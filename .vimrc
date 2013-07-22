@@ -1,3 +1,23 @@
+set nocompatible
+filetype off
+
+" Vundle
+" Use vundle for plugin management
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+" Bundles :
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-haml'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'airblade/vim-gitgutter'
+
 execute pathogen#infect()
 
 " General settings
@@ -25,6 +45,11 @@ map  <Esc> :w
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
 map <Leader>m :Rmodel
+imap <esc>:tabn <F7>
+imap gT <F8>
+imap gt <F7>
+map :tabn <F8>
+map :tabp <F7>
 
 if has("gui_running")
   set guioption=-t

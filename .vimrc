@@ -38,6 +38,9 @@ set hidden
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+" Enable filetype plugin
+filetype plugin indent on
+
 " Shortcuts ============================
 let mapleader = ","
 map ; :

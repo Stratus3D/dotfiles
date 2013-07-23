@@ -72,6 +72,9 @@ set clipboard=unnamed
 " Not sure if I am going to ever use this stuff
 "You can use <c-j> to goto the next <++> - it is pretty smart.
 
+" Start CtrlP on startup
+autocmd VimEnter * CtrlP
+
 "JavaScript
 autocmd BufRead,BufNewFile *.tmpl,*.htm,*.js inorea <buffer> cfun <c-r>=IMAP_PutTextWithMovement("function <++>(<++>) {\n<++>;\nreturn <++>;\n}")<CR>
 autocmd BufRead,BufNewFile *.tmpl,*.htm,*.js inorea <buffer> cfor <c-r>=IMAP_PutTextWithMovement("for(<++>; <++>; <++>) {\n<++>;\n}")<CR>

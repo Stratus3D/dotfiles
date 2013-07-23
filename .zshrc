@@ -1,6 +1,9 @@
 PATH=/usr/local/bin:/usr/local/sbin:$PATH # brew 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting 
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator # For tmuxinator
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -37,8 +40,11 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.rvm/bin:/Users/user/.rvm/gems/ruby-1.9.3-p194/bin:/Users/user/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/user/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/user/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
+export PATH=$PATH:/usr/local/bin:/usr/local/sbin:$HOME/.rvm/bin:/Users/user/.rvm/gems/ruby-1.9.3-p194/bin:/Users/user/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/user/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/user/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
 
 PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 
 SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
+
+export TERM="xterm-256color"
+export EDITOR='vim'

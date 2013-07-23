@@ -47,6 +47,8 @@ map ; :
 map  <Esc> :w
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
+map <Leader>s <esc>:w<CR>
+imap <Leader>s <esc>:w<CR>
 map <Leader>m :Rmodel
 imap <esc>:tabn <F7>
 imap gT <F8>

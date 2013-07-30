@@ -48,13 +48,13 @@ map  <Esc> :w
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
 map <Leader>s <esc>:w<CR>
-imap <Leader>s <esc>:w<CR>
 map <Leader>m :Rmodel
 imap <esc>:tabn <F7>
-imap gT <F8>
-imap gt <F7>
+map gT <F8>
+map gt <F7>
 map :tabn <F8>
 map :tabp <F7>
+map <Leader>cr <F5>
 
 if has("gui_running")
   set guioption=-t

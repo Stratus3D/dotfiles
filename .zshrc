@@ -48,3 +48,7 @@ SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 
 export TERM="xterm-256color"
 export EDITOR='vim'
+
+# source `which tmuxinator.zsh`
+
+alias vim="/usr/local/bin/vim"

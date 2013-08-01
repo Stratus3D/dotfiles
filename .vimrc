@@ -69,7 +69,7 @@ let NERDTreeShowHidden=1
 nnoremap <leader>b :CtrlPBuffer<CR>
 
 " allow yanking to OSX clipboard
-set clipboard=unnamed
+" set clipboard+=unnamed
 
 " Not sure if I am going to ever use this stuff
 "You can use <c-j> to goto the next <++> - it is pretty smart.

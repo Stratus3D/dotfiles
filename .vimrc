@@ -17,6 +17,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'Valloric/YouCompleteMe'
+
 
 execute pathogen#infect()
 

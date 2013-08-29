@@ -52,3 +52,7 @@ export EDITOR='vim'
 # source `which tmuxinator.zsh`
 
 alias vim="/usr/local/bin/vim"
+
+alias gs="git status"
+alias gco="git commit "
+alias gdh="git diff HEAD "

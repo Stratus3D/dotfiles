@@ -34,6 +34,7 @@ colorscheme solarized
 set background=dark
 set pastetoggle=<F2>
 set showmatch
+set hlsearch
 
 " Allow hidden buffers
 set hidden
@@ -69,6 +70,9 @@ let NERDTreeShowHidden=1
 
 "open CtrlP in buffer mode
 nnoremap <leader>b :CtrlPBuffer<CR>
+
+" Press Space to turn off highlighting and clear any message already displayed.
+:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " allow yanking to OSX clipboard
 " set clipboard+=unnamed

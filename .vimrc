@@ -17,10 +17,9 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'Valloric/YouCompleteMe'
-
-
-execute pathogen#infect()
+" Bundle 'Valloric/YouCompleteMe'
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'jimenezrick/vimerl'
 
 " General settings
 syntax on

@@ -40,7 +40,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/usr/local/bin:/usr/local/sbin:$HOME/.rvm/bin:/Users/user/.rvm/gems/ruby-1.9.3-p194/bin:/Users/user/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/user/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/user/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
+export PATH=$HOME/src:$PATH:/usr/local/bin:/usr/local/sbin:$HOME/.rvm/bin:/Users/user/.rvm/gems/ruby-1.9.3-p194/bin:/Users/user/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/user/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/user/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
 
 PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 
@@ -56,3 +56,5 @@ alias vim="/usr/local/bin/vim"
 alias gs="git status"
 alias gco="git commit "
 alias gdh="git diff HEAD "
+
+eval "$(rbenv init -)"

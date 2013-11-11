@@ -1,7 +1,5 @@
 PATH=/usr/local/bin:/usr/local/sbin:$PATH # brew 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting 
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator # For tmuxinator
 
 # Path to your oh-my-zsh configuration.
@@ -40,7 +38,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$HOME/src:$PATH:/usr/local/bin:/usr/local/sbin:$HOME/.rvm/bin:/Users/user/.rvm/gems/ruby-1.9.3-p194/bin:/Users/user/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/user/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/user/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
+export PATH=$HOME/src:$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
 
 PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 
@@ -51,10 +49,13 @@ export EDITOR='vim'
 
 # source `which tmuxinator.zsh`
 
-alias vim="/usr/local/bin/vim"
+alias vim="vi"
 
+alias g="git"
 alias gs="git status"
 alias gco="git commit "
 alias gdh="git diff HEAD "
 
+export RBENV_ROOT="$HOME/.rbenv"
+export PATH="$RBENV_ROOT/bin:$PATH"
 eval "$(rbenv init -)"

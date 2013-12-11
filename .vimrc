@@ -35,6 +35,9 @@ set pastetoggle=<F2>
 set showmatch
 set hlsearch
 
+" Ignored files
+set wildignore+=/tmp/,*.so,*.swp,*.swo,*.zip,*.meta,*.prefab,*.png,*.jpg,*.beam
+
 " Allow hidden buffers
 set hidden
 
@@ -70,6 +73,12 @@ let NERDTreeShowHidden=1
 "open CtrlP in buffer mode
 nnoremap <leader>b :CtrlPBuffer<CR>
 
+" custom CtrlP ignores
+let g:ctrlp_custom_ignore = {
+  \'dir': 'ebin\|DS_Store\|git$',
+  \'file': '\v\.(beam|pyc|swo)$',
+  \}
+
 " Press Space to turn off highlighting and clear any message already displayed.
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
@@ -81,6 +90,9 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 
 " Start CtrlP on startup
 autocmd VimEnter * CtrlP
+
+" Erlang
+autocmd Filetype erlang setlocal softtabstop=4 shiftwidth=4 expandtab fileencoding=utf-8
 
 "JavaScript
 autocmd BufRead,BufNewFile *.tmpl,*.htm,*.js inorea <buffer> cfun <c-r>=IMAP_PutTextWithMovement("function <++>(<++>) {\n<++>;\nreturn <++>;\n}")<CR>

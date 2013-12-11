@@ -1,4 +1,4 @@
-PATH=/usr/local/bin:/usr/local/sbin:$PATH # brew 
+PATH=~/.rbenv/shims:/usr/local/bin:/usr/local/sbin:$PATH # brew
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator # For tmuxinator
 
@@ -38,7 +38,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$HOME/src:$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
+export PATH=$HOME/bin/neo4j-community-2.0.0-RC1/bin:$HOME/lib:$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
 
 PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 

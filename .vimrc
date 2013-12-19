@@ -20,6 +20,7 @@ Bundle 'airblade/vim-gitgutter'
 " Bundle 'Valloric/YouCompleteMe'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'jimenezrick/vimerl'
+Bundle 'xolox/vim-lua-ftplugin'
 
 " General settings
 syntax on
@@ -70,6 +71,9 @@ nmap <silent> <F3> :NERDTreeToggle<CR>
 set guioptions-=T
 let NERDTreeShowHidden=1
 
+" CtrlP directory mode
+let g:ctrlp_working_path_mode = 0
+
 "open CtrlP in buffer mode
 nnoremap <leader>b :CtrlPBuffer<CR>
 
@@ -87,6 +91,9 @@ let g:ctrlp_custom_ignore = {
 
 " Not sure if I am going to ever use this stuff
 "You can use <c-j> to goto the next <++> - it is pretty smart.
+
+" Allow tabs in makefiles
+autocmd FileType make setlocal noexpandtab
 
 " Start CtrlP on startup
 autocmd VimEnter * CtrlP

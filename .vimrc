@@ -20,6 +20,7 @@ Bundle 'airblade/vim-gitgutter'
 " Bundle 'Valloric/YouCompleteMe'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'jimenezrick/vimerl'
+Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-lua-ftplugin'
 Bundle 'groenewege/vim-less'
 

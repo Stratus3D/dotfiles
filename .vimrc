@@ -21,6 +21,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'jimenezrick/vimerl'
 Bundle 'xolox/vim-lua-ftplugin'
+Bundle 'groenewege/vim-less'
 
 " General settings
 syntax on

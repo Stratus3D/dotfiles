@@ -35,24 +35,26 @@ ZSH_THEME="blinks" #"robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
+DISABLE_CORRECTION="true"
+
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=$HOME/bin/neo4j-community-2.0.0-RC1/bin:$HOME/lib:$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
+export ANDROID_HOME=/Users/tbrown/lib/adt-bundle-mac-x86_64-20131030
 
-PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+# Customize to your needs...
+export PATH=/usr/local/share/npm/bin:$HOME/.kerl/builds/R16B03-1/release_R16B03-1/bin:$HOME/lib/elixir/bin:$HOME/lib/luarocks-2.1.1\ Copy/src/bin:$HOME/lib/apache-ant-1.9.3/bin:$ANDROID_HOME/sdk/platform-tools:$ANDROID_HOME/sdk/tools:$HOME/lib/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:/Applications/CoronaSDK:$HOME/lib/lua-5.1.5/src:$HOME/lib/neo4j-community-2.0.0-RC1/bin:$HOME/lib:/usr/local/bin:$PATH:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
+
+PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
 
 SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 
 export TERM="xterm-256color"
 export EDITOR='vim'
 
-# source `which tmuxinator.zsh`
-
 alias vim="vi"
 
 alias g="git"
-alias gs="git status"
+alias gst="git status"
 alias gco="git commit "
 alias gdh="git diff HEAD "
 

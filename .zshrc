@@ -57,6 +57,7 @@ alias g="git"
 alias gst="git status"
 alias gco="git commit "
 alias gdh="git diff HEAD "
+alias glp="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 
 export RBENV_ROOT="$HOME/.rbenv"
 export PATH="$RBENV_ROOT/bin:$PATH"

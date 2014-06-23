@@ -37,6 +37,7 @@ set background=dark
 set pastetoggle=<F2>
 set showmatch
 set hlsearch
+set colorcolumn=80
 
 " Ignored files
 set wildignore+=/tmp/,*.so,*.swp,*.swo,*.zip,*.meta,*.prefab,*.png,*.jpg,*.beam
@@ -81,7 +82,7 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 
 " custom CtrlP ignores
 let g:ctrlp_custom_ignore = {
-  \'dir': 'ebin\|DS_Store\|git$\|bower_components\|node_modules',
+  \'dir': 'ebin\|DS_Store\|git$\|bower_components\|node_modules\|build',
   \'file': '\v\.(beam|pyc|swo)$',
   \}
 

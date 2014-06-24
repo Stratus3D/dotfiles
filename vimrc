@@ -1,74 +1,129 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"   Filename: .vimrc                                                         "
-" Maintainer: Michael J. Smalley <michaeljsmalley@gmail.com>                 "
-"        URL: http://github.com/michaeljsmalley/dotfiles                     "
-"                                                                            "
-"                                                                            "
-" Sections:                                                                  "
-"   01. General ................. General Vim behavior                       "
-"   02. Events .................. General autocmd events                     "
-"   03. Theme/Colors ............ Colors, fonts, etc.                        "
-"   04. Vim UI .................. User interface behavior                    "
-"   05. Text Formatting/Layout .. Text, tab, indentation related             "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible
+filetype off
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 01. General                                                                "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible         " get rid of Vi compatibility mode. SET FIRST!
+" Vundle
+" Use vundle for plugin management
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 02. Events                                                                 "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype plugin indent on " filetype detection[ON] plugin[ON] indent[ON]
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
 
-" In Makefiles DO NOT use spaces instead of tabs
-autocmd FileType make setlocal noexpandtab
-" In Ruby files, use 2 spaces instead of 4 for tabs
-autocmd FileType ruby setlocal sw=2 ts=2 sts=2
+" Bundles :
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-haml'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'airblade/vim-gitgutter'
+" Bundle 'Valloric/YouCompleteMe'
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'jimenezrick/vimerl'
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-lua-ftplugin'
+Bundle 'groenewege/vim-less'
 
-" Enable omnicompletion (to use, hold Ctrl+X then Ctrl+O while in Insert mode.
-set ofu=syntaxcomplete#Complete
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 03. Theme/Colors                                                           "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set t_Co=256              " enable 256-color mode.
-syntax enable             " enable syntax highlighting (previously syntax on).
-colorscheme molokai       " set colorscheme
-
-" Prettify JSON files
-autocmd BufRead,BufNewFile *.json set filetype=json
-autocmd Syntax json sou ~/.vim/syntax/json.vim
-
-" Prettify Vagrantfile
-autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
-
-" Highlight characters that go over 80 columns
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 04. Vim UI                                                                 "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set number                " show line numbers
-set cul                   " highlight current line
-set laststatus=2          " last window always has a statusline
-set nohlsearch            " Don't continue to highlight searched phrases.
-set incsearch             " But do highlight as you type your search.
-set ignorecase            " Make searches case-insensitive.
-set ruler                 " Always show info along bottom.
+" General settings
+syntax on
+set number
+set autoindent
+set tabstop=4
+set shiftwidth=2
+set expandtab
+set guifont=Monaco:h12
+colorscheme solarized
+set background=dark
+set pastetoggle=<F2>
 set showmatch
-set statusline=%<%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B,%n%Y%)\%P
+set hlsearch
+set colorcolumn=80
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 05. Text Formatting/Layout                                                 "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set autoindent            " auto-indent
-set tabstop=4             " tab spacing
-set softtabstop=4         " unify
-set shiftwidth=4          " indent/outdent by 4 columns
-set shiftround            " always indent/outdent to the nearest tabstop
-set expandtab             " use spaces instead of tabs
-set smarttab              " use tabs at the start of a line, spaces elsewhere
-set nowrap                " don't wrap text
+" Ignored files
+set wildignore+=/tmp/,*.so,*.swp,*.swo,*.zip,*.meta,*.prefab,*.png,*.jpg,*.beam
+
+" Allow hidden buffers
+set hidden
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" Enable filetype plugin
+filetype plugin indent on
+
+" Shortcuts ============================
+let mapleader = ","
+map ; :
+map  <Esc> :w
+map <C-s> <esc>:w<CR>
+imap <C-s> <esc>:w<CR>
+map <Leader>s <esc>:w<CR>
+map <Leader>m :Rmodel
+imap <esc>:tabn <F7>
+map gT <F8>
+map gt <F7>
+map :tabn <F8>
+map :tabp <F7>
+map <Leader>cr <F5>
+
+if has("gui_running")
+  set guioption=-t
+endif
+
+" NERDTree settings
+nmap <silent> <F3> :NERDTreeToggle<CR>
+set guioptions-=T
+let NERDTreeShowHidden=1
+
+" CtrlP directory mode
+let g:ctrlp_working_path_mode = 0
+
+"open CtrlP in buffer mode
+nnoremap <leader>b :CtrlPBuffer<CR>
+
+" custom CtrlP ignores
+let g:ctrlp_custom_ignore = {
+  \'dir': 'ebin\|DS_Store\|git$\|bower_components\|node_modules\|build',
+  \'file': '\v\.(beam|pyc|swo)$',
+  \}
+
+" Press Space to turn off highlighting and clear any message already displayed.
+:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+" allow yanking to OSX clipboard
+" set clipboard+=unnamed
+
+" Not sure if I am going to ever use this stuff
+"You can use <c-j> to goto the next <++> - it is pretty smart.
+
+" Allow tabs in makefiles
+autocmd FileType make setlocal noexpandtab
+
+" Start CtrlP on startup
+autocmd VimEnter * CtrlP
+
+" Erlang
+autocmd Filetype erlang setlocal softtabstop=4 shiftwidth=4 expandtab fileencoding=utf-8
+
+"JavaScript
+autocmd BufRead,BufNewFile *.tmpl,*.htm,*.js inorea <buffer> cfun <c-r>=IMAP_PutTextWithMovement("function <++>(<++>) {\n<++>;\nreturn <++>;\n}")<CR>
+autocmd BufRead,BufNewFile *.tmpl,*.htm,*.js inorea <buffer> cfor <c-r>=IMAP_PutTextWithMovement("for(<++>; <++>; <++>) {\n<++>;\n}")<CR>
+autocmd BufRead,BufNewFile *.tmpl,*.htm,*.js inorea <buffer> cif <c-r>=IMAP_PutTextWithMovement("if(<++>) {\n<++>;\n}")<CR>
+autocmd BufRead,BufNewFile *.tmpl,*.htm,*.js inorea <buffer> cifelse <c-r>=IMAP_PutTextWithMovement("if(<++>) {\n<++>;\n}\nelse {\n<++>;\n}")<CR>
+
+"HTML
+autocmd BufRead,BufNewFile *.tmpl,*.js,*.htm inorea <buffer> cahref <c-r>=IMAP_PutTextWithMovement('<a href="<++>"><++></a>')<CR>
+autocmd BufRead,BufNewFile *.tmpl,*.js,*.htm inorea <buffer> cbold <c-r>=IMAP_PutTextWithMovement('<b><++></b>')<CR>
+autocmd BufRead,BufNewFile *.tmpl,*.js,*.htm inorea <buffer> cimg <c-r>=IMAP_PutTextWithMovement('<¿mg src="<++>" alt="<++>" />')<CR>
+autocmd BufRead,BufNewFile *.tmpl,*.js,*.htm inorea <buffer> cpara <c-r>=IMAP_PutTextWithMovement('<p><++></p>')<CR>
+autocmd BufRead,BufNewFile *.tmpl,*.js,*.htm inorea <buffer> ctag <c-r>=IMAP_PutTextWithMovement('<<++>><++></<++>>')<CR>
+autocmd BufRead,BufNewFile *.tmpl,*.js,*.htm inorea <buffer> ctag1 <c-r>=IMAP_PutTextWithMovement("<<++>><CR><++><CR></<++>>")<CR>
+
+"Python
+autocmd BufNewFile,BufRead *.py inorea <buffer> cfun <c-r>=IMAP_PutTextWithMovement("def <++>(<++>):\n<++>\nreturn <++>")<CR>
+autocmd BufRead,BufNewFile *.py inorea <buffer> cclass <c-r>=IMAP_PutTextWithMovement("class <++>:\n<++>")<CR>
+autocmd BufRead,BufNewFile *.py inorea <buffer> cfor <c-r>=IMAP_PutTextWithMovement("for <++> in <++>:\n<++>")<CR>
+autocmd BufRead,BufNewFile *.py inorea <buffer> cif <c-r>=IMAP_PutTextWithMovement("if <++>:\n<++>")<CR>
+autocmd BufRead,BufNewFile *.py inorea <buffer> cifelse <c-r>=IMAP_PutTextWithMovement("if <++>:\n<++>\nelse:\n<++>")<CR>
+
+"Press c-q insted of space (or other key) to complete the snippet
+imap <C-q> <C-]>

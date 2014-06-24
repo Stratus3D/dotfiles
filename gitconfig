@@ -1,8 +1,6 @@
 [user]
-	name = Trevor Brown
-	email = trevor@glideint.com
 [github]
-	user = trevor-brown
+	user = Stratus3 
 [color]
  branch = auto
  diff = auto
@@ -21,4 +19,5 @@
  changed = green
  untracked = cyan
 [core]
-	autocrlf = true
+[core]
+	excludesfile = /Users/tbrown/.gitignore_global

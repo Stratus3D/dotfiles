@@ -1,0 +1,27 @@
+# ~/.tmuxinator/default.yml
+
+name: Project Name
+root: ~/Development/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+windows:
+  - editor:
+    layout: main-vertical
+    panes:
+      - vim `git status --porcelain | sed -ne 's/^ M //p'`
+      - # zsh
+      - # zsh
+      - rake console
+  - build:
+  - logs:

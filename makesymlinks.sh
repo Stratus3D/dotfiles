@@ -30,3 +30,10 @@ for file in $files; do
   echo "Creating symlink to $file in home directory."
   ln -s $dir/$file ~/.$file
 done
+
+# setup default tmuxinator project
+if [ ! -d ~/.tmuxinator ]; then
+  mkdir ~/.tmuxinator
+fi
+# link the default tmuxinator project
+ln -s $dir/tmuxinator/default.yml ~/.tmuxinator/default.yml

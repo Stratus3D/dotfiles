@@ -37,3 +37,7 @@ if [ ! -d ~/.tmuxinator ]; then
 fi
 # link the default tmuxinator project
 ln -s $dir/tmuxinator/default.yml ~/.tmuxinator/default.yml
+
+# download vundle
+git clone https://github.com/gmarik/Vundle.vim.git ~/dotfiles/vim/bundle/Vundle.vim
+vim +PluginInstall +qall

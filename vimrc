@@ -3,26 +3,26 @@ filetype off
 
 " Vundle
 " Use vundle for plugin management
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " Bundles :
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-haml'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-haml'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'airblade/vim-gitgutter'
 " Bundle 'Valloric/YouCompleteMe'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'jimenezrick/vimerl'
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-lua-ftplugin'
-Bundle 'groenewege/vim-less'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'jimenezrick/vimerl'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-lua-ftplugin'
+Plugin 'groenewege/vim-less'
 
 " General settings
 syntax on
@@ -32,12 +32,14 @@ set tabstop=4
 set shiftwidth=2
 set expandtab
 set guifont=Monaco:h12
-colorscheme solarized
 set background=dark
 set pastetoggle=<F2>
 set showmatch
 set hlsearch
 set colorcolumn=80
+
+" set the color scheme
+colorscheme solarized
 
 " Ignored files
 set wildignore+=/tmp/,*.so,*.swp,*.swo,*.zip,*.meta,*.prefab,*.png,*.jpg,*.beam

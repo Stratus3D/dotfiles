@@ -24,6 +24,10 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-lua-ftplugin'
 Plugin 'groenewege/vim-less'
 
+call vundle#end()
+" Enable filetype plugin
+filetype plugin indent on
+
 " General settings
 syntax on
 set number
@@ -48,9 +52,6 @@ set wildignore+=/tmp/,*.so,*.swp,*.swo,*.zip,*.meta,*.prefab,*.png,*.jpg,*.beam
 set hidden
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-" Enable filetype plugin
-filetype plugin indent on
 
 " Shortcuts ============================
 let mapleader = ","

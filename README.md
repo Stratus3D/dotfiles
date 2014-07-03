@@ -31,8 +31,17 @@ This is software that I need for my day-to-day programming work. I try to keep t
 
 #### Languages
 * Erlang
+  * Use kerl for installation of Erlang versions (https://github.com/cqwww/kerl)
+  * Versions R16 and R17
 * Elixir
+  * Latest version (currently v0.14.0)
 * Ruby
+  * Use rbenv for installation of Ruby versions (https://github.com/sstephenson/rbenv)
+  * Versions 1.9.\* and 2.1.\*
 * Python
 * Lua
 * Javascript(NodeJS)
+
+#### Frameworks
+* Rails
+* AngularJS

@@ -16,6 +16,12 @@ My dotfiles.
     chmod +x makesymlinks.sh
     ./makesymlinks.sh
 
+
+### Issues
+
+* Since these dotfiles are shared across my machines, there are scenarios where portions of the dotfiles will need to be altered. Such as the as the path variables in zshrc.
+
+
 ### Easily Forgottten Command Line Tricks
 * `open .` to open current directory in Finder
 * `python -m SimpleHTTPServer 8000` runs a webserver that serves the contents of the directory
@@ -31,10 +37,6 @@ My dotfiles.
 * `^K` delete from the cursor to the end of the line
 
 
-### Issues
-
-* Since these dotfiles are shared across my machines, there are scenarios where portions of the dotfiles will need to be altered. Such as the as the path variables in zshrc.
-
 ### Software
 This is software that I need for my day-to-day programming work. I try to keep this list updated with the latest software I am using. This allows me to quickly setup new development machines.
 
@@ -43,6 +45,7 @@ This is software that I need for my day-to-day programming work. I try to keep t
 * Vim
 * Tmux
 * Tmuxinator
+
 
 #### Languages
 * Erlang

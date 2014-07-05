@@ -3,7 +3,7 @@ My Dotfiles
 
 Stratus3D
 
-My dotfiles. 
+My dotfiles. Everything I need to get setup on a new machine.
 
 ### Installation
 
@@ -24,7 +24,9 @@ My dotfiles.
 
 ### Easily Forgottten Command Line Tricks
 * `open .` to open current directory in Finder
+* `open -a TextEdit textfile.txt` to open a file in a specific application
 * `python -m SimpleHTTPServer 8000` runs a webserver that serves the contents of the directory
+* `python -m smtpd -n -c DebuggingServer localhost:25` runs a SMTP server that logs all messages to the console
 * `^X, ^E` to edit the currently typed command in vim
 * `!!` run the last command again
 * `cd -` change back to the previous directory
@@ -35,6 +37,8 @@ My dotfiles.
 * `Esc-F` move forward one word
 * `^U` delete from cursor to the beginning of the line
 * `^K` delete from the cursor to the end of the line
+* `^Y` paste previously deleted command (separate from global Cmd-C buffer). Delete a line with `^A ^K` and then paste it back with `^Y`
+* Files/directories can be dragged onto the terminal and the path will be pasted at the current cursor position
 
 
 ### Software

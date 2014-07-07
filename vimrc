@@ -17,12 +17,12 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'airblade/vim-gitgutter'
-" Bundle 'Valloric/YouCompleteMe'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'jimenezrick/vimerl'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-lua-ftplugin'
 Plugin 'groenewege/vim-less'
+" Bundle 'Valloric/YouCompleteMe'
 
 call vundle#end()
 " Enable filetype plugin

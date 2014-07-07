@@ -28,6 +28,8 @@ This is software that I need for my day-to-day programming work. I try to keep t
 * Vim
 * Tmux
 * Tmuxinator
+* Chrome
+* iTerm2 (Mac OSX)
 
 #### Languages
 * Erlang
@@ -36,11 +38,13 @@ This is software that I need for my day-to-day programming work. I try to keep t
 * Elixir
   * Latest version (currently v0.14.0)
 * Ruby
-  * Use rbenv for installation of Ruby versions (https://github.com/sstephenson/rbenv)
+  * Use rbenv for management of Ruby versions (https://github.com/sstephenson/rbenv)
+  * Use ruby-build for installation of Ruby versions (https://github.com/sstephenson/ruby-build)
   * Versions 1.9.\* and 2.1.\*
 * Python
 * Lua
 * Javascript(NodeJS)
+  * Use installer from (http://nodejs.org/)
 
 #### Frameworks
 * Rails

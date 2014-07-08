@@ -92,6 +92,10 @@ let g:ctrlp_custom_ignore = {
 " Press Space to turn off highlighting and clear any message already displayed.
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
+" highlight trailing whitespace
+:highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+:match ExtraWhitespace /\s\+$/
+
 " allow yanking to OSX clipboard
 " set clipboard+=unnamed
 

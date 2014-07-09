@@ -22,6 +22,7 @@ Plugin 'jimenezrick/vimerl'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-lua-ftplugin'
 Plugin 'groenewege/vim-less'
+Plugin 'elzr/vim-json'
 " Bundle 'Valloric/YouCompleteMe'
 
 call vundle#end()

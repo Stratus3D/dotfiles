@@ -34,7 +34,7 @@ syntax on
 set number
 set autoindent
 set tabstop=4
-set shiftwidth=2
+set shiftwidth=4
 set expandtab
 set guifont=Monaco:h12
 set background=dark
@@ -103,14 +103,8 @@ let g:ctrlp_custom_ignore = {
 " Not sure if I am going to ever use this stuff
 "You can use <c-j> to goto the next <++> - it is pretty smart.
 
-" Allow tabs in makefiles
-autocmd FileType make setlocal noexpandtab
-
 " Start CtrlP on startup
 autocmd VimEnter * CtrlP
-
-" Erlang
-autocmd Filetype erlang setlocal softtabstop=4 shiftwidth=4 expandtab fileencoding=utf-8
 
 "JavaScript
 autocmd BufRead,BufNewFile *.tmpl,*.htm,*.js inorea <buffer> cfun <c-r>=IMAP_PutTextWithMovement("function <++>(<++>) {\n<++>;\nreturn <++>;\n}")<CR>

@@ -3,7 +3,7 @@ My Dotfiles
 
 Stratus3D
 
-My dotfiles. 
+My dotfiles.
 
 ### Installation
 
@@ -35,7 +35,8 @@ My dotfiles.
 * `Esc-F` move forward one word
 * `^U` delete from cursor to the beginning of the line
 * `^K` delete from the cursor to the end of the line
-
+Vim Commands
+* `vit` select contents of html tag. `v`isual select text `i`n a `t`ag. `dit` would delete the contents of the tag.
 
 ### Software
 This is software that I need for my day-to-day programming work. I try to keep this list updated with the latest software I am using. This allows me to quickly setup new development machines.

@@ -39,7 +39,8 @@ My dotfiles. Everything I need to get setup on a new machine.
 * `^K` delete from the cursor to the end of the line
 * `^Y` paste previously deleted command (separate from global Cmd-C buffer). Delete a line with `^A ^K` and then paste it back with `^Y`
 * Files/directories can be dragged onto the terminal and the path will be pasted at the current cursor position
-
+Vim Commands
+* `vit` select contents of html tag. `v`isual select text `i`n a `t`ag. `dit` would delete the contents of the tag.
 
 ### Software
 This is software that I need for my day-to-day programming work. I try to keep this list updated with the latest software I am using. This allows me to quickly setup new development machines.
@@ -49,7 +50,8 @@ This is software that I need for my day-to-day programming work. I try to keep t
 * Vim
 * Tmux
 * Tmuxinator
-
+* Chrome
+* iTerm2 (Mac OSX)
 
 #### Languages
 * Erlang
@@ -58,11 +60,13 @@ This is software that I need for my day-to-day programming work. I try to keep t
 * Elixir
   * Latest version (currently v0.14.0)
 * Ruby
-  * Use rbenv for installation of Ruby versions (https://github.com/sstephenson/rbenv)
+  * Use rbenv for management of Ruby versions (https://github.com/sstephenson/rbenv)
+  * Use ruby-build for installation of Ruby versions (https://github.com/sstephenson/ruby-build)
   * Versions 1.9.\* and 2.1.\*
 * Python
 * Lua
 * Javascript(NodeJS)
+  * Use installer from (http://nodejs.org/)
 
 #### Frameworks
 * Rails

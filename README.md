@@ -41,6 +41,7 @@ My dotfiles. Everything I need to get setup on a new machine.
 * Files/directories can be dragged onto the terminal and the path will be pasted at the current cursor position
 Vim Commands
 * `vit` select contents of html tag. `v`isual select text `i`n a `t`ag. `dit` would delete the contents of the tag.
+* `^A` and `^X` allow you to increment the number your cursor is over, or first number after the cursor that is on the same line.
 
 ### Software
 This is software that I need for my day-to-day programming work. I try to keep this list updated with the latest software I am using. This allows me to quickly setup new development machines.
@@ -71,3 +72,7 @@ This is software that I need for my day-to-day programming work. I try to keep t
 #### Frameworks
 * Rails
 * AngularJS
+
+###Misc Stuff
+#####Colors
+

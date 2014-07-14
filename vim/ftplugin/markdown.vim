@@ -1,0 +1,2 @@
+" Markdown
+setlocal spell

@@ -1,0 +1,2 @@
+" Plain Text
+setlocal spell

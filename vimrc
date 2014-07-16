@@ -27,8 +27,11 @@ Bundle 'cakebaker/scss-syntax.vim'
 " Bundle 'Valloric/YouCompleteMe'
 
 call vundle#end()
+
 " Enable filetype plugin
 filetype plugin indent on
+" Plain text filetype
+autocmd BufRead,BufNewFile *.txt setfiletype text
 
 " General settings
 syntax on
@@ -101,11 +104,11 @@ let g:ctrlp_custom_ignore = {
 " allow yanking to OSX clipboard
 " set clipboard+=unnamed
 
-" Not sure if I am going to ever use this stuff
-"You can use <c-j> to goto the next <++> - it is pretty smart.
-
 " Start CtrlP on startup
 autocmd VimEnter * CtrlP
+
+" Not sure if I am going to ever use this stuff
+"You can use <c-j> to goto the next <++> - it is pretty smart.
 
 "JavaScript
 autocmd BufRead,BufNewFile *.tmpl,*.htm,*.js inorea <buffer> cfun <c-r>=IMAP_PutTextWithMovement("function <++>(<++>) {\n<++>;\nreturn <++>;\n}")<CR>

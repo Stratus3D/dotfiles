@@ -28,10 +28,12 @@ Bundle 'cakebaker/scss-syntax.vim'
 
 call vundle#end()
 
+" File type settings (file type-specific settings in vim/ftplugin/)
 " Enable filetype plugin
 filetype plugin indent on
-" Plain text filetype
 autocmd BufRead,BufNewFile *.txt setfiletype text
+autocmd BufRead,BufNewFile *.app setfiletype erlang
+autocmd BufRead,BufNewFile *.app.src setfiletype erlang
 
 " General settings
 syntax on

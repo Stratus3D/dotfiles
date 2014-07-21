@@ -23,7 +23,8 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-lua-ftplugin'
 Plugin 'groenewege/vim-less'
 Plugin 'elzr/vim-json'
-Bundle 'cakebaker/scss-syntax.vim'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'tpope/vim-markdown'
 " Bundle 'Valloric/YouCompleteMe'
 
 call vundle#end()

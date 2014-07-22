@@ -45,10 +45,15 @@ set shiftwidth=4
 set expandtab
 set guifont=Monaco:h12
 set background=dark
-set pastetoggle=<F2>
 set showmatch
 set hlsearch
 set colorcolumn=80
+
+" Show pastetoggle status
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
 
 " set the color scheme
 colorscheme solarized

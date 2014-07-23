@@ -105,6 +105,10 @@ let g:ctrlp_custom_ignore = {
 " Press Space to turn off highlighting and clear any message already displayed.
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
+" Hide everything that occupies space on the left side of the file, so we can
+" copy the file contents with ease
+:nnoremap <F4> :set number! <bar> :GitGutterToggle<CR>
+
 " highlight trailing whitespace
 :highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 :match ExtraWhitespace /\s\+$/

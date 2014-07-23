@@ -18,11 +18,10 @@ My dotfiles. Everything I need to get setup on a new machine.
 
 
 ### Issues
-
 * Since these dotfiles are shared across my machines, there are scenarios where portions of the dotfiles will need to be altered. Such as the as the path variables in zshrc.
 
 
-### Easily Forgottten Command Line Tricks
+### Easily Forgotten Command Line Tricks
 * `open .` to open current directory in Finder
 * `open -a TextEdit textfile.txt` to open a file in a specific application
 * `python -m SimpleHTTPServer 8000` runs a webserver that serves the contents of the directory
@@ -42,6 +41,7 @@ My dotfiles. Everything I need to get setup on a new machine.
 Vim Commands
 * `vit` select contents of html tag. `v`isual select text `i`n a `t`ag. `dit` would delete the contents of the tag.
 * `^A` and `^X` allow you to increment the number your cursor is over, or first number after the cursor that is on the same line.
+* `<F4>` toggles everything that occupies space to the left of the text (line numbers, gitgutter, etc...)
 
 ### Software
 This is software that I need for my day-to-day programming work. I try to keep this list updated with the latest software I am using. This allows me to quickly setup new development machines.

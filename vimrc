@@ -113,6 +113,11 @@ let g:ctrlp_custom_ignore = {
 :highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 :match ExtraWhitespace /\s\+$/
 
+
+" experimental
+set statusline=\ -\ Extension:%t\ -\ Encoding:\%{strlen(&fenc)?&fenc:'none'}\ -\ Line\ Endings:%{&ff}\ -\ File\ Type:%y%=%h%m%r%c,%l/%L\ %P
+set laststatus=2
+
 " allow yanking to OSX clipboard
 " set clipboard+=unnamed
 

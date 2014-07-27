@@ -113,9 +113,12 @@ let g:ctrlp_custom_ignore = {
 :highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 :match ExtraWhitespace /\s\+$/
 
-
-" experimental
-set statusline=\ -\ Extension:%t\ -\ Encoding:\%{strlen(&fenc)?&fenc:'none'}\ -\ Line\ Endings:%{&ff}\ -\ File\ Type:%y%=%h%m%r%c,%l/%L\ %P
+" Custom status bar
+set statusline=\ Extension:%-8t                               " File extension
+set statusline+=\ Encoding:\%-8{strlen(&fenc)?&fenc:'none'}   " File encoding
+set statusline+=\ Line\ Endings:%-6{&ff}                      " Line Endings
+set statusline+=\ File\ Type:%-12Y                            " File Type
+set statusline+=%=%h%m%r%c,%l/%L\ %P        " Cursor location and file status
 set laststatus=2
 
 " allow yanking to OSX clipboard

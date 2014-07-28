@@ -114,7 +114,7 @@ let g:ctrlp_custom_ignore = {
 :match ExtraWhitespace /\s\+$/
 
 " Custom status bar
-set statusline=\ Extension:%-8t                               " File extension
+set statusline=\ Filename:%-8t                               " Filename
 set statusline+=\ Encoding:\%-8{strlen(&fenc)?&fenc:'none'}   " File encoding
 set statusline+=\ Line\ Endings:%-6{&ff}                      " Line Endings
 set statusline+=\ File\ Type:%-12Y                            " File Type

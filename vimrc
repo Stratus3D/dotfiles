@@ -127,6 +127,12 @@ set laststatus=2
 " Start CtrlP on startup
 autocmd VimEnter * CtrlP
 
+" Automatically reload .vimrc
+autocmd! BufWritePost .vimrc,*vimrc source %
+
+" Compute ctags if possible
+autocmd BufWritePost *.c,*.cpp,*.h,*.rb,*.py,*.erl,*.hrl,*.ex silent! !ctags -R --exclude=".js*" &
+
 " Not sure if I am going to ever use this stuff
 "You can use <c-j> to goto the next <++> - it is pretty smart.
 

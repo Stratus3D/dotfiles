@@ -131,6 +131,13 @@ autocmd VimEnter * CtrlP
 " Automatically reload .vimrc
 autocmd! BufWritePost .vimrc,*vimrc source %
 
+" Keep vim ctags in the tags file like normal
+let easytags_file = '~/tags'
+
+" Write to project specific tag file if it exists
+set tags=./tags;
+let easytags_dynamic_files = 1
+
 " Not sure if I am going to ever use this stuff
 "You can use <c-j> to goto the next <++> - it is pretty smart.
 

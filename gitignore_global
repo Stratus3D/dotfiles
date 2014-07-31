@@ -34,6 +34,10 @@
 *.sql
 *.sqlite
 
+# ctags file         #
+######################
+tags
+
 # OS generated files #
 ######################
 .DS_Store

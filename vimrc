@@ -21,6 +21,7 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'jimenezrick/vimerl'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-lua-ftplugin'
+Plugin 'xolox/vim-easytags'
 Plugin 'groenewege/vim-less'
 Plugin 'elzr/vim-json'
 Plugin 'cakebaker/scss-syntax.vim'
@@ -129,9 +130,6 @@ autocmd VimEnter * CtrlP
 
 " Automatically reload .vimrc
 autocmd! BufWritePost .vimrc,*vimrc source %
-
-" Compute ctags if possible
-autocmd BufWritePost *.c,*.cpp,*.h,*.rb,*.py,*.erl,*.hrl,*.ex silent! !ctags -R --exclude=".js*" &
 
 " Not sure if I am going to ever use this stuff
 "You can use <c-j> to goto the next <++> - it is pretty smart.

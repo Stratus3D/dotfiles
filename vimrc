@@ -121,6 +121,8 @@ set statusline+=\ Line\ Endings:%-6{&ff}                      " Line Endings
 set statusline+=\ File\ Type:%-12Y                            " File Type
 set statusline+=%=%h%m%r%c,%l/%L\ %P        " Cursor location and file status
 set laststatus=2
+" Color status bar
+highlight statusline ctermfg=cyan ctermbg=black guifg=cyan guibg=black
 
 " allow yanking to OSX clipboard
 " set clipboard+=unnamed

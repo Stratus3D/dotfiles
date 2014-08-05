@@ -51,13 +51,7 @@ SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 export TERM="xterm-256color"
 export EDITOR='vim'
 
-alias vim="vi"
-
-alias g="git"
-alias gst="git status"
-alias gco="git commit "
-alias gdh="git diff HEAD "
-alias glp="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
+source $HOME/.aliases
 
 export RBENV_ROOT="$HOME/.rbenv"
 export PATH="$RBENV_ROOT/bin:$PATH"

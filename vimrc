@@ -139,3 +139,4 @@ let easytags_file = '~/tags'
 " Write to project specific tag file if it exists
 set tags=./tags;
 let easytags_dynamic_files = 1
+let easytags_async = 1

@@ -9,8 +9,8 @@
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 # list of files/folders to symlink in homedir
-files="vimrc vim zshrc bashrc aliases tmux.conf gitconfig gitignore_global \
-    ackrc ctags jshintrc"
+files="vimrc vim zshrc bashrc aliases grep tmux.conf gitconfig \
+    gitignore_global ackrc ctags jshintrc"
 
 ##########
 

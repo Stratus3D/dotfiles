@@ -52,6 +52,7 @@ export TERM="xterm-256color"
 export EDITOR='vim'
 
 source $HOME/.aliases
+source $HOME/.grep
 
 export RBENV_ROOT="$HOME/.rbenv"
 export PATH="$RBENV_ROOT/bin:$PATH"

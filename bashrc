@@ -1,8 +1,6 @@
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
-fi
-if [ -f ~/.grep ]; then
-    . ~/.grep
-fi
+FILES="~/.aliases ~/.grep ~/.path"
 
-export PATH="$HOME/.rbenv/bin:$PATH"
+for file in ~/.{aliases, grep, path}
+do
+    [ -r $file ] && [ -f $file ] && source $file
+done

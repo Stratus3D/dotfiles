@@ -1,4 +1,3 @@
-PATH=~/.rbenv/shims:/usr/local/bin:/usr/local/sbin:$PATH # brew
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator # For tmuxinator
 
@@ -41,11 +40,6 @@ source $ZSH/oh-my-zsh.sh
 
 export ANDROID_HOME=/Users/tbrown/lib/adt-bundle-mac-x86_64-20131030
 
-# Customize to your needs...
-export PATH=/usr/local/share/npm/bin:$HOME/.kerl/builds/R16B03-1/release_R16B03-1/bin:$HOME/lib/elixir/bin:$HOME/lib/luarocks-2.1.1\ Copy/src/bin:$HOME/lib/apache-ant-1.9.3/bin:$ANDROID_HOME/sdk/platform-tools:$ANDROID_HOME/sdk/tools:$HOME/lib/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:/Applications/CoronaSDK:$HOME/lib/lua-5.1.5/src:$HOME/lib/neo4j-community-2.0.0-RC1/bin:$HOME/lib:/usr/local/bin:$PATH:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
-
-PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
-
 SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 
 export TERM="xterm-256color"
@@ -53,13 +47,11 @@ export EDITOR='vim'
 
 source $HOME/.aliases
 source $HOME/.grep
+source $HOME/.path
 
 export RBENV_ROOT="$HOME/.rbenv"
-export PATH="$RBENV_ROOT/bin:$PATH"
 eval "$(rbenv init -)"
 
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
-PATH=$JAVA_HOME/bin:$PATH
 export MIRTH_MATCH_HOME=/opt/mirthmatch
 export AS_HOME=/opt/glassfish
 export AS_LOGS=/opt/glassfish/domains/domain1/logs

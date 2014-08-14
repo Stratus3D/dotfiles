@@ -36,6 +36,7 @@ filetype plugin indent on
 autocmd BufRead,BufNewFile *.txt setfiletype text
 autocmd BufRead,BufNewFile *.app setfiletype erlang
 autocmd BufRead,BufNewFile *.app.src setfiletype erlang
+autocmd BufRead,BufNewFile sys.config setfiletype erlang
 
 " General settings
 syntax on

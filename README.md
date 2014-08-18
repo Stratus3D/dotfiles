@@ -53,8 +53,12 @@ This is software that I need for my day-to-day programming work. I try to keep t
 * Vim
 * Tmux
 * Tmuxinator
+* iTerm2 (for Mac OSX)
+* Mou (for Mac OSX)
+
+#### Browsers
 * Chrome
-* iTerm2 (Mac OSX)
+* Firefox
 
 #### Languages
 * Erlang

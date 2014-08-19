@@ -1,6 +1,6 @@
 alias vim="vi"
 alias g="git"
 alias gst="git status"
-alias gco="git commit "
+alias gco="git commit -m "
 alias gdh="git diff HEAD "
 alias glp="git log --graph --decorate --pretty=oneline --abbrev-commit --all"

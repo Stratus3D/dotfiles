@@ -55,6 +55,7 @@ This is software that I need for my day-to-day programming work. I try to keep t
 * Tmuxinator
 * iTerm2 (for Mac OSX)
 * Mou (for Mac OSX)
+* ipmenulet (for Mac OSX)
 
 #### Browsers
 * Chrome
@@ -66,6 +67,8 @@ This is software that I need for my day-to-day programming work. I try to keep t
   * Versions R16 and R17
 * Elixir
   * Latest version (currently v0.14.0)
+  * Use exenv for version management (https://github.com/mururu/exenv)
+  * Use elixir-build for installation (https://github.com/mururu/elixir-build)
 * Ruby
   * Use rbenv for management of Ruby versions (https://github.com/sstephenson/rbenv)
   * Use ruby-build for installation of Ruby versions (https://github.com/sstephenson/ruby-build)

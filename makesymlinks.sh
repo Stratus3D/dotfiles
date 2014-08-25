@@ -46,8 +46,9 @@ ln -s $dir/tmuxinator/default.yml ~/.tmuxinator/default.yml
 if [ -d ~/dotfiles/vim/bundle/Vundle.vim ]; then
     rm -rf ~/dotfiles/vim/bundle/Vundle.vim
 fi
-# download vundle
+# Download vundle
 git clone https://github.com/gmarik/Vundle.vim.git ~/dotfiles/vim/bundle/Vundle.vim
+# Install vundle and all other plugins
 vim +PluginInstall +qall
 
 echo "$border Linking complete! $border"

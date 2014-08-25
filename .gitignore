@@ -9,4 +9,3 @@ private
 
 # Ignore everything in vim/bundle except Vundle
 vim/bundle/
-!vim/bundle/Vundle.vim/

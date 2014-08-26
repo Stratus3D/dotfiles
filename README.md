@@ -52,7 +52,8 @@ This is software that I need for my day-to-day programming work. I try to keep t
 * Git
 * Vim
 * Tmux
-* Tmuxinator
+* Tmuxinator ([https://github.com/tmuxinator/tmuxinator](https://github.com/tmuxinator/tmuxinator))
+* Exuberant Ctags ([http://ctags.sourceforge.net/](http://ctags.sourceforge.net/))
 * iTerm2 (for Mac OSX)
 * Mou (for Mac OSX)
 * ipmenulet (for Mac OSX)

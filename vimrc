@@ -7,7 +7,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " Bundles :
 Plugin 'tpope/vim-rails'
@@ -26,7 +26,7 @@ Plugin 'groenewege/vim-less'
 Plugin 'elzr/vim-json'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'tpope/vim-markdown'
-" Bundle 'Valloric/YouCompleteMe'
+Bundle 'ervandew/supertab'
 
 call vundle#end()
 

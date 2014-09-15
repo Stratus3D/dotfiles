@@ -38,6 +38,8 @@ My dotfiles. Everything I need to get setup on a new machine.
 * `^K` delete from the cursor to the end of the line
 * `^Y` paste previously deleted command (separate from global Cmd-C buffer). Delete a line with `^A ^K` and then paste it back with `^Y`
 * Files/directories can be dragged onto the terminal and the path will be pasted at the current cursor position
+* `command <<< "input text"` can be used in place of `command < file.in`
+
 Vim Commands
 * `vit` select contents of html tag. `v`isual select text `i`n a `t`ag. `dit` would delete the contents of the tag.
 * `^A` and `^X` allow you to increment the number your cursor is over, or first number after the cursor that is on the same line.

@@ -33,7 +33,7 @@ echo "$return_"
     # echo first argument in red
     printf "\e[31m✘ ${1}"
     # reset colours back to normal
-    echo "\033[0m"
+    echo -e "\033[0m"
 }
 
 # display a message in green with a tick by it
@@ -43,7 +43,7 @@ function echo_pass {
 # echo first argument in green
 printf "\e[32m✔ ${1}"
 # reset colours back to normal
-echo "\033[0m"
+echo -e "\033[0m"
                         }
 
                         # echo pass or fail

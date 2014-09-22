@@ -68,6 +68,9 @@ echo -e "\033[0m"
                     echo "requirejs     $(echo_if $(program_is_installed r.js))"
                     echo "lodash        $(echo_if $(program_is_installed lodash))"
                     echo "gem           $(echo_if $(program_is_installed gem))"
+                    echo "git           $(echo_if $(program_is_installed git))"
+                    echo "tmux           $(echo_if $(program_is_installed tmux))"
+                    echo "tmuxinator           $(echo_if $(program_is_installed tmuxinator))"
 
                     # local npm packages
                     echo "grunt-shell   $(echo_if $(npm_package_is_installed grunt-shell))"

@@ -71,6 +71,7 @@ echo -e "\033[0m"
                     echo "git           $(echo_if $(program_is_installed git))"
                     echo "tmux           $(echo_if $(program_is_installed tmux))"
                     echo "tmuxinator           $(echo_if $(program_is_installed tmuxinator))"
+                    echo "rbenv           $(echo_if $(program_is_installed rbenv))"
 
                     # local npm packages
                     echo "grunt-shell   $(echo_if $(npm_package_is_installed grunt-shell))"

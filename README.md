@@ -45,7 +45,9 @@ Vim Commands
 * `^A` and `^X` allow you to increment the number your cursor is over, or first number after the cursor that is on the same line.
 * `<F4>` toggles everything that occupies space to the left of the text (line numbers, gitgutter, etc...)
 * `^F-[` in tmux works the same as `^F <PageUp>`, which puts tmux into scroll mode. This command comes in handy on keyboards that don't have `<PageUp>` and `<PageDown>`.
+* `:21,25s/old/new/g` to substitute `new` for `old on lines 21 through 25.
 * When scrolling in tmux, `<fn> <UpArrow>` and `<fn> <DownArrow>` can be used instead of `<PageUp>` and `<PageDown>`. This also comes in handy on keyboards that lack Page Up and Page Down.
+
 
 ### Software
 This is software that I need for my day-to-day programming work. I try to keep this list updated with the latest software I am using. This allows me to quickly setup new development machines. I am developing a script named checkenv.sh that will verify everything is setup properly.

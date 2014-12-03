@@ -38,6 +38,9 @@ autocmd BufRead,BufNewFile *.txt setfiletype text
 autocmd BufRead,BufNewFile *.app setfiletype erlang
 autocmd BufRead,BufNewFile *.app.src setfiletype erlang
 autocmd BufRead,BufNewFile sys.config setfiletype erlang
+autocmd BufRead,BufNewFile Vagrantfile setfiletype ruby
+autocmd BufRead,BufNewFile Dockerfile setfiletype bash
+
 
 " General settings
 syntax on
@@ -113,8 +116,8 @@ let g:ctrlp_custom_ignore = {
 :nnoremap <F4> :set number! <bar> :GitGutterToggle<CR>
 
 " highlight trailing whitespace
-:highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-:match ExtraWhitespace /\s\+$/
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+match ExtraWhitespace /\s\+$/
 
 " Custom status bar
 set statusline=\ Filename:%-8t                               " Filename

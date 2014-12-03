@@ -27,6 +27,7 @@ Plugin 'elzr/vim-json'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'tpope/vim-markdown'
 Bundle 'ervandew/supertab'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 

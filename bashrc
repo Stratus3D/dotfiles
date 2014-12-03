@@ -1,4 +1,4 @@
-FILES="~/.aliases ~/.grep ~/.path"
+FILES="~/.general ~/.aliases ~/.grep ~/.path"
 
 for file in ~/.aliases ~/.grep ~/.path
 do

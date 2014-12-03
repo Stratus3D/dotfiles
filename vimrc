@@ -16,7 +16,6 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jelera/vim-javascript-syntax'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'jimenezrick/vimerl'
 Plugin 'xolox/vim-misc'
@@ -26,8 +25,9 @@ Plugin 'groenewege/vim-less'
 Plugin 'elzr/vim-json'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'tpope/vim-markdown'
-Bundle 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 

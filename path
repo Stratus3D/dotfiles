@@ -1,6 +1,10 @@
 PATH=~/.rbenv/shims:/usr/local/bin:/usr/local/sbin:$PATH # brew
 # Customize to your needs...
-export PATH=/usr/local/share/npm/bin:$HOME/.kerl/builds/R16B03-1/release_R16B03-1/bin:$HOME/lib/elixir/bin:$HOME/lib/luarocks-2.1.1\ Copy/src/bin:$HOME/lib/apache-ant-1.9.3/bin:$ANDROID_HOME/sdk/platform-tools:$ANDROID_HOME/sdk/tools:$HOME/lib/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:/Applications/CoronaSDK:$HOME/lib/lua-5.1.5/src:$HOME/lib/neo4j-community-2.0.0-RC1/bin:$HOME/lib:/usr/local/bin:$PATH:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
+export PATH=:/usr/local/share/npm/bin:$HOME/.kerl/builds/R16B03-1/release_R16B03-1/bin:$HOME/lib/elixir/bin:$HOME/lib/luarocks-2.1.1\ Copy/src/bin:$HOME/lib/apache-ant-1.9.3/bin:$ANDROID_HOME/sdk/platform-tools:$ANDROID_HOME/sdk/tools:$HOME/lib/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:/Applications/CoronaSDK:$HOME/lib/lua-5.1.5/src:$HOME/lib/neo4j-community-2.0.0-RC1/bin:$HOME/lib:/usr/local/bin:$PATH:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
+
+# Erlang
+PATH=$HOME/erlang_17/bin:$PATH
+PATH=$HOME/erlang/bin:$PATH
 
 # PostgreSQL
 PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
@@ -12,3 +16,9 @@ PATH=$JAVA_HOME/bin:$PATH
 # rbenv
 export PATH="$RBENV_ROOT/bin:$PATH" # I think one of these needs to be removed
 export PATH="$HOME/.rbenv/bin:$PATH"
+
+# Neo4j
+export PATH="/Users/tbrown/lib/neo4j-community-2.0.0-RC1/bin/neo4j:$PATH"
+
+# Go
+export GOPATH=$HOME/Development

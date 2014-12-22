@@ -71,7 +71,7 @@ export ANDROID_HOME=/Users/tbrown/lib/adt-bundle-mac-x86_64-20131030
 
 SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 
-export TERM="xterm-256color"
+export TERM="screen-256color"
 export EDITOR='vim'
 
 source $HOME/.general

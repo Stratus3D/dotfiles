@@ -77,10 +77,8 @@ export EDITOR='vim'
 source $HOME/.general
 source $HOME/.aliases
 source $HOME/.grep
+source $HOME/.rbenv
 source $HOME/.path
-
-export RBENV_ROOT="$HOME/.rbenv"
-eval "$(rbenv init -)"
 
 export MIRTH_MATCH_HOME=/opt/mirthmatch
 export AS_HOME=/opt/glassfish

@@ -89,6 +89,16 @@ This is software that I need for my day-to-day programming work. I try to keep t
 * Rails
 * AngularJS
 
+###Documentation
+Offline documentation suitible for day to day use.
+* Erlang: [http://erldocs.com/](http://erldocs.com/)
+* Elixir: [http://elixir-lang.org/docs.html](http://elixir-lang.org/docs.html)
+* Ruby: [http://pjkh.com/articles/building-your-own-rails-and-ruby-searchable-api-docs/](http://pjkh.com/articles/building-your-own-rails-and-ruby-searchable-api-docs/) and [http://shynnergy.com/2012/02/create-local-ruby-on-rails-documentation-for-offline-use/](http://shynnergy.com/2012/02/create-local-ruby-on-rails-documentation-for-offline-use/)
+* JavaScript: [https://developer.mozilla.org/media/developer.mozilla.org.tar.gz](https://developer.mozilla.org/media/developer.mozilla.org.tar.gz)
+* Golang: Run `godoc -http=:6060` and then navigate to [http://localhost:6060/doc/](http://localhost:6060/doc/)
+* C: [http://www.gnu.org/software/libc/manual/html_mono/libc.html](http://www.gnu.org/software/libc/manual/html_mono/libc.html)
+* Make: [http://www.gnu.org/software/make/manual/make.html](http://www.gnu.org/software/make/manual/make.html)
+
 ###Misc Stuff
 #####Colors
 

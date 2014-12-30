@@ -90,7 +90,7 @@ This is software that I need for my day-to-day programming work. I try to keep t
 * AngularJS
 
 ###Documentation
-Offline documentation suitible for day to day use.
+Offline documentation suitable for day to day use.
 * Erlang: [http://erldocs.com/](http://erldocs.com/)
 * Elixir: [http://elixir-lang.org/docs.html](http://elixir-lang.org/docs.html)
 * Ruby: [http://pjkh.com/articles/building-your-own-rails-and-ruby-searchable-api-docs/](http://pjkh.com/articles/building-your-own-rails-and-ruby-searchable-api-docs/) and [http://shynnergy.com/2012/02/create-local-ruby-on-rails-documentation-for-offline-use/](http://shynnergy.com/2012/02/create-local-ruby-on-rails-documentation-for-offline-use/)

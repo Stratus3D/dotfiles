@@ -63,6 +63,7 @@ This is software that I need for my day-to-day programming work. I try to keep t
 * iTerm2 (for Mac OSX)
 * Mou (for Mac OSX)
 * ipmenulet (for Mac OSX)
+* ievms ([https://github.com/xdissent/ievms])
 
 #### Browsers
 * Chrome

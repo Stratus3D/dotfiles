@@ -14,6 +14,7 @@ alias hide_icons="~/dotfiles/tools/hide_icons.sh"
 alias show_icons="~/dotfiles/tools/show_icons.sh"
 alias enable_locate="~/dotfiles/tools/enable_locate.sh"
 alias update_locate="~/dotfiles/tools/update_locate.sh"
+alias count_lines="~/dotfiles/tools/count_lines.sh"
 
 # Vagrant aliases
 alias docker="docker -H tcp://127.0.0.1:4243"

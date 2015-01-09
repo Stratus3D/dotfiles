@@ -85,6 +85,9 @@ This is software that I need for my day-to-day programming work. I try to keep t
 * Lua
 * Javascript(NodeJS)
   * Use installer from (http://nodejs.org/)
+* Go
+  * Download from (https://golang.org)
+  * gvm version management (https://github.com/moovweb/gvm)
 
 #### Frameworks
 * Rails

@@ -4,6 +4,10 @@
 # This script creates everything needed to get started on a new laptop
 ############################
 
+# Terminate script if anything exits with a non-zero value
+set -e
+
+# Get the uname string
 unamestr=`uname`
 
 if [[ "$unamestr" == 'Darwin' ]]; then
@@ -14,3 +18,12 @@ elif [[ "$unamestr" == 'Linux' ]]; then
     # Do nothing for now, add custom code here
     echo "script for Linux incomplete"
 fi
+
+# download the dotfiles
+cd ~
+git clone https://github.com/Stratus3D/dotfiles.git
+cd dotfiles/
+
+# run the install script, which symlinks the dotfiles
+chmod +x makesymlinks.sh
+./makesymlinks.sh

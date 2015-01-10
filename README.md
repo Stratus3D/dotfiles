@@ -106,3 +106,6 @@ Offline documentation suitable for day to day use.
 ###Misc Stuff
 #####Colors
 
+###Repos that I referred to when creating this
+* [Joshua Steele's dotfiles (https://github.com/joshukraine/dotfiles)](https://github.com/joshukraine/dotfiles)
+* [thoughtbot/laptop (https://github.com/thoughtbot/laptop)](https://github.com/thoughtbot/laptop)

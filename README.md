@@ -7,6 +7,14 @@ My dotfiles. Everything I need to get setup on a new machine.
 
 ### Installation
 
+####On a new machine
+Run the `setup.sh`. This will install all the necessary software, setup commonly used directories, and install dotfiles.
+
+    curl --remote-name https://raw.githubusercontent.com/Stratus3D/dotfiles/master/setup.sh
+    sh setup.sh 2>&1 | tee ~/setup.log
+
+####On an existing machine
+
     # download the files
     cd ~
     git clone https://github.com/Stratus3D/dotfiles.git

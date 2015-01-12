@@ -7,6 +7,14 @@ My dotfiles. Everything I need to get setup on a new machine.
 
 ### Installation
 
+####On a new machine
+Run the `setup.sh`. This will install all the necessary software, setup commonly used directories, and install dotfiles.
+
+    curl --remote-name https://raw.githubusercontent.com/Stratus3D/dotfiles/master/setup.sh
+    sh setup.sh 2>&1 | tee ~/setup.log
+
+####On an existing machine
+
     # download the files
     cd ~
     git clone https://github.com/Stratus3D/dotfiles.git
@@ -63,7 +71,8 @@ This is software that I need for my day-to-day programming work. I try to keep t
 * iTerm2 (for Mac OSX)
 * Mou (for Mac OSX)
 * ipmenulet (for Mac OSX)
-* ievms ([https://github.com/xdissent/ievms])
+* Virtual Box [https://www.virtualbox.org/](https://www.virtualbox.org/) & ievms ([https://github.com/xdissent/ievms])
+* pgAdmin ([http://www.pgadmin.org/download/](http://www.pgadmin.org/download/))
 
 #### Browsers
 * Chrome
@@ -106,3 +115,6 @@ Offline documentation suitable for day to day use.
 ###Misc Stuff
 #####Colors
 
+###Repos that I referred to when creating this
+* [Joshua Steele's dotfiles (https://github.com/joshukraine/dotfiles)](https://github.com/joshukraine/dotfiles)
+* [thoughtbot/laptop (https://github.com/thoughtbot/laptop)](https://github.com/thoughtbot/laptop)

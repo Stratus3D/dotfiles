@@ -1,6 +1,17 @@
 #!/bin/bash
 # This is still a work in progress. I want to make this handle both custom host
 # files.
+# TODO:
+# * Consider a lock to prevent races between add_host and rm_host. $ACTIVE_FLAG 
+#   might make a good lock.
+# * $HOME env variable and consequently the $VARDIR env variable. Potentially 
+#   {add,rm}_host may act on different files to {start,stop}_block. Note that 
+#   this won't present itself if you only use sudo. Reconsider what you want
+#   $VARDIR to be. On a a single user machine /var/ may be a good choice.
+
+set -u # Prevent unset variables
+set -e # Stop on an error
+
 usage()
 {
     cat <<EOF
@@ -26,7 +37,7 @@ VARDIR="$HOME/dotfiles"
 HOST_FILE="/etc/hosts"
 ORIG_FILE="$VARDIR/original_host"
 BLCK_FILE="$VARDIR/blocked_host"
-BLCK_TEMP=`mktemp -t "blocked_hosts"` || `mktemp /tmp/blocked_hosts.XXXXXXX` || exit 1
+BLCK_TEMP=$(mktemp -t "blocked_hosts") || $(mktemp /tmp/blocked_hosts.XXXXXXX) || exit 1
 
 # Make sure files exist.
 [[ -e $ORIG_FILE ]] || touch "$ORIG_FILE"
@@ -34,9 +45,9 @@ BLCK_TEMP=`mktemp -t "blocked_hosts"` || `mktemp /tmp/blocked_hosts.XXXXXXX` || 
 
 # Check to see if the block is currently active.
 ACTIVE_FLAG="$HOME/.wrk_block.flag"
-if [[ -e $ACTIVE_FLAG ]]; then 
+if [[ -e $ACTIVE_FLAG ]]; then
     IS_ACTIVE=0
-else 
+else
     IS_ACTIVE=1
 fi
 
@@ -46,7 +57,7 @@ add_host()
     for host in "${hosts[@]:1}"; do
         # append host to blocked hosts list
         echo "127.0.0.1 $host" >> "$BLCK_FILE"
-        echo -e "\033[0;32madded\033[0m $host" 
+        echo -e "\033[0;32madded\033[0m $host"
     done
 }
 
@@ -58,16 +69,16 @@ rm_host()
         # overwrite host list file with a copy removing a certain host
         awk -v host=$host 'NF==2 && $2!=host { print }' "$BLCK_FILE" > "$BLCK_TEMP"
         mv "$BLCK_TEMP" "$BLCK_FILE"
-        echo -e "\033[0;31mremoved\033[0m $host" 
+        echo -e "\033[0;31mremoved\033[0m $host"
     done
 }
 
 check_root()
 {
-    if [[ "`whoami`" != "root" ]]; then
+    if [[ "$(whoami)" != "root" ]]; then
         echo "You don't have sufficient priviledges to run this script (try sudo.)"
         exit 1
-    else 
+    else
         [[ -e $HOST_FILE ]] || { echo "Can't find or access host file."; exit 1; }
     fi
 }

@@ -4,8 +4,8 @@
 # TODO:
 # * Consider a lock to prevent races between add_host and rm_host. $ACTIVE_FLAG 
 #   might make a good lock.
-# * $HOME env variable and consequently the $VARDIR env variable. Potentially 
-#   {add,rm}_host may act on different files to {start,stop}_block. Note that 
+# * $HOME env variable and consequently the $VARDIR env variable. Potentially
+#   {add,rm}_host may act on different files to {start,stop}_block. Note that
 #   this won't present itself if you only use sudo. Reconsider what you want
 #   $VARDIR to be. On a a single user machine /var/ may be a good choice.
 
@@ -23,7 +23,7 @@ usage()
     rm [host ...]       remove hosts from block
     start               start blocking
     stop                stop blocking
-    EOF
+EOF
 }
 
 # Put the original in the dotfiles repo, so it shows up with git status
@@ -106,21 +106,25 @@ stop_block()
     fi
 }
 
-case $1 in
-    'ls' | 'list') 
-        awk 'NF == 2 { print $2 }; END { if (!NR) print "Empty" }' "$BLCK_FILE";;
-    'add') 
-        [[ -z $2 ]] && { usage; exit 1; }
-        add_host $@;;
-    'rm' | 'remove') 
-        [[ -z $2 ]] && { usage; exit 1; }
-        rm_host $@;;
-    'start') 
-        check_root
-        start_block;;
-    'stop') 
-        check_root
-        stop_block;;
-    *)
-        usage;;
-esac
+if [ $# -gt 0 ]; then
+    case $1 in
+        'ls' | 'list')
+            awk 'NF == 2 { print $2 }; END { if (!NR) print "Empty" }' "$BLCK_FILE";;
+        'add')
+            [[ -z $2 ]] && { usage; exit 1; }
+            add_host $@;;
+        'rm' | 'remove')
+            [[ -z $2 ]] && { usage; exit 1; }
+            rm_host $@;;
+        'start')
+            check_root
+            start_block;;
+        'stop')
+            check_root
+            stop_block;;
+        *)
+            usage;;
+    esac
+else
+    usage;
+fi

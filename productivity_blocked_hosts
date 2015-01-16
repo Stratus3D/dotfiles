@@ -1,3 +1,6 @@
 # Block time wasting websites
 0.0.0.0 facebook.com
 0.0.0.0 twitter.com
+0.0.0.0 youtube.com
+0.0.0.0 drudgereport.com
+0.0.0.0 yahoo.com

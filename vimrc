@@ -91,6 +91,16 @@ if has("gui_running")
   set guioption=-t
 endif
 
+" Disable arrow keys
+nnoremap <Left> :echoe "Use h"<cr>
+nnoremap <Right> :echoe "Use l"<cr>
+nnoremap <Up> :echoe "Use k"<cr>
+nnoremap <Down> :echoe "Use j"<cr>
+inoremap <Left> <esc> :echoe "Use h"<cr>
+inoremap <Right> <esc> :echoe "Use l"<cr>
+inoremap <Up> <esc> :echoe "Use k"<cr>
+inoremap <Down> <esc> :echoe "Use j"<cr>
+
 " NERDTree settings
 nmap <silent> <F3> :NERDTreeToggle<CR>
 set guioptions-=T

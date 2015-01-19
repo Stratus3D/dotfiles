@@ -13,6 +13,9 @@ set -e
 # Get the uname string
 unamestr=`uname`
 
+# Install oh-my-zsh first, as the laptop script doesn't install it
+curl -L http://install.ohmyz.sh | sh
+
 if [[ "$unamestr" == 'Darwin' ]]; then
     # Use thoughtbot's laptop script to set everything up
     curl --remote-name https://raw.githubusercontent.com/thoughtbot/laptop/master/mac

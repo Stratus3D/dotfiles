@@ -29,11 +29,11 @@ fi
 ############################
 # Create commonly used directories
 ############################
-mkdir ~/Development
-mkdir ~/Development/src # Go directories
-mkdir ~/Development/bin
-mkdir ~/Documentation
-mkdir ~/Installers
+mkdir -p $HOME/Development
+mkdir -p $HOME/Development/src # Go directories
+mkdir -p $HOME/Development/bin
+mkdir -p $HOME/Documentation
+mkdir -p $HOME/Installers
 
 ############################
 # Setup dotfiles

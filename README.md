@@ -1,7 +1,7 @@
 My Dotfiles
 ===========
 
-Stratus3D
+**Stratus3D**
 
 My dotfiles. Everything I need to get setup on a new machine.
 
@@ -28,6 +28,8 @@ Run the `setup.sh`. This will install all the necessary software, setup commonly
 ### Issues
 * Since these dotfiles are shared across my machines, there are scenarios where portions of the dotfiles will need to be altered. Such as the as the path variables in zshrc.
 
+### TODO
+* Complete the setup script so it installs all software and configures iterm2 with my custom profile.
 
 ### Easily Forgotten Command Line Tricks
 * `open .` to open current directory in Finder

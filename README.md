@@ -1,7 +1,7 @@
 My Dotfiles
 ===========
 
-Stratus3D
+**Stratus3D**
 
 My dotfiles. Everything I need to get setup on a new machine.
 

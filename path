@@ -12,8 +12,11 @@ PATH=$HOME/erlang/bin:$PATH
 PATH=/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH
 
 # Java
-export JAVA_HOME=`/usr/libexec/java_home -v '1.8*'`
-PATH=$JAVA_HOME/bin:$PATH
+JAVA_HOME_BIN=/usr/libexec/java_home
+if [ -f $JAVA_HOME_BIN ]; then
+    export JAVA_HOME=`$JAVA_HOME_BIN -v '1.8*'`
+    PATH=$JAVA_HOME/bin:$PATH
+fi
 
 # rbenv
 PATH=$RBENV_ROOT/bin:$PATH

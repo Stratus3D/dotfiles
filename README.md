@@ -71,8 +71,9 @@ This is software that I need for my day-to-day programming work. I try to keep t
 * Tmuxinator ([https://github.com/tmuxinator/tmuxinator](https://github.com/tmuxinator/tmuxinator))
 * Exuberant Ctags ([http://ctags.sourceforge.net/](http://ctags.sourceforge.net/))
 * iTerm2 (for Mac OSX)
-* Mou (for Mac OSX)
+* Mou [http://25.io/mou/](http://25.io/mou/) (for Mac OSX)
 * ipmenulet (for Mac OSX)
+* BetterTouchTool [http://www.bettertouchtool.net/](http://www.bettertouchtool.net/) (for Mac OSX)
 * Virtual Box [https://www.virtualbox.org/](https://www.virtualbox.org/) & ievms ([https://github.com/xdissent/ievms])
 * pgAdmin ([http://www.pgadmin.org/download/](http://www.pgadmin.org/download/))
 

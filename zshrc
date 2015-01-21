@@ -75,7 +75,6 @@ export TERM="screen-256color"
 export EDITOR='vim'
 
 source $HOME/.general
-source $HOME/.aliases
 source $HOME/.grep
 source $HOME/.rbenv
 source $HOME/.path
@@ -87,3 +86,4 @@ export AS_CFG=/opt/glassfish/domains/domain1/config
 
 # export MANPATH="/usr/local/man:$MANPATH"
 source $ZSH/oh-my-zsh.sh
+source $HOME/.aliases

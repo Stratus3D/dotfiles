@@ -18,21 +18,19 @@ else
 GITHUB_USER="Stratus3D"
 fi
 
-# Use $HOME/Development as the default clone dir unless one is specificed in an
-# argument.
+# Use $DEVELOPMENT_DIR as the default clone dir unless one is specificed in an
+# argument, if $DEVELOPMENT_DIR is not set use $HOME.
+CLONE_DIR=$DEVELOPMENT_DIR
 if [ $# -gt 1 ];
 then
     CLONE_DIR=$2
-elif [ -z $DEVELOPMENT_DIR ];
-then
-    CLONE_DIR=$DEVELOPMENT_DIR
 else
-    CLONE_DIR=$HOME
+    ${CLONE_DIR=$HOME}
 fi
 
 # the git clone cmd used for cloning each repository
 # the parameter recursive is used to clone submodules, too.
-GIT_CLONE_CMD="git clone --quiet --mirror --recursive "
+GIT_CLONE_CMD="git clone --quiet --recursive "
 
 echo "Fetching $GITHUB_USER's repositories from the GitHub API..."
 
@@ -40,14 +38,17 @@ echo "Fetching $GITHUB_USER's repositories from the GitHub API..."
 # grep fetches the json object key ssh_url, which contains the ssh url for the repository
 REPOLIST=`curl --silent https://api.github.com/users/${GITHUB_USER}/repos -q | grep "\"ssh_url\"" | awk -F': "' '{print $2}' | sed -e 's/",//g'`
 
-echo $REPOLIST
 echo "Starting to clone down $GITHUB_USER's repositories into '$CLONE_DIR'..."
 
 # loop over all repository urls and execute clone
 cd $CLONE_DIR;
 
 for REPO in $REPOLIST; do
+    REPO_DIR=$(echo $REPO | sed 's%^.*/\([^/]*\)\.git$%\1%g')
     ${GIT_CLONE_CMD}${REPO}
+    cd $REPO_DIR
+    git pull --all
+    cd $CLONE_DIR
 done
 
 echo "Finished cloning the repositories"

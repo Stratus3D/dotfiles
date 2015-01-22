@@ -35,7 +35,8 @@ VARDIR="$HOME/dotfiles"
 # BLCK_TEMP - temporary file used when removing hosts.
 
 HOST_FILE="/etc/hosts"
-ORIG_FILE="$VARDIR/original_host"
+# store the original host file in the etc dir so others can find it.
+ORIG_FILE="/etc/hosts.original"
 BLCK_FILE="$VARDIR/blocked_host"
 BLCK_TEMP=$(mktemp -t "blocked_hosts") || $(mktemp /tmp/blocked_hosts.XXXXXXX) || exit 1
 

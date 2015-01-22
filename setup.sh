@@ -39,7 +39,7 @@ mkdir -p $HOME/Installers
 # Setup dotfiles
 ############################
 cd ~
-git clone https://github.com/Stratus3D/dotfiles.git
+git clone ssh://git@github.com/Stratus3D/dotfiles.git
 cd dotfiles/
 
 # run the install script, which symlinks the dotfiles

@@ -18,11 +18,12 @@ usage()
     Usage: hosts_manager  [command] [host1 host2 ...]
 
     Commands:
-    list                list blocked hosts
-    add [host ...]      add a host to be blocked
-    rm [host ...]       remove hosts from block
-    start               start blocking
-    stop                stop blocking
+    profiles                   list all the profiles in \$VARDIR
+    show [profile ...]         list blocked hosts in profile
+    add [profile, host ...]    add a host to be blocked
+    rm [profile, host ...]     remove hosts from block
+    start [profile ...]        start blocking
+    stop [profile ...]         stop blocking
 EOF
 }
 
@@ -109,7 +110,7 @@ stop_block()
 
 if [ $# -gt 0 ]; then
     case $1 in
-        'ls' | 'list')
+        'ls' | 'list' | 'show')
             awk 'NF == 2 { print $2 }; END { if (!NR) print "Empty" }' "$BLCK_FILE";;
         'add')
             [[ -z $2 ]] && { usage; exit 1; }

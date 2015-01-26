@@ -60,6 +60,8 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
+" Turn on cursor column highlighting
+set cursorcolumn
 
 " set the color scheme
 colorscheme solarized

@@ -17,5 +17,10 @@ for file in ~/dotfiles/tools/*.sh; do
     #alias
 done
 
+# Postgres
+alias startpost='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias stoppost='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
+alias statpost='ps aux | ag postgres'
+
 # Vagrant aliases
 alias docker="docker -H tcp://127.0.0.1:4243"

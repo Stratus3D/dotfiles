@@ -35,6 +35,9 @@ for file in $files; do
   ln -s $dir/$file ~/.$file
 done
 
+# Set global gitignore file to symlink gitignore_global
+git config --global core.excludesfile $HOME/.gitignore_global
+
 # setup default tmuxinator project
 if [ ! -d ~/.tmuxinator ]; then
   mkdir ~/.tmuxinator

@@ -29,6 +29,8 @@ fi
 ############################
 # Create commonly used directories
 ############################
+# TODO: The names of these directories are duplicated elsewhere.
+mkdir -p $HOME/.erlang_versions
 mkdir -p $HOME/bin # Third-party binaries
 mkdir -p $HOME/Development
 mkdir -p $HOME/Development/src # Go source directory

@@ -12,6 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 " Bundles :
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-ragtag'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'

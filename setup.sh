@@ -29,9 +29,10 @@ fi
 ############################
 # Create commonly used directories
 ############################
+mkdir -p $HOME/bin # Third-party binaries
 mkdir -p $HOME/Development
-mkdir -p $HOME/Development/src # Go directories
-mkdir -p $HOME/Development/bin
+mkdir -p $HOME/Development/src # Go source directory
+mkdir -p $HOME/Development/bin # Go binary directory
 mkdir -p $HOME/Documentation
 mkdir -p $HOME/Installers
 

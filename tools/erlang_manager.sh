@@ -17,15 +17,32 @@ usage()
 
     Commands:
     install_latest                      Install the latest version of Erlang available via kerl
+    install [version]                   Install an erlang version via kerl
     list [available|built|installed]    List Erlang versions
     show [version]                      Show the details of an installation
-    xxxadd [profile, host ...]    add a host to be blocked
-    rm [profile, host ...]     remove hosts from block
 
     Flags:
-    --install-dir
+    --install-dir                       Override default erlang install directory
 EOF
 }
 
-ARR1=$(kerl list releases)
-echo ${ARR1[${#ARR1[@]}-1]}
+
+#ARR1=$(kerl list releases)
+#echo ${ARR1[${#ARR1[@]}-1]}
+
+if [ $# -gt 0 ]; then
+    case $1 in
+        'install_latest')
+            echo "TODO: write this command";;
+        'install')
+            echo "TODO: write this command";;
+        'ls' | 'list')
+            echo "TODO: write this command";;
+        'show')
+            echo "TODO: write this command";;
+        *)
+            usage;;
+    esac
+else
+    usage;
+fi

@@ -26,6 +26,12 @@ usage()
 EOF
 }
 
+# Use `$HOME/.erlang_versions/` as the default user, unless one is specified in an argument.
+INSTALL_DIR=$HOME/.erlang_versions/
+if [ $# -gt 0 ]; # TODO: check if --install-dir flag is set and use that instead
+then
+    INSTALL_DIR=$1
+fi
 
 #ARR1=$(kerl list releases)
 #echo ${ARR1[${#ARR1[@]}-1]}

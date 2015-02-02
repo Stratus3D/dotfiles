@@ -35,3 +35,6 @@ export PATH=$HOME/lib/neo4j-community-2.0.0-RC1/bin/neo4j:$PATH
 # Go
 export GOPATH=$DEVELOPMENT_DIR
 export PATH=$GOPATH/bin:$PATH
+
+# NodeJS
+export NVM_DIR=$HOME/.nvm"

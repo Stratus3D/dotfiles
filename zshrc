@@ -76,6 +76,7 @@ export EDITOR='vim'
 
 source $HOME/.general
 source $HOME/.grep
+source $HOME/.nodejs
 source $HOME/.rbenv
 source $HOME/.path
 

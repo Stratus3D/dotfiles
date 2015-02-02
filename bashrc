@@ -1,6 +1,7 @@
 FILES="$HOME/.general
 $HOME/.aliases
 $HOME/.grep
+$HOME/.nodejs
 $HOME/.path"
 
 for file in $FILES

@@ -4,6 +4,9 @@
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 ############################
 
+set -u # Prevent unset variables
+set -e # Stop on an error
+
 ########## Variables
 
 border="====="
@@ -42,8 +45,11 @@ git config --global core.excludesfile $HOME/.gitignore_global
 if [ ! -d ~/.tmuxinator ]; then
   mkdir ~/.tmuxinator
 fi
+
 # link the default tmuxinator project
-ln -s $dir/tmuxinator/default.yml ~/.tmuxinator/default.yml
+if [ ! -L $HOME/.tmuxinator/default.yml ]; then
+    ln -nsf $dir/tmuxinator/default.yml $HOME/.tmuxinator/default.yml
+fi
 
 # If vundle is already installed, remove it and fetch the latest from Github
 if [ -d ~/dotfiles/vim/bundle/Vundle.vim ]; then

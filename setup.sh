@@ -41,10 +41,26 @@ mkdir -p $HOME/Installers
 ############################
 # Setup dotfiles
 ############################
-cd ~
-git clone ssh://git@github.com/Stratus3D/dotfiles.git
-cd dotfiles/
+cd $HOME
+
+DOTFILES_DIR=$HOME/dotfiles
+if [ ! -d $DOTFILES_DIR ]; then
+  git clone ssh://git@github.com/Stratus3D/dotfiles.git $DOTFILES_DIR
+else
+  cd $DOTFILES_DIR
+  git pull origin master
+fi
 
 # run the install script, which symlinks the dotfiles
+cd $DOTFILES_DIR
 chmod +x makesymlinks.sh
 ./makesymlinks.sh
+
+############################
+# Place third party scripts in ~/bin
+############################
+cd $HOME/bin
+
+# Download kerl
+curl -O https://raw.githubusercontent.com/spawngrid/kerl/master/kerl
+chmod a+x kerl

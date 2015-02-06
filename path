@@ -10,6 +10,8 @@ PATH=/usr/local/share/npm/bin:$HOME/.kerl/builds/R16B03-1/release_R16B03-1/bin:$
 # Erlang
 PATH=$HOME/erlang_17/bin:$PATH
 PATH=$HOME/erlang/bin:$PATH
+# Additional OTP applications
+export ERL_LIBS=$DEVELOPMENT_DIR
 
 # PostgreSQL
 PATH=/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH
@@ -34,7 +36,10 @@ export PATH=$HOME/lib/neo4j-community-2.0.0-RC1/bin/neo4j:$PATH
 
 # Go
 export GOPATH=$DEVELOPMENT_DIR
-export PATH=$GOPATH/bin:$PATH
+PATH=$GOPATH/bin:$PATH
 
 # NodeJS
 export NVM_DIR=$HOME/.nvm
+
+# Finally export completed PATH
+export PATH

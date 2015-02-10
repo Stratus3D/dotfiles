@@ -28,7 +28,7 @@ EOF
 }
 
 # Put the original in the dotfiles repo, so it shows up with git status
-VARDIR="$HOME/dotfiles"
+VARDIR="$HOME/dotfiles/hosts_profiles"
 
 # HOST_FILE - actual host file to be swapped around.
 # ORIG_FILE - original host file without any of the appended blocked hosts.
@@ -42,8 +42,8 @@ BLCK_FILE="$VARDIR/blocked_host"
 BLCK_TEMP=$(mktemp -t "blocked_hosts") || $(mktemp /tmp/blocked_hosts.XXXXXXX) || exit 1
 
 # Make sure files exist.
-[[ -e $ORIG_FILE ]] || touch "$ORIG_FILE"
-[[ -e $BLCK_FILE ]] || touch "$BLCK_FILE"
+[[ -e $ORIG_FILE ]] || sudo touch "$ORIG_FILE"
+[[ -e $BLCK_FILE ]] || sudo touch "$BLCK_FILE"
 
 # Check to see if the block is currently active.
 ACTIVE_FLAG="$HOME/.wrk_block.flag"
@@ -108,6 +108,11 @@ stop_block()
     fi
 }
 
+print_profiles()
+{
+    ls $VARDIR | cat
+}
+
 if [ $# -gt 0 ]; then
     case $1 in
         'ls' | 'list' | 'show')
@@ -124,6 +129,8 @@ if [ $# -gt 0 ]; then
         'stop')
             check_root
             stop_block;;
+        'profiles')
+            print_profiles;;
         *)
             usage;;
     esac

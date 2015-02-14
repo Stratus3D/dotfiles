@@ -26,6 +26,9 @@ elif [[ "$unamestr" == 'Linux' ]]; then
     echo "Script for Linux incomplete. Please install all the software manually."
 fi
 
+# Install nvm
+curl https://raw.githubusercontent.com/creationix/nvm/v0.23.3/install.sh | bash
+
 ############################
 # Create commonly used directories
 ############################

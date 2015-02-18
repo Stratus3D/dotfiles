@@ -88,3 +88,5 @@ export AS_CFG=/opt/glassfish/domains/domain1/config
 # export MANPATH="/usr/local/man:$MANPATH"
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
+
+unalias gm # This alias has the same name as the GraphicsMagick binary

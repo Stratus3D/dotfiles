@@ -19,5 +19,10 @@
  changed = green
  untracked = cyan
 [core]
-[core]
 	excludesfile = /Users/tbrown/.gitignore_global
+[status]
+	submoduleSummary = true
+[diff]
+	submodule = log
+[fetch]
+	recurseSubmodules = on-demand

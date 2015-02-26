@@ -4,8 +4,9 @@
 # This script creates everything needed to get started on a new laptop
 ############################
 
-# Terminate script if anything exits with a non-zero value
-set -e
+
+set -e # Terminate script if anything exits with a non-zero value
+set -u # Prevent unset variables
 
 ############################
 # Install software on laptop
@@ -59,6 +60,20 @@ fi
 cd $DOTFILES_DIR
 chmod +x makesymlinks.sh
 ./makesymlinks.sh
+# Reload after installing dotfiles
+source $HOME/.bashrc
+
+############################
+# Install devdocs
+############################
+cd $HOME/Development
+rbenv install 2.2.0
+git clone https://github.com/Thibaut/devdocs.git && cd devdocs
+rbenv local 2.2.0
+gem install bundler
+# TODO: Fix issue with bundle install never finishing
+bundle install
+thor docs:download --all
 
 ############################
 # Place third party scripts in ~/bin

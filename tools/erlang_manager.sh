@@ -63,17 +63,34 @@ get_installed_releases() {
     ls $INSTALL_DIR
 }
 
+install_latest_erlang_version() {
+    versions=get_installed_releases
+    echo "TODO: write this command"
+}
+
+install_erlang_version() {
+    if [ $# -gt 1 ]; then
+        echo "TODO: write this command"
+    else
+        echo "You didn't specify an Erlang version to install, installing latest"
+        install_latest_erlang_version
+    fi
+}
+
+show_erlang_version() {
+    echo "TODO: write this command"
+}
+
 if [ $# -gt 0 ]; then
     case $1 in
         'install_latest')
-            echo "TODO: write this command";;
+            install_latest_erlang_version;;
         'install')
-            echo $
-            echo "TODO: write this command";;
+            install_erlang_version;;
         'ls' | 'list')
             check_available_releases;;
         'show')
-            echo "TODO: write this command";;
+            show_erlang_version;;
         *)
             usage;;
     esac

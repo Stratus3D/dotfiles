@@ -19,7 +19,7 @@
  changed = green
  untracked = cyan
 [core]
-	excludesfile = /Users/tbrown/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [status]
 	submoduleSummary = true
 [diff]

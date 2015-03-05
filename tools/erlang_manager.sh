@@ -54,6 +54,14 @@ get_available_releases() {
         sed -e "s/^R\(.*\)/\1:R\1/" | sed -e "s/^\([^\:]*\)$/\1-z:\1/" | sort | cut -d':' -f2
 }
 
+get_newest_release() {
+    releases=($(get_available_releases))
+    length=${#releases[@]}
+    last_position=$((length - 1))
+    newest=${releases[${last_position}]}
+    echo $newest
+}
+
 check_available_releases() {
     echo "Getting the available releases from erlang.org..."
     echo $(check_available_releases)
@@ -64,7 +72,8 @@ get_installed_releases() {
 }
 
 install_latest_erlang_version() {
-    versions=get_installed_releases
+    version=$(get_newest_release)
+    echo $version
     echo "TODO: write this command"
 }
 

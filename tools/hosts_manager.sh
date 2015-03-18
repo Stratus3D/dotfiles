@@ -115,7 +115,7 @@ print_profiles()
 
 if [ $# -gt 0 ]; then
     case $1 in
-        'ls' | 'list' | 'show')
+        'show')
             awk 'NF == 2 { print $2 }; END { if (!NR) print "Empty" }' "$BLCK_FILE";;
         'add')
             [[ -z $2 ]] && { usage; exit 1; }
@@ -129,7 +129,7 @@ if [ $# -gt 0 ]; then
         'stop')
             check_root
             stop_block;;
-        'profiles')
+        'ls' | 'list' | 'profiles')
             print_profiles;;
         *)
             usage;;

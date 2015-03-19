@@ -9,3 +9,8 @@ private
 
 # Ignore everything in vim/bundle except Vundle
 vim/bundle/
+
+# Ignore custom files
+gitconfig.custom
+vimrc.custom
+shellrc.custom

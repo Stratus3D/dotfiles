@@ -138,7 +138,7 @@ match ExtraWhitespace /\s\+$/
 set statusline=\ Filename:%-8t                               " Filename
 set statusline+=\ Encoding:\%-8{strlen(&fenc)?&fenc:'none'}   " File encoding
 set statusline+=\ Line\ Endings:%-6{&ff}                      " Line Endings
-set statusline+=\ File\ Type:%-12Y                            " File Type
+set statusline+=\ File\ Type:%-12y                            " File Type
 set statusline+=%=%h%m%r%c,%l/%L\ %P        " Cursor location and file status
 set laststatus=2
 " Color status bar

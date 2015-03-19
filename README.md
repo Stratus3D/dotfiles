@@ -32,6 +32,7 @@ Run the `setup.sh`. This will install all the necessary software, setup commonly
 * Complete the setup script so it installs all software and configures iterm2 with my custom profile.
 * Complete the `clone_all_bitbucket_repos.sh` script so that all private repos can be cloned.
 * Complete the `erlang_manager.sh` and `hosts_manager.sh` scripts.
+* Allow for custom config files (`.bashrc`, `.zshrc`, `.gitconfig`) and custom scripts.
 
 ### Easily Forgotten Command Line Tricks
 * `open .` to open current directory in Finder

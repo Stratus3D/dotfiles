@@ -1,0 +1,3 @@
+# This file is for customizing the Bash and Zsh shells. To use this file remove
+# the .example suffix. The contents of the file will be loaded into the .bashrc
+# and .zshrc.

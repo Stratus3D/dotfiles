@@ -46,6 +46,12 @@ usage()
 EOF
 }
 
+# Use `$HOME/.erlang_versions/` as the default user, unless one is specified in an argument.
+INSTALL_DIR=$HOME/.erlang_versions/
+if [ $# -gt 0 ]; # TODO: check if --install-dir flag is set and use that instead
+then
+    INSTALL_DIR=$1
+fi
 
 get_available_releases() {
     curl -L -s $ERLANG_DOWNLOAD_URL/ | \

@@ -18,7 +18,7 @@ find_notes() {
     # Take keyword and pass it to `ag`. Then edit the output of `ag` to remove
     # any unnecessary syntax from the line.
     # TODO: Figure out how to get `ag` to print multi-line results when using pipe
-    ag $1 --color | sed 's/\:\+'"$1"'//'
+    ag $1 --group --color | sed 's/\:\+'"$1"'//'
 }
 
 if [ $# -gt 0 ]; then

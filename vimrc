@@ -30,6 +30,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'burnettk/vim-angular'
 
 call vundle#end()
 

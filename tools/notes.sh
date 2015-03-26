@@ -13,22 +13,38 @@ usage() {
     optimize   Print out the OPTIMIZE lines in the source code contained in the dir
 EOF
 }
-
 find_notes() {
-    # Take keyword and pass it to `ag`. Then edit the output of `ag` to remove
-    # any unnecessary syntax from the line.
-    ag $1 --group | tee /dev/tty | sed '1,$s/:.*TODO\(:\)\{0,1\}/:/'
+    # Take keyword and pass it to `ag`.
+    ag $1 --group
+}
+
+print_todos() {
+    # Edit the output of `ag` to remove any unnecessary syntax from the line.
+    find_notes todo | sed '1,$s/:.*TODO\(:\)\{0,1\}/:/
+    1,$s/:.*todo\(:\)\{0,1\}/:/'
+}
+
+print_fixmes() {
+    # Edit the output of `ag` to remove any unnecessary syntax from the line.
+    find_notes fixme | sed '1,$s/:.*FIXME\(:\)\{0,1\}/:/
+    1,$s/:.*fixme\(:\)\{0,1\}/:/'
+}
+
+print_optimizes() {
+    # Edit the output of `ag` to remove any unnecessary syntax from the line.
+    find_notes optimize | sed '1,$s/:.*OPTIMIZE\(:\)\{0,1\}/:/
+    1,$s/:.*optimize\(:\)\{0,1\}/:/'
 }
 
 if [ $# -gt 0 ]; then
     lower_command=$(echo $1 | awk '{print tolower($0)}');
     case $lower_command in
         'todo')
-            find_notes TODO;;
+            print_todos;;
         'fixme')
-            find_notes FIXME;;
+            print_fixmes;;
         'optimize')
-            find_notes OPTIMIZE;;
+            print_optimizes;;
         *)
             usage;;
     esac

@@ -161,3 +161,9 @@ let easytags_file = '~/tags'
 set tags=./tags;
 let easytags_dynamic_files = 1
 let easytags_async = 1
+
+" Load in custom config if it exists
+let custom_vimrc='~/.vimrc.custom'
+if filereadable(custom_vimrc)
+    source custom_vimrc
+end

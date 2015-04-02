@@ -1,7 +1,8 @@
 #!/bin/bash
 ############################
 # .make.sh
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
+# This script creates symlinks from the home directory to any desired dotfiles
+# in ~/dotfiles
 ############################
 
 set -u # Prevent unset variables
@@ -26,7 +27,8 @@ echo "Creating $olddir for backup of any existing dotfiles in $HOME"
 mkdir -p $olddir
 echo "...done"
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
+# move any existing dotfiles in homedir to dotfiles_old directory, then create
+# symlinks
 echo "Moving any existing dotfiles from $HOME to $olddir"
 for file in $files; do
   oldfile="$HOME/.$file"

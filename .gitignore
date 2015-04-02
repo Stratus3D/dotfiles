@@ -14,3 +14,7 @@ vim/bundle/
 gitconfig.custom
 vimrc.custom
 shellrc.custom
+
+# Ignore the compiled and the originals directories
+compiled/
+originals/

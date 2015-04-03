@@ -1,14 +1,15 @@
 #!/bin/bash
-############################
-# .make.sh
+###############################################################################
 # This script creates symlinks from the home directory to any desired dotfiles
 # in ~/dotfiles
-############################
+###############################################################################
 
 set -u # Prevent unset variables
 set -e # Stop on an error
 
-########## Variables
+###############################################################################
+# Variables
+###############################################################################
 
 border="====="
 dotfiles=$HOME/dotfiles               # dotfiles directory
@@ -16,8 +17,6 @@ olddir=$HOME/dotfiles_old             # old dotfiles backup directory
 # list of files/folders to symlink in homedir
 files="vimrc vim zshrc bashrc general aliases grep nodejs path
     tmux.conf gitconfig gitignore_global ackrc ctags jshintrc irssi"
-
-##########
 
 # Remove everything in dotfiles_old
 rm -rf $olddir

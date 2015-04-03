@@ -49,6 +49,8 @@ mkdir -p $HOME/Installers
 cd $HOME
 
 DOTFILES_DIR=$HOME/dotfiles
+DOTFILE_SCRIPTS_DIR=$DOTFILES_DIR/scripts
+
 if [ ! -d $DOTFILES_DIR ]; then
   git clone ssh://git@github.com/Stratus3D/dotfiles.git $DOTFILES_DIR
 else
@@ -57,9 +59,9 @@ else
 fi
 
 # run the install script, which symlinks the dotfiles
-cd $DOTFILES_DIR
-chmod +x makesymlinks.sh
-./makesymlinks.sh
+chmod +x $DOTFILE_SCRIPTS_DIR/makesymlinks.sh
+./$DOTFILE_SCRIPTS_DIR/makesymlinks.sh
+
 # Reload after installing dotfiles
 source $HOME/.bashrc
 

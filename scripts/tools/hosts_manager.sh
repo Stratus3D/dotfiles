@@ -112,6 +112,13 @@ print_profiles()
 {
     ls $VARDIR | cat
 }
+while getopts :a FLAG; do
+    case $FLAG in
+        \?)
+            echo $FLAG
+            echo $OPTARG;;
+    esac
+done
 
 if [ $# -gt 0 ]; then
     case $1 in
@@ -125,7 +132,7 @@ if [ $# -gt 0 ]; then
             rm_host $@;;
         'start')
             check_root
-            start_block;;
+            start_block $2;;
         'stop')
             check_root
             stop_block;;

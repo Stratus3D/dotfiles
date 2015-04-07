@@ -10,7 +10,7 @@ alias gll="git log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 
 # Tool aliases
 # Create alaises for bash scripts in the tools directory
-for file in ~/dotfiles/tools/*.sh; do
+for file in $HOME/dotfiles/scripts/tools/*.sh; do
     filename=${file%.sh}
     root_filename=${filename##*/}
     alias $root_filename="$file"

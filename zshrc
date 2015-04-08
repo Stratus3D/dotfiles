@@ -74,11 +74,10 @@ SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 export TERM="screen-256color"
 export EDITOR='vim'
 
-source $HOME/.general
-source $HOME/.grep
-source $HOME/.nodejs
-source $HOME/.rbenv
-source $HOME/.path
+source $HOME/dotfiles/mixins/general
+source $HOME/dotfiles/mixins/grep
+source $HOME/dotfiles/mixins/nodejs
+source $HOME/dotfiles/mixins/path
 
 export MIRTH_MATCH_HOME=/opt/mirthmatch
 export AS_HOME=/opt/glassfish
@@ -87,6 +86,6 @@ export AS_CFG=/opt/glassfish/domains/domain1/config
 
 # export MANPATH="/usr/local/man:$MANPATH"
 source $ZSH/oh-my-zsh.sh
-source $HOME/.aliases
+source $HOME/dotfiles/mixins/aliases
 
 unalias gm # This alias has the same name as the GraphicsMagick binary

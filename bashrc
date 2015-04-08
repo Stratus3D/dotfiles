@@ -1,8 +1,8 @@
-FILES="$HOME/.general
-$HOME/.aliases
-$HOME/.grep
-$HOME/.nodejs
-$HOME/.path"
+FILES="$HOME/dotfiles/mixings/general
+$HOME/dotfiles/mixings/aliases
+$HOME/dotfiles/mixings/grep
+$HOME/dotfiles/mixings/nodejs
+$HOME/dotfiles/mixings/path"
 
 for file in $FILES
 do

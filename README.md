@@ -33,6 +33,7 @@ Run the `setup.sh`. This will install all the necessary software, setup commonly
 * Complete the `clone_all_bitbucket_repos.sh` script so that all private repos can be cloned.
 * Complete the `erlang_manager.sh` and `hosts_manager.sh` scripts.
 * Allow for custom config files (`.bashrc`, `.zshrc`, `.gitconfig`) and custom scripts.
+* Figure out how to setup devdocs.io locally when running the setup script.
 
 ###Useful commands that I often forget
 Bash/Zshell Commands

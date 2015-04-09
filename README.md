@@ -34,7 +34,8 @@ Run the `setup.sh`. This will install all the necessary software, setup commonly
 * Complete the `erlang_manager.sh` and `hosts_manager.sh` scripts.
 * Allow for custom config files (`.bashrc`, `.zshrc`, `.gitconfig`) and custom scripts.
 
-### Easily Forgotten Command Line Tricks
+###Useful commands that I often forget
+Bash/Zshell Commands
 * `open .` to open current directory in Finder
 * `open -a TextEdit textfile.txt` to open a file in a specific application
 * `python -m SimpleHTTPServer 8000` runs a webserver that serves the contents of the directory
@@ -52,6 +53,8 @@ Run the `setup.sh`. This will install all the necessary software, setup commonly
 * `^Y` paste previously deleted command (separate from global Cmd-C buffer). Delete a line with `^A ^K` and then paste it back with `^Y`
 * Files/directories can be dragged onto the terminal and the path will be pasted at the current cursor position
 * `command <<< "input text"` can be used in place of `command < file.in`
+* `pkill <process_name>` kills all processes with the given name (e.g. `pkill HipChat` kills the HipChat app)
+* `kill <process_id>` kills the process identified by `<process_id>`. `-9` can be used to kill the process immediately
 
 Vim Commands
 * `vit` select contents of html tag. `v`isual select text `i`n a `t`ag. `dit` would delete the contents of the tag.
@@ -121,7 +124,7 @@ Offline documentation suitable for day to day use.
 ###Misc Stuff
 #####Colors
 
-###Repos that I referred to when creating this
+###Repos that I referred to when creating this repo
 * [Joshua Steele's dotfiles (https://github.com/joshukraine/dotfiles)](https://github.com/joshukraine/dotfiles)
 * [thoughtbot/laptop (https://github.com/thoughtbot/laptop)](https://github.com/thoughtbot/laptop)
 * [Michael J. Smalley's dotfiles (https://github.com/michaeljsmalley/dotfiles)](https://github.com/michaeljsmalley/dotfiles)

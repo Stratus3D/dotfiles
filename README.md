@@ -37,6 +37,7 @@ Run the `setup.sh`. This will install all the necessary software, setup commonly
 
 ###Useful commands that I often forget
 Bash/Zshell Commands
+
 * `open .` to open current directory in Finder
 * `open -a TextEdit textfile.txt` to open a file in a specific application
 * `python -m SimpleHTTPServer 8000` runs a webserver that serves the contents of the directory
@@ -58,6 +59,7 @@ Bash/Zshell Commands
 * `kill <process_id>` kills the process identified by `<process_id>`. `-9` can be used to kill the process immediately
 
 Vim Commands
+
 * `vit` select contents of html tag. `v`isual select text `i`n a `t`ag. `dit` would delete the contents of the tag.
 * `^A` and `^X` allow you to increment the number your cursor is over, or first number after the cursor that is on the same line.
 * `<F4>` toggles everything that occupies space to the left of the text (line numbers, gitgutter, etc...)
@@ -65,6 +67,9 @@ Vim Commands
 * `:21,25s/old/new/g` to substitute `new` for `old on lines 21 through 25.
 * When scrolling in tmux, `<fn> <UpArrow>` and `<fn> <DownArrow>` can be used instead of `<PageUp>` and `<PageDown>`. This also comes in handy on keyboards that lack Page Up and Page Down.
 
+Make Targets and Commands
+
+* `print-%: ; @echo $*=$($*)` or `print-%: ; @echo '$(subst ','\'',$*=$($*))'` allows you to run `make print-<variable_name>` and print the value of any variable. Can be used without modifying the file in GNU make 3.82 or greater like this: `make --eval="print-%: ; @echo $*=$($*)" print-SOURCE_FILES`.
 
 ### Software
 This is software that I need for my day-to-day programming work. I try to keep this list updated with the latest software I am using. This allows me to quickly setup new development machines. I am developing a script named checkenv.sh that will verify everything is setup properly.

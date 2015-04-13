@@ -24,12 +24,11 @@ if [ -f $JAVA_HOME_BIN ]; then
 fi
 
 # rbenv
-PATH=$RBENV_ROOT/bin:$PATH
-
 # I am leaving this here as it does have an effect on my $PATH
 # I might want to move this to a better location later
 export RBENV_ROOT=$HOME/.rbenv
-eval "$(rbenv init - --no-rehash)"
+PATH=$RBENV_ROOT/bin:$PATH
+eval "$(rbenv init -)"
 
 # Neo4j
 export PATH=$HOME/lib/neo4j-community-2.0.0-RC1/bin/neo4j:$PATH

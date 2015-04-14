@@ -67,6 +67,10 @@ Vim Commands
 * `:21,25s/old/new/g` to substitute `new` for `old on lines 21 through 25.
 * When scrolling in tmux, `<fn> <UpArrow>` and `<fn> <DownArrow>` can be used instead of `<PageUp>` and `<PageDown>`. This also comes in handy on keyboards that lack Page Up and Page Down.
 
+SSH/SCP Commands
+
+* `scp localfile user@remotehost:~` to copy `localfile` up to your home directory on `remotehost`.
+
 Make Targets and Commands
 
 * `print-%: ; @echo $*=$($*)` or `print-%: ; @echo '$(subst ','\'',$*=$($*))'` allows you to run `make print-<variable_name>` and print the value of any variable. Can be used without modifying the file in GNU make 3.82 or greater like this: `make --eval="print-%: ; @echo $*=$($*)" print-SOURCE_FILES`.

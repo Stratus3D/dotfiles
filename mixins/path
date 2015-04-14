@@ -1,11 +1,18 @@
 # Development directory
 export DEVELOPMENT_DIR=$HOME/Development
 
-# Binaries for development
-PATH=$HOME/bin
+# Misc
+PATH=$HOME/lib/luarocks-2.1.1\ Copy/src/bin:$HOME/lib/apache-ant-1.9.3/bin:$ANDROID_HOME/sdk/platform-tools:$ANDROID_HOME/sdk/tools:$HOME/lib/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:/Applications/CoronaSDK:$HOME/lib/lua-5.1.5/src:$HOME/lib:/usr/local/bin:$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:$PATH
 
-PATH=$HOME/.rbenv/shims:/usr/local/bin:/usr/local/sbin:$PATH # brew
-PATH=/usr/local/share/npm/bin:$HOME/.kerl/builds/R16B03-1/release_R16B03-1/bin:$HOME/lib/elixir/bin:$HOME/lib/luarocks-2.1.1\ Copy/src/bin:$HOME/lib/apache-ant-1.9.3/bin:$ANDROID_HOME/sdk/platform-tools:$ANDROID_HOME/sdk/tools:$HOME/lib/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:/Applications/CoronaSDK:$HOME/lib/lua-5.1.5/src:$HOME/lib/neo4j-community-2.0.0-RC1/bin:$HOME/lib:/usr/local/bin:$PATH:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
+# Binaries for development
+PATH=$HOME/bin:$PATH
+
+# Brew
+PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+# Elixir
+PATH=$HOME/lib/elixir/bin:$PATH
+PATH=$HOME/lib/elixir_0_12_5/bin:$PATH
 
 # Erlang
 PATH=$HOME/erlang_17/bin:$PATH
@@ -31,7 +38,7 @@ PATH=$RBENV_ROOT/bin:$PATH
 eval "$(rbenv init -)"
 
 # Neo4j
-export PATH=$HOME/lib/neo4j-community-2.0.0-RC1/bin/neo4j:$PATH
+PATH=$HOME/lib/neo4j-community-2.0.0-RC1/bin/neo4j:$PATH
 
 # Go
 export GOPATH=$DEVELOPMENT_DIR
@@ -39,6 +46,7 @@ PATH=$GOPATH/bin:$PATH
 
 # NodeJS
 export NVM_DIR=$HOME/.nvm
+PATH=/usr/local/share/npm/bin:$PATH
 
 # Finally export completed PATH
 export PATH

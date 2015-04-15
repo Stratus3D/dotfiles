@@ -26,5 +26,7 @@
 	submodule = log
 [fetch]
 	recurseSubmodules = on-demand
+[push]
+    default = simple
 [pull]
 	rebase = preserve

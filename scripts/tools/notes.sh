@@ -2,7 +2,11 @@
 
 # Provides a simple interface for view notes left by the programming in a
 # projects source code. Modelled after the rake notes task.
-# TODO: Add color to the output of the script.
+#
+# TODO:
+# * Add color to the output of the script.
+# * Handle multiline TODOs.
+# * Take a directory as an additional argument.
 
 set -u # Prevent unset variables
 set -e # Stop on an error

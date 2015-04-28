@@ -55,6 +55,12 @@ plugins=(git)
 
 DISABLE_CORRECTION="true"
 
+# For my dotfiles repo to work correctly the paths to source'd files must be
+# relative to the location of this file. This doesn't handle cases where the
+# .zshrc is symlinked to a symlink.
+# Taken from http://stackoverflow.com/a/26492107/1245380
+ZSHRC_PATH=$(dirname "$(readlink "${(%):-%N}")")
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -74,10 +80,10 @@ SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 export TERM="screen-256color"
 export EDITOR='vim'
 
-source $HOME/dotfiles/mixins/general
-source $HOME/dotfiles/mixins/grep
-source $HOME/dotfiles/mixins/nodejs
-source $HOME/dotfiles/mixins/path
+source $ZSHRC_PATH/mixins/general
+source $ZSHRC_PATH/mixins/grep
+source $ZSHRC_PATH/mixins/nodejs
+source $ZSHRC_PATH/mixins/path
 
 export MIRTH_MATCH_HOME=/opt/mirthmatch
 export AS_HOME=/opt/glassfish
@@ -86,6 +92,6 @@ export AS_CFG=/opt/glassfish/domains/domain1/config
 
 # export MANPATH="/usr/local/man:$MANPATH"
 source $ZSH/oh-my-zsh.sh
-source $HOME/dotfiles/mixins/aliases
+source $ZSHRC_PATH/mixins/aliases
 
 unalias gm # This alias has the same name as the GraphicsMagick binary

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -
 ############################
 # setup.sh
 # This script creates everything needed to get started on a new laptop

@@ -1,0 +1,6 @@
+# This file is for customizing the aliases used in Bash and Zsh shells. To use
+# this file remove the .example suffix. The contents of the file will be loaded
+# into the .bashrc and .zshrc.
+
+# Aliases I usually use on OSX
+#alias chrome="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"

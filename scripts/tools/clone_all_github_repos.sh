@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -
 
 ############################
 # clone_all_github_repos.sh

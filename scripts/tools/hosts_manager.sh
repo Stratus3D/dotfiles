@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -
 # This is still a work in progress. I want to make this handle both custom host
 # files.
 # TODO:

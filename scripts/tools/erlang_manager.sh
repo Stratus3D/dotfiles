@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/bash -
 
 # Provides a simple interface for installing and managing Erlang versions. Uses
 # kerl underneath for the actual downloading and building of the Erlang source.

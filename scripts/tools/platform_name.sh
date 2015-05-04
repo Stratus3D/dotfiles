@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/bash -
 
 # Provide the name of the current operating system.
 

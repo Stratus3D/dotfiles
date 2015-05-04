@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/bash -
 
 # Provides a simple interface for view notes left by the programming in a
 # projects source code. Modelled after the rake notes task.

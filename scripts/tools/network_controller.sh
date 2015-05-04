@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/bash -
 
 # Provides a simple interface to allow enable and disabling of network interfaces
 # quickly.

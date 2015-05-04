@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -
 # Bitbucket backup script
 # backups all repos (including wiki and issues) of a user
 #

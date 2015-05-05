@@ -36,7 +36,7 @@ echo "Fetching $GITHUB_USER's repositories from the GitHub API..."
 
 # fetch repository list via github api
 # grep fetches the json object key ssh_url, which contains the ssh url for the repository
-REPOLIST=`curl --silent https://api.github.com/users/${GITHUB_USER}/repos -q | grep "\"ssh_url\"" | awk -F': "' '{print $2}' | sed -e 's/",//g'`
+REPOLIST=$(curl --silent https://api.github.com/users/${GITHUB_USER}/repos -q | grep "\"ssh_url\"" | awk -F': "' '{print $2}' | sed -e 's/",//g')
 
 echo "Starting to clone down $GITHUB_USER's repositories into '$CLONE_DIR'..."
 

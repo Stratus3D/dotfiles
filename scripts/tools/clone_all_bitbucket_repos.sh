@@ -54,16 +54,16 @@ fi
 
                                 mkdir -p $BACKUP_LOCATION
 
-                                repositories=`curl -s -S --user $USER_NAME:$API_KEY https://api.bitbucket.org/2.0/repositories/$USER_NAME\?pagelen\=100 | jq -r '.values[] | "\(.full_name) \(.scm) \(.has_issues) \(.has_wiki)"'`
+                                repositories=$(curl -s -S --user $USER_NAME:$API_KEY https://api.bitbucket.org/2.0/repositories/$USER_NAME\?pagelen\=100 | jq -r '.values[] | "\(.full_name) \(.scm) \(.has_issues) \(.has_wiki)"')
 
                                 OIFS="$IFS"
                                 IFS=$'\n'
                                 for repository in $repositories
                                 do
-                                    repository_name=`echo $repository | cut -d ' ' -f1`
-                                    has_issues=`echo $repository | cut -d ' ' -f3`
-                                    has_wiki=`echo $repository | cut -d ' ' -f4`
-                                    scm=`echo $repository | cut -d ' ' -f2`
+                                    repository_name=$(echo $repository | cut -d ' ' -f1)
+                                    has_issues=$(echo $repository | cut -d ' ' -f3)
+                                    has_wiki=$(echo $repository | cut -d ' ' -f4)
+                                    scm=$(echo $repository | cut -d ' ' -f2)
 
                                     echo "backing up $repository_name"
                                     echo "backing up $repository_name repo"

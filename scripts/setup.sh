@@ -30,6 +30,9 @@ fi
 # Install nvm
 curl https://raw.githubusercontent.com/creationix/nvm/v0.23.3/install.sh | bash
 
+# Install command-line JSON processor
+brew install jq
+
 ############################
 # Create commonly used directories
 ############################

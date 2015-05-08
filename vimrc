@@ -32,6 +32,7 @@ Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'burnettk/vim-angular'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 call vundle#end()
 

@@ -148,7 +148,7 @@ set laststatus=2
 highlight statusline ctermfg=cyan ctermbg=black guifg=cyan guibg=black
 
 " allow yanking to OSX clipboard
-" set clipboard+=unnamed
+set clipboard+=unnamed
 
 " Start CtrlP on startup
 autocmd VimEnter * CtrlP

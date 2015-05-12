@@ -3,4 +3,6 @@
 # into the .bashrc and .zshrc.
 
 # Aliases I usually use on OSX
-#alias chrome="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+#alias chrome="'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'"
+#alias chrome_jail="'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --user-data-dir=$(mktemp -d -t chrome_jail)"
+#alias chrome_incognito="'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --incognito"

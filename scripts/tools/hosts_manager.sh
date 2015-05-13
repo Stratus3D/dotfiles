@@ -12,6 +12,31 @@
 set -u # Prevent unset variables
 set -e # Stop on an error
 
+
+# Put the original in the dotfiles repo, so it shows up with git status
+VARDIR="$HOME/dotfiles/hosts_profiles"
+
+# Actual host file to be swapped around.
+HOST_FILE="/etc/hosts"
+
+# Original host file without any of the appended blocked hosts.
+# Store the original file in the etc dir so others can find it.
+ORIG_FILE="/etc/hosts.original"
+
+# List of blocked hosts. TODO: This will be replaced by different "profiles"
+BLCK_FILE="$VARDIR/blocked_host"
+
+# Temporary file used when removing hosts.
+BLCK_TEMP=$(mktemp -t "blocked_hosts") || $(mktemp /tmp/blocked_hosts.XXXXXXX) || exit 1
+
+# Make sure files exist.
+[[ -e $ORIG_FILE ]] || sudo touch "$ORIG_FILE"
+[[ -e $BLCK_FILE ]] || sudo touch "$BLCK_FILE"
+
+# Check to see if the block is currently active.
+ACTIVE_FLAG="$HOME/.wrk_block.flag"
+
+
 usage()
 {
     cat <<EOF
@@ -27,26 +52,6 @@ usage()
 EOF
 }
 
-# Put the original in the dotfiles repo, so it shows up with git status
-VARDIR="$HOME/dotfiles/hosts_profiles"
-
-# HOST_FILE - actual host file to be swapped around.
-# ORIG_FILE - original host file without any of the appended blocked hosts.
-# BLCK_FILE - list of blocked hosts.
-# BLCK_TEMP - temporary file used when removing hosts.
-
-HOST_FILE="/etc/hosts"
-# store the original host file in the etc dir so others can find it.
-ORIG_FILE="/etc/hosts.original"
-BLCK_FILE="$VARDIR/blocked_host"
-BLCK_TEMP=$(mktemp -t "blocked_hosts") || $(mktemp /tmp/blocked_hosts.XXXXXXX) || exit 1
-
-# Make sure files exist.
-[[ -e $ORIG_FILE ]] || sudo touch "$ORIG_FILE"
-[[ -e $BLCK_FILE ]] || sudo touch "$BLCK_FILE"
-
-# Check to see if the block is currently active.
-ACTIVE_FLAG="$HOME/.wrk_block.flag"
 if [[ -e $ACTIVE_FLAG ]]; then
     IS_ACTIVE=0
 else

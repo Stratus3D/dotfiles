@@ -1,4 +1,4 @@
-alias vim="vi"
+alias vi="vim"
 
 # Git alias
 alias g="git"

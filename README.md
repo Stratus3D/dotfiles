@@ -58,6 +58,7 @@ Bash/Zshell Commands
 * `command <<< "input text"` can be used in place of `command < file.in`
 * `pkill <process_name>` kills all processes with the given name (e.g. `pkill HipChat` kills the HipChat app)
 * `kill <process_id>` kills the process identified by `<process_id>`. `-9` can be used to kill the process immediately
+* `echo -n ✘ | hexdump` to print the encoding of a character by the console. Useful for bash scripts
 
 Vim Commands
 

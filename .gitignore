@@ -12,6 +12,7 @@ vim/bundle/
 
 # Ignore custom files
 mixins/*.custom
+scripts/custom_tools/
 
 # Ignore the compiled and the originals directories
 compiled/

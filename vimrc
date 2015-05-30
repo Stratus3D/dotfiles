@@ -148,7 +148,10 @@ set laststatus=2
 highlight statusline ctermfg=cyan ctermbg=black guifg=cyan guibg=black
 
 " allow yanking to OSX clipboard
-set clipboard+=unnamed
+" http://stackoverflow.com/questions/11404800/fix-vim-tmux-yank-paste-on-unnamed-register
+if $TMUX == ''
+    set clipboard+=unnamed
+endif
 
 " Start CtrlP on startup
 autocmd VimEnter * CtrlP

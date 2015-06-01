@@ -81,6 +81,7 @@ export TERM="screen-256color"
 export EDITOR='vim'
 
 source $ZSHRC_PATH/mixins/general
+source $ZSHRC_PATH/mixins/functions
 source $ZSHRC_PATH/mixins/grep
 source $ZSHRC_PATH/mixins/nodejs
 source $ZSHRC_PATH/mixins/path

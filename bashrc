@@ -1,8 +1,9 @@
 FILES="$HOME/dotfiles/mixings/general
-$HOME/dotfiles/mixings/aliases
-$HOME/dotfiles/mixings/grep
-$HOME/dotfiles/mixings/nodejs
-$HOME/dotfiles/mixings/path"
+$HOME/dotfiles/mixins/functions
+$HOME/dotfiles/mixins/aliases
+$HOME/dotfiles/mixins/grep
+$HOME/dotfiles/mixins/nodejs
+$HOME/dotfiles/mixins/path"
 
 for file in $FILES
 do

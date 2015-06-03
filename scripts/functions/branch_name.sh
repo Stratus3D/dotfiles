@@ -1,6 +1,6 @@
 #! /bin/bash -
 
-branch_name() {
+branch() {
     # Check if current directory is a git repository
     if $(git rev-parse > /dev/null 2>&1); then
         # Get the branch name
@@ -10,5 +10,3 @@ branch_name() {
         echo $BRANCH_NAME;
     fi
 }
-
-branch_name;

@@ -1,7 +1,5 @@
 #! /bin/bash -
 
-#source branch_name.sh
-
 ticket() {
     # Get the branch name
     BRANCH_NAME="$(branch)";

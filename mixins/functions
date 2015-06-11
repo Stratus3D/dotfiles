@@ -1,3 +1,7 @@
 for file in $HOME/dotfiles/scripts/functions/*; do
     source $file;
 done
+
+for file in $HOME/dotfiles/scripts/custom_functions/*; do
+    source $file;
+done

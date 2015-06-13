@@ -109,6 +109,12 @@ inoremap <Right> <esc> :echoe "Use l"<cr>
 inoremap <Up> <esc> :echoe "Use k"<cr>
 inoremap <Down> <esc> :echoe "Use j"<cr>
 
+" Allow replacing of searched text by using `cs` on the first result and `n.`
+" on all consecutive results
+vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
+            \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
+omap s :normal vs<CR>
+
 " NERDTree settings
 nmap <silent> <F3> :NERDTreeToggle<CR>
 set guioptions-=T

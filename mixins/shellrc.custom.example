@@ -1,3 +1,9 @@
 # This file is for customizing the Bash and Zsh shells. To use this file remove
 # the .example suffix. The contents of the file will be loaded into the .bashrc
 # and .zshrc.
+
+# These are variables that you will most likely need to set
+export GIT_AUTHOR_NAME="John Doe"
+export GIT_AUTHOR_EMAIL="jdoe@example.com"
+export GIT_COMMITTER_NAME="John Doe"
+export GIT_COMMITTER_EMAIL="jdoe@example.com"

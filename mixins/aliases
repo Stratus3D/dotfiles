@@ -14,7 +14,13 @@ for file in $HOME/dotfiles/scripts/tools/*.sh; do
     filename=${file%.sh}
     root_filename=${filename##*/}
     alias $root_filename="$file"
-    #alias
+done
+
+# Create alaises for bash scripts in the custom_tools directory
+for file in $HOME/dotfiles/scripts/custom_tools/*.sh; do
+    filename=${file%.sh}
+    root_filename=${filename##*/}
+    alias $root_filename="$file"
 done
 
 # Postgres

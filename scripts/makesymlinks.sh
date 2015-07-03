@@ -16,7 +16,7 @@ dotfiles=$HOME/dotfiles               # dotfiles directory
 olddir=$HOME/dotfiles_old             # old dotfiles backup directory
 # list of files/folders to symlink in homedir
 files="vimrc vim zshrc bashrc tmux.conf gitconfig gitignore_global ackrc ctags
-jshintrc irssi"
+screenrc jshintrc irssi"
 
 # Remove everything in dotfiles_old
 rm -rf $olddir

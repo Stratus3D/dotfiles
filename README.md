@@ -77,6 +77,15 @@ Make Targets and Commands
 
 * `print-%: ; @echo $*=$($*)` or `print-%: ; @echo '$(subst ','\'',$*=$($*))'` allows you to run `make print-<variable_name>` and print the value of any variable. Can be used without modifying the file in GNU make 3.82 or greater like this: `make --eval="print-%: ; @echo $*=$($*)" print-SOURCE_FILES`.
 
+Irssi Commands
+
+* `/server`
+* `/connect`
+* `/disconnect`
+* `Alt + Left Arrow/Right Arrow` scroll through Irssi windows.
+* `/q <users nick>`  starts a private message with a user.
+* `/wc` closes the current window. This parts from the current channel or disconnects from the current network.
+
 ### Software
 This is software that I need for my day-to-day programming work. I try to keep this list updated with the latest software I am using. This allows me to quickly setup new development machines. I am developing a script named checkenv.sh that will verify everything is setup properly.
 

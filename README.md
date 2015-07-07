@@ -78,6 +78,7 @@ Make Targets and Commands
 * `print-%: ; @echo $*=$($*)` or `print-%: ; @echo '$(subst ','\'',$*=$($*))'` allows you to run `make print-<variable_name>` and print the value of any variable. Can be used without modifying the file in GNU make 3.82 or greater like this: `make --eval="print-%: ; @echo $*=$($*)" print-SOURCE_FILES`.
 
 Screen Commands
+
 * `^A d` detach current window.
 * `screen -rd` to reattach a window. Follow the prompts if there are multiple windows.
 

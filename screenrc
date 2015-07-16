@@ -1,0 +1,10 @@
+shell -${SHELL}
+
+# Detach on SIGHUP
+autodetach on
+
+# Hide startup message
+startup_message off
+
+hardstatus on
+hardstatus alwayslastline

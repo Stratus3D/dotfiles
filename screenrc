@@ -7,4 +7,4 @@ autodetach on
 startup_message off
 
 hardstatus on
-hardstatus alwayslastline
+hardstatus alwayslastline "%{=b}%{G} Screen(s): %{b}%w"

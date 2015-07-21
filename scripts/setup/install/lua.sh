@@ -1,5 +1,6 @@
 #!/bin/bash -
 
+TARGET=${TARGET:-linux}
 FILE="lua-5.3.1.tar.gz"
 INSTALL_DIR="$HOME/lib"
 
@@ -13,7 +14,7 @@ wget "http://www.lua.org/ftp/$FILE"
 tar -zxvf $FILE
 
 # Build Lua
-make macosx test local
+make $TARGET test local
 
 # Clean up
 rm $FILE

@@ -41,6 +41,7 @@ brew install jq
 # TODO: The names of these directories are duplicated elsewhere.
 mkdir -p $HOME/.erlang_versions
 mkdir -p $HOME/bin # Third-party binaries
+mkdir -p $HOME/lib # Third-party software
 mkdir -p $HOME/nobackup # All files that shouldn't be backed up the normal way
 mkdir -p $HOME/Development
 mkdir -p $HOME/Development/src # Go source directory

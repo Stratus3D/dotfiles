@@ -8,6 +8,9 @@
 set -e # Terminate script if anything exits with a non-zero value
 set -u # Prevent unset variables
 
+# Get the directory this script is stored in
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
 ############################
 # Install software on laptop
 ############################
@@ -23,10 +26,10 @@ if [[ "$unamestr" == 'Darwin' ]]; then
     sh mac 2>&1 | tee ~/laptop.log
 
     # Then run our own setup script
-    setup/darwin.sh
+    "$DIR/setup/darwin.sh"
 elif [[ "$unamestr" == 'Linux' ]]; then
     # Run our own setup script
-    setup/linux.sh
+    "$DIR/setup/linux.sh"
 fi
 
 # Install nvm

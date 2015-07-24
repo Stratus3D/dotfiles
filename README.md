@@ -35,6 +35,7 @@ Run the `setup.sh`. This will install all the necessary software, setup commonly
 * Allow for custom config files (`.bashrc`, `.zshrc`, `.gitconfig`) and custom scripts.
 * Figure out how to setup devdocs.io locally when running the setup script.
 * Make all `source`s relative.
+* Configure Ctrl-P so files in gitignore are ignored by Ctrl-P.
 
 ###Useful commands that I often forget
 Bash/Zshell Commands

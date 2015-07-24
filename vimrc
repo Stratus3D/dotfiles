@@ -128,7 +128,7 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 
 " custom CtrlP ignores
 let g:ctrlp_custom_ignore = {
-  \'dir': 'ebin\|DS_Store\|git$\|bower_components\|node_modules\|build\|logs',
+  \'dir': 'ebin\|DS_Store\|git$\|bower_components\|node_modules\|logs',
   \'file': '\v\.(beam|pyc|swo)$',
   \}
 

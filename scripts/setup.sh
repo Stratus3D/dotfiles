@@ -12,6 +12,20 @@ set -u # Prevent unset variables
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 ############################
+# Create commonly used directories
+############################
+# TODO: The names of these directories are duplicated elsewhere.
+mkdir -p $HOME/.erlang_versions
+mkdir -p $HOME/bin # Third-party binaries
+mkdir -p $HOME/lib # Third-party software
+mkdir -p $HOME/nobackup # All files that shouldn't be backed up the normal way
+mkdir -p $HOME/Development
+mkdir -p $HOME/Development/src # Go source directory
+mkdir -p $HOME/Development/bin # Go binary directory
+mkdir -p $HOME/Documentation
+mkdir -p $HOME/Installers
+
+############################
 # Install software on laptop
 ############################
 # Get the uname string
@@ -33,24 +47,10 @@ elif [[ "$unamestr" == 'Linux' ]]; then
 fi
 
 # Install nvm
-curl https://raw.githubusercontent.com/creationix/nvm/v0.23.3/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | bash
 
 # Install command-line JSON processor
 brew install jq
-
-############################
-# Create commonly used directories
-############################
-# TODO: The names of these directories are duplicated elsewhere.
-mkdir -p $HOME/.erlang_versions
-mkdir -p $HOME/bin # Third-party binaries
-mkdir -p $HOME/lib # Third-party software
-mkdir -p $HOME/nobackup # All files that shouldn't be backed up the normal way
-mkdir -p $HOME/Development
-mkdir -p $HOME/Development/src # Go source directory
-mkdir -p $HOME/Development/bin # Go binary directory
-mkdir -p $HOME/Documentation
-mkdir -p $HOME/Installers
 
 ############################
 # Setup dotfiles

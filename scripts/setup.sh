@@ -24,6 +24,7 @@ mkdir -p $HOME/Development/src # Go source directory
 mkdir -p $HOME/Development/bin # Go binary directory
 mkdir -p $HOME/Documentation
 mkdir -p $HOME/Installers
+mkdir -p $HOME/nobackup
 
 ############################
 # Install software on laptop

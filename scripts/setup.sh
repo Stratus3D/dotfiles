@@ -36,10 +36,6 @@ unamestr=`uname`
 curl -L http://install.ohmyz.sh | sh
 
 if [[ "$unamestr" == 'Darwin' ]]; then
-    # Use thoughtbot's laptop script to set everything up
-    curl --remote-name https://raw.githubusercontent.com/thoughtbot/laptop/master/mac
-    sh mac 2>&1 | tee ~/laptop.log
-
     # Then run our own setup script
     "$DIR/setup/darwin.sh"
 elif [[ "$unamestr" == 'Linux' ]]; then

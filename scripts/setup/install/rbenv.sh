@@ -15,10 +15,10 @@ type rbenv
 
 # Install ruby-build so we can easily install ruby versions
 # Create a temp folder for installation
-TEMP=$(mktemp --tmpdir XXXXruby-build);
+TEMP=$(mktemp --tmpdir -d XXXXXXXXruby-build);
 
 # Clone down ruby-build into temp folder
-git clone https://github.com/sstephenson/ruby-build.git $TEMP
+git clone https://github.com/sstephenson/ruby-build.git $TEMP/
 
 # Go to temp folder and run install script
 cd $TEMP

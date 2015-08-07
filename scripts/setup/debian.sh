@@ -6,6 +6,7 @@ DEBIAN_FRONTEND=noninteractive
 # Tools I need
 sudo apt-get -y install git
 sudo apt-get -y install zsh
+sudo apt-get -y install vim
 sudo apt-get -y install tmux
 
 # ctags

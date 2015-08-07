@@ -1,4 +1,8 @@
-alias vi="vim"
+if ! hash vi 2>/dev/null; then
+    alias vi="vim"
+else
+    alias vim="vi"
+fi
 
 # Git alias
 alias g="git"

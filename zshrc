@@ -73,7 +73,7 @@ export ZSH=$HOME/.oh-my-zsh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-export ANDROID_HOME=/Users/tbrown/lib/adt-bundle-mac-x86_64-20131030
+export ANDROID_HOME=$HOME/lib/adt-bundle-mac-x86_64-20131030
 
 SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 

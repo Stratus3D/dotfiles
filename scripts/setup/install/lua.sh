@@ -26,8 +26,15 @@ cd "$INSTALL_DIR/$FILE"
 make $TARGET test local
 
 # Symlink to lua/current
-echo "Symlinking $FILE/install to lua/current/..."
-ln -s "$INSTALL_DIR/$FILE/install" "$INSTALL_DIR/current"
+CURRENT_SYMLINK="$INSTALL_DIR/$FILE/install"
+echo "Symlinking $FILE/install to $CURRENT_SYMLINK ..."
+# If symlink already exists remove it
+if [ ! -L $CURRENT_SYMLINK ]; then
+    rm $CURRENT_SYMLINK
+fi
+
+# Then link the directory
+ln -s $CURRENT_SYMLINK "$INSTALL_DIR/current"
 
 # Clean up
 echo "Cleaning up..."

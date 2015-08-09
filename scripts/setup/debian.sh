@@ -43,3 +43,6 @@ sudo apt-get -y install love
 
 # Photo editing
 sudo apt-get -y install gimp
+
+# Vector graphics
+sudo apt-get -y install inkscape

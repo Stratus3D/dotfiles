@@ -33,3 +33,13 @@ sudo add-apt-repository ppa:kilian/f.lux
 sudo apt-get update
 sudo apt-get install fluxgui
 # TODO: Add flux to list of startup applications
+
+# Love 2D for game development
+# These are needed by love 2d
+sudo apt-get -y install autoconf
+sudo apt-get -y install libtool
+sudo add-apt-repository ppa:bartbes/love-stable
+sudo apt-get -y install love
+
+# Photo editing
+sudo apt-get -y install gimp

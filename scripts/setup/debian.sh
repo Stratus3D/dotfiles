@@ -49,3 +49,10 @@ sudo apt-get -y install inkscape
 
 # Needed for ruby 2.2.0
 sudo apt-get install libffi-dev autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
+
+# JavaScript runtime
+sudo apt-get install nodejs
+
+# Postgres
+sudo apt-get install postgresql
+sudo apt-get install libpq-dev # development package

@@ -88,3 +88,9 @@ cd $HOME/bin
 # Download kerl
 curl -O https://raw.githubusercontent.com/spawngrid/kerl/master/kerl
 chmod a+x kerl
+
+############################
+# Setup cpan and install packages for irssi
+############################
+
+cpan Lingua::Ispell

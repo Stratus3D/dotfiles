@@ -323,13 +323,13 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1203 78 445 270 0 0 1920 1058 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>291 572 924 485 0 0 1920 1057 </string>
+	<string>291 572 605 485 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>742 695 384 129 0 0 1920 1057 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>154 474 592 584 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>110 -101 1873 1034 0 0 1920 1057 </string>
+	<string>0 23 1873 1034 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>136 52 650 476 0 0 1280 778 </string>
 	<key>NeverWarnAboutShortLivedSessions_F8A2BF92-AD20-4186-BD7F-064D9C0984C9</key>
@@ -1069,6 +1069,10 @@
 			<string>/Users/tbrown</string>
 		</dict>
 	</array>
+	<key>NoSyncTimeOfLastPromo</key>
+	<real>453748402.34854102</real>
+	<key>NoSyncTimeOfLastPromoDownload</key>
+	<real>460486190.98618197</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -1135,7 +1139,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-04-29T15:30:01Z</date>
+	<date>2015-08-05T16:49:25Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -1191,6 +1195,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.0.0.20150412</string>
+	<string>2.1.1</string>
 </dict>
 </plist>

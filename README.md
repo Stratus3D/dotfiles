@@ -36,6 +36,7 @@ Run the `setup.sh`. This will install all the necessary software, setup commonly
 * Figure out how to setup devdocs.io locally when running the setup script.
 * Make all `source`s relative.
 * Configure Ctrl-P so files in gitignore are ignored by Ctrl-P (https://github.com/kien/ctrlp.vim/issues/174).
+* Fix Home and End keys in vim on Ubuntu GNOME
 
 ###Useful commands that I often forget
 Bash/Zshell Commands

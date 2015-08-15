@@ -37,10 +37,10 @@ curl -L http://install.ohmyz.sh | sh
 
 if [[ "$unamestr" == 'Darwin' ]]; then
     # Then run our own setup script
-    "$DIR/setup/darwin.sh"
+    "$DIR/setup/darwin.sh" 1>&1 2>&1
 elif [[ "$unamestr" == 'Linux' ]]; then
     # Run our own setup script
-    "$DIR/setup/linux.sh"
+    "$DIR/setup/linux.sh" 1>&1 2>&1
 fi
 
 # Install nvm

@@ -79,13 +79,15 @@ get_installed_releases() {
 
 install_latest_erlang_version() {
     version=$(get_newest_release)
-    echo $version
-    echo "TODO: write this command"
+    install_erlang_version $version
 }
 
 install_erlang_version() {
-    if [ $# -gt 1 ]; then
-        echo "TODO: write this command"
+    if [ $# -gt 0 ]; then
+        echo "Preparing to install Erlang version $1"
+        kerl build $1 $1
+        kerl install $1 "$HOME/lib/erlang/$1"
+        echo "Command incomplete. Make sure Erlang version is fully installed."
     else
         echo "You didn't specify an Erlang version to install, installing latest"
         install_latest_erlang_version

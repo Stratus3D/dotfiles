@@ -130,11 +130,25 @@ let g:ctrlp_working_path_mode = 0
 "open CtrlP in buffer mode
 nnoremap <leader>b :CtrlPBuffer<CR>
 
-" custom CtrlP ignores
-let g:ctrlp_custom_ignore = {
-  \'dir': 'ebin\|DS_Store\|git$\|bower_components\|node_modules\|logs',
-  \'file': '\v\.(beam|pyc|swo)$',
-  \}
+" custom CtrlP ignores toggle
+function! ToggleCtrlPIgnores()
+    if exists("g:ctrlp_user_command")
+        " unset the ignores
+        let g:ctrlp_custom_ignore = {}
+        unlet g:ctrlp_user_command
+    else
+        " always ignore these patterns
+        let g:ctrlp_custom_ignore = {
+                    \'dir': 'ebin\|DS_Store\|git$\|bower_components\|node_modules\|logs',
+                    \'file': '\v\.(beam|pyc|swo)$',
+                    \}
+        " also ignore files listed in the .gitignore
+        let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+    end
+endfunction
+
+call ToggleCtrlPIgnores()
+:nnoremap <F6> call ToggleCtrlPIgnores()<CR>
 
 " Press Space to turn off highlighting and clear any message already displayed.
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>

@@ -81,6 +81,11 @@ bundle install
 thor docs:download --all
 
 ############################
+# Install Pygments
+############################
+pip install Pygments
+
+############################
 # Place third party scripts in ~/bin
 ############################
 cd $HOME/bin

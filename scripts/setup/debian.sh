@@ -56,3 +56,6 @@ sudo apt-get install nodejs
 # Postgres
 sudo apt-get install postgresql
 sudo apt-get install libpq-dev # development package
+
+# Install pip so we can install python packages easily
+sudo apt-get install python-pip

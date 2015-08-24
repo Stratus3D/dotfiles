@@ -136,8 +136,8 @@ Offline documentation suitable for day to day use.
 * C: [http://www.gnu.org/software/libc/manual/html_mono/libc.html](http://www.gnu.org/software/libc/manual/html_mono/libc.html)
 * Make: [http://www.gnu.org/software/make/manual/make.html](http://www.gnu.org/software/make/manual/make.html)
 
-###Misc Stuff
-#####Colors
+###Color Schemes
+* [Solarized Color Scheme (http://ethanschoonover.com/solarized)](http://ethanschoonover.com/solarized)
 
 ###Repos that I referred to when creating these dotfiles
 * [Joshua Steele's dotfiles (https://github.com/joshukraine/dotfiles)](https://github.com/joshukraine/dotfiles)

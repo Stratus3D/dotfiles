@@ -59,3 +59,8 @@ sudo apt-get install libpq-dev # development package
 
 # Install pip so we can install python packages easily
 sudo apt-get install python-pip
+
+# Zeal Docs
+sudo add-apt-repository ppa:zeal-developers/ppa
+sudo apt-get update
+sudo apt-get install zeal

@@ -116,6 +116,7 @@ This is software that I need for my day-to-day programming work. I try to keep t
   * Versions 1.9.\* and 2.1.\*
 * Python
 * Lua
+  * LuaRocks for package management (https://luarocks.org/)
 * Javascript(NodeJS)
   * Use installer from (http://nodejs.org/)
 * Go

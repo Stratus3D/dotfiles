@@ -39,7 +39,7 @@ fi
 # I might want to move this to a better location later
 export RBENV_ROOT=$HOME/.rbenv
 PATH=$RBENV_ROOT/bin:$PATH
-eval "$(rbenv init -)"
+eval "$(rbenv init - zsh)"
 
 # Neo4j
 PATH=$HOME/lib/neo4j-community-2.0.0-RC1/bin/neo4j:$PATH

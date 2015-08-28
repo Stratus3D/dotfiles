@@ -78,7 +78,6 @@ export ANDROID_HOME=$HOME/lib/adt-bundle-mac-x86_64-20131030
 SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 
 export TERM="screen-256color"
-export EDITOR='vim'
 
 source $ZSHRC_PATH/mixins/general
 source $ZSHRC_PATH/mixins/functions

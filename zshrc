@@ -77,7 +77,9 @@ export ANDROID_HOME=$HOME/lib/adt-bundle-mac-x86_64-20131030
 
 SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 
-export TERM="screen-256color"
+# xterm-256color is the only profile that works in GNOME terminal
+#export TERM="screen-256color"
+export TERM="xterm-256color"
 
 source $ZSHRC_PATH/mixins/general
 source $ZSHRC_PATH/mixins/functions

@@ -48,19 +48,21 @@ sudo apt-get -y install gimp
 sudo apt-get -y install inkscape
 
 # Needed for ruby 2.2.0
-sudo apt-get install libffi-dev autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
+sudo apt-get -y install libffi-dev autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
+# Needed for capybara
+sudo apt-get -y install libqt4-dev libqtwebkit-dev
 
 # JavaScript runtime
-sudo apt-get install nodejs
+sudo apt-get -y install nodejs
 
 # Postgres
-sudo apt-get install postgresql
-sudo apt-get install libpq-dev # development package
+sudo apt-get -y install postgresql
+sudo apt-get -y install libpq-dev # development package
 
 # Install pip so we can install python packages easily
-sudo apt-get install python-pip
+sudo apt-get -y install python-pip
 
 # Zeal Docs
 sudo add-apt-repository ppa:zeal-developers/ppa
 sudo apt-get update
-sudo apt-get install zeal
+sudo apt-get -y install zeal

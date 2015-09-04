@@ -28,3 +28,6 @@ done
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# We need this so that tmux uses bash when started in a bash shell
+export SHELL=/bin/bash

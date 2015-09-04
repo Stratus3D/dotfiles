@@ -81,6 +81,9 @@ SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 #export TERM="screen-256color"
 export TERM="xterm-256color"
 
+# We need this so that tmux uses zsh when started in a zsh shell
+export SHELL='/bin/zsh'
+
 source $ZSHRC_PATH/mixins/general
 source $ZSHRC_PATH/mixins/functions
 source $ZSHRC_PATH/mixins/grep

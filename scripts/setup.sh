@@ -99,3 +99,9 @@ chmod a+x kerl
 ############################
 
 cpan Lingua::Ispell
+
+############################
+# Check environment and print out results
+############################
+
+$DIR/checkenv.sh

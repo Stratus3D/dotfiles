@@ -80,6 +80,9 @@ Irssi Commands
 * `/wc` closes the current window. This parts from the current channel or disconnects from the current network.
 * `Alt + Left Arrow/Right Arrow` scroll through Irssi windows.
 
+Gcc Flags
+* `-ftrapv` trap signed integer overflows
+
 ### Software
 This is software that I need for my day-to-day programming work. I try to keep this list updated with the latest software I am using. This allows me to quickly setup new development machines. I am developing a script named checkenv.sh that will verify everything is setup properly.
 

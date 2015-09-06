@@ -15,12 +15,16 @@ PATH=$HOME/bin:$PATH
 PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Elixir
+PATH=$HOME/lib/elixir/current/bin:$PATH
 PATH=$HOME/lib/elixir/bin:$PATH
-PATH=$HOME/lib/elixir_0_12_5/bin:$PATH
 
 # Erlang
 PATH=$HOME/erlang_17/bin:$PATH
 PATH=$HOME/erlang/bin:$PATH
+# Kerl installed version - get the last version installed and activate it
+# This is just a hack. I need to figure out a better way of managing erlang versions.
+ERLANG_VERSION=$(kerl list installations | tail -1 | awk '{print $2}')
+. $ERLANG_VERSION/activate
 # Additional OTP applications
 export ERL_LIBS=$DEVELOPMENT_DIR
 

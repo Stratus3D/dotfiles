@@ -47,40 +47,40 @@ function echo_fail {
 # example
 # echo echo_fail "Yes"
 function echo_pass {
-# echo first argument in green
-printf "\e[32m$CHECKMARK ${1}"
-# reset colours back to normal
-echo -e "\033[0m"
-                        }
+    # echo first argument in green
+    printf "\e[32m$CHECKMARK ${1}"
+    # reset colours back to normal
+    echo -e "\033[0m"
+}
 
-                        # echo pass or fail
-                        # example
-                        # echo echo_if 1 "Passed"
-                        # echo echo_if 0 "Failed"
-                        function echo_if {
-                        if [ $1 == 1 ]; then
-                            echo_pass $2
-                        else
-                            echo_fail $2
-                        fi
-                    }
+# echo pass or fail
+# example
+# echo echo_if 1 "Passed"
+# echo echo_if 0 "Failed"
+function echo_if {
+    if [ $1 == 1 ]; then
+        echo_pass $2
+    else
+        echo_fail $2
+    fi
+}
 
-                    # ============================================== Functions
+# ============================================== Functions
 
-                    # command line programs
-                    echo "node          $(echo_if $(program_is_installed node))"
-                    echo "grunt         $(echo_if $(program_is_installed grunt))"
-                    echo "testacular    $(echo_if $(program_is_installed testacular))"
-                    echo "uglifyjs      $(echo_if $(program_is_installed uglifyjs))"
-                    echo "requirejs     $(echo_if $(program_is_installed r.js))"
-                    echo "lodash        $(echo_if $(program_is_installed lodash))"
-                    echo "gem           $(echo_if $(program_is_installed gem))"
-                    echo "git           $(echo_if $(program_is_installed git))"
-                    echo "tmux           $(echo_if $(program_is_installed tmux))"
-                    echo "tmuxinator           $(echo_if $(program_is_installed tmuxinator))"
-                    echo "rbenv           $(echo_if $(program_is_installed rbenv))"
+# command line programs
+echo "node          $(echo_if $(program_is_installed node))"
+echo "grunt         $(echo_if $(program_is_installed grunt))"
+echo "testacular    $(echo_if $(program_is_installed testacular))"
+echo "uglifyjs      $(echo_if $(program_is_installed uglifyjs))"
+echo "requirejs     $(echo_if $(program_is_installed r.js))"
+echo "lodash        $(echo_if $(program_is_installed lodash))"
+echo "gem           $(echo_if $(program_is_installed gem))"
+echo "git           $(echo_if $(program_is_installed git))"
+echo "tmux           $(echo_if $(program_is_installed tmux))"
+echo "tmuxinator           $(echo_if $(program_is_installed tmuxinator))"
+echo "rbenv           $(echo_if $(program_is_installed rbenv))"
 
-                    # local npm packages
-                    echo "grunt-shell   $(echo_if $(npm_package_is_installed grunt-shell))"
-                    echo "grunt-hashres $(echo_if $(npm_package_is_installed grunt-hashres))"
-                    echo "gruntacular   $(echo_if $(npm_package_is_installed gruntacular))"
+# local npm packages
+echo "grunt-shell   $(echo_if $(npm_package_is_installed grunt-shell))"
+echo "grunt-hashres $(echo_if $(npm_package_is_installed grunt-hashres))"
+echo "gruntacular   $(echo_if $(npm_package_is_installed gruntacular))"

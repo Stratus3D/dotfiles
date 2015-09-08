@@ -6,13 +6,13 @@ My Dotfiles
 My dotfiles. Everything I need to get setup on a new machine.
 
 ### Installation
-Run the `setup.sh`. This will install all the necessary software, setup commonly used directories, and install dotfiles.
+Run the `setup.sh`. This will install all the necessary software, setup commonly used directories, and install dotfiles. Since the setup script is idempotent it can be run on machines that have already been setup without causing issues.
 
     curl --remote-name https://raw.githubusercontent.com/Stratus3D/dotfiles/master/scripts/setup.sh
     sh setup.sh 2>&1 | tee ~/setup.log
 
 ### Issues
-* Since these dotfiles are shared across my machines, there are scenarios where PATH will need to be different. PATH will need to be customized in `path`.
+* Since these dotfiles are shared across my machines, there are scenarios where PATH will need to be different. PATH will need to be customized in `mixins/path`.
 
 ### TODO
 * Complete the setup script so it installs all software and configures iterm2 with my custom profile.

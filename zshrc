@@ -77,10 +77,6 @@ export ANDROID_HOME=$HOME/lib/adt-bundle-mac-x86_64-20131030
 
 SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 
-# xterm-256color is the only profile that works in GNOME terminal
-#export TERM="screen-256color"
-export TERM="xterm-256color"
-
 # We need this so that tmux uses zsh when started in a zsh shell
 export SHELL='/bin/zsh'
 
@@ -101,3 +97,12 @@ source $ZSH/oh-my-zsh.sh
 source $ZSHRC_PATH/mixins/aliases
 
 unalias gm # This alias has the same name as the GraphicsMagick binary
+
+# We must do this after sourcing the alias so we can use `platform_name`
+if [[ "$(platform_name)" = 'darwin' ]]; then
+    # screen-256color is the only profile that works properly in iTerm2
+    export TERM="screen-256color"
+else
+    # xterm-256color is the only profile that works in GNOME terminal
+    export TERM="xterm-256color"
+fi

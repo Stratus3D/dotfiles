@@ -32,7 +32,7 @@
 	<entry name="scrollback_lines" mtime="1438996435" type="int" value="512"/>
 	<entry name="scrollback_unlimited" mtime="1442064552" type="bool" value="true"/>
 	<entry name="visible_name" mtime="1442064552" type="string">
-		<stringvalue>solarized</stringvalue>
+		<stringvalue>Solarized</stringvalue>
 	</entry>
 	<entry name="silent_bell" mtime="1438996435" type="bool" value="false"/>
 	<entry name="delete_binding" mtime="1442064552" type="string">

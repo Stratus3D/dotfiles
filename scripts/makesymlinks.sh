@@ -35,8 +35,8 @@ for file in $files; do
       echo "Removing $oldfile symlink"
       rm $oldfile;
   else
-      echo "Moving existing $oldfile from $HOME to $olddir"
       if [[ -e $oldfile ]]; then
+          echo "Moving existing $oldfile from $HOME to $olddir"
           mv $oldfile $olddir;
       fi
   fi
@@ -44,6 +44,7 @@ for file in $files; do
   echo "$dotfiles/$file - $HOME/.$file"
   ln -s "$dotfiles/$file" "$HOME/.$file"
 done
+
 
 # setup default tmuxinator project
 if [ ! -d $HOME/.tmuxinator ]; then
@@ -63,5 +64,21 @@ fi
 git clone https://github.com/gmarik/Vundle.vim.git $dotfiles/vim/bundle/Vundle.vim
 # Install vundle and all other plugins
 vim +PluginInstall +qall
+
+# Link gnome terminal profile if we are on gnome
+if [ -d $HOME/.gconf/ ]; then
+    TERMINAL_APP=$HOME/.gconf/apps/gnome-terminal
+    PROFILES=$TERMINAL_APP/profiles/
+    echo "Linking gnome profile..."
+
+    # Link Solarized profile
+    #if [ -d $PROFILES/Solarized ]; then
+    #    rm -r $PROFILES/Solarized
+    #fi
+    ln -nfs $dotfiles/gnome_terminal_profile/profiles/Solarized/%gconf.xml $PROFILES/Solarized/%gconf.xml
+    # Link global gconf.xml
+    ln -nfs $dotfiles/gnome_terminal_profile/global/%gconf.xml $TERMINAL_APP/global/%gconf.xml
+    echo "Gnome profile linked"
+fi
 
 echo "$border Linking complete! $border"

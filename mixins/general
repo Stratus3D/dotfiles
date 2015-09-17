@@ -8,4 +8,8 @@ export LUA="$HOME/lib/lua/current"
 export PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
 export PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 
-# TODO: include mixins/shellrc.custom if it exists
+# Custom options
+#if [ -f "dotfiles/mixins/shellrc.custom" ]; then
+#    source "dotfiles/mixins/shellrc.custom"
+#    echo "Including custom!"
+#fi

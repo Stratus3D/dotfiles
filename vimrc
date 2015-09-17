@@ -155,6 +155,7 @@ call ToggleCtrlPIgnores()
 
 " Hide everything that occupies space on the left side of the file, so we can
 " copy the file contents with ease
+" TODO: Toggle syntastic hints as well
 :nnoremap <F4> :set number! <bar> :GitGutterToggle<CR>
 
 " highlight trailing whitespace

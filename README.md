@@ -37,6 +37,8 @@ Bash/Zshell Commands
 * `^A` move to the start of the line
 * `^E` move to the end of the line
 * `^B` move back one character
+* `^P` scroll backward one item in history
+* `^N` scroll forward obackne item in history
 * `Esc-B` move back one word
 * `Esc-F` move forward one word
 * `^U` delete from cursor to the beginning of the line

@@ -22,7 +22,7 @@ Run the `setup.sh`. This will install all the necessary software, setup commonly
 * Figure out how to setup devdocs.io/zealdocs locally when running the setup script.
 * Make all `source`s relative.
 * Toggle syntastic icons at the beginning of the lines with F4.
-* Come up with a per-directory software version manager (for Erlang, Elixir and Lua)
+* Come up with a per-directory software version manager (for Erlang, Elixir and Lua) Maybe https://github.com/HashNuke/asdf?
 
 ###Useful commands that I often forget
 Bash/Zshell Commands

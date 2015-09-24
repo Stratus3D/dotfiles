@@ -1,4 +1,7 @@
 export EDITOR='vim'
+
+. $HOME/.asdf/asdf.sh
+
 export ERLANG_VERSIONS=$HOME/.erlang_versions/
 
 # Lua options

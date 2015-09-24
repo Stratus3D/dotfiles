@@ -69,6 +69,14 @@ chmod +x $DOTFILE_SCRIPTS_DIR/makesymlinks.sh
 source $HOME/.bashrc
 
 ############################
+# Install asdf for version management
+############################
+git clone https://github.com/HashNuke/asdf.git $HOME/.asdf
+
+# Install all the plugins needed
+asdf plugin-add elixir https://github.com/HashNuke/asdf-elixir.git
+asdf plugin-add erlang https://github.com/HashNuke/asdf-erlang.git
+############################
 # Install devdocs
 ############################
 cd $HOME/Development

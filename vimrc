@@ -33,6 +33,9 @@ Plugin 'fatih/vim-go'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'burnettk/vim-angular'
 Plugin 'nathanaelkane/vim-indent-guides'
+" For writing
+Plugin 'junegunn/goyo.vim'
+Plugin 'reedes/vim-pencil'
 
 call vundle#end()
 

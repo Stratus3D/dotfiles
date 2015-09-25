@@ -51,6 +51,14 @@ autocmd BufRead,BufNewFile Gemfile setfiletype ruby
 autocmd BufRead,BufNewFile Vagrantfile setfiletype ruby
 autocmd BufRead,BufNewFile Dockerfile setfiletype bash
 
+let g:pencil#wrapModeDefault = 'soft'
+
+" TODO: Turn on goyo for markdown and text files as well
+augroup pencil
+    autocmd!
+    autocmd FileType mkd.markdown,markdown,mkd call pencil#init()
+    autocmd FileType text         call pencil#init()
+augroup END
 
 " General settings
 syntax on

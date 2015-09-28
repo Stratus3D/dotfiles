@@ -63,7 +63,7 @@ fi
 
 # run the install script, which symlinks the dotfiles
 chmod +x $DOTFILE_SCRIPTS_DIR/makesymlinks.sh
-./$DOTFILE_SCRIPTS_DIR/makesymlinks.sh
+$DOTFILE_SCRIPTS_DIR/makesymlinks.sh
 
 # Reload after installing dotfiles
 source $HOME/.bashrc
@@ -71,11 +71,20 @@ source $HOME/.bashrc
 ############################
 # Install asdf for version management
 ############################
-git clone https://github.com/HashNuke/asdf.git $HOME/.asdf
+ASDF_DIR=$HOME/.asdf
+if [ ! -d $ASDF_DIR ]; then
+    echo "Installing asdf..."
+    git clone https://github.com/HashNuke/asdf.git $ASDF_DIR
+    echo "asdf installation complete"
+else
+    echo "asdf already installed"
+fi
 
 # Install all the plugins needed
 asdf plugin-add elixir https://github.com/HashNuke/asdf-elixir.git
 asdf plugin-add erlang https://github.com/HashNuke/asdf-erlang.git
+asdf plugin-add erlang https://github.com/HashNuke/asdf-ruby.git
+
 ############################
 # Install devdocs
 ############################

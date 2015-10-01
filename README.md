@@ -6,16 +6,21 @@ My Dotfiles
 My dotfiles. Everything I need to get setup on a new machine.
 
 ### Installation
-Run the `setup.sh`. This will install all the necessary software, setup commonly used directories, and install dotfiles. Since the setup script is idempotent it can be run on machines that have already been setup without causing issues.
+1. Run the `setup.sh`. This will install all the necessary software, setup commonly used directories, and install dotfiles. Since the setup script is idempotent it can be run on machines that have already been setup without causing issues.
 
-    curl --remote-name https://raw.githubusercontent.com/Stratus3D/dotfiles/master/scripts/setup.sh
-    sh setup.sh 2>&1 | tee ~/setup.log
+       curl --remote-name https://raw.githubusercontent.com/Stratus3D/dotfiles/master/scripts/setup.sh
+       sh setup.sh 2>&1 | tee ~/setup.log
+
+    On Debian this is all you need to do. Everything should be installed and configured correctly. On OSX there are two remaining steps.
+
+
+2. (OSX only) Configure iTerm2 to use the custom profile stored in the dotfiles directory. In the iTerm2 preferences window click the "browse" button and navigate to `~/dotfiles/iterm2_profile/` and select the plist file.
+3. (OSX only) Load Better Touch Tool mappings that are stored in the dotfiles directory. Open Better Touch Tool and click the import button. Choose `~/dotfiles/better_touch_tool/better_touch_tool_configuration`.
 
 ### Issues
 * Since these dotfiles are shared across my machines, there are scenarios where PATH will need to be different. PATH will need to be customized in `mixins/path`.
 
 ### TODO
-* Complete the setup script so it installs all software and configures iterm2 with my custom profile.
 * Complete the `clone_all_bitbucket_repos.sh` script so that all private repos can be cloned.
 * Complete the `erlang_manager.sh` and `hosts_manager.sh` scripts.
 * Allow for custom config files (`.bashrc`, `.zshrc`, `.gitconfig`) and custom scripts.
@@ -23,6 +28,7 @@ Run the `setup.sh`. This will install all the necessary software, setup commonly
 * Make all `source`s relative.
 * Toggle syntastic icons at the beginning of the lines with F4.
 * Integrate https://github.com/HashNuke/asdf for version management.
+* Make vim highlight HTML and scripts in HTML correctly.
 
 ###Useful commands that I often forget
 Bash/Zshell Commands
@@ -57,7 +63,7 @@ Vim Commands
 * `^A` and `^X` allow you to increment the number your cursor is over, or first number after the cursor that is on the same line.
 * `<F4>` toggles everything that occupies space to the left of the text (line numbers, gitgutter, etc...)
 * `^F-[` in tmux works the same as `^F <PageUp>`, which puts tmux into scroll mode. This command comes in handy on keyboards that don't have `<PageUp>` and `<PageDown>`.
-* `:21,25s/old/new/g` to substitute `new` for `old on lines 21 through 25.
+* `:21,25s/old/new/g` to substitute `new` for `old` on lines 21 through 25.
 * When scrolling in tmux, `<fn> <UpArrow>` and `<fn> <DownArrow>` can be used instead of `<PageUp>` and `<PageDown>`. This also comes in handy on keyboards that lack Page Up and Page Down.
 
 SSH/SCP Commands

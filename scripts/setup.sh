@@ -4,7 +4,6 @@
 # This script creates everything needed to get started on a new laptop
 ############################
 
-
 set -e # Terminate script if anything exits with a non-zero value
 set -u # Prevent unset variables
 
@@ -33,7 +32,15 @@ mkdir -p $HOME/nobackup
 unamestr=`uname`
 
 # Install oh-my-zsh first, as the laptop script doesn't install it
-curl -L http://install.ohmyz.sh | sh
+ZSH_DIR="$HOME/.oh-my-zsh"
+if [[ -d $ZSH_DIR ]]; then
+    # Update Zsh if we already have it installed
+    cd $ZSH_DIR
+    git pull origin master
+else
+    # Install it if don't have a ~/.oh-my-zsh directory
+    curl -L http://install.ohmyz.sh | sh
+fi
 
 if [[ "$unamestr" == 'Darwin' ]]; then
     # Then run our own setup script

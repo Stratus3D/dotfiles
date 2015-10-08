@@ -15,8 +15,8 @@ border="====="
 dotfiles=$HOME/dotfiles               # dotfiles directory
 olddir=$HOME/dotfiles_old             # old dotfiles backup directory
 # list of files/folders to symlink in homedir
-files="vimrc vim zshrc bashrc tmux.conf gitconfig gitignore_global ackrc ctags
-screenrc jshintrc irssi rsync-exclude tool-versions"
+files="vimrc vim zshrc bashrc tmux.conf gitignore_global ackrc ctags
+screenrc jshintrc rsync-exclude tool-versions"
 
 # Remove everything in dotfiles_old
 rm -rf $olddir
@@ -45,6 +45,11 @@ for file in $files; do
   ln -s "$dotfiles/$file" "$HOME/.$file"
 done
 
+# Generate and copy gitconfig
+./generate_gitconfig.sh
+
+# Generate and copy irssi/config
+./generate_irssi_config.sh
 
 # setup default tmuxinator project
 if [ ! -d $HOME/.tmuxinator ]; then
@@ -60,6 +65,7 @@ fi
 if [ -d $dotfiles/vim/bundle/Vundle.vim ]; then
     rm -rf $dotfiles/vim/bundle/Vundle.vim
 fi
+
 # Download vundle
 git clone https://github.com/gmarik/Vundle.vim.git $dotfiles/vim/bundle/Vundle.vim
 # Install vundle and all other plugins

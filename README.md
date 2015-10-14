@@ -58,6 +58,10 @@ Bash/Zshell Commands
 * `echo -n ✘ | hexdump` to print the encoding of a character by the console. Useful for bash scripts
 * `ssh -vT git@github.com` useful for debugging SSH authentication issues.
 
+OSX Commands
+* `su` needs to be `sudo su`
+* `| paste` needs to be `| paste -`
+
 Vim Commands
 
 * `vit` select contents of html tag. `v`isual select text `i`n a `t`ag. `dit` would delete the contents of the tag.

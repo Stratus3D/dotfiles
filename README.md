@@ -57,6 +57,8 @@ Bash/Zshell Commands
 * `kill <process_id>` kills the process identified by `<process_id>`. `-9` can be used to kill the process immediately
 * `echo -n ✘ | hexdump` to print the encoding of a character by the console. Useful for bash scripts
 * `ssh -vT git@github.com` useful for debugging SSH authentication issues.
+* `ssh-add` allows identity to be used on remote machines by using the `-A` flag with the `ssh` command.
+* `tar -cvzf tarballname.tar.gz file_or_directory` compresses `file_or_directory` to a tarball named `tarballname.tar.gz`.
 
 OSX Commands
 * `su` needs to be `sudo su`
@@ -74,6 +76,7 @@ Vim Commands
 SSH/SCP Commands
 
 * `scp localfile user@remotehost:~` to copy `localfile` up to your home directory on `remotehost`.
+* `scp user@remotehost:remote/file local/directory/` to download `file` from `remotehost`
 
 Make Targets and Commands
 

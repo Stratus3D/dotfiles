@@ -65,3 +65,6 @@ sudo apt-get -y install python-pip
 sudo add-apt-repository ppa:zeal-developers/ppa
 sudo apt-get update
 sudo apt-get -y install zeal
+
+# Enable DVD playback
+sudo /usr/share/doc/libdvdread4/install-css.sh

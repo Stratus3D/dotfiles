@@ -131,7 +131,7 @@ This is software that I need for my day-to-day programming work. I try to keep t
   * Use asdf for version management (https://github.com/HashNuke/asdf)
   * Latest version (currently v0.14.0)
 * Ruby
-  * Use rbenv for management of Ruby versions (https://github.com/sstephenson/rbenv)
+  * Use rbenv (https://github.com/sstephenson/rbenv) or asdf (https://github.com/HashNuke/asdf) for management of Ruby versions
   * Use ruby-build for installation of Ruby versions (https://github.com/sstephenson/ruby-build)
   * Versions 1.9.\* and 2.1.\*
 * Python
@@ -145,6 +145,7 @@ This is software that I need for my day-to-day programming work. I try to keep t
 
 #### Frameworks
 * Rails
+* Phoenix
 * AngularJS
 
 ###Documentation

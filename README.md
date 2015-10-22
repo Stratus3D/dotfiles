@@ -125,12 +125,11 @@ This is software that I need for my day-to-day programming work. I try to keep t
 
 #### Languages
 * Erlang
-  * Use kerl for installation of Erlang versions (https://github.com/cqwww/kerl)
+  * Use asdf for version management (https://github.com/HashNuke/asdf)
   * Versions R16 and R17
 * Elixir
+  * Use asdf for version management (https://github.com/HashNuke/asdf)
   * Latest version (currently v0.14.0)
-  * Use exenv for version management (https://github.com/mururu/exenv)
-  * Use elixir-build for installation (https://github.com/mururu/elixir-build)
 * Ruby
   * Use rbenv for management of Ruby versions (https://github.com/sstephenson/rbenv)
   * Use ruby-build for installation of Ruby versions (https://github.com/sstephenson/ruby-build)

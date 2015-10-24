@@ -46,10 +46,10 @@ for file in $files; do
 done
 
 # Generate and copy gitconfig
-./generate_gitconfig.sh
+$dotfiles/scripts/generate_gitconfig.sh
 
 # Generate and copy irssi/config
-./generate_irssi_config.sh
+$dotfiles/scripts/generate_irssi_config.sh
 
 # setup default tmuxinator project
 if [ ! -d $HOME/.tmuxinator ]; then

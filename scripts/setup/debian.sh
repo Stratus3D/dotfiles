@@ -68,3 +68,6 @@ sudo apt-get -y install zeal
 
 # Enable DVD playback
 sudo /usr/share/doc/libdvdread4/install-css.sh
+
+# Install Pandora CLI
+sudo apt-get -y install pianobar

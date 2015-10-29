@@ -38,3 +38,8 @@ alias docker="docker -H tcp://127.0.0.1:4243"
 # Less aliases
 # TODO: convert this to a function? Aliases aren't very flexible
 alias lessh='LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s" less -M '
+
+# If we aren't on OSX create an `open` alias
+if [ $(platform_name) = 'linux' ]; then
+    alias open='xdg-open'
+fi

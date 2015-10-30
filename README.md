@@ -106,9 +106,9 @@ This is software that I need for my day-to-day programming work. I try to keep t
 #### Tools
 * Git
 * Vim
+* Tmux
 * Z shell ([http://zsh.sourceforge.net/](http://zsh.sourceforge.net/))
 * oh-my-zsh ([https://github.com/robbyrussell/oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh))
-* Tmux
 * Tmuxinator ([https://github.com/tmuxinator/tmuxinator](https://github.com/tmuxinator/tmuxinator))
 * Exuberant Ctags ([http://ctags.sourceforge.net/](http://ctags.sourceforge.net/))
 * iTerm2 (for Mac OSX)
@@ -136,6 +136,7 @@ This is software that I need for my day-to-day programming work. I try to keep t
   * Versions 1.9.\* and 2.1.\*
 * Python
 * Lua
+  * Use asdf for version management (https://github.com/HashNuke/asdf)
   * LuaRocks for package management (https://luarocks.org/)
 * Javascript(NodeJS)
   * Use installer from (http://nodejs.org/)

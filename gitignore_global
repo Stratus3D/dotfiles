@@ -31,7 +31,6 @@
 # Logs and databases #
 ######################
 *.log
-*.sql
 *.sqlite
 
 # ctags file         #

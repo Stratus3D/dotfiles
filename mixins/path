@@ -2,11 +2,7 @@
 export DEVELOPMENT_DIR=$HOME/Development
 
 # Misc
-PATH=$HOME/lib/luarocks-2.1.1\ Copy/src/bin:$HOME/lib/apache-ant-1.9.3/bin:$ANDROID_HOME/sdk/platform-tools:$ANDROID_HOME/sdk/tools:$HOME/lib/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:/Applications/CoronaSDK:$HOME/lib:/usr/local/bin:$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:$PATH
-
-# Lua
-PATH=$HOME/lib/lua/current/bin:$PATH
-PATH=$HOME/lib/luarocks/current/bin:$PATH
+PATH=$HOME/lib/apache-ant-1.9.3/bin:$ANDROID_HOME/sdk/platform-tools:$ANDROID_HOME/sdk/tools:$HOME/lib/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:/Applications/CoronaSDK:/usr/local/bin:$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:$PATH
 
 # Binaries for development
 PATH=$HOME/bin:$PATH

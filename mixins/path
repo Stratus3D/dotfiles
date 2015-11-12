@@ -10,10 +10,6 @@ PATH=$HOME/bin:$PATH
 # Brew
 PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-# Elixir
-PATH=$HOME/lib/elixir/current/bin:$PATH
-PATH=$HOME/lib/elixir/bin:$PATH
-
 # Erlang
 PATH=$HOME/erlang_17/bin:$PATH
 PATH=$HOME/erlang/bin:$PATH

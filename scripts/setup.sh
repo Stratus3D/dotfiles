@@ -88,8 +88,8 @@ else
 fi
 
 # Install all the plugins needed
-asdf plugin-add elixir https://github.com/HashNuke/asdf-elixir.git
 asdf plugin-add erlang https://github.com/HashNuke/asdf-erlang.git
+asdf plugin-add elixir https://github.com/HashNuke/asdf-elixir.git
 asdf plugin-add ruby https://github.com/HashNuke/asdf-ruby.git
 asdf plugin-add lua https://github.com/Stratus3D/asdf-lua.git
 

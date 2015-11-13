@@ -68,6 +68,9 @@ else
   git pull origin master
 fi
 
+# Change to the dotfiles directory either way
+cd $DOTFILES_DIR
+
 # run the install script, which symlinks the dotfiles
 chmod +x $DOTFILE_SCRIPTS_DIR/makesymlinks.sh
 $DOTFILE_SCRIPTS_DIR/makesymlinks.sh

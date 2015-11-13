@@ -8,8 +8,7 @@ My dotfiles. Everything I need to get setup on a new machine.
 ### Installation
 1. Run the `setup.sh`. This will install all the necessary software, setup commonly used directories, and install dotfiles. Since the setup script is idempotent it can be run on machines that have already been setup without causing issues.
 
-       curl --remote-name https://raw.githubusercontent.com/Stratus3D/dotfiles/master/scripts/setup.sh
-       sh setup.sh 2>&1 | tee ~/setup.log
+        wget -O - https://raw.githubusercontent.com/Stratus3D/dotfiles/master/scripts/setup.sh | sh 2>&1 | tee ~/setup.log
 
     On Debian this is all you need to do. Everything should be installed and configured correctly. On OSX there are two remaining steps.
 

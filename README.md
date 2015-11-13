@@ -139,7 +139,7 @@ This is software that I need for my day-to-day programming work. I try to keep t
   * Use asdf for version management (https://github.com/HashNuke/asdf)
   * LuaRocks for package management (https://luarocks.org/)
 * Javascript(NodeJS)
-  * Use installer from (http://nodejs.org/)
+  * Use asdf for version management (https://github.com/HashNuke/asdf)
 * Go
   * Download from (https://golang.org)
   * gvm version management (https://github.com/moovweb/gvm)

@@ -11,6 +11,31 @@ set -u # Prevent unset variables
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 ############################
+# Setup dotfiles
+############################
+cd $HOME
+
+DOTFILES_DIR=$HOME/dotfiles
+DOTFILE_SCRIPTS_DIR=$DOTFILES_DIR/scripts
+
+if [ ! -d $DOTFILES_DIR ]; then
+  git clone ssh://git@github.com/Stratus3D/dotfiles.git $DOTFILES_DIR
+else
+  cd $DOTFILES_DIR
+  git pull origin master
+fi
+
+# Change to the dotfiles directory either way
+cd $DOTFILES_DIR
+
+# run the install script, which symlinks the dotfiles
+chmod +x $DOTFILE_SCRIPTS_DIR/makesymlinks.sh
+$DOTFILE_SCRIPTS_DIR/makesymlinks.sh
+
+# Reload after installing dotfiles
+source $HOME/.bashrc
+
+############################
 # Create commonly used directories
 ############################
 # TODO: The names of these directories are duplicated elsewhere.
@@ -52,31 +77,6 @@ fi
 
 # Install nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | bash
-
-############################
-# Setup dotfiles
-############################
-cd $HOME
-
-DOTFILES_DIR=$HOME/dotfiles
-DOTFILE_SCRIPTS_DIR=$DOTFILES_DIR/scripts
-
-if [ ! -d $DOTFILES_DIR ]; then
-  git clone ssh://git@github.com/Stratus3D/dotfiles.git $DOTFILES_DIR
-else
-  cd $DOTFILES_DIR
-  git pull origin master
-fi
-
-# Change to the dotfiles directory either way
-cd $DOTFILES_DIR
-
-# run the install script, which symlinks the dotfiles
-chmod +x $DOTFILE_SCRIPTS_DIR/makesymlinks.sh
-$DOTFILE_SCRIPTS_DIR/makesymlinks.sh
-
-# Reload after installing dotfiles
-source $HOME/.bashrc
 
 ############################
 # Install asdf for version management

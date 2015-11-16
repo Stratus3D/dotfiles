@@ -126,14 +126,11 @@ This is software that I need for my day-to-day programming work. I try to keep t
 #### Languages
 * Erlang
   * Use asdf for version management (https://github.com/HashNuke/asdf)
-  * Versions R16 and R17
 * Elixir
   * Use asdf for version management (https://github.com/HashNuke/asdf)
-  * Latest version (currently v0.14.0)
 * Ruby
   * Use rbenv (https://github.com/sstephenson/rbenv) or asdf (https://github.com/HashNuke/asdf) for management of Ruby versions
   * Use ruby-build for installation of Ruby versions (https://github.com/sstephenson/ruby-build)
-  * Versions 1.9.\* and 2.1.\*
 * Python
 * Lua
   * Use asdf for version management (https://github.com/HashNuke/asdf)
@@ -145,9 +142,9 @@ This is software that I need for my day-to-day programming work. I try to keep t
   * gvm version management (https://github.com/moovweb/gvm)
 
 #### Frameworks
-* Rails
-* Phoenix
-* AngularJS
+* [Rails](http://rubyonrails.org/)
+* [Phoenix](http://www.phoenixframework.org/)
+* [AngularJS](https://angularjs.org/)
 
 ###Documentation
 Offline documentation suitable for day to day use.

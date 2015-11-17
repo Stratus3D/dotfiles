@@ -62,6 +62,7 @@ if [[ -d $ZSH_DIR ]]; then
     # Update Zsh if we already have it installed
     cd $ZSH_DIR
     git pull origin master
+    cd -
 else
     # Install it if don't have a ~/.oh-my-zsh directory
     curl -L http://install.ohmyz.sh | sh
@@ -82,6 +83,8 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | b
 # Install asdf for version management
 ############################
 ASDF_DIR=$HOME/.asdf
+cd $HOME
+
 if [ ! -d $ASDF_DIR ]; then
     echo "Installing asdf..."
     git clone https://github.com/HashNuke/asdf.git $ASDF_DIR
@@ -95,6 +98,7 @@ asdf plugin-add erlang https://github.com/HashNuke/asdf-erlang.git
 asdf plugin-add elixir https://github.com/HashNuke/asdf-elixir.git
 asdf plugin-add ruby https://github.com/HashNuke/asdf-ruby.git
 asdf plugin-add lua https://github.com/Stratus3D/asdf-lua.git
+asdf install
 
 ############################
 # Install devdocs

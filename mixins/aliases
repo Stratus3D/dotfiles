@@ -43,3 +43,10 @@ alias lessh='LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s" less -M '
 if [[ $(uname -a) =~ 'Linux' ]]; then
     alias open='xdg-open'
 fi
+
+# Custom options
+RC_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+if [ -f "$RC_DIR/dotfiles/mixins/aliases.custom" ]; then
+    source "$RC_DIR/dotfiles/mixins/aliases.custom"
+fi

@@ -13,5 +13,4 @@ RC_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 if [ -f "$RC_DIR/dotfiles/mixins/shellrc.custom" ]; then
     source "$RC_DIR/dotfiles/mixins/shellrc.custom"
-    echo "Including custom!"
 fi

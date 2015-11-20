@@ -9,6 +9,9 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # Install command-line JSON processor
 brew install jq
 
+# Install pianobar for music
+brew install pianobar
+
 # Install lua
 "$DIR/install/lua_darwin.sh"
 # TODO: write code to install software on Darwin

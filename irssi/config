@@ -295,6 +295,8 @@ settings = {
     # Solarized
     theme = "solarized-universal";
     hilight_color = "= %R";
+    autolog_path = "~/.irssi/logs/$tag/$0.log";
+    autolog = "yes";
   };
   hilights = (
   );

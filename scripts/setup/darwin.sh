@@ -12,7 +12,5 @@ brew install jq
 # Install pianobar for music
 brew install pianobar
 
-# Install lua
-"$DIR/install/lua_darwin.sh"
 # TODO: write code to install software on Darwin
 echo "Script for Darwin incomplete. Please install all the software manually."

@@ -12,6 +12,5 @@ else
     echo "apt-get is missing. Please install all packages listed in '$DIR/debian.sh' manually."
 fi
 
-"$DIR/install/lua_linux.sh"
 # TODO: write code to install software on Linux
 echo "Script for Linux incomplete. Please install all missing software manually."

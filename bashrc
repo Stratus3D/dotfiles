@@ -31,3 +31,10 @@ export NVM_DIR="$HOME/.nvm"
 
 # We need this so that tmux uses bash when started in a bash shell
 export SHELL=/bin/bash
+
+# Keep all history
+export HISTFILESIZE=
+export HISTSIZE=
+export HISTFILE=~/.bash_eternal_history
+#HISTFILE="${HOME}/.history/$(date -u +%Y/%m/%d.%H.%M.%S)_${USER}_$$"
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"

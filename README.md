@@ -100,6 +100,9 @@ Irssi Commands
 Gcc Flags
 * `-ftrapv` trap signed integer overflows
 
+Erlang Flags
+* `bin_opt_info` print warnings and information about how binaries are used
+
 ### Software
 This is software that I need for my day-to-day programming work. I try to keep this list updated with the latest software I am using. This allows me to quickly setup new development machines. I am developing a script named checkenv.sh that will verify everything is setup properly.
 

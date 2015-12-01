@@ -45,6 +45,11 @@ ZSH_THEME="blinks" #"robbyrussell"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 
+# Keep as much history as possible
+# TODO: This needs to be set to LONG_MAX from limits.h
+# http://www.zsh.org/mla/users/2013/msg00695.html
+HISTSIZE=
+
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 

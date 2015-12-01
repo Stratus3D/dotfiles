@@ -27,7 +27,7 @@ My dotfiles. Everything I need to get setup on a new machine.
 * Toggle syntastic icons at the beginning of the lines with F4.
 * Integrate https://github.com/HashNuke/asdf for version management.
 * Make vim highlight HTML and scripts in HTML correctly.
-* Configure Bash and Zsh with infinite history.
+* Configure Zsh with infinite history.
 
 ###Useful commands that I often forget
 Bash/Zshell Commands

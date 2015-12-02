@@ -29,6 +29,12 @@ wget -O - https://www.hipchat.com/keys/hipchat-linux.key | apt-key add -
 sudo apt-get update
 sudo apt-get -y install hipchat
 
+# Install skype
+# Skype is in the canonical partner repository
+sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
+sudo apt-get update
+sudo apt-get -y install skype
+
 # Flux for lighting
 sudo add-apt-repository ppa:kilian/f.lux
 sudo apt-get update

@@ -21,7 +21,7 @@ sudo apt-get -y install irssi
 sudo apt-get -y install thunderbird
 #sudo apt-get -y install chrome # chrome isn't available
 
-# Install hipchat
+# Hipchat
 sudo su
 echo "deb http://downloads.hipchat.com/linux/apt stable main" > \
     /etc/apt/sources.list.d/atlassian-hipchat.list
@@ -29,11 +29,18 @@ wget -O - https://www.hipchat.com/keys/hipchat-linux.key | apt-key add -
 sudo apt-get update
 sudo apt-get -y install hipchat
 
-# Install skype
+# Skype
 # Skype is in the canonical partner repository
+# https://help.ubuntu.com/community/Skype
 sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
 sudo apt-get update
 sudo apt-get -y install skype
+
+# Google Chrome
+sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install google-chrome-stable
 
 # Flux for lighting
 sudo add-apt-repository ppa:kilian/f.lux

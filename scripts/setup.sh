@@ -32,9 +32,6 @@ cd $DOTFILES_DIR
 chmod +x $DOTFILE_SCRIPTS_DIR/makesymlinks.sh
 $DOTFILE_SCRIPTS_DIR/makesymlinks.sh
 
-# Reload after installing dotfiles
-source $HOME/.bashrc
-
 ############################
 # Create commonly used directories
 ############################
@@ -118,15 +115,6 @@ thor docs:download --all
 pip install Pygments
 
 ############################
-# Place third party scripts in ~/bin
-############################
-cd $HOME/bin
-
-# Download kerl
-curl -O https://raw.githubusercontent.com/spawngrid/kerl/master/kerl
-chmod a+x kerl
-
-############################
 # Setup cpan and install packages for irssi
 ############################
 
@@ -135,5 +123,8 @@ cpan Lingua::Ispell
 ############################
 # Check environment and print out results
 ############################
+
+# Reload after installing dotfiles
+source $HOME/.bashrc
 
 $DIR/checkenv.sh

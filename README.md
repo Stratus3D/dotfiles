@@ -17,7 +17,7 @@ My dotfiles. Everything I need to get setup on a new machine.
 3. (OSX only) Load Better Touch Tool mappings that are stored in the dotfiles directory. Open Better Touch Tool and click the import button. Choose `~/dotfiles/better_touch_tool/better_touch_tool_configuration`.
 
 ### Issues
-* Since these dotfiles are shared across my machines, there are scenarios where PATH will need to be different. PATH will need to be customized in `mixins/path`.
+* Setup script expects git to already be installed. If git is missing the setup script breaks. We can't assume git will be installed and we need to install it before using it to setup the machine.
 
 ### TODO
 * Complete the `clone_all_bitbucket_repos.sh` script so that all private repos can be cloned.

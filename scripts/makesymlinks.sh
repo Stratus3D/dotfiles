@@ -18,6 +18,19 @@ olddir=$HOME/dotfiles_old             # old dotfiles backup directory
 files="vimrc vim zshrc bashrc tmux.conf gitignore_global ackrc ctags
 screenrc jshintrc rsync-exclude tool-versions agignore"
 
+###############################################################################
+# Functions
+###############################################################################
+
+symlink_file_if_missing() {
+    local source=$1
+    local destination=$2
+
+    if [ ! -f $destination ]; then
+        ln -nfs $source $destination
+    fi
+}
+
 # Remove everything in dotfiles_old
 rm -rf $olddir
 
@@ -81,9 +94,9 @@ if [ -d $HOME/.gconf/ ]; then
     #if [ -d $PROFILES/Solarized ]; then
     #    rm -r $PROFILES/Solarized
     #fi
-    ln -nfs $dotfiles/gnome_terminal_profile/profiles/Solarized/%gconf.xml $PROFILES/Solarized/%gconf.xml
+    symlink_file_if_missing $dotfiles/gnome_terminal_profile/profiles/Solarized/%gconf.xml $PROFILES/Solarized/%gconf.xml
     # Link global gconf.xml
-    ln -nfs $dotfiles/gnome_terminal_profile/global/%gconf.xml $TERMINAL_APP/global/%gconf.xml
+    symlink_file_if_missing $dotfiles/gnome_terminal_profile/global/%gconf.xml $TERMINAL_APP/global/%gconf.xml
     echo "Gnome profile linked"
 fi
 

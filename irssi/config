@@ -24,7 +24,13 @@ chatnets = {
 
 channels = (
   { name = "#freenode"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "#irssi"; chatnet = "Freenode"; autojoin = "No"; }
+  { name = "#irssi"; chatnet = "Freenode"; autojoin = "No"; },
+  { name = "#erlang"; chatnet = "Freenode"; autojoin = "Yes"; },
+  { name = "#erlounge"; chatnet = "Freenode"; autojoin = "Yes"; },
+  { name = "#elixir"; chatnet = "Freenode"; autojoin = "Yes"; },
+  { name = "#rubyonrails"; chatnet = "Freenode"; autojoin = "No"; }
+  { name = "#lua"; chatnet = "Freenode"; autojoin = "No"; }
+  { name = "#lua-support"; chatnet = "Freenode"; autojoin = "No"; }
 );
 
 aliases = {

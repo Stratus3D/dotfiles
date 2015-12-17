@@ -19,6 +19,8 @@ sudo apt-get -y install rbenv
 # Communication apps
 sudo apt-get -y install irssi
 sudo apt-get -y install thunderbird
+sudo apt-get -y install enigmail # For secure email
+
 #sudo apt-get -y install chrome # chrome isn't available
 
 # Hipchat
@@ -80,6 +82,9 @@ sudo apt-get -y install python-pip
 sudo add-apt-repository ppa:zeal-developers/ppa
 sudo apt-get update
 sudo apt-get -y install zeal
+
+# ReText
+sudo apt-get -y install retext
 
 # Enable DVD playback
 sudo /usr/share/doc/libdvdread4/install-css.sh

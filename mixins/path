@@ -23,13 +23,6 @@ if [ -f $JAVA_HOME_BIN ]; then
     PATH=$JAVA_HOME/bin:$PATH
 fi
 
-# rbenv
-# I am leaving this here as it does have an effect on my $PATH
-# I might want to move this to a better location later
-export RBENV_ROOT=$HOME/.rbenv
-PATH=$RBENV_ROOT/bin:$PATH
-eval "$(rbenv init - zsh)"
-
 # Neo4j
 PATH=$HOME/lib/neo4j-community-2.0.0-RC1/bin/neo4j:$PATH
 

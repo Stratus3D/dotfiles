@@ -329,7 +329,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>154 474 592 584 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 27 1873 1030 0 0 1920 1057 </string>
+	<string>0 23 1873 1034 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>136 52 650 476 0 0 1280 778 </string>
 	<key>NeverWarnAboutShortLivedSessions_F8A2BF92-AD20-4186-BD7F-064D9C0984C9</key>
@@ -1072,7 +1072,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>453748402.34854102</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>465496236.58392501</real>
+	<real>466433715.36471099</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -1135,11 +1135,11 @@
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedURL</key>
-	<string>http://iterm2.com/appcasts/testing.xml</string>
+	<string>https://iterm2.com/appcasts/testing.xml</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-10-02T16:29:21Z</date>
+	<date>2015-10-13T12:54:34Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -1195,6 +1195,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.1.3</string>
+	<string>2.1.4</string>
 </dict>
 </plist>

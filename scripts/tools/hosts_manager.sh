@@ -4,27 +4,30 @@
 # TODO:
 # * Consider a lock to prevent races between add_host and rm_host. $ACTIVE_FLAG 
 #   might make a good lock.
-# * $HOME env variable and consequently the $VARDIR env variable. Potentially
+# * $HOME env variable and consequently the $HOST_DIR env variable. Potentially
 #   {add,rm}_host may act on different files to {start,stop}_block. Note that
 #   this won't present itself if you only use sudo. Reconsider what you want
-#   $VARDIR to be. On a a single user machine /var/ may be a good choice.
+#   $HOST_DIR to be. On a a single user machine /var/ may be a good choice.
 
 set -u # Prevent unset variables
 set -e # Stop on an error
 
 
 # Put the original in the dotfiles repo, so it shows up with git status
-VARDIR="$HOME/dotfiles/hosts_profiles"
+HOST_DIR="$HOME/.hosts"
+
+# Create HOST_DIR if doesn't exist
+mkdir -p $HOST_DIR
 
 # Actual host file to be swapped around.
 HOST_FILE="/etc/hosts"
 
 # Original host file without any of the appended blocked hosts.
 # Store the original file in the etc dir so others can find it.
-ORIG_FILE="/etc/hosts.original"
+ORIG_FILE="$HOST_DIR/hosts.original"
 
 # List of blocked hosts. TODO: This will be replaced by different "profiles"
-BLCK_FILE="$VARDIR/blocked_host"
+BLCK_FILE="$HOST_DIR/blocked_host"
 
 # Temporary file used when removing hosts.
 BLCK_TEMP=$(mktemp -t "blocked_hosts") || $(mktemp /tmp/blocked_hosts.XXXXXXX) || exit 1
@@ -34,7 +37,7 @@ BLCK_TEMP=$(mktemp -t "blocked_hosts") || $(mktemp /tmp/blocked_hosts.XXXXXXX) |
 [[ -e $BLCK_FILE ]] || sudo touch "$BLCK_FILE"
 
 # Check to see if the block is currently active.
-ACTIVE_FLAG="$HOME/.wrk_block.flag"
+ACTIVE_FLAG="$HOST_DIR/.wrk_block.flag"
 
 
 usage()
@@ -43,7 +46,7 @@ usage()
     Usage: hosts_manager  [command] [host1 host2 ...]
 
     Commands:
-    profiles                   list all the profiles in \$VARDIR
+    profiles                   list all the profiles in \$HOST_DIR
     show [profile ...]         list blocked hosts in profile
     add [profile, host ...]    add a host to be blocked
     rm [profile, host ...]     remove hosts from block
@@ -115,7 +118,7 @@ stop_block()
 
 print_profiles()
 {
-    ls $VARDIR | cat
+    ls $HOST_DIR | cat
 }
 while getopts :a FLAG; do
     case $FLAG in

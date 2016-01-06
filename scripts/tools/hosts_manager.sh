@@ -26,6 +26,9 @@ HOST_FILE="/etc/hosts"
 # Store the original file in the etc dir so others can find it.
 ORIG_FILE="$HOST_DIR/hosts.original"
 
+# The pattern used to filter files in the $HOST_DIR
+HOST_PROFILES_PATTERN="*_host"
+
 # List of blocked hosts. TODO: This will be replaced by different "profiles"
 BLCK_FILE="$HOST_DIR/blocked_host"
 
@@ -116,9 +119,10 @@ stop_block()
     fi
 }
 
-print_profiles()
+get_profiles()
 {
-    ls $HOST_DIR | cat
+    #find $HOST_DIR -name "$HOST_PROFILES_PATTERN" -printf "%f\n" | cat
+    find $HOST_DIR -name "$HOST_PROFILES_PATTERN" | xargs basename | cat
 }
 while getopts :a FLAG; do
     case $FLAG in
@@ -145,7 +149,7 @@ if [ $# -gt 0 ]; then
             check_root
             stop_block;;
         'ls' | 'list' | 'profiles')
-            print_profiles;;
+            get_profiles;;
         *)
             usage;;
     esac

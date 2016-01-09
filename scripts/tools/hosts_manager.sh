@@ -26,18 +26,17 @@ HOST_FILE="/etc/hosts"
 # Store the original file in the etc dir so others can find it.
 ORIG_FILE="$HOST_DIR/hosts.original"
 
-# The pattern used to filter files in the $HOST_DIR
-HOST_PROFILES_PATTERN="*_host"
+# Suffix added to the profile names when writting files
+HOST_PROFILES_SUFFIX="_host"
 
-# List of blocked hosts. TODO: This will be replaced by different "profiles"
-BLCK_FILE="$HOST_DIR/blocked_host"
+# The pattern used to filter files in the $HOST_DIR
+HOST_PROFILES_PATTERN="*"$HOST_PROFILES_SUFFIX
 
 # Temporary file used when removing hosts.
 BLCK_TEMP=$(mktemp -t "blocked_hosts") || $(mktemp /tmp/blocked_hosts.XXXXXXX) || exit 1
 
 # Make sure files exist.
 [[ -e $ORIG_FILE ]] || sudo touch "$ORIG_FILE"
-[[ -e $BLCK_FILE ]] || sudo touch "$BLCK_FILE"
 
 # Check to see if the block is currently active.
 ACTIVE_FLAG="$HOST_DIR/.wrk_block.flag"
@@ -46,13 +45,13 @@ ACTIVE_FLAG="$HOST_DIR/.wrk_block.flag"
 usage()
 {
     cat <<EOF
-    Usage: hosts_manager  [command] [host1 host2 ...]
+    Usage: hosts_manager  [command]
 
     Commands:
     profiles                   list all the profiles in \$HOST_DIR
     show [profile ...]         list blocked hosts in profile
     add [profile, host ...]    add a host to be blocked
-    rm [profile, host ...]     remove hosts from block
+    rm [profile, host ...]     remove hosts from profile
     start [profile ...]        start blocking
     stop [profile ...]         stop blocking
 EOF
@@ -67,9 +66,12 @@ fi
 add_host()
 {
     local hosts=("$@")
+    local profile=$0
+    local profile_file=$profile$HOST_PROFILES_SUFFIX
+
     for host in "${hosts[@]:1}"; do
         # append host to blocked hosts list
-        echo "127.0.0.1 $host" >> "$BLCK_FILE"
+        echo "127.0.0.1 $host" >> "$profile_file"
         echo -e "\033[0;32madded\033[0m $host"
     done
 }
@@ -78,10 +80,13 @@ add_host()
 rm_host()
 {
     local hosts=("$@")
+    local profile=$0
+    local profile_file=$profile$HOST_PROFILES_SUFFIX
+
     for host in "${hosts[@]:1}"; do
         # overwrite host list file with a copy removing a certain host
-        awk -v host=$host 'NF==2 && $2!=host { print }' "$BLCK_FILE" > "$BLCK_TEMP"
-        mv "$BLCK_TEMP" "$BLCK_FILE"
+        awk -v host=$host 'NF==2 && $2!=host { print }' "$profile_file" > "$BLCK_TEMP"
+        mv "$BLCK_TEMP" "$profile_file"
         echo -e "\033[0;31mremoved\033[0m $host"
     done
 }
@@ -98,9 +103,12 @@ check_root()
 
 start_block()
 {
+    local profile=$0
+    local profile_file=$profile$HOST_PROFILES_SUFFIX
+
     if [[ $IS_ACTIVE -ne 0 ]]; then
         cp "$HOST_FILE" "$ORIG_FILE"
-        cat "$BLCK_FILE" >> "$HOST_FILE"
+        cat "$profile_file" >> "$HOST_FILE"
         touch "$ACTIVE_FLAG"
         echo "Block started."
     else
@@ -135,6 +143,7 @@ done
 if [ $# -gt 0 ]; then
     case $1 in
         'show')
+            # TODO: Add code to return the filename of the current profile
             awk 'NF == 2 { print $2 }; END { if (!NR) print "Empty" }' "$BLCK_FILE";;
         'add')
             [[ -z $2 ]] && { usage; exit 1; }

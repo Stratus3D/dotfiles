@@ -24,7 +24,7 @@ HOST_FILE="/etc/hosts"
 
 # Original host file without any of the appended blocked hosts.
 # Store the original file in the etc dir so others can find it.
-ORIG_FILE="$HOST_DIR/hosts.original"
+ORIG_FILE="$HOST_DIR/hosts_original"
 
 # Suffix added to the profile names when writting files
 HOST_PROFILES_SUFFIX="_host"
@@ -63,6 +63,11 @@ else
     IS_ACTIVE=1
 fi
 
+get_current_profile()
+{
+    first_line=$(head -n 1 $HOST_FILE)
+    # TODO: Should return the name of the current profile if one is set.
+}
 add_host()
 {
     local hosts=("$@")

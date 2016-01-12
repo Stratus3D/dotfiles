@@ -48,7 +48,7 @@ usage()
     Usage: hosts_manager  [command]
 
     Commands:
-    profiles                   list all the profiles in \$HOST_DIR
+    profiles                   list all the profiles in $HOST_DIR
     show [profile ...]         list blocked hosts in profile
     add [profile, host ...]    add a host to be blocked
     rm [profile, host ...]     remove hosts from profile
@@ -66,6 +66,10 @@ fi
 get_current_profile()
 {
     first_line=$(head -n 1 $HOST_FILE)
+    OFIS="$IFS"
+    IFS=':' line=$($first_line) IFS="$OFIS"
+    prefix=${$line[0]}
+    profile=${$line[1]}
     # TODO: Should return the name of the current profile if one is set.
 }
 add_host()

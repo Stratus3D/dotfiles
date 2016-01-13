@@ -35,13 +35,6 @@ HOST_PROFILES_PATTERN="*"$HOST_PROFILES_SUFFIX
 # Temporary file used when removing hosts.
 BLCK_TEMP=$(mktemp -t "blocked_hosts") || $(mktemp /tmp/blocked_hosts.XXXXXXX) || exit 1
 
-# Make sure files exist.
-[[ -e $ORIG_FILE ]] || sudo touch "$ORIG_FILE"
-
-# Check to see if the block is currently active.
-ACTIVE_FLAG="$HOST_DIR/.wrk_block.flag"
-
-
 usage()
 {
     cat <<EOF
@@ -54,23 +47,27 @@ usage()
     rm [profile, host ...]     remove hosts from profile
     start [profile ...]        start blocking
     stop [profile ...]         stop blocking
+
+
+    Current Profile: $(get_current_profile)
 EOF
 }
-
-if [[ -e $ACTIVE_FLAG ]]; then
-    IS_ACTIVE=0
-else
-    IS_ACTIVE=1
-fi
 
 get_current_profile()
 {
     first_line=$(head -n 1 $HOST_FILE)
     OFIS="$IFS"
-    IFS=':' line=$($first_line) IFS="$OFIS"
-    prefix=${$line[0]}
-    profile=${$line[1]}
-    # TODO: Should return the name of the current profile if one is set.
+    IFS=':' read -ra line <<< "$first_line" IFS="$OFIS"
+    line_segments=${#line[@]}
+    if (( line_segments > 1 )); then
+        prefix=${$line[0]}
+        IFS=' ' prefix_length=${#$(prefix)[@]} IFS="$OFIS"
+        profile=${$line[1]}
+        echo $prefix
+        echo $profile
+        # TODO: Should return the name of the current profile if one is set.
+    fi
+    # Otherwise, no profile
 }
 add_host()
 {
@@ -141,6 +138,13 @@ get_profiles()
     #find $HOST_DIR -name "$HOST_PROFILES_PATTERN" -printf "%f\n" | cat
     find $HOST_DIR -name "$HOST_PROFILES_PATTERN" | xargs basename | cat
 }
+
+if [[ "" = "$(get_current_profile)" ]]; then
+    IS_ACTIVE=0
+else
+    IS_ACTIVE=1
+fi
+
 while getopts :a FLAG; do
     case $FLAG in
         \?)

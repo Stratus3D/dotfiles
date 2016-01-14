@@ -47,10 +47,19 @@ usage()
     rm [profile, host ...]     remove hosts from profile
     start [profile ...]        start blocking
     stop [profile ...]         stop blocking
+EOF
 
+    if [[ $(get_current_profile) != "" ]]; then
+        cat << EOF
 
     Current Profile: $(get_current_profile)
 EOF
+    else
+        cat << EOF
+
+    No profile set
+EOF
+    fi
 }
 
 get_current_profile()

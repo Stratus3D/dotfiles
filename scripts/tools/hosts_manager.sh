@@ -35,33 +35,6 @@ HOST_PROFILES_PATTERN="*"$HOST_PROFILES_SUFFIX
 # Temporary file used when removing hosts.
 BLCK_TEMP=$(mktemp -t "blocked_hosts") || $(mktemp /tmp/blocked_hosts.XXXXXXX) || exit 1
 
-usage()
-{
-    cat <<EOF
-    Usage: hosts_manager  [command]
-
-    Commands:
-    profiles                   list all the profiles in $HOST_DIR
-    show [profile ...]         list blocked hosts in profile
-    add [profile, host ...]    add a host to be blocked
-    rm [profile, host ...]     remove hosts from profile
-    start [profile ...]        start blocking
-    stop [profile ...]         stop blocking
-EOF
-
-    if [[ $(get_current_profile) != "" ]]; then
-        cat << EOF
-
-    Current Profile: $(get_current_profile)
-EOF
-    else
-        cat << EOF
-
-    No profile set
-EOF
-    fi
-}
-
 get_current_profile()
 {
     first_line=$(head -n 1 $HOST_FILE)
@@ -78,6 +51,47 @@ get_current_profile()
     fi
     # Otherwise, no profile
 }
+
+# Set IS_ACTIVE based on whether or not a custom profile is currently set
+if [[ "$(get_current_profile)" = "" ]]; then
+    IS_ACTIVE=0
+else
+    IS_ACTIVE=1
+fi
+
+usage()
+{
+    cat <<EOF
+    Usage: hosts_manager  [command]
+
+    Commands:
+    profiles                   list all the profiles in $HOST_DIR
+    show [profile ...]         list blocked hosts in profile
+    add [profile, host ...]    add a host to be blocked
+    rm [profile, host ...]     remove hosts from profile
+    start [profile ...]        start blocking
+    stop [profile ...]         stop blocking
+EOF
+
+    if [[ $IS_ACTIVE = 1 ]]; then
+        cat << EOF
+
+    Current Profile: $(get_current_profile)
+EOF
+    else
+        cat << EOF
+
+    No profile set
+EOF
+    fi
+}
+
+backup_original() {
+    if [[ $IS_ACTIVE = 0 ]]; then
+        cp $HOST_FILE $ORIG_FILE
+    fi
+}
+
 add_host()
 {
     local hosts=("$@")
@@ -147,12 +161,6 @@ get_profiles()
     #find $HOST_DIR -name "$HOST_PROFILES_PATTERN" -printf "%f\n" | cat
     find $HOST_DIR -name "$HOST_PROFILES_PATTERN" | xargs basename | cat
 }
-
-if [[ "" = "$(get_current_profile)" ]]; then
-    IS_ACTIVE=0
-else
-    IS_ACTIVE=1
-fi
 
 while getopts :a FLAG; do
     case $FLAG in

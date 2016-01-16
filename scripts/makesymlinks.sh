@@ -22,6 +22,12 @@ screenrc jshintrc rsync-exclude tool-versions agignore"
 # Functions
 ###############################################################################
 
+print_heading() {
+    local text=$1
+
+    echo "$border $text $border"
+}
+
 symlink_file_if_missing() {
     local source=$1
     local destination=$2
@@ -100,4 +106,4 @@ if [ -d $HOME/.gconf/ ]; then
     echo "Gnome profile linked"
 fi
 
-echo "$border Linking complete! $border"
+print_heading "Linking complete!"

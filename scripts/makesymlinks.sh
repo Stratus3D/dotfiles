@@ -28,6 +28,14 @@ print_heading() {
     echo "$border $text $border"
 }
 
+make_dir_if_missing() {
+    local directory=$1
+
+    if [ ! -d $directory ]; then
+        mkdir $directory
+    fi
+}
+
 symlink_file_if_missing() {
     local source=$1
     local destination=$2
@@ -71,9 +79,7 @@ $dotfiles/scripts/generate_gitconfig.sh
 $dotfiles/scripts/generate_irssi_config.sh
 
 # setup default tmuxinator project
-if [ ! -d $HOME/.tmuxinator ]; then
-  mkdir $HOME/.tmuxinator
-fi
+make_dir_if_missing $HOME/.tmuxinator
 
 # link the default tmuxinator project
 if [ ! -L $HOME/.tmuxinator/default.yml ]; then

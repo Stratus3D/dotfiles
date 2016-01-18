@@ -36,6 +36,14 @@ make_dir_if_missing() {
     fi
 }
 
+remove_dir_if_exists() {
+    local directory=$1
+
+    if [ -d $directory ]; then
+        rm -rf $directory
+    fi
+}
+
 symlink_file_if_missing() {
     local source=$1
     local destination=$2
@@ -87,9 +95,7 @@ if [ ! -L $HOME/.tmuxinator/default.yml ]; then
 fi
 
 # If vundle is already installed, remove it and fetch the latest from Github
-if [ -d $dotfiles/vim/bundle/Vundle.vim ]; then
-    rm -rf $dotfiles/vim/bundle/Vundle.vim
-fi
+remove_dir_if_exists $dotfiles/vim/bundle/Vundle.vim
 
 # Download vundle
 git clone https://github.com/gmarik/Vundle.vim.git $dotfiles/vim/bundle/Vundle.vim
@@ -103,10 +109,8 @@ if [ -d $HOME/.gconf/ ]; then
     echo "Linking gnome profile..."
 
     # Link Solarized profile
-    #if [ -d $PROFILES/Solarized ]; then
-    #    rm -r $PROFILES/Solarized
-    #fi
     symlink_file_if_missing $dotfiles/gnome_terminal_profile/profiles/Solarized/%gconf.xml $PROFILES/Solarized/%gconf.xml
+
     # Link global gconf.xml
     symlink_file_if_missing $dotfiles/gnome_terminal_profile/global/%gconf.xml $TERMINAL_APP/global/%gconf.xml
     echo "Gnome profile linked"

@@ -162,6 +162,14 @@ get_profiles()
     find $HOST_DIR -name "$HOST_PROFILES_PATTERN" | xargs basename | cat
 }
 
+show_profile()
+{
+    profile=$1
+
+    # Use cat to print the contents of the file
+    cat $HOST_DIR/$profile$HOST_PROFILES_SUFFIX
+}
+
 while getopts :a FLAG; do
     case $FLAG in
         \?)
@@ -173,8 +181,8 @@ done
 if [ $# -gt 0 ]; then
     case $1 in
         'show')
-            # TODO: Add code to return the filename of the current profile
-            awk 'NF == 2 { print $2 }; END { if (!NR) print "Empty" }' "$BLCK_FILE";;
+            profile=$2
+            show_profile $profile;;
         'add')
             [[ -z $2 ]] && { usage; exit 1; }
             add_host $@;;

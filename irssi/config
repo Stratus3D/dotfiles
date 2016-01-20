@@ -33,6 +33,7 @@ channels = (
   { name = "#lua-support"; chatnet = "Freenode"; autojoin = "No"; }
   { name = "##c"; chatnet = "Freenode"; autojoin = "No"; }
   { name = "#lobsters"; chatnet = "Freenode"; autojoin = "No"; }
+  { name = "#octopress"; chatnet = "Freenode"; autojoin = "No"; }
 );
 
 aliases = {

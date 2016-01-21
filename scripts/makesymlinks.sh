@@ -116,4 +116,13 @@ if [ -d $HOME/.gconf/ ]; then
     echo "Gnome profile linked"
 fi
 
+# Symlink hosts_manager hosts profiles directory
+HOSTS_DIR="$HOME/.hosts"
+HOSTS_SOURCE_DIR="$dotfiles/hosts_profiles"
+if [ -d $HOSTS_DIR ]; then
+    mv $HOSTS_DIR $olddir
+fi
+
+symlink_file_if_missing $HOSTS_SOURCE_DIR $HOSTS_DIR
+
 print_heading "Linking complete!"

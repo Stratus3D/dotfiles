@@ -53,6 +53,26 @@ symlink_file_if_missing() {
     fi
 }
 
+symlink_and_save_original() {
+    local source=$1
+    local destination=$2
+    local backup_dir=$3
+
+    echo "symlink_and_save_original called!"
+    if [[ -L $destination ]]; then
+        echo "Removing $destination symlink"
+        rm $destination;
+    else
+        if [[ -e $destination ]]; then
+            echo "Moving existing $destination from $HOME to $backup_dir"
+            mv $destination $backup_dir;
+        fi
+    fi
+    echo "Creating symlink to $file in home directory."
+    echo "Symlinking $destination -> $source"
+    ln -s "$source" "$destination"
+}
+
 # Remove everything in dotfiles_old
 rm -rf $olddir
 
@@ -66,18 +86,7 @@ echo "...done"
 for file in $files; do
   oldfile="$HOME/.$file"
 
-  if [[ -L $oldfile ]]; then
-      echo "Removing $oldfile symlink"
-      rm $oldfile;
-  else
-      if [[ -e $oldfile ]]; then
-          echo "Moving existing $oldfile from $HOME to $olddir"
-          mv $oldfile $olddir;
-      fi
-  fi
-  echo "Creating symlink to $file in home directory."
-  echo "$dotfiles/$file - $HOME/.$file"
-  ln -s "$dotfiles/$file" "$HOME/.$file"
+  symlink_and_save_original $dotfiles/$file $oldfile $olddir
 done
 
 # Generate and copy gitconfig
@@ -119,10 +128,6 @@ fi
 # Symlink hosts_manager hosts profiles directory
 HOSTS_DIR="$HOME/.hosts"
 HOSTS_SOURCE_DIR="$dotfiles/hosts_profiles"
-if [ -d $HOSTS_DIR ]; then
-    mv $HOSTS_DIR $olddir
-fi
-
-symlink_file_if_missing $HOSTS_SOURCE_DIR $HOSTS_DIR
+symlink_and_save_original $HOSTS_SOURCE_DIR $HOSTS_DIR $olddir
 
 print_heading "Linking complete!"

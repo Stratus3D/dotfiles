@@ -119,21 +119,21 @@ vim +PluginInstall +qall
 
 # Link gnome terminal profile if we are on gnome
 if [ -d $HOME/.gconf/ ]; then
-    TERMINAL_APP=$HOME/.gconf/apps/gnome-terminal
-    PROFILES=$TERMINAL_APP/profiles/
+    terminal_app=$HOME/.gconf/apps/gnome-terminal
+    profiles=$terminal_app/profiles/
     echo "Linking gnome profile..."
 
     # Link Solarized profile
-    symlink_file_if_missing $dotfiles/gnome_terminal_profile/profiles/Solarized/%gconf.xml $PROFILES/Solarized/%gconf.xml
+    symlink_file_if_missing $dotfiles/gnome_terminal_profile/profiles/Solarized/%gconf.xml $profiles/Solarized/%gconf.xml
 
     # Link global gconf.xml
-    symlink_file_if_missing $dotfiles/gnome_terminal_profile/global/%gconf.xml $TERMINAL_APP/global/%gconf.xml
+    symlink_file_if_missing $dotfiles/gnome_terminal_profile/global/%gconf.xml $terminal_app/global/%gconf.xml
     echo "Gnome profile linked"
 fi
 
 # Symlink hosts_manager hosts profiles directory
-HOSTS_DIR="$HOME/.hosts"
-HOSTS_SOURCE_DIR="$dotfiles/hosts_profiles"
-symlink_and_save_original $HOSTS_SOURCE_DIR $HOSTS_DIR $olddir
+hosts_dir="$HOME/.hosts"
+hosts_source_dir="$dotfiles/hosts_profiles"
+symlink_and_save_original $hosts_source_dir $hosts_dir $olddir
 
 print_heading "Linking complete!"

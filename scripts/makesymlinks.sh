@@ -11,10 +11,16 @@ set -e # Stop on an error
 # Variables
 ###############################################################################
 
+# The border for headings printed to STDOUT
 border="====="
-dotfiles=$HOME/dotfiles               # dotfiles directory
-olddir=$HOME/dotfiles_old             # old dotfiles backup directory
-# list of files/folders to symlink in homedir
+
+# Dotfiles directory
+dotfiles=$HOME/dotfiles
+
+# Old dotfiles backup directory
+olddir=$HOME/dotfiles_old
+
+# List of files/folders to symlink in homedir (these are the typical "dotfiles")
 files="vimrc vim zshrc bashrc tmux.conf gitignore_global ackrc ctags
 screenrc jshintrc rsync-exclude tool-versions agignore"
 

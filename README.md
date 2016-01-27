@@ -97,10 +97,21 @@ Irssi Commands
 * `Alt + Left Arrow/Right Arrow` scroll through Irssi windows.
 
 Gcc Flags
+
 * `-ftrapv` trap signed integer overflows
 
 Erlang Flags
+
 * `bin_opt_info` print warnings and information about how binaries are used
+
+Bash Flags
+
+All scripts should use these flags:
+
+* `set -e` - Exit if any command has a non-zero exit status. This ensures all commands that can fail are handled properly.
+* `set -u` - Exit if any variable is undefined (other than $* and $@, which are assumed to be available).
+* `set -o pipefail` - Causes any non-zero exit status in a pipeline to be the exit status of the entire pipeline.
+http://redsymbol.net/articles/unofficial-bash-strict-mode/
 
 ### Software
 This is software that I need for my day-to-day programming work. I try to keep this list updated with the latest software I am using. This allows me to quickly setup new development machines. I am developing a script named checkenv.sh that will verify everything is setup properly.

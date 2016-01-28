@@ -30,4 +30,5 @@
 [pull]
 	rebase = preserve
 [merge]
+	conflictstyle = diff3
 	ff = false

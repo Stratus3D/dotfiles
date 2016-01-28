@@ -6,6 +6,7 @@
 
 set -u # Prevent unset variables
 set -e # Stop on an error
+set -o pipefail # Pipe exit code should be non-zero when a command in it fails
 
 ###############################################################################
 # Variables
@@ -64,7 +65,6 @@ symlink_and_save_original() {
     local destination=$2
     local backup_dir=$3
 
-    echo "symlink_and_save_original called!"
     if [[ -L $destination ]]; then
         echo "Removing $destination symlink"
         rm $destination;
@@ -83,9 +83,8 @@ symlink_and_save_original() {
 rm -rf $olddir
 
 # create dotfiles_old in homedir
-echo "Creating $olddir for backup of any existing dotfiles in $HOME"
 mkdir -p $olddir
-echo "...done"
+echo "Created $olddir for backup of any existing dotfiles in $HOME"
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create
 # symlinks
@@ -113,6 +112,7 @@ fi
 remove_dir_if_exists $dotfiles/vim/bundle/Vundle.vim
 
 # Download vundle
+echo "Installing vim plugins..."
 git clone https://github.com/gmarik/Vundle.vim.git $dotfiles/vim/bundle/Vundle.vim
 # Install vundle and all other plugins
 vim +PluginInstall +qall

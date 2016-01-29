@@ -1,18 +1,19 @@
 #!/bin/bash -
-############################
+###############################################################################
 # setup.sh
 # This script creates everything needed to get started on a new laptop
-############################
+###############################################################################
 
 set -e # Terminate script if anything exits with a non-zero value
 set -u # Prevent unset variables
+set -o pipefail # Pipe exit code should be non-zero when a command in it fails
 
 # Get the directory this script is stored in
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-############################
+###############################################################################
 # Setup dotfiles
-############################
+###############################################################################
 cd $HOME
 
 DOTFILES_DIR=$HOME/dotfiles
@@ -32,9 +33,9 @@ cd $DOTFILES_DIR
 chmod +x $DOTFILE_SCRIPTS_DIR/makesymlinks.sh
 $DOTFILE_SCRIPTS_DIR/makesymlinks.sh
 
-############################
+###############################################################################
 # Create commonly used directories
-############################
+###############################################################################
 # TODO: The names of these directories are duplicated elsewhere.
 mkdir -p $HOME/bin # Third-party binaries
 mkdir -p $HOME/lib # Third-party software
@@ -46,9 +47,9 @@ mkdir -p $HOME/Documentation
 mkdir -p $HOME/Installers
 mkdir -p $HOME/nobackup
 
-############################
+###############################################################################
 # Install software on laptop
-############################
+###############################################################################
 # Get the uname string
 unamestr=`uname`
 
@@ -72,9 +73,9 @@ elif [[ "$unamestr" == 'Linux' ]]; then
     "$DIR/setup/linux.sh" 1>&1 2>&1
 fi
 
-############################
+###############################################################################
 # Install asdf for version management
-############################
+###############################################################################
 ASDF_DIR=$HOME/.asdf
 cd $HOME
 
@@ -94,9 +95,9 @@ asdf plugin-add lua https://github.com/Stratus3D/asdf-lua.git
 asdf plugin-add nodejs https://github.com/HashNuke/asdf-nodejs.git
 asdf install
 
-############################
+###############################################################################
 # Install devdocs
-############################
+###############################################################################
 cd $HOME/Development
 rbenv install 2.2.0
 git clone https://github.com/Thibaut/devdocs.git && cd devdocs
@@ -106,20 +107,20 @@ gem install bundler
 bundle install
 thor docs:download --all
 
-############################
+###############################################################################
 # Install Pygments
-############################
+###############################################################################
 pip install Pygments
 
-############################
+###############################################################################
 # Setup cpan and install packages for irssi
-############################
+###############################################################################
 
 cpan Lingua::Ispell
 
-############################
+###############################################################################
 # Check environment and print out results
-############################
+###############################################################################
 
 # Reload after installing dotfiles
 source $HOME/.bashrc

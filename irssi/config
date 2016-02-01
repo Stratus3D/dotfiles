@@ -35,6 +35,7 @@ channels = (
   { name = "#lobsters"; chatnet = "Freenode"; autojoin = "No"; }
   { name = "#octopress"; chatnet = "Freenode"; autojoin = "No"; }
   { name = "#git"; chatnet = "Freenode"; autojoin = "No"; }
+  { name = "#vim"; chatnet = "Freenode"; autojoin = "No"; }
 );
 
 aliases = {

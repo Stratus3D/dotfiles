@@ -1,4 +1,5 @@
 #!/bin/bash -
+###############################################################################
 # This is still a work in progress. I want to make this handle both custom host
 # files.
 # TODO:
@@ -8,10 +9,15 @@
 #   {add,rm}_host may act on different files to {start,stop}_block. Note that
 #   this won't present itself if you only use sudo. Reconsider what you want
 #   $HOST_DIR to be. On a a single user machine /var/ may be a good choice.
+###############################################################################
 
 set -u # Prevent unset variables
 set -e # Stop on an error
+set -o pipefail # Pipe exit code should be non-zero when a command in it fails
 
+###############################################################################
+# Variables
+###############################################################################
 
 # Put the original in the dotfiles repo, so it shows up with git status
 HOST_DIR="$HOME/.hosts"

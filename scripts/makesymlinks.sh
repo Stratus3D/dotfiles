@@ -7,6 +7,8 @@
 set -u # Prevent unset variables
 set -e # Stop on an error
 set -o pipefail # Pipe exit code should be non-zero when a command in it fails
+IFS=$'\t\n'
+ORIGINAL_IFS=$IFS
 
 ###############################################################################
 # Variables
@@ -21,7 +23,7 @@ dotfiles=$HOME/dotfiles
 # Old dotfiles backup directory
 olddir=$HOME/dotfiles_old
 
-# List of files/folders to symlink in homedir (these are the typical "dotfiles")
+# List of space separated files/folders to symlink in homedir (these are the typical "dotfiles")
 files="vimrc vim zshrc bashrc tmux.conf gitignore_global ackrc ctags
 screenrc jshintrc rsync-exclude tool-versions agignore"
 
@@ -88,11 +90,13 @@ echo "Created $olddir for backup of any existing dotfiles in $HOME"
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create
 # symlinks
+IFS=$' '
 for file in $files; do
   oldfile="$HOME/.$file"
 
   symlink_and_save_original $dotfiles/$file $oldfile $olddir
 done
+IFS=$ORIGINAL_IFS
 
 # Generate and copy gitconfig
 $dotfiles/scripts/generate_gitconfig.sh

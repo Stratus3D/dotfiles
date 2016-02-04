@@ -10,3 +10,13 @@ ticket() {
     # Echo branch name
     echo $UPPERCASE_BRANCH_NAME;
 }
+
+jira_ticket() {
+    # Get the uppercase branch name
+    branch_name=$(ticket)
+
+    # Remove everything after the numbers, only the start of the branch is the JIRA ticket name
+    jira_ticket_name=$(echo $branch_name | sed 's/\(^.*[0-9]\)\(.*\)/\1/g')
+
+    echo $jira_ticket_name
+}

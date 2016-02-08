@@ -34,5 +34,8 @@ PATH=$GOPATH/bin:$PATH
 export NVM_DIR=$HOME/.nvm
 PATH=/usr/local/share/npm/bin:$PATH
 
+# Add tools
+PATH=$HOME/dotfiles/scripts/git:$PATH
+
 # Finally export completed PATH
 export PATH

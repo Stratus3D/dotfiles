@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# Small wrapper around git commit. Command works just like regular `git commit`
+# except the commit message is prefixed with the ticket name.
+
+ticket_name=$(jira_ticket) # Could also be $(ticket)
+
+if [[ $# > 0 ]]; then
+    git commit -m "$ticket_name - $@"
+else
+    git commit -v
+fi

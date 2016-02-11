@@ -1,34 +1,37 @@
+[alias]
+  comt = commit-ticket
+  comjt = commit-jira-ticket
 [github]
 [color]
- branch = auto
- diff = auto
- status = auto
+  branch = auto
+  diff = auto
+  status = auto
 [color "branch"]
- current = yellow reverse
- local = yellow
- remote = green
+  current = yellow reverse
+  local = yellow
+  remote = green
 [color "diff"]
- meta = yellow bold
- frag = magenta bold
- old = red
- new = cyan
+  meta = yellow bold
+  frag = magenta bold
+  old = red
+  new = cyan
 [color "status"]
- added = yellow
- changed = green
- untracked = cyan
+  added = yellow
+  changed = green
+  untracked = cyan
 [core]
-	excludesfile = ~/.gitignore_global
-	ignorecase = false
+  excludesfile = ~/.gitignore_global
+  ignorecase = false
 [status]
-	submoduleSummary = true
+  submoduleSummary = true
 [diff]
-	submodule = log
+  submodule = log
 [fetch]
-	recurseSubmodules = on-demand
+  recurseSubmodules = on-demand
 [push]
-    default = simple
+  default = simple
 [pull]
-	rebase = preserve
+  rebase = preserve
 [merge]
-	conflictstyle = diff3
-	ff = false
+  conflictstyle = diff3
+  ff = false

@@ -76,16 +76,21 @@ fi
 ###############################################################################
 # Install asdf for version management
 ###############################################################################
-ASDF_DIR=$HOME/.asdf
+asdf_dir=$HOME/.asdf
 cd $HOME
 
-if [ ! -d $ASDF_DIR ]; then
+if [ ! -d $asdf_dir ]; then
     echo "Installing asdf..."
-    git clone https://github.com/HashNuke/asdf.git $ASDF_DIR
+    git clone https://github.com/HashNuke/asdf.git $asdf_dir
     echo "asdf installation complete"
 else
     echo "asdf already installed"
 fi
+
+###############################################################################
+# Reload the .bashrc so we have asdf and all the other recently installed tools
+###############################################################################
+source $HOME/.bashrc
 
 # Install all the plugins needed
 asdf plugin-add erlang https://github.com/HashNuke/asdf-erlang.git
@@ -121,9 +126,6 @@ cpan Lingua::Ispell
 ###############################################################################
 # Check environment and print out results
 ###############################################################################
-
-# Reload after installing dotfiles
-source $HOME/.bashrc
 
 $DIR/checkenv.sh
 

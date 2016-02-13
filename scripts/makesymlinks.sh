@@ -108,9 +108,8 @@ $dotfiles/scripts/generate_irssi_config.sh
 make_dir_if_missing $HOME/.tmuxinator
 
 # link the default tmuxinator project
-if [ ! -L $HOME/.tmuxinator/default.yml ]; then
-    ln -nsf $dotfiles/tmuxinator/default.yml $HOME/.tmuxinator/default.yml
-fi
+symlink_and_save_original $dotfiles/tmuxinator/default.yml \
+    $HOME/.tmuxinator/default.yml $olddir
 
 # If vundle is already installed, remove it and fetch the latest from Github
 remove_dir_if_exists $dotfiles/vim/bundle/Vundle.vim

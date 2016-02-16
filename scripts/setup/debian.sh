@@ -50,6 +50,9 @@ sudo apt-get update
 sudo apt-get -y install fluxgui
 # TODO: Add flux to list of startup applications
 
+# WxWidgets is needed for Erlang
+sudo apt-get -y install libwxgtk2.8-dev libwxgtk2.8-dbg
+
 # Love 2D for game development
 # These are needed by love 2d
 sudo apt-get -y install autoconf

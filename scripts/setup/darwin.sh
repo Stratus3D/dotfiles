@@ -9,6 +9,9 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # Install command-line JSON processor
 brew install jq
 
+# WxWidgets for Erlang
+brew install wxmac --with-static --with-stl --universal
+
 # Install pianobar for music
 brew install pianobar
 

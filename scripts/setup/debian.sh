@@ -1,5 +1,19 @@
 #!/bin/bash -
 
+###############################################################################
+# Set flags so script is executed in "strict mode"
+###############################################################################
+
+set -u # Prevent unset variables
+set -e # Stop on an error
+set -o pipefail # Pipe exit code should be non-zero when a command in it fails
+IFS=$'\t\n' # Stricter IFS settings
+ORIGINAL_IFS=$IFS
+
+###############################################################################
+# Install packages with apt-get
+###############################################################################
+
 # Make apt-get calls non-interactive
 DEBIAN_FRONTEND=noninteractive
 

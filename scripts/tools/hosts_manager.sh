@@ -7,8 +7,7 @@
 #   might make a good lock.
 # * $HOME env variable and consequently the $HOST_DIR env variable. Potentially
 #   {add,rm}_host may act on different files to {start,stop}_block. Note that
-#   this won't present itself if you only use sudo. Reconsider what you want
-#   $HOST_DIR to be. On a a single user machine /var/ may be a good choice.
+#   this won't present itself if you only use sudo.
 ###############################################################################
 
 set -u # Prevent unset variables
@@ -33,10 +32,10 @@ HOST_FILE="/etc/hosts"
 ORIG_FILE="$HOST_DIR/hosts_original"
 
 # Suffix added to the profile names when writting files
-HOST_PROFILES_SUFFIX="_host"
+HOST_PROFILES_SUFFIX="_hosts"
 
 # The pattern used to filter files in the $HOST_DIR
-HOST_PROFILES_PATTERN="*"$HOST_PROFILES_SUFFIX
+HOST_PROFILES_PATTERN="*$HOST_PROFILES_SUFFIX"
 
 # Temporary file used when removing hosts.
 BLCK_TEMP=$(mktemp -t "blocked_hosts") || $(mktemp /tmp/blocked_hosts.XXXXXXX) || exit 1
@@ -164,8 +163,7 @@ stop_block()
 
 get_profiles()
 {
-    #find $HOST_DIR -name "$HOST_PROFILES_PATTERN" -printf "%f\n" | cat
-    find $HOST_DIR -name "$HOST_PROFILES_PATTERN" | xargs basename | cat
+    find -L $HOST_DIR -name "$HOST_PROFILES_PATTERN" | xargs basename | cat
 }
 
 show_profile()

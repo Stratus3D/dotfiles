@@ -65,6 +65,7 @@ OSX Commands
 
 Vim Commands
 
+* `vim -u NONE` start vim without any vimrc. `vim -u ~/.othervimrc` to specify a custom vimrc.
 * `vit` select contents of html tag. `v`isual select text `i`n a `t`ag. `dit` would delete the contents of the tag.
 * `^A` and `^X` allow you to increment the number your cursor is over, or first number after the cursor that is on the same line.
 * `<F4>` toggles everything that occupies space to the left of the text (line numbers, gitgutter, etc...)

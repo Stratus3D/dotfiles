@@ -20,6 +20,9 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # Use thoughtbot's laptop script to set everything up
 "$DIR/laptop.sh"
 
+# Visualization library
+brew install graphviz
+
 # Install command-line JSON processor
 brew install jq
 

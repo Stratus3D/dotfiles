@@ -9,34 +9,41 @@ call vundle#begin()
 " let Vundle manage Vundle
 Plugin 'gmarik/Vundle.vim'
 
-" Bundles :
-Plugin 'tpope/vim-rails'
+" Plugins
+" For writing
+Plugin 'junegunn/goyo.vim'
+Plugin 'reedes/vim-pencil'
+
+" For syntax
 Plugin 'tpope/vim-haml'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'jimenezrick/vimerl' " causes vim to hang on OSX
+Plugin 'xolox/vim-misc' " required by vim-lua-ftplugin
+Plugin 'xolox/vim-lua-ftplugin'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'groenewege/vim-less'
+Plugin 'fatih/vim-go'
+Plugin 'cakebaker/scss-syntax.vim'
+" Plugin 'ap/vim-css-color'
+Plugin 'elzr/vim-json'
+
+" For frameworks
+Plugin 'tpope/vim-rails'
+Plugin 'burnettk/vim-angular'
+
+" For productivity
 Plugin 'tpope/vim-ragtag'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'pangloss/vim-javascript'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'jimenezrick/vimerl'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-lua-ftplugin'
 Plugin 'xolox/vim-easytags'
-Plugin 'groenewege/vim-less'
-Plugin 'elzr/vim-json'
-Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'ervandew/supertab'
-Plugin 'fatih/vim-go'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'burnettk/vim-angular'
 Plugin 'nathanaelkane/vim-indent-guides'
-" For writing
-Plugin 'junegunn/goyo.vim'
-Plugin 'reedes/vim-pencil'
 
 call vundle#end()
 

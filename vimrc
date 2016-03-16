@@ -19,7 +19,11 @@ Plugin 'tpope/vim-haml'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'elixir-lang/vim-elixir'
-Plugin 'jimenezrick/vimerl' " causes vim to hang on OSX
+" Erlang
+Plugin 'vim-erlang/vim-erlang-runtime'
+Plugin 'vim-erlang/vim-erlang-compiler'
+Plugin 'vim-erlang/vim-erlang-omnicomplete'
+Plugin 'vim-erlang/vim-erlang-tags'
 Plugin 'xolox/vim-misc' " required by vim-lua-ftplugin
 Plugin 'xolox/vim-lua-ftplugin'
 Plugin 'plasticboy/vim-markdown'

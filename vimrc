@@ -216,6 +216,10 @@ set tags=./tags;
 let easytags_dynamic_files = 1
 let easytags_async = 1
 
+" Vim-Erlang Skeleton settings
+let g:erl_replace_buffer=0
+"let g:erl_tpl_dir="" TODO: Figure out where to put custom templates
+
 " Load in custom config if it exists
 let custom_vimrc='~/dotfiles/mixins/vimrc.custom'
 if filereadable(custom_vimrc)

@@ -14,25 +14,32 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'reedes/vim-pencil'
 
-" For syntax
-Plugin 'tpope/vim-haml'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'pangloss/vim-javascript'
-Plugin 'elixir-lang/vim-elixir'
+" Language
 " Erlang
 Plugin 'vim-erlang/vim-erlang-runtime'
 Plugin 'vim-erlang/vim-erlang-compiler'
 Plugin 'vim-erlang/vim-erlang-omnicomplete'
 Plugin 'vim-erlang/vim-erlang-tags'
 Plugin 'vim-erlang/vim-erlang-skeletons'
+" Elixir
+Plugin 'elixir-lang/vim-elixir'
+" JavaScript
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
+" Lua
 Plugin 'xolox/vim-misc' " required by vim-lua-ftplugin
 Plugin 'xolox/vim-lua-ftplugin'
+" Markdown
 Plugin 'plasticboy/vim-markdown'
+" SASS/SCSS/Less/CSS
 Plugin 'groenewege/vim-less'
-Plugin 'fatih/vim-go'
 Plugin 'cakebaker/scss-syntax.vim'
 " Plugin 'ap/vim-css-color'
-Plugin 'elzr/vim-json'
+" Haml
+Plugin 'tpope/vim-haml'
+" Go
+Plugin 'fatih/vim-go'
 
 " For frameworks
 Plugin 'tpope/vim-rails'

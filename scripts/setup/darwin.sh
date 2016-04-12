@@ -20,6 +20,9 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # Use thoughtbot's laptop script to set everything up
 "$DIR/laptop.sh"
 
+# Exuberant Ctags
+brew install ctags
+
 # Visualization library
 brew install graphviz
 

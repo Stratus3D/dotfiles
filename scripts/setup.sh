@@ -11,13 +11,26 @@ set -o pipefail # Pipe exit code should be non-zero when a command in it fails
 # Get the directory this script is stored in
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-###############################################################################
-# Setup dotfiles
-###############################################################################
 cd $HOME
 
 DOTFILES_DIR=$HOME/dotfiles
 DOTFILE_SCRIPTS_DIR=$DOTFILES_DIR/scripts
+
+###############################################################################
+# Ensure Git is installed before proceeding
+###############################################################################
+
+if hash git 2>/dev/null; then
+    echo "Git is already installed. Skipping installation"
+else
+    # We need to install git before continuing
+    echo "Git is not installed. Installing..."
+    # TODO: Use apt-get or brew
+fi
+
+###############################################################################
+# Setup dotfiles
+###############################################################################
 
 if [ ! -d $DOTFILES_DIR ]; then
   git clone ssh://git@github.com/Stratus3D/dotfiles.git $DOTFILES_DIR

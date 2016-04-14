@@ -56,6 +56,7 @@ mkdir -p $HOME/nobackup # All files that shouldn't be backed up the normal way
 mkdir -p $HOME/Development
 mkdir -p $HOME/Development/src # Go source directory
 mkdir -p $HOME/Development/bin # Go binary directory
+mkdir -p $HOME/Development/archived # Old projects
 mkdir -p $HOME/Documentation
 mkdir -p $HOME/Installers
 mkdir -p $HOME/nobackup

@@ -31,7 +31,8 @@ if [ ! -d $DOTFILES_DIR ]; then
     mv dotfiles-master dotfiles
     # TODO: If we have to download the archive, we don't git the .git
     # metadata, which means we can't run `git pull` in dotfiles directory to
-    # update the dotfiles
+    # update the dotfiles. Which means if we run this script again, the else
+    # clause below will fail.
   fi
 else
   cd $DOTFILES_DIR

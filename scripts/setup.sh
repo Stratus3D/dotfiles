@@ -17,23 +17,22 @@ DOTFILES_DIR=$HOME/dotfiles
 DOTFILE_SCRIPTS_DIR=$DOTFILES_DIR/scripts
 
 ###############################################################################
-# Ensure Git is installed before proceeding
-###############################################################################
-
-if hash git 2>/dev/null; then
-    echo "Git is already installed. Skipping installation"
-else
-    # We need to install git before continuing
-    echo "Git is not installed. Installing..."
-    # TODO: Use apt-get or brew
-fi
-
-###############################################################################
 # Setup dotfiles
 ###############################################################################
 
 if [ ! -d $DOTFILES_DIR ]; then
-  git clone ssh://git@github.com/Stratus3D/dotfiles.git $DOTFILES_DIR
+  if hash git 2>/dev/null; then
+    echo "Git is already installed. Cloning repository..."
+    git clone ssh://git@github.com/Stratus3D/dotfiles.git $DOTFILES_DIR
+  else
+    echo "Git is not installed. Downloading repository archive..."
+    wget https://github.com/Stratus3D/dotfiles/archive/master.tar.gz
+    tar -zxvf master.tar.gz
+    mv dotfiles-master dotfiles
+    # TODO: If we have to download the archive, we don't git the .git
+    # metadata, which means we can't run `git pull` in dotfiles directory to
+    # update the dotfiles
+  fi
 else
   cd $DOTFILES_DIR
   git pull origin master

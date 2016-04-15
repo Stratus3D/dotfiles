@@ -16,9 +16,6 @@ My dotfiles. Everything I need to get setup on a new machine.
 2. (OSX only) Configure iTerm2 to use the custom profile stored in the dotfiles directory. In the iTerm2 preferences window click the "browse" button and navigate to `~/dotfiles/iterm2_profile/` and select the plist file.
 3. (OSX only) Load Better Touch Tool mappings that are stored in the dotfiles directory. Open Better Touch Tool and click the import button. Choose `~/dotfiles/better_touch_tool/better_touch_tool_configuration`.
 
-### Issues
-* Setup script expects git to already be installed. If git is missing the setup script breaks. We can't assume git will be installed and we need to install it before using it to setup the machine.
-
 ### TODO
 * Complete the `clone_all_bitbucket_repos.sh` script so that all private repos can be cloned.
 * Complete the `hosts_manager.sh` script.

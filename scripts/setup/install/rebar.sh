@@ -3,8 +3,6 @@
 # Build and install the `rebar` binary in ~/bin/
 #
 # Usage ./rebar.sh
-#
-# TODO: Complete this script
 
 # Variables
 BIN_DIR=$HOME/bin/

@@ -59,7 +59,7 @@ mkdir -p $HOME/Development/bin # Go binary directory
 mkdir -p $HOME/Development/archived # Old projects
 mkdir -p $HOME/Documentation
 mkdir -p $HOME/Installers
-mkdir -p $HOME/nobackup
+mkdir -p $HOME/Screenshots
 
 ###############################################################################
 # Install software on laptop

@@ -186,8 +186,20 @@ call ToggleCtrlPIgnores()
 
 " Hide everything that occupies space on the left side of the file, so we can
 " copy the file contents with ease
-" TODO: Toggle syntastic hints as well
-:nnoremap <F4> :set number! <bar> :GitGutterToggle<CR>
+function! ToggleLeftGuides()
+    " Toggle line numbers
+    :set number!
+
+    " Toggle GitGutter
+    :GitGutterToggle
+
+    " Reset Syntastic, then set it to passive mode
+    " TODO: Hide syntastic hints as well
+    :SyntasticToggle
+    :SyntasticReset
+endfunction
+
+:nnoremap <F4>  :call ToggleLeftGuides()<CR>
 
 " highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
@@ -225,7 +237,8 @@ let easytags_async = 1
 
 " Vim-Erlang Skeleton settings
 let g:erl_replace_buffer=0
-"let g:erl_tpl_dir="" TODO: Figure out where to put custom templates
+" TODO: Figure out how to copy default erlang templates into our custom dir
+" let g:erl_tpl_dir="~/.erlang_templates"
 
 " Load in custom config if it exists
 let custom_vimrc='~/dotfiles/mixins/vimrc.custom'

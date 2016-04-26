@@ -188,15 +188,15 @@ call ToggleCtrlPIgnores()
 " copy the file contents with ease
 function! ToggleLeftGuides()
     " Toggle line numbers
-    :set number!
+    set number!
 
     " Toggle GitGutter
-    :GitGutterToggle
+    GitGutterToggle
 
     " Reset Syntastic, then set it to passive mode
     " TODO: Hide syntastic hints as well
-    :SyntasticToggle
-    :SyntasticReset
+    SyntasticToggle
+    SyntasticReset
 endfunction
 
 :nnoremap <F4>  :call ToggleLeftGuides()<CR>

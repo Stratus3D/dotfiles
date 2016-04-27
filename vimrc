@@ -184,19 +184,45 @@ call ToggleCtrlPIgnores()
 " Press Space to turn off highlighting and clear any message already displayed.
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
+" Toggle everything that occupies space on the left side of the editor
+function! ToggleLeftGuides()
+    if (g:left_guides == 1)
+        call HideLeftGuids()
+        let g:left_guides_enabled = 0
+    else
+        call ShowLeftGuids()
+        let g:left_guides_enabled = 1
+    endif
+endfunction
+
+" By default everything on the left side is enabled
+let g:left_guides_enabled = 1
+
 " Hide everything that occupies space on the left side of the file, so we can
 " copy the file contents with ease
-function! ToggleLeftGuides()
-    " Toggle line numbers
-    set number!
+function! HideLeftGuids()
+    " Hide line numbers
+    set nonumber
 
-    " Toggle GitGutter
-    GitGutterToggle
+    " Hide GitGutter
+    GitGutterEnable
 
     " Reset Syntastic, then set it to passive mode
     " TODO: Hide syntastic hints as well
     SyntasticToggle
     SyntasticReset
+endfunction
+
+" Show everything that occupies space on the left side of the file
+function! ShowLeftGuids()
+    " Show line numbers
+    set number
+
+    " Show GitGutter
+    GitGutterEnable
+
+    " Run the Syntastic check
+    SyntasticCheck
 endfunction
 
 :nnoremap <F4>  :call ToggleLeftGuides()<CR>

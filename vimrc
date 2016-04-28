@@ -186,7 +186,7 @@ call ToggleCtrlPIgnores()
 
 " Toggle everything that occupies space on the left side of the editor
 function! ToggleLeftGuides()
-    if (g:left_guides == 1)
+    if (g:left_guides_enabled == 1)
         call HideLeftGuids()
         let g:left_guides_enabled = 0
     else
@@ -205,7 +205,7 @@ function! HideLeftGuids()
     set nonumber
 
     " Hide GitGutter
-    GitGutterEnable
+    GitGutterDisable
 
     " Reset Syntastic, then set it to passive mode
     " TODO: Hide syntastic hints as well

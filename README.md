@@ -22,7 +22,6 @@ My dotfiles. Everything I need to get setup on a new machine.
 * Complete the `prax.sh` install script.
 * Figure out how to setup devdocs.io/zealdocs locally when running the setup script.
 * Make all `source`s relative.
-* Toggle syntastic icons at the beginning of the lines with F4.
 * Make vim highlight HTML and scripts in HTML correctly.
 * Configure Zsh with infinite history.
 

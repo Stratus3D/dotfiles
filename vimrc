@@ -174,7 +174,9 @@ function! ToggleCtrlPIgnores()
                     \'file': '\v\.(beam|pyc|swo)$',
                     \}
         " also ignore files listed in the .gitignore
-        let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+        " TODO: Figure out which of these two commands is best
+        " let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+        let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
     end
 endfunction
 

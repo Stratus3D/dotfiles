@@ -27,6 +27,9 @@ for file in $HOME/dotfiles/scripts/custom_tools/*.sh; do
     alias $root_filename="$file"
 done
 
+# Additional tool aliases to make commands shorter
+alias ot="open_ticket"
+
 # Postgres
 alias startpost='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias stoppost='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'

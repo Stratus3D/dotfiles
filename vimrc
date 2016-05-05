@@ -209,8 +209,8 @@ function! HideLeftGuids()
     " Hide GitGutter
     GitGutterDisable
 
-    " Reset Syntastic, then set it to passive mode
-    " TODO: Hide syntastic hints as well
+    " Reset Syntastic, then set it to passive mode, this effectively hides the
+    " hints in the left side columns
     SyntasticToggle
     SyntasticReset
 endfunction

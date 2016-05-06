@@ -47,7 +47,7 @@ Bash/Zshell Commands
 * `^Y` paste previously deleted command (separate from global Cmd-C buffer). Delete a line with `^A ^K` and then paste it back with `^Y`
 * Files/directories can be dragged onto the terminal and the path will be pasted at the current cursor position
 * `command <<< "input text"` can be used in place of `command < file.in`
-* `pkill <process_name>` kills all processes with the given name (e.g. `pkill HipChat` kills the HipChat app)
+* `pkill <process_name>` kills all processes with the given name (e.g. `pkill HipChat` kills the HipChat app). The `-u` flag limits the killing to all processes with a certain euid (e.g. `pkill -u username HipChat`)
 * `kill <process_id>` kills the process identified by `<process_id>`. `-9` can be used to kill the process immediately
 * `echo -n ✘ | hexdump` to print the encoding of a character by the console. Useful for bash scripts
 * `ssh -vT git@github.com` useful for debugging SSH authentication issues.

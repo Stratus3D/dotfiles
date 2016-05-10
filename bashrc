@@ -11,7 +11,7 @@ resolve_source() {
     echo $DIR
 }
 
-resolve_source $SOURCE
+#resolve_source $SOURCE
 
 FILES="$HOME/dotfiles/mixings/general
 $HOME/dotfiles/mixins/functions

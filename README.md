@@ -94,6 +94,10 @@ Irssi Commands
 * `/wc` closes the current window. This parts from the current channel or disconnects from the current network.
 * `Alt + Left Arrow/Right Arrow` scroll through Irssi windows.
 
+VirtualBox Commands
+
+* `VBoxManage unregistervm --delete <vm name>` Completely removes the VM and all associated files
+
 Gcc Flags
 
 * `-ftrapv` trap signed integer overflows

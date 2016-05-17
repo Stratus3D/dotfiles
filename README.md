@@ -24,6 +24,8 @@ My dotfiles. Everything I need to get setup on a new machine.
 * Make all `source`s relative.
 * Make vim highlight HTML and scripts in HTML correctly.
 * Configure Zsh with infinite history.
+* Add solarized light/dark toggle functions.
+* Make vim read color scheme from zsh.
 
 ###Useful commands that I often forget
 Bash/Zshell Commands

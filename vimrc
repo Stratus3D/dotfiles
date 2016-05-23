@@ -1,12 +1,9 @@
 set nocompatible
-filetype off
 
 " Load plugins
-source '$HOME/.vim/plugins.vim'
+source $HOME/.vim/plugins.vim
 
 " File type settings (file type-specific settings in vim/ftplugin/)
-" Enable filetype plugin
-filetype plugin indent on
 autocmd BufRead,BufNewFile *.txt setfiletype text
 autocmd BufRead,BufNewFile *.app setfiletype erlang
 autocmd BufRead,BufNewFile *.app.src setfiletype erlang

@@ -1,5 +1,6 @@
 " Vundle
 " Use vundle for plugin management
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -55,3 +56,5 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 call vundle#end()
+
+filetype plugin indent on

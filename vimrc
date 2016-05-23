@@ -2,7 +2,7 @@ set nocompatible
 filetype off
 
 " Load plugins
-source '~/.vim/plugins.vim'
+source '$HOME/.vim/plugins.vim'
 
 " File type settings (file type-specific settings in vim/ftplugin/)
 " Enable filetype plugin

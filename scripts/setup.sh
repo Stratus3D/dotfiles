@@ -53,6 +53,7 @@ $DOTFILE_SCRIPTS_DIR/makesymlinks.sh
 mkdir -p $HOME/bin # Third-party binaries
 mkdir -p $HOME/lib # Third-party software
 mkdir -p $HOME/nobackup # All files that shouldn't be backed up the normal way
+mkdir -p $HOME/history # Zsh and Bash history files
 mkdir -p $HOME/Development
 mkdir -p $HOME/Development/src # Go source directory
 mkdir -p $HOME/Development/bin # Go binary directory

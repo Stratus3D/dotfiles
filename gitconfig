@@ -1,6 +1,7 @@
 [alias]
   comt = commit-ticket
   comjt = commit-jira-ticket
+  recent = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
 [github]
 [color]
   branch = auto

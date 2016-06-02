@@ -36,5 +36,5 @@ export SHELL=/bin/bash
 export HISTFILESIZE=
 export HISTSIZE=
 export HISTFILE=~/.bash_eternal_history
-#HISTFILE="${HOME}/.history/$(date -u +%Y/%m/%d.%H.%M.%S)_${USER}_$$"
-PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+# Also write history to files in the history/ directory
+export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> $HOME/history/bash-history-$(date "+%Y-%m-%d").log; fi'

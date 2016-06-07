@@ -26,6 +26,7 @@ My dotfiles. Everything I need to get setup on a new machine.
 * Configure Zsh with infinite history.
 * Add solarized light/dark toggle functions.
 * Make vim read color scheme from zsh.
+* Add command to vim to toggle showing of whitespace
 
 ###Useful commands that I often forget
 Bash/Zshell Commands

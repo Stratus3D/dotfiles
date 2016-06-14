@@ -126,6 +126,7 @@ This is software that I need for my day-to-day programming work. I try to keep t
 * Vim
 * Tmux
 * Z shell ([http://zsh.sourceforge.net/](http://zsh.sourceforge.net/))
+* asdf ([https://github.com/asdf-vm/asdf](https://github.com/asdf-vm/asdf))
 * oh-my-zsh ([https://github.com/robbyrussell/oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh))
 * Tmuxinator ([https://github.com/tmuxinator/tmuxinator](https://github.com/tmuxinator/tmuxinator))
 * Exuberant Ctags ([http://ctags.sourceforge.net/](http://ctags.sourceforge.net/))

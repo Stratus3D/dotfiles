@@ -142,8 +142,8 @@ OSX Only
 * BetterTouchTool [http://www.bettertouchtool.net/](http://www.bettertouchtool.net/)
 
 #### Browsers
-* Chrome
 * Firefox
+* Chrome
 
 #### Languages
 * Erlang
@@ -151,8 +151,7 @@ OSX Only
 * Elixir
   * Use asdf for version management (https://github.com/HashNuke/asdf)
 * Ruby
-  * Use rbenv (https://github.com/sstephenson/rbenv) or asdf (https://github.com/HashNuke/asdf) for management of Ruby versions
-  * Use ruby-build for installation of Ruby versions (https://github.com/sstephenson/ruby-build)
+  * Use asdf for version management (https://github.com/HashNuke/asdf)
 * Python
 * Lua
   * Use asdf for version management (https://github.com/HashNuke/asdf)

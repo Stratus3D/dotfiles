@@ -159,8 +159,7 @@ OSX Only
 * Javascript(NodeJS)
   * Use asdf for version management (https://github.com/HashNuke/asdf)
 * Go
-  * Download from (https://golang.org)
-  * gvm version management (https://github.com/moovweb/gvm)
+  * Use asdf for version management (https://github.com/HashNuke/asdf)
 
 #### Frameworks
 * [Rails](http://rubyonrails.org/)

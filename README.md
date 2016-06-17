@@ -146,20 +146,17 @@ OSX Only
 * Chrome
 
 #### Languages
+
+Use asdf for version management ([https://github.com/HashNuke/asdf](https://github.com/HashNuke/asdf)) of each language unless otherwise noted.
+
 * Erlang
-  * Use asdf for version management (https://github.com/HashNuke/asdf)
 * Elixir
-  * Use asdf for version management (https://github.com/HashNuke/asdf)
 * Ruby
-  * Use asdf for version management (https://github.com/HashNuke/asdf)
 * Python
 * Lua
-  * Use asdf for version management (https://github.com/HashNuke/asdf)
-  * LuaRocks for package management (https://luarocks.org/)
+  * LuaRocks for package management ([https://luarocks.org/](https://luarocks.org/))
 * Javascript(NodeJS)
-  * Use asdf for version management (https://github.com/HashNuke/asdf)
 * Go
-  * Use asdf for version management (https://github.com/HashNuke/asdf)
 
 #### Frameworks
 * [Rails](http://rubyonrails.org/)

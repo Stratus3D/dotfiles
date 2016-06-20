@@ -122,9 +122,9 @@ http://redsymbol.net/articles/unofficial-bash-strict-mode/
 This is software that I need for my day-to-day programming work. I try to keep this list updated with the latest software I am using. This allows me to quickly setup new development machines. I am developing a script named checkenv.sh that will verify everything is setup properly.
 
 #### Tools
-* Git
-* Vim
-* Tmux
+* Git ([https://git-scm.com/](https://git-scm.com/))
+* Vim ([http://www.vim.org/](http://www.vim.org/))
+* Tmux ([https://tmux.github.io/](https://tmux.github.io/))
 * Z shell ([http://zsh.sourceforge.net/](http://zsh.sourceforge.net/))
 * asdf ([https://github.com/asdf-vm/asdf](https://github.com/asdf-vm/asdf))
 * oh-my-zsh ([https://github.com/robbyrussell/oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh))
@@ -132,7 +132,7 @@ This is software that I need for my day-to-day programming work. I try to keep t
 * Exuberant Ctags ([http://ctags.sourceforge.net/](http://ctags.sourceforge.net/))
 * Virtual Box ([https://www.virtualbox.org/](https://www.virtualbox.org/)) & ievms ([https://github.com/xdissent/ievms](https://github.com/xdissent/ievms))
 * pgAdmin ([http://www.pgadmin.org/download/](http://www.pgadmin.org/download/))
-* Dash/ZealDocs ([http://zealdocs.org/])(http://zealdocs.org/)
+* Dash/ZealDocs ([http://zealdocs.org/](http://zealdocs.org/))
 
 OSX Only
 

@@ -80,6 +80,7 @@ SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 export SHELL='/bin/zsh'
 
 source $ZSHRC_PATH/mixins/general
+source $ZSHRC_PATH/mixins/asdf
 source $ZSHRC_PATH/mixins/functions
 source $ZSHRC_PATH/mixins/grep
 source $ZSHRC_PATH/mixins/nodejs

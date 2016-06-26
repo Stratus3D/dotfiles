@@ -1,0 +1,7 @@
+# Use asdf
+. $HOME/.asdf/asdf.sh
+
+# asdf plugin options
+
+# Ruby
+export RUBY_CONFIGURE_OPTIONS='--with-opt-dir=/usr/local/opt/openssl:/usr/local/opt/readline:/usr/local/opt/libyaml:/usr/local/opt/gdbm'

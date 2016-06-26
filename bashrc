@@ -14,6 +14,7 @@ resolve_source() {
 #resolve_source $SOURCE
 
 FILES="$HOME/dotfiles/mixings/general
+$HOME/dotfiles/mixins/asdf
 $HOME/dotfiles/mixins/functions
 $HOME/dotfiles/mixins/aliases
 $HOME/dotfiles/mixins/grep

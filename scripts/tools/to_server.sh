@@ -24,33 +24,56 @@ error_exit() {
 }
 
 sync() {
-    source_dir=${0-"."}
-    destination_server=${1-"localhost"}
-    destination_dir=${2-"."}
+    source_dir=$0
+    destination_server=$1
+    destination_dir=$2
     rsync -p -r --exclude='.git' $source_dir $destination_server:$destination_dir
 }
 
-while getopts ":s:m:d:" opt; do
-    case "${opt}" in
-        s)
-            s=${OPTARG}
+get_value() {
+    first=${1#*=}
+    second=$2
+
+    if [ -z "$first" ]; then
+        if [[ $second == "-*" ]]; then
+            echo ""
+        else
+            echo $second
+        fi
+    else
+        echo $first
+    fi
+}
+
+destination_dir=""
+destination_server=""
+
+while :; do
+    case $1 in
+        -h|-?|--help)
+            usage
+            exit
             ;;
-        m)
-            m=${OPTARG}
+        -s|--source|--source=)
+            s_dir=${1#*=}
             ;;
-        m)
-            m=${OPTARG}
+        -m|--destination_server|--destination_server=)
+            destination_server=$(get_value $1 $2)
+            ;;
+        -d|--destination_dir|--destination_dir=)
+            destination_dir=$(get_value $1 $2)
             ;;
         *)
             error_exit
-            ;;
     esac
+
+    shift
 done
 
-shift $((OPTIND-1))
+source_dir=${s_dir-"."}
 
-if [ $# -gt 2 ]; then
-    sync $0 $1 $2
-else
+if [ -z "$destination_server" ] || [ -z "$destination_dir" ]; then
     error_exit
+else
+    sync $source_dir $destination_server $destination_dir
 fi

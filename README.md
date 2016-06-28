@@ -118,6 +118,10 @@ All scripts should use these flags:
 * `set -o pipefail` - Causes any non-zero exit status in a pipeline to be the exit status of the entire pipeline.
 http://redsymbol.net/articles/unofficial-bash-strict-mode/
 
+AWK and sed
+
+* `#!/usr/bin/sed 1d .` - prints all but the first line of the sed file.
+
 ### Software
 This is software that I need for my day-to-day programming work. I try to keep this list updated with the latest software I am using. This allows me to quickly setup new development machines. I am developing a script named checkenv.sh that will verify everything is setup properly.
 

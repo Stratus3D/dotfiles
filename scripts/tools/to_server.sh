@@ -7,14 +7,11 @@ usage() {
     cat <<EOF
     Usage: to_server.sh [options]
 
-    Commands:
-    site [url] [destination dir]         Download all pages on the domain
-    subdirectory [url] [destination dir] Download URL and sub pages
-    single_page [url] [destination dir]  Download a single URL
-
     Options:
-    --no-localize                        Don't localize links. With this option
-                                         URLs may not work on your local copy
+    --destination_server                 Hostname of the remote server to rsync
+                                         the files to
+    --destination_dir                    Path the directory on the remote server
+    --source_dir                         The directory to rsync to the server
 EOF
 }
 
@@ -24,9 +21,9 @@ error_exit() {
 }
 
 sync() {
-    source_dir=$0
-    destination_server=$1
-    destination_dir=$2
+    source_dir=$1
+    destination_server=$2
+    destination_dir=$3
     rsync -p -r --exclude='.git' $source_dir $destination_server:$destination_dir
 }
 
@@ -49,22 +46,31 @@ destination_dir=""
 destination_server=""
 
 while :; do
-    case $1 in
-        -h|-?|--help)
+    case ${1:-} in
+        -h|-\?|--help)
             usage
             exit
             ;;
-        -s|--source|--source=)
-            s_dir=${1#*=}
+        -s|--source|--source=*)
+            s_dir=$(get_value $1 ${2-""})
             ;;
-        -m|--destination_server|--destination_server=)
-            destination_server=$(get_value $1 $2)
+        -m|--destination_server|--destination_server=*)
+            destination_server=$(get_value $1 ${2:-""})
             ;;
-        -d|--destination_dir|--destination_dir=)
-            destination_dir=$(get_value $1 $2)
+        -d|--destination_dir|--destination_dir=*)
+            destination_dir=$(get_value $1 ${2:-""})
+            ;;
+        --)
+            shift
+            break
             ;;
         *)
-            error_exit
+            if [ -z "${1:-}" ]; then
+                break
+            else
+                echo "Unknown option ${1:-}"
+                error_exit
+            fi
     esac
 
     shift
@@ -75,5 +81,7 @@ source_dir=${s_dir-"."}
 if [ -z "$destination_server" ] || [ -z "$destination_dir" ]; then
     error_exit
 else
+    echo "Syncing $source_dir to $destination_server:$destination_dir"
     sync $source_dir $destination_server $destination_dir
+    echo "Complete sync of $source_dir"
 fi

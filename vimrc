@@ -213,3 +213,9 @@ let custom_vimrc='~/dotfiles/mixins/vimrc.custom'
 if filereadable(custom_vimrc)
     source custom_vimrc
 end
+
+" Toggle visibility of whitespace characters
+nmap <leader>l :set list!<CR>
+
+" Use special chars in place of tab and eol
+set listchars=eol:¬,tab:→\ ,extends:>,precedes:<

@@ -27,6 +27,7 @@ My dotfiles. Everything I need to get setup on a new machine.
 * Make vim read color scheme from zsh.
 * Add command to vim to toggle showing of whitespace
 * Add `remsh` bash script
+* Add custom status line to tmux with asdf versions
 
 ###Useful commands that I often forget
 Bash/Zshell Commands

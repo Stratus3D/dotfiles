@@ -23,7 +23,7 @@ EOF
 }
 find_notes() {
     # Take keyword and pass it to `ag`.
-    ag $1 --group
+    ag $1 --group --color
 }
 
 print_todos() {

@@ -1,6 +1,6 @@
 #! /bin/bash -
 
-# Delete vim swap files in directory
+# Delete vim swap files in the given directory
 
 # Set flags so script is executed in "strict mode"
 set -u # Prevent unset variables
@@ -9,18 +9,22 @@ set -o pipefail # Pipe exit code should be non-zero when a command in it fails
 IFS=$'\t\n' # Stricter IFS settings
 ORIGINAL_IFS=$IFS
 
+# Variables
+directory=${1:-}
+
 usage() {
     cat <<EOF
-    Usage
+    Usage: delete_vim_swap_files.sh [directory]
 EOF
 }
 
 delete_vim_swap_files() {
-    find $1 -type f -name "*.swp" -delete
+    directory=${1:-}
+    find $directory -type f -name "*.swp" -delete
 }
 
-if [ -z $1 ]; then
-    delete_vim_swap_files
-else
+if [ "z" = "z$directory" ]; then
     usage
+else
+    delete_vim_swap_files $directory
 fi

@@ -2,10 +2,9 @@
 
 # Delete vim swap files in the given directory
 
-# Set flags so script is executed in "strict mode"
-set -u # Prevent unset variables
-set -e # Stop on an error
-set -o pipefail # Pipe exit code should be non-zero when a command in it fails
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
 IFS=$'\t\n' # Stricter IFS settings
 ORIGINAL_IFS=$IFS
 

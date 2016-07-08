@@ -1,7 +1,10 @@
 #! /bin/bash -
 
-set -u # Prevent unset variables
-set -e # Stop on an error
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+IFS=$'\t\n' # Stricter IFS settings
+ORIGINAL_IFS=$IFS
 
 usage() {
     cat <<EOF

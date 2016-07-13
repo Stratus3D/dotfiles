@@ -89,6 +89,10 @@ Screen Commands
 * `^A d` detach current window.
 * `screen -rd` to reattach a window. Follow the prompts if there are multiple windows.
 
+Git Commands
+
+* `git clean -X` - Remove files ignored by Git
+
 Irssi Commands
 
 * `/server`

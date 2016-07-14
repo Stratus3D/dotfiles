@@ -113,6 +113,9 @@ asdf plugin-add elixir https://github.com/HashNuke/asdf-elixir.git
 asdf plugin-add ruby https://github.com/HashNuke/asdf-ruby.git
 asdf plugin-add lua https://github.com/Stratus3D/asdf-lua.git
 asdf plugin-add nodejs https://github.com/HashNuke/asdf-nodejs.git
+asdf plugin-add postgres https://github.com/smashedtoatoms/asdf-postgres.git
+
+# Install the software versions listed in the .tool-versions file in $HOME
 asdf install
 
 ###############################################################################

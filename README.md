@@ -92,6 +92,7 @@ Screen Commands
 Git Commands
 
 * `git clean -X` - Remove files ignored by Git
+* `git checkout $(git rev-list -n 1 --before="2016-07-05 21:00" master)` - Checkout a branch at a specific point in time.
 
 Irssi Commands
 
@@ -127,6 +128,10 @@ http://redsymbol.net/articles/unofficial-bash-strict-mode/
 AWK and sed
 
 * `#!/usr/bin/sed 1d .` - prints all but the first line of the sed file.
+
+Postgres
+
+* `SHOW hba_file;` - Show the path to `pg_hba.conf` config file.
 
 ### Software
 This is software that I need for my day-to-day programming work. I try to keep this list updated with the latest software I am using. This allows me to quickly setup new development machines. I am developing a script named checkenv.sh that will verify everything is setup properly.

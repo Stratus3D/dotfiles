@@ -83,7 +83,7 @@ sudo apt-get -y install inkscape
 # Visualization library
 sudo apt-get -y install graphviz
 
-# Needed for ruby 2.2.0
+# Needed for Ruby and PostgreSQL
 sudo apt-get -y install libffi-dev autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
 # Needed for capybara
 sudo apt-get -y install libqt4-dev libqtwebkit-dev

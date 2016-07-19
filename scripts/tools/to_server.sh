@@ -14,7 +14,7 @@ usage() {
     --destination_server                 Hostname of the remote server to rsync
                                          the files to
     --destination_dir                    Path the directory on the remote server
-    --source_dir                         The directory to rsync to the server
+    --source                             The directory to rsync to the server
 EOF
 }
 

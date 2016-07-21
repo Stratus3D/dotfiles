@@ -1,7 +1,5 @@
 #! /usr/bin/env bash -
 
-# Provides an easy way of running an Erlang remote shell (remsh).
-
 # Unoffical Bash "strict mode"
 # http://redsymbol.net/articles/unofficial-bash-strict-mode/
 set -euo pipefail
@@ -10,7 +8,9 @@ ORIGINAL_IFS=$IFS
 
 usage() {
     cat <<EOF
-    Usage info here...
+$(basename $0) [target] [erlang-cookie]
+
+Provides an easy way of running an Erlang remote shell (remsh).
 EOF
 }
 

@@ -26,7 +26,6 @@ My dotfiles. Everything I need to get setup on a new machine.
 * Add solarized light/dark toggle functions.
 * Make vim read color scheme from zsh.
 * Add command to vim to toggle showing of whitespace
-* Add `remsh` bash script
 * Add custom status line to tmux with asdf versions
 * Add info on current selection in vim status bar
 

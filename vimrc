@@ -5,9 +5,7 @@ source $HOME/.vim/plugins.vim
 
 " File type settings (file type-specific settings in vim/ftplugin/)
 autocmd BufRead,BufNewFile *.txt setfiletype text
-autocmd BufRead,BufNewFile *.app setfiletype erlang
-autocmd BufRead,BufNewFile *.app.src setfiletype erlang
-autocmd BufRead,BufNewFile sys.config setfiletype erlang
+autocmd BufRead,BufNewFile sys.config,*.app.src,*.app,*.erl,*.es,*.hrl,*.yaws,*.xrl setfiletype erlang
 autocmd BufRead,BufNewFile Gemfile setfiletype ruby
 autocmd BufRead,BufNewFile Vagrantfile setfiletype ruby
 autocmd BufRead,BufNewFile Dockerfile setfiletype bash

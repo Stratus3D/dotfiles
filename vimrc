@@ -10,14 +10,6 @@ autocmd BufRead,BufNewFile Gemfile setfiletype ruby
 autocmd BufRead,BufNewFile Vagrantfile setfiletype ruby
 autocmd BufRead,BufNewFile Dockerfile setfiletype bash
 
-let g:pencil#wrapModeDefault = 'soft'
-
-" TODO: Turn on goyo for markdown and text files as well
-augroup pencil
-    autocmd!
-    autocmd FileType mkd.markdown,markdown,mkd call pencil#init()
-    autocmd FileType text         call pencil#init()
-augroup END
 
 " General settings
 syntax on
@@ -89,6 +81,15 @@ inoremap <Down> <esc> :echoe "Use j"<cr>
 vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
             \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
 omap s :normal vs<CR>
+
+" Vim pencil settings
+let g:pencil#wrapModeDefault = 'soft'
+
+augroup pencil
+    autocmd!
+    autocmd FileType mkd.markdown,markdown,mkd call pencil#init()
+    autocmd FileType text         call pencil#init()
+augroup END
 
 " NERDTree settings
 nmap <silent> <F3> :NERDTreeToggle<CR>

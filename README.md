@@ -25,9 +25,8 @@ My dotfiles. Everything I need to get setup on a new machine.
 * Make vim highlight HTML and scripts in HTML correctly.
 * Add solarized light/dark toggle functions.
 * Make vim read color scheme from zsh.
-* Add command to vim to toggle showing of whitespace
 * Add custom status line to tmux with asdf versions
-* Add info on current selection in vim status bar
+* Add info on current selection in vim status bar (`set showcmd` in visual mode)
 
 ###Useful commands that I often forget
 Bash/Zshell Commands
@@ -73,6 +72,7 @@ Vim Commands
 * `^F-[` in tmux works the same as `^F <PageUp>`, which puts tmux into scroll mode. This command comes in handy on keyboards that don't have `<PageUp>` and `<PageDown>`.
 * `:21,25s/old/new/g` to substitute `new` for `old` on lines 21 through 25.
 * When scrolling in tmux, `<fn> <UpArrow>` and `<fn> <DownArrow>` can be used instead of `<PageUp>` and `<PageDown>`. This also comes in handy on keyboards that lack Page Up and Page Down.
+* `set list!` to toggle showing of whitespace characters.
 
 SSH/SCP Commands
 

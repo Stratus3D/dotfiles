@@ -15,6 +15,8 @@ usage() {
                                          the files to
     --destination_dir                    Path the directory on the remote server
     --source                             The directory to rsync to the server
+    --exclude-gitignored                 Exclude files that match the patterns
+                                         in the gitignores
 EOF
 }
 
@@ -27,7 +29,14 @@ sync() {
     source_dir=$1
     destination_server=$2
     destination_dir=$3
-    rsync -p -r --exclude='.git' $source_dir $destination_server:$destination_dir
+    exclude_gitignored=$4
+    set -x
+    if [ "$exclude_gitignored" = true ]; then
+        rsync -p -r --exclude='.git' $source_dir $destination_server:$destination_dir --exclude='/.git' --filter='dir-merge,- .gitignore .gitignore_global'
+    else
+        rsync -p -r --exclude='.git' $source_dir $destination_server:$destination_dir
+    fi
+    set +x
 }
 
 get_value() {
@@ -47,6 +56,7 @@ get_value() {
 
 destination_dir=""
 destination_server=""
+exclude_gitignored=false
 
 while :; do
     case ${1:-} in
@@ -62,6 +72,9 @@ while :; do
             ;;
         -d|--destination_dir|--destination_dir=*)
             destination_dir=$(get_value $1 ${2:-""})
+            ;;
+        -g|--exclude-gitignored)
+            exclude_gitignored=true
             ;;
         --)
             shift
@@ -85,6 +98,6 @@ if [ -z "$destination_server" ] || [ -z "$destination_dir" ]; then
     error_exit
 else
     echo "Syncing $source_dir to $destination_server:$destination_dir"
-    sync $source_dir $destination_server $destination_dir
+    sync $source_dir $destination_server $destination_dir $exclude_gitignored
     echo "Complete sync of $source_dir"
 fi

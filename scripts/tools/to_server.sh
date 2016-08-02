@@ -30,12 +30,21 @@ sync() {
     destination_server=$2
     destination_dir=$3
     exclude_gitignored=$4
-    set -x
+    delete=$5
+
+    # Base command
+    command_array=(-p -r --exclude='.git' $source_dir $destination_server:$destination_dir)
+
     if [ "$exclude_gitignored" = true ]; then
-        rsync -p -r --exclude='.git' $source_dir $destination_server:$destination_dir --exclude='/.git' --filter='dir-merge,- .gitignore .gitignore_global'
-    else
-        rsync -p -r --exclude='.git' $source_dir $destination_server:$destination_dir
+        command_array+=(--exclude='/.git' --filter='dir-merge,- .gitignore .gitignore_global')
     fi
+
+    if [ "$delete" = true ]; then
+        command_array+=(--delete)
+    fi
+
+    set -x
+    rsync "${command_array[@]}"
     set +x
 }
 
@@ -57,6 +66,7 @@ get_value() {
 destination_dir=""
 destination_server=""
 exclude_gitignored=false
+delete=false
 
 while :; do
     case ${1:-} in
@@ -75,6 +85,9 @@ while :; do
             ;;
         -g|--exclude-gitignored)
             exclude_gitignored=true
+            ;;
+        -f|--delete)
+            delete=true
             ;;
         --)
             shift
@@ -98,6 +111,6 @@ if [ -z "$destination_server" ] || [ -z "$destination_dir" ]; then
     error_exit
 else
     echo "Syncing $source_dir to $destination_server:$destination_dir"
-    sync $source_dir $destination_server $destination_dir $exclude_gitignored
+    sync $source_dir $destination_server $destination_dir $exclude_gitignored $delete
     echo "Complete sync of $source_dir"
 fi

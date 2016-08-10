@@ -218,3 +218,8 @@ nmap <leader>l :set list!<CR>
 
 " Use special chars in place of tab and eol
 set listchars=eol:¬,tab:→\ ,extends:>,precedes:<
+
+" Remove all trailing whitespace
+function! RemoveTrailingWhitespace()
+    %s/\s\+$//e
+endfunction

@@ -111,6 +111,10 @@ make_dir_if_missing $HOME/.tmuxinator
 symlink_and_save_original $dotfiles/tmuxinator/default.yml \
     $HOME/.tmuxinator/default.yml $olddir
 
+# Symlink the .erlang file
+symlink_and_save_original $dotfiles/erlang/erlang \
+    $HOME/.erlang $olddir
+
 # If vundle is already installed, remove it and fetch the latest from Github
 remove_dir_if_exists $dotfiles/vim/bundle/Vundle.vim
 

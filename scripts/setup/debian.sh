@@ -31,7 +31,7 @@ sudo apt-get -y install jq
 sudo apt-get -y install rbenv
 
 # Communication apps
-sudo apt-get -y install irssi
+sudo apt-get -y install weechat
 sudo apt-get -y install thunderbird
 sudo apt-get -y install enigmail # For secure email
 

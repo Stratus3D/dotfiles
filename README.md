@@ -93,6 +93,7 @@ Git Commands
 * `git clean -X` - Remove files ignored by Git
 * `git checkout $(git rev-list -n 1 --before="2016-07-05 21:00" master)` - Checkout a branch at a specific point in time.
 * `git show $(git rev-list -n 1 --before="2016-07-05 21:00" master):path/to/file` - Show what a file looked like at a specific point in time on a specific branch.
+* `--ignore-all-space` - Ignore whitespace only changes when showing diff.
 
 Irssi Commands
 

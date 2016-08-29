@@ -2,6 +2,8 @@
 #
 # Build and install redshift
 #
+# Only tested on ubuntu
+#
 # Usage ./redshift.sh
 #
 

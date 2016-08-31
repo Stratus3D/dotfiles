@@ -64,6 +64,9 @@ sudo apt-get update
 sudo apt-get -y install fluxgui
 # TODO: Add flux to list of startup applications
 
+sudo apt-get install -y autopoint intltool libdrm-dev libxcb1-dev libxcb-randr0-dev
+#sudo apt-get install -y libgeoclue-dev
+
 # WxWidgets is needed for Erlang
 sudo apt-get -y install libwxgtk2.8-dev libwxgtk2.8-dbg
 

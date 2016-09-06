@@ -58,6 +58,8 @@ Bash/Zshell Commands
 * `ssh-add` allows identity to be used on remote machines by using the `-A` flag with the `ssh` command.
 * `tar -cvzf tarballname.tar.gz file_or_directory` compresses `file_or_directory` to a tarball named `tarballname.tar.gz`.
 * `ssh -A -L 5432:localhost:5432 remoteserver` to proxy whatever (e.g. PostgreSQL) is listening on port `5432` on `remoteserver` to port 5432 on `localhost`.
+* `netstat -tunapl` show which process are running on which ports.
+* `ls -i -P` show which process are running on which ports.
 
 OSX Commands
 * `su` needs to be `sudo su`

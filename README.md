@@ -5,6 +5,8 @@ My Dotfiles
 
 My dotfiles. Everything I need to get setup on a new machine.
 
+This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a script to symlink all the config files and directories in place, and a set of setup scripts that install all the tools I need on Ubuntu or OSX.
+
 ### Installation
 1. Run the `setup.sh`. This will install all the necessary software, setup commonly used directories, and install dotfiles. Since the setup script is idempotent it can be run on machines that have already been setup without causing issues.
 

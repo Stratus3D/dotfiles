@@ -58,13 +58,7 @@ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-ke
 sudo apt-get update
 sudo apt-get install google-chrome-stable
 
-# Flux for lighting
-sudo add-apt-repository ppa:kilian/f.lux
-sudo apt-get update
-sudo apt-get -y install fluxgui
-# TODO: Add flux to list of startup applications
-
-sudo apt-get install -y autopoint intltool libdrm-dev libxcb1-dev libxcb-randr0-dev
+sudo apt-get install -y autopoint intltool libdrm-dev libxcb1-dev libxcb-randr0-dev geoclue-hostip
 #sudo apt-get install -y libgeoclue-dev
 
 # WxWidgets is needed for Erlang

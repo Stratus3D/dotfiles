@@ -4,6 +4,13 @@ else
     alias vim="vi"
 fi
 
+# For convenience
+alias ..="cd .."
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+
 # Git alias
 alias g="git"
 alias gst="git status"

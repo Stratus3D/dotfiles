@@ -7,7 +7,9 @@ My dotfiles. Everything I need to get setup on a new machine.
 
 This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a script to symlink all the config files and directories in place, and a set of setup scripts that install all the tools I need on Ubuntu or OSX.
 
-### Installation
+## Installation
+
+#### Installation Steps
 1. Run the `setup.sh`. This will install all the necessary software, setup commonly used directories, and install dotfiles. Since the setup script is idempotent it can be run on machines that have already been setup without causing issues.
 
         wget -O - https://raw.githubusercontent.com/Stratus3D/dotfiles/master/scripts/setup.sh | sh 2>&1 | tee ~/setup.log
@@ -18,10 +20,11 @@ This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a scrip
 2. (OSX only) Configure iTerm2 to use the custom profile stored in the dotfiles directory. In the iTerm2 preferences window click the "browse" button and navigate to `~/dotfiles/iterm2_profile/` and select the plist file.
 3. (OSX only) Load Better Touch Tool mappings that are stored in the dotfiles directory. Open Better Touch Tool and click the import button. Choose `~/dotfiles/better_touch_tool/better_touch_tool_configuration`.
 
-### Software
+## Software
+
 This is software that I need for my day-to-day programming work. I try to keep this list updated with the latest software I am using. This allows me to quickly setup new development machines. I am developing a script named checkenv.sh that will verify everything is setup properly.
 
-#### Tools
+### Tools
 * Git ([https://git-scm.com/](https://git-scm.com/))
 * Vim ([http://www.vim.org/](http://www.vim.org/))
 * Tmux ([https://tmux.github.io/](https://tmux.github.io/))
@@ -41,11 +44,11 @@ OSX Only
 * ipmenulet [https://github.com/mcandre/IPMenulet](https://github.com/mcandre/IPMenulet)
 * BetterTouchTool [http://www.bettertouchtool.net/](http://www.bettertouchtool.net/)
 
-#### Browsers
+### Browsers
 * Firefox
 * Chrome
 
-#### Languages
+### Languages
 
 Use asdf for version management ([https://github.com/HashNuke/asdf](https://github.com/HashNuke/asdf)) of each language unless otherwise noted.
 
@@ -58,12 +61,12 @@ Use asdf for version management ([https://github.com/HashNuke/asdf](https://gith
 * Javascript(NodeJS)
 * Go
 
-#### Frameworks
+### Frameworks
 * [Rails](http://rubyonrails.org/)
 * [Phoenix](http://www.phoenixframework.org/)
 * [AngularJS](https://angularjs.org/)
 
-###Documentation
+##Documentation
 Offline documentation suitable for day to day use.
 * Erlang: [http://erldocs.com/](http://erldocs.com/)
 * Elixir: [http://elixir-lang.org/docs.html](http://elixir-lang.org/docs.html)
@@ -73,17 +76,17 @@ Offline documentation suitable for day to day use.
 * C: [http://www.gnu.org/software/libc/manual/html_mono/libc.html](http://www.gnu.org/software/libc/manual/html_mono/libc.html)
 * Make: [http://www.gnu.org/software/make/manual/make.html](http://www.gnu.org/software/make/manual/make.html)
 
-###Color Schemes
+##Color Schemes
 * [Solarized Color Scheme (http://ethanschoonover.com/solarized)](http://ethanschoonover.com/solarized)
 
-###Repos that I referred to when creating these dotfiles
+##Repos that I referred to when creating these dotfiles
 * [Joshua Steele's dotfiles (https://github.com/joshukraine/dotfiles)](https://github.com/joshukraine/dotfiles)
 * [thoughtbot/laptop (https://github.com/thoughtbot/laptop)](https://github.com/thoughtbot/laptop)
 * [Michael J. Smalley's dotfiles (https://github.com/michaeljsmalley/dotfiles)](https://github.com/michaeljsmalley/dotfiles)
 * [Gary Bernhardt's dotfiles (https://github.com/garybernhardt/dotfiles)](https://github.com/garybernhardt/dotfiles)
 * [Andrew Stambrosky's dotfiles (https://github.com/astambrosky/dotfiles)](https://github.com/astambrosky/dotfiles)
 
-### TODO
+## TODO
 * Complete the `clone_all_bitbucket_repos.sh` script so that all private repos can be cloned.
 * Complete the `hosts_manager.sh` script.
 * Complete the `prax.sh` install script.
@@ -95,7 +98,7 @@ Offline documentation suitable for day to day use.
 * Add custom status line to tmux with asdf versions
 * Add info on current selection in vim status bar (`set showcmd` in visual mode)
 
-###Useful commands that I often forget
+##Useful commands that I often forget
 Bash/Zshell Commands
 
 * `open .` to open current directory in Finder

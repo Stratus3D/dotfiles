@@ -58,6 +58,9 @@ if [[ $(uname -a) =~ 'Linux' ]]; then
     alias open='xdg-open'
 fi
 
+#create hangout
+alias hangout="open https://hangouts.google.com/hangouts/_"
+
 # Custom options
 RC_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 

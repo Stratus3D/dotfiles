@@ -9,10 +9,14 @@ This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a scrip
 
 ## Installation
 
+#### Prerequisites
+
+* `curl` - For the command below
+
 #### Installation Steps
 1. Run the `setup.sh`. This will install all the necessary software, setup commonly used directories, and install dotfiles. Since the setup script is idempotent it can be run on machines that have already been setup without causing issues.
 
-        wget -O - https://raw.githubusercontent.com/Stratus3D/dotfiles/master/scripts/setup.sh | sh 2>&1 | tee ~/setup.log
+        curl -s https://raw.githubusercontent.com/Stratus3D/dotfiles/master/scripts/setup.sh | sh 2>&1 | tee ~/setup.log
 
     On Debian this is all you need to do. Everything should be installed and configured correctly. On OSX there are two remaining steps.
 

@@ -134,6 +134,7 @@ Bash/Zshell Commands
 * `ssh -A -L 5432:localhost:5432 remoteserver` to proxy whatever (e.g. PostgreSQL) is listening on port `5432` on `remoteserver` to port 5432 on `localhost`.
 * `netstat -tunapl` show which process are running on which ports.
 * `ls -i -P` show which process are running on which ports.
+* `tcpdump -A` print out all packets.
 
 OSX Commands
 * `su` needs to be `sudo su`

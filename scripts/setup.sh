@@ -8,9 +8,6 @@ set -e # Terminate script if anything exits with a non-zero value
 set -u # Prevent unset variables
 set -o pipefail # Pipe exit code should be non-zero when a command in it fails
 
-# Get the directory this script is stored in
-DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-
 cd $HOME
 
 DOTFILES_DIR=$HOME/dotfiles
@@ -36,7 +33,10 @@ if [ ! -d $DOTFILES_DIR ]; then
   fi
 else
   cd $DOTFILES_DIR
+  # We could have modifications in the repository, so we stash them
+  git stash
   git pull origin master
+  git stash pop
 fi
 
 # Change to the dotfiles directory either way
@@ -82,10 +82,10 @@ fi
 
 if [[ "$unamestr" == 'Darwin' ]]; then
     # Then run our own setup script
-    "$DIR/setup/darwin.sh" 1>&1 2>&1
+    "$DOTFILE_SCRIPTS_DIR/setup/darwin.sh" 1>&1 2>&1
 elif [[ "$unamestr" == 'Linux' ]]; then
     # Run our own setup script
-    "$DIR/setup/linux.sh" 1>&1 2>&1
+    "$DOTFILE_SCRIPTS_DIR/setup/linux.sh" 1>&1 2>&1
 fi
 
 ###############################################################################
@@ -145,7 +145,7 @@ cpan Lingua::Ispell
 # Check environment and print out results
 ###############################################################################
 
-$DIR/checkenv.sh
+$DOTFILE_SCRIPTS_DIR/checkenv.sh
 
 # Install jslint
 npm install -g jslint

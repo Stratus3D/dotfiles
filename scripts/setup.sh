@@ -43,8 +43,8 @@ fi
 cd $DOTFILES_DIR
 
 # run the install script, which symlinks the dotfiles
-chmod +x $DOTFILE_SCRIPTS_DIR/makesymlinks.sh
-$DOTFILE_SCRIPTS_DIR/makesymlinks.sh
+chmod +x $DOTFILE_SCRIPTS_DIR/makesymlinks.sh || exit 1
+$DOTFILE_SCRIPTS_DIR/makesymlinks.sh || exit 1
 
 ###############################################################################
 # Create commonly used directories
@@ -96,7 +96,7 @@ cd $HOME
 
 if [ ! -d $asdf_dir ]; then
     echo "Installing asdf..."
-    git clone https://github.com/HashNuke/asdf.git $asdf_dir
+    git clone https://github.com/HashNuke/asdf.git $asdf_dir || exit 1
     echo "asdf installation complete"
 else
     echo "asdf already installed"
@@ -122,9 +122,7 @@ asdf install
 # Install devdocs
 ###############################################################################
 cd $HOME/Development
-rbenv install 2.2.0
 git clone https://github.com/Thibaut/devdocs.git && cd devdocs
-rbenv local 2.2.0
 gem install bundler
 # TODO: Fix issue with bundle install never finishing
 bundle install

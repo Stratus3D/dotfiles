@@ -80,12 +80,11 @@ else
     curl -L http://install.ohmyz.sh | sh
 fi
 
+# Run the OS-specific setup scripts
 if [[ "$unamestr" == 'Darwin' ]]; then
-    # Then run our own setup script
-    "$DOTFILE_SCRIPTS_DIR/setup/darwin.sh" 1>&1 2>&1
+    "$DOTFILE_SCRIPTS_DIR/setup/darwin.sh"
 elif [[ "$unamestr" == 'Linux' ]]; then
-    # Run our own setup script
-    "$DOTFILE_SCRIPTS_DIR/setup/linux.sh" 1>&1 2>&1
+    "$DOTFILE_SCRIPTS_DIR/setup/linux.sh"
 fi
 
 ###############################################################################

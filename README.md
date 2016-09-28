@@ -202,6 +202,11 @@ Bash Flags
 * `set -o pipefail` - Causes any non-zero exit status in a pipeline to be the exit status of the entire pipeline.
 http://redsymbol.net/articles/unofficial-bash-strict-mode/
 
+Curl Flags
+
+* `-w "%{http_code}\n"` - Show the status code of the response.
+
+
 AWK and sed
 
 * `#!/usr/bin/sed 1d .` - prints all but the first line of the sed file.

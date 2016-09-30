@@ -10,6 +10,7 @@
 -import(io, [format/1]).
 
 help() ->
+     % TODO: Don't hardcode all this info here
      shell_default:help(),
      format("** user extended commands **~n"),
      format("dbgtc(File)   -- use dbg:trace_client() to read data from File\n"),
@@ -25,6 +26,7 @@ help() ->
      format("la()          -- load all modules\n"),
 %     format("nl()          -- load all changed modules on all known nodes\n"),
      format("mm()          -- list modified modules\n"),
+     format("cmd(Command)  -- Execute Command in the shell of the OS\n"),
      true.
 
 dbgtc(File) ->

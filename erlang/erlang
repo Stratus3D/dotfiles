@@ -1,2 +1,8 @@
-UserDefault = "~/erlang/user_default.erl".
-shell_default:c(UserDefault).
+% Get the home directory of the user so we don't have to hard code it
+{ok, Home} = init:get_argument(home).
+
+% Build the path to the user_default.erl file
+UserDefaultFile = Home ++ "/dotfiles/erlang/user_default.erl".
+
+% Load the user default file
+shell_default:c(UserDefaultFile).

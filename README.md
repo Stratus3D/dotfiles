@@ -93,7 +93,6 @@ Offline documentation suitable for day to day use.
 ## TODO
 * Complete the `clone_all_bitbucket_repos.sh` script so that all private repos can be cloned.
 * Complete the `hosts_manager.sh` script.
-* Complete the `prax.sh` install script.
 * Figure out how to setup devdocs.io/zealdocs locally when running the setup script.
 * Make all `source`s relative.
 * Make vim highlight HTML and scripts in HTML correctly.
@@ -134,7 +133,9 @@ Bash/Zshell Commands
 * `ssh -A -L 5432:localhost:5432 remoteserver` to proxy whatever (e.g. PostgreSQL) is listening on port `5432` on `remoteserver` to port 5432 on `localhost`.
 * `netstat -tunapl` show which process are running on which ports.
 * `ls -i -P` show which process are running on which ports.
+* `iptables -vnL` show default firewall rules.
 * `tcpdump -A` print out all packets.
+* `tcpdump -i lo -s0 -w xyz.pcap` save all packets from interface to file.
 
 OSX Commands
 * `su` needs to be `sudo su`
@@ -202,10 +203,9 @@ Bash Flags
 * `set -o pipefail` - Causes any non-zero exit status in a pipeline to be the exit status of the entire pipeline.
 http://redsymbol.net/articles/unofficial-bash-strict-mode/
 
-Curl Flags
+Curl Commands
 
 * `-w "%{http_code}\n"` - Show the status code of the response.
-
 
 AWK and sed
 

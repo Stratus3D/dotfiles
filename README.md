@@ -194,6 +194,7 @@ Gcc Flags
 Erlang Flags
 
 * `bin_opt_info` print warnings and information about how binaries are used
+* `+pc unicode` increase the range of characters that the system will consider printable. Helpful when testing with unicode in the shell
 
 Bash Flags
 

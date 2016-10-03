@@ -1,6 +1,7 @@
 !.*
 .tugboat
 .DS_Store
+*.beam
 oh-my-zsh/
 vim/.netrwhist
 chef/

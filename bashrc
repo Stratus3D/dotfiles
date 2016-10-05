@@ -18,7 +18,6 @@ $HOME/dotfiles/mixins/asdf
 $HOME/dotfiles/mixins/functions
 $HOME/dotfiles/mixins/aliases
 $HOME/dotfiles/mixins/grep
-$HOME/dotfiles/mixins/nodejs
 $HOME/dotfiles/mixins/path"
 
 

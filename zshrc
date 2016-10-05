@@ -83,7 +83,6 @@ source $ZSHRC_PATH/mixins/general
 source $ZSHRC_PATH/mixins/asdf
 source $ZSHRC_PATH/mixins/functions
 source $ZSHRC_PATH/mixins/grep
-source $ZSHRC_PATH/mixins/nodejs
 source $ZSHRC_PATH/mixins/path
 
 export MIRTH_MATCH_HOME=/opt/mirthmatch

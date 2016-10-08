@@ -28,11 +28,15 @@ for file in $HOME/dotfiles/scripts/tools/*.sh; do
 done
 
 # Create alaises for bash scripts in the custom_tools directory
-for file in $HOME/dotfiles/scripts/custom_tools/*.sh; do
-    filename=${file%.sh}
-    root_filename=${filename##*/}
-    alias $root_filename="$file"
-done
+files=$HOME/dotfiles/scripts/custom_tools/*.sh
+# We might not have any custom tools
+if [ "$files" != "" ]; then
+    for file in $file; do
+        filename=${file%.sh}
+        root_filename=${filename##*/}
+        alias $root_filename="$file"
+    done
+fi
 
 # Additional tool aliases to make commands shorter
 alias ot="open_ticket"

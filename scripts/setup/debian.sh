@@ -113,5 +113,8 @@ sudo apt-get -y install android-tools-adb
 # Install Blender for 3D modeling
 sudo apt-get -y install blender
 
+# Misc other dependencies
+sudo apt-get -y install ncftp python-paramiko python-pycryptopp lftp python-boto python-dev librsync-dev
+
 # Assume we are using Gnome
 source gnome.sh

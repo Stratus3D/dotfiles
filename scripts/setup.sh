@@ -49,11 +49,12 @@ $DOTFILE_SCRIPTS_DIR/makesymlinks.sh || exit 1
 ###############################################################################
 # Create commonly used directories
 ###############################################################################
-# TODO: The names of these directories are duplicated elsewhere.
+# TODO: These directory names are duplicated elsewhere. Reduce duplication
 mkdir -p $HOME/bin # Third-party binaries
 mkdir -p $HOME/lib # Third-party software
 mkdir -p $HOME/nobackup # All files that shouldn't be backed up the normal way
 mkdir -p $HOME/history # Zsh and Bash history files
+mkdir -p $HOME/ErlangLibraries # $ERL_LIBS directory
 mkdir -p $HOME/Development
 mkdir -p $HOME/Development/src # Go source directory
 mkdir -p $HOME/Development/bin # Go binary directory

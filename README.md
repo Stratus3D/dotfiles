@@ -126,6 +126,7 @@ Bash/Zshell Commands
 * `pkill <process_name>` kills all processes with the given name (e.g. `pkill HipChat` kills the HipChat app). The `-u` flag limits the killing to all processes with a certain euid (e.g. `pkill -u username HipChat`)
 * `kill <process_id>` kills the process identified by `<process_id>`. `-9` can be used to kill the process immediately
 * `echo -n ✘ | hexdump` to print the encoding of a character by the console. Useful for bash scripts
+* `for f in directory/* ; do echo -e \\n\\n$f\\n 1>&1 ; cat $f ; done ;` print out all file name and file contents for all files in `directory`.
 * `ssh -vT git@github.com` useful for debugging SSH authentication issues.
 * `sudo -u git -H ssh -vT bitbucket.org` similar to the SSH command above, only test the connection for a specific user.
 * `ssh-add` allows identity to be used on remote machines by using the `-A` flag with the `ssh` command.
@@ -151,6 +152,8 @@ Vim Commands
 * `:21,25s/old/new/g` to substitute `new` for `old` on lines 21 through 25.
 * When scrolling in tmux, `<fn> <UpArrow>` and `<fn> <DownArrow>` can be used instead of `<PageUp>` and `<PageDown>`. This also comes in handy on keyboards that lack Page Up and Page Down.
 * `set list!` to toggle showing of whitespace characters.
+* `g;` go back a change position
+* `g,` go forward a change position
 
 SSH/SCP Commands
 

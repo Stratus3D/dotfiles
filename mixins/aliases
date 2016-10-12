@@ -28,10 +28,10 @@ for file in $HOME/dotfiles/scripts/tools/*.sh; do
 done
 
 # Create alaises for bash scripts in the custom_tools directory
-files=$HOME/dotfiles/scripts/custom_tools/*.sh
+custom_tools=($(find $HOME/dotfiles/scripts/custom_tools -maxdepth 1 -name "*.sh"))
 # We might not have any custom tools
-if [ "$files" != "" ]; then
-    for file in $file; do
+if [ ${#custom_tools[@]} -gt 0 ]; then
+    for file in $custom_tools; do
         filename=${file%.sh}
         root_filename=${filename##*/}
         alias $root_filename="$file"
@@ -43,6 +43,7 @@ alias ot="open_ticket"
 
 # Postgres
 # TODO: These need to change to support asdf-postgres
+# pg_ctl -D ~/.asdf/installs/postgres/9.5.2/data -l logfile start
 alias startpost='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias stoppost='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
 alias statpost='ps aux | ag postgres'

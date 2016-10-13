@@ -100,6 +100,7 @@ Offline documentation suitable for day to day use.
 * Make vim read color scheme from zsh.
 * Add custom status line to tmux with asdf versions
 * Add info on current selection in vim status bar (`set showcmd` in visual mode)
+* Fix setup script
 
 ##Useful commands that I often forget
 Bash/Zshell Commands

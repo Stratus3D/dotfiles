@@ -9,8 +9,6 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 if hash apt-get 2>/dev/null; then
     "$DIR/debian.sh" 1>&1 2>&1
 else
+    echo "Script for Linux incomplete. Please install all missing software manually."
     echo "apt-get is missing. Please install all packages listed in '$DIR/debian.sh' manually."
 fi
-
-# TODO: write code to install software on Linux
-echo "Script for Linux incomplete. Please install all missing software manually."

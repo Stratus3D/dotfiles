@@ -40,7 +40,7 @@ sudo apt-get -y install enigmail # For secure email
 #sudo apt-get -y install chrome # chrome isn't available
 
 # For emoji
-sudo apt-get -y ttf-ancient-fonts
+sudo apt-get -y install ttf-ancient-fonts
 
 # Skype
 # Skype is in the canonical partner repository

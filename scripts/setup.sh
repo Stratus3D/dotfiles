@@ -4,9 +4,11 @@
 # This script creates everything needed to get started on a new laptop
 ###############################################################################
 
-set -e # Terminate script if anything exits with a non-zero value
-set -u # Prevent unset variables
-set -o pipefail # Pipe exit code should be non-zero when a command in it fails
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+IFS=$'\t\n' # Stricter IFS settings
+ORIGINAL_IFS=$IFS
 
 cd $HOME
 

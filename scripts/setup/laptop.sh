@@ -3,6 +3,7 @@
 # Welcome to the thoughtbot laptop script!
 # Be prepared to turn your laptop (or desktop, no haters here)
 # into an awesome development machine.
+# TODO: Remove everything here I don't need
 
 fancy_echo() {
   local fmt="$1"; shift
@@ -133,9 +134,7 @@ brew update
 
 brew_install_or_upgrade 'zsh'
 brew_install_or_upgrade 'git'
-brew_install_or_upgrade 'postgres'
 brew_launchctl_restart 'postgresql'
-brew_install_or_upgrade 'redis'
 brew_launchctl_restart 'redis'
 brew_install_or_upgrade 'the_silver_searcher'
 brew_install_or_upgrade 'vim'
@@ -145,10 +144,6 @@ brew_install_or_upgrade 'reattach-to-user-namespace'
 brew_install_or_upgrade 'imagemagick'
 brew_install_or_upgrade 'qt'
 brew_install_or_upgrade 'hub'
-brew_install_or_upgrade 'node'
-
-brew_install_or_upgrade 'rbenv'
-brew_install_or_upgrade 'ruby-build'
 
 # shellcheck disable=SC2016
 append_to_zshrc 'eval "$(rbenv init - --no-rehash zsh)"' 1

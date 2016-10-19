@@ -16,12 +16,10 @@ root: ~/Development/
 # tmux_options: -f ~/.tmux.mac.conf
 
 windows:
-  - editor:
+  - main:
       layout: main-vertical
       panes:
         - vim $(git status --porcelain | sed -ne 's/^ M //p')
         - # zsh
         - # zsh
-        - rake console
-  - build:
-  - logs:
+        - # zsh

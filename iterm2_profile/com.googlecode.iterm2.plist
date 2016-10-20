@@ -339,19 +339,21 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>1203 78 445 136 0 0 1920 1057 </string>
+	<string>1203 33 445 94 0 0 1920 1057 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>359 -479 606 456 322 -800 1280 777 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>912 425 400 129 0 0 1920 1057 </string>
+	<string>737 696 400 129 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>779 -506 620 392 322 -800 1280 777 </string>
+	<string>587 326 700 622 0 0 1920 1057 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>269 139 606 456 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>269 121 796 474 0 0 1920 1057 </string>
+	<string>338 122 918 495 0 0 1920 1057 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>80 193 592 584 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 22 1874 1035 0 0 1920 1057 </string>
+	<string>0 38 1874 1017 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>136 52 650 476 0 0 1280 778 </string>
 	<key>NeverWarnAboutShortLivedSessions_F8A2BF92-AD20-4186-BD7F-064D9C0984C9</key>
@@ -512,7 +514,7 @@
 			<key>Automatically Log</key>
 			<false/>
 			<key>BM Growl</key>
-			<true/>
+			<false/>
 			<key>Background Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -912,11 +914,11 @@
 			<key>Name</key>
 			<string>Solarized</string>
 			<key>Non Ascii Font</key>
-			<string>Monaco 13</string>
+			<string>Monaco 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Monaco 13</string>
+			<string>Monaco 12</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1098,6 +1100,8 @@
 			<false/>
 			<key>Use Italic Font</key>
 			<false/>
+			<key>Use Non-ASCII Font</key>
+			<true/>
 			<key>Use Tab Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
@@ -1118,10 +1122,12 @@
 	<integer>0</integer>
 	<key>NoSyncHaveShownPromoWithId_4</key>
 	<true/>
+	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
+	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>FBFC2151-9BB6-4D30-BA18-55DBAA4D623C</string>
 	<key>NoSyncLastTipTime</key>
-	<real>491854345.92683798</real>
+	<real>493908663.06680602</real>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -1130,6 +1136,8 @@
 	<real>477846301.23457098</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
 	<real>488761835.38716</real>
+	<key>NoSyncTipsDisabled</key>
+	<true/>
 	<key>NoSyncTipsToNotShow</key>
 	<array>
 		<string>000</string>
@@ -1141,6 +1149,24 @@
 		<string>0005</string>
 		<string>0006</string>
 		<string>0007</string>
+		<string>0008</string>
+		<string>0009</string>
+		<string>0010</string>
+		<string>0011</string>
+		<string>0012</string>
+		<string>0013</string>
+		<string>0014</string>
+		<string>0015</string>
+		<string>0016</string>
+		<string>0017</string>
+		<string>0018</string>
+		<string>0019</string>
+		<string>0020</string>
+		<string>0021</string>
+		<string>0022</string>
+		<string>0023</string>
+		<string>0024</string>
+		<string>0025</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
@@ -1210,7 +1236,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-08-01T14:41:31Z</date>
+	<date>2016-10-20T14:55:59Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -1266,7 +1292,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.5</string>
+	<string>3.0.10</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

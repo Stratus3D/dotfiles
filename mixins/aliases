@@ -67,8 +67,6 @@ fi
 alias hangout="open https://hangouts.google.com/hangouts/_"
 
 # Custom options
-RC_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-
-if [ -f "$RC_DIR/dotfiles/mixins/aliases.custom" ]; then
-    source "$RC_DIR/dotfiles/mixins/aliases.custom"
+if [ -f "$HOME/dotfiles/mixins/aliases.custom" ]; then
+    source "$HOME/dotfiles/mixins/aliases.custom"
 fi

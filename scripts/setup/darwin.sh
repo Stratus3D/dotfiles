@@ -35,5 +35,9 @@ brew install wxmac --with-static --with-stl --universal
 # Install pianobar for music
 brew install pianobar
 
+# QCacheGrind for valgrind analysis
+brew install qcachegrind --with-graphviz
+brew linkapps qcachegrind
+
 # TODO: write code to install software on Darwin
 echo "Script for Darwin incomplete. Please install all the software manually."

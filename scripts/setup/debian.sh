@@ -31,6 +31,8 @@ sudo apt-get -y install jq
 sudo apt-get -y install rbenv
 sudo apt-get -y install linux-tools-`uname -r` # perf
 sudo apt-get -y install dstat
+# For use with Erlang's fprof
+sudo apt-get -y install kcachegrind
 
 # Communication apps
 sudo apt-get -y install weechat

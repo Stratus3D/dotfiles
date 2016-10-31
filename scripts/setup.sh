@@ -64,6 +64,7 @@ mkdir -p $HOME/Development/archived # Old projects
 mkdir -p $HOME/Documentation
 mkdir -p $HOME/Installers
 mkdir -p $HOME/Screenshots
+mkdir -p $HOME/servers # For remote server mounts
 
 ###############################################################################
 # Install software on laptop

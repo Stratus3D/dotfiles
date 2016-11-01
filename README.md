@@ -3,7 +3,7 @@ My Dotfiles
 
 **Stratus3D**
 
-My dotfiles. Everything I need to get setup on a new machine.
+Everything I need to get setup on a new machine.
 
 This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a script to symlink all the config files and directories in place, and a set of setup scripts that install all the tools I need on Ubuntu or OSX.
 

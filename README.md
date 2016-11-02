@@ -177,6 +177,7 @@ Git Commands
 * `git show $(git rev-list -n 1 --before="2016-07-05 21:00" master):path/to/file` - Show what a file looked like at a specific point in time on a specific branch.
 * `--ignore-all-space` - Ignore whitespace only changes when showing diff.
 * `git stash save --keep-index` - Stash everything except what is already staged.
+* `git add -p` - Stage specific changes in a file.
 
 Irssi Commands
 

@@ -138,6 +138,7 @@ Bash/Zshell Commands
 * `iptables -vnL` show default firewall rules.
 * `tcpdump -A` print out all packets.
 * `tcpdump -i lo -s0 -w xyz.pcap` save all packets from interface to file.
+* `export $(cut -d= -f1 <file>)` export all variables in file containing environment variables
 
 OSX Commands
 * `su` needs to be `sudo su`

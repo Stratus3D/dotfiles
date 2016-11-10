@@ -13,3 +13,4 @@ curl -OL https://github.com/osxfuse/osxfuse/releases/download/osxfuse-3.5.3/osxf
 curl -OL https://github.com/osxfuse/sshfs/releases/download/osxfuse-sshfs-2.5.0/sshfs-2.5.0.pkg
 
 # TODO: Figure out how to install the dmg and the pkg
+echo "Installation script incomplete. Please install the dmg and the pkg manually."

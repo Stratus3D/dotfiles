@@ -5,7 +5,7 @@
 	 dbg_ip_trace/1,
          l/0, mm/0, la/0]).
 -export([my_tracer/0, my_dhandler/2, filt_state_from_term/1]).
--export([cmd/1]).
+-export([cmd/1, debug_binary/1]).
 
 -import(io, [format/1]).
 
@@ -200,3 +200,6 @@ filt_state_from_term(X) ->
 
 cmd(Cmd) ->
     io:format("~s~n", [os:cmd(Cmd)]).
+
+debug_binary(Bin) ->
+    io:format("Binary: ~s~n", [[ <<(X+$0)>> || <<X:1>> <= Bin]]).

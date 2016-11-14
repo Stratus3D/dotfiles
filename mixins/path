@@ -1,5 +1,5 @@
 # Development directory
-export DEVELOPMENT_DIR=$HOME/Development
+export DEVELOPMENT_DIR=$HOME/devel
 
 # Misc
 PATH=$HOME/lib/apache-ant-1.9.3/bin:$ANDROID_HOME/sdk/platform-tools:$ANDROID_HOME/sdk/tools:$HOME/lib/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:/Applications/CoronaSDK:/usr/local/bin:$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:$PATH

@@ -180,6 +180,7 @@ Git Commands
 * `--ignore-all-space` - Ignore whitespace only changes when showing diff.
 * `git stash save --keep-index` - Stash everything except what is already staged.
 * `git add -p` - Stage specific changes in a file.
+* `git merge-base --is-ancestor <commit-1> <commit-2>` - Check if `commit-1` is an ancestor of `commit-2`.
 
 Irssi Commands
 

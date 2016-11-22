@@ -28,7 +28,6 @@ sudo apt-get -y install curl
 sudo apt-get -y install silversearcher-ag
 sudo apt-get -y install exuberant-ctags
 sudo apt-get -y install jq
-sudo apt-get -y install rbenv
 sudo apt-get -y install linux-tools-`uname -r` # perf
 sudo apt-get -y install dstat
 # For use with Erlang's fprof

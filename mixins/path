@@ -14,7 +14,7 @@ PATH=$HOME/bin:$PATH
 export ERL_LIBS=$DEVELOPMENT_DIR
 
 # PostgreSQL
-PATH=/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH
+#PATH=/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH
 
 # Java
 JAVA_HOME_BIN=/usr/libexec/java_home
@@ -29,10 +29,6 @@ PATH=$HOME/lib/neo4j-community-2.0.0-RC1/bin/neo4j:$PATH
 # Go
 export GOPATH=$DEVELOPMENT_DIR
 PATH=$GOPATH/bin:$PATH
-
-# NodeJS
-export NVM_DIR=$HOME/.nvm
-PATH=/usr/local/share/npm/bin:$PATH
 
 # Add tools
 PATH=$HOME/dotfiles/scripts/git:$PATH

@@ -168,8 +168,8 @@ endfunction
 
 :nnoremap <F4>  :call ToggleLeftGuides()<CR>
 
-" highlight trailing whitespace
-highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+" highlight trailing whitespace in red so it stands out
+highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
 " Custom status bar

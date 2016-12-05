@@ -10,7 +10,6 @@ autocmd BufRead,BufNewFile Gemfile setfiletype ruby
 autocmd BufRead,BufNewFile Vagrantfile setfiletype ruby
 autocmd BufRead,BufNewFile Dockerfile setfiletype bash
 
-
 " General settings
 syntax on
 set number
@@ -168,10 +167,6 @@ endfunction
 
 :nnoremap <F4>  :call ToggleLeftGuides()<CR>
 
-" highlight trailing whitespace in red so it stands out
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-
 " Custom status bar
 set statusline=\ Filename:%-8t                               " Filename
 set statusline+=\ Encoding:\%-8{strlen(&fenc)?&fenc:'none'}   " File encoding
@@ -219,7 +214,5 @@ nmap <leader>l :set list!<CR>
 " Use special chars in place of tab and eol
 set listchars=eol:¬,tab:→\ ,extends:>,precedes:<
 
-" Remove all trailing whitespace
-function! RemoveTrailingWhitespace()
-    %s/\s\+$//e
-endfunction
+" Load trailing whitespace functions
+source $HOME/.vim/whitespace.vim

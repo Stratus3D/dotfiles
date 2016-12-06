@@ -79,12 +79,6 @@ SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 # We need this so that tmux uses zsh when started in a zsh shell
 export SHELL='/bin/zsh'
 
-source $ZSHRC_PATH/mixins/general
-source $ZSHRC_PATH/mixins/asdf
-source $ZSHRC_PATH/mixins/functions
-source $ZSHRC_PATH/mixins/grep
-source $ZSHRC_PATH/mixins/path
-
 export MIRTH_MATCH_HOME=/opt/mirthmatch
 export AS_HOME=/opt/glassfish
 export AS_LOGS=/opt/glassfish/domains/domain1/logs
@@ -92,6 +86,12 @@ export AS_CFG=/opt/glassfish/domains/domain1/config
 
 # export MANPATH="/usr/local/man:$MANPATH"
 source $ZSH/oh-my-zsh.sh
+
+source $ZSHRC_PATH/mixins/general
+source $ZSHRC_PATH/mixins/asdf
+source $ZSHRC_PATH/mixins/functions
+source $ZSHRC_PATH/mixins/grep
+source $ZSHRC_PATH/mixins/path
 
 source $ZSHRC_PATH/mixins/aliases
 

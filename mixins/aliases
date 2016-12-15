@@ -66,6 +66,11 @@ if [[ $(uname -a) =~ 'Linux' ]]; then
     alias open='xdg-open'
 fi
 
+# If we are on OSX create a `zeal` alias
+if [[ $(uname) =~ 'Darwin' ]]; then
+    alias zeal='/Applications/Zeal.app/Contents/MacOS/Zeal'
+fi
+
 #create hangout
 alias hangout="open https://hangouts.google.com/hangouts/_"
 

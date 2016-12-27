@@ -4,13 +4,13 @@
     <dict>
         <key>Label</key>
         <string>com.stratus3d.dotfiles.login</string>
-        key>EnableGlobbing</key>
-    <true/>
-    <key>ProgramArguments</key>
-    <array>
-            <string>say</string>
-                <string>~/*</string>
-            </array>
+        <key>ProgramArguments</key>
+        <array>
+            <string>/usr/bin/env</string>
+            <string>bash</string>
+            <string>-c</string>
+            <string>~/dotfiles/scripts/upon_login.sh</string>
+        </array>
         <key>RunAtLoad</key>
         <true/>
     </dict>

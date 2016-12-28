@@ -14,6 +14,7 @@ vim/bundle/
 mixins/*.custom
 scripts/custom_tools/
 scripts/custom_functions/
+scripts/upon_login_custom.sh
 
 # Ignore the compiled and the originals directories
 compiled/

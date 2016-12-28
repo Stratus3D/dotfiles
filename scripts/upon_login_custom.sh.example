@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# This is an example of a upon_login_custom.sh script
+
+# Things that should be run at login like:
+#
+# * Mount remote file systems that are available
+# * Start any services that aren't started automatically
+#
+# For example mounting sshfs file systems:
+#sshfs myserver:my/directory $HOME/servers/myserver -ovolname=myserver

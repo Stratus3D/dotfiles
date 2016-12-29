@@ -17,6 +17,10 @@ usage() {
     --source                             The directory to rsync to the server
     --exclude-gitignored                 Exclude files that match the patterns
                                          in the gitignores
+    --delete                             Delete files on the target server that
+                                         no longer exist in the source directory
+    --include-repo                       Whether or not to sync the git
+                                         repository. Defaults to false.
 EOF
 }
 
@@ -31,12 +35,17 @@ sync() {
     destination_dir=$3
     exclude_gitignored=$4
     delete=$5
+    include_dot_git=$6
 
     # Base command
-    command_array=(-p -r --exclude='.git' $source_dir $destination_server:$destination_dir)
+    command_array=(-p -r $source_dir $destination_server:$destination_dir)
 
     if [ "$exclude_gitignored" = true ]; then
-        command_array+=(--exclude='/.git' --filter='dir-merge,- .gitignore .gitignore_global')
+        command_array+=(--filter='dir-merge,- .gitignore .gitignore_global')
+    fi
+
+    if [ "$include_dot_git" = false ]; then
+        command_array+=(--exclude='.git')
     fi
 
     if [ "$delete" = true ]; then
@@ -52,6 +61,8 @@ get_value() {
     first=${1#*=}
     second=$2
 
+    # TODO: Use sed to parse the arguments?
+    #export OUTPUT=`echo $1 | sed -e 's/^[^=]*=//g'`
     if [ -z "$first" ]; then
         if [[ $second == "-*" ]]; then
             echo ""
@@ -67,6 +78,7 @@ destination_dir=""
 destination_server=""
 exclude_gitignored=false
 delete=false
+include_dot_git=false
 
 while :; do
     case ${1:-} in
@@ -88,6 +100,9 @@ while :; do
             ;;
         -f|--delete)
             delete=true
+            ;;
+        -r|--include-repo)
+            include_dot_git=true
             ;;
         --)
             shift
@@ -111,6 +126,6 @@ if [ -z "$destination_server" ] || [ -z "$destination_dir" ]; then
     error_exit
 else
     echo "Syncing $source_dir to $destination_server:$destination_dir"
-    sync $source_dir $destination_server $destination_dir $exclude_gitignored $delete
+    sync $source_dir $destination_server $destination_dir $exclude_gitignored $delete $include_dot_git
     echo "Complete sync of $source_dir"
 fi

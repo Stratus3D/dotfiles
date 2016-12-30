@@ -23,6 +23,9 @@ set showmatch
 set hlsearch
 set colorcolumn=80
 
+" Allow backspace to delete end of line, indent and start of line characters
+set backspace=indent,eol,start
+
 " Show pastetoggle status
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>

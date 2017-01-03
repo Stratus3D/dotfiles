@@ -7,5 +7,21 @@
 # * Mount remote file systems that are available
 # * Start any services that aren't started automatically
 #
-# For example mounting sshfs file systems:
-#sshfs myserver:my/directory $HOME/servers/myserver -ovolname=myserver
+# For example mounting sshfs file systems on OSX:
+#
+#ensure_mounted() {
+#    mount_point=$1
+#    server_and_dir=$2
+#    drive_name=$(basename $mount_point)
+#
+#    # Unmount first to be safe
+#    umount $mount_point
+#
+#    # Ensure the directory exists
+#    mkdir -p $mount_point
+#
+#    # Mount
+#    sshfs $server_and_dir $mount_point -ovolname=$drive_name
+#}
+#
+#ensure_mounted $HOME/servers/myserver myserver:my/directory

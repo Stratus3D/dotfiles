@@ -15,6 +15,7 @@
 *.dll
 *.exe
 *.o
+*.beam
 
 # Packages #
 ############

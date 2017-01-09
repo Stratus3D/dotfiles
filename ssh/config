@@ -1,0 +1,11 @@
+# Example Configuration
+#
+# All servers
+#Host *
+#
+# Trusted servers
+#Host *.stratus3d.com
+#    ForwardAgent yes
+#    # Also need these settings on OSX Sierra
+#    UseKeychain    no
+#    AddKeysToAgent yes

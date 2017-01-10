@@ -122,3 +122,25 @@ sudo apt-get -y install ncftp python-paramiko python-pycryptopp lftp python-boto
 
 # Assume we are using Gnome
 source gnome.sh
+
+# Install other software using custom install scripts
+install_scripts=(
+    # Testing
+    bats.sh
+    # Color
+    redshift.sh
+    # JavaScript
+    doctorjs.sh
+    # Ruby
+    prax.sh
+    # Erlang
+    rebar.sh
+    rebar3.sh
+    erlgrind.sh
+    observer_cli.sh
+    recon.sh
+    relx.sh
+    sync.sh
+)
+
+run_install_scripts $install_scripts

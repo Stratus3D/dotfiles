@@ -42,5 +42,25 @@ brew linkapps qcachegrind
 # autoexpect
 brew install expect
 
-# TODO: write code to install software on Darwin
-echo "Script for Darwin incomplete. Please install all the software manually."
+# Install other software using custom install scripts
+install_scripts=(
+    # Testing
+    bats.sh
+    # JavaScript
+    doctorjs.sh
+    # Ruby
+    prax.sh
+    # Erlang
+    erlgrind.sh
+    observer_cli.sh
+    rebar.sh
+    rebar3.sh
+    recon.sh
+    relx.sh
+    sync.sh
+    # OSX only
+    osxfuse.sh
+    zeal.sh
+)
+
+run_install_scripts $install_scripts

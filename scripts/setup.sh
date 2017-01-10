@@ -84,6 +84,18 @@ else
     curl -L http://install.ohmyz.sh | sh
 fi
 
+# Define a function used by the setup scripts to run all the custom install
+# scripts.
+run_install_scripts() {
+    $scripts_list=$1
+    $install_scripts_dir=$HOME/dotfiles/scripts/setup/install
+
+    # Run each script
+    for file in $scripts_list; do
+        "$install_scripts_dir/$file"
+    done
+}
+
 # Run the OS-specific setup scripts
 if [[ "$unamestr" == 'Darwin' ]]; then
     "$DOTFILE_SCRIPTS_DIR/setup/darwin.sh"

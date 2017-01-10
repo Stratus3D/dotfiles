@@ -110,7 +110,6 @@ gem_install_or_update() {
   else
     fancy_echo "Installing %s ..." "$1"
     gem install "$@"
-    rbenv rehash
   fi
 }
 
@@ -145,23 +144,11 @@ brew_install_or_upgrade 'imagemagick'
 brew_install_or_upgrade 'qt'
 brew_install_or_upgrade 'hub'
 
-# shellcheck disable=SC2016
-append_to_zshrc 'eval "$(rbenv init - --no-rehash zsh)"' 1
-
 brew_install_or_upgrade 'openssl'
 brew unlink openssl && brew link openssl --force
 brew_install_or_upgrade 'libyaml'
 
 ruby_version="$(curl -sSL http://ruby.thoughtbot.com/latest)"
-
-eval "$(rbenv init - zsh)"
-
-if ! rbenv versions | grep -Fq "$ruby_version"; then
-  rbenv install -s "$ruby_version"
-fi
-
-rbenv global "$ruby_version"
-rbenv shell "$ruby_version"
 
 gem update --system
 

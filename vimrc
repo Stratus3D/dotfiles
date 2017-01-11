@@ -192,14 +192,6 @@ autocmd VimEnter * CtrlP
 " Automatically reload .vimrc
 autocmd! BufWritePost .vimrc,*vimrc source %
 
-" Keep vim ctags in the tags file like normal
-let easytags_file = '~/tags'
-
-" Write to project specific tag file if it exists
-set tags=./tags;
-let easytags_dynamic_files = 1
-let easytags_async = 1
-
 " Vim-Erlang Skeleton settings
 let g:erl_replace_buffer=0
 " TODO: Figure out how to copy default erlang templates into our custom dir

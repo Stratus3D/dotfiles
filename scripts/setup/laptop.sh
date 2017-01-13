@@ -141,8 +141,6 @@ brew_install_or_upgrade 'openssl'
 brew unlink openssl && brew link openssl --force
 brew_install_or_upgrade 'libyaml'
 
-ruby_version="$(curl -sSL http://ruby.thoughtbot.com/latest)"
-
 gem update --system
 
 gem_install_or_update 'bundler'

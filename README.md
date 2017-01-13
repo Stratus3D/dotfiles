@@ -159,6 +159,7 @@ Vim Commands
 * `set list!` to toggle showing of whitespace characters.
 * `g;` go back a change position
 * `g,` go forward a change position
+* `vim -V9logfile` tell Vim to log to file a named `logfile` in the current directory
 
 SSH/SCP Commands
 

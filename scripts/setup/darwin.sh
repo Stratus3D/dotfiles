@@ -25,6 +25,7 @@ brew install ctags
 
 # Visualization library
 brew install graphviz
+brew link graphviz
 
 # Install command-line JSON processor
 brew install jq

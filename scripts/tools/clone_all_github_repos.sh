@@ -7,7 +7,6 @@
 
 # This script is incomplete
 # TODO:
-# * Put everything in the development dir by default
 # * Check for repository clashes
 
 # Unoffical Bash "strict mode"
@@ -31,7 +30,7 @@ if [ $# -gt 1 ];
 then
     CLONE_DIR=$2
 else
-    ${CLONE_DIR=$HOME}
+    CLONE_DIR=$HOME
 fi
 
 # the git clone cmd used for cloning each repository
@@ -51,9 +50,18 @@ cd $CLONE_DIR;
 
 for REPO in $REPOLIST; do
     REPO_DIR=$(echo $REPO | sed 's%^.*/\([^/]*\)\.git$%\1%g')
-    ${GIT_CLONE_CMD}${REPO}
-    cd $REPO_DIR
-    git pull --all
+    echo "Repo: $REPO_DIR"
+
+    if [ -d $REPO_DIR ]; then
+        # If repo exists cd into and fetch changes
+        cd $REPO_DIR
+        git fetch --tags
+    else
+        # Clone down repo and pull down all changes
+        eval $GIT_CLONE_CMD$REPO
+        cd $REPO_DIR
+        git pull --all
+    fi
     cd $CLONE_DIR
 done
 

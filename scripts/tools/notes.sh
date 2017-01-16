@@ -4,7 +4,7 @@
 # projects source code. Modelled after the rake notes task.
 #
 # TODO:
-# * Add color to the output of the script.
+# * Add color to the output of the script `source $HOME/dotfiles/scripts/utility/bash_colors.sh`
 # * Handle multiline TODOs.
 # * Take a directory as an additional argument.
 

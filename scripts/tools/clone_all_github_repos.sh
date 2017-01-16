@@ -10,6 +10,12 @@
 # * Put everything in the development dir by default
 # * Check for repository clashes
 
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+IFS=$'\t\n' # Stricter IFS settings
+ORIGINAL_IFS=$IFS
+
 # Use `Stratus3D` as the default user, unless one is specified in an argument.
 if [ $# -gt 0 ];
 then

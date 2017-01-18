@@ -4,6 +4,13 @@
 #
 # Usage ./rebar.sh
 
+# Bash "strict mode"
+set -u # Prevent unset variables
+set -e # Stop on an error
+set -o pipefail # Pipe exit code should be non-zero when a command in it fails
+IFS=$'\t\n' # Stricter IFS settings
+ORIGINAL_IFS=$IFS
+
 # Variables
 BIN_DIR=$HOME/bin/
 REBAR_REPO='git://github.com/rebar/rebar.git'

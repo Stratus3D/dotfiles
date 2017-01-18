@@ -10,6 +10,10 @@ autocmd BufRead,BufNewFile Gemfile setfiletype ruby
 autocmd BufRead,BufNewFile Vagrantfile setfiletype ruby
 autocmd BufRead,BufNewFile Dockerfile setfiletype bash
 
+" TODO: Turn on showcmd when in visual mode
+"autocmd VisualEnter * silent execute "set showcmd!"
+"autocmd VisualLeave * silent execute "set showcmd!"
+
 " General settings
 syntax on
 set number
@@ -36,6 +40,9 @@ set cursorcolumn
 
 " set the color scheme
 colorscheme solarized
+" TODO: Pull colors for env variables
+"execute "set background=".$BACKGROUND
+"execute "colorscheme ".$THEME
 
 " Make background transparent since we are using solarized in the terminal
 let g:solarized_termtrans = 1
@@ -47,7 +54,7 @@ set wildignore+=/tmp/,*.so,*.swp,*.swo,*.zip,*.meta,*.prefab,*.png,*.jpg,*.beam
 " Allow hidden buffers
 set hidden
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+set runtimepath^=$HOME/.vim/bundle/ctrlp.vim
 
 " Shortcuts ============================
 let mapleader = ","

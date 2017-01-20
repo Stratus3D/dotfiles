@@ -5,5 +5,6 @@ Scripts in this directory are for installing specific pieces of software on one 
 * Must exit with a status code of 0 when software is successfully installed
 * Must exit with a status code of 1 when software fails to install
 * Must exit with a status code of 2 when software is already installed on the machine
+* Must exit with a status code of 3 when the software is not supported on platform
 
 It's important to exit with a status of 2 so the `setup.sh` script knows the software the script was going to install is already installed.

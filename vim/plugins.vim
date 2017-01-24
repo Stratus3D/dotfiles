@@ -11,6 +11,7 @@ Plugin 'gmarik/Vundle.vim'
 " For writing
 Plugin 'junegunn/goyo.vim'
 Plugin 'reedes/vim-pencil'
+Plugin 'christoomey/vim-titlecase'
 
 " Language
 " Erlang

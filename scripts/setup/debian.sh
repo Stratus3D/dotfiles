@@ -33,6 +33,9 @@ sudo apt-get -y install dstat
 # For use with Erlang's fprof
 sudo apt-get -y install kcachegrind
 
+# Shell script linting
+sudo apt-get -y shellcheck
+
 # Communication apps
 sudo apt-get -y install weechat
 sudo apt-get -y install thunderbird

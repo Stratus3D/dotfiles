@@ -136,6 +136,7 @@ brew_install_or_upgrade 'reattach-to-user-namespace'
 brew_install_or_upgrade 'imagemagick'
 brew_install_or_upgrade 'qt'
 brew_install_or_upgrade 'hub'
+brew_install_or_upgrade 'shellcheck'
 
 brew_install_or_upgrade 'openssl'
 brew unlink openssl && brew link openssl --force

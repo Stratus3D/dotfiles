@@ -79,3 +79,7 @@ alias hangout="open https://hangouts.google.com/hangouts/_"
 if [ -f "$HOME/dotfiles/mixins/aliases.custom" ]; then
     source "$HOME/dotfiles/mixins/aliases.custom"
 fi
+
+# Charts
+alias bigo="open $HOME/dotfiles/charts/bigoposter.pdf"
+alias vim-cheatsheet="open $HOME/dotfiles/charts/vim_cheat_sheet_for_programmers_print.png"

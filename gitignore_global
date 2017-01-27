@@ -37,6 +37,7 @@
 # ctags file         #
 ######################
 tags
+tags.*
 
 # OS generated files #
 ######################

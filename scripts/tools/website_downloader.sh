@@ -4,7 +4,9 @@
 # http://redsymbol.net/articles/unofficial-bash-strict-mode/
 set -euo pipefail
 IFS=$'\t\n' # Stricter IFS settings
-ORIGINAL_IFS=$IFS
+#ORIGINAL_IFS=$IFS
+
+DEFAULT_DOMAIN=stratus3d.com
 
 usage() {
     cat <<EOF
@@ -22,27 +24,48 @@ EOF
 }
 
 download() {
-  wget \
-    --recursive \ # Follow links and download the whole site
-    --no-clobber \ # Don't overwrite files when downloading
-    --page-requisites \ # Download CSS and other assets
-    --html-extension \ # Save files with the .html extension
-    --convert-links \ # Change URLs in links so they work offline
-    --restrict-file-names=windows \ # modify filenames so they will work in Windows
-    --domains $domain \ # Limit the download to this directory
-    --no-parent $url # Don't follow links outside the directory
-    --mirror
-    --adjust-extension # Save HTML and CSS with the proper extensions
-    -e robots=off
-    --wait=9 --limit-rate=10K
+  url=$1;
+  #domain=?
+  cookies_file=~/cookies.txt
+
+  # Follow links and download the whole site
+  wget "$url" --recursive \
+      # Don't overwrite files when downloading
+    --no-clobber \
+    # Download CSS and other assets
+    --page-requisites \
+    # Save files with the .html extension
+    --html-extension \
+    # Change URLs in links so they work offline
+    --convert-links \
+    # modify filenames so they will work in Windows
+    --restrict-file-names=windows \
+    # Limit the download to this directory
+    --domains $domain \
+    # Don't follow links outside the directory
+    --no-parent "$url" \
+    --mirror \
+    # Save HTML and CSS with the proper extensions
+    --adjust-extension \
+    -e robots=off \
+    --wait=9 --limit-rate=10K \
+    # Use cookies from file. Usefully when dealing with site behind a login page
+    #--load-cookies=$cookies_file
 }
 
 if [ $# -gt 0 ]; then
-    lower_command=$(echo $1 | awk '{print tolower($0)}');
+    lower_command=$(echo "$1" | awk '{print tolower($0)}');
 
     case $lower_command in
         'site')
-            download ;;
+            if [ $# -gt 2 ]; then
+                url=${2:-$DEFAULT_DOMAIN}
+                directory=${3:-$HOME}
+
+                download "$url" "$directory"
+            else
+                echo "You must provide a URL and a destination directory"
+            fi;;
         'subdirectory')
             print_fixmes;;
         'single_page')

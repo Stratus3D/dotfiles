@@ -9,7 +9,7 @@
 if [[ $# -gt 0 ]]; then
     # Lookup the branch name of the commit hash that was passed in
     commit_hash=${1:-HEAD}
-    git log "$commit_hash"..HEAD --ancestry-path --merges --oneline | tail -n 1
+    git log "$commit_hash"^..HEAD --ancestry-path --merges --oneline | tail -n 1
 else
     # No commit hash
     echo "You must provide a commit hash"

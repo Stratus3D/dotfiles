@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Prints out the merge commit that first included the given commit hash
+#
+# example:
+# $ git commit-branch
+# 5ea7f2a10 Merge branch 'fix-something' into master
+
+if [[ $# -gt 0 ]]; then
+    # Lookup the branch name of the commit hash that was passed in
+    commit_hash=${1:-HEAD}
+    git log "$commit_hash"..HEAD --ancestry-path --merges --oneline | tail -n 1
+else
+    # No commit hash
+    echo "You must provide a commit hash"
+    exit 1
+fi

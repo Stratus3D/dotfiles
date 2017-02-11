@@ -120,6 +120,9 @@ sudo apt-get -y install blender
 # Install Scribus for publishing
 sudo apt-get -y install scribus
 
+# Golang, for puma-dev
+sudo apt-get -y install golang
+
 # Misc other dependencies
 sudo apt-get -y install ncftp python-paramiko python-pycryptopp lftp python-boto python-dev librsync-dev
 

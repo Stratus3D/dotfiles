@@ -14,6 +14,7 @@ ORIGINAL_IFS=$IFS
 # Variables
 BIN_DIR=$HOME/bin/
 REBAR_REPO='git://github.com/rebar/rebar.git'
+TAG='2.1.0'
 
 # Create temp directory
 TEMP_DIR=$(mktemp -dt "$(basename $0).XXXXXX") || exit 1
@@ -22,7 +23,7 @@ echo "Created temp directory $TEMP_DIR"
 # Build rebar in a temp directory
 cd $TEMP_DIR
 echo "Downloading and building rebar..."
-git clone $REBAR_REPO || exit 1
+git clone $REBAR_REPO --branch $TAG || exit 1
 cd rebar || exit 1
 ./bootstrap || exit 1
 

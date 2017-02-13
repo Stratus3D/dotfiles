@@ -14,6 +14,7 @@ ORIGINAL_IFS=$IFS
 # Variables
 BIN_DIR=$HOME/bin/
 RELX_REPO='https://github.com/erlware/relx.git'
+RELX_TAG='v3.22.2'
 RELX_REPO_DIR=relx
 
 # Create temp directory
@@ -23,7 +24,7 @@ echo "Created temp directory $TEMP_DIR"
 # Build rebar3 in a temp directory
 cd $TEMP_DIR
 echo "Downloading and building rebar3..."
-git clone $RELX_REPO
+git clone $RELX_REPO $RELX_TAG
 cd $RELX_REPO_DIR
 rebar3 update
 rebar3 escriptize

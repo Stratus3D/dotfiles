@@ -1,0 +1,23 @@
+#!/usr/bin/env escript
+
+% Take a sys.config-format file and generate a Common Test-format config file
+%
+% Usage:
+%
+%   ./sys_config_to_ct_config sys.config ct_test.config
+
+main([Source|Destination]) ->
+    case file:consult(Destination) of
+        {error, _} ->
+            PrintTuple = fun(Tuple) ->
+                    io_lib:format("~tp.~n", [Tuple])
+            end,
+
+            % File doesn't exist, create it
+            {ok, [Terms]} = file:consult(Source),
+            CtConfigStrings = lists:map(PrintTuple, Terms),
+            file:write_file(Destination, CtConfigStrings);
+        {ok, _Terms} ->
+            % File exists, do nothing
+            ok
+    end.

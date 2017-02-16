@@ -1,7 +1,7 @@
 #! /bin/bash -
 
 # Check if the file extension was provided
-if [[ $# < 2 ]]; then
+if [ $# -lt 1 ]; then
     cat <<EOF
     Usage: `basename "$0"` [file_extension]
 EOF
@@ -12,4 +12,4 @@ fi
 FILES=$(find . -iname "*.$1")
 
 # Then we count the lines in all those files
-$FILES | wc -l
+cat $FILES | wc -l

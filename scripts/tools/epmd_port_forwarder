@@ -1,0 +1,107 @@
+#! /bin/bash -
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+usage() {
+    cat <<EOF
+    Usage: epmd_port_forwarder [options]
+
+    Options:
+    --server                 Hostname of the remote server to rsync
+                                         the files to
+    --source                             The directory to rsync to the server
+    --exclude-gitignored                 Exclude files that match the patterns
+                                         in the gitignores
+    --delete                             Delete files on the target server that
+                                         no longer exist in the source directory
+EOF
+}
+
+error_exit() {
+    usage
+    exit 1
+}
+
+get_value() {
+    first=${1#*=}
+    second=$2
+
+    # TODO: Use sed to parse the arguments?
+    #export OUTPUT=`echo $1 | sed -e 's/^[^=]*=//g'`
+    if [ -z "$first" ]; then
+        if [[ $second == "-*" ]]; then
+            echo ""
+        else
+            echo $second
+        fi
+    else
+        echo $first
+    fi
+}
+
+server=""
+exclude_gitignored=false
+delete=false
+
+while :; do
+    case ${1:-} in
+        -h|-\?|--help)
+            usage
+            exit
+            ;;
+        -s|--server|--server=*)
+            server=$(get_value $1 ${2:-""})
+            ;;
+        -g|--exclude-gitignored)
+            exclude_gitignored=true
+            ;;
+        -f|--delete)
+            delete=true
+            ;;
+        --)
+            shift
+            break
+            ;;
+        *)
+            if [ -z "${1:-}" ]; then
+                break
+            else
+                echo "Unknown option ${1:-}"
+                error_exit
+            fi
+    esac
+
+    shift
+done
+
+# Make sure required arguments are present
+if [ -z "$server" ]; then
+    error_exit
+fi
+
+# Make sure no local epmd is running
+# if epmd isn't running and this command returns a non-zero exit code we don't care
+epmd -kill || true
+echo "Killed local epmd"
+
+# SSH into server and find epmd port
+epmd_names=$(ssh "$server" "epmd -names")
+echo "$epmd_names"
+
+# Extract port numbers from epmd output
+port_numbers=()
+
+while read -r epmd_line
+do
+    port=$(echo "$epmd_line" | sed 's/[^0-9]*//g')
+    port_numbers+=(-L $port:localhost:$port)
+done <<< "$epmd_names"
+
+# Forward epmd port(s) to localhost
+echo "Forwarding ports"
+set -x
+ssh -N "${port_numbers[@]}" $server

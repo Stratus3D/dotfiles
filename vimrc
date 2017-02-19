@@ -214,7 +214,7 @@ end
 nmap <leader>l :set list!<CR>
 
 " Use special chars in place of tab and eol
-set listchars=eol:¬,tab:→\ ,extends:>,precedes:<
+set listchars=eol:¬,tab:→\ ,extends:>,precedes:<,trail:·
 
 " Load trailing whitespace functions
 source $HOME/.vim/whitespace.vim

@@ -8,16 +8,19 @@ IFS=$'\t\n' # Stricter IFS settings
 
 usage() {
     cat <<EOF
+    This script SSHs into a remote server, runs an epmd command to get the port
+    numbers of all running Erlang nodes, then uses SSH port forwarding to
+    forward all the ports to localhost. This allows remsh'ing into Erlang nodes
+    as if they were on your local machine. This makes running observer on a
+    node running on another machine trivial.
+
     Usage: epmd_port_forwarder [options]
 
     Options:
-    --server                 Hostname of the remote server to rsync
-                                         the files to
-    --source                             The directory to rsync to the server
-    --exclude-gitignored                 Exclude files that match the patterns
-                                         in the gitignores
-    --delete                             Delete files on the target server that
-                                         no longer exist in the source directory
+    --server                             Hostname of the remote server running
+                                         epmd
+    --only-epmd                          Whether or not to forward ports to all
+                                         Erlang nodes
 EOF
 }
 
@@ -44,8 +47,7 @@ get_value() {
 }
 
 server=""
-exclude_gitignored=false
-delete=false
+only_epmd=false
 
 while :; do
     case ${1:-} in
@@ -56,11 +58,8 @@ while :; do
         -s|--server|--server=*)
             server=$(get_value $1 ${2:-""})
             ;;
-        -g|--exclude-gitignored)
-            exclude_gitignored=true
-            ;;
-        -f|--delete)
-            delete=true
+        -o|--only-epmd)
+            only_epmd=true
             ;;
         --)
             shift

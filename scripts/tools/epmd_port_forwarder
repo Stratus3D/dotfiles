@@ -94,6 +94,13 @@ echo "$epmd_names"
 # Extract port numbers from epmd output
 port_numbers=()
 
+# if we are only forwarding the epmd port discard the other lines in the output
+if $only_epmd; then
+    epmd_names=$(echo "$epmd_names" | head -n1)
+fi
+
+# Grab the port number on each line of the epmd output and build the forwarding
+# option from it
 while read -r epmd_line
 do
     port=$(echo "$epmd_line" | sed 's/[^0-9]*//g')

@@ -7,6 +7,13 @@ Everything I need to get setup on a new machine.
 
 This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a script to symlink all the config files and directories in place, and a set of setup scripts that install all the tools I need on Ubuntu or OSX.
 
+## Features
+
+* Vim, tmux, Zsh, Bash, and Git configurations
+* Setup script that symlinks dotfiles and installs all the software I use
+* A collection of Bash scripts I rely on for Erlang development
+* List of commands I often forget
+
 ## Installation
 
 #### Prerequisites

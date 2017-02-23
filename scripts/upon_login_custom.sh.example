@@ -9,19 +9,4 @@
 #
 # For example mounting sshfs file systems on OSX:
 #
-#ensure_mounted() {
-#    mount_point=$1
-#    server_and_dir=$2
-#    drive_name=$(basename $mount_point)
-#
-#    # Unmount first to be safe
-#    umount $mount_point
-#
-#    # Ensure the directory exists
-#    mkdir -p $mount_point
-#
-#    # Mount
-#    sshfs $server_and_dir $mount_point -ovolname=$drive_name
-#}
-#
-#ensure_mounted $HOME/servers/myserver myserver:my/directory
+#ensure_sshfs_mounted $HOME/servers/myserver myserver:my/directory

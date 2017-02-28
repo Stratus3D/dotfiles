@@ -9,7 +9,7 @@ This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a scrip
 
 ## Features
 
-* Vim, tmux, Zsh, Bash, and Git configurations
+* Vim, tmux, Zsh, Bash, asdf, and Git configurations
 * Setup script that symlinks dotfiles and installs all the software I use
 * A collection of Bash scripts I rely on for Erlang development
 * List of commands I often forget
@@ -114,6 +114,7 @@ Offline documentation suitable for day to day use.
 * Add custom status line to tmux with asdf versions
 * Add info on current selection in vim status bar (`set showcmd` in visual mode)
 * Add command to pipe vim selection to command.
+* Make sure user_default module is loaded into remote shells
 
 ##Useful commands that I often forget
 
@@ -156,7 +157,8 @@ Bash/Zshell Commands
 * `export $(cut -d= -f1 <file>)` export all variables in file containing environment variables
 * `find ./ -type f -exec sed -i -e 's/foo/bar/g' {} \;` find and replace string in all files in a directory
 * `find src -name 'old*' -type f -exec bash -c 'mv "$1" "${1/old/new}"' -- {} \;` rename every filename that matches pattern
-* `git log --grep="^prefix" --pretty='format:%h - %cn - %s'` find all commits with `prefix`
+* `sudo getent passwd | cut -d : -f 6 | sudo sed 's:$:/.bash_history:' | sudo xargs -d '\n' grep -H -e "$command"` or `grep -e "$pattern" /home/*/.bash_history` to see how others use a command
+* `bindkey` show Zsh commands
 
 OSX Commands
 * `su` needs to be `sudo su`
@@ -201,6 +203,7 @@ Git Commands
 * `git add -p` - Stage specific changes in a file.
 * `git merge-base --is-ancestor <commit-1> <commit-2>` - Check if `commit-1` is an ancestor of `commit-2`.
 * `git describe --long` - version string suitable for Erlang module `-vsn` attributes.
+* `git log --grep="^prefix" --pretty='format:%h - %cn - %s'` find all commits with `prefix`
 
 Irssi Commands
 

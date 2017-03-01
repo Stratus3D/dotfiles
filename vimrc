@@ -218,3 +218,5 @@ set listchars=eol:¬,tab:→\ ,extends:>,precedes:<,trail:·
 
 " Load trailing whitespace functions
 source $HOME/.vim/whitespace.vim
+
+highlight SpecialKey ctermfg=darkgreen guifg=darkgreen

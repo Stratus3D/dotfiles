@@ -40,6 +40,9 @@ brew install pianobar
 brew install qcachegrind --with-graphviz
 brew linkapps qcachegrind
 
+# Install GNU readlink
+brew install coreutils
+
 # autoexpect
 brew install expect
 

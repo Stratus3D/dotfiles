@@ -70,6 +70,8 @@ fi
 if [[ $(uname) =~ 'Darwin' ]]; then
     alias zeal='/Applications/Zeal.app/Contents/MacOS/Zeal'
     alias qcachegrind='/Applications/qcachegrind.app/Contents/MacOS/qcachegrind'
+
+    alias readlink="greadlink"
 fi
 
 #create hangout

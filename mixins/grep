@@ -1,2 +1,4 @@
+# These options seemed to break the Erlang builds. These lines may need to be
+# commented out
 export GREP_OPTIONS="--color=always"
 export GREP_COLORS="1;35;40"

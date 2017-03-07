@@ -35,6 +35,9 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
+" Toggle Tagbar
+nmap <F9> :TagbarToggle<CR>
+
 " Turn on cursor column highlighting
 set cursorcolumn
 

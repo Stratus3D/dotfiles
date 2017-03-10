@@ -46,6 +46,9 @@ brew install coreutils
 # autoexpect
 brew install expect
 
+# For adb
+brew android-platform-tools
+
 # Install other software using custom install scripts
 install_scripts=(
     # Testing

@@ -1,10 +1,10 @@
-#! /usr/bin/env bash -
+#!/usr/bin/env bash
 
 # Unoffical Bash "strict mode"
 # http://redsymbol.net/articles/unofficial-bash-strict-mode/
 set -euo pipefail
+#ORIGINAL_IFS=$IFS
 IFS=$'\t\n' # Stricter IFS settings
-ORIGINAL_IFS=$IFS
 
 usage() {
     cat <<EOF
@@ -40,4 +40,4 @@ else
 fi
 
 set -x # Show debug info when running the erl command
-erl -sname "$short_name" -setcookie "$erlang_cookie" -hidden -remsh $remote_node
+erl -sname "$short_name" -setcookie "$erlang_cookie" -hidden -remsh $remote_node -pa $HOME/dotfiles/erlang/

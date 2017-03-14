@@ -103,7 +103,7 @@ fi
 # option from it
 while read -r epmd_line
 do
-    port=$(echo "$epmd_line" | sed 's/[^0-9]*//g')
+    port=$(echo "$epmd_line" | egrep -o '\s([0-9])+' | egrep -o '([0-9])+')
     port_numbers+=(-L $port:localhost:$port)
 done <<< "$epmd_names"
 

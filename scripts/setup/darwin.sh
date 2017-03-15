@@ -47,7 +47,10 @@ brew install coreutils
 brew install expect
 
 # For adb
-brew android-platform-tools
+brew install android-platform-tools
+
+# Mosh for high latency remote servers
+brew install mobile-shell
 
 # Install other software using custom install scripts
 install_scripts=(

@@ -114,6 +114,9 @@ sudo apt-get -y install pianobar
 # Install Android Debug Bridge
 sudo apt-get -y install android-tools-adb
 
+# Install mosh shell for high latency servers
+sudo apt-get -y install mosh
+
 # Install Blender for 3D modeling
 sudo apt-get -y install blender
 

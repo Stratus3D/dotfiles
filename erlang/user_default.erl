@@ -1,33 +1,60 @@
+% TODO: Update this module so custom functions are added
 -module(user_default).
 
--export([help/0,dbgtc/1, dbgon/1, dbgon/2,
-         dbgadd/1, dbgadd/2, dbgdel/1, dbgdel/2, dbgoff/0,
-	 dbg_ip_trace/1,
-         l/0, mm/0, la/0]).
--export([my_tracer/0, my_dhandler/2, filt_state_from_term/1]).
+-export([help/0]).
+
+% General
+-export([l/0, mm/0, la/0]).
+
+% OS
 -export([cmd/1, debug_binary/1]).
 
--import(io, [format/1]).
+% Tracing
+-export([my_tracer/0, my_dhandler/2, filt_state_from_term/1]).
+-export([trace_to_group_leader/0,dbgtc/1, dbgon/1, dbgon/2,
+         dbgadd/1, dbgadd/2, dbgdel/1, dbgdel/2, dbgallp/0, dbgoff/0,
+         dbg_ip_trace/1]).
+
+-import(io, [format/1, format/2]).
 
 help() ->
-     % TODO: Don't hardcode all this info here
-     shell_default:help(),
-     format("** user extended commands **~n"),
-     format("dbgtc(File)   -- use dbg:trace_client() to read data from File\n"),
-     format("dbgon(M)      -- enable dbg tracer on all funs in module M\n"),
-     format("dbgon(M,Fun)  -- enable dbg tracer for module M and function F\n"),
-     format("dbgon(M,File) -- enable dbg tracer for module M and log to File\n"),
-     format("dbgadd(M)     -- enable call tracer for module M\n"),
-     format("dbgadd(M,F)   -- enable call tracer for function M:F\n"),
-     format("dbgdel(M)     -- disable call tracer for module M\n"),
-     format("dbgdel(M,F)   -- disable call tracer for function M:F\n"),
-     format("dbgoff()      -- disable dbg tracer (calls dbg:stop/0)\n"),
-     format("l()           -- load all changed modules\n"),
-     format("la()          -- load all modules\n"),
-%     format("nl()          -- load all changed modules on all known nodes\n"),
-     format("mm()          -- list modified modules\n"),
-     format("cmd(Command)  -- Execute Command in the shell of the OS\n"),
+    % TODO: Don't hardcode all this info here
+    % {Command, Help, Usage},
+    Commands = [
+                % Modules
+                {"l()", "load all changed modules", undefined},
+                {"la()", "load all modules", undefined},
+                %     format("nl()          -- load all changed modules on all known nodes\n"),
+                {"mm()", "list modified modules", undefined},
+                % Tracing
+                {trace_to_group_leader, "Start a dbg trace and print traces to group leader", undefined},
+                format("dbgtc(File)   -- use dbg:trace_client() to read data from File\n"),
+                format("dbgon(M)      -- enable dbg tracer on all funs in module M\n"),
+                format("dbgon(M,Fun)  -- enable dbg tracer for module M and function F\n"),
+                format("dbgon(M,File) -- enable dbg tracer for module M and log to File\n"),
+                format("dbgadd(M)     -- enable call tracer for module M\n"),
+                format("dbgadd(M,F)   -- enable call tracer for function M:F\n"),
+                format("dbgdel(M)     -- disable call tracer for module M\n"),
+                format("dbgdel(M,F)   -- disable call tracer for function M:F\n"),
+                {"dbgallp()", "trace on all processes", undefined},
+                {"dbgoff()","disable dbg tracer (calls dbg:stop/0)", undefined},
+                % OS
+                {"cmd(Command)", "Execute Command in the shell of the OS and print the result", undefined}
+               ],
+
+    shell_default:help(),
+    format("** user extended commands **~n"),
+    [command_help(Command, Help, Usage) || {Command, Help, Usage} <- Commands],
+
      true.
+
+command_help(Command, Help, undefined) ->
+    format("~s, -- ~s~n", [Command, Help]);
+command_help(Command, Help, Usage) ->
+    format("~s, -- ~s. Usage: ~p~n", [Command, Help, Usage]).
+
+trace_to_group_leader() ->
+    dbg:tracer(process, {fun(Msg, _) -> io:format("~p\n", [Msg]) end, []}).
 
 dbgtc(File) ->
     Fun = fun({trace,_,call,{M,F,A}}, _) ->
@@ -38,6 +65,9 @@ dbgtc(File) ->
                  io:format("~w: ~w~n", [A,B])
           end,
     dbg:trace_client(file, File, {Fun, []}).
+
+dbgallp() ->
+    dbg:p(all, c).
 
 dbgon(Module) ->
     case dbg:tracer() of
@@ -198,8 +228,8 @@ filt_state_from_term([H|T]) ->
 filt_state_from_term(X) ->
     X.
 
-cmd(Cmd) ->
-    io:format("~s~n", [os:cmd(Cmd)]).
+cmd(Command) ->
+    io:format("~s~n", [os:cmd(Command)]).
 
 debug_binary(Bin) ->
     io:format("Binary: ~s~n", [[ <<(X+$0)>> || <<X:1>> <= Bin]]).

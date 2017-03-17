@@ -114,7 +114,6 @@ Offline documentation suitable for day to day use.
 * Add custom status line to tmux with asdf versions
 * Add info on current selection in vim status bar (`set showcmd` in visual mode)
 * Add command to pipe vim selection to command.
-* Make sure user_default module is loaded into remote shells
 
 ##Useful commands that I often forget
 

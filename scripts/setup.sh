@@ -65,6 +65,7 @@ mkdir -p $HOME/Documentation
 mkdir -p $HOME/Installers
 mkdir -p $HOME/Screenshots
 mkdir -p $HOME/servers # For remote server mounts
+mkdir -p $HOME/.psql # psql history directory
 
 ###############################################################################
 # Install software on laptop

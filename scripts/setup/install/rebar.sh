@@ -30,4 +30,7 @@ cd rebar || exit 1
 # Place rebar on the path
 mv rebar $BIN_DIR || exit 1
 
+# Remove temp directory
+rm -rf $TEMP_DIR
+
 echo "Rebar installation complete"

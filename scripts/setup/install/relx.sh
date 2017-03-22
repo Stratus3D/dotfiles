@@ -8,8 +8,8 @@
 set -u # Prevent unset variables
 set -e # Stop on an error
 set -o pipefail # Pipe exit code should be non-zero when a command in it fails
+#ORIGINAL_IFS=$IFS
 IFS=$'\t\n' # Stricter IFS settings
-ORIGINAL_IFS=$IFS
 
 # Variables
 BIN_DIR=$HOME/bin/
@@ -31,5 +31,8 @@ rebar3 escriptize
 
 # Place rebar3 on the path
 mv _build/default/bin/relx $BIN_DIR
+
+# Remove temp directory
+rm -rf $TEMP_DIR
 
 echo "Rebar installation complete"

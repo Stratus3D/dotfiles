@@ -2,6 +2,6 @@
 \set HISTFILE ~/.psql/history- :DBNAME
 \pset null '[null]'
 \set PROMPT1 '%[%033[1m%]%M %n@%/%R%[%033[0m%]%# '
-\set PROMPT2 '[more] %R >
+\set PROMPT2 '[more] %R > '
 
 \x auto

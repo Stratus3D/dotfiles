@@ -41,8 +41,8 @@ Plugin 'tpope/vim-haml'
 Plugin 'fatih/vim-go'
 
 " For frameworks
-Plugin 'tpope/vim-rails'
-Plugin 'burnettk/vim-angular'
+"Plugin 'tpope/vim-rails'
+"Plugin 'burnettk/vim-angular'
 
 " For productivity
 Plugin 'tpope/vim-ragtag'

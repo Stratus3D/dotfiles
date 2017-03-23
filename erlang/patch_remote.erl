@@ -33,13 +33,13 @@ with_module(ModuleName, Remote, CookieList, SnameList) ->
                  [] ->
                      % Load it into the remote node
                      rpc:call(Node, code, load_binary, [Module, [], Binary]);
+                 non_existing ->
+                     % Load it into the remote node
+                     rpc:call(Node, code, load_binary, [Module, [], Binary]);
                  Filename when is_binary(Filename) orelse is_list(Filename) ->
                      io:format("Filename: ~p~n", [Filename]),
                      ok = rpc:call(Node, file, write_file, [Filename, Binary]),
-                     rpc:call(Node, code, load_file, [Module]);
-                 _ ->
-                     % Load it into the remote node
-                     rpc:call(Node, code, load_binary, [Module, [], Binary])
+                     rpc:call(Node, code, load_file, [Module])
              end,
 
     case Return of

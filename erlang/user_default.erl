@@ -17,10 +17,9 @@
 
 -import(io, [format/1, format/2]).
 
-help() ->
-    % TODO: Don't hardcode all this info here
-    % {Command, Help, Usage},
-    Commands = [
+% TODO: Don't hardcode all this info here
+% {Command, Help, Usage},
+-define(HELP, [
                 % Modules
                 {"l()", "load all changed modules", undefined},
                 {"la()", "load all modules", undefined},
@@ -28,30 +27,31 @@ help() ->
                 {"mm()", "list modified modules", undefined},
                 % Tracing
                 {trace_to_group_leader, "Start a dbg trace and print traces to group leader", undefined},
-                format("dbgtc(File)   -- use dbg:trace_client() to read data from File\n"),
-                format("dbgon(M)      -- enable dbg tracer on all funs in module M\n"),
-                format("dbgon(M,Fun)  -- enable dbg tracer for module M and function F\n"),
-                format("dbgon(M,File) -- enable dbg tracer for module M and log to File\n"),
-                format("dbgadd(M)     -- enable call tracer for module M\n"),
-                format("dbgadd(M,F)   -- enable call tracer for function M:F\n"),
-                format("dbgdel(M)     -- disable call tracer for module M\n"),
-                format("dbgdel(M,F)   -- disable call tracer for function M:F\n"),
+                {"dbgtc(File)", "use dbg:trace_client() to read data from File", undefined},
+                {"dbgon(M)", "enable dbg tracer on all funs in module M", undefined},
+                {"dbgon(M,Fun)", "enable dbg tracer for module M and function F", undefined},
+                {"dbgon(M,File)", "enable dbg tracer for module M and log to File", undefined},
+                {"dbgadd(M)", "enable call tracer for module M", undefined},
+                {"dbgadd(M,F)", "enable call tracer for function M:F", undefined},
+                {"dbgdel(M)", "disable call tracer for module M", undefined},
+                {"dbgdel(M,F)", "disable call tracer for function M:F", undefined},
                 {"dbgallp()", "trace on all processes", undefined},
                 {"dbgoff()","disable dbg tracer (calls dbg:stop/0)", undefined},
                 % OS
-                {"cmd(Command)", "Execute Command in the shell of the OS and print the result", undefined}
-               ],
+                {"cmd(Command)", "Execute Command in the shell of the OS and print the result", undefined},
+                {"cmd(Command)", "Prints a binary as a sequence of ones and zeros", undefined}
+               ]).
 
+help() ->
     shell_default:help(),
-    format("** user extended commands **~n"),
-    [command_help(Command, Help, Usage) || {Command, Help, Usage} <- Commands],
-
+    format("** user extended commands **~n~n"),
+    [command_help(Command, Help, Usage) || {Command, Help, Usage} <- ?HELP],
      true.
 
 command_help(Command, Help, undefined) ->
-    format("~s, -- ~s~n", [Command, Help]);
+    format("~-30s -- ~s~n", [Command, Help]);
 command_help(Command, Help, Usage) ->
-    format("~s, -- ~s. Usage: ~p~n", [Command, Help, Usage]).
+    format("~-30s -- ~s. Usage: ~p~n", [Command, Help, Usage]).
 
 trace_to_group_leader() ->
     dbg:tracer(process, {fun(Msg, _) -> io:format("~p\n", [Msg]) end, []}).

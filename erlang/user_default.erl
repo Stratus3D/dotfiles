@@ -12,7 +12,7 @@
 % Tracing
 -export([my_tracer/0, my_dhandler/2, filt_state_from_term/1]).
 -export([trace_to_group_leader/0,dbgtc/1, dbgon/1, dbgon/2,
-         dbgadd/1, dbgadd/2, dbgdel/1, dbgdel/2, dbgallp/0, dbgoff/0,
+         dbgadd/1, dbgadd/2, dbgdel/1, dbgdel/2, dbgallp/0, dbgoff/0, dbgend/0,
          dbg_ip_trace/1]).
 
 -import(io, [format/1, format/2]).
@@ -37,6 +37,7 @@
                 {"dbgdel(M,F)", "disable call tracer for function M:F", undefined},
                 {"dbgallp()", "trace on all processes", undefined},
                 {"dbgoff()","disable dbg tracer (calls dbg:stop/0)", undefined},
+                {"dbgend()","disable dbg tracer and clear traces (calls dbg:stop_clear/0)", undefined},
                 % OS
                 {"cmd(Command)", "Execute Command in the shell of the OS and print the result", undefined},
                 {"cmd(Command)", "Prints a binary as a sequence of ones and zeros", undefined}
@@ -127,6 +128,9 @@ dbgdel(Module, Fun) ->
 
 dbgoff() ->
     dbg:stop().
+
+dbgend() ->
+    dbg:stop_clear().
 
 %% Reload modules that have been modified since last load.  From Tobbe
 %% Tornqvist, http://blog.tornkvist.org/, "Easy load of recompiled

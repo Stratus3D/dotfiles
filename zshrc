@@ -106,6 +106,16 @@ else
     export TERM="xterm-256color"
 fi
 
+# Save all history
+# Incrementally write history to file
+setopt INC_APPEND_HISTORY
+# Save timestamp to history file too
+setopt EXTENDED_HISTORY
+# Import newly written commands from the history file
+setopt SHARE_HISTORY
+
 precmd() {
-    eval 'if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history | tail -n 1)" >>! $HOME/history/zsh-history-$(date "+%Y-%m-%d").log; fi'
+    if [ "$(id -u)" -ne 0 ]; then
+        echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history | tail -n 1)" >>! $HOME/history/zsh-history-$(date "+%Y-%m-%d").log;
+    fi
 }

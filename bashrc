@@ -30,6 +30,7 @@ done
 export SHELL=/bin/bash
 
 # Keep all history
+shopt -s histappend
 export HISTFILESIZE=
 export HISTSIZE=
 export HISTFILE=~/.bash_eternal_history

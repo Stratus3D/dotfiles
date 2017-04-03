@@ -2,5 +2,5 @@ erlang 18.2
 elixir 1.2.6
 lua 5.3.1
 ruby 2.3.0
-nodejs 0.12.2
+nodejs 4.7.2
 postgres 9.5.2

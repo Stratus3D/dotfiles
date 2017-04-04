@@ -158,11 +158,14 @@ Bash/Zshell Commands
 * `find src -name 'old*' -type f -exec bash -c 'mv "$1" "${1/old/new}"' -- {} \;` rename every filename that matches pattern
 * `sudo getent passwd | cut -d : -f 6 | sudo sed 's:$:/.bash_history:' | sudo xargs -d '\n' grep -H -e "$command"` or `grep -e "$pattern" /home/*/.bash_history` to see how others use a command
 * `bindkey` show Zsh commands
+* `cat *.c *.h | cpp -fpreprocessed | sed 's/[_a-zA-Z0-9][_a-zA-Z0-9]*/x/g' | tr -d ' \012' | wc -c` count words in C project
 
 OSX Commands
 * `su` needs to be `sudo su`
 * `| paste` needs to be `| paste -`
 * `lsvfs` get details on file systems
+* `killall -STOP AppName` pause an app
+* `killall -CONT AppName` resume an app
 
 Vim Commands
 

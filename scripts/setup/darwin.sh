@@ -52,6 +52,12 @@ brew install android-platform-tools
 # Mosh for high latency remote servers
 brew install mobile-shell
 
+# Yarn for package management
+brew install yarn
+
+# Elm for packages that require it
+brew install elm
+
 # Install other software using custom install scripts
 install_scripts=(
     # Testing

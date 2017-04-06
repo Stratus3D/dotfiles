@@ -1,6 +1,13 @@
 [alias]
+  # Shorten a few common commands
   comt = commit-ticket
   comjt = commit-jira-ticket
+
+  # Stash all files, including untracked files and directories
+  stash-all = stash save --include-untracked
+
+  # Show the branches, ordered by most recently updated closest to prompt.
+  # Also shows the last commit and committer for each branch listed.
   recent = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
 [github]
 [color]

@@ -6,6 +6,9 @@
   # Stash all files, including untracked files and directories
   stash-all = stash save --include-untracked
 
+  # Soft reset to get to the way things were before the last commit was made
+  undo = reset --soft HEAD^
+
   # Show the branches, ordered by most recently updated closest to prompt.
   # Also shows the last commit and committer for each branch listed.
   recent = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
@@ -41,5 +44,7 @@
 [pull]
   rebase = preserve
 [merge]
+  # Standard diff is two sets of final changes. This introduces the change
+  # present in the common ancestor of both conflicting commits.
   conflictstyle = diff3
   ff = false

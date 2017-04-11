@@ -113,7 +113,6 @@ Offline documentation suitable for day to day use.
 * Make vim read color scheme from zsh.
 * Add custom status line to tmux with asdf versions
 * Add info on current selection in vim status bar (`set showcmd` in visual mode)
-* Add command to pipe vim selection to command.
 
 ##Useful commands that I often forget
 
@@ -180,6 +179,7 @@ Vim Commands
 * `g;` go back a change position
 * `g,` go forward a change position
 * `vim -V9logfile` tell Vim to log to file a named `logfile` in the current directory
+* `:'<,'>:w !<command>` pipe selection to STDIN of `<command>`. For example, to count the words selected run `:'<,'>:w !wc -w`.
 
 SSH/SCP Commands
 

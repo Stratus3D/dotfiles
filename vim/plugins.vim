@@ -39,6 +39,8 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'tpope/vim-haml'
 " Go
 Plugin 'fatih/vim-go'
+" Mustache
+Plugin 'mustache/vim-mustache-handlebars'
 
 " For frameworks
 "Plugin 'tpope/vim-rails'

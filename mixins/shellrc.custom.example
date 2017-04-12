@@ -7,3 +7,5 @@ export GIT_AUTHOR_NAME="John Doe"
 export GIT_AUTHOR_EMAIL="jdoe@example.com"
 export GIT_COMMITTER_NAME="John Doe"
 export GIT_COMMITTER_EMAIL="jdoe@example.com"
+
+export HASTEBIN_URL="https://hastebin.com"

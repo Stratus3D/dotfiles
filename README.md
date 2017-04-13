@@ -205,6 +205,7 @@ Git Commands
 * `git merge-base --is-ancestor <commit-1> <commit-2>` - Check if `commit-1` is an ancestor of `commit-2`.
 * `git describe --long` - version string suitable for Erlang module `-vsn` attributes.
 * `git log --grep="^prefix" --pretty='format:%h - %cn - %s'` find all commits with `prefix`
+* `git log -p --cc` show only resolved conflicts in merge commits
 
 Irssi Commands
 

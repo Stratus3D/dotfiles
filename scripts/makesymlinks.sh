@@ -62,6 +62,17 @@ symlink_file_if_missing() {
     fi
 }
 
+create_or_replace_symlink() {
+    local source=$1
+    local destination=$2
+
+    if [ -L $destination ]; then
+        rm $destination
+    fi
+
+    ln -nfs $source $destination
+}
+
 symlink_and_save_original() {
     local source=$1
     local destination=$2
@@ -119,7 +130,7 @@ symlink_and_save_original $dotfiles/erlang/erlang \
 tool_scripts=$(find $dotfiles/scripts/tools -type f \( -perm -u=x \) -print)
 IFS=$'\n'
 for file in $tool_scripts; do
-    symlink_file_if_missing $dotfiles/$file $HOME/bin
+    create_or_replace_symlink $file $HOME/bin
 done
 IFS=$ORIGINAL_IFS
 

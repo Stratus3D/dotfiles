@@ -15,24 +15,44 @@ autocmd BufRead,BufNewFile Dockerfile setfiletype bash
 "autocmd VisualLeave * silent execute "set showcmd!"
 
 " General settings
+" Turn on syntax highlighting
 syntax on
+
+" Show line numbers
 set number
+
+" Turn on auto indenting
 set autoindent
+
+" Use previous indent
+set copyindent
+
+" Tab is for spaces
 set tabstop=4
+
+" Number of spaces to use for audo indenting
 set shiftwidth=4
+
+" Convert tabs to spaces
 set expandtab
-set guifont=Monaco:h12
-set background=dark
+
+" Show matching brackets
 set showmatch
+
+" Highlight search results
 set hlsearch
+
+" Show the 80 column line
 set colorcolumn=80
 
 " Allow backspace to delete end of line, indent and start of line characters
 set backspace=indent,eol,start
 
-" Show pastetoggle status
+" Show pastetoggle status and allow it to be toggled with F2
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
+
+" Show the curent mode on the last line (command line)
 set showmode
 
 " Toggle Tagbar
@@ -40,6 +60,16 @@ nmap <F9> :TagbarToggle<CR>
 
 " Turn on cursor column highlighting
 set cursorcolumn
+
+" don't beep
+set visualbell
+set noerrorbells
+
+" Font
+set guifont=Monaco:h12
+
+" Background style
+set background=dark
 
 " set the color scheme
 colorscheme solarized
@@ -187,6 +217,7 @@ set statusline+=\ Line\ Endings:%-6{&ff}                      " Line Endings
 set statusline+=\ File\ Type:%-12y                            " File Type
 set statusline+=%=%h%m%r%c,%l/%L\ %P        " Cursor location and file status
 set laststatus=2
+
 " Color status bar
 highlight statusline ctermfg=cyan ctermbg=black guifg=cyan guibg=black
 

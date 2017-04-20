@@ -8,6 +8,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Plugins
+" Tmux
+Plugin 'christoomey/vim-tmux-navigator'
 " For writing
 Plugin 'junegunn/goyo.vim'
 Plugin 'reedes/vim-pencil'

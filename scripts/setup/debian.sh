@@ -64,7 +64,10 @@ sudo apt-get install -y autopoint intltool libdrm-dev libxcb1-dev libxcb-randr0-
 #sudo apt-get install -y libgeoclue-dev geoclue-hostip
 
 # WxWidgets is needed for Erlang
-sudo apt-get -y install libwxgtk2.8-dev libwxgtk2.8-dbg
+sudo apt-get -y install libwxgtk3.0-dev libwxgtk3.0-dbg
+
+# Other packages needed for Erlang
+sudo apt-get -y install libgl1-mesa-dev libglu1-mesa-dev libpng3
 
 # Love 2D for game development
 # These are needed by love 2d

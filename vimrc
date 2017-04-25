@@ -212,10 +212,13 @@ endfunction
 
 " Custom status bar
 set statusline=\ Filename:%-8t                               " Filename
-set statusline+=\ Encoding:\%-8{strlen(&fenc)?&fenc:'none'}   " File encoding
-set statusline+=\ Line\ Endings:%-6{&ff}                      " Line Endings
-set statusline+=\ File\ Type:%-12y                            " File Type
-set statusline+=%=%h%m%r%c,%l/%L\ %P        " Cursor location and file status
+set statusline+=\ Encoding:\%-8{strlen(&fenc)?&fenc:'none'}  " File encoding
+set statusline+=\ Line\ Endings:%-6{&ff}                     " Line Endings
+set statusline+=\ Type:%-12y                                 " File Type
+set statusline+=%=%h%m%r                                     " Flags
+set statusline+=\ %l/%L                                      " Cursor line and total lines
+set statusline+=\ %c                                         " Cursor column
+set statusline+=\ %P                                         " Percentage through file
 set laststatus=2
 
 " Color status bar

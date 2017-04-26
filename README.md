@@ -179,6 +179,7 @@ Vim Commands
 * `g,` go forward a change position
 * `vim -V9logfile` tell Vim to log to file a named `logfile` in the current directory
 * `:'<,'>:w !<command>` pipe selection to STDIN of `<command>`. For example, to count the words selected run `:'<,'>:w !wc -w`.
+* `g^g` print number of selected lines when in visual mode
 
 SSH/SCP Commands
 

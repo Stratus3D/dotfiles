@@ -36,3 +36,6 @@ export HISTSIZE=
 export HISTFILE=~/.bash_eternal_history
 # Also write history to files in the history/ directory
 export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> $HOME/history/bash-history-$(date "+%Y-%m-%d").log; fi'
+
+# Use vi mode
+set -o vi

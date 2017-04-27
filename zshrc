@@ -119,3 +119,6 @@ precmd() {
         echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history | tail -n 1)" >>! $HOME/history/zsh-history-$(date "+%Y-%m-%d").log;
     fi
 }
+
+# Use vi mode
+bindkey -v

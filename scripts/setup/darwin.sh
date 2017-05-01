@@ -58,6 +58,9 @@ brew install yarn
 # Elm for packages that require it
 brew install elm
 
+# For network troubleshooting
+brew install mtr
+
 # Install other software using custom install scripts
 install_scripts=(
     # Testing

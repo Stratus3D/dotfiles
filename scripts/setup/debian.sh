@@ -132,6 +132,9 @@ sudo apt-get -y install golang
 # Misc other dependencies
 sudo apt-get -y install ncftp python-paramiko python-pycryptopp lftp python-boto python-dev librsync-dev
 
+# For network troubleshooting
+sudo apt-get -y install mtr
+
 # Assume we are using Gnome
 source gnome.sh
 

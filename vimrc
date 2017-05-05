@@ -244,6 +244,13 @@ let g:erl_replace_buffer=0
 " TODO: Figure out how to copy default erlang templates into our custom dir
 " let g:erl_tpl_dir="~/.erlang_templates"
 
+" Align line-wise comment delimiters flush left instead of following code
+" indentation
+let g:NERDDefaultAlign = 'left'
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
 " Load in custom config if it exists
 let custom_vimrc='~/dotfiles/mixins/vimrc.custom'
 if filereadable(custom_vimrc)

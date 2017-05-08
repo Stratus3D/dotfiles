@@ -110,7 +110,6 @@ Offline documentation suitable for day to day use.
 * Make vim highlight HTML and scripts in HTML correctly.
 * Add solarized light/dark toggle functions.
 * Make vim read color scheme from zsh.
-* Add custom status line to tmux with asdf versions
 
 ##Useful commands that I often forget
 

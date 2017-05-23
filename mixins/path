@@ -14,7 +14,7 @@ export DEVELOPMENT_DIR=$HOME/devel
 PATH=$HOME/bin:$PATH
 
 # Erlang - Additional OTP applications
-export ERL_LIBS=$DEVELOPMENT_DIR
+export ERL_LIBS=$HOME/erl_libs
 
 # PostgreSQL
 #PATH=/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH

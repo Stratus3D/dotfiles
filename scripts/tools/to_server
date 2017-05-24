@@ -8,7 +8,7 @@ IFS=$'\t\n' # Stricter IFS settings
 
 usage() {
     cat <<EOF
-    Usage: to_server.sh [options]
+    Usage: to_server [options]
 
     Options:
     --destination_server                 Hostname of the remote server to rsync

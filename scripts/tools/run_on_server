@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+usage() {
+    cat <<EOF
+
+    A script that allows arbitrary shell scripts on the local computer to be run
+    on a remote server.
+
+    Usage: run_on_server [server] [script] [arguments]
+EOF
+}
+
+error_exit() {
+    usage
+    exit 1
+}
+
+blue_text() {
+    echo -e "\033[0;35m$1\033[0m"
+}
+
+target_server=${1:-""}
+script=${2:-""}
+arguments=${@:3}
+
+if [ -z "$target_server" ] || [ -z "$script" ]; then
+    error_exit
+else
+    # Must be valid arguments, use ssh to run the script on the server
+    blue_text "Output from remote server:"
+    ssh "$target_server" "bash -s" -- < "$script" "$arguments"
+fi

@@ -206,6 +206,8 @@ Git Commands
 * `git describe --long` - version string suitable for Erlang module `-vsn` attributes.
 * `git log --grep="^prefix" --pretty='format:%h - %cn - %s'` find all commits with `prefix`
 * `git log -p --cc` show only resolved conflicts in merge commits
+* `git shortlog -sn --since='10 weeks' --until='2 weeks'` show number commits by each committer between two times
+* `git diff --word-diff` show changed words rather than lines
 
 Irssi Commands
 

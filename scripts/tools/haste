@@ -14,7 +14,7 @@ fi
 
 pastebin() {
     a=$(cat);
-    curl -X POST -s -d "$a" $HASTEBIN_URL/documents | awk -F '"' '{print "$HASTEBIN_URL/"$4}';
+    curl -X POST -s -d "$a" $HASTEBIN_URL/documents | awk -v HASTEBIN_URL=$HASTEBIN_URL -F '"' '{print HASTEBIN_URL"/"$4}';
 }
 
 pastebin

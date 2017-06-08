@@ -9,7 +9,8 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugins
 " Tmux
-Plugin 'christoomey/vim-tmux-navigator'
+" Disabled this plugin because it broke the C-l mapping to refresh Vim
+" Plugin 'christoomey/vim-tmux-navigator'
 " For writing
 Plugin 'junegunn/goyo.vim'
 Plugin 'reedes/vim-pencil'

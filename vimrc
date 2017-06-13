@@ -55,6 +55,10 @@ set pastetoggle=<F2>
 " Show the curent mode on the last line (command line)
 set showmode
 
+" Turn on autocompletion of commands
+set wildmenu
+set wildmode=full
+
 " Toggle Tagbar
 nmap <F9> :TagbarToggle<CR>
 

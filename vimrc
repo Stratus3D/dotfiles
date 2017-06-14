@@ -18,6 +18,9 @@ autocmd BufRead,BufNewFile Dockerfile setfiletype bash
 " Turn on syntax highlighting
 syntax on
 
+" Limit syntax highlighting to 300 columns
+set synmaxcol=300
+
 " Show line numbers
 set number
 

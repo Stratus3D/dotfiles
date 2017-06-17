@@ -29,6 +29,8 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
+" CoffeeScript
+Plugin 'kchmck/vim-coffee-script'
 " Lua
 Plugin 'xolox/vim-misc' " required by vim-lua-ftplugin
 Plugin 'xolox/vim-lua-ftplugin'

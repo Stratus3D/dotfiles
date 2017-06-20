@@ -179,6 +179,8 @@ Vim Commands
 * `vim -V9logfile` tell Vim to log to file a named `logfile` in the current directory
 * `:'<,'>:w !<command>` pipe selection to STDIN of `<command>`. For example, to count the words selected run `:'<,'>:w !wc -w` or `:'<,'>:w !haste|pbcopy` to send to pastebin and copy the URL.
 * `g^g` print number of selected lines when in visual mode
+* `^x^l` complete whole line
+* `cfdo s/foo/bar/g | update` - find and replace in all files in quickfix
 
 SSH/SCP Commands
 

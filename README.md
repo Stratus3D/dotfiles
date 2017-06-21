@@ -78,7 +78,7 @@ Use asdf for version management ([https://github.com/HashNuke/asdf](https://gith
 * [Phoenix](http://www.phoenixframework.org/)
 * [AngularJS](https://angularjs.org/)
 
-##Documentation
+## Documentation
 
 Offline documentation suitable for day to day use.
 
@@ -90,11 +90,11 @@ Offline documentation suitable for day to day use.
 * C: [http://www.gnu.org/software/libc/manual/html_mono/libc.html](http://www.gnu.org/software/libc/manual/html_mono/libc.html)
 * Make: [http://www.gnu.org/software/make/manual/make.html](http://www.gnu.org/software/make/manual/make.html)
 
-##Color Schemes
+## Color Schemes
 
 * [Solarized Color Scheme (http://ethanschoonover.com/solarized)](http://ethanschoonover.com/solarized)
 
-##Repos that I referred to when creating these dotfiles
+## Repos that I referred to when creating these dotfiles
 
 * [Joshua Steele's dotfiles (https://github.com/joshukraine/dotfiles)](https://github.com/joshukraine/dotfiles)
 * [thoughtbot/laptop (https://github.com/thoughtbot/laptop)](https://github.com/thoughtbot/laptop)
@@ -111,7 +111,7 @@ Offline documentation suitable for day to day use.
 * Add solarized light/dark toggle functions.
 * Make vim read color scheme from zsh.
 
-##Useful commands that I often forget
+## Useful commands that I often forget
 
 Bash/Zshell Commands
 

@@ -21,6 +21,9 @@ syntax on
 " Limit syntax highlighting to 300 columns
 set synmaxcol=300
 
+" Only highlight 256 or fewer lines
+syntax sync minlines=256
+
 " Show line numbers
 set number
 

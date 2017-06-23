@@ -17,6 +17,10 @@ alias gst="git status"
 alias gco="git commit -m "
 alias gdh="git diff HEAD "
 
+# Weather
+alias wthr="curl wttr.in/"
+# Or I can use `weather`
+
 # Create alaises for bash scripts in the custom_tools directory
 custom_tools=($(find $HOME/dotfiles/scripts/custom_tools -maxdepth 1 -name "*.sh"))
 # We might not have any custom tools

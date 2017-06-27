@@ -16,7 +16,13 @@ if [ ! $# -gt 0 ]; then
     exit 1;
 fi
 
+if [ ! $# -gt 1 ]; then
+    echo "Must specify swagger version"
+    exit 1;
+fi
+
 project_root=$1
+swagger_version=$2
 dist_destination=$project_root/priv/swagger
 
 # Prepare project
@@ -24,14 +30,20 @@ cd "$project_root"
 mkdir -p "$dist_destination"
 mkdir -p priv/swagger-src
 
+set -x
+
 # Clone swagger
 (
 cd priv/swagger-src
 git clone git@github.com:swagger-api/swagger-ui.git
 
+# Check the specified version
+cd swagger-ui
+git checkout $swagger_version
+
 # Copy swagger dist into priv/swagger
-cd swagger-ui/dist
-cp -r *  $dist_destination
+cd dist
+cp -R *  $dist_destination
 )
 
 # Remove swagger repo

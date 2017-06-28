@@ -89,7 +89,7 @@ colorscheme solarized
 
 " Make background transparent since we are using solarized in the terminal
 let g:solarized_termtrans = 1
-set t_Co=16
+set t_Co=256
 
 " Ignored files
 set wildignore+=/tmp/,*.so,*.swp,*.swo,*.zip,*.meta,*.prefab,*.png,*.jpg,*.beam

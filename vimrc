@@ -277,3 +277,14 @@ set listchars=eol:¬,tab:→\ ,extends:>,precedes:<,trail:·,space:·
 source $HOME/.vim/whitespace.vim
 
 highlight SpecialKey ctermfg=darkgreen guifg=darkgreen
+
+" BangOpen is useful for open an executable script on the $PATH without having
+" to lookup the name manually. For example:
+"
+" :BangOpen which to_server
+"
+function! BangOpen(arg)
+    execute 'tabe ' . system(a:arg)
+endfunction
+
+command! -nargs=1 BangOpen :call BangOpen(<f-args>)

@@ -139,6 +139,7 @@ cmap w!! w !sudo tee >/dev/null %
 
 " Vim pencil settings
 let g:pencil#wrapModeDefault = 'soft'
+let g:pencil#textwidth = 80
 
 augroup pencil
     autocmd!

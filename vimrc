@@ -48,6 +48,9 @@ set showmatch
 " Highlight search results
 set hlsearch
 
+" Jump to the next match in the file after the cursor
+set incsearch
+
 " Show the 80 column line
 set colorcolumn=80
 

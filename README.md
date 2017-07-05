@@ -69,7 +69,6 @@ Use asdf for version management ([https://github.com/HashNuke/asdf](https://gith
 * Ruby
 * Python
 * Lua
-  * LuaRocks for package management ([https://luarocks.org/](https://luarocks.org/))
 * Javascript(NodeJS)
 * Go
 

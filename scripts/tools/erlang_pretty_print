@@ -1,0 +1,33 @@
+#! /usr/bin/env escript
+
+main([TermList]) ->
+    case lists:reverse(TermList) of
+        [$.|_] ->
+            pretty_print_term(TermList);
+        _ ->
+            pretty_print_term(lists:flatten([TermList, "."]))
+    end;
+main(_) ->
+    usage().
+
+pretty_print_term(TermBin) ->
+    try erl_scan:string(TermBin) of
+        {ok,Tokens,_} ->
+            case erl_parse:parse_term(Tokens) of
+                {ok,Term} ->
+                    ok = io:format("~p~n", [Term]);
+                {error, Error} ->
+                    ok = io:format("~p~n", [Error])
+            end;
+        {error, Error, Location} ->
+            ok = io:format("~p~p~n", [Error, Location])
+    catch
+        error:badarg ->
+                io:format("Error: Not a valid Erlang term~n", [])
+    end.
+
+usage() ->
+    Script = escript:script_name(),
+    io:format("Usage: ~s [term]~n~n", [Script]),
+    io:format("Takes a string containing an Erlang term and pretty prints it to STDOUT.~n", []),
+    halt(1).

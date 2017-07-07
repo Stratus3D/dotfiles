@@ -155,6 +155,8 @@ Bash/Zshell Commands
 * `bindkey` show Zsh commands
 * `cat *.c *.h | cpp -fpreprocessed | sed 's/[_a-zA-Z0-9][_a-zA-Z0-9]*/x/g' | tr -d ' \012' | wc -c` count words in C project
 * `column -t -s ',' data.csv` print CSV as a table in the terminal
+* `file <img file>` show general image info like format and dimensions
+* `identify -verbose <img file>` show colorspace, channel depth, dimensions, and other metadata for an image
 
 OSX Commands
 * `su` needs to be `sudo su`
@@ -197,6 +199,7 @@ Screen Commands
 
 Git Commands
 
+* `git tag --contains <commit hash>` - Lists the tags that include the specified commit.
 * `git clean -X` - Remove files ignored by Git
 * `git checkout $(git rev-list -n 1 --before="2016-07-05 21:00" master)` - Checkout a branch at a specific point in time.
 * `git show $(git rev-list -n 1 --before="2016-07-05 21:00" master):path/to/file` - Show what a file looked like at a specific point in time on a specific branch.

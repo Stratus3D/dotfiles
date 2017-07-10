@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+usage() {
+    cat <<EOF
+    Usage: erlang_version_bump [application root] [new version]
+EOF
+}
+
+error_exit() {
+    usage
+    exit 1
+}
+
+app_dir="${1:-}"
+new_version="${2:-}"
+
+if [[ -z "$app_dir" ]]
+then
+    echo "ERROR: no application path specified"
+    error_exit
+fi
+
+if [[ -z "$new_version" ]]
+then
+    echo "ERROR: no new version specified"
+    error_exit
+fi
+
+# Replace version in app.src file if it is set
+# Not sure if this is always the location
+app_src_file=$(find "$app_dir/src" -name "*.app.src")
+sed -i .bak "s/\({.*vsn.*,\).*\(}.*,.*\)/\1 \"$new_version\"\2/g" "$app_src_file"
+
+# Replace version in Makefile if it is set
+sed -i .bak 's/VERSION *= *.*/VERSION = '$new_version'/g' "$app_dir/Makefile"
+
+# Replace version in relx.config
+relx_config="$app_dir/relx.config" # Not sure if this is always the location
+sed -i .bak 's/\({.*release.*,.*{.*,\).*\(}.*\)/\1 "'$new_version'"\2/g' "$relx_config"
+
+echo "Updated version to $new_version"

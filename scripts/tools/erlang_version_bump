@@ -42,6 +42,6 @@ sed -i .bak 's/VERSION *= *.*/VERSION = '$new_version'/g' "$app_dir/Makefile"
 
 # Replace version in relx.config
 relx_config="$app_dir/relx.config" # Not sure if this is always the location
-sed -i .bak 's/\({.*release.*,.*{.*,\).*\(}.*\)/\1 "'$new_version'"\2/g' "$relx_config"
+sed -i .bak 's/\({.*release.*,.*{[^}]*,\)[^}]*\(}.*\)/\1 "'$new_version'"\2/g' "$relx_config"
 
 echo "Updated version to $new_version"

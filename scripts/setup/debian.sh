@@ -135,6 +135,12 @@ sudo apt-get -y install ncftp python-paramiko python-pycryptopp lftp python-boto
 # For network troubleshooting
 sudo apt-get -y install mtr
 
+# Screen recording
+sudo apt-get -y install vokoscreen
+
+# Sound recording
+sudo apt-get install audacity
+
 # Assume we are using Gnome
 source gnome.sh
 

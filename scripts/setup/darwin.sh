@@ -43,6 +43,9 @@ brew linkapps qcachegrind
 # Install GNU readlink
 brew install coreutils
 
+# Install GNU sed
+brew install gnu-sed
+
 # autoexpect
 brew install expect
 

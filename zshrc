@@ -88,10 +88,10 @@ export AS_CFG=/opt/glassfish/domains/domain1/config
 source $ZSH/oh-my-zsh.sh
 
 source $ZSHRC_PATH/mixins/general
-source $ZSHRC_PATH/mixins/asdf
 source $ZSHRC_PATH/mixins/functions
 source $ZSHRC_PATH/mixins/grep
 source $ZSHRC_PATH/mixins/path
+source $ZSHRC_PATH/mixins/asdf
 
 source $ZSHRC_PATH/mixins/aliases
 

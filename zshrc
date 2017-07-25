@@ -122,3 +122,7 @@ precmd() {
 
 # Use vi mode
 bindkey -v
+
+# Vi mode settings
+bindkey -M vicmd '?' history-incremental-search-backward
+bindkey -M vicmd '/' history-incremental-search-forward

@@ -36,7 +36,10 @@
   changed = green
   untracked = cyan
 [core]
+  # Global gitignore rules
   excludesfile = ~/.gitignore_global
+
+  # Pay attention to case, even on OSX
   ignorecase = false
 [status]
   submoduleSummary = true

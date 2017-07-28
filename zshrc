@@ -124,5 +124,12 @@ precmd() {
 bindkey -v
 
 # Vi mode settings
+# Better searching in command mode
 bindkey -M vicmd '?' history-incremental-search-backward
 bindkey -M vicmd '/' history-incremental-search-forward
+
+# Beginning search with arrow keys
+bindkey -M viins "^[OA" up-line-or-beginning-search
+bindkey -M viins "^[OB" down-line-or-beginning-search
+bindkey -M vicmd "^[OA" up-line-or-beginning-search
+bindkey -M vicmd "^[OB" down-line-or-beginning-search

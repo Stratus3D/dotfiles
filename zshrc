@@ -133,3 +133,6 @@ bindkey -M viins "^[OA" up-line-or-beginning-search
 bindkey -M viins "^[OB" down-line-or-beginning-search
 bindkey -M vicmd "^[OA" up-line-or-beginning-search
 bindkey -M vicmd "^[OB" down-line-or-beginning-search
+
+# Easier, more vim-like editor opening
+bindkey -M vicmd v edit-command-line

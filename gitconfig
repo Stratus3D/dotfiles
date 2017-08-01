@@ -59,3 +59,6 @@
 
   # Always create a merge commit when merging
   ff = false
+[branch]
+  # When checking out branches locally make them always track the remote branch
+  autosetupmerge = always

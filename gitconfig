@@ -46,6 +46,8 @@
 [diff]
   submodule = log
 [fetch]
+  # Push push submodule changes to the remote before pushing the main project.
+  # If a submodule fails to push the main project will not be pushed.
   recurseSubmodules = on-demand
 [push]
   # Push branch to remote branch with same name

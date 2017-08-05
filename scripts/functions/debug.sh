@@ -4,6 +4,19 @@
 # execution and allow for inspection of the environment and execution of
 # commands.
 
+# Example usage in a script:
+
+#    #! /usr/bin/env bash
+#    # Load the debug function
+#    source scripts/functions/debug.sh
+#
+#    ...
+#
+#    # Then use it somewhere
+#    foobar() {
+#        debug # Now I can inspect the variables that were passed into foobar
+#    }
+
 function debug
 {
     echo "#############|  Entering DEBUG mode  |####################";

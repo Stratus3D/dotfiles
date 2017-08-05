@@ -139,7 +139,10 @@ sudo apt-get -y install mtr
 sudo apt-get -y install vokoscreen
 
 # Sound recording
-sudo apt-get install audacity
+sudo apt-get -y install audacity
+
+# Video editing
+sudo apt-get -y install kdenlive
 
 # Assume we are using Gnome
 source gnome.sh

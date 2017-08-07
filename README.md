@@ -182,6 +182,7 @@ Vim Commands
 * `g^g` print number of selected lines when in visual mode
 * `^x^l` complete whole line
 * `cfdo s/foo/bar/g | update` - find and replace in all files in quickfix
+* `:g/^\d/norm A;` - use g + norm to add a semicolon to every line that starts with a number.
 
 SSH/SCP Commands
 

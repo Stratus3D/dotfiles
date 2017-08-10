@@ -15,6 +15,7 @@
 *.exe
 *.o
 *.beam
+*.pyc
 
 # Packages #
 ############

@@ -53,6 +53,7 @@
   # Push branch to remote branch with same name
   default = current
 [pull]
+  # Don't flatten locally created merge commits when rebasing
   rebase = preserve
 [merge]
   # Standard diff is two sets of final changes. This introduces the change

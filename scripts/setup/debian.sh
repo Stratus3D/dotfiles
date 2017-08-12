@@ -18,6 +18,9 @@ ORIGINAL_IFS=$IFS
 DEBIAN_FRONTEND=noninteractive
 
 # Tools I need for development
+# Add apt apt-get repository with latest version of Git
+sudo add-apt-repository ppa:git-core/ppa -y
+sudo apt-get update
 sudo apt-get -y install git
 sudo apt-get -y install zsh
 sudo apt-get -y install vim

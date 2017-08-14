@@ -42,6 +42,7 @@
   # Pay attention to case, even on OSX
   ignorecase = false
 [status]
+  # Show status of git submodules in git status output
   submoduleSummary = true
 [diff]
   submodule = log

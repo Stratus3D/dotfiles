@@ -5,3 +5,4 @@ ruby 2.3.0
 nodejs 4.7.2
 postgres 9.5.2
 rebar 3.4.1
+python 2.7.13

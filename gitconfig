@@ -46,6 +46,9 @@
   submoduleSummary = true
 [diff]
   submodule = log
+
+  # Default tool for resolving conflicts
+  tool = vimdiff3
 [fetch]
   # Push push submodule changes to the remote before pushing the main project.
   # If a submodule fails to push the main project will not be pushed.

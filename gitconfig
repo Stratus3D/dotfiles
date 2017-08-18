@@ -45,6 +45,7 @@
   # Show status of git submodules in git status output
   submoduleSummary = true
 [diff]
+  # Show submodules changes in diffs as a list of commits like `git log` shows
   submodule = log
 
   # Default tool for resolving conflicts

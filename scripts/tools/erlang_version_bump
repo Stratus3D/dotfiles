@@ -35,13 +35,16 @@ fi
 # Replace version in app.src file if it is set
 # Not sure if this is always the location
 app_src_file=$(find "$app_dir/src" -name "*.app.src")
-sed -i .bak "s/\({.*vsn.*,\).*\(}.*,.*\)/\1 \"$new_version\"\2/g" "$app_src_file"
+sed -i.bak "s/\({.*vsn.*,\).*\(}.*,.*\)/\1 \"$new_version\"\2/g" "$app_src_file"
 
 # Replace version in Makefile if it is set
-sed -i .bak 's/VERSION *= *.*/VERSION = '$new_version'/g' "$app_dir/Makefile"
+sed -i.bak 's/VERSION *= *.*/VERSION = '$new_version'/g' "$app_dir/Makefile"
 
 # Replace version in relx.config
 relx_config="$app_dir/relx.config" # Not sure if this is always the location
-sed -i .bak 's/\({.*release.*,.*{[^}]*,\)[^}]*\(}.*\)/\1 "'$new_version'"\2/g' "$relx_config"
+# Not all Erlang applications have a relx.config
+if [[ -f "$relx_config" ]]; then
+  sed -i.bak 's/\({.*release.*,.*{[^}]*,\)[^}]*\(}.*\)/\1 "'$new_version'"\2/g' "$relx_config"
+fi
 
 echo "Updated version to $new_version"

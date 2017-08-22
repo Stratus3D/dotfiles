@@ -41,6 +41,10 @@
 
   # Pay attention to case, even on OSX
   ignorecase = false
+
+  # Better diff of changes
+  #pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = diff-so-fancy | less
 [status]
   # Show status of git submodules in git status output
   submoduleSummary = true

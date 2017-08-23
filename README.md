@@ -213,6 +213,8 @@ Git Commands
 * `git log -p --cc` show only resolved conflicts in merge commits
 * `git shortlog -sn --since='10 weeks' --until='2 weeks'` show number commits by each committer between two times
 * `git diff --word-diff` show changed words rather than lines
+* `git mergetool --tool-help` show merge tools available
+* `git checkout -m FILE` restores a file to it's unresolved state
 
 Irssi Commands
 

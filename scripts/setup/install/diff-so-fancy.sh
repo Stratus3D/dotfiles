@@ -20,6 +20,7 @@ cd diff-so-fancy
 
 # Place diff-so-fancy on path
 cp diff-so-fancy $HOME/bin
+cp -r lib $HOME/bin
 cp -r third_party $HOME/bin
 
 # Remove temp directory

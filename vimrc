@@ -251,6 +251,9 @@ if has("unix")
         else
             set clipboard=unnamed
         endif
+    else
+        " Allow yanking to clipboard on Ubuntu
+        set clipboard=unnamedplus
     endif
 endif
 

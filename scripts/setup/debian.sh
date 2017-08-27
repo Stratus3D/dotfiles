@@ -37,7 +37,7 @@ sudo apt-get -y install dstat
 sudo apt-get -y install kcachegrind
 
 # Shell script linting
-sudo apt-get -y shellcheck
+sudo apt-get -y install shellcheck
 
 # Communication apps
 sudo apt-get -y install weechat

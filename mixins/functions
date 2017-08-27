@@ -2,10 +2,14 @@ for file in $HOME/dotfiles/scripts/functions/*; do
     source $file;
 done
 
-custom_functions=($(find $HOME/dotfiles/scripts/custom_functions -maxdepth 1 -name "*.sh"))
+custom_functions_dir="$HOME/dotfiles/scripts/custom_functions"
 
-if [ ${#custom_functions[@]} -gt 0 ]; then
-    for file in $custom_functions*; do
-        source $file;
-    done
+if [ -d "$custom_functions_dir" ]; then
+    custom_functions=($(find $custom_functions_dir -maxdepth 1 -name "*.sh"))
+    
+    if [ ${#custom_functions[@]} -gt 0 ]; then
+        for file in $custom_functions*; do
+            source $file;
+        done
+    fi
 fi

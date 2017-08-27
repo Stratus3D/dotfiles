@@ -44,10 +44,6 @@ fi
 # Change to the dotfiles directory either way
 cd $DOTFILES_DIR
 
-# run the install script, which symlinks the dotfiles
-chmod +x $DOTFILE_SCRIPTS_DIR/makesymlinks.sh || exit 1
-$DOTFILE_SCRIPTS_DIR/makesymlinks.sh || exit 1
-
 ###############################################################################
 # Create commonly used directories
 ###############################################################################
@@ -119,6 +115,11 @@ else
 fi
 
 ###############################################################################
+# Create symlinks to custom config now that all the software is installed
+###############################################################################
+$DOTFILE_SCRIPTS_DIR/makesymlinks.sh
+
+###############################################################################
 # Reload the .bashrc so we have asdf and all the other recently installed tools
 ###############################################################################
 source $HOME/.bashrc
@@ -156,6 +157,8 @@ pip install Pygments
 ###############################################################################
 
 cpan Lingua::Ispell
+
+
 
 ###############################################################################
 # Check environment and print out results

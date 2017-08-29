@@ -64,6 +64,10 @@ brew install elm
 # For network troubleshooting
 brew install mtr
 
+# Images in the terminal
+brew tap eddieantonio/eddieantonio
+brew install imgcat
+
 # Install other software using custom install scripts
 install_scripts=(
     # Testing

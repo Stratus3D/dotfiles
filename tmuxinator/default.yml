@@ -7,7 +7,7 @@ root: ~/devel/
 # socket_name: foo
 
 # Runs before everything. Use it to start daemons etc.
-# sudo /etc/rc.d/mysqld start
+# pre: sudo /etc/rc.d/mysqld start
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247

@@ -5,9 +5,14 @@
 
 -module(patch_remote).
 
--export([with_module/2, with_module/4]).
+-export([with_modules/2, with_module/2, with_module/4]).
 
-% @doc Convience function for remsh's
+% @doc Convenience function for remsh's that allows us to add multiple modules
+
+with_modules(ModuleNames, InitArgs) ->
+    [with_module(ModuleName, InitArgs) || ModuleName <- ModuleNames].
+
+% @doc Convenience function for remsh's
 
 with_module(ModuleName, InitArgs) ->
     [Remsh] = proplists:get_value(remsh, InitArgs),

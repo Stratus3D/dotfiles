@@ -82,3 +82,5 @@ fi
 # Charts
 alias bigo="open $HOME/dotfiles/charts/bigoposter.pdf"
 alias vim-cheatsheet="open $HOME/dotfiles/charts/vim_cheat_sheet_for_programmers_print.png"
+
+alias erlybery="(cd $HOME/bin; java -jar erlyberly-0.6.9-SNAPSHOT-runnable.jar &)"

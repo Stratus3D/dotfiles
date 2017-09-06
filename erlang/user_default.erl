@@ -4,7 +4,7 @@
 -export([help/0]).
 
 % General
--export([l/0, mm/0, la/0]).
+-export([l/0, mm/0, la/0, write_term/2]).
 
 % OS
 -export([cmd/1, debug_binary/1]).
@@ -14,6 +14,9 @@
 -export([trace_to_group_leader/0,dbgtc/1, dbgon/1, dbgon/2,
          dbgadd/1, dbgadd/2, dbgdel/1, dbgdel/2, dbgallp/0, dbgoff/0, dbgend/0,
          dbg_ip_trace/1]).
+
+% Debugging
+-export([environment/0]).
 
 -import(io, [format/1, format/2]).
 
@@ -53,6 +56,13 @@ command_help(Command, Help, undefined) ->
     format("~-30s -- ~s~n", [Command, Help]);
 command_help(Command, Help, Usage) ->
     format("~-30s -- ~s. Usage: ~p~n", [Command, Help, Usage]).
+
+%%%===================================================================
+%%% General
+%%%===================================================================
+
+write_term(Path, Term) ->
+    file:write_file(Path, io_lib:fwrite("~p.~n", [Term])).
 
 trace_to_group_leader() ->
     dbg:tracer(process, {fun(Msg, _) -> io:format("~p\n", [Msg]) end, []}).
@@ -237,3 +247,12 @@ cmd(Command) ->
 
 debug_binary(Bin) ->
     io:format("Binary: ~s~n", [[ <<(X+$0)>> || <<X:1>> <= Bin]]).
+
+%%%===================================================================
+%%% Debugging
+%%%===================================================================
+
+environment() ->
+    Apps = application:which_applications(),
+    AppNames = [AppName || {AppName, _Desc, _Version} <- Apps],
+    [{App, application:get_all_env(App)} || App <- AppNames].

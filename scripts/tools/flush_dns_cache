@@ -1,3 +1,10 @@
-#! /bin/bash -
+#! /usr/bin/env bash
 
-dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+dscacheutil -flushcache
+sudo killall -HUP mDNSResponder

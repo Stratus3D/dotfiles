@@ -1,4 +1,6 @@
-export EDITOR='vim'
+# Set vim with no config as the default editor
+export EDITOR='vim -u NONE'
+
 #export TZ='America/New_York'
 
 # Perl options

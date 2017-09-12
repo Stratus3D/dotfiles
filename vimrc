@@ -9,6 +9,7 @@ autocmd BufRead,BufNewFile sys.config,*.app.src,*.app,*.erl,*.es,*.hrl,*.yaws,*.
 autocmd BufRead,BufNewFile Gemfile setfiletype ruby
 autocmd BufRead,BufNewFile Vagrantfile setfiletype ruby
 autocmd BufRead,BufNewFile Dockerfile setfiletype bash
+autocmd BufRead,BufNewFile *gitconfig setfiletype conf
 
 " TODO: Turn on showcmd when in visual mode
 "autocmd VisualEnter * silent execute "set showcmd!"

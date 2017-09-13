@@ -52,6 +52,9 @@ set hlsearch
 " Jump to the next match in the file after the cursor
 set incsearch
 
+" Wrap around the file when searching
+set wrapscan
+
 " Show the 80 column line
 set colorcolumn=80
 

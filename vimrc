@@ -137,68 +137,6 @@ if has("gui_running")
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins and plugin settings
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Load plugins
-source $HOME/.vim/plugins.vim
-
-" Start CtrlP on startup
-autocmd VimEnter * CtrlP
-
-" Vim-Erlang Skeleton settings
-let g:erl_replace_buffer=0
-" TODO: Figure out how to copy default erlang templates into our custom dir
-" let g:erl_tpl_dir="~/.erlang_templates"
-
-" Align line-wise comment delimiters flush left instead of following code
-" indentation
-let g:NERDDefaultAlign = 'left'
-
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-
-" NERDTree settings
-nmap <silent> <F3> :NERDTreeToggle<CR>
-set guioptions-=T
-let NERDTreeShowHidden=1
-
-" CtrlP directory mode
-let g:ctrlp_working_path_mode = 0
-
-set runtimepath^=$HOME/.vim/bundle/ctrlp.vim
-
-" Vim pencil settings
-let g:pencil#wrapModeDefault = 'hard'
-let g:pencil#textwidth = 80
-
-augroup pencil
-    autocmd!
-    autocmd FileType mkd.markdown,markdown,mkd call pencil#init()
-    autocmd FileType text         call pencil#init()
-augroup END
-
-"open CtrlP in buffer mode
-nnoremap <leader>b :CtrlPBuffer<CR>
-
-" custom CtrlP ignores toggle
-function! ToggleCtrlPIgnores()
-    if exists("g:ctrlp_user_command")
-        " unset the ignores
-        let g:ctrlp_custom_ignore = {}
-        unlet g:ctrlp_user_command
-    else
-        " always ignore these patterns
-        let g:ctrlp_custom_ignore = {
-                    \'dir': 'ebin\|DS_Store\|git$\|bower_components\|node_modules\|logs',
-                    \'file': '\v\.(beam|pyc|swo)$',
-                    \}
-        " also ignore files listed in the .gitignore
-        let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-    end
-endfunction
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Shortcuts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -236,9 +174,6 @@ omap s :normal vs<CR>
 
 " Allow sudo after opening file
 cmap w!! w !sudo tee >/dev/null %
-
-call ToggleCtrlPIgnores()
-:nnoremap <F6> call ToggleCtrlPIgnores()<CR>
 
 " Press Space to turn off highlighting and clear any message already displayed.
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
@@ -326,6 +261,71 @@ function! SetSpaces(arg)
 endfunction
 
 command! -nargs=1 SetSpaces :call SetSpaces(<f-args>)
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins and plugin settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Load plugins
+source $HOME/.vim/plugins.vim
+
+" Start CtrlP on startup
+autocmd VimEnter * CtrlP
+
+" Vim-Erlang Skeleton settings
+let g:erl_replace_buffer=0
+" TODO: Figure out how to copy default erlang templates into our custom dir
+" let g:erl_tpl_dir="~/.erlang_templates"
+
+" Align line-wise comment delimiters flush left instead of following code
+" indentation
+let g:NERDDefaultAlign = 'left'
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" NERDTree settings
+nmap <silent> <F3> :NERDTreeToggle<CR>
+set guioptions-=T
+let NERDTreeShowHidden=1
+
+" CtrlP directory mode
+let g:ctrlp_working_path_mode = 0
+
+set runtimepath^=$HOME/.vim/bundle/ctrlp.vim
+
+" Vim pencil settings
+let g:pencil#wrapModeDefault = 'hard'
+let g:pencil#textwidth = 80
+
+augroup pencil
+    autocmd!
+    autocmd FileType mkd.markdown,markdown,mkd call pencil#init()
+    autocmd FileType text         call pencil#init()
+augroup END
+
+"open CtrlP in buffer mode
+nnoremap <leader>b :CtrlPBuffer<CR>
+
+" custom CtrlP ignores toggle
+function! ToggleCtrlPIgnores()
+    if exists("g:ctrlp_user_command")
+        " unset the ignores
+        let g:ctrlp_custom_ignore = {}
+        unlet g:ctrlp_user_command
+    else
+        " always ignore these patterns
+        let g:ctrlp_custom_ignore = {
+                    \'dir': 'ebin\|DS_Store\|git$\|bower_components\|node_modules\|logs',
+                    \'file': '\v\.(beam|pyc|swo)$',
+                    \}
+        " also ignore files listed in the .gitignore
+        let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+    end
+endfunction
+
+call ToggleCtrlPIgnores()
+:nnoremap <F6> call ToggleCtrlPIgnores()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File type settings (file type-specific settings in vim/ftplugin/)

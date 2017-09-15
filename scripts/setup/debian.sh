@@ -7,8 +7,8 @@
 set -u # Prevent unset variables
 set -e # Stop on an error
 set -o pipefail # Pipe exit code should be non-zero when a command in it fails
+#ORIGINAL_IFS=$IFS
 IFS=$'\t\n' # Stricter IFS settings
-ORIGINAL_IFS=$IFS
 
 ###############################################################################
 # Install packages with apt-get
@@ -44,8 +44,6 @@ sudo apt-get -y install weechat
 sudo apt-get -y install thunderbird
 sudo apt-get -y install enigmail # For secure email
 
-#sudo apt-get -y install chrome # chrome isn't available
-
 # For emoji
 sudo apt-get -y install ttf-ancient-fonts
 
@@ -57,7 +55,7 @@ sudo apt-get update
 sudo apt-get -y install skype
 
 # Google Chrome
-sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install google-chrome-stable

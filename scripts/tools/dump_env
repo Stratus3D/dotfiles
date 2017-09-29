@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+usage() {
+    cat <<EOF
+$(basename $0) [target] [erlang-cookie]
+
+Provides an easy way of dumping the environment of a remote node to STDOUT.
+EOF
+}
+
+target="${1:-}"
+erlang_cookie="${2:-}"
+short_name="$( id -un )_$( date +%s )"
+
+if [[ -z "$target" ]]
+then
+    echo "ERROR: no node name specified"
+    usage
+    exit 1
+fi
+
+if [[ -z "$erlang_cookie" ]]
+then
+    echo "ERROR: no Erlang cookie specified"
+    usage
+    exit 1
+fi
+
+if echo $target | grep -q @ 2>/dev/null
+then
+    remote_node=$target
+else
+    remote_node="$target@$( hostname -s )"
+fi
+
+# Grab the application names, get the environment for each app, then print the
+# environment in the same way it would appear in the sys.config.
+# TODO: Bug here, doesn't get applications from the remote node.
+set -x
+erl -noshell -sname "$short_name" -setcookie "$erlang_cookie" -hidden \
+    -remsh $remote_node -pa $HOME/dotfiles/erlang/ -eval '
+Apps = application:which_applications(),
+AppNames = [AppName || {AppName, Desc, Ver} <- Apps],
+Envs = [{App, application:get_all_env(App)} || App <- AppNames],
+io:format("~p.~n", [Envs]),
+init:stop().'

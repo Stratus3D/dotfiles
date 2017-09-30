@@ -151,8 +151,10 @@ if [ -d $HOME/.gconf/ ]; then
     echo "Linking gnome profile..."
 
     # Link Solarized profile
-    mkdir -p $solarized_profile
-    symlink_file_if_missing $dotfiles/gnome_terminal_profile/profiles/Solarized/%gconf.xml "$solarized_profile%gconf.xml"
+    mkdir -p $profiles/SolarizedLight
+    mkdir -p $profiles/SolarizedDark
+    symlink_file_if_missing $dotfiles/gnome_terminal_profile/profiles/SolarizedLight/%gconf.xml $profiles/SolarizedLight/%gconf.xml
+    symlink_file_if_missing $dotfiles/gnome_terminal_profile/profiles/SolarizedDark/%gconf.xml $profiles/SolarizedDark/%gconf.xml
 
     # Link global gconf.xml
     mkdir -p $terminal_app/global

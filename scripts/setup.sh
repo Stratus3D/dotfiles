@@ -84,8 +84,8 @@ fi
 # Define a function used by the setup scripts to run all the custom install
 # scripts.
 run_install_scripts() {
-    $scripts_list=$1
-    $install_scripts_dir=$HOME/dotfiles/scripts/setup/install
+    scripts_list="$1"
+    install_scripts_dir=$HOME/dotfiles/scripts/setup/install
 
     # Run each script
     for file in $scripts_list; do
@@ -161,13 +161,14 @@ pip install Pygments
 
 cpan Lingua::Ispell
 
+###############################################################################
+# Install Misc. Packages
+###############################################################################
 
+$DOTFILE_SCRIPTS_DIR/setup/packages.sh
 
 ###############################################################################
 # Check environment and print out results
 ###############################################################################
 
 $DOTFILE_SCRIPTS_DIR/checkenv.sh
-
-# Install jslint
-npm install -g jslint

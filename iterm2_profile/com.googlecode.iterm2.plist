@@ -343,17 +343,17 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>359 -479 606 456 322 -800 1280 777 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>417 486 400 129 0 0 1280 777 </string>
+	<string>737 696 400 129 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>612 -684 700 622 322 -800 1280 777 </string>
+	<string>587 326 700 622 0 0 1920 1057 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 139 606 456 0 0 1920 1057 </string>
+	<string>269 207 599 388 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>338 236 918 381 0 0 1920 1057 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>80 193 592 584 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 6 1872 1051 0 0 1920 1057 </string>
+	<string>281 -471 1872 1051 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>136 52 650 476 0 0 1280 778 </string>
 	<key>NeverWarnAboutShortLivedSessions_F8A2BF92-AD20-4186-BD7F-064D9C0984C9</key>
@@ -1182,6 +1182,8 @@
 	<false/>
 	<key>PasteFromClipboard</key>
 	<false/>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>4</integer>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1238,7 +1240,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-03-29T17:53:43Z</date>
+	<date>2017-10-03T15:51:46Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -1294,7 +1296,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.13</string>
+	<string>3.0.15</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

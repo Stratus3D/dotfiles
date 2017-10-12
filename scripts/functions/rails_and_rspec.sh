@@ -9,8 +9,6 @@ function _rspec_command () {
   fi
 }
 
-alias rspec="_rspec_command"
-
 function _spring_command () {
   if [ -e "bin/spring" ]; then
     bin/spring $@
@@ -20,5 +18,3 @@ function _spring_command () {
     command spring $@
   fi
 }
-
-alias spring="_spring_command"

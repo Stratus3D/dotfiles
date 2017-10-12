@@ -88,3 +88,7 @@ alias erlybery="(cd $HOME/bin; java -jar erlyberly-0.6.9-SNAPSHOT-runnable.jar &
 # Aliases so these commands work regardless of what versions I'm currently using
 alias fb="ASDF_NODEJS_VERSION=6.11.3 fb-messenger-cli"
 alias tmuxinator="ASDF_RUBY_VERSION=2.3.0 tmuxinator"
+
+# Aliases for commands that aren't available via oh-my-zsh
+alias rspec="_rspec_command"
+alias spring="_spring_command"

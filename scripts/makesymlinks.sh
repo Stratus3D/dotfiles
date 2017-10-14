@@ -147,7 +147,6 @@ vim +PluginInstall +qall
 if [ -d $HOME/.gconf/ ]; then
     terminal_app=$HOME/.gconf/apps/gnome-terminal
     profiles=$terminal_app/profiles/
-    solarized_profile="$profiles/Solarized/"
     echo "Linking gnome profile..."
 
     # Link Solarized profile

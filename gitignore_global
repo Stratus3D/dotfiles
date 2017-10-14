@@ -4,9 +4,7 @@
 
 # Editor Temp Files  #
 ######################
-*.swp
-*.swo
-*.swn
+*.sw[klmnop]
 
 # Compiled source #
 ###################

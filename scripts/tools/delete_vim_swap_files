@@ -19,7 +19,7 @@ EOF
 
 delete_vim_swap_files() {
     directory=${1:-}
-    find $directory -type f -name "*.swp" -delete
+    find $directory -type f -name "*.sw[klmnop]" -delete
 }
 
 if [ "z" = "z$directory" ]; then

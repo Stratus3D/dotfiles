@@ -6,7 +6,7 @@
 	<entry name="alternate_screen_scroll" mtime="1459699940" type="bool" value="true"/>
 	<entry name="use_custom_command" mtime="1459699940" type="bool" value="true"/>
 	<entry name="font" mtime="1459699940" type="string">
-		<stringvalue>Inconsolata Medium 12</stringvalue>
+		<stringvalue>Inconsolata Medium 11</stringvalue>
 	</entry>
 	<entry name="scrollbar_position" mtime="1438996435" type="string">
 		<stringvalue>right</stringvalue>

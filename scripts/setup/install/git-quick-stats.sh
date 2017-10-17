@@ -19,7 +19,7 @@ git clone https://github.com/arzzen/git-quick-stats.git
 cd git-quick-stats
 
 # Install
-make install
+make install PREFIX=$HOME
 
 # Remove temp directory
 rm -rf $TEMP_DIR

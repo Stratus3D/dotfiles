@@ -63,6 +63,9 @@ set incsearch
 " Wrap around the file when searching
 set wrapscan
 
+" Show 4 lines after cursor, useful when reviewing search results
+set scrolloff=4
+
 " Show the 80 column line
 set colorcolumn=80
 

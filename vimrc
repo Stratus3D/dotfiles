@@ -301,7 +301,8 @@ let g:ctrlp_working_path_mode = 0
 set runtimepath^=$HOME/.vim/bundle/ctrlp.vim
 
 " Vim pencil settings
-let g:pencil#wrapModeDefault = 'hard'
+" Hard wrapping was causing newlines I added to be removed from code in Markdown
+let g:pencil#wrapModeDefault = 'soft'
 let g:pencil#textwidth = 80
 
 augroup pencil

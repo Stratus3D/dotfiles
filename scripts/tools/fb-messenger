@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+export ASDF_NODEJS_VERSION=6.11.3
+exec fb-messenger-cli

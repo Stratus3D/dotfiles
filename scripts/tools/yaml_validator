@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+# Pass in a path to a file or directory and the script will validate the file
+# or all files in the directory.
+
+require "yaml"
+
+path_or_file=ARGV[0]
+
+def validate(file)
+  begin
+    unless YAML.load_file(file)
+      puts "#{file} contains invalid YAML"
+    end
+  rescue Exception => e # Not sure what sort of exceptions we could receive
+    puts "error: #{e}"
+  end
+end
+
+if File.directory?(path_or_file)
+  # Find all yaml files in the directory and load each one
+  Dir.glob("#{path_or_file}/**/*.yml") do |file|
+    validate(file)
+  end
+else
+  # Must be a regular file
+  validate(path_or_file)
+end

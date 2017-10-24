@@ -135,6 +135,9 @@ set wildignore+=/tmp/,*.so,*.swp,*.swo,*.zip,*.meta,*.prefab,*.png,*.jpg,*.beam
 " Allow hidden buffers
 set hidden
 
+" Use American English when spell checking is turned on
+set spelllang=en_us
+
 if has("gui_running")
   set guioption=-t
 endif

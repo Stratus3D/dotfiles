@@ -138,6 +138,9 @@ set hidden
 " Use American English when spell checking is turned on
 set spelllang=en_us
 
+" Set the spell file to one stored in my dotfiles repo
+set spellfile=$HOME/dotfiles/vim/spell/en.utf-8.add
+
 if has("gui_running")
   set guioption=-t
 endif

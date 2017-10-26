@@ -5,7 +5,6 @@
 oh-my-zsh/
 vim/.netrwhist
 vim/spell
-chef/
 private
 
 # Ignore everything in vim/bundle except Vundle
@@ -16,7 +15,3 @@ mixins/*.custom
 scripts/custom_tools/
 scripts/custom_functions/
 scripts/upon_login_custom.sh
-
-# Ignore the compiled and the originals directories
-compiled/
-originals/

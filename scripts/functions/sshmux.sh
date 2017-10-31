@@ -4,5 +4,5 @@
 
 function sshmux {
     # Pass all arguments directly to `ssh` and add the tmux command
-    ssh $@ -t 'tmux has-session && exec tmux attach || exec tmux; tmux showenv -s;'
+    ssh $@ -t 'tmux has-session && exec tmux attach || exec tmux; exec $(tmux showenv -s)'
 }

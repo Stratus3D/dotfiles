@@ -59,3 +59,7 @@ Thumbs.db
 *.fprof
 # Files produced by various programs that generate callgrind files
 callgrind.*
+
+# VM/Containerization Files #
+#############################
+.vagrant/

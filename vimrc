@@ -345,7 +345,7 @@ call ToggleCtrlPIgnores()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 autocmd BufRead,BufNewFile *.txt setfiletype text
-autocmd BufRead,BufNewFile sys.config,*.app.src,*.app,*.erl,*.es,*.hrl,*.yaws,*.xrl setfiletype erlang
+autocmd BufRead,BufNewFile sys.config,*.app.src,*.app,*.erl,*.es,*.hrl,*.yaws,*.xrl*.spec setfiletype erlang
 autocmd BufRead,BufNewFile Gemfile setfiletype ruby
 autocmd BufRead,BufNewFile Vagrantfile setfiletype ruby
 autocmd BufRead,BufNewFile Dockerfile setfiletype bash

@@ -346,10 +346,9 @@ call ToggleCtrlPIgnores()
 
 autocmd BufRead,BufNewFile *.txt setfiletype text
 autocmd BufRead,BufNewFile sys.config,*.app.src,*.app,*.erl,*.es,*.hrl,*.yaws,*.xrl*.spec setfiletype erlang
-autocmd BufRead,BufNewFile Gemfile setfiletype ruby
-autocmd BufRead,BufNewFile Vagrantfile setfiletype ruby
-autocmd BufRead,BufNewFile Dockerfile setfiletype bash
-autocmd BufRead,BufNewFile *gitconfig setfiletype conf
+autocmd BufRead,BufNewFile Gemfile,Vagrantfile set filetype=ruby
+autocmd BufRead,BufNewFile Dockerfile,*.bats set filetype=sh
+autocmd BufRead,BufNewFile *gitconfig set filetype=conf
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Auto commands

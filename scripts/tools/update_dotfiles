@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set -u # Prevent unset variables
+set -e # Stop on an error
+set -o pipefail # Pipe exit code should be non-zero when a command in it fails
+IFS=$'\t\n' # Stricter IFS settings
+ORIGINAL_IFS=$IFS
+
+git_stash_message="stashing_for_git_pull"
+
+# Dotfiles directory
+dotfiles=$HOME/dotfiles
+
+cd "$dotfiles"
+
+# Stash users changes
+git stash save "$git_stash_message" > /dev/null
+
+# Update the repo with the latest
+git pull origin master
+
+# Check if we need to pop stashed changes
+if git stash list | grep "$git_stash_message"; then
+    git stash apply && git stash drop
+fi

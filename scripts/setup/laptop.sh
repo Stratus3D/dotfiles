@@ -149,14 +149,3 @@ gem_install_or_update 'bundler'
 fancy_echo "Configuring Bundler ..."
   number_of_cores=$(sysctl -n hw.ncpu)
   bundle config --global jobs $((number_of_cores - 1))
-
-brew_install_or_upgrade 'heroku-toolbelt'
-
-if ! command -v rcup >/dev/null; then
-  brew_tap 'thoughtbot/formulae'
-  brew_install_or_upgrade 'rcm'
-fi
-
-if [ -f "$HOME/.laptop.local" ]; then
-  . "$HOME/.laptop.local"
-fi

@@ -1,0 +1,28 @@
+#! /usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+target_branch="${1:-}"
+
+# Run the command and remove any files that it warns about, allow `git checkout`
+# to fail
+set +e
+output=$(git checkout "$target_branch" 2>&1)
+status_code=$?
+set -e
+
+if [ ! $status_code -eq 0 ]; then
+    conflicting_files=$(echo "$output" | grep '^\s' | gsed -r "s/\x1B\[([0-9]{1,3}((;[0-9]{1,3})*)?)?[m|K]//g")
+    echo "Deleting conflicting files: ${conflicting_files}"
+    echo $conflicting_files | xargs rm
+
+    # Then checkout the branch for real
+    git checkout "$target_branch"
+else
+    # If things are successful just print the output of the checkout command
+    echo "${output}"
+fi

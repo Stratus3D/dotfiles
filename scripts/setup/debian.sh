@@ -35,6 +35,8 @@ sudo apt-get -y install linux-tools-`uname -r` # perf
 sudo apt-get -y install dstat
 # For use with Erlang's fprof
 sudo apt-get -y install kcachegrind
+sudo apt-get -y install vagrant
+sudo apt-get -y install ansible
 
 # Shell script linting
 sudo apt-get -y install shellcheck

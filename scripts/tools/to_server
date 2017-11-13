@@ -36,12 +36,17 @@ sync() {
     exclude_gitignored=$4
     delete=$5
     include_dot_git=$6
+    local temp_file
 
     # Base command
     command_array=(-p -r $source_dir $destination_server:$destination_dir)
 
     if [ "$exclude_gitignored" = true ]; then
-        command_array+=(--filter='dir-merge,- .gitignore .gitignore_global')
+        # Build a list of excluded files, write them to a temp file and pass
+        # that file to --exclude-from, as per https://stackoverflow.com/a/35927535/1245380
+        temp_file=$(mktemp /tmp/excludes.XXXXXX)
+        git -C "$source_dir" ls-files --exclude-standard -oi --directory > "$temp_file"
+        command_array+=(--exclude-from="$temp_file")
     fi
 
     if [ "$include_dot_git" = false ]; then
@@ -55,6 +60,10 @@ sync() {
     set -x
     rsync "${command_array[@]}"
     set +x
+
+    if [ "$exclude_gitignored" = true ]; then
+        rm "$temp_file"
+    fi
 }
 
 get_value() {

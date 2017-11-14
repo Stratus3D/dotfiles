@@ -6,6 +6,5 @@
 #alias chrome="'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'"
 #alias chrome_jail="'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --user-data-dir=$(mktemp -d -t chrome_jail)"
 #alias chrome_incognito="'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --incognito"
-#alias schema_spy_localhost="java -jar ~/lib/schemaSpy_4.0.0.jar  -t pgsql -u rvoalte -o ~/Desktop/voalte_labs/database_refactor -host localhost:5432 -db dvoalte -dp /Users/tbrown/Downloads/postgresql-9.3-1103.jdbc3.jar -s public -p sample"
 #alias clean-erlang="rm -rf deps; rm -rf logs; rm db.config"
 #alias psql-remote="psql -p 5431"

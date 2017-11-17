@@ -93,6 +93,9 @@ set cursorcolumn
 set visualbell
 set noerrorbells
 
+" The mouse is evil
+set mouse=
+
 " Font
 set guifont=Monaco:h12
 

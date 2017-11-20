@@ -8,15 +8,24 @@ IFS=$'\t\n' # Stricter IFS settings
 
 usage() {
     cat <<EOF
-$(basename $0) [target] [erlang-cookie]
+$(basename $0) [target] [erlang-cookie] [[patch modules...]]
 
 Provides an easy way of running an Erlang remote shell (remsh).
+
+Patch modules should be space delimited list of module names.
 EOF
+}
+
+function join_by {
+    local IFS="$1";
+    shift;
+    echo "$*";
 }
 
 target="${1:-}"
 erlang_cookie="${2:-}"
 short_name="$( id -un )_$( date +%s )"
+modules=(user_default)
 
 if [[ -z "$target" ]]
 then
@@ -39,9 +48,17 @@ else
     remote_node="$target@$( hostname -s )"
 fi
 
+# Add extra patch modules if they are provided
+if [ ! -z "${@:3}" ]; then
+    IFS=' ' read -r -a array <<< "${@:3}"
+    modules+=( "${array[@]}" )
+fi
+
+eval_string='patch_remote:with_modules(['$(join_by ',' "${modules[@]}")'], init:get_arguments()).'
+
 # Show debug info when running the erl command
 set -x
 
 # Evaluate the patch_remote call in the local shell before the remsh is started
 # so the remsh starts with the module already loaded
-erl -sname "$short_name" -setcookie "$erlang_cookie" -hidden -remsh $remote_node -pa $HOME/dotfiles/erlang/ -eval 'patch_remote:with_module(user_default, init:get_arguments()).'
+erl -sname "$short_name" -setcookie "$erlang_cookie" -hidden -remsh "$remote_node" -pa "$HOME/dotfiles/erlang/" -eval "$eval_string"

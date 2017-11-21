@@ -8,3 +8,4 @@
 #alias chrome_incognito="'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --incognito"
 #alias clean-erlang="rm -rf deps; rm -rf logs; rm db.config"
 #alias psql-remote="psql -p 5431"
+#alias remsh_with_eflame="remsh_with_custom <server> eflame eflame2 eflame_app eflame_sup"

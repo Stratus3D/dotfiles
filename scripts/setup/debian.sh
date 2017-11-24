@@ -38,6 +38,12 @@ sudo apt-get -y install kcachegrind
 sudo apt-get -y install vagrant
 sudo apt-get -y install ansible
 
+# VirtualBox for VMs
+sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib"
+wget -q -O - https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get -y install virtualbox-5.2
+
 # Shell script linting
 sudo apt-get -y install shellcheck
 

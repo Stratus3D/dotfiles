@@ -95,7 +95,7 @@ alias rspec="_rspec_command"
 alias spring="_spring_command"
 
 # Silver Searcher aliases
-alias age="ag -G '.*\.erl$'"
-alias agj="ag -G '.*\.js$'"
-alias agr="ag -G '.*\.rb$'"
-alias agp="ag -G '.*\.py$'"
+alias age="ag --erlang"
+alias agj="ag --js"
+alias agr="ag --ruby"
+alias agp="ag --python"

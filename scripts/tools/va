@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+usage() {
+    cat <<EOF
+$(basename $0) [command or script] [args]
+
+Provides an easy way of running commands on a Vagrant box.
+EOF
+}
+
+command_or_script="${1:-}"
+remaining_args=${*:2}
+
+if [[ -z "$command_or_script" ]]
+then
+    echo "ERROR: no command or script specified"
+    usage
+    exit 1
+fi
+
+if [[ -x "$command_or_script" ]]; then
+    vagrant_command="vagrant ssh -- < $command_or_script $remaining_args"
+else
+    vagrant_command="vagrant ssh -- $command_or_script $remaining_args"
+fi
+
+set -x # Show debug info when running the erl command
+eval $vagrant_command

@@ -24,10 +24,25 @@ then
     exit 1
 fi
 
+current_dir=$(pwd)
+
+# First line is guest dir, second line is host dir
+# TODO: We shouldn't have to hardcode virtualbox in this jq query
+synced_dirs_info=$(cat .vagrant/machines/default/*/synced_folders | jq -r '.virtualbox[] | .[]')
+
+#guest_dir=$(echo "$synced_dirs_info" | sed -n 1p)
+host_dir=$(echo "$synced_dirs_info" | sed -n 2p)
+
+echo "$host_dir"
+echo "$current_dir"
+
+# TODO: Need to compare the project root with teh current directory and then
+# `cd` to the correct directory on the vagrant box before running the command
+
 if [[ -x "$command_or_script" ]]; then
-    vagrant_command="vagrant ssh -- < $command_or_script $remaining_args"
+    vagrant_command="vagrant ssh -- < '$command_or_script $remaining_args'"
 else
-    vagrant_command="vagrant ssh -- $command_or_script $remaining_args"
+    vagrant_command="vagrant ssh -- '$command_or_script $remaining_args'"
 fi
 
 set -x # Show debug info when running the erl command

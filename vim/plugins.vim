@@ -55,6 +55,7 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'tpope/vim-ragtag'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+" Maybe try https://github.com/tpope/vim-commentary instead?
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'

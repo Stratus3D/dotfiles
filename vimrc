@@ -72,6 +72,16 @@ set colorcolumn=80
 " Allow backspace to delete end of line, indent and start of line characters
 set backspace=indent,eol,start
 
+" Comment formatting options
+" Auto wrap text
+set formatoptions+=tc
+" Automatically insert the comment leader after hitting 'o' or 'O'
+set formatoptions+=o
+" Automatically insert the comment leader after hitting return in insert mode
+set formatoptions+=r
+" Allow formatting comments with 'gq'
+set formatoptions=q
+
 " Show pastetoggle status and allow it to be toggled with F2
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>

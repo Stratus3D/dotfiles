@@ -80,7 +80,9 @@ set formatoptions+=o
 " Automatically insert the comment leader after hitting return in insert mode
 set formatoptions+=r
 " Allow formatting comments with 'gq'
-set formatoptions=q
+set formatoptions+=q
+" Allow numbered lists in comments
+set formatoptions+=n
 
 " Show pastetoggle status and allow it to be toggled with F2
 nnoremap <F2> :set invpaste paste?<CR>

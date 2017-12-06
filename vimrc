@@ -156,6 +156,10 @@ set spelllang=en_us
 " Set the spell file to one stored in my dotfiles repo
 set spellfile=$HOME/dotfiles/vim/spell/en.utf-8.add
 
+" Autocompletion from spell check
+" TODO: Figure out if this is needed or not
+set complete+=kspell
+
 if has("gui_running")
   set guioption=-t
 endif

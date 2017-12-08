@@ -15,8 +15,13 @@ EOF
 }
 
 upfind() {
+    local result
+
     while [[ $PWD != / ]] ; do
-        if find "$PWD" -maxdepth 1 "$@"; then
+        result=$(find "$PWD" -maxdepth 1 "$@")
+
+        if [[ -n $result ]]; then
+            echo "$result"
             break
         else
             cd ..
@@ -34,25 +39,25 @@ then
     exit 1
 fi
 
+host_dir=$(dirname $(upfind -name '.vagrant'))
 current_dir=$(pwd)
+provider=$(vagrant status --machine-readable | grep "provider-name" | cut -f 4 -d,)
 
 # First line is guest dir, second line is host dir
-# TODO: We shouldn't have to hardcode virtualbox in this jq query
-synced_dirs_info=$(cat .vagrant/machines/default/*/synced_folders | jq -r '.virtualbox[] | .[]')
+synced_dirs_info=$(cat $host_dir/.vagrant/machines/default/*/synced_folders | jq -r ".$provider[] | .[]")
+guest_dir=$(echo "$synced_dirs_info" | sed -n 1p)
+#host_dir=$(echo "$synced_dirs_info" | sed -n 2p)
 
-#guest_dir=$(echo "$synced_dirs_info" | sed -n 1p)
-host_dir=$(echo "$synced_dirs_info" | sed -n 2p)
+#echo "$host_dir"
+#echo "$current_dir"
 
-echo "$host_dir"
-echo "$current_dir"
-
-# TODO: Need to compare the project root with teh current directory and then
+# TODO: Need to compare the project root with the current directory and then
 # `cd` to the correct directory on the vagrant box before running the command
 
 if [[ -x "$command_or_script" ]]; then
-    vagrant_command="vagrant ssh -- < '$command_or_script $remaining_args'"
+    vagrant_command="vagrant ssh -- 'cd $current_dir' < '$command_or_script $remaining_args'"
 else
-    vagrant_command="vagrant ssh -- '$command_or_script $remaining_args'"
+    vagrant_command="vagrant ssh -- 'cd $current_dir' '$command_or_script $remaining_args'"
 fi
 
 set -x # Show debug info when running the erl command

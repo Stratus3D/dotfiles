@@ -64,7 +64,14 @@ Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
 Plugin 'ervandew/supertab'
 Plugin 'airblade/vim-gitgutter'
+"Plugin 'tpope/vim-fugitive'
 Plugin 'nathanaelkane/vim-indent-guides'
+
+" Sublime like minimap
+Plugin 'severin-lemaignan/vim-minimap'
+
+" Easier movements
+Plugin 'easymotion/vim-easymotion'
 
 call vundle#end()
 

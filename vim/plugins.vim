@@ -68,7 +68,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 " Sublime like minimap
-Plugin 'severin-lemaignan/vim-minimap'
+" Decided against this as it doesn't really help me keep track of my location
+" in the file
+" Plugin 'severin-lemaignan/vim-minimap'
 
 " Easier movements
 Plugin 'easymotion/vim-easymotion'

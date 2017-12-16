@@ -50,6 +50,7 @@ tags.*
 .Trashes
 ehthumbs.db
 Thumbs.db
+*.desktop
 
 # Trace Files #
 ###############

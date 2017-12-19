@@ -1,0 +1,3 @@
+This file exists so the Last Login message is not displayed when opening a new
+terminal. See:
+http://osxdaily.com/2010/06/22/remove-the-last-login-message-from-the-terminal/

@@ -97,15 +97,6 @@ source $ZSHRC_PATH/mixins/aliases
 
 unalias gm # This alias has the same name as the GraphicsMagick binary
 
-# We must do this after sourcing the alias so we can use `platform_name`
-if [[ "$(platform_name)" = 'darwin' ]]; then
-    # screen-256color is the only profile that works properly in iTerm2
-    export TERM="screen-256color"
-else
-    # xterm-256color is the only profile that works in GNOME terminal
-    export TERM="xterm-256color"
-fi
-
 # Save all history
 # Incrementally write history to file
 setopt INC_APPEND_HISTORY

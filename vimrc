@@ -14,11 +14,8 @@ colorscheme solarized
 "execute "colorscheme ".$THEME
 
 " Make background transparent since we are using solarized in the terminal
-"let g:solarized_termtrans = 1
+let g:solarized_termtrans = 1
 set t_Co=256
-" if &term =~ '256color'
-"     set t_ut=
-" endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General settings

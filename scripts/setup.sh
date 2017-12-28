@@ -125,14 +125,14 @@ $DOTFILE_SCRIPTS_DIR/makesymlinks.sh
 source $HOME/.bashrc
 
 # Install all the plugins needed
-asdf plugin-add erlang https://github.com/HashNuke/asdf-erlang.git
-asdf plugin-add elixir https://github.com/HashNuke/asdf-elixir.git
-asdf plugin-add ruby https://github.com/HashNuke/asdf-ruby.git
+asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
 asdf plugin-add lua https://github.com/Stratus3D/asdf-lua.git
 asdf plugin-add postgres https://github.com/smashedtoatoms/asdf-postgres.git
 asdf plugin-add rebar https://github.com/Stratus3D/asdf-rebar.git
 asdf plugin-add python https://github.com/tuvistavie/asdf-python.git
-asdf plugin-add nodejs https://github.com/HashNuke/asdf-nodejs.git
+asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 
 # Imports Node.js release team's OpenPGP keys to main keyring
 bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring

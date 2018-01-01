@@ -130,6 +130,8 @@ sudo apt-get -y install android-tools-adb
 sudo apt-get -y install mosh
 
 # Install Blender for 3D modeling
+sudo add-apt-repository ppa:thomas-schiex/blender
+sudo apt-get update
 sudo apt-get -y install blender
 
 # Install Scribus for publishing

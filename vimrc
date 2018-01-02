@@ -166,6 +166,9 @@ if has("gui_running")
   set guioption=-t
 endif
 
+" Don't redraw when executing macros
+set lazyredraw
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Shortcuts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

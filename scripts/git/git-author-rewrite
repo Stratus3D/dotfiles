@@ -6,16 +6,27 @@ set -euo pipefail
 #ORIGINAL_IFS=$IFS
 IFS=$'\t\n' # Stricter IFS settings
 
+# Resources I used when developing this:
+#
+# * https://stackoverflow.com/questions/4981126/how-to-amend-several-commits-in-git-to-change-author
+# * https://stackoverflow.com/a/25815116/1245380
+# * https://help.github.com/articles/changing-author-info/
+
 usage() {
     cat <<EOF
     Usage: git-author-rewrite [options]
 
+    Rewrites existing Git commits with new committer and author information.
+
     Options:
-    --old         The old email address you want to replace
-    --new-email   The new email address to use
-    --new-name    The new name to use
+    --old           The old email address you want to replace
+    --new-email     The new email address to use
+    --new-name      The new name to use
+    --after-commit  Only update commits on current branch that come after this
+                    commit hash.
 EOF
 }
+
 
 error_exit() {
     usage
@@ -53,6 +64,9 @@ while :; do
             ;;
         -a|--new-name|--new-name=*)
             CORRECT_NAME=$(get_value $1 ${2:-""})
+            ;;
+        -c|--after-commit|--after-commit=*)
+            COMMIT_HASH=$(get_value $1 ${2:-""})
             ;;
         --)
             shift

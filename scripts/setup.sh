@@ -141,27 +141,6 @@ bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 asdf install
 
 ###############################################################################
-# Install devdocs
-###############################################################################
-cd $HOME/devel
-git clone https://github.com/Thibaut/devdocs.git && cd devdocs
-gem install bundler
-# TODO: Fix issue with bundle install never finishing
-bundle install
-thor docs:download --all
-
-###############################################################################
-# Install Pygments
-###############################################################################
-pip install Pygments
-
-###############################################################################
-# Setup cpan and install packages for irssi
-###############################################################################
-
-cpan Lingua::Ispell
-
-###############################################################################
 # Install Misc. Packages
 ###############################################################################
 

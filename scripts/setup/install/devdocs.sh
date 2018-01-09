@@ -3,6 +3,11 @@
 # Install devdocs
 #
 # Usage ./devdocs.sh
+#
+# Had a hard time getting this installed. These questions helped some:
+# * https://stackoverflow.com/questions/27699357/error-installing-eventmachine-gem-on-osx-yosemite
+# * https://stackoverflow.com/questions/40038953/how-to-install-nokogiri-on-mac-os-sierra-10-12
+#
 
 # Unoffical Bash "strict mode"
 # http://redsymbol.net/articles/unofficial-bash-strict-mode/

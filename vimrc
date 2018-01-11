@@ -108,6 +108,9 @@ set mouse=
 " Font
 set guifont=Monaco:h12
 
+" Show the status bar
+set laststatus=2
+
 " Custom status bar
 set statusline=\ Filename:%-8t                               " Filename
 set statusline+=\ Encoding:\%-8{strlen(&fenc)?&fenc:'none'}  " File encoding
@@ -117,7 +120,6 @@ set statusline+=%=%h%m%r                                     " Flags
 set statusline+=\ %l/%L                                      " Cursor line and total lines
 set statusline+=\ %c                                         " Cursor column
 set statusline+=\ %P                                         " Percentage through file
-set laststatus=2
 
 " Color status bar
 highlight statusline ctermfg=cyan ctermbg=black guifg=cyan guibg=black

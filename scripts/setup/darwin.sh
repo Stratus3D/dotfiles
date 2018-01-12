@@ -227,6 +227,9 @@ brew install ansible
 brew cask install vagrant
 brew cask install vagrant-manager # OSX toolbar for vagrant
 
+# Install iperf3 for network performance tests
+brew install iperf3
+
 # Install other software using custom install scripts
 install_scripts=(
     # Testing

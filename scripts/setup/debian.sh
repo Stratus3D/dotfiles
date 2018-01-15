@@ -129,6 +129,9 @@ sudo apt-get -y install android-tools-adb
 # Install mosh shell for high latency servers
 sudo apt-get -y install mosh
 
+# Install iperf so I can test network latency
+sudo apt-get -y install iperf3
+
 # Install Blender for 3D modeling
 sudo add-apt-repository ppa:thomas-schiex/blender
 sudo apt-get update

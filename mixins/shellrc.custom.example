@@ -9,3 +9,4 @@ export GIT_COMMITTER_NAME="John Doe"
 export GIT_COMMITTER_EMAIL="jdoe@example.com"
 
 export HASTEBIN_URL="https://hastebin.com"
+export BASE_TICKET_URL="https://atlassian.net/browse/"

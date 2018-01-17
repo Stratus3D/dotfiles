@@ -8,10 +8,8 @@ export PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
 export PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 
 # Custom options
-RC_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-
-if [ -f "$RC_DIR/dotfiles/mixins/shellrc.custom" ]; then
-    source "$RC_DIR/dotfiles/mixins/shellrc.custom"
+if [ -f "$HOME/dotfiles/mixins/shellrc.custom" ]; then
+    source "$HOME/dotfiles/mixins/shellrc.custom"
 fi
 
 # Erlang `erl` options

@@ -300,6 +300,9 @@ endfunction
 
 command! -nargs=1 SetSpaces :call SetSpaces(<f-args>)
 
+" Jira ticket command
+nnoremap <silent> gto :!open $BASE_TICKET_URL/<c-r>=expand("<cWORD>")<cr>/<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins and plugin settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

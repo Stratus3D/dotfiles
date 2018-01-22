@@ -259,12 +259,6 @@ endfunction
 
 :nnoremap <F4>  :call ToggleLeftGuides()<CR>
 
-" Load in custom config if it exists
-let custom_vimrc='~/dotfiles/mixins/vimrc.custom'
-if filereadable(custom_vimrc)
-    source custom_vimrc
-end
-
 " Toggle visibility of whitespace characters
 nmap <leader>l :set list!<CR>
 
@@ -317,6 +311,10 @@ autocmd VimEnter * CtrlP
 let g:erl_replace_buffer=0
 " TODO: Figure out how to copy default erlang templates into our custom dir
 " let g:erl_tpl_dir="~/.erlang_templates"
+
+" Erlang plugin settings. TODO: Pull these from the environment
+" let g:erl_author=""
+" let g:erl_company=""
 
 " Align line-wise comment delimiters flush left instead of following code
 " indentation

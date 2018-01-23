@@ -165,6 +165,7 @@ OSX Commands
 * `lsvfs` get details on file systems
 * `killall -STOP AppName` pause an app
 * `killall -CONT AppName` resume an app
+* `ditto -x -k <source> <destination dir>` unzip large file on OSX.
 
 Vim Commands
 

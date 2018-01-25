@@ -60,12 +60,16 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
 Plugin 'ervandew/supertab'
 Plugin 'airblade/vim-gitgutter'
 "Plugin 'tpope/vim-fugitive'
-Plugin 'nathanaelkane/vim-indent-guides'
+
+" I want to use it but it was buggy, need to figure out what is going on.
+"Plugin 'nathanaelkane/vim-indent-guides'
+
+" Not using tagbar because I didn't feel like the tag info was helpful.
+"Plugin 'majutsushi/tagbar'
 
 " Sublime like minimap
 " Decided against this as it doesn't really help me keep track of my location

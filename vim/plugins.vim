@@ -57,7 +57,10 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 " Maybe try https://github.com/tpope/vim-commentary instead?
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
+
+" ale for syntax checking
+Plugin 'w0rp/ale'
+
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'godlygeek/tabular'

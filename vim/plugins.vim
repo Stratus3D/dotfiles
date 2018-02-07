@@ -54,7 +54,9 @@ Plugin 'mustache/vim-mustache-handlebars'
 " For productivity
 Plugin 'tpope/vim-ragtag'
 Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
+" In-editor file browser. Disabled because of poor performance
+"Plugin 'scrooloose/nerdtree'
+
 " Maybe try https://github.com/tpope/vim-commentary instead?
 Plugin 'scrooloose/nerdcommenter'
 

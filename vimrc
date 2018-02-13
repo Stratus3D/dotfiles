@@ -177,6 +177,20 @@ set lazyredraw
 " https://github.com/joshukraine/dotfiles/blob/79aae9ac707460877d0fb36a3ef6a9b1ea7c44ce/vim-performance.md
 set re=1
 
+" Use built in file browser (netrw) instead of NERDTree
+" (https://shapeshed.com/vim-netrw/)
+let g:netrw_banner = 0
+" Make the browser 25% of the width of the editor
+let g:netrw_winsize = 25
+" Show directory as an expandable tree
+let g:netrw_liststyle = 3
+" Disable the banner at the top of the buffer
+let g:netrw_banner = 0
+" Open files in the previous window (e.g. not the netrw file browser window)
+let g:netrw_browse_split = 4
+" Open files on the right
+let g:netrw_altv = 1
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Shortcuts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

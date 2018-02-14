@@ -346,11 +346,6 @@ let g:NERDDefaultAlign = 'left'
 " Use compact syntax for prettified multi-line comments
 let g:NERDCompactSexyComs = 1
 
-" NERDTree settings
-nmap <silent> <F3> :NERDTreeToggle<CR>
-set guioptions-=T
-let NERDTreeShowHidden=1
-
 " CtrlP directory mode
 let g:ctrlp_working_path_mode = 0
 

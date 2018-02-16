@@ -317,6 +317,9 @@ command! -nargs=1 SetSpaces :call SetSpaces(<f-args>)
 " JSON formatting with jq
 nnoremap <silent> <leader>fj :%!jq '.'<CR>
 
+" Erlang term formatting with erlang_pretty_print
+nnoremap <silent> <leader>fe :%!erlang_pretty_print -i<CR>
+
 " Jira ticket command
 nnoremap <silent> <leader>to :!open $BASE_TICKET_URL/<c-r>=expand("<cWORD>")<cr>/<CR>
 

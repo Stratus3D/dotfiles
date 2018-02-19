@@ -1,6 +1,12 @@
 #! /usr/bin/env escript
 
+main(["-i"]) ->
+    % Read from STDIN
+    In = read_stdin([]),
+    pretty_print_term(In),
+    ok;
 main([TermList]) ->
+    io:format("TermList:~p", [TermList]),
     case lists:reverse(TermList) of
         [$.|_] ->
             pretty_print_term(TermList);
@@ -10,24 +16,50 @@ main([TermList]) ->
 main(_) ->
     usage().
 
-pretty_print_term(TermBin) ->
-    try erl_scan:string(TermBin) of
-        {ok,Tokens,_} ->
-            case erl_parse:parse_term(Tokens) of
-                {ok,Term} ->
-                    ok = io:format("~p~n", [Term]);
-                {error, Error} ->
-                    ok = io:format("~p~n", [Error])
-            end;
-        {error, Error, Location} ->
-            ok = io:format("~p~p~n", [Error, Location])
-    catch
-        error:badarg ->
-                io:format("Error: Not a valid Erlang term~n", [])
-    end.
-
 usage() ->
     Script = escript:script_name(),
     io:format("Usage: ~s [term]~n~n", [Script]),
     io:format("Takes a string containing an Erlang term and pretty prints it to STDOUT.~n", []),
     halt(1).
+
+read_stdin(Acc) ->
+    case io:get_chars("", 1000) of
+        eof ->
+            lists:flatten(io_lib:format("~s", [Acc]));
+        More ->
+            read_stdin([More|Acc])
+    end.
+
+pretty_print_term(TermList) when is_list(TermList) ->
+    case pretty_print(TermList) of
+        ok ->
+            ok;
+        {error, _Err} ->
+            case pretty_print(TermList ++ ".") of
+                ok ->
+                    ok;
+                {error, badarg} ->
+                    io:format("Error: Not a valid Erlang term~n", []);
+                {error, {Error, Location}} ->
+                    io:format("Syntax error: ~p~p~n", [Error, Location]);
+                {error, Error} ->
+                    io:format("~p~n", [Error])
+            end
+    end.
+
+pretty_print(TermList) when is_list(TermList) ->
+    try erl_scan:string(TermList) of
+        {ok,Tokens,_} ->
+            case erl_parse:parse_term(Tokens) of
+                {ok,Term} ->
+                    ok = io:format("~p~n", [Term]),
+                    ok;
+                {error, Error} ->
+                    {error, Error}
+            end;
+        {error, Error, Location} ->
+            {error, {Error, Location}}
+    catch
+        error:badarg ->
+            {error, badarg}
+    end.

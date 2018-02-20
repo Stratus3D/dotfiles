@@ -218,6 +218,9 @@ brew install mtr
 # OSX alternative to `ps auxf` for process tree views
 brew install pstree
 
+# Required by asdf-nodejs
+brew install gnupg
+
 # Images in the terminal
 brew tap eddieantonio/eddieantonio
 brew install imgcat

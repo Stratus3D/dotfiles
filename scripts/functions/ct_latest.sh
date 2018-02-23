@@ -19,7 +19,14 @@ ct_latest() {
         cd ../..
     fi
 
+    # Figure out the latest ct_run dir
+    local ct_dir
+
+    # Find all the ct_run dirs, sort them on fields dot delimited fields 3, 4
+    # and 5 (the values in the timestamps). Print only the highest one. Probably
+    # doesn't work with daylight savings.
+    ct_dir="$(find logs/ -name 'ct_run.*' -maxdepth 1 -mindepth 1 -type d | sort -t. -r -k3,5 | head -1)"
+
     # Change to the right directory
-    DIR="logs/$(cd logs && find . -name 'ct_run.*' -maxdepth 1 -mindepth 1 -type d | sort -r | head -1)"
-    cd $DIR
+    cd "$ct_dir"
 }

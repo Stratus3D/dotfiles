@@ -13,9 +13,6 @@ PATH=$HOME/bin:$PATH
 # Erlang - Additional OTP applications
 export ERL_LIBS=$HOME/erl_libs
 
-# PostgreSQL
-#PATH=/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH
-
 # Java
 JAVA_HOME_BIN=/usr/libexec/java_home
 if [ -f $JAVA_HOME_BIN ]; then

@@ -60,9 +60,6 @@ DISABLE_CORRECTION="true"
 # Taken from http://stackoverflow.com/a/26492107/1245380
 ZSHRC_PATH=$(dirname "$(readlink "${(%):-%N}")")
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -72,19 +69,6 @@ export ZSH=$HOME/.oh-my-zsh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-export ANDROID_HOME=$HOME/lib/adt-bundle-mac-x86_64-20131030
-
-SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
-
-# We need this so that tmux uses zsh when started in a zsh shell
-export SHELL='/bin/zsh'
-
-export MIRTH_MATCH_HOME=/opt/mirthmatch
-export AS_HOME=/opt/glassfish
-export AS_LOGS=/opt/glassfish/domains/domain1/logs
-export AS_CFG=/opt/glassfish/domains/domain1/config
-
-# export MANPATH="/usr/local/man:$MANPATH"
 source $ZSH/oh-my-zsh.sh
 
 source $ZSHRC_PATH/mixins/general

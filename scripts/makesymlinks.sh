@@ -134,6 +134,14 @@ for file in $tool_scripts; do
 done
 IFS=$ORIGINAL_IFS
 
+# Symlink all the scripts in scripts/git to the bin directory
+tool_scripts=$(find $dotfiles/scripts/git -type f \( -perm -u=x \) -print)
+IFS=$'\n'
+for file in $tool_scripts; do
+    create_or_replace_symlink $file $HOME/bin
+done
+IFS=$ORIGINAL_IFS
+
 # If vundle is already installed, remove it and fetch the latest from Github
 remove_dir_if_exists $dotfiles/vim/bundle/Vundle.vim
 

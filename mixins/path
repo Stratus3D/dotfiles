@@ -27,8 +27,5 @@ PATH=$HOME/lib/neo4j-community-2.0.0-RC1/bin/neo4j:$PATH
 export GOPATH=$DEVELOPMENT_DIR
 PATH=$GOPATH/bin:$PATH
 
-# Add tools
-PATH=$HOME/dotfiles/scripts/git:$PATH
-
 # Finally export completed PATH
 export PATH

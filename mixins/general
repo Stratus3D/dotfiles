@@ -12,5 +12,10 @@ if [ -f "$HOME/dotfiles/mixins/shellrc.custom" ]; then
     source "$HOME/dotfiles/mixins/shellrc.custom"
 fi
 
+# Solarized color scheme for LXDE
+if [ $XDG_CURRENT_DESKTOP = "LXDE" ]; then
+    source "$HOME/dotfiles/mixins/solarized"
+fi
+
 # Erlang `erl` options
 export ERL_AFLAGS="+pc unicode"

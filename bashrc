@@ -13,7 +13,7 @@ resolve_source() {
 
 #resolve_source $SOURCE
 
-FILES="$HOME/dotfiles/mixings/general
+FILES="$HOME/dotfiles/mixins/general
 $HOME/dotfiles/mixins/asdf
 $HOME/dotfiles/mixins/functions
 $HOME/dotfiles/mixins/aliases

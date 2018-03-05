@@ -50,8 +50,6 @@ This is software that I need for my day-to-day programming work. I try to keep t
 
 OSX Only
 
-* iTerm2 [https://iterm2.com/](https://iterm2.com/)
-* Mou [http://25.io/mou/](http://25.io/mou/)
 * ipmenulet [https://github.com/mcandre/IPMenulet](https://github.com/mcandre/IPMenulet)
 * ShiftIt [https://github.com/fikovnik/ShiftIt](https://github.com/fikovnik/ShiftIt)
 
@@ -186,6 +184,7 @@ Vim Commands
 * `cfdo s/foo/bar/g | update` - find and replace in all files in quickfix
 * `:g/^\d/norm A;` - use g + norm to add a semicolon to every line that starts with a number.
 * `vim --startuptime timeCost.txt timeCost.txt` - record the startup time of vim.
+* `e! ++enc=<encoding>` - reopen the file as a different encoding.
 
 SSH/SCP Commands
 

@@ -13,7 +13,7 @@ if [ -f "$HOME/dotfiles/mixins/shellrc.custom" ]; then
 fi
 
 # Solarized color scheme for LXDE
-if [ $XDG_CURRENT_DESKTOP = "LXDE" ]; then
+if [ "$XDG_CURRENT_DESKTOP" = "LXDE" ]; then
     source "$HOME/dotfiles/mixins/solarized"
 fi
 

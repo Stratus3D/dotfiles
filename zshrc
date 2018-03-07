@@ -3,11 +3,24 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="blinks" #"robbyrussell"
+# This is faster than `autoload -U compinit && compinit`
+autoload -Uz compinit
+if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+  compinit
+else
+  compinit -C
+fi
+
+# This is faster than loading all of oh-my-zsh
+source $ZSH/lib/functions.zsh
+source $ZSH/lib/theme-and-appearance.zsh
+source $ZSH/lib/git.zsh
+source $ZSH/lib/history.zsh
+source $ZSH/lib/key-bindings.zsh
+source $ZSH/lib/completion.zsh
+source $ZSH/lib/misc.zsh
+source $ZSH/plugins/gitfast/gitfast.plugin.zsh
+source $ZSH/themes/blinks.zsh-theme
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -69,17 +82,12 @@ ZSHRC_PATH=$(dirname "$(readlink "${(%):-%N}")")
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-source $ZSH/oh-my-zsh.sh
-
 source $ZSHRC_PATH/mixins/general
 source $ZSHRC_PATH/mixins/functions
 source $ZSHRC_PATH/mixins/grep
 source $ZSHRC_PATH/mixins/path
 source $ZSHRC_PATH/mixins/asdf
-
 source $ZSHRC_PATH/mixins/aliases
-
-unalias gm # This alias has the same name as the GraphicsMagick binary
 
 # Save all history
 # Incrementally write history to file

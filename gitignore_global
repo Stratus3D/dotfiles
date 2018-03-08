@@ -60,6 +60,8 @@ Thumbs.db
 *.fprof
 # Files produced by various programs that generate callgrind files
 callgrind.*
+# Erlang crash dump files
+*.dump
 
 # VM/Containerization Files #
 #############################

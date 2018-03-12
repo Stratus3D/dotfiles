@@ -82,6 +82,9 @@ ZSHRC_PATH=$(dirname "$(readlink "${(%):-%N}")")
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+# We need this so that tmux uses zsh when started in a zsh shell
+export SHELL='/bin/zsh'
+
 source $ZSHRC_PATH/mixins/general
 source $ZSHRC_PATH/mixins/functions
 source $ZSHRC_PATH/mixins/grep

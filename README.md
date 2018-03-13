@@ -156,6 +156,7 @@ Bash/Zshell Commands
 * `file <img file>` show general image info like format and dimensions
 * `identify -verbose <img file>` show colorspace, channel depth, dimensions, and other metadata for an image
 * `for ((n=0;n<10;n++)); do { time bundle exec rspec ./spec ; } 2>> time.txt; done` run a command ten times and write the execution time of each run to a file
+* `xmllint --valid --encode utf-8 <file>; echo $?` validate that an XML file is valid and encoded as UTF-8
 
 OSX Commands
 * `su` needs to be `sudo su`

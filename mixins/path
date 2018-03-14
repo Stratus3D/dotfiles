@@ -20,9 +20,6 @@ if [ -f $JAVA_HOME_BIN ]; then
     PATH=$JAVA_HOME/bin:$PATH
 fi
 
-# Neo4j
-PATH=$HOME/lib/neo4j-community-2.0.0-RC1/bin/neo4j:$PATH
-
 # Go
 export GOPATH=$DEVELOPMENT_DIR
 PATH=$GOPATH/bin:$PATH

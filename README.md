@@ -50,8 +50,8 @@ This is software that I need for my day-to-day programming work. I try to keep t
 
 OSX Only
 
-* ipmenulet [https://github.com/mcandre/IPMenulet](https://github.com/mcandre/IPMenulet)
-* ShiftIt [https://github.com/fikovnik/ShiftIt](https://github.com/fikovnik/ShiftIt)
+* ipmenulet ([https://github.com/mcandre/IPMenulet](https://github.com/mcandre/IPMenulet))
+* ShiftIt ([https://github.com/fikovnik/ShiftIt](https://github.com/fikovnik/ShiftIt))
 
 ### Browsers
 
@@ -60,15 +60,14 @@ OSX Only
 
 ### Languages
 
-Use asdf for version management ([https://github.com/HashNuke/asdf](https://github.com/HashNuke/asdf)) of each language unless otherwise noted.
+Use asdf for version management ([https://github.com/HashNuke/asdf](https://github.com/HashNuke/asdf)) for each language.
 
 * Erlang
 * Elixir
 * Ruby
 * Python
 * Lua
-* Javascript(NodeJS)
-* Go
+* Javascript (NodeJS)
 
 ### Frameworks
 * [Rails](http://rubyonrails.org/)
@@ -83,7 +82,6 @@ Offline documentation suitable for day to day use.
 * Elixir: [http://elixir-lang.org/docs.html](http://elixir-lang.org/docs.html)
 * Ruby: [http://pjkh.com/articles/building-your-own-rails-and-ruby-searchable-api-docs/](http://pjkh.com/articles/building-your-own-rails-and-ruby-searchable-api-docs/) and [http://shynnergy.com/2012/02/create-local-ruby-on-rails-documentation-for-offline-use/](http://shynnergy.com/2012/02/create-local-ruby-on-rails-documentation-for-offline-use/)
 * JavaScript: [https://developer.mozilla.org/media/developer.mozilla.org.tar.gz](https://developer.mozilla.org/media/developer.mozilla.org.tar.gz)
-* Golang: Run `godoc -http=:6060` and then navigate to [http://localhost:6060/doc/](http://localhost:6060/doc/)
 * C: [http://www.gnu.org/software/libc/manual/html_mono/libc.html](http://www.gnu.org/software/libc/manual/html_mono/libc.html)
 * Make: [http://www.gnu.org/software/make/manual/make.html](http://www.gnu.org/software/make/manual/make.html)
 
@@ -91,7 +89,7 @@ Offline documentation suitable for day to day use.
 
 * [Solarized Color Scheme (http://ethanschoonover.com/solarized)](http://ethanschoonover.com/solarized)
 
-## Repos that I referred to when creating these dotfiles
+## Repositories that I referred to when creating these dotfiles
 
 * [Joshua Steele's dotfiles (https://github.com/joshukraine/dotfiles)](https://github.com/joshukraine/dotfiles)
 * [thoughtbot/laptop (https://github.com/thoughtbot/laptop)](https://github.com/thoughtbot/laptop)

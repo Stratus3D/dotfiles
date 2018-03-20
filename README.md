@@ -60,7 +60,7 @@ OSX Only
 
 ### Languages
 
-Use asdf for version management ([https://github.com/HashNuke/asdf](https://github.com/HashNuke/asdf)) for each language.
+Use asdf for version management ([https://github.com/asdf-vm/asdf](https://github.com/asdf-vm/asdf)) for each language.
 
 * Erlang
 * Elixir

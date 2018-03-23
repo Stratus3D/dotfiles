@@ -43,7 +43,7 @@ alias ot="open_ticket"
 # pg_ctl -D ~/.asdf/installs/postgres/9.5.2/data -l logfile start
 alias startpost='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias stoppost='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
-alias statpost='ps aux | rg postgres'
+alias statpost='ps aux | ag postgres'
 
 # Vagrant aliases
 alias docker="docker -H tcp://127.0.0.1:4243"
@@ -96,10 +96,10 @@ alias rspec="_rspec_command"
 alias spring="_spring_command"
 
 # Silver Searcher aliases
-alias rge="rg -terlang"
-alias rgj="rg -tjs"
-alias rgr="rg -trb"
-alias rgp="rg -tpy"
+alias age="ag --erlang"
+alias agj="ag --js"
+alias agr="ag --ruby"
+alias agp="ag --python"
 
 # URL encoding/decoding commands
 alias urldecode='python -c "import sys, urllib as ul; \

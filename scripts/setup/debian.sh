@@ -28,9 +28,7 @@ sudo apt-get -y install tmux
 sudo apt-get -y install curl
 
 # other development tools
-curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.8.1/ripgrep_0.8.1_amd64.deb
-sudo dpkg -i ripgrep_0.8.1_amd64.deb
-rm ripgrep_0.8.1_amd64.deb
+sudo apt-get -y install silversearcher-ag
 sudo apt-get -y install exuberant-ctags
 sudo apt-get -y install jq
 sudo apt-get -y install linux-tools-`uname -r` # perf

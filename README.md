@@ -12,7 +12,7 @@ This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a scrip
 * Vim, tmux, Zsh, Bash, asdf, and Git configurations
 * Setup script that symlinks dotfiles and installs all the software I use
 * A collection of Bash scripts I rely on for Erlang development
-* List of commands I often forget
+* List of commands I often forget (see below)
 
 ## Installation
 
@@ -70,6 +70,7 @@ Use asdf for version management ([https://github.com/asdf-vm/asdf](https://githu
 * Javascript (NodeJS)
 
 ### Frameworks
+
 * [Rails](http://rubyonrails.org/)
 * [Phoenix](http://www.phoenixframework.org/)
 * [AngularJS](https://angularjs.org/)
@@ -85,9 +86,9 @@ Offline documentation suitable for day to day use.
 * C: [http://www.gnu.org/software/libc/manual/html_mono/libc.html](http://www.gnu.org/software/libc/manual/html_mono/libc.html)
 * Make: [http://www.gnu.org/software/make/manual/make.html](http://www.gnu.org/software/make/manual/make.html)
 
-## Color Schemes
+## Color Scheme
 
-* [Solarized Color Scheme (http://ethanschoonover.com/solarized)](http://ethanschoonover.com/solarized)
+The [Solarized Color Scheme (http://ethanschoonover.com/solarized)](http://ethanschoonover.com/solarized) is used for everything.
 
 ## Repositories that I referred to when creating these dotfiles
 

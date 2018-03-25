@@ -5,7 +5,7 @@ My Dotfiles
 
 Everything I need to get setup on a new machine.
 
-This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a script to symlink all the config files and directories in place, and a set of setup scripts that install all the tools I need on Ubuntu or OSX.
+This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a script to symlink all the config files and directories in place, and a set of setup scripts that install all the tools I need on Ubuntu or OSX. The [Solarized Color Scheme (http://ethanschoonover.com/solarized)](http://ethanschoonover.com/solarized) is used for Vim and the terminal emulator profiles.
 
 ## Features
 
@@ -21,6 +21,7 @@ This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a scrip
 * `curl` - For the command below
 
 #### Installation Steps
+
 1. Run the `setup.sh`. This will install all the necessary software, setup commonly used directories, and install dotfiles. Since the setup script is idempotent it can be run on machines that have already been setup without causing issues.
 
         curl -s https://raw.githubusercontent.com/Stratus3D/dotfiles/master/scripts/setup.sh | bash 2>&1 | tee ~/setup.log
@@ -85,10 +86,6 @@ Offline documentation suitable for day to day use.
 * JavaScript: [https://developer.mozilla.org/media/developer.mozilla.org.tar.gz](https://developer.mozilla.org/media/developer.mozilla.org.tar.gz)
 * C: [http://www.gnu.org/software/libc/manual/html_mono/libc.html](http://www.gnu.org/software/libc/manual/html_mono/libc.html)
 * Make: [http://www.gnu.org/software/make/manual/make.html](http://www.gnu.org/software/make/manual/make.html)
-
-## Color Scheme
-
-The [Solarized Color Scheme (http://ethanschoonover.com/solarized)](http://ethanschoonover.com/solarized) is used for everything.
 
 ## Repositories that I referred to when creating these dotfiles
 

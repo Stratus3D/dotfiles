@@ -154,6 +154,7 @@ brew_install_or_upgrade 'imagemagick'
 brew_install_or_upgrade 'qt'
 brew_install_or_upgrade 'hub'
 brew_install_or_upgrade 'shellcheck'
+brew_install_or_upgrade 'telnet'
 
 brew_install_or_upgrade 'openssl'
 brew unlink openssl && brew link openssl --force

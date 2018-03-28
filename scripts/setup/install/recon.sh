@@ -15,17 +15,17 @@ RECON_LIB_DIR="$ERL_LIBS/recon"
 
 echo "Building the recon Erlang library"
 
-cd $ERL_LIBS || exit 1
+cd $ERL_LIBS
 
 if [ -d "$RECON_LIB_DIR" ]; then
     echo "Directory $RECON_LIB_DIR already exists. Unable to install recon library"
     exit 1
 else
-    git clone git@github.com:ferd/recon.git || exit 1
-    cd $RECON_LIB_DIR || exit 1
-    rebar3 compile || exit 1
-    mkdir -p ebin || exit 1
-    cp _build/default/lib/recon/ebin/* ebin || exit 1
+    git clone git@github.com:ferd/recon.git
+    cd $RECON_LIB_DIR
+    rebar3 compile
+    mkdir -p ebin
+    cp _build/default/lib/recon/ebin/* ebin
 
     echo "Successfully built the recon Erlang library"
 fi

@@ -16,7 +16,7 @@ BIN_DIR="$HOME/bin"
 
 echo "Building the erlgrind Erlang library"
 
-cd "$ERL_LIBS" || exit 1
+cd "$ERL_LIBS"
 
 if [ -d "$ERLGRIND_LIB_DIR" ]; then
     echo "Directory $ERLGRIND_LIB_DIR already exists. Unable to install erlgrind"

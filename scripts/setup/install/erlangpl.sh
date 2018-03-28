@@ -11,7 +11,7 @@ set -x
 TARGET_DIR=$HOME/bin
 
 # Create temp directory for the build
-TEMP_DIR=$(mktemp -dt "$(basename $0).XXXXXX") || exit 1
+TEMP_DIR=$(mktemp -dt "$(basename $0).XXXXXX")
 echo "Created temp directory $TEMP_DIR"
 cd $TEMP_DIR
 

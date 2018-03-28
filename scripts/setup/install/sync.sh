@@ -15,15 +15,15 @@ SYNC_LIB_DIR="$ERL_LIBS/sync"
 
 echo "Building the sync Erlang library"
 
-cd $ERL_LIBS || exit 1
+cd $ERL_LIBS
 
 if [ -d "$SYNC_LIB_DIR" ]; then
     echo "Directory $SYNC_LIB_DIR already exists. Unable to install sync library"
     exit 1
 else
-    git clone git@github.com:rustyio/sync.git || exit 1
-    cd $SYNC_LIB_DIR || exit 1
-    make || exit 1
+    git clone git@github.com:rustyio/sync.git
+    cd $SYNC_LIB_DIR
+    make
 
     echo "Successfully built the sync Erlang library"
 fi

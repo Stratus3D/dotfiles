@@ -108,7 +108,7 @@ cd $HOME
 
 if [ ! -d $asdf_dir ]; then
     echo "Installing asdf..."
-    git clone https://github.com/asdf-vm/asdf.git $asdf_dir || exit 1
+    git clone https://github.com/asdf-vm/asdf.git $asdf_dir
     echo "asdf installation complete"
 else
     echo "asdf already installed"

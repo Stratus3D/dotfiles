@@ -18,7 +18,7 @@ RELX_TAG='v3.22.2'
 RELX_REPO_DIR=relx
 
 # Create temp directory
-TEMP_DIR=$(mktemp -dt "$(basename $0).XXXXXX") || exit 1
+TEMP_DIR=$(mktemp -dt "$(basename $0).XXXXXX")
 echo "Created temp directory $TEMP_DIR"
 
 # Build rebar3 in a temp directory

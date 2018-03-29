@@ -24,7 +24,7 @@ fi
 # Try to install it
 
 # Create a temp directory
-TEMP_DIR=$(mktemp -dt "$(basename $0).XXXXXX") || exit 1
+TEMP_DIR=$(mktemp -dt "$(basename $0).XXXXXX")
 echo "Created temp directory $TEMP_DIR"
 cd $TEMP_DIR
 

@@ -17,7 +17,7 @@ ELVIS_TAG='0.3.2'
 ELVIS_REPO_DIR=elvis
 
 # Create temp directory
-TEMP_DIR=$(mktemp -dt "$(basename $0).XXXXXX") || exit 1
+TEMP_DIR=$(mktemp -dt "$(basename $0).XXXXXX")
 echo "Created temp directory $TEMP_DIR"
 
 # Build elvis in a temp directory

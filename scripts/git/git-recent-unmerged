@@ -6,7 +6,12 @@ set -euo pipefail
 #ORIGINAL_IFS=$IFS
 IFS=$'\t\n' # Stricter IFS settings
 
+# Get all unmerged branches. This will be unmerged feature branches as well as
+# release branches and the master branches that have not been merged into any
+# other branches
 unmerged_branches="$(git branch -a --no-merged)"
 
+# For each of the unmerged branches, use for-each-ref to sort them by last
+# commit and print out all the details of the branch
 git for-each-ref $unmerged_branches --sort=committerdate \
     --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'

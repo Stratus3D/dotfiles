@@ -3,16 +3,18 @@
 # This is still a work in progress. I want to make this handle both custom host
 # files.
 # TODO:
-# * Consider a lock to prevent races between add_host and rm_host. $ACTIVE_FLAG 
+# * Consider a lock to prevent races between add_host and rm_host. $ACTIVE_FLAG
 #   might make a good lock.
 # * $HOME env variable and consequently the $HOST_DIR env variable. Potentially
 #   {add,rm}_host may act on different files to {start,stop}_block. Note that
 #   this won't present itself if you only use sudo.
 ###############################################################################
 
-set -u # Prevent unset variables
-set -e # Stop on an error
-set -o pipefail # Pipe exit code should be non-zero when a command in it fails
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
 
 ###############################################################################
 # Variables
@@ -38,7 +40,7 @@ HOST_PROFILES_SUFFIX="_hosts"
 HOST_PROFILES_PATTERN="*$HOST_PROFILES_SUFFIX"
 
 # Temporary file used when removing hosts.
-BLCK_TEMP=$(mktemp -t "blocked_hosts") || $(mktemp /tmp/blocked_hosts.XXXXXXX) || exit 1
+BLCK_TEMP=$(mktemp -t "blocked_hosts") || $(mktemp /tmp/blocked_hosts.XXXXXXX)
 
 get_current_profile()
 {

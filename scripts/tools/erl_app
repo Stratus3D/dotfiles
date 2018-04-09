@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+# Start an Erlang application in the `erl` shell. Designed for Erlang projects
+# that do not have a suitable `make console` target.
+#
+# This script must be run from the project root.
+
+PROJECT_DIR=$(pwd)
+DEPS_DIR="$PROJECT_DIR/deps"
+APPS_DIR="$PROJECT_DIR/apps"
+
+# Guess at project name
+PROJECT_NAME=$(basename $(pwd))
+
+# Not sure this is still needed
+export ERL_LIBS="$PROJECT_DIR"
+
+# TODO: Get the app name from the .app file
+set -x
+erl -sname "$PROJECT_NAME" -setcookie "$PROJECT_NAME" \
+    -pa "$(realpath ebin)" "$DEPS_DIR"/*/ebin "$APPS_DIR"/*/ebin \
+    -eval "application:ensure_all_started($PROJECT_NAME)"

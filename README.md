@@ -11,7 +11,7 @@ This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a scrip
 
 * Vim, tmux, Zsh, Bash, asdf, and Git configurations
 * Setup script that symlinks dotfiles and installs all the software I use
-* A collection of Bash scripts I rely on for Erlang development
+* A collection of Bash scripts I rely on for software development
 * List of commands I often forget (see below)
 
 ## Installation

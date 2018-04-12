@@ -156,6 +156,7 @@ Bash/Zshell Commands
 * `nmcli d wifi` show signals for wifi networks
 
 OSX Commands
+
 * `su` needs to be `sudo su`
 * `| paste` needs to be `| paste -`
 * `lsvfs` get details on file systems

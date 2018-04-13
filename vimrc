@@ -120,6 +120,8 @@ set statusline+=%=%h%m%r                                     " Flags
 set statusline+=\ %l/%L                                      " Cursor line and total lines
 set statusline+=\ %c                                         " Cursor column
 set statusline+=\ %P                                         " Percentage through file
+" No need to show the buffer number
+"set statusline+=\ Buf:%n                                     " Buffer number
 
 " Color status bar
 highlight statusline ctermfg=cyan ctermbg=black guifg=cyan guibg=black

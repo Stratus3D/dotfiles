@@ -21,8 +21,9 @@ if [ -f $JAVA_HOME_BIN ]; then
 fi
 
 # Go
-export GOPATH=$DEVELOPMENT_DIR
-PATH=$GOPATH/bin:$PATH
+# I don't think I need this anymore
+#export GOPATH=$DEVELOPMENT_DIR
+#PATH=$GOPATH/bin:$PATH
 
 # Finally export completed PATH
 export PATH

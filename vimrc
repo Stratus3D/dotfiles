@@ -325,6 +325,9 @@ nnoremap <silent> <leader>fe :%!erlang_pretty_print -i<CR>
 " Jira ticket command
 nnoremap <silent> <leader>to :!open $BASE_TICKET_URL/<c-r>=expand("<cWORD>")<cr>/<CR>
 
+" Make Q repeat last macro
+nnoremap Q @@
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RUNNING TESTS
 "
@@ -489,6 +492,13 @@ endfunction
 
 call ToggleCtrlPIgnores()
 :nnoremap <F6> call ToggleCtrlPIgnores()<CR>
+
+" vim-indent-guides settings
+"let g:indent_guides_enable_on_vim_startup = 1
+"let g:indent_guides_start_level = 0
+"let g:indent_guides_guide_size = 1
+
+let g:ale_lint_delay = 400
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File type settings (file type-specific settings in vim/ftplugin/)

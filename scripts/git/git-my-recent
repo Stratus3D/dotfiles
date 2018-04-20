@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+usage() {
+    cat <<EOF
+    Usage: git-my-recent
+
+    Returns all the branches recently changed by the current Git user
+EOF
+}
+
+
+# Get all unmerged branches. This will be unmerged feature branches as well as
+# release branches and the master branches that have not been merged into any
+# other branches
+unmerged_branches="$(git branch -a --no-merged)"
+commits=$(git for-each-ref --sort=committerdate refs/heads/ --format='%(objectname)')
+
+git for-each-ref --sort=committerdate $commits \
+    --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+#git for-each-ref --sort=committerdate refs/heads/ \
+#    --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' \
+#    #--author="$(git config user.email)"
+
+# For each of the unmerged branches, use for-each-ref to sort them by last
+# commit and print out all the details of the branch
+git for-each-ref $unmerged_branches --sort=committerdate \
+    --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'

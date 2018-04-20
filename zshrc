@@ -91,6 +91,7 @@ source $ZSHRC_PATH/mixins/grep
 source $ZSHRC_PATH/mixins/path
 source $ZSHRC_PATH/mixins/asdf
 source $ZSHRC_PATH/mixins/aliases
+source $ZSHRC_PATH/mixins/man_color
 
 # Save all history
 # Incrementally write history to file

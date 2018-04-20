@@ -18,7 +18,8 @@ $HOME/dotfiles/mixins/asdf
 $HOME/dotfiles/mixins/functions
 $HOME/dotfiles/mixins/aliases
 $HOME/dotfiles/mixins/grep
-$HOME/dotfiles/mixins/path"
+$HOME/dotfiles/mixins/path
+$HOME/dotfiles/mixins/man_color"
 
 
 for file in $FILES

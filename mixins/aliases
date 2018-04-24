@@ -45,9 +45,6 @@ alias startpost='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/se
 alias stoppost='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
 alias statpost='ps aux | ag postgres'
 
-# Vagrant aliases
-alias docker="docker -H tcp://127.0.0.1:4243"
-
 # Less aliases
 # TODO: convert this to a function? Aliases aren't very flexible
 alias lessh='LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s" less -M '

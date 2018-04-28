@@ -24,7 +24,6 @@ sudo apt-get update
 sudo apt-get -y install git
 sudo apt-get -y install zsh
 sudo apt-get -y install vim
-sudo apt-get -y install tmux
 sudo apt-get -y install curl
 
 # other development tools
@@ -145,6 +144,8 @@ sudo apt-get -y install golang
 
 # Misc other dependencies
 sudo apt-get -y install ncftp python-paramiko python-pycryptopp lftp python-boto python-dev librsync-dev
+# Needed for tmux
+sudo apt-get -y install libevent-dev
 
 # For network troubleshooting
 sudo apt-get -y install mtr
@@ -163,6 +164,7 @@ source gnome.sh
 
 # Install other software using custom install scripts
 install_scripts=(
+    tmux.sh
     # Testing
     bats.sh
     # Color

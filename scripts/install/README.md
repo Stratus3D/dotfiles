@@ -1,4 +1,4 @@
-#scripts/setup/install/
+#scripts/install/
 
 Scripts in this directory are for installing specific pieces of software on one or more operating systems. Each script is self contained and must adhere to the following rules in order for `scripts/setup.sh` to be able to install all software on a new or existing machine:
 

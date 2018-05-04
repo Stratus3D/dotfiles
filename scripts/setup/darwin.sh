@@ -235,24 +235,4 @@ brew cask install vagrant-manager # OSX toolbar for vagrant
 brew install iperf3
 
 # Install other software using custom install scripts
-install_scripts=(
-    # Testing
-    bats.sh
-    # JavaScript
-    doctorjs.sh
-    # Ruby
-    prax.sh
-    # Erlang
-    erlgrind.sh
-    observer_cli.sh
-    rebar.sh
-    rebar3.sh
-    recon.sh
-    relx.sh
-    sync.sh
-    # OSX only
-    osxfuse.sh
-    zeal.sh
-)
-
-run_install_scripts $install_scripts
+run_install_scripts

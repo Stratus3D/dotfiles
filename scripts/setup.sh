@@ -83,11 +83,10 @@ fi
 # Define a function used by the setup scripts to run all the custom install
 # scripts.
 run_install_scripts() {
-    scripts_list="$1"
-    install_scripts_dir=$HOME/dotfiles/scripts/setup/install
+    install_scripts_dir=$HOME/dotfiles/scripts/install
 
     # Run each script
-    for file in $scripts_list; do
+    for file in $install_scripts_dir/*; do
         "$install_scripts_dir/$file"
     done
 }

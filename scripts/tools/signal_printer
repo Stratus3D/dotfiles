@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+# Signal printer!
+#
+# This script prints out the details of all the signals it receives. It can be
+# useful when trying to debug another program that is sending signals. Or it can
+# be used as a drop in replacement for a program that is receiving signals you
+# are unfamiliar with.
+#
+# * https://stackoverflow.com/a/2183063/1245380
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+# Parse the list of signals outputted from `trap -l`. The output from the
+# command clearly wasn't meant to be used this way
+signals_string=$(trap -l | tr '\n' ' ' | sed -e 's/\<[0-9]*\>)//g')
+IFS=' \t\r\n' read -r -a SIGNALS <<< $signals_string
+
+func_trap() {
+    local signal=$1
+    echo "Received Signal: $signal"
+}
+
+trap_with_arg() {
+    func="$1" ; shift
+
+    for signal in "$@"; do
+        trap "$func $signal" "$signal"
+    done
+}
+
+# Trap exits for each signal in our list of signals and add func_trap as the
+# handler for each one
+trap_with_arg func_trap ${SIGNALS[*]}
+
+if [ "${1:-}" = "-l" ]; then
+    # Print out all the signals we are trapping
+    echo ${SIGNALS[*]};
+else
+    # Loop infinitely
+    while true; do
+        sleep 0
+    done
+fi

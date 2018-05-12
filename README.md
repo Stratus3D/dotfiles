@@ -217,6 +217,7 @@ Git Commands
 * `git diff --word-diff` show changed words rather than lines
 * `git mergetool --tool-help` show merge tools available
 * `git checkout -m FILE` restores a file to it's unresolved state
+* `git push --force-with-lease` only overwrites changes in the remote branch if the remote branch has not changed since you last pushed to it.
 
 Irssi Commands
 

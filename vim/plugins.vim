@@ -63,12 +63,16 @@ Plugin 'scrooloose/nerdcommenter'
 " ale for syntax checking
 Plugin 'w0rp/ale'
 
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'godlygeek/tabular'
 Plugin 'ervandew/supertab'
+
+" Git plugins
 Plugin 'airblade/vim-gitgutter'
-"Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
+
+" Not needed anymore
+"Plugin 'altercation/vim-colors-solarized'
 
 " I want to use it but it was buggy, need to figure out what is going on.
 "Plugin 'nathanaelkane/vim-indent-guides'

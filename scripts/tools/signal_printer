@@ -17,7 +17,7 @@ IFS=$'\t\n' # Stricter IFS settings
 
 # Parse the list of signals outputted from `trap -l`. The output from the
 # command clearly wasn't meant to be used this way
-signals_string=$(trap -l | tr '\n' ' ' | sed -e 's/\<[0-9]*\>)//g')
+signals_string=$(trap -l | tr '\n' ' ' | sed -e 's/[0-9]*)//g')
 IFS=' \t\r\n' read -r -a SIGNALS <<< $signals_string
 
 func_trap() {
@@ -33,14 +33,14 @@ trap_with_arg() {
     done
 }
 
-# Trap exits for each signal in our list of signals and add func_trap as the
-# handler for each one
-trap_with_arg func_trap ${SIGNALS[*]}
-
 if [ "${1:-}" = "-l" ]; then
     # Print out all the signals we are trapping
     echo ${SIGNALS[*]};
 else
+    # Trap exits for each signal in our list of signals and add func_trap as the
+    # handler for each one
+    trap_with_arg func_trap ${SIGNALS[*]}
+
     # Loop infinitely
     while true; do
         sleep 0

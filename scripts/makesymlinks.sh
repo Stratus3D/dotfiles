@@ -24,8 +24,8 @@ dotfiles=$HOME/dotfiles
 olddir=$HOME/dotfiles_old
 
 # List of space separated files/folders to symlink in homedir (these are the typical "dotfiles")
-files="vimrc vim zshrc bashrc tmux.conf gitignore_global ackrc ctags
-screenrc jshintrc rsync-exclude tool-versions agignore asdfrc psqlrc hushlogin"
+files="vimrc vim zshrc bashrc tmux.conf gitignore_global ackrc ctags screenrc \
+    jshintrc rsync-exclude tool-versions agignore asdfrc psqlrc hushlogin my.cnf"
 
 ###############################################################################
 # Functions

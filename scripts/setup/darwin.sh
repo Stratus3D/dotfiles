@@ -234,5 +234,8 @@ brew cask install vagrant-manager # OSX toolbar for vagrant
 # Install iperf3 for network performance tests
 brew install iperf3
 
+# For IRC
+brew install weechat
+
 # Install other software using custom install scripts
 run_install_scripts

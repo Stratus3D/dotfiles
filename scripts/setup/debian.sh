@@ -159,6 +159,11 @@ sudo apt-get -y install audacity
 # Video editing
 sudo apt-get -y install kdenlive
 
+# Install xsane and dependencies
+sudo add-apt-repository ppa:robert-ancell/sane-backends
+sudo apt-get update
+sudo apt-get -y install libsane libsane-extras sane-utils xsane
+
 # Assume we are using Gnome
 source gnome.sh
 

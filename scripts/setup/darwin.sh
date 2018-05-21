@@ -202,7 +202,9 @@ brew install gnu-sed
 brew install expect
 
 # For adb
-brew install android-platform-tools
+brew tap caskroom/cask
+brew cask install android-sdk
+brew cask install android-platform-tools
 
 # Mosh for high latency remote servers
 brew install mobile-shell

@@ -34,3 +34,6 @@ make
 
 # Install
 cp tmux $BIN_DIR
+
+# Remove temp dir
+rm -r $TEMP_DIR

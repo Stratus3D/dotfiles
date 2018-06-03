@@ -4,7 +4,10 @@
 
 # Editor Temp Files  #
 ######################
-*.sw[klmnop]
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
 
 # Compiled source #
 ###################

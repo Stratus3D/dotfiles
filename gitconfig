@@ -72,6 +72,9 @@
 
   # Always create a merge commit when merging
   ff = false
+[rebase]
+  # Always auto squash when rebasing
+  autosquash = true
 [branch]
   # When checking out branches locally make them always track the remote branch
   autosetupmerge = always

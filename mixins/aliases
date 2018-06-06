@@ -55,13 +55,8 @@ alias kllist='kill_listener'
 # Find aliases
 alias ff='find * -iname'
 
-os=$(uname -s)
-# If we aren't on OSX create an `open` alias
-if [[ "$os" = 'Linux' ]]; then
-    alias open='xdg-open'
-fi
-
 # If we are on OSX create a `zeal` alias and a `qcachegrind` alias
+os=$(uname -s)
 if [[ "$os" = 'Darwin' ]]; then
     alias zeal='/Applications/Zeal.app/Contents/MacOS/Zeal'
     alias qcachegrind='/Applications/qcachegrind.app/Contents/MacOS/qcachegrind'

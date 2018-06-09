@@ -11,3 +11,22 @@ if [[ "$os" = 'Linux' ]]; then
     }
 fi
 
+search_string() {
+    search=""
+
+    for term in $@; do
+        search="$search%20$term"
+    done
+
+    echo "$search"
+}
+
+function goo() {
+    search_string "$@"
+    open "http://www.google.com/search?q=$(search_string "$@")"
+}
+
+function duc() {
+    search_string "$@"
+    open "http://www.duckduckgo.com?q=$(search_string "$@")"
+}

@@ -21,7 +21,7 @@ alias gdh="git diff HEAD "
 alias wthr="curl wttr.in/"
 # Or I can use `weather`
 
-# Create alaises for bash scripts in the custom_tools directory
+# Create aliases for bash scripts in the custom_tools directory
 custom_tools_dir="$HOME/dotfiles/scripts/custom_tools"
 if [ -d $custom_tools_dir ]; then
     custom_tools=($(find $custom_tools_dir -maxdepth 1 -name "*.sh"))

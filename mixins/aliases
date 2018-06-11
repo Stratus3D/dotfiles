@@ -92,6 +92,7 @@ alias age="ag --erlang"
 alias agj="ag --js"
 alias agr="ag --ruby"
 alias agp="ag --python"
+alias agu="ag -u"
 
 # URL encoding/decoding commands
 alias urldecode='python -c "import sys, urllib as ul; \

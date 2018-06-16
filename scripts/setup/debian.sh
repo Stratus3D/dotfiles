@@ -139,6 +139,9 @@ sudo apt-get -y install blender
 # Install Scribus for publishing
 sudo apt-get -y install scribus
 
+# Pandoc for document utilities
+sudo apt-get -y install pandoc
+
 # Golang, for puma-dev
 sudo apt-get -y install golang
 

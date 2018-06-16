@@ -124,6 +124,9 @@ brew link graphviz
 # Install command-line JSON processor
 brew_install_or_upgrade jq
 
+# Install pandoc
+brew_install_or_upgrade pandoc
+
 # WxWidgets for Erlang
 brew_install_or_upgrade wxmac --with-static --with-stl --universal
 

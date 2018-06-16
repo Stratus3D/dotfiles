@@ -98,9 +98,6 @@ sudo apt-get -y install libffi-dev autoconf bison build-essential libssl-dev lib
 # Needed for capybara
 sudo apt-get -y install libqt4-dev libqtwebkit-dev
 
-# JavaScript runtime
-sudo apt-get -y install nodejs
-
 # Postgres
 sudo apt-get -y install postgresql
 sudo apt-get -y install libpq-dev # development package

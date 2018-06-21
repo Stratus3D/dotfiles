@@ -10,6 +10,10 @@ set -o pipefail # Pipe exit code should be non-zero when a command in it fails
 #ORIGINAL_IFS=$IFS
 IFS=$'\t\n' # Stricter IFS settings
 
+install_or_upgrade() {
+    sudo apt-get -y install "$@"
+}
+
 ###############################################################################
 # Install packages with apt-get
 ###############################################################################
@@ -21,148 +25,152 @@ DEBIAN_FRONTEND=noninteractive
 # Add apt apt-get repository with latest version of Git
 sudo add-apt-repository ppa:git-core/ppa -y
 sudo apt-get update
-sudo apt-get -y install git
-sudo apt-get -y install zsh
-sudo apt-get -y install vim
-sudo apt-get -y install curl
+install_or_upgrade git
+install_or_upgrade zsh
+install_or_upgrade vim
+install_or_upgrade curl
 
 # other development tools
-sudo apt-get -y install silversearcher-ag
-sudo apt-get -y install exuberant-ctags
-sudo apt-get -y install jq
-sudo apt-get -y install linux-tools-`uname -r` # perf
-sudo apt-get -y install dstat
+install_or_upgrade silversearcher-ag
+install_or_upgrade exuberant-ctags
+install_or_upgrade jq
+install_or_upgrade linux-tools-`uname -r` # perf
+install_or_upgrade dstat
 # For use with Erlang's fprof
-sudo apt-get -y install kcachegrind
-sudo apt-get -y install vagrant
-sudo apt-get -y install ansible
+install_or_upgrade kcachegrind
+install_or_upgrade vagrant
+install_or_upgrade ansible
 
 # VirtualBox for VMs
 sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib"
 wget -q -O - https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo apt-key add -
 sudo apt-get update
-sudo apt-get -y install virtualbox-5.2
+install_or_upgrade virtualbox-5.2
 
 # Shell script linting
-sudo apt-get -y install shellcheck
+install_or_upgrade shellcheck
 
 # Communication apps
-sudo apt-get -y install weechat
-sudo apt-get -y install thunderbird
-sudo apt-get -y install enigmail # For secure email
+install_or_upgrade weechat
+install_or_upgrade thunderbird
+install_or_upgrade enigmail # For secure email
 
 # For emoji
-sudo apt-get -y install ttf-ancient-fonts
+install_or_upgrade ttf-ancient-fonts
 
 # Skype
 # Skype is in the canonical partner repository
 # https://help.ubuntu.com/community/Skype
 sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
 sudo apt-get update
-sudo apt-get -y install skype
+install_or_upgrade skype
 
 # Google Chrome
 sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo apt-get update
-sudo apt-get install google-chrome-stable
+install_or_upgrade google-chrome-stable
 
 # Redshift dependencies
-sudo apt-get install -y autopoint intltool libdrm-dev libxcb1-dev libxcb-randr0-dev
+install_or_upgrade autopoint intltool libdrm-dev libxcb1-dev libxcb-randr0-dev
 #sudo apt-get install -y libgeoclue-dev geoclue-hostip
 
 # WxWidgets is needed for Erlang
-sudo apt-get -y install libwxgtk3.0-dev libwxgtk3.0-dbg
+install_or_upgrade libwxgtk3.0-dev libwxgtk3.0-dbg
 
 # Other packages needed for Erlang
-sudo apt-get -y install libgl1-mesa-dev libglu1-mesa-dev libpng3
+install_or_upgrade libgl1-mesa-dev libglu1-mesa-dev libpng3
 
 # Love 2D for game development
 # These are needed by love 2d
-sudo apt-get -y install autoconf
-sudo apt-get -y install libtool
+install_or_upgrade autoconf
+install_or_upgrade libtool
 sudo add-apt-repository ppa:bartbes/love-stable
-sudo apt-get -y install love
+install_or_upgrade love
 
 # Photo editing
-sudo apt-get -y install gimp
+install_or_upgrade gimp
 
 # Vector graphics
-sudo apt-get -y install inkscape
+install_or_upgrade inkscape
 
 # Visualization library
-sudo apt-get -y install graphviz
+install_or_upgrade graphviz
 
 # Needed for Ruby and PostgreSQL
-sudo apt-get -y install libffi-dev autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
+install_or_upgrade libffi-dev autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
 # Needed for capybara
-sudo apt-get -y install libqt4-dev libqtwebkit-dev
+install_or_upgrade libqt4-dev libqtwebkit-dev
 
 # Postgres
-sudo apt-get -y install postgresql
-sudo apt-get -y install libpq-dev # development package
+install_or_upgrade postgresql
+install_or_upgrade libpq-dev # development package
 
 # Install pip so we can install python packages easily
-sudo apt-get -y install python-pip
+install_or_upgrade python-pip
 
 # Zeal Docs
 sudo add-apt-repository ppa:zeal-developers/ppa
 sudo apt-get update
-sudo apt-get -y install zeal
+install_or_upgrade zeal
 
 # ReText
-sudo apt-get -y install retext
+install_or_upgrade retext
 
 # Enable DVD playback
 sudo /usr/share/doc/libdvdread4/install-css.sh
 
 # Install Pandora CLI
-sudo apt-get -y install pianobar
+install_or_upgrade pianobar
 
 # Install Android Debug Bridge
-sudo apt-get -y install android-tools-adb
+install_or_upgrade android-tools-adb
 
 # Install mosh shell for high latency servers
-sudo apt-get -y install mosh
+install_or_upgrade mosh
 
 # Install iperf so I can test network latency
-sudo apt-get -y install iperf3
+install_or_upgrade iperf3
 
 # Install Blender for 3D modeling
 sudo add-apt-repository ppa:thomas-schiex/blender
 sudo apt-get update
-sudo apt-get -y install blender
+install_or_upgrade blender
 
 # Install Scribus for publishing
-sudo apt-get -y install scribus
+install_or_upgrade scribus
 
 # Pandoc for document utilities
-sudo apt-get -y install pandoc
+install_or_upgrade pandoc
 
 # Golang, for puma-dev
-sudo apt-get -y install golang
+install_or_upgrade golang
 
 # Misc other dependencies
-sudo apt-get -y install ncftp python-paramiko python-pycryptopp lftp python-boto python-dev librsync-dev
+install_or_upgrade ncftp python-paramiko python-pycryptopp lftp python-boto python-dev librsync-dev
+
 # Needed for tmux
-sudo apt-get -y install libevent-dev
+install_or_upgrade libevent-dev
+
+# Needed for phantomjs
+install_or_upgrade build-essential chrpath libssl-dev libxft-dev libfreetype6-dev libfreetype6 libfontconfig1-dev libfontconfig1
 
 # For network troubleshooting
-sudo apt-get -y install mtr
+install_or_upgrade mtr
 
 # Screen recording
-sudo apt-get -y install vokoscreen
+install_or_upgrade vokoscreen
 
 # Sound recording
-sudo apt-get -y install audacity
+install_or_upgrade audacity
 
 # Video editing
-sudo apt-get -y install kdenlive
+install_or_upgrade kdenlive
 
 # Install xsane and dependencies
 sudo add-apt-repository ppa:robert-ancell/sane-backends
 sudo apt-get update
-sudo apt-get -y install libsane libsane-extras sane-utils xsane
+install_or_upgrade libsane libsane-extras sane-utils xsane
 
 # Assume we are using Gnome
 source gnome.sh

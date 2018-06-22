@@ -21,6 +21,11 @@ install_or_upgrade() {
 # Make apt-get calls non-interactive
 DEBIAN_FRONTEND=noninteractive
 
+# General dependencies
+install_or_upgrade autoconf
+install_or_upgrade libssl-dev
+install_or_upgrade build-essential
+
 # Tools I need for development
 # Add apt apt-get repository with latest version of Git
 sudo add-apt-repository ppa:git-core/ppa -y
@@ -83,7 +88,6 @@ install_or_upgrade libgl1-mesa-dev libglu1-mesa-dev libpng3
 
 # Love 2D for game development
 # These are needed by love 2d
-install_or_upgrade autoconf
 install_or_upgrade libtool
 sudo add-apt-repository ppa:bartbes/love-stable
 install_or_upgrade love
@@ -98,7 +102,7 @@ install_or_upgrade inkscape
 install_or_upgrade graphviz
 
 # Needed for Ruby and PostgreSQL
-install_or_upgrade libffi-dev autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
+install_or_upgrade libffi-dev bison libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libgdbm3 libgdbm-dev
 # Needed for capybara
 install_or_upgrade libqt4-dev libqtwebkit-dev
 
@@ -153,7 +157,7 @@ install_or_upgrade ncftp python-paramiko python-pycryptopp lftp python-boto pyth
 install_or_upgrade libevent-dev
 
 # Needed for phantomjs
-install_or_upgrade build-essential chrpath libssl-dev libxft-dev libfreetype6-dev libfreetype6 libfontconfig1-dev libfontconfig1
+install_or_upgrade chrpath libxft-dev libfreetype6-dev libfreetype6 libfontconfig1-dev libfontconfig1
 
 # For network troubleshooting
 install_or_upgrade mtr

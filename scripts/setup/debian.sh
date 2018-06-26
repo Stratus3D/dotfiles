@@ -147,9 +147,6 @@ install_or_upgrade scribus
 # Pandoc for document utilities
 install_or_upgrade pandoc
 
-# Golang, for puma-dev
-install_or_upgrade golang
-
 # Misc other dependencies
 install_or_upgrade ncftp python-paramiko python-pycryptopp lftp python-boto python-dev librsync-dev
 
@@ -161,6 +158,9 @@ install_or_upgrade chrpath libxft-dev libfreetype6-dev libfreetype6 libfontconfi
 
 # For network troubleshooting
 install_or_upgrade mtr
+
+# Tree for directory structure
+install_or_upgrade tree
 
 # Screen recording
 install_or_upgrade vokoscreen

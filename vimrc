@@ -40,10 +40,10 @@ set autoindent
 set copyindent
 
 " Tab is for spaces
-set tabstop=4
+set tabstop=2
 
-" Number of spaces to use for audo indenting
-set shiftwidth=4
+" Number of spaces to use for auto indenting
+set shiftwidth=2
 
 " Convert tabs to spaces
 set expandtab
@@ -483,14 +483,17 @@ function! ToggleCtrlPIgnores()
         " always ignore these patterns
         let g:ctrlp_custom_ignore = {
                     \'dir': 'ebin\|DS_Store\|git$\|bower_components\|node_modules\|logs',
-                    \'file': '\v\.(beam|pyc|swo)$',
+                    \'file': '\v\.(beam|pyc|swo|jpg)$',
                     \}
         " also ignore files listed in the .gitignore
+        " This command returns all text files under version control
         let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+        "let g:ctrlp_user_command = '(cd %s; git grep --cached -Il "") || find %s -type f'
     end
 endfunction
 
 call ToggleCtrlPIgnores()
+"let g:ctrlp_user_command = '(cd %s; git grep --cached -Il "") || find %s -type f'
 :nnoremap <F6> call ToggleCtrlPIgnores()<CR>
 
 " vim-indent-guides settings

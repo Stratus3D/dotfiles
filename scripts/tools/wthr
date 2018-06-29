@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Load weather report in terminal
+# Or you can use `weather`
+
+# Default to Sarasota, FL and use fahrenheit
+location=${1:-Sarasota}
+options=${2:-?u}
+
+curl "wttr.in/$location$options"

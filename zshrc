@@ -5,7 +5,16 @@ ZSH=$HOME/.oh-my-zsh
 
 # This is faster than `autoload -U compinit && compinit`
 autoload -Uz compinit
-if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+
+zcompdump_current() {
+  if [[ $(uname -s) == 'Darwin' ]]; then
+    [ "$(date +'%s')" != "$(stat -f '%Y' -t '%j' $HOME/.zcompdump)" ];
+  else
+    [ "$(date +'%s')" != "$(stat -c '%Y' $HOME/.zcompdump)" ];
+  fi
+}
+
+if zcompdump_current; then
   compinit
 else
   compinit -C

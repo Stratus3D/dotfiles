@@ -16,7 +16,7 @@ export ERL_LIBS=$HOME/erl_libs
 # Java
 JAVA_HOME_BIN=/usr/libexec/java_home
 if [ -f $JAVA_HOME_BIN ]; then
-    export JAVA_HOME=`$JAVA_HOME_BIN -v '1.8*'`
+    export JAVA_HOME=$($JAVA_HOME_BIN -v '1.8*' 2> /dev/null)
     PATH=$JAVA_HOME/bin:$PATH
 fi
 

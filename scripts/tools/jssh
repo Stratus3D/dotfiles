@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# Bash Script to SSH through multiple "jumpbox" servers
+#
+# Usage:
+#
+# ./jssh [target server]
+
+jssh() {
+  local jumpbox_servers
+  local target_server
+
+  target_server="$1"
+
+  jumpbox_servers="$(cat "$HOME/.jumpbox-servers")"
+  command="$(cat "$HOME/.jumpbox-command)"
+
+  ssh -J "$jumpbox_servers" "$target_server" -t "$command"
+}
+
+jssh "$1"

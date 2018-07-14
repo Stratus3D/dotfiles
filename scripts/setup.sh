@@ -123,17 +123,17 @@ $DOTFILE_SCRIPTS_DIR/makesymlinks.sh
 source $HOME/.bashrc
 
 # Install all the plugins needed
-asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
-asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
-asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
-asdf plugin-add lua https://github.com/Stratus3D/asdf-lua.git
-asdf plugin-add postgres https://github.com/smashedtoatoms/asdf-postgres.git
-asdf plugin-add rebar https://github.com/Stratus3D/asdf-rebar.git
-asdf plugin-add python https://github.com/tuvistavie/asdf-python.git
-asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git || true
+asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git || true
+asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git || true
+asdf plugin-add lua https://github.com/Stratus3D/asdf-lua.git || true
+asdf plugin-add postgres https://github.com/smashedtoatoms/asdf-postgres.git || true
+asdf plugin-add rebar https://github.com/Stratus3D/asdf-rebar.git || true
+asdf plugin-add python https://github.com/tuvistavie/asdf-python.git || true
+asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git || true
 
 # Imports Node.js release team's OpenPGP keys to main keyring
-bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring || true
 
 # Install the software versions listed in the .tool-versions file in $HOME
 asdf install

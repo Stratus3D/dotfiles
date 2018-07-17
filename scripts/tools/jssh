@@ -6,6 +6,12 @@
 #
 # ./jssh [target server]
 
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
 jssh() {
   local jumpbox_servers
   local target_server
@@ -13,7 +19,7 @@ jssh() {
   target_server="$1"
 
   jumpbox_servers="$(cat "$HOME/.jumpbox-servers")"
-  command="$(cat "$HOME/.jumpbox-command)"
+  command="$(cat "$HOME/.jumpbox-command")"
 
   ssh -J "$jumpbox_servers" "$target_server" -t "$command"
 }

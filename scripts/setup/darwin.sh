@@ -186,3 +186,9 @@ brew_install_or_upgrade weechat
 
 # Install other software using custom install scripts
 run_install_scripts
+
+###############################################################################
+# Configure OSX
+###############################################################################
+
+$HOME/dotfiles/scripts/setup/macos-defaults

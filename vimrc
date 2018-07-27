@@ -64,7 +64,7 @@ set wrapscan
 set scrolloff=4
 
 " Show the 80 column line
-set colorcolumn=80
+set colorcolumn=80,120
 
 " Allow backspace to delete end of line, indent and start of line characters
 set backspace=indent,eol,start

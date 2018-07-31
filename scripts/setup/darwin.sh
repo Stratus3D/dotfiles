@@ -180,6 +180,9 @@ brew cask install vagrant-manager # OSX toolbar for vagrant
 # Install iperf3 for network performance tests
 brew_install_or_upgrade iperf3
 
+# I should probably create an asdf plugin for RabbitMQ
+brew_install_or_upgrade rabbitmq
+
 # For IRC
 brew_install_or_upgrade weechat
 

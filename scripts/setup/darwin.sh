@@ -120,6 +120,10 @@ brew_install_or_upgrade ctags
 brew_install_or_upgrade graphviz
 brew link graphviz
 
+# Gimp for image editing
+brew_tap homebrew/cask
+brew cask install gimp
+
 # Install command-line JSON processor
 brew_install_or_upgrade jq
 

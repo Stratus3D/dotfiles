@@ -150,7 +150,7 @@ brew_install_or_upgrade gnu-sed
 brew_install_or_upgrade expect
 
 # For adb
-brew tap caskroom/cask
+brew_tap caskroom/cask
 brew cask install android-sdk
 brew cask install android-platform-tools
 
@@ -173,7 +173,7 @@ brew_install_or_upgrade pstree
 brew_install_or_upgrade gnupg
 
 # Images in the terminal
-brew tap eddieantonio/eddieantonio
+brew_tap eddieantonio/eddieantonio
 brew_install_or_upgrade imgcat
 
 # Install tools for server testing and administration

@@ -124,6 +124,10 @@ brew link graphviz
 brew_tap homebrew/cask
 brew cask install gimp
 
+# Inkscape for vector graphics
+brew cask install xquartz
+brew cask install inkscape
+
 # Install command-line JSON processor
 brew_install_or_upgrade jq
 

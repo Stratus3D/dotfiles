@@ -185,6 +185,8 @@ Vim Commands
 * `:g/^\d/norm A;` - use g + norm to add a semicolon to every line that starts with a number.
 * `vim --startuptime timeCost.txt timeCost.txt` - record the startup time of vim.
 * `e! ++enc=<encoding>` - reopen the file as a different encoding.
+* `:r https://stratus3d.com/index.html` load remote file into buffer
+* `:e https://stratus3d.com/index.html` load remote file into new buffer
 
 SSH/SCP Commands
 

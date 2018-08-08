@@ -142,7 +142,6 @@ brew_install_or_upgrade pianobar
 
 # QCacheGrind for valgrind analysis
 brew_install_or_upgrade qcachegrind --with-graphviz
-brew linkapps qcachegrind
 
 # Install GNU readlink
 brew_install_or_upgrade coreutils

@@ -184,6 +184,9 @@ brew_install_or_upgrade ansible
 brew cask install vagrant
 brew cask install vagrant-manager # OSX toolbar for vagrant
 
+# For MySQL migrations
+brew_install_or_upgrade percona-toolkit
+
 # Install iperf3 for network performance tests
 brew_install_or_upgrade iperf3
 

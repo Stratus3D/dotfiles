@@ -45,6 +45,7 @@ install_or_upgrade dstat
 install_or_upgrade kcachegrind
 install_or_upgrade vagrant
 install_or_upgrade ansible
+install_or_upgrade percona-toolkit
 
 # VirtualBox for VMs
 sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib"

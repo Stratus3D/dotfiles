@@ -14,7 +14,7 @@ fi
 search_string() {
     search=""
 
-    for term in $@; do
+    for term in "$@"; do
         search="$search%20$term"
     done
 

@@ -142,6 +142,9 @@ brew_install_or_upgrade pianobar
 # QCacheGrind for valgrind analysis
 brew_install_or_upgrade qcachegrind --with-graphviz
 
+# For watching for file change events
+brew_install_or_upgrade entr
+
 # Install GNU readlink
 brew_install_or_upgrade coreutils
 

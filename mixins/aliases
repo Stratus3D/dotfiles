@@ -51,13 +51,20 @@ alias kllist='kill_listener'
 # Find aliases
 alias ff='find * -iname'
 
-# If we are on OSX create a `zeal` alias and a `qcachegrind` alias
 os=$(uname -s)
 if [[ "$os" = 'Darwin' ]]; then
+    # If we are on OSX create a `zeal` alias and a `qcachegrind` alias
+
     alias zeal='/Applications/Zeal.app/Contents/MacOS/Zeal'
     alias qcachegrind='/Applications/qcachegrind.app/Contents/MacOS/qcachegrind'
 
     alias readlink="greadlink"
+else
+    # We must be on Debian or some other OS
+    # Create pbcopy and pbpaste aliases so we can use them outside of OSX
+ 
+    alias pbcopy='xclip -selection clipboard'
+    alias pbpaste='xclip -selection clipboard -o'
 fi
 
 #create hangout

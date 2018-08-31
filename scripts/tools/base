@@ -9,6 +9,8 @@ IFS=$'\t\n' # Stricter IFS settings
 usage() {
     cat <<EOF
     Usage: base <base> <number>
+
+    Converts the number to base 2, 4, 8, 10, and 16.
 EOF
 }
 
@@ -37,12 +39,11 @@ base_to_base() {
 
   local result=$(echo "ibase=$in;obase=$out; $number" | bc)
 
-  echo -e "To Base $out:\t$result"
+  echo -e "Base $out:\t\t$result"
 }
 
-#set -x
-base_to_base $base 2 $number
-base_to_base $base 4 $number
-base_to_base $base 8 $number
-base_to_base $base 10 $number
-base_to_base $base 16 $number
+base_to_base "$base" 2 "$number"
+base_to_base "$base" 4 "$number"
+base_to_base "$base" 8 "$number"
+base_to_base "$base" 10 "$number"
+base_to_base "$base" 16 "$number"

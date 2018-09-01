@@ -11,6 +11,8 @@ usage() {
     Usage: base <base> <number>
 
     Converts the number to base 2, 4, 8, 10, and 16.
+
+    The input base should be in base 10. The number should be in the base given.
 EOF
 }
 
@@ -24,11 +26,11 @@ error_exit() {
 base=${1:-}
 number=${2:-}
 
-if [ -z $base ]; then
+if [ -z "$base" ]; then
   error_exit "No base specified"
 fi
 
-if [ -z $number ]; then
+if [ -z "$number" ]; then
   error_exit "No number specified"
 fi
 
@@ -37,13 +39,27 @@ base_to_base() {
   local out=$2
   local number=$3
 
-  local result=$(echo "ibase=$in;obase=$out; $number" | bc)
+  echo "ibase=$in;obase=$out; $number" | bc
+}
+
+print_base_to_base() {
+  local in=$1
+  local out=$2
+  local number=$3
+
+  # First convert the output base to the base of the input
+  local output_base="$(base_to_base 10 "$in" "$out")"
+
+  # Now we can invoke bc with both the output base and the number both in the
+  # input base
+  local result="$(base_to_base "$in" "$output_base" "$number")"
 
   echo -e "Base $out:\t\t$result"
 }
 
-base_to_base "$base" 2 "$number"
-base_to_base "$base" 4 "$number"
-base_to_base "$base" 8 "$number"
-base_to_base "$base" 10 "$number"
-base_to_base "$base" 16 "$number"
+# Print out common base converions
+print_base_to_base "$base" 2 "$number"
+print_base_to_base "$base" 4 "$number"
+print_base_to_base "$base" 8 "$number"
+print_base_to_base "$base" 10 "$number"
+print_base_to_base "$base" 16 "$number"

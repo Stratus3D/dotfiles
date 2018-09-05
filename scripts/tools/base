@@ -12,7 +12,7 @@ usage() {
 
     Converts the number to base 2, 4, 8, 10, and 16.
 
-    The input base should be in base 10. The number should be in the base given.
+    The input base should be in decimal. The number should be in the base given.
 EOF
 }
 
@@ -47,7 +47,7 @@ print_base_to_base() {
   local out=$2
   local number=$3
 
-  # First convert the output base to the base of the input
+  # First convert the output base from decimal to the base of the input number
   local output_base="$(base_to_base 10 "$in" "$out")"
 
   # Now we can invoke bc with both the output base and the number both in the

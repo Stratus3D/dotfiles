@@ -20,6 +20,12 @@ else
   compinit -C
 fi
 
+# For my dotfiles repo to work correctly the paths to source'd files must be
+# relative to the location of this file. This doesn't handle cases where the
+# .zshrc is symlinked to a symlink.
+# Taken from http://stackoverflow.com/a/26492107/1245380
+ZSHRC_PATH=$(dirname "$(readlink "${(%):-%N}")")
+
 # This is faster than loading all of oh-my-zsh
 source $ZSH/lib/functions.zsh
 source $ZSH/lib/theme-and-appearance.zsh
@@ -29,7 +35,7 @@ source $ZSH/lib/key-bindings.zsh
 source $ZSH/lib/completion.zsh
 source $ZSH/lib/misc.zsh
 source $ZSH/plugins/gitfast/gitfast.plugin.zsh
-source $ZSH/themes/blinks.zsh-theme
+source $ZSHRC_PATH/zsh/blinks.zsh-theme
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -75,12 +81,6 @@ source $ZSH/themes/blinks.zsh-theme
 plugins=(git tmuxinator rails)
 
 DISABLE_CORRECTION="true"
-
-# For my dotfiles repo to work correctly the paths to source'd files must be
-# relative to the location of this file. This doesn't handle cases where the
-# .zshrc is symlinked to a symlink.
-# Taken from http://stackoverflow.com/a/26492107/1245380
-ZSHRC_PATH=$(dirname "$(readlink "${(%):-%N}")")
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

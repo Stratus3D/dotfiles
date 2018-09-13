@@ -8,6 +8,17 @@ function _prompt_char() {
   fi
 }
 
+function check_last_exit_code() {
+  local LAST_EXIT_CODE=$?
+  if [[ $LAST_EXIT_CODE -ne 0 ]]; then
+    local EXIT_CODE_PROMPT=' '
+    EXIT_CODE_PROMPT+="%{$fg[red]%}-%{$reset_color%}"
+    EXIT_CODE_PROMPT+="%{$fg_bold[red]%}$LAST_EXIT_CODE%{$reset_color%}"
+    EXIT_CODE_PROMPT+="%{$fg[red]%}-%{$reset_color%}"
+    echo "$EXIT_CODE_PROMPT"
+  fi
+}
+
 # This theme works with both the "dark" and "light" variants of the
 # Solarized color schema.  Set the SOLARIZED_THEME variable to one of
 # these two values to choose.  If you don't specify, we'll assume you're
@@ -27,4 +38,4 @@ PROMPT='%{%f%k%b%}
 %{%K{${bkg}}%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%} %{%b%F{yellow}%K{${bkg}}%}%~%{%B%F{green}%}$(git_prompt_info)%E%{%f%k%b%}
 %{%K{${bkg}}%}$(_prompt_char)%{%K{${bkg}}%} %#%{%f%k%b%} '
 
-RPROMPT='!%{%B%F{cyan}%}%!%{%f%k%b%}'
+RPROMPT='$(check_last_exit_code)!%{%B%F{cyan}%}%!%{%f%k%b%}'

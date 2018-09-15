@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+# Bash Script to SSH to "check" various types of projects by running multiple project-specific checks.
+#
+# Project types supported:
+#
+# * Elixir/Mix
+# * Erlang
+#
+# Usage:
+#
+# ./check [project dir]
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+check() {
+  directory="${1:-pwd}"
+
+  if is_elixir "$directory"; then
+    elixir_checks "$directory"
+  elif is_ruby "$directory"; then
+    ruby_checks "$directory"
+  else
+    echo "Unknown project type"
+  fi
+}
+
+# Project type check functions
+is_elixir() {
+  local=directory
+  directory=$1
+
+  # Check if root contains mix.exs file
+}
+
+is_ruby() {
+  local=directory
+  directory=$1
+
+}
+
+check
+#git diff master --name-only | ag 'exs?$' | xargs mix format
+  

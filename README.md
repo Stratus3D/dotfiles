@@ -105,6 +105,10 @@ Offline documentation suitable for day to day use.
 * Make vim read color scheme from zsh.
 * Make cursor stay in last position when switching back to buffer https://github.com/kien/ctrlp.vim/issues/240 https://askubuntu.com/questions/223018/vim-is-not-remembering-last-position
 
+## Feedback
+
+Suggestions/improvements are welcome! Please [open an issue](https://github.com/Stratus3D/dotfiles/issues) or [contact me directly](https://stratus3d.com/contact).
+
 ## Useful commands that I often forget
 
 Bash/Zshell Commands

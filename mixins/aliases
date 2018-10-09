@@ -89,6 +89,7 @@ alias fb="ASDF_NODEJS_VERSION=6.11.3 fb-messenger-cli"
 # Aliases for commands that aren't available via oh-my-zsh
 alias rspec="_rspec_command"
 alias spring="_spring_command"
+alias be="bundle exec"
 
 # Silver Searcher aliases
 alias age="ag --erlang"

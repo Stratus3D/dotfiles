@@ -174,6 +174,9 @@ install_or_upgrade audacity
 # Video editing
 install_or_upgrade kdenlive
 
+# CLI dictionary
+install_or_upgrade dict
+
 # Install xsane and dependencies
 sudo add-apt-repository ppa:robert-ancell/sane-backends
 sudo apt-get update

@@ -159,6 +159,7 @@ Bash/Zshell Commands
 * `for ((n=0;n<10;n++)); do { time bundle exec rspec ./spec ; } 2>> time.txt; done` run a command ten times and write the execution time of each run to a file
 * `xmllint --valid --encode utf-8 <file>; echo $?` validate that an XML file is valid and encoded as UTF-8
 * `nmcli d wifi` show signals for wifi networks
+* `nohup <long running command> &` leave a command running in the background. Even after logout.
 
 OSX Commands
 

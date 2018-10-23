@@ -1,12 +1,31 @@
+function psgrep() {
+  ps auxf | grep -v grep | grep "$@" -i
+}
+
+function fname() {
+  find . -iname "*$@*"
+}
+
+function remove_lines_from() {
+  # Removes lines from $1 if they appear in $2
+  grep -F -x -v -f $2 $1
+}
+
+function mkcd() {
+  mkdir $1 && cd $1
+}
+
+# Load functions in other files
 for file in $HOME/dotfiles/scripts/functions/*; do
     source $file;
 done
 
+# Load custom functions
 custom_functions_dir="$HOME/dotfiles/scripts/custom_functions"
 
 if [ -d "$custom_functions_dir" ]; then
     custom_functions=($(find $custom_functions_dir -maxdepth 1 -name "*.sh"))
-    
+
     if [ ${#custom_functions[@]} -gt 0 ]; then
         for file in $custom_functions*; do
             source $file;

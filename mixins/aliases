@@ -48,9 +48,6 @@ alias lessh='LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s" less -M '
 # Function aliases (for functions defined in scripts/functions/)
 alias kllist='kill_listener'
 
-# Find aliases
-alias ff='find * -iname'
-
 os=$(uname -s)
 if [[ "$os" = 'Darwin' ]]; then
     # If we are on OSX create a `zeal` alias and a `qcachegrind` alias

@@ -524,3 +524,13 @@ autocmd! BufWritePost .vimrc,*vimrc source %
 " TODO: Turn on showcmd when in visual mode
 "autocmd VisualEnter * silent execute "set showcmd!"
 "autocmd VisualLeave * silent execute "set showcmd!"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Saved macros
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Insert binding.pry call into Ruby code
+map <Leader>pry Orequire 'pry'; binding.pry<ESC>^
+
+" Insert IEx.pry call into Elixir code
+map <Leader>pry OIEx.pry<ESC>^

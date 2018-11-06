@@ -2,6 +2,7 @@
 # Set the editing mode to vi
 set editing-mode vi
 
+# Taken from https://www.chainsawonatireswing.com/2012/05/13/fun-with-inputrc-part-1/
 # Use Unicode & do NOT use the "8bit hack" to input/output non-ASCII characters
 # See http://code.google.com/p/iterm2/wiki/Keybindings
 set input-meta on

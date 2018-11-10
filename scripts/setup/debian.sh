@@ -177,6 +177,9 @@ install_or_upgrade kdenlive
 # CLI dictionary
 install_or_upgrade dict
 
+# For password management
+sudo apt-get install pass
+
 # Install xsane and dependencies
 sudo add-apt-repository ppa:robert-ancell/sane-backends
 sudo apt-get update

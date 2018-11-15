@@ -162,6 +162,9 @@ brew cask install android-platform-tools
 # Mosh for high latency remote servers
 brew_install_or_upgrade mobile-shell
 
+# For password management
+brew_install_or_upgrade pass
+
 # Yarn for package management
 brew_install_or_upgrade yarn
 

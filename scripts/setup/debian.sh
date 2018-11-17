@@ -178,7 +178,10 @@ install_or_upgrade kdenlive
 install_or_upgrade dict
 
 # For password management
-sudo apt-get install pass
+install_or_upgrade pass
+
+# For wrapping shells that don't use readline
+install_or_upgrade rlwrap
 
 # Install xsane and dependencies
 sudo add-apt-repository ppa:robert-ancell/sane-backends

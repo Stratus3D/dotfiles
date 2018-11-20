@@ -162,6 +162,9 @@ brew cask install android-platform-tools
 # Mosh for high latency remote servers
 brew_install_or_upgrade mobile-shell
 
+# For wrapping shells that don't use readline
+brew_install_or_upgrade rlwrap
+
 # For password management
 brew_install_or_upgrade pass
 

@@ -102,5 +102,5 @@ alias urldecode='python -c "import sys, urllib as ul; \
 alias urlencode='python -c "import sys, urllib as ul; \
     print ul.quote_plus(sys.argv[1])"'
 
-# esh alias for better Erlang shell
+# esh alias for better Erlang shell with a readline wrapper
 alias esh='rlwrap erl -oldshell'

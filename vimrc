@@ -158,8 +158,8 @@ set spelllang=en_us
 set spellfile=$HOME/dotfiles/vim/spell/en.utf-8.add
 
 " Autocompletion from spell check
-" TODO: Figure out if this is needed or not
 set complete+=kspell
+" TODO: Figure out if this is needed or not
 set complete+=s
 
 " TODO: Figure out what all these settings do and check in the ones that are

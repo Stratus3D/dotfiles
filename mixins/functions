@@ -15,6 +15,11 @@ function mkcd() {
   mkdir $1 && cd $1
 }
 
+# Read STDIN as JSON and print to STDOUT as YAML
+function json_to_yaml() {
+	ruby -ryaml -rjson -e 'puts YAML.dump(JSON.parse(STDIN.read))'
+}
+
 # Load functions in other files
 for file in $HOME/dotfiles/scripts/functions/*; do
     source $file;

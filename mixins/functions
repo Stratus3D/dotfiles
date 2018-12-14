@@ -20,6 +20,11 @@ function json_to_yaml() {
 	ruby -ryaml -rjson -e 'puts YAML.dump(JSON.parse(STDIN.read))'
 }
 
+# Read STDIN as YAML and print to STDOUT as JSON
+function yaml_to_json() {
+	ruby -ryaml -rjson -e 'puts YAML.load(STDIN.read).to_json'
+}
+
 # Load functions in other files
 for file in $HOME/dotfiles/scripts/functions/*; do
     source $file;

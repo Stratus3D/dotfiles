@@ -104,6 +104,9 @@ install_or_upgrade inkscape
 # Visualization library
 install_or_upgrade graphviz
 
+# For image metadata manipulation
+install_or_upgrade exiftool
+
 # Needed for Ruby and PostgreSQL
 install_or_upgrade libffi-dev bison libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libgdbm3 libgdbm-dev
 # Needed for capybara

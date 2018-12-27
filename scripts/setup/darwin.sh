@@ -126,6 +126,9 @@ brew cask install gimp
 brew cask install xquartz
 brew cask install inkscape
 
+# For image metadata manipulation
+brew_install_or_upgrade exiftool
+
 # Install command-line JSON processor
 brew_install_or_upgrade jq
 

@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+# Script to convert CSV files to HTML
+#
+# Usage:
+#
+# $ ./csv2html [<csv input file>] [<html output file>]
+#
+# Alternatively, the script can read from STDIN:
+#
+# $ cat table.csv | ./csv2html table.html
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+
+# Read input from file or from STDIN if it is present
+if [ -t 0 ]; then
+  input_file="${1:-}"
+  output_file="${2:-}"
+  input="$(cat "$input_file")"
+else
+  output_file="${1:-}"
+  stdin_lines=""
+
+  while read line
+  do
+    stdin_lines+="$line"
+  done < "${1:-/dev/stdin}"
+  input="$stdin_lines"
+fi
+
+# Create temp file and write input to it
+temp_file="$(mktemp /tmp/excludes.XXXXXX)"
+echo "$input" > "$temp_file"
+
+# The dummy Markdown document needed for Pandoc to load the CSV file
+doc='```{.table file="'"$temp_file"'"}
+```'
+
+if [ -n "$output_file" ]; then
+  echo "$doc" | pandoc --filter pandoc-placetable -t html -f markdown -o "$output_file"
+else
+  echo "$doc" | pandoc --filter pandoc-placetable -t html -f markdown
+fi
+
+rm "$temp_file"

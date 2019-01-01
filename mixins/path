@@ -1,8 +1,8 @@
 # Brew
 PATH=/usr/local/sbin:$PATH
 
-# Android and Corona, not sure if still needed
-#PATH=$HOME/lib/apache-ant-1.9.3/bin:$ANDROID_HOME/sdk/platform-tools:$ANDROID_HOME/sdk/tools:$HOME/lib/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:/Applications/CoronaSDK:$PATH
+# Cabal packages
+PATH=$HOME/.cabal/bin:$PATH
 
 # Development directory
 export DEVELOPMENT_DIR=$HOME/devel
@@ -19,11 +19,6 @@ if [ -f $JAVA_HOME_BIN ]; then
     export JAVA_HOME=$($JAVA_HOME_BIN -v '1.8*' 2> /dev/null)
     PATH=$JAVA_HOME/bin:$PATH
 fi
-
-# Go
-# I don't think I need this anymore
-#export GOPATH=$DEVELOPMENT_DIR
-#PATH=$GOPATH/bin:$PATH
 
 # Finally export completed PATH
 export PATH

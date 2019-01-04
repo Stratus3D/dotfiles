@@ -29,3 +29,12 @@ npm install -g xml2json-command
 
 # Setup cpan and install packages for irssi
 cpan Lingua::Ispell
+
+# Haskell Packages
+###############################################################################
+
+# Make sure our local list is up to date
+cabal update
+
+# For building tables on the command line
+cabal install pandoc-placetable

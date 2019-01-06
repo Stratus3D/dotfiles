@@ -9,13 +9,15 @@
 # Alternatively, the script can read from STDIN:
 #
 # $ cat table.csv | ./csv2html table.html
+#
+# Created based on the suggestions here:
+# https://lobste.rs/s/id3yrb/cli_tool_for_generating_html_markdown
 
 # Unoffical Bash "strict mode"
 # http://redsymbol.net/articles/unofficial-bash-strict-mode/
 set -euo pipefail
 #ORIGINAL_IFS=$IFS
 IFS=$'\t\n' # Stricter IFS settings
-
 
 # Read input from file or from STDIN if it is present
 if [ -t 0 ]; then

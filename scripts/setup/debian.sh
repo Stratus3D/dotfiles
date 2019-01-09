@@ -153,6 +153,9 @@ install_or_upgrade scribus
 # Pandoc for document utilities
 install_or_upgrade pandoc
 
+# Cabal for Haskell packages
+install_or_upgrade cabal-install
+
 # Misc other dependencies
 install_or_upgrade ncftp python-paramiko python-pycryptopp lftp python-boto python-dev librsync-dev
 

@@ -200,6 +200,9 @@ brew_install_or_upgrade percona-toolkit
 # Install iperf3 for network performance tests
 brew_install_or_upgrade iperf3
 
+# For web server performance
+brew_install_or_upgrade siege
+
 # I should probably create an asdf plugin for RabbitMQ
 brew_install_or_upgrade rabbitmq
 

@@ -160,6 +160,7 @@ Bash/Zshell Commands
 * `xmllint --valid --encode utf-8 <file>; echo $?` validate that an XML file is valid and encoded as UTF-8
 * `nmcli d wifi` show signals for wifi networks
 * `nohup <long running command> &` leave a command running in the background. Even after logout.
+* `reset` clears the terminal and resets the terminal state.
 
 OSX Commands
 

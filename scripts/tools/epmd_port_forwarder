@@ -30,20 +30,29 @@ error_exit() {
 }
 
 get_value() {
-    first=${1#*=}
-    second=$2
+  raw_flag=$1
+  first=${1#*'='}
+  second=$2
 
-    # TODO: Use sed to parse the arguments?
-    #export OUTPUT=`echo $1 | sed -e 's/^[^=]*=//g'`
-    if [ -z "$first" ]; then
-        if [[ $second == "-*" ]]; then
-            echo ""
-        else
-            echo $second
-        fi
+  # If the raw flag contains an equals sign and the value after it (first) is
+  # not null return first, otherwise return the next argument (second)
+  if [[ "$raw_flag" == *=* ]] && [ -n "$first" ]; then
+    echo "$first"
+  else
+    if [[ "$second" == -* ]]; then
+      echo "$second"
     else
-        echo $first
+      echo "$second"
     fi
+  fi
+}
+
+get_shift_count() {
+  if [[ "$1" == *=* ]]; then
+    echo "1"
+  else
+    echo "2"
+  fi
 }
 
 server=""
@@ -56,10 +65,12 @@ while :; do
             exit
             ;;
         -s|--server|--server=*)
-            server=$(get_value $1 ${2:-""})
+            server=$(get_value "$1" "${2:-}")
+            shift $(get_shift_count "$1")
             ;;
         -o|--only-epmd)
             only_epmd=true
+            shift
             ;;
         --)
             shift
@@ -67,14 +78,13 @@ while :; do
             ;;
         *)
             if [ -z "${1:-}" ]; then
+                shift
                 break
             else
                 echo "Unknown option ${1:-}"
                 error_exit
             fi
     esac
-
-    shift
 done
 
 # Make sure required arguments are present

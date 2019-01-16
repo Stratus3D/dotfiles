@@ -13,39 +13,50 @@ IFS=$'\t\n' # Stricter IFS settings
 # * https://help.github.com/articles/changing-author-info/
 
 usage() {
-    cat <<EOF
-    Usage: git-author-rewrite [options]
+  cat <<EOF
+  Usage: git-author-rewrite [options]
 
-    Rewrites existing Git commits with new committer and author information.
+  Rewrites existing Git commits with new committer and author information.
 
-    Options:
-    --old           The old email address you want to replace
-    --new-email     The new email address to use
-    --new-name      The new name to use
-    --after-commit  Only update commits on current branch that come after this
-                    commit hash.
+  Options:
+  --old           The old email address you want to replace
+  --new-email     The new email address to use
+  --new-name      The new name to use
+  --after-commit  Only update commits on current branch that come after this
+                  commit hash.
 EOF
 }
 
 
 error_exit() {
-    usage
-    exit 1
+  usage
+  exit 1
 }
 
 get_value() {
-    first=${1#*'='}
-    second=$2
+  raw_flag=$1
+  first=${1#*'='}
+  second=$2
 
-    if [ -z "$first" ]; then
-      if [[ "$second" == -* ]]; then
-        echo ""
-      else
-        echo "$second"
-      fi
+  # If the raw flag contains an equals sign and the value after it (first) is
+  # not null return first, otherwise return the next argument (second)
+  if [[ "$raw_flag" == *=* ]] && [ -n "$first" ]; then
+    echo "$first"
+  else
+    if [[ "$second" == -* ]]; then
+      echo "$second"
     else
-      echo "$first"
+      echo "$second"
     fi
+  fi
+}
+
+get_shift_count() {
+  if [[ "$1" == *=* ]]; then
+    echo "1"
+  else
+    echo "2"
+  fi
 }
 
 COMMIT_HASH=""
@@ -58,19 +69,19 @@ while :; do
             ;;
         -o|--old|--old=*)
             OLD_EMAIL=$(get_value "$1" "${2:-}")
-            shift
+            shift "$(get_shift_count "$1")"
             ;;
         -n|--new-email|--new-email=*)
             CORRECT_EMAIL=$(get_value "$1" "${2:-}")
-            shift
+            shift "$(get_shift_count "$1")"
             ;;
         -a|--new-name|--new-name=*)
             CORRECT_NAME=$(get_value "$1" "${2:-}")
-            shift
+            shift "$(get_shift_count "$1")"
             ;;
         -c|--after-commit|--after-commit=*)
             COMMIT_HASH=$(get_value "$1" "${2:-}")
-            shift
+            shift "$(get_shift_count "$1")"
             ;;
         --)
             shift
@@ -85,31 +96,30 @@ while :; do
             fi
             ;;
     esac
-
-    shift
 done
+
+# Export variables so they are availabe in the env filter
+export OLD_EMAIL
+export CORRECT_EMAIL
+export CORRECT_NAME
+
+filter_command="
+if [ \"\$GIT_COMMITTER_EMAIL\" = \"$OLD_EMAIL\" ];then
+    echo 'Fixed committer info'
+    export GIT_COMMITTER_NAME=\"$CORRECT_NAME\"
+    export GIT_COMMITTER_EMAIL=\"$CORRECT_EMAIL\"
+fi
+
+if [ \"\$GIT_AUTHOR_EMAIL\" = \"$OLD_EMAIL\" ]; then
+    echo 'Fixed author info'
+    export GIT_AUTHOR_NAME=\"$CORRECT_NAME\"
+    export GIT_AUTHOR_EMAIL=\"$CORRECT_EMAIL\"
+fi"
 
 # Use $COMMIT_HASH if set to do a rebase on a specific set of commits after
 # the given hash to rewrite committer and author
 if [ -z "$COMMIT_HASH" ]; then
-    export OLD_EMAIL
-    export CORRECT_EMAIL
-    export CORRECT_NAME
-
-    git filter-branch --env-filter '
-    if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
-    then
-        echo "Fixed committer info"
-        export GIT_COMMITTER_NAME="$CORRECT_NAME"
-        export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL"
-    fi
-    if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]
-    then
-        echo "Fixed author info"
-        export GIT_AUTHOR_NAME="$CORRECT_NAME"
-        export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
-    fi
-    ' --tag-name-filter cat -- --branches --tags
+  git filter-branch --env-filter "$filter_command" --tag-name-filter cat -- --branches --tags
 else
-    git rebase -i "$COMMIT_HASH" -x "git commit --amend --author '$GIT_AUTHOR_NAME <$GIT_AUTHOR_EMAIL>' --committer '$GIT_COMMITTER_NAME <$GIT_COMMITTER_EMAIL>' -CHEAD"
+  git filter-branch --env-filter "$filter_command" --tag-name-filter cat -- "$COMMIT_HASH..HEAD"
 fi

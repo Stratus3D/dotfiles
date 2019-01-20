@@ -533,4 +533,4 @@ autocmd! BufWritePost .vimrc,*vimrc source %
 map <Leader>pry Orequire 'pry'; binding.pry<ESC>^
 
 " Insert IEx.pry call into Elixir code
-map <Leader>ipry Orequire 'pry'; IEx.pry<ESC>^
+map <Leader>ipry Orequire IEx; IEx.pry<ESC>^

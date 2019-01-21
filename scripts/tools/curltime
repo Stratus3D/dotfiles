@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+#
+# curl wrapper that returns timing information.
+#
+# curl format adapted from
+#
+# *  http://josephscott.org/archives/2011/10/timing-details-with-curl/
+# *  https://stackoverflow.com/questions/18215389/how-do-i-measure-request-and-response-times-at-once-using-curl
+#
+# Example usage:
+#   $ curltime http://www.apple.com
+#   $ time curltime http://www.apple.com -v
+
+set -e
+
+curl_format='{
+ "url": "%{url_effective}",
+ "time_namelookup": %{time_namelookup},
+ "time_connect": %{time_connect},
+ "time_appconnect": %{time_appconnect},
+ "time_pretransfer": %{time_pretransfer},
+ "time_redirect": %{time_redirect},
+ "time_starttransfer": %{time_starttransfer},
+ "time_total": %{time_total}
+}'
+
+exec curl -s -w "$curl_format" -o /dev/null "$@"

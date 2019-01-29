@@ -115,7 +115,7 @@ fancy_echo "Configuring Bundler ..."
 brew_install_or_upgrade ctags
 
 # Visualization library
-brew_install_or_upgrade graphviz
+brew_install_or_upgrade graphviz --with-app
 brew link graphviz
 
 # Gimp for image editing
@@ -140,6 +140,9 @@ brew_install_or_upgrade wxmac --with-static --with-stl --universal
 
 # Install pianobar for music
 brew_install_or_upgrade pianobar
+
+# For JSON pretty printing in the quicklook window
+brew cask install quicklook-json
 
 # QCacheGrind for valgrind analysis
 brew_install_or_upgrade qcachegrind --with-graphviz

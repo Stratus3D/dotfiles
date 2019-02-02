@@ -518,8 +518,15 @@ autocmd BufRead,BufNewFile *gitconfig set filetype=conf
 " Auto commands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Automatically reload .vimrc
-autocmd! BufWritePost .vimrc,*vimrc source %
+augroup vimrc
+  autocmd!
+  " Include ! and ? as word characters, so dw will delete all of e.g. gsub!,
+  " and not leave the "!"
+  autocmd FileType ruby,eruby,yaml set iskeyword+=!,?
+
+  " Re-source vimrc whenever it changes
+  autocmd BufWritePost .vimrc,*vimrc source %
+augroup END
 
 " TODO: Turn on showcmd when in visual mode
 "autocmd VisualEnter * silent execute "set showcmd!"

@@ -9,10 +9,11 @@ This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a scrip
 
 ## Features
 
-* Vim, tmux, Zsh, Bash, asdf, and Git configurations
+* Vim, tmux, Zsh, Bash, asdf, and Git configurations, as well as configurations for all other tools I use
 * Setup script that symlinks dotfiles and installs all the software I use
 * A collection of Bash scripts I rely on for software development
-* List of commands I often forget (see below)
+* Profiles for the terminal emulators I use
+* [List of commands I often forget](docs/useful_commands.md)
 
 ## Installation
 
@@ -94,10 +95,6 @@ Offline documentation suitable for day to day use.
 * [Michael J. Smalley's dotfiles (https://github.com/michaeljsmalley/dotfiles)](https://github.com/michaeljsmalley/dotfiles)
 * [Gary Bernhardt's dotfiles (https://github.com/garybernhardt/dotfiles)](https://github.com/garybernhardt/dotfiles)
 * [Andrew Stambrosky's dotfiles (https://github.com/astambrosky/dotfiles)](https://github.com/astambrosky/dotfiles)
-
-## Helpful Commands
-
-I keep a [document of various commands I often forget checked into this repository](docs/useful_commands.md).
 
 ## TODO
 

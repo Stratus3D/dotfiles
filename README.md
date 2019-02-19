@@ -58,7 +58,7 @@ OSX Only
 ### Browsers
 
 * Firefox
-* Chrome
+* Chromium
 
 ### Languages
 

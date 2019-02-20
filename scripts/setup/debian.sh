@@ -73,11 +73,8 @@ sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) pa
 sudo apt-get update
 install_or_upgrade skype
 
-# Google Chrome
-sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo apt-get update
-install_or_upgrade google-chrome-stable
+# Chromium
+install_or_upgrade chromium-browser
 
 # Redshift dependencies
 install_or_upgrade autopoint intltool libdrm-dev libxcb1-dev libxcb-randr0-dev

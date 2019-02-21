@@ -2,10 +2,10 @@
 # this file remove the .example suffix. The contents of the file will be loaded
 # into the .bashrc and .zshrc.
 
-# Aliases I usually use on OSX
-#alias chrome="'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'"
-#alias chrome_jail="'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --user-data-dir=$(mktemp -d -t chrome_jail)"
-#alias chrome_incognito="'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --incognito"
+# Aliases I usually use
+#alias chrome="chromium-browser"
+#alias chrome_jail="chromium-browser --user-data-dir=$(mktemp -d -t chrome_jail)"
+#alias chrome_incognito="chromium-browser --incognito"
 #alias clean-erlang="rm -rf deps; rm -rf logs; rm db.config"
 #alias psql-remote="psql -p 5431"
 #alias remsh_with_eflame="remsh_with_custom <server> eflame eflame2 eflame_app eflame_sup"

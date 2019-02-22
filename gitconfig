@@ -78,3 +78,6 @@
 [branch]
   # When checking out branches locally make them always track the remote branch
   autosetupmerge = always
+[commit]
+  # Show the diff below the commit message for context when writing the message
+  verbose = true

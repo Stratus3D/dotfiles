@@ -75,6 +75,9 @@
 [rebase]
   # Always auto squash when rebasing
   autosquash = true
+
+  # Automatically stash local changes when rebasing
+  autostash = true
 [branch]
   # When checking out branches locally make them always track the remote branch
   autosetupmerge = always

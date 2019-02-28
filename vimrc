@@ -179,6 +179,12 @@ set lazyredraw
 " https://github.com/joshukraine/dotfiles/blob/79aae9ac707460877d0fb36a3ef6a9b1ea7c44ce/vim-performance.md
 set re=1
 
+" Maintain edit history between sessions in file
+set undofile
+
+" Directory for edit history
+set undodir=~/.vim/undodir
+
 " Use built in file browser (netrw) instead of NERDTree
 " (https://shapeshed.com/vim-netrw/)
 let g:netrw_banner = 0

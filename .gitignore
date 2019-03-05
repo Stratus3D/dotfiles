@@ -5,6 +5,7 @@
 oh-my-zsh/
 vim/.netrwhist
 vim/spell
+vim/undodir
 private
 
 # Ignore everything in vim/bundle except Vundle

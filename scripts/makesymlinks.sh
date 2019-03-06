@@ -119,6 +119,9 @@ $dotfiles/scripts/generate_irssi_config.sh
 # setup default tmuxinator project
 make_dir_if_missing $HOME/.tmuxinator
 
+# Create directory for Vim undo history
+make_dir_if_missing $dotfiles/vim/undodir
+
 # link the default tmuxinator project
 symlink_and_save_original $dotfiles/tmuxinator/default.yml \
     $HOME/.tmuxinator/default.yml $olddir

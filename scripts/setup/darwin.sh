@@ -194,6 +194,9 @@ brew_install_or_upgrade imgcat
 
 # Install tools for server testing and administration
 brew_install_or_upgrade ansible
+
+# For VMs and Vagrant
+brew cask install virtualbox
 brew cask install vagrant
 brew cask install vagrant-manager # OSX toolbar for vagrant
 

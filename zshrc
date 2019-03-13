@@ -88,9 +88,6 @@ DISABLE_CORRECTION="true"
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
 # We need this so that tmux uses zsh when started in a zsh shell
 export SHELL='/bin/zsh'
 

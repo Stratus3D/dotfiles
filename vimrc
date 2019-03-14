@@ -98,15 +98,12 @@ nmap <F9> :TagbarToggle<CR>
 " Turn on cursor column highlighting
 set cursorcolumn
 
-" don't beep
+" Don't beep
 set visualbell
 set noerrorbells
 
 " The mouse is evil
 set mouse=
-
-" Font
-set guifont=Monaco:h12
 
 " Show the status bar
 set laststatus=2
@@ -166,10 +163,6 @@ set complete+=s
 " useful
 "set spell noci nosi noai nolist noshowmode noshowcmd
 
-if has("gui_running")
-  set guioption=-t
-endif
-
 " Don't redraw when executing macros
 set lazyredraw
 
@@ -198,6 +191,17 @@ let g:netrw_banner = 0
 let g:netrw_browse_split = 4
 " Open files on the right
 let g:netrw_altv = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GUI settings (currently not using these, probably good to remove eventually)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if has("gui_running")
+  set guioption=-t
+endif
+
+" Font
+set guifont=Monaco:h12
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Shortcuts

@@ -1,1 +1,5 @@
+# Tell asdf to pull versions from other version files like .ruby-version
 legacy_version_file = yes
+
+# When upgrading upgrade to the latest release candidate version
+use_release_candidates = yes

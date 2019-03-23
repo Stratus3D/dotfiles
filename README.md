@@ -32,9 +32,13 @@ This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a scrip
 
 2. (OSX only) Configure iTerm2 to use the custom profile stored in the dotfiles directory. In the iTerm2 preferences window click the "browse" button and navigate to `~/dotfiles/iterm2_profile/` and select the plist file.
 
+## Configuration
+
+Configurations for all the tools are need are checked into this repository. All the dotfiles are symlinked with to my home directory with the [scripts/makesymlinks.sh](scripts/makesymlinks.sh) script.
+
 ## Software
 
-This is software that I need for my day-to-day programming work. I try to keep this list updated with the latest software I am using. This allows me to quickly setup new development machines. I am developing a script named checkenv.sh that will verify everything is setup properly.
+This is software that I need for my day-to-day programming work. I try to keep this list updated with the latest software I am using. This allows me to quickly setup new development machines.
 
 ### Tools
 

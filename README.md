@@ -34,7 +34,7 @@ This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a scrip
 
 ## Configuration
 
-Configurations for all the tools are need are checked into this repository. All the dotfiles are symlinked with to my home directory with the [scripts/makesymlinks.sh](scripts/makesymlinks.sh) script.
+Configurations for all the tools are need are checked into this repository. All the dotfiles are symlinked with to my home directory with the [scripts/makesymlinks.sh](scripts/makesymlinks.sh) script. The makesymlink.sh script is run by the setup.sh script, which is used to install these dotfiles.
 
 ## Software
 

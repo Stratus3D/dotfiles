@@ -35,6 +35,7 @@ install_or_upgrade zsh
 install_or_upgrade vim
 install_or_upgrade curl
 install_or_upgrade tmux
+$HOME/dotfiles/script/setup/tmux.sh
 
 # other development tools
 install_or_upgrade silversearcher-ag

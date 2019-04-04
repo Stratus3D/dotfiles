@@ -93,6 +93,7 @@ brew_install_or_upgrade 'the_silver_searcher'
 brew_install_or_upgrade 'vim'
 brew_install_or_upgrade 'ctags'
 brew_install_or_upgrade 'tmux' --with-utf8proc
+$HOME/dotfiles/script/setup/tmux.sh
 brew_install_or_upgrade 'imagemagick'
 brew_install_or_upgrade 'qt'
 brew_install_or_upgrade 'shellcheck'

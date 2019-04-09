@@ -51,6 +51,9 @@ install_or_upgrade vagrant
 install_or_upgrade ansible
 install_or_upgrade percona-toolkit
 
+# For clipboard access on the command line
+install_or_upgrade xsel
+
 # VirtualBox for VMs
 sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib"
 wget -q -O - https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo apt-key add -

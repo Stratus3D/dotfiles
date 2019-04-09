@@ -476,8 +476,10 @@ let g:pencil#textwidth = 80
 
 augroup pencil
     autocmd!
-    autocmd FileType mkd.markdown,markdown,mkd call pencil#init()
-    autocmd FileType text         call pencil#init()
+    " Vim pencil breaks the colorcolumn setting. Waiting for input on plugin
+    " maintainers
+    " https://github.com/reedes/vim-pencil/issues/75
+    autocmd FileType text,mkd.markdown,markdown,mkd call pencil#init()
 augroup END
 
 "open CtrlP in buffer mode

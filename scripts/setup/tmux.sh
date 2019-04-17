@@ -11,4 +11,6 @@ mkdir -p $HOME/.tmux
 
 # Install plugins
 # https://github.com/tmux-plugins/tmux-yank
-git clone https://github.com/tmux-plugins/tmux-yank $HOME/.tmux
+if [ ! -d $HOME/.tmux/tmux-yank ]; then
+  git clone https://github.com/tmux-plugins/tmux-yank $HOME/.tmux/tmux-yank
+fi

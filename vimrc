@@ -513,7 +513,15 @@ call ToggleCtrlPIgnores()
 "let g:indent_guides_start_level = 0
 "let g:indent_guides_guide_size = 1
 
+" ALE settings
 let g:ale_lint_delay = 400
+
+" Disable elixirLS Dialyzer checks
+let g:ale_elixir_elixir_ls_config = {
+\   'elixirLS': {
+\     'dialyzerEnabled': v:false,
+\   },
+\ }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File type settings (file type-specific settings in vim/ftplugin/)

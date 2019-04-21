@@ -35,7 +35,7 @@ install_or_upgrade zsh
 install_or_upgrade vim
 install_or_upgrade curl
 install_or_upgrade tmux
-$HOME/dotfiles/script/setup/tmux.sh
+$HOME/dotfiles/scripts/setup/tmux.sh
 
 # other development tools
 install_or_upgrade silversearcher-ag
@@ -70,6 +70,9 @@ install_or_upgrade enigmail # For secure email
 
 # For emoji
 install_or_upgrade ttf-ancient-fonts
+
+# For the terminal
+sudo apt-get install fonts-inconsolata
 
 # Skype
 # Skype is in the canonical partner repository

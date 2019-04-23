@@ -34,8 +34,6 @@ install_or_upgrade git
 install_or_upgrade zsh
 install_or_upgrade vim
 install_or_upgrade curl
-install_or_upgrade tmux
-$HOME/dotfiles/scripts/setup/tmux.sh
 
 # other development tools
 install_or_upgrade silversearcher-ag
@@ -210,3 +208,6 @@ source gnome.sh
 
 # Install other software using custom install scripts
 run_install_scripts
+
+# This needs to be run after tmux installation
+$HOME/dotfiles/scripts/setup/tmux.sh

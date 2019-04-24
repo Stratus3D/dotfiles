@@ -23,7 +23,7 @@ echo "Created temp directory $TEMP_DIR"
 cd $TEMP_DIR
 
 # Clone down the tmux source code
-git clone https://github.com/tmux/tmux.git
+git clone https://github.com/tmux/tmux.git --branch 2.9
 
 # Configure and build
 cd tmux

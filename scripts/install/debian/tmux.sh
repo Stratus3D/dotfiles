@@ -14,7 +14,7 @@ set -euo pipefail
 #ORIGINAL_IFS=$IFS
 IFS=$'\t\n' # Stricter IFS settings
 
-VERSION=2.7
+VERSION=2.9
 BIN_DIR=$HOME/bin
 
 # Create temp directory for the build
@@ -23,7 +23,7 @@ echo "Created temp directory $TEMP_DIR"
 cd $TEMP_DIR
 
 # Clone down the tmux source code
-git clone https://github.com/tmux/tmux.git --branch 2.9
+git clone https://github.com/tmux/tmux.git
 
 # Configure and build
 cd tmux

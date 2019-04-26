@@ -203,6 +203,9 @@ wget -q -O - https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 sudo apt-get update
 install_or_upgrade yarn
 
+# For duplicati
+install_or_upgrade mono-runtime
+
 # Assume we are using Gnome
 source gnome.sh
 

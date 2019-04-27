@@ -123,20 +123,18 @@ set statusline+=\ %P                                         " Percentage throug
 " Color status bar
 highlight statusline ctermfg=cyan ctermbg=black guifg=cyan guibg=black
 
-if has("unix")
-    let s:uname = system("uname")
-    if s:uname == "Darwin\n"
-        " allow yanking to OSX clipboard
-        " http://stackoverflow.com/questions/11404800/fix-vim-tmux-yank-paste-on-unnamed-register
-        if $TMUX == ''
-            set clipboard+=unnamed
-        else
-            set clipboard=unnamed
-        endif
+let s:uname = system("uname")
+if s:uname == "Darwin\n"
+    " allow yanking to OSX clipboard
+    " http://stackoverflow.com/questions/11404800/fix-vim-tmux-yank-paste-on-unnamed-register
+    if $TMUX == ''
+        set clipboard+=unnamed
     else
-        " Allow yanking to clipboard on Ubuntu
-        set clipboard=unnamedplus
+        set clipboard=unnamed
     endif
+else
+    " Allow yanking to clipboard on Ubuntu
+    set clipboard=unnamedplus
 endif
 
 " Use special chars in place of tab and eol

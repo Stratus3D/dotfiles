@@ -123,8 +123,7 @@ set statusline+=\ %P                                         " Percentage throug
 " Color status bar
 highlight statusline ctermfg=cyan ctermbg=black guifg=cyan guibg=black
 
-let s:uname = system("uname")
-if s:uname == "Darwin\n"
+if has('macunix')
     " allow yanking to OSX clipboard
     " http://stackoverflow.com/questions/11404800/fix-vim-tmux-yank-paste-on-unnamed-register
     if $TMUX == ''

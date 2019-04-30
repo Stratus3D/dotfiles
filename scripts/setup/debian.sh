@@ -32,7 +32,7 @@ sudo add-apt-repository ppa:git-core/ppa -y
 sudo apt-get update
 install_or_upgrade git
 install_or_upgrade zsh
-install_or_upgrade vim
+install_or_upgrade vim-gtk
 install_or_upgrade curl
 
 # other development tools

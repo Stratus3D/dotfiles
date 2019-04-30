@@ -73,11 +73,7 @@ install_or_upgrade ttf-ancient-fonts
 sudo apt-get install fonts-inconsolata
 
 # Skype
-# Skype is in the canonical partner repository
-# https://help.ubuntu.com/community/Skype
-sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
-sudo apt-get update
-install_or_upgrade skype
+install_or_upgrade skypeforlinux
 
 # Chromium
 install_or_upgrade chromium-browser

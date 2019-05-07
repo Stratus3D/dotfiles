@@ -189,8 +189,6 @@ install_or_upgrade pass
 install_or_upgrade rlwrap
 
 # Install xsane and dependencies
-sudo add-apt-repository ppa:robert-ancell/sane-backends
-sudo apt-get update
 install_or_upgrade libsane libsane-extras sane-utils xsane
 
 # Install yarn

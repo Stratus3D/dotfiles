@@ -112,7 +112,6 @@ install_or_upgrade libffi-dev bison libyaml-dev libreadline6-dev zlib1g-dev libn
 install_or_upgrade libqt4-dev libqtwebkit-dev
 
 # Postgres
-install_or_upgrade postgresql
 install_or_upgrade libpq-dev # development package
 
 # Install pip so we can install python packages easily

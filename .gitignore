@@ -11,6 +11,9 @@ private
 # Ignore everything in vim/bundle except Vundle
 vim/bundle/
 
+# Ignore bundle cache
+bundle/cache
+
 # Ignore custom files
 mixins/*.custom
 scripts/custom_tools/

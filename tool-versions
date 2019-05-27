@@ -6,3 +6,4 @@ nodejs 8.11.4
 postgres 9.5.2
 rebar 3.4.1
 python 2.7.13
+yarn 1.16.0

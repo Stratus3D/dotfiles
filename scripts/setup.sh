@@ -131,6 +131,7 @@ asdf plugin-add postgres https://github.com/smashedtoatoms/asdf-postgres.git || 
 asdf plugin-add rebar https://github.com/Stratus3D/asdf-rebar.git || true
 asdf plugin-add python https://github.com/tuvistavie/asdf-python.git || true
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git || true
+asdf plugin-add yarn https://github.com/twuni/asdf-yarn.git || true
 
 # Imports Node.js release team's OpenPGP keys to main keyring
 bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring || true

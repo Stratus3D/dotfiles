@@ -14,8 +14,10 @@ TEMP_DIR=$(mktemp -dt "$(basename $0).XXXXXX")
 echo "Created temp directory $TEMP_DIR"
 cd $TEMP_DIR
 
+VERSION_TAG=v1.2.5
+
 # Download and unarchive
-git clone https://github.com/so-fancy/diff-so-fancy.git
+git clone https://github.com/so-fancy/diff-so-fancy.git --branch $VERSION_TAG
 cd diff-so-fancy
 
 # Place diff-so-fancy on path

@@ -174,9 +174,6 @@ brew_install_or_upgrade rlwrap
 # For password management
 brew_install_or_upgrade pass
 
-# Yarn for package management
-brew_install_or_upgrade yarn
-
 # Elm for packages that require it
 brew_install_or_upgrade elm
 

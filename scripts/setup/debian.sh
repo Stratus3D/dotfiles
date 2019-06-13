@@ -133,6 +133,7 @@ install_or_upgrade pianobar
 
 # Install Android Debug Bridge
 install_or_upgrade android-tools-adb
+install_or_upgrade android-sdk-platform-tools
 
 # Install mosh shell for high latency servers
 install_or_upgrade mosh

@@ -28,8 +28,8 @@ ZSH_THEME_GIT_PROMPT_DIRTY=" %{%F{red}%}*%{%f%k%b%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 PROMPT='%{%f%k%b%}
-%{%K{${bkg}}%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%} %{%b%F{yellow}%K{${bkg}}%}%~%{%B%F{green}%}$(git_prompt_info)%E%{%f%k%b%}
-%{%K{${bkg}}%}%{$fg_bold[red]%}%(?..%?)%{%f%b%}$(_prompt_char)%{%K{${bkg}}%} %#%{%f%k%b%} '
+%{%K{${bkg}}%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%} %{%b%F{yellow}%K{${bkg}}%}%~%{%B%F{green}%}$(git_prompt_info)%E %{%K{${bkg}}%}%{$fg_bold[red]%}%(?..%?)%{%f%b%}%{%f%k%b%}
+$(_prompt_char)%{%K{${bkg}}%} %#%{%f%k%b%} '
 
 # I no longer use the right prompt because I often forgot it was there
 #RPROMPT='%{%K{${bkg}}%}%{$fg_bold[red]%}%(?..%?)%{%f%b%} !%{%B%F{cyan}%}%!%{%f%k%b%}'

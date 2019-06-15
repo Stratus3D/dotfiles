@@ -50,6 +50,7 @@ Bash/Zshell Commands
 * `nmcli d wifi` show signals for wifi networks
 * `nohup <long running command> &` leave a command running in the background. Even after logout.
 * `reset` clears the terminal and resets the terminal state.
+* `fc` open last command in `$EDITOR` for editing.
 
 OSX Commands
 

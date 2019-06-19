@@ -19,3 +19,8 @@ fi
 
 # Erlang `erl` options
 export ERL_AFLAGS="+pc unicode"
+
+# Set CDPATH so we can easily navigate to directories in ~/devel and ~
+# This variable is not exported because we only want this set in the interactive
+# shell
+CDPATH=.:$HOME:$HOME/devel

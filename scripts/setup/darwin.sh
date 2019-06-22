@@ -99,6 +99,10 @@ brew_install_or_upgrade 'qt'
 brew_install_or_upgrade 'shellcheck'
 brew_install_or_upgrade 'telnet'
 
+# For Ruby
+brew_install_or_upgrade readline
+
+# For various languages that use OpenSSL
 brew_install_or_upgrade 'openssl'
 brew unlink openssl && brew link openssl --force
 

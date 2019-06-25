@@ -191,12 +191,6 @@ install_or_upgrade rlwrap
 # Install xsane and dependencies
 install_or_upgrade libsane libsane-extras sane-utils xsane
 
-# Install yarn
-sudo add-apt-repository "deb https://dl.yarnpkg.com/debian/ stable main"
-wget -q -O - https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-sudo apt-get update
-install_or_upgrade yarn
-
 # For duplicati
 install_or_upgrade mono-runtime
 

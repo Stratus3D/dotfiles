@@ -127,7 +127,7 @@ install_or_upgrade zeal
 install_or_upgrade retext
 
 # Enable DVD playback
-sudo /usr/share/doc/libdvdread4/install-css.sh
+sudo apt-get install libdvd-pkg
 
 # Install Pandora CLI
 install_or_upgrade pianobar

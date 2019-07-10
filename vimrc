@@ -543,11 +543,14 @@ augroup vimrc
 
   " Re-source vimrc whenever it changes
   autocmd BufWritePost .vimrc,*vimrc source %
-augroup END
 
-" TODO: Turn on showcmd when in visual mode
-"autocmd VisualEnter * silent execute "set showcmd!"
-"autocmd VisualLeave * silent execute "set showcmd!"
+  " TODO: Turn on showcmd when in visual mode
+  "autocmd VisualEnter * silent execute "set showcmd!"
+  "autocmd VisualLeave * silent execute "set showcmd!"
+
+  " Turn on spell checking for file types that contain text
+  autocmd FileType markdown,asciidoc,text setlocal spell
+augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Saved macros

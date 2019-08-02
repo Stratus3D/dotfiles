@@ -21,6 +21,13 @@ set t_Co=256
 " General settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Disable modelines for security reasons
+set modelines=0
+set nomodeline
+
+" Don't allow autocmds from local rc files we don't own
+set secure
+
 " Turn on syntax highlighting
 syntax on
 

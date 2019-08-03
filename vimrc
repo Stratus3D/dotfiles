@@ -22,6 +22,7 @@ set t_Co=256
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Disable modelines for security reasons
+" See https://thehackernews.com/2019/06/linux-vim-vulnerability.html
 set modelines=0
 set nomodeline
 

@@ -129,7 +129,7 @@ asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git || true
 asdf plugin-add lua https://github.com/Stratus3D/asdf-lua.git || true
 asdf plugin-add postgres https://github.com/smashedtoatoms/asdf-postgres.git || true
 asdf plugin-add rebar https://github.com/Stratus3D/asdf-rebar.git || true
-asdf plugin-add python https://github.com/tuvistavie/asdf-python.git || true
+asdf plugin-add python https://github.com/danhper/asdf-python.git || true
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git || true
 asdf plugin-add yarn https://github.com/twuni/asdf-yarn.git || true
 

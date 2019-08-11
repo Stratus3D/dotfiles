@@ -569,3 +569,6 @@ map <Leader>pry Orequire 'pry'; binding.pry<ESC>^
 
 " Insert IEx.pry call into Elixir code
 map <Leader>ipry Orequire IEx; IEx.pry<ESC>^
+
+" Insert pdb.set_trace() call into Python code
+map <Leader>ppry Oimport pdb; pdb.set_trace()<ESC>^

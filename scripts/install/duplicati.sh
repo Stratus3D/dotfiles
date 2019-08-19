@@ -16,7 +16,7 @@ TEMP_DIR=$(mktemp -dt "$(basename $0).XXXXXX")
 echo "Created temp directory $TEMP_DIR"
 cd $TEMP_DIR
 
-DEB_FILENAME="duplicati_2.0.3.3-1_all.deb"
+DEB_FILENAME="duplicati_2.0.4.23-1_all.deb"
 
 # Download the deb file
 wget -O "$DEB_FILENAME" "https://updates.duplicati.com/beta/$DEB_FILENAME"

@@ -18,6 +18,9 @@ python -m pip install flake8
 # csvkit for CSV utilities
 pip install csvkit
 
+# Spotify downloader
+pip3 install spotdl
+
 # Node.JS Packages
 ###############################################################################
 

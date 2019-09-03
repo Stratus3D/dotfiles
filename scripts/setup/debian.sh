@@ -66,6 +66,12 @@ install_or_upgrade weechat
 install_or_upgrade thunderbird
 install_or_upgrade enigmail # For secure email
 
+# Signal for encrypted messaging
+curl -s https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
+echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
+sudo apt-get update
+install_or_upgrade signal-desktop
+
 # For emoji
 install_or_upgrade ttf-ancient-fonts
 

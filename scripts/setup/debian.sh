@@ -209,3 +209,9 @@ run_install_scripts
 
 # This needs to be run after tmux installation
 $HOME/dotfiles/scripts/setup/tmux.sh
+
+# Fix annoying pulseaudio settings, if not already there
+# Taken from https://lobste.rs/s/kst05r/disable_flat_volume_for_pulseaudio
+if ! grep -c "flat-volumes = no" "$HOME/.pulse/daemon.conf"; then
+    echo "flat-volumes = no" >> "$HOME/.pulse/daemon.conf"
+fi

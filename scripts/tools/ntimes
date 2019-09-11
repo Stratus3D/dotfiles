@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Simple Bash script to run a command multiple times. Easier than using the for
+# loop syntax.
+
+number=$1
+
+shift
+for i in $(seq $number); do
+  "$@"
+done

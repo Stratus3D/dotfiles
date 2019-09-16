@@ -68,7 +68,7 @@
   default = current
 [pull]
   # Don't flatten locally created merge commits when rebasing
-  rebase = preserve
+  rebase = merges
 [merge]
   # Standard diff is two sets of final changes. This introduces the change
   # present in the common ancestor of both conflicting commits.

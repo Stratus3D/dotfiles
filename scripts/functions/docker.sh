@@ -5,5 +5,5 @@ docker_clean() {
     docker ps -aq --no-trunc | xargs docker rm
 
     # Remove dangling/untagged images
-    docker images -q filter dangling=true | xargs docker rmi
+    docker images --quiet --filter=dangling=true | xargs docker rmi
 }

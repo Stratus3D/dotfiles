@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
 # Simple Bash script to run a command multiple times. Easier than using the for
 # loop syntax.
 

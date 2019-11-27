@@ -5,11 +5,29 @@
 set -euo pipefail
 #ORIGINAL_IFS=$IFS
 IFS=$'\t\n' # Stricter IFS settings
-# Simple Bash script to run a command multiple times. Easier than using the for
-# loop syntax.
 
-number=$1
+usage() {
+    cat <<EOF
+Simple Bash script to run a command multiple times. Easier than using the for
+loop syntax.
 
+Usage:
+
+ntimes [options] [command ...]
+
+Options:
+
+-n|--times            The number of times to execute the command
+-f|--failure          Execute the command until it fails
+-s|--success          Execute the command until it succeeds
+
+Example:
+
+$ ntimes 10 ping -c stratus3d.com
+
+Will run the ping command 10 times
+EOF
+}
 shift
 for i in $(seq $number); do
   "$@"

@@ -61,7 +61,65 @@ get_shift_count() {
   fi
 }
 
-shift
-for i in $(seq $number); do
-  "$@"
+log_command() {
+  expression="$@"
+  echo "Executing '$expression'"
+}
+
+number=''
+until=''
+
+echo $@
+
+while :; do
+    case ${1:-} in
+        -h|-\?|--help)
+            usage
+            exit
+            ;;
+        -n|--times|--times=*)
+            echo $1
+            echo $0
+            number=$(get_value "$1" "${2:-}")
+            shift $(get_shift_count "$1")
+            ;;
+        -s|--success)
+            until=success
+            shift
+            ;;
+        -f|--failure)
+            until=failure
+            shift
+            ;;
+        --)
+            shift
+            break 2
+            ;;
+        *)
+            if [ -z "${1:-}" ]; then
+                break 2
+            else
+                error_exit "Unknown option ${1:-}"
+            fi
+    esac
 done
+
+if [ -z "${number+x}" ]; then
+  for i in $(seq $number); do
+    log_command "$@"
+    "$@"
+  done
+else
+  # Must be until success or failure
+  if [ "$until" = "success" ]; then
+    until log_command "$@" && "$@"; do
+      true
+    done
+  elif [ "$until" = "failure" ]; then
+    while log_command "$@" && "$@"; do
+      true
+    done
+  else
+    error_exit "Must be until success or failure if the number of runs is not specified"
+  fi
+fi

@@ -67,6 +67,7 @@ log_command() {
 }
 
 number=''
+parallel=false
 until=''
 
 while :; do
@@ -78,6 +79,10 @@ while :; do
         -n|--times|--times=*)
             number=$(get_value "$1" "${2:-}")
             shift $(get_shift_count "$1")
+            ;;
+        -p|--parallel)
+            parallel=true
+            shift
             ;;
         -s|--success)
             until=success
@@ -104,7 +109,14 @@ if [ ! -z "${number+x}" ]; then
   # Execute the command a set number of times
   for i in $(seq $number); do
     log_command "$@"
-    "$@"
+
+    if [ "$parallel" = true ]; then
+      # Execute child process if parallel is true
+      "$@" &
+    else
+      # Otherwise execute in the current process sequentially
+      "$@"
+    fi
   done
 else
   # Must be until success or failure

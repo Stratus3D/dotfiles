@@ -20,6 +20,7 @@ Options:
 -n|--times            The number of times to execute the command
 -f|--failure          Execute the command until it fails
 -s|--success          Execute the command until it succeeds
+-v                    Verbose output
 
 Example:
 
@@ -28,6 +29,11 @@ $ ntimes 10 ping -c stratus3d.com
 Will run the ping command 10 times
 EOF
 }
+
+number=''
+parallel=false
+until=''
+verbose=false
 
 error_exit() {
   echo "Error: ""$@"
@@ -63,12 +69,11 @@ get_shift_count() {
 
 log_command() {
   expression="$@"
-  echo "Executing '$expression'"
+  if $verbose; then
+    echo "Executing '$expression'"
+  fi
 }
 
-number=''
-parallel=false
-until=''
 
 while :; do
     case ${1:-} in
@@ -90,6 +95,10 @@ while :; do
             ;;
         -f|--failure)
             until=failure
+            shift
+            ;;
+        -v)
+            verbose=true
             shift
             ;;
         --)

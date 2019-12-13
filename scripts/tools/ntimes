@@ -75,7 +75,11 @@ log_command() {
 }
 
 execute_command() {
-  log_command "$@" && "$@"
+  if [ ${#@} -eq 1 ]; then
+    log_command "$@" && eval "$@"
+  else
+    log_command "$@" && "$@"
+  fi
 }
 
 while :; do
@@ -120,6 +124,7 @@ done
 if [ ! -z "${number+x}" ]; then
   # Execute the command a set number of times
   for i in $(seq $number); do
+    export i
     if [ "$parallel" = true ]; then
       # Execute child process if parallel is true
       log_command "$@"

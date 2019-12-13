@@ -74,6 +74,9 @@ log_command() {
   fi
 }
 
+execute_command() {
+  log_command "$@" && "$@"
+}
 
 while :; do
     case ${1:-} in
@@ -117,24 +120,23 @@ done
 if [ ! -z "${number+x}" ]; then
   # Execute the command a set number of times
   for i in $(seq $number); do
-    log_command "$@"
-
     if [ "$parallel" = true ]; then
       # Execute child process if parallel is true
+      log_command "$@"
       "$@" &
     else
       # Otherwise execute in the current process sequentially
-      "$@"
+      execute_command "$@"
     fi
   done
 else
   # Must be until success or failure
   if [ "$until" = "success" ]; then
-    until log_command "$@" && "$@"; do
+    until execute_command "$@"; do
       true
     done
   elif [ "$until" = "failure" ]; then
-    while log_command "$@" && "$@"; do
+    while execute_command "$@"; do
       true
     done
   else

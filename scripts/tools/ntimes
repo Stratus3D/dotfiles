@@ -17,7 +17,7 @@ ntimes [options] [command ...]
 
 Options:
 
--n|--times            The number of times to execute the command
+-n|--times [number]   The number of times to execute the command
 -f|--failure          Execute the command until it fails
 -s|--success          Execute the command until it succeeds
 -v                    Verbose output
@@ -76,6 +76,9 @@ log_command() {
 
 execute_command() {
   if [ ${#@} -eq 1 ]; then
+    # If $@ has a lenght equal to 1, it is either a string that should be
+    # evaluated as an expression, or a single command, in either case we should
+    # use eval to execute the command
     log_command "$@" && eval "$@"
   else
     log_command "$@" && "$@"

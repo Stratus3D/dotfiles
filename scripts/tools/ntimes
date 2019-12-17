@@ -124,7 +124,7 @@ while :; do
     esac
 done
 
-if [ ! -z "${number+x}" ]; then
+if [ ! -z "$number" ]; then
   # Execute the command a set number of times
   for i in $(seq $number); do
     export i

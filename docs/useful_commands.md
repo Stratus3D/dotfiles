@@ -136,8 +136,12 @@ Gcc Flags
 
 * `-ftrapv` trap signed integer overflows
 
-Erlang Flags
+Erlang
 
+* `erlang:system_info(port_limit).` show port/file limit
+* `:inet.i()` show ports being used by processes in the VM
+
+Erlang Flags
 * `bin_opt_info` print warnings and information about how binaries are used
 * `+pc unicode` increase the range of characters that the system will consider printable. Helpful when testing with unicode in the shell
 

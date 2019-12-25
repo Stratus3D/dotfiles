@@ -37,6 +37,7 @@ Bash/Zshell Commands
 * `tcpdump -A` print out all packets.
 * `tcpdump -i lo -s0 -w xyz.pcap` save all packets from interface to file.
 * `export $(cut -d= -f1 <file>)` export all variables in file containing environment variables
+* `env $(cat .env | xargs) rails` run command with variables contained in environment file
 * `find ./ -type f -exec sed -i -e 's/foo/bar/g' {} \;` find and replace string in all files in a directory
 * `find src -name 'old*' -type f -exec bash -c 'mv "$1" "${1/old/new}"' -- {} \;` rename every filename that matches pattern
 * `sudo getent passwd | cut -d : -f 6 | sudo sed 's:$:/.bash_history:' | sudo xargs -d '\n' grep -H -e "$command"` or `grep -e "$pattern" /home/*/.bash_history` to see how others use a command

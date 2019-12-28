@@ -37,6 +37,7 @@ Bash/Zshell Commands
 * `tcpdump -A` print out all packets.
 * `tcpdump -i lo -s0 -w xyz.pcap` save all packets from interface to file.
 * `export $(cut -d= -f1 <file>)` export all variables in file containing environment variables
+* `unset $(grep -v '^#' .env | sed -E 's/(.*)=.*/\1/' | xargs)` unset all variables contained in an environment file
 * `env $(cat .env | xargs) rails` run command with variables contained in environment file
 * `env $(grep -v '^#' .env | xargs)` run command with variables contained in an environment file, ignore comments
 * `find ./ -type f -exec sed -i -e 's/foo/bar/g' {} \;` find and replace string in all files in a directory

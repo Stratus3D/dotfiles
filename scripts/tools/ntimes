@@ -20,6 +20,8 @@ Options:
 -n|--times [number]   The number of times to execute the command
 -f|--failure          Execute the command until it fails
 -s|--success          Execute the command until it succeeds
+-p|--parallel         Execute the command in parallel. Can only be used with
+                        the -n flag.
 -v                    Verbose output
 
 Example:

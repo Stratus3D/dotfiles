@@ -26,9 +26,15 @@ Options:
 
 Example:
 
-$ ntimes 10 ping -c stratus3d.com
+$ ntimes -n 10 -- ping -c stratus3d.com
 
-Will run the ping command 10 times
+Will run the ping command 10 times.
+
+Example:
+
+$ ntimes -s -- make test
+
+Will run 'make test' until it succeeds.
 EOF
 }
 

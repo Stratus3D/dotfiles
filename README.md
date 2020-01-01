@@ -51,7 +51,6 @@ This is software that I need for my day-to-day programming work. I try to keep t
 * Tmuxinator ([https://github.com/tmuxinator/tmuxinator](https://github.com/tmuxinator/tmuxinator))
 * Exuberant Ctags ([http://ctags.sourceforge.net/](http://ctags.sourceforge.net/))
 * Virtual Box ([https://www.virtualbox.org/](https://www.virtualbox.org/)) & ievms ([https://github.com/xdissent/ievms](https://github.com/xdissent/ievms))
-* pgAdmin ([http://www.pgadmin.org/download/](http://www.pgadmin.org/download/))
 * Dash/ZealDocs ([http://zealdocs.org/](http://zealdocs.org/))
 
 OSX Only

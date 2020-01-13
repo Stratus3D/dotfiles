@@ -25,6 +25,14 @@ function yaml_to_json() {
 	ruby -ryaml -rjson -e 'puts YAML.load(STDIN.read).to_json'
 }
 
+# Asciidoc to Markdown conversion function, since pandoc can't do this natively.
+# Pipe asciidoc to this function on STDIN, and it will write the markdown to
+# STDOUT. Based on
+# https://alvinalexander.com/bookmarks/how-convert-asciidoc-to-html-or-markdown
+function asciidoc_to_markdown() {
+  asciidoc -b docbook - | pandoc -f docbook -t markdown_strict
+}
+
 # Load functions in other files
 for file in $HOME/dotfiles/scripts/functions/*; do
     source $file;

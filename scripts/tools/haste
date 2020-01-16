@@ -7,14 +7,21 @@
 # work. E.g.  `export HASTEBIN_URL=https://hastebin.com`. This is done so I
 # don't accidentally create hastebin snippets with company code
 
-if [ -z $HASTEBIN_URL ]; then
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+if [ -z ${HASTEBIN_URL:-} ]; then
     echo "The HASTEBIN_URL environment variable must be set."
     exit 1
 fi
 
 pastebin() {
-    a=$(cat);
-    curl -X POST -s -d "$a" $HASTEBIN_URL/documents | awk -v HASTEBIN_URL=$HASTEBIN_URL -F '"' '{print HASTEBIN_URL"/"$4}';
+    input_string=$(cat);
+    curl -X POST -s -d "$input_string" $HASTEBIN_URL/documents -v \
+      | awk -v HASTEBIN_URL=$HASTEBIN_URL -F '"' '{print HASTEBIN_URL"/"$4}';
 }
 
 pastebin

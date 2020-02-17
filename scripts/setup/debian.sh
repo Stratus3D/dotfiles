@@ -75,8 +75,12 @@ install_or_upgrade signal-desktop
 # For emoji
 install_or_upgrade ttf-ancient-fonts
 
+# Fonts
 # For the terminal
 sudo apt-get install fonts-inconsolata
+
+# For documents
+sudo apt-get install fonts-cmu
 
 # Skype
 install_or_upgrade skypeforlinux

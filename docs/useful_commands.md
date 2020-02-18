@@ -1,8 +1,9 @@
 # Useful commands that I often forget
 
 Bash/Zshell Commands
-* `echo "SMS notification" | sendmail -t '<phone number>@messaging.sprintpcs.com'` send an SMS notification by emailing the service's email to SMS gateway.
+* `echo "SMS notification" | sendmail -t '<phone number>@messaging.sprintpcs.com'` send an SMS notification by emailing the service's email to SMS gateway
 * `stat -c%s` show file size
+* `ln -s /dev/null ~/file/you/never/want/to/persist` good for ensure data written to the file by applications never persists
 * `open .` to open current directory in Finder
 * `open -a TextEdit textfile.txt` to open a file in a specific application
 * `python -m SimpleHTTPServer 8000` runs a webserver that serves the contents of the directory

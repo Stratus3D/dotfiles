@@ -99,6 +99,9 @@ source $ZSHRC_PATH/mixins/asdf
 source $ZSHRC_PATH/mixins/aliases
 source $ZSHRC_PATH/mixins/man_color
 
+# Use asdf autocompletions
+. $HOME/.asdf/completions/_asdf
+
 # Save all history
 # Incrementally write history to file
 setopt INC_APPEND_HISTORY

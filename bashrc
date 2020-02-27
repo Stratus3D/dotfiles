@@ -1,18 +1,15 @@
 SOURCE="${BASH_SOURCE[0]}"
 
-FILES="$HOME/dotfiles/mixins/general
-$HOME/dotfiles/mixins/asdf
-$HOME/dotfiles/mixins/functions
-$HOME/dotfiles/mixins/aliases
-$HOME/dotfiles/mixins/grep
-$HOME/dotfiles/mixins/path
-$HOME/dotfiles/mixins/man_color"
+source $HOME/dotfiles/mixins/general
+source $HOME/dotfiles/mixins/asdf
+source $HOME/dotfiles/mixins/functions
+source $HOME/dotfiles/mixins/aliases
+source $HOME/dotfiles/mixins/grep
+source $HOME/dotfiles/mixins/path
+source $HOME/dotfiles/mixins/man_color
 
-
-for file in $FILES
-do
-    [ -r $file ] && [ -f $file ] && source $file
-done
+# Use asdf autocompletions
+. $HOME/.asdf/completions/asdf.bash
 
 # We need this so that tmux uses bash when started in a bash shell
 export SHELL=/bin/bash

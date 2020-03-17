@@ -2,5 +2,9 @@
 bind -v
 # Tab complete
 bind \\t rl_complete
+
+# Clear the screen
 bind ^l ed-clear-screen
+
+# Revserse search through history
 bind ^r em-inc-search-prev

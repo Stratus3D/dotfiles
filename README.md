@@ -30,7 +30,7 @@ This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a scrip
     On Debian this is all you need to do. Everything should be installed and configured correctly. On OSX there are two remaining steps.
 
 
-2. (OSX only) Configure iTerm2 to use the custom profile stored in the dotfiles directory. In the iTerm2 preferences window click the "browse" button and navigate to `~/dotfiles/iterm2_profile/` and select the plist file.
+2. (OSX only) Configure Terminal.app to use the custom profile stored in the dotfiles directory. In the Terminal preferences window under the Profiles tab click the "import" button and navigate to `~/dotfiles/terminal.app_profile/` and select the profile file.
 
 ## Configuration
 

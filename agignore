@@ -1,0 +1,5 @@
+# Directory ignores for the silver searcher
+deps
+rel
+_build
+vendor/bundle

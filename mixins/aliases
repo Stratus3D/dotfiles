@@ -85,6 +85,7 @@ alias spring="_spring_command"
 alias be="bundle exec"
 
 # Silver Searcher aliases
+alias ag="ag --path-to-ignore ~/.agignore"
 alias age="ag --erlang"
 alias agj="ag --js"
 alias agr="ag --ruby"

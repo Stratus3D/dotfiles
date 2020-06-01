@@ -9,4 +9,4 @@ gsettings set org.gnome.gnome-screenshot auto-save-directory "$HOME/Screenshots/
 gsettings set org.gnome.desktop.interface enable-animations false
 
 # Set desktop background color
-gsettings set org.gnome.desktop.background primary-color '#221a15'
+gsettings set org.gnome.desktop.background primary-color '#1a1410'

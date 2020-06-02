@@ -455,8 +455,9 @@ autocmd VimEnter * CtrlP
 
 " Vim-Erlang Skeleton settings
 let g:erl_replace_buffer=0
-" TODO: Figure out how to copy default erlang templates into our custom dir
-" let g:erl_tpl_dir="~/.erlang_templates"
+
+" Custom simplified Erlang templates (without all the verbose comment blocks)
+let g:erl_tpl_dir=$HOME."/dotfiles/templates/erlang"
 
 " Erlang plugin settings. TODO: Pull these from the environment
 " let g:erl_author=""

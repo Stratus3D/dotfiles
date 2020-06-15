@@ -1,0 +1,146 @@
+%%%-------------------------------------------------------------------
+%%% @author $author
+%%% @copyright (C) $year, $company
+%%% @doc
+%%%
+%%% @end
+%%% Created : $fulldate
+%%%-------------------------------------------------------------------
+-module($basename).
+
+-behaviour(gen_statem).
+
+%% API
+-export([start_link/0]).
+
+%% gen_statem callbacks
+-export([
+         callback_mode/0,
+         init/1,
+         format_status/2,
+         state_name/3,
+         handle_event/4,
+         terminate/3,
+         code_change/4
+        ]).
+
+-define(SERVER, ?MODULE).
+
+-record(state, {}).
+
+%%%===================================================================
+%%% API
+%%%===================================================================
+
+-spec start_link() -> {ok, Pid} | ignore | {error, Error}.
+
+start_link() ->
+    gen_statem:start_link({local, ?SERVER}, ?MODULE, [], []).
+
+%%%===================================================================
+%%% gen_statem callbacks
+%%%===================================================================
+
+%%--------------------------------------------------------------------
+%% @private
+%%--------------------------------------------------------------------
+
+-spec callback_mode() -> state_functions |
+                         handle_event_function |
+                         [state_functions, state_enter] |
+                         [handle_event_function, state_enter].
+
+callback_mode() ->
+    state_functions.
+
+%%--------------------------------------------------------------------
+%% @private
+%%--------------------------------------------------------------------
+
+-spec init(Args) -> {ok, State, Data} |
+                    {ok, State, Data, Actions} |
+                    ignore |
+                    {stop, Reason}.
+init([]) ->
+    process_flag(trap_exit, true),
+    {ok, state_name, #state{}}.
+
+%%--------------------------------------------------------------------
+%% @private
+%%--------------------------------------------------------------------
+
+-spec format_status(Opt, [PDict, State, Data]) -> Status.
+
+format_status(_Opt, [_PDict, State, Data]) ->
+    [{data, [{"State", {State, Data}}]}].
+
+%%--------------------------------------------------------------------
+%% @private
+%%--------------------------------------------------------------------
+
+-spec state_name(Event, OldState, Data) ->
+                  {next_state, NextState, NewData} |
+                  {next_state, NextState, NewData, Actions} |
+                  {keep_state, NewData} |
+                  {keep_state, NewData, Actions} |
+                  keep_state_and_data |
+                  {keep_state_and_data, Actions} |
+                  {repeat_state, NewData} |
+                  {repeat_state, NewData, Actions} |
+                  repeat_state_and_data |
+                  {repeat_state_and_data, Actions} |
+                  stop |
+                  {stop, Reason} |
+                  {stop, Reason, NewData} |
+                  {stop_and_reply, Reason, Replies} |
+                  {stop_and_reply, Reason, Replies, NewData}.
+
+state_name({call, Caller}, _Msg, Data) ->
+    {next_state, state_name, Data, [{reply, Caller, ok}]}.
+
+%%--------------------------------------------------------------------
+%% @private
+%%--------------------------------------------------------------------
+-spec handle_event(Event, StateName, State) ->
+                  {next_state, NextState, NewData} |
+                  {next_state, NextState, NewData, Actions} |
+                  {keep_state, NewData} |
+                  {keep_state, NewData, Actions} |
+                  keep_state_and_data |
+                  {keep_state_and_data, Actions} |
+                  {repeat_state, NewData} |
+                  {repeat_state, NewData, Actions} |
+                  repeat_state_and_data |
+                  {repeat_state_and_data, Actions} |
+                  stop |
+                  {stop, Reason} |
+                  {stop, Reason, NewData} |
+                  {stop_and_reply, Reason, Replies} |
+                  {stop_and_reply, Reason, Replies, NewData}.
+
+handle_event({call, From}, _Msg, State, Data) ->
+    {next_state, State, Data, [{reply, From, ok}]}.
+
+%%--------------------------------------------------------------------
+%% @private
+%%--------------------------------------------------------------------
+
+-spec terminate(Reason, State, Data) -> Ignored.
+
+terminate(_Reason, _State, _Data) ->
+    ok.
+
+%%--------------------------------------------------------------------
+%% @private
+%%--------------------------------------------------------------------
+
+-spec code_change(OldVsn, OldState, OldData, Extra) ->
+                  {ok, NewState, NewData} |
+                  Reason.
+
+code_change(_OldVsn, State, Data, _Extra) ->
+    {ok, State, Data}.
+
+%%%===================================================================
+%%% Internal functions
+%%%===================================================================

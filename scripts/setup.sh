@@ -63,6 +63,7 @@ mkdir -p $HOME/audio
 mkdir -p $HOME/audio/podcasts # For podcast storage
 mkdir -p $HOME/audio/music # For music storage
 mkdir -p $HOME/servers # For remote server mounts
+mkdir -p $HOME/clients # Files for third parties - companies, friends, etc...
 mkdir -p $HOME/.psql # psql history directory
 
 ###############################################################################

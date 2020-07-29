@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+# Supports mult-page scanning to PDF
+#
+# Relies on scanimage command in the sane-utils Debian package. Output filename
+# must end in .pdf.
+#
+# Usage:
+#
+# scanpdf [number_of_pages] [output_filename]
+#
+# Example:
+#
+# $ ./scanpdf 2 output.pdf
+#
+# Inspired by https://jvns.ca/blog/2020/07/11/scanimage--scan-from-the-command-line/
+# and http://billauer.co.il/blog/2015/05/linux-multiple-page-scanimage/
+
+pages=${1:-}
+output_filename=${2:-}
+
+if [ -z "$pages" ]; then
+  echo "Number of pages must be specified"
+  exit 1
+fi
+
+if [ -z "$output_filename" ]; then
+  echo "Output filename must be specified"
+  exit 1
+fi
+
+# If scanimage -L only produces one line of output use the scanner
+# Otherwise print an error for the user
+echo "Checking for scanner..."
+scanners="$(scanimage -L -f"%d" || true)"
+first_line="$(echo "$scanners" | head -n 1)"
+lines=$(echo "$scanners" | wc -l)
+
+if [ "$first_line" = "" ]; then
+  echo "No scanners found"
+  exit 1
+elif [ "$lines" -gt 1 ]; then
+  echo "Multiple scanners found on your system. Please unplug all but one"
+  exit 1
+fi
+
+scanner_id="$(echo "$first_line" | sed -n 's/.*`\(.*\)'"'"'.*/\1/p')"
+echo "Scanner found with ID: $scanner_id"
+
+CUR=$(pwd)
+
+# Create temp directory for the scan
+TEMP_DIR="$(mktemp -dt "$(basename "$0").XXXXXX")"
+echo "Created temp directory $TEMP_DIR"
+cd "$TEMP_DIR"
+
+# scanimage -y 297 --format pnm --batch=scan%04d.pnm --batch-count=10  --resolution 150 --mode Color
+# scanimage -b --format png -d "$scanner_id" --source 'ADF Front' --resolution 150 --mode Color
+
+# Scan each page. US letter size is 216 x 279
+scanimage -b --format png --batch-count="$pages" -d "$scanner_id" --resolution 150 --mode Color -x 216 -y 279
+
+echo "Scan complete"
+
+convert ./*.png "$CUR/$output_filename"
+
+echo "Coverted to pdf file named $output_filename"
+
+# Cleanup files
+cd "$CUR"
+rm -rf "$TEMP_DIR"

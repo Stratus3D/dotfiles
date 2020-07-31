@@ -480,13 +480,20 @@ set runtimepath^=$HOME/.vim/bundle/ctrlp.vim
 let g:pencil#wrapModeDefault = 'soft'
 let g:pencil#textwidth = 80
 
-augroup pencil
-    autocmd!
-    " Vim pencil breaks the colorcolumn setting. Waiting for input on plugin
-    " maintainers
-    " https://github.com/reedes/vim-pencil/issues/75
-    autocmd FileType text,mkd.markdown,markdown,mkd call pencil#init()
-augroup END
+" Goyo writing mode callback functions
+" I have to toggle vim-pencil in these callbacks because of
+" https://github.com/reedes/vim-pencil/issues/75
+function! s:goyo_enter()
+  autocmd FileType text,mkd.markdown,markdown,mkd call pencil#init()
+  :PencilSoft
+endfunction
+
+function! s:goyo_leave()
+  :PencilOff
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 "open CtrlP in buffer mode
 nnoremap <leader>b :CtrlPBuffer<CR>

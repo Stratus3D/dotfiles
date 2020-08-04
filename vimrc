@@ -546,6 +546,8 @@ autocmd BufRead,BufNewFile Gemfile,Vagrantfile set filetype=ruby
 autocmd BufRead,BufNewFile Dockerfile,*.bats set filetype=sh
 autocmd BufRead,BufNewFile Jenkinsfile set filetype=groovy
 autocmd BufRead,BufNewFile *gitconfig set filetype=conf
+" I don't think *.avdl files are valid scala but this is close enough
+autocmd BufRead,BufNewFile *.avdl set filetype=scala
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Auto commands

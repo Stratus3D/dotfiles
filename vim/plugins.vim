@@ -85,6 +85,9 @@ Plugin 'tpope/vim-fugitive'
 " in the file
 " Plugin 'severin-lemaignan/vim-minimap'
 
+" Ultisnips for code snippet management
+Plugin 'SirVer/ultisnips'
+
 " Easier movements
 Plugin 'easymotion/vim-easymotion'
 

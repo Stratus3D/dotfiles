@@ -536,6 +536,9 @@ let g:ale_elixir_elixir_ls_config = {
 \   },
 \ }
 
+" UltiSnips settings
+let g:UltiSnipsExpandTrigger=",<tab>"
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File type settings (file type-specific settings in vim/ftplugin/)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

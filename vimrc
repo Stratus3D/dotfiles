@@ -572,10 +572,3 @@ augroup vimrc
   " Turn on spell checking for file types that contain text
   autocmd FileType markdown,asciidoc,text setlocal spell
 augroup END
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Saved macros
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Insert pdb.set_trace() call into Python code
-map <Leader>ppry Oimport pdb; pdb.set_trace()<ESC>^

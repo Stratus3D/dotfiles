@@ -14,8 +14,10 @@ source $HOME/dotfiles/mixins/man_color
 # We need this so that tmux uses bash when started in a bash shell
 export SHELL=/bin/bash
 
-# Keep all history
+# Append to the history file, don't overwrite it
 shopt -s histappend
+
+# Keep all history
 export HISTFILESIZE=
 export HISTSIZE=
 export HISTFILE=~/.bash_eternal_history

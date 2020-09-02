@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+# shrinkpdf, a script inspired by http://www.alfredklomp.com/programming/shrinkpdf/
+# but differing in two ways - it's a little simpler in what it supports and it
+# prints out help information
+#
+# Related: https://askubuntu.com/questions/113544/how-can-i-reduce-the-file-size-of-a-scanned-pdf-file/256449#256449
+
+usage() {
+    cat <<EOF
+    Usage: shrinkpdf input_file [output_file] [size]
+
+    Valid size values are:
+      screen - lower quality, smaller size. (72 dpi)
+      ebook - for better quality, but slightly larger pdfs. (150 dpi)
+      prepress - similar to Acrobat Distiller "Prepress Optimized" setting (300 dpi)
+      printer - similar to the Acrobat Distiller "Print Optimized" setting (300 dpi)
+      default - output for a wide variety of uses. Usually produces large files.
+
+    The default is "printer" if no size argument is given.
+EOF
+}
+
+shrink() {
+  gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS="/$3" -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$2" "$1"
+}
+
+input_file=${1:-}
+
+# Input file is a required argument
+if [ -z "$input_file" ]; then
+  usage
+  exit 1
+fi
+
+if [ -z "${2:-}" ]; then
+  # Ouput is STDOUT if no file is given
+  output_file="-"
+else
+  output_file="${2:-}"
+fi
+
+if [ -z "${3:-}" ]; then
+  # Default to printer
+  resolution="printer"
+else
+  resolution=${3:-}
+fi
+
+shrink "$input_file" "$output_file" "$resolution"

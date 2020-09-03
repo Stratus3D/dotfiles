@@ -30,7 +30,7 @@ function yaml_to_json() {
 # STDOUT. Based on
 # https://alvinalexander.com/bookmarks/how-convert-asciidoc-to-html-or-markdown
 function asciidoc_to_markdown() {
-  asciidoc -b docbook - | pandoc -f docbook -t markdown_strict
+  asciidoc -b docbook - | pandoc -f docbook -t markdown_strict --wrap none
 }
 
 # Load functions in other files

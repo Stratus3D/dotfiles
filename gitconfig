@@ -39,6 +39,9 @@
   # Global gitignore rules
   excludesfile = ~/.gitignore_global
 
+  # Global gitattributes file
+  attributesFile = ~/.gitattributes
+
   # Pay attention to case, even on OSX
   ignorecase = false
 

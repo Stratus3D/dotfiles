@@ -1,3 +1,9 @@
 # Auto detect text files and perform LF normalization
 # http://davidlaing.com/2012/09/19/customise-your-gitattributes-to-become-a-git-ninja/
 * text=auto
+
+# Exif diffs for images
+# Not convinced this output is particularly useful for me, but it is better than
+# no diff at all.
+*.png diff=exif
+*.jpg diff=exif

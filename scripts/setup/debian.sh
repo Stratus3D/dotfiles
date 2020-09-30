@@ -208,6 +208,10 @@ install_or_upgrade mono-runtime
 # Assume we are using Gnome
 source gnome.sh
 
+# Assume we are using Gnome Nautilus file manager
+# Easy right click image conversion operations
+sudo apt-get install nautilus-image-converter
+
 # Install other software using custom install scripts
 run_install_scripts
 

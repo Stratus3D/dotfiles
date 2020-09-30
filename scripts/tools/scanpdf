@@ -68,7 +68,11 @@ scanimage -b --format png --batch-count="$pages" -d "$scanner_id" --resolution 1
 
 echo "Scan complete"
 
-convert ./*.png "$CUR/$output_filename"
+# Files need to be sorted numerically based on the numbers in the filenames so
+# the pages in the final document are ordered properly.
+files=($(find . -type f | sort -V))
+# shellcheck disable=SC2068
+convert ${files[@]} "$CUR/$output_filename"
 
 echo "Coverted to pdf file named $output_filename"
 

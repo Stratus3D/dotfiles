@@ -107,6 +107,7 @@ Offline documentation suitable for day to day use.
 * Add solarized light/dark toggle functions.
 * Make vim read color scheme from zsh.
 * Make cursor stay in last position when switching back to buffer https://github.com/kien/ctrlp.vim/issues/240 https://askubuntu.com/questions/223018/vim-is-not-remembering-last-position
+* .gitattributes settings for Erlang files.
 
 ## Feedback
 

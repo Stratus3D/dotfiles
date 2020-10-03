@@ -1,4 +1,8 @@
 [alias]
+  # Better version of the stash list command
+  # Taken from https://stackoverflow.com/a/38826108/1245380
+  sl = stash list --format='%C(red)%h%C(reset) - %C(yellow)(%C(bold magenta)%gd%C(yellow))%C(reset) %<(70,trunc)%s %C(green)(%cr) %C(bold blue)%C(reset)'
+
   # Shorten a few common commands
   comt = commit-ticket
   comjt = commit-jira-ticket

@@ -9,3 +9,9 @@ set -euo pipefail
 #ORIGINAL_IFS=$IFS
 IFS=$'\t\n' # Stricter IFS settings
 endsnippet
+
+snippet tempdir "My own temp directory creating code"
+TEMP_DIR=$(mktemp -dt "$(basename $0).XXXXXX")
+echo "Created temp directory $TEMP_DIR"
+cd $TEMP_DIR
+endsnippet

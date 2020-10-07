@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+usage() {
+    cat <<EOF
+    Usage: git-branch-search
+
+    Searches the head of all branches
+EOF
+}
+
+# This script is a series of commands I found on
+# https://stackoverflow.com/questions/7151311/using-git-how-could-i-search-for-a-string-across-all-branches/37962363
+
+# Get the head of all branches
+heads=$(git show-ref --heads)
+
+# Get the SHAs for the head of each branch
+head_shas=$(cut -d' ' -f2 <<< "$heads")
+
+# Search for the search term passed in
+git grep "$1" $(cut -d' ' -f2 <<< "$heads")

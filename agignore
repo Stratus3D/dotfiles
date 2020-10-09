@@ -3,3 +3,6 @@ deps
 rel
 _build
 vendor/bundle
+
+# JavaScript projects
+node_modules

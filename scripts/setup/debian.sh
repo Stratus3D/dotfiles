@@ -205,6 +205,10 @@ install_or_upgrade libsane libsane-extras sane-utils xsane
 # For duplicati
 install_or_upgrade mono-runtime
 
+# For Ebooks
+# For resizing PDFs for Kindle
+install_or_upgrade k2pdfopt
+
 # Assume we are using Gnome
 source gnome.sh
 

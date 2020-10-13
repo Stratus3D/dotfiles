@@ -206,6 +206,9 @@ install_or_upgrade libsane libsane-extras sane-utils xsane
 install_or_upgrade mono-runtime
 
 # For Ebooks
+# For library management
+install_or_upgrade calibre
+
 # For resizing PDFs for Kindle
 install_or_upgrade k2pdfopt
 

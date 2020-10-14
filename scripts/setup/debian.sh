@@ -77,10 +77,10 @@ install_or_upgrade ttf-ancient-fonts
 
 # Fonts
 # For the terminal
-sudo apt-get install fonts-inconsolata
+install_or_upgrade fonts-inconsolata
 
 # For documents
-sudo apt-get install fonts-cmu
+install_or_upgrade fonts-cmu
 
 # Skype
 install_or_upgrade skypeforlinux

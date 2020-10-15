@@ -137,7 +137,7 @@ install_or_upgrade zeal
 install_or_upgrade retext
 
 # Enable DVD playback
-sudo apt-get install libdvd-pkg
+install_or_upgrade libdvd-pkg
 
 # Install Pandora CLI
 install_or_upgrade pianobar
@@ -217,7 +217,7 @@ source gnome.sh
 
 # Assume we are using Gnome Nautilus file manager
 # Easy right click image conversion operations
-sudo apt-get install nautilus-image-converter
+install_or_upgrade  nautilus-image-converter
 
 # Install other software using custom install scripts
 run_install_scripts

@@ -29,3 +29,7 @@ export ERL_AFLAGS="+pc unicode"
 # This variable is not exported because we only want this set in the interactive
 # shell
 CDPATH=.:$HOME:$HOME/devel
+
+# Set k2pdfopt options. -dev k2 denotes the target device is a second generation
+# kindle.
+export K2PDFOPT='-n -wrap+ -hy -ws -0.2 -dev k2'

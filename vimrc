@@ -150,7 +150,8 @@ set listchars=eol:¬,tab:→\ ,extends:>,precedes:<,trail:·,space:·
 " Ignored files
 set wildignore+=/tmp/,*.so,*.swp,*.swo,*.zip,*.meta,*.prefab,*.png,*.jpg,*.beam
 
-" Allow hidden buffers
+" Allow hidden buffers, useful for when you want to edit a buffer but not save
+" it before working on another buffer.
 set hidden
 
 " Use American English when spell checking is turned on

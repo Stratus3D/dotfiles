@@ -213,7 +213,9 @@ set guifont=Monaco:h12
 " Shortcuts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Make comma the leader key
 let mapleader = ","
+
 map ; :
 map  <Esc> :w
 map <C-s> <esc>:w<CR>

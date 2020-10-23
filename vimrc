@@ -216,7 +216,9 @@ set guifont=Monaco:h12
 " Make comma the leader key
 let mapleader = ","
 
+" Map semicolon to colon for easier invocation of ex commands
 map ; :
+
 map  <Esc> :w
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>

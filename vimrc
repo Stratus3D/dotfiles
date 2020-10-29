@@ -219,8 +219,6 @@ let mapleader = ","
 " Map semicolon to colon for easier invocation of ex commands
 map ; :
 
-map  <Esc> :w
-map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
 map <Leader>s <esc>:w<CR>
 imap <esc>:tabn <F7>

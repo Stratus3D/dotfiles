@@ -222,9 +222,8 @@ map ; :
 " A more convenient buffer write command
 imap <Leader>s <esc>:w<CR>
 
-imap <esc>:tabn <F7>
-
 " Not sure what these are for
+imap <esc>:tabn <F7>
 map gT <F8>
 map gt <F7>
 map :tabn <F8>

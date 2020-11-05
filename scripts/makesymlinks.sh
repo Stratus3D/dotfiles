@@ -26,7 +26,8 @@ olddir=$HOME/dotfiles_old
 # List of space separated files/folders to symlink in homedir (these are the typical "dotfiles")
 files="vimrc vim zshrc bashrc tmux.conf gitignore_global ctags screenrc \
     jshintrc rsync-exclude tool-versions agignore asdfrc psqlrc hushlogin \
-    my.cnf inputrc editrc iex.exs curlrc irbrc gemrc weechat gitattributes"
+    my.cnf inputrc editrc iex.exs curlrc irbrc gemrc weechat gitattributes \
+    gnuplot"
 
 ###############################################################################
 # Functions

@@ -9,6 +9,12 @@ set macros
 # Font settings
 set terminal qt font "Helvetica,16"
 
+# Line settings
+set termoption linewidth 1.4
+
+# 8 line colors
+# dashtypes
+#
 set style line 1 linecolor rgb '#de181f' linetype 1  # Red
 set style line 2 linecolor rgb '#0060ae' linetype 1  # Blue
 set style line 3 linecolor rgb '#228C22' linetype 1  # Forest green

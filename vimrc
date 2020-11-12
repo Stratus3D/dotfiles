@@ -103,6 +103,13 @@ set wildmode=full
 " Toggle Tagbar
 nmap <F9> :TagbarToggle<CR>
 
+" Make moving between windows easier.
+" http://vimcasts.org/episodes/working-with-windows/
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
 " Turn on cursor column highlighting
 set cursorcolumn
 

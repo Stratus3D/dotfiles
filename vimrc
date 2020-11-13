@@ -100,16 +100,6 @@ set showmode
 set wildmenu
 set wildmode=full
 
-" Toggle Tagbar
-nmap <F9> :TagbarToggle<CR>
-
-" Make moving between windows easier.
-" http://vimcasts.org/episodes/working-with-windows/
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-
 " Turn on cursor column highlighting
 set cursorcolumn
 
@@ -217,8 +207,18 @@ endif
 set guifont=Monaco:h12
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Shortcuts
+" Shortcuts/Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Toggle Tagbar
+nmap <F9> :TagbarToggle<CR>
+
+" Make moving between windows easier.
+" http://vimcasts.org/episodes/working-with-windows/
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " Make comma the leader key
 let mapleader = ","

@@ -227,7 +227,7 @@ let mapleader = ","
 map ; :
 
 " A more convenient buffer write command
-imap <Leader>s <esc>:w<CR>
+map <Leader>s <esc>:w<CR>
 
 " Not sure what these are for
 imap <esc>:tabn <F7>

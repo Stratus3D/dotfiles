@@ -34,8 +34,6 @@ Plugin 'kchmck/vim-coffee-script'
 " Lua
 Plugin 'xolox/vim-misc' " required by vim-lua-ftplugin
 Plugin 'xolox/vim-lua-ftplugin'
-" Markdown
-Plugin 'plasticboy/vim-markdown'
 " SASS/SCSS/Less/CSS
 Plugin 'groenewege/vim-less'
 Plugin 'cakebaker/scss-syntax.vim'

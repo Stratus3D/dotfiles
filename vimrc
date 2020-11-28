@@ -581,3 +581,6 @@ augroup vimrc
   " Turn on spell checking for file types that contain text
   autocmd FileType markdown,asciidoc,text setlocal spell
 augroup END
+
+" Always highlight mispellings with and underline and bold text
+hi SpellBad cterm=underline,bold

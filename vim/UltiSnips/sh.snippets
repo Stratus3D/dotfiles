@@ -21,3 +21,10 @@ TEMP_DIR=$(mktemp -dt "$(basename \$0).XXXXXX")
 echo "Created temp directory $TEMP_DIR"
 cd $TEMP_DIR
 endsnippet
+
+snippet errorexit "My own error exit function"
+error_exit() {
+  printf "%s\\n" "\$1"
+  exit "${2:-1}" # default exit status 1
+}
+endsnippet

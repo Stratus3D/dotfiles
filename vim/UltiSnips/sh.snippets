@@ -28,3 +28,21 @@ error_exit() {
   exit "${2:-1}" # default exit status 1
 }
 endsnippet
+
+snippet usage "Usage function template"
+usage() {
+  cat <<EOF
+Usage: $(basename "$0") [-h] [-v] [-f] -p param_value arg1 [arg2...]
+
+Script description here.
+
+Available options:
+
+-h, --help      Print this help and exit
+-v, --verbose   Print script debug info
+-f, --flag      Some flag description
+-p, --param     Some param description
+EOF
+  exit
+}
+endsnippet

@@ -30,6 +30,11 @@ if [ -z "$pages" ]; then
   exit 1
 fi
 
+if [[ ! "$pages" =~ ^[0-9]+$ ]]; then
+  echo "Number of pages must be specified as an integer"
+  exit 1
+fi
+
 if [ -z "$output_filename" ]; then
   echo "Output filename must be specified"
   exit 1

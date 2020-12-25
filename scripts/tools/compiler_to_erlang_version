@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+# This script must be run in the OTP repository directory
+
+version_to_find="7.3.2"
+
+git for-each-ref --format="%(refname)" refs/tags | while read -r tag
+do
+  vsn_mk=$(git show "$tag":lib/compiler/vsn.mk)
+  if grep "$version_to_find" <<< "$vsn_mk" > /dev/null; then
+    echo "Found version $version_to_find in tag $tag"
+  fi
+done

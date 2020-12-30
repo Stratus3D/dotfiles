@@ -10,6 +10,11 @@ IFS=$'\t\n' # Stricter IFS settings
 
 compiler_version=${1:-}
 
+if [ -z "$compiler_version" ]; then
+  echo "Compiler version must be specified"
+  exit 1
+fi
+
 git for-each-ref --format="%(refname)" refs/tags | while read -r tag
 do
   vsn_mk=$(git show "$tag":lib/compiler/vsn.mk)

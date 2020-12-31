@@ -6,7 +6,24 @@ set -euo pipefail
 #ORIGINAL_IFS=$IFS
 IFS=$'\t\n' # Stricter IFS settings
 
-# This script must be run in the OTP repository directory
+# If run in a directory with the Erlang/OTP Git repository, finds all the OTP
+# versions that have included the specified compiler version.
+#
+# Usage:
+#
+# compiler_to_erlang_version [compiler_version]
+#
+# Example:
+#
+# $ ./compiler_to_erlang_version 7.3.2
+#
+# This utility script is useful when you have a beam file and what to know what
+# version of Erlang it was compiled with. .beam files only contain the compiler
+# version, that is, the version of the compiler Erlang application that ships
+# with OTP.
+#
+# This script must be run in a directory containing a clone of the OTP
+# repository in order to find the Erlang/OTP tags to iterate over.
 
 compiler_version=${1:-}
 

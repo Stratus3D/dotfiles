@@ -24,6 +24,15 @@ IFS=$'\t\n' # Stricter IFS settings
 #
 # This script must be run in a directory containing a clone of the OTP
 # repository in order to find the Erlang/OTP tags to iterate over.
+#
+# Finding the compiler version used to generate a beam file is easy:
+#
+# $ erl
+# 1> beam_lib:chunks("path/to/compiled/module.beam", [compile_info]).
+#
+# The return value is a tuple, the second item is tuple containing a proplist.
+# The proplist has a key named `version` with a value that is the compiler
+# version.
 
 compiler_version=${1:-}
 

@@ -100,7 +100,6 @@ Offline documentation suitable for day to day use.
 
 ## TODO
 
-* Complete the `clone_all_bitbucket_repos.sh` script so that all private repos can be cloned.
 * Complete the `hosts_manager.sh` script.
 * Figure out how to setup docsets locally when running the setup script.
 * Make vim highlight HTML and scripts in HTML correctly.

@@ -22,6 +22,14 @@ echo "Created temp directory $TEMP_DIR"
 cd $TEMP_DIR
 endsnippet
 
+snippet debugflag "Code to turn on tracing when the DEBUG env var is set"
+# Enable xtrace if the DEBUG environment variable is set
+if [[ ${DEBUG-} =~ ^1|yes|true$ ]]; then
+  # Trace the execution of the script (debug)
+  set -o xtrace
+fi
+endsnippet
+
 snippet errorexit "My own error exit function"
 error_exit() {
   printf "%s\\n" "\$1"

@@ -77,7 +77,6 @@ Use asdf for version management ([https://github.com/asdf-vm/asdf](https://githu
 
 * [Rails](http://rubyonrails.org/)
 * [Phoenix](http://www.phoenixframework.org/)
-* [AngularJS](https://angularjs.org/)
 
 ## Documentation
 

@@ -47,7 +47,6 @@ Plugin 'mustache/vim-mustache-handlebars'
 
 " For frameworks
 "Plugin 'tpope/vim-rails'
-"Plugin 'burnettk/vim-angular'
 
 " For productivity
 Plugin 'tpope/vim-ragtag'

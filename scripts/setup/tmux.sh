@@ -6,7 +6,7 @@ set -euo pipefail
 IFS=$'\t\n' # Stricter IFS settings
 ORIGINAL_IFS=$IFS
 
-# Create tmux directory
+# Create tmux directory if it doesn't already exist
 mkdir -p $HOME/.tmux
 
 # Install plugins

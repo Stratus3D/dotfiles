@@ -5,3 +5,6 @@
 \set PROMPT2 '[more] %R > '
 
 \x auto
+
+-- Display query times in psql shell
+\timing

@@ -88,6 +88,9 @@ Plugin 'SirVer/ultisnips'
 " Easier movements
 Plugin 'easymotion/vim-easymotion'
 
+" Quickly run tests
+Plugin 'vim-test/vim-test'
+
 call vundle#end()
 
 filetype plugin indent on

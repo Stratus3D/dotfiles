@@ -448,6 +448,17 @@ let g:ale_elixir_elixir_ls_config = {
 " UltiSnips settings
 let g:UltiSnipsExpandTrigger=",<tab>"
 
+" My custom mapping
+function! RunTestFileOrLast()
+  if (test#test_file(expand('%s')) == 1)
+    echo "In a test file"
+    :TestFile
+  else
+    echo "Not in a test file, running last"
+    :TestLast
+  endif
+endfunction
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File type settings (file type-specific settings in vim/ftplugin/)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

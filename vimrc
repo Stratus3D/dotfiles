@@ -459,6 +459,9 @@ function! RunTestFileOrLast()
   endif
 endfunction
 
+" Run my custom RunTestFileOrLast function when I hit enter
+nnoremap <cr> :call RunTestFileOrLast()<cr>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File type settings (file type-specific settings in vim/ftplugin/)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

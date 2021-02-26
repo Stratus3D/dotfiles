@@ -460,7 +460,10 @@ function! RunTestFileOrLast()
 endfunction
 
 " Run my custom RunTestFileOrLast function when I hit enter
-nnoremap <cr> :call RunTestFileOrLast()<cr>
+nnoremap <CR> :call RunTestFileOrLast()<CR>
+
+" Run all the tests in the project when I hit shift enter
+nnoremap <S-CR> :TestSuite<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File type settings (file type-specific settings in vim/ftplugin/)

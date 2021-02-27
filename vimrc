@@ -499,5 +499,14 @@ augroup vimrc
   autocmd FileType markdown,asciidoc,text setlocal spell
 augroup END
 
+augroup test
+  autocmd!
+
+  " Run tests automatically when a file is saved
+  autocmd BufWrite * if test#exists() |
+    \   TestFile |
+    \ endif
+augroup END
+
 " Always highlight mispellings with and underline and bold text
 hi SpellBad cterm=underline,bold

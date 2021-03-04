@@ -60,7 +60,7 @@ OSX Only
 ### Browsers
 
 * Firefox
-* Chromium
+* Ungoogled Chromium (https://github.com/Eloston/ungoogled-chromium)
 
 ### Languages
 

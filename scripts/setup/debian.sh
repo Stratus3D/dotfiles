@@ -14,12 +14,20 @@ install_or_upgrade() {
     sudo apt-get -y install "$@"
 }
 
+# Make apt-get calls non-interactive
+export DEBIAN_FRONTEND=noninteractive
+
+###############################################################################
+# Purge bad packages that may be pre-installed
+###############################################################################
+
+# Remove chromium browser if it was installed with apt-get or snap
+sudo apt-get purge chromium-browser
+sudo snap remove chromium
+
 ###############################################################################
 # Install packages with apt-get
 ###############################################################################
-
-# Make apt-get calls non-interactive
-DEBIAN_FRONTEND=noninteractive
 
 # General dependencies
 install_or_upgrade autoconf

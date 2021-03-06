@@ -93,8 +93,11 @@ install_or_upgrade fonts-cmu
 # Skype
 install_or_upgrade skypeforlinux
 
-# Chromium
-install_or_upgrade chromium-browser
+# Ungoogled Chromium (Ubuntu Focal)
+echo 'deb http://download.opensuse.org/repositories/home:/ungoogled_chromium/Ubuntu_Focal/ /' | sudo tee /etc/apt/sources.list.d/home-ungoogled_chromium.list > /dev/null
+curl -s 'https://download.opensuse.org/repositories/home:/ungoogled_chromium/Ubuntu_Focal/Release.key' | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home-ungoogled_chromium.gpg > /dev/null
+sudo apt-get update
+install_or_upgrade ungoogled-chromium
 
 # Redshift dependencies
 install_or_upgrade autopoint intltool libdrm-dev libxcb1-dev libxcb-randr0-dev

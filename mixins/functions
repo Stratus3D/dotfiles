@@ -25,6 +25,11 @@ function yaml_to_json() {
 	ruby -ryaml -rjson -e 'puts YAML.load(STDIN.read).to_json'
 }
 
+# Easily create a temp directory and cd into it for quick experiments
+function t {
+  cd $(mktemp -d /tmp/$1.XXXX)
+}
+
 # Asciidoc to Markdown conversion function, since pandoc can't do this natively.
 # Pipe asciidoc to this function on STDIN, and it will write the markdown to
 # STDOUT. Based on

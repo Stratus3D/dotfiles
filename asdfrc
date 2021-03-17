@@ -3,3 +3,6 @@ legacy_version_file = yes
 
 # When upgrading upgrade to the latest release candidate version
 use_release_candidates = yes
+
+# Keep all downloads for convenience when working offline
+always_keep_download = yes

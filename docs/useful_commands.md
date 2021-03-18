@@ -1,6 +1,7 @@
 # Useful commands that I often forget
 
 Bash/Zshell Commands
+* `pcregrep --color='auto' -n '[^\x00-\x7F]' README.md` highlight lines in a file that contain non-ASCII characters. Alternatively use `grep` with the `-P` flag.
 * `echo "SMS notification" | sendmail -t '<phone number>@messaging.sprintpcs.com'` send an SMS notification by emailing the service's email to SMS gateway
 * `stat -c%s` show file size
 * `ln -s /dev/null ~/file/you/never/want/to/persist` good for ensure data written to the file by applications never persists

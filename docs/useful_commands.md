@@ -57,6 +57,9 @@ Bash/Zshell Commands
 * `nohup <long running command> &` leave a command running in the background. Even after logout.
 * `reset` clears the terminal and resets the terminal state.
 * `fc` open last command in `$EDITOR` for editing.
+Video Manipulation
+
+* `ffmpeg -i master_bedroom.mp4 -vcodec libx265 -crf 28 -vf scale=iw/1.5:-1 -an master_bedroom_small.mp4`. Scale from full HD to 720p, compress, and remove audio from a video clip. Good for real estate videos.
 
 OSX Commands
 

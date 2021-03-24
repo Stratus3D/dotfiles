@@ -28,7 +28,7 @@ Bash/Zshell Commands
 * `command <<< "input text"` can be used in place of `command < file.in`
 * `pkill <process_name>` kills all processes with the given name (e.g. `pkill HipChat` kills the HipChat app). The `-u` flag limits the killing to all processes with a certain euid (e.g. `pkill -u username HipChat`)
 * `kill <process_id>` kills the process identified by `<process_id>`. `-9` can be used to kill the process immediately
-* `echo -n ✘ | hexdump` to print the encoding of a character by the console. Useful for bash scripts
+* `echo -n ✘ | hexdump` to print the encoding of a character by the console. Useful for bash scripts. Also use `od` to dump octals.
 * `for f in directory/* ; do echo -e \\n\\n$f\\n 1>&1 ; cat $f ; done ;` print out all file name and file contents for all files in `directory`.
 * `ssh -vT git@github.com` useful for debugging SSH authentication issues.
 * `sudo -u git -H ssh -vT bitbucket.org` similar to the SSH command above, only test the connection for a specific user.

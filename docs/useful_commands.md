@@ -1,6 +1,6 @@
 # Useful commands that I often forget
 
-Bash/Zshell Commands
+## Bash/Zshell Command Line
 
 * `pcregrep --color='auto' -n '[^\x00-\x7F]' README.md` highlight lines in a file that contain non-ASCII characters. Alternatively use `grep` with the `-P` flag.
 * `file -i file.txt` print encoding of file. On OSX use `file -I`.
@@ -63,7 +63,7 @@ Video Manipulation
 
 * `ffmpeg -i master_bedroom.mp4 -vcodec libx265 -crf 28 -vf scale=iw/1.5:-1 -an master_bedroom_small.mp4`. Scale from full HD to 720p, compress, and remove audio from a video clip. Good for real estate videos.
 
-OSX Commands
+### OSX Commands
 
 * `su` needs to be `sudo su`
 * `| paste` needs to be `| paste -`
@@ -72,7 +72,52 @@ OSX Commands
 * `killall -CONT AppName` resume an app
 * `ditto -x -k <source> <destination dir>` unzip large file on OSX.
 
-Vim Commands
+### SSH/SCP Commands
+
+* `scp localfile user@remotehost:~` to copy `localfile` up to your home directory on `remotehost`.
+* `scp user@remotehost:remote/file local/directory/` to download `file` from `remotehost`
+
+### Git Commands
+
+* `git tag --contains <commit hash>` - Lists the tags that include the specified commit.
+* `git clean -X` - Remove files ignored by Git
+* `git checkout $(git rev-list -n 1 --before="2016-07-05 21:00" master)` - Checkout a branch at a specific point in time.
+* `git show $(git rev-list -n 1 --before="2016-07-05 21:00" master):path/to/file` - Show what a file looked like at a specific point in time on a specific branch.
+* `--ignore-all-space` - Ignore whitespace only changes when showing diff.
+* `git stash save --keep-index` - Stash everything except what is already staged.
+* `git add -p` - Stage specific changes in a file.
+* `git merge-base --is-ancestor <commit-1> <commit-2>` - Check if `commit-1` is an ancestor of `commit-2`.
+* `git describe --long` - version string suitable for Erlang module `-vsn` attributes.
+* `git log --grep="^prefix" --pretty='format:%h - %cn - %s'` find all commits with `prefix`
+* `git log -p --cc` show only resolved conflicts in merge commits
+* `git shortlog -sn --since='10 weeks' --until='2 weeks'` show number commits by each committer between two times
+* `git diff --word-diff` show changed words rather than lines
+* `git mergetool --tool-help` show merge tools available
+* `git checkout -m FILE` restores a file to it's unresolved state
+* `git push --force-with-lease` only overwrites changes in the remote branch if the remote branch has not changed since you last pushed to it.
+* `git diff master --name-only` list filenames of files that have been changed.
+
+### VirtualBox Commands
+
+* `VBoxManage unregistervm --delete <vm name>` Completely removes the VM and all associated files
+
+### Bash Flags
+
+* `set -x` - Turn on debug mode.
+* `set -e` - Exit if any command has a non-zero exit status. This ensures all commands that can fail are handled properly.
+* `set -u` - Exit if any variable is undefined (other than `$*` and `$@`, which are assumed to be available).
+* `set -o pipefail` - Causes any non-zero exit status in a pipeline to be the exit status of the entire pipeline.
+http://redsymbol.net/articles/unofficial-bash-strict-mode/
+
+### Curl Commands
+
+* `-w "%{http_code}\n"` - Show the status code of the response.
+
+### Pranks
+
+* `say -v whisper "I am watching you"`
+
+## Vim Commands
 
 * `vim -u NONE` start vim without any vimrc. `vim -u ~/.othervimrc` to specify a custom vimrc.
 * `vit` select contents of html tag. `v`isual select text `i`n a `t`ag. `dit` would delete the contents of the tag.
@@ -95,41 +140,16 @@ Vim Commands
 * `:r https://stratus3d.com/index.html` load remote file into buffer
 * `:e https://stratus3d.com/index.html` load remote file into new buffer
 
-SSH/SCP Commands
-
-* `scp localfile user@remotehost:~` to copy `localfile` up to your home directory on `remotehost`.
-* `scp user@remotehost:remote/file local/directory/` to download `file` from `remotehost`
-
-Make Targets and Commands
+## Make Targets and Commands
 
 * `print-%: ; @echo $*=$($*)` or `print-%: ; @echo '$(subst ','\'',$*=$($*))'` allows you to run `make print-<variable_name>` and print the value of any variable. Can be used without modifying the file in GNU make 3.82 or greater like this: `make --eval="print-%: ; @echo $*=$($*)" print-SOURCE_FILES`.
 
-Screen Commands
+## Screen Commands
 
 * `^A d` detach current window.
 * `screen -rd` to reattach a window. Follow the prompts if there are multiple windows.
 
-Git Commands
-
-* `git tag --contains <commit hash>` - Lists the tags that include the specified commit.
-* `git clean -X` - Remove files ignored by Git
-* `git checkout $(git rev-list -n 1 --before="2016-07-05 21:00" master)` - Checkout a branch at a specific point in time.
-* `git show $(git rev-list -n 1 --before="2016-07-05 21:00" master):path/to/file` - Show what a file looked like at a specific point in time on a specific branch.
-* `--ignore-all-space` - Ignore whitespace only changes when showing diff.
-* `git stash save --keep-index` - Stash everything except what is already staged.
-* `git add -p` - Stage specific changes in a file.
-* `git merge-base --is-ancestor <commit-1> <commit-2>` - Check if `commit-1` is an ancestor of `commit-2`.
-* `git describe --long` - version string suitable for Erlang module `-vsn` attributes.
-* `git log --grep="^prefix" --pretty='format:%h - %cn - %s'` find all commits with `prefix`
-* `git log -p --cc` show only resolved conflicts in merge commits
-* `git shortlog -sn --since='10 weeks' --until='2 weeks'` show number commits by each committer between two times
-* `git diff --word-diff` show changed words rather than lines
-* `git mergetool --tool-help` show merge tools available
-* `git checkout -m FILE` restores a file to it's unresolved state
-* `git push --force-with-lease` only overwrites changes in the remote branch if the remote branch has not changed since you last pushed to it.
-* `git diff master --name-only` list filenames of files that have been changed.
-
-Irssi Commands
+## Irssi Commands
 
 * `/server`
 * `/connect <server name>` - Connect to an IRC server (`/connect irc.freenode.net`)
@@ -139,42 +159,27 @@ Irssi Commands
 * `/wc` closes the current window. This parts from the current channel or disconnects from the current network.
 * `Alt + Left Arrow/Right Arrow` scroll through Irssi windows.
 
-VirtualBox Commands
-
-* `VBoxManage unregistervm --delete <vm name>` Completely removes the VM and all associated files
-
-Gcc Flags
+## Gcc Flags
 
 * `-ftrapv` trap signed integer overflows
 
-Erlang
+## Erlang
 
 * `erlang:system_info(port_limit).` show port/file limit
 * `:inet.i()` show ports being used by processes in the VM
 
-Erlang Flags
+### Erlang Flags
+
 * `bin_opt_info` print warnings and information about how binaries are used
 * `+pc unicode` increase the range of characters that the system will consider printable. Helpful when testing with unicode in the shell
 
     :hackney_trace.enable(:max, :io)
 
-Bash Flags
-
-* `set -x` - Turn on debug mode.
-* `set -e` - Exit if any command has a non-zero exit status. This ensures all commands that can fail are handled properly.
-* `set -u` - Exit if any variable is undefined (other than `$*` and `$@`, which are assumed to be available).
-* `set -o pipefail` - Causes any non-zero exit status in a pipeline to be the exit status of the entire pipeline.
-http://redsymbol.net/articles/unofficial-bash-strict-mode/
-
-Curl Commands
-
-* `-w "%{http_code}\n"` - Show the status code of the response.
-
-AWK and sed
+## AWK and sed
 
 * `#!/usr/bin/sed 1d .` - prints all but the first line of the sed file.
 
-Postgres
+## Postgres
 
 * `SHOW hba_file;` - Show the path to `pg_hba.conf` config file.
 * `\du` - Show all roles

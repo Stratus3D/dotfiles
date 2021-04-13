@@ -231,7 +231,7 @@ source gnome.sh
 
 # Assume we are using Gnome Nautilus file manager
 # Easy right click image conversion operations
-install_or_upgrade  nautilus-image-converter
+install_or_upgrade nautilus-image-converter
 
 # Install other software using custom install scripts
 run_install_scripts

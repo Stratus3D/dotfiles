@@ -226,8 +226,9 @@ install_or_upgrade k2pdfopt
 # For converting scanned PDFs to text PDFs
 install_or_upgrade ocrmypdf
 
-# Assume we are using Gnome
-source gnome.sh
+if [ "$XDG_CURRENT_DESKTOP" = "GNOME" ]; then
+  source gnome.sh
+fi
 
 # Assume we are using Gnome Nautilus file manager
 # Easy right click image conversion operations

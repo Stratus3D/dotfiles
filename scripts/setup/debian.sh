@@ -228,6 +228,8 @@ install_or_upgrade ocrmypdf
 
 if [ "$XDG_CURRENT_DESKTOP" = "GNOME" ]; then
   source gnome.sh
+elif [ "$XDG_CURRENT_DESKTOP" = "LXQt" ] || [ "$XDG_CURRENT_DESKTOP" = "LXDE" ]; then
+  ./debian/lxde
 fi
 
 # Assume we are using Gnome Nautilus file manager

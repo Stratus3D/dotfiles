@@ -227,7 +227,7 @@ install_or_upgrade k2pdfopt
 install_or_upgrade ocrmypdf
 
 if [ "$XDG_CURRENT_DESKTOP" = "GNOME" ]; then
-  source gnome.sh
+  ./debian/gnome
 elif [ "$XDG_CURRENT_DESKTOP" = "LXQt" ] || [ "$XDG_CURRENT_DESKTOP" = "LXDE" ]; then
   ./debian/lxde
 fi

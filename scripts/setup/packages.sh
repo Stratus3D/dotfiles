@@ -35,9 +35,6 @@ pip3 install spotdl
 # Node.JS Packages
 ###############################################################################
 
-# fb-messenger-cli for messaging
-npm install -g fb-messenger-cli
-
 # Install jslint for linting
 npm install -g jslint
 

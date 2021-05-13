@@ -109,12 +109,6 @@ install_or_upgrade libwxgtk3.0-dev libpng-dev
 # Other packages needed for Erlang
 install_or_upgrade libgl1-mesa-dev libglu1-mesa-dev
 
-# Love 2D for game development
-# These are needed by love 2d
-install_or_upgrade libtool
-sudo add-apt-repository ppa:bartbes/love-stable
-install_or_upgrade love
-
 # Photo editing
 install_or_upgrade gimp
 

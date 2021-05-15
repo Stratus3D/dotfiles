@@ -132,9 +132,6 @@ sudo add-apt-repository ppa:zeal-developers/ppa
 sudo apt-get update
 install_or_upgrade zeal
 
-# ReText
-install_or_upgrade retext
-
 # Enable DVD playback
 install_or_upgrade libdvd-pkg
 

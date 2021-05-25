@@ -132,9 +132,6 @@ install_or_upgrade zeal
 # Enable DVD playback
 install_or_upgrade libdvd-pkg
 
-# Install Pandora CLI
-install_or_upgrade pianobar
-
 # Install Android Debug Bridge
 install_or_upgrade android-tools-adb
 install_or_upgrade android-sdk-platform-tools

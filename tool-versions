@@ -4,6 +4,6 @@ lua 5.3.1
 ruby 2.4.6
 nodejs 10.24.0
 postgres 9.5.2
-rebar 3.4.1
+rebar 3.16.1
 python 3.7.4 2.7.13
 yarn 1.16.0

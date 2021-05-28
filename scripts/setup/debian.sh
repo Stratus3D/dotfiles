@@ -113,7 +113,7 @@ install_or_upgrade graphviz
 install_or_upgrade exiftool
 
 # Needed for Ruby and PostgreSQL
-install_or_upgrade libffi-dev bison libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libgdbm5 libgdbm-dev
+install_or_upgrade libffi-dev bison libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libgdbm6 libgdbm-dev
 
 # Needed for capybara
 install_or_upgrade libqt4-dev libqtwebkit-dev

@@ -122,7 +122,7 @@ install_or_upgrade libqt4-dev libqtwebkit-dev
 install_or_upgrade libpq-dev # development package
 
 # Install pip so we can install python packages easily
-install_or_upgrade python-pip
+install_or_upgrade python3-pip
 
 # Zeal Docs
 sudo add-apt-repository ppa:zeal-developers/ppa

@@ -60,12 +60,6 @@ install_or_upgrade percona-toolkit
 # For clipboard access on the command line
 install_or_upgrade xsel
 
-# VirtualBox for VMs
-sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib"
-wget -q -O - https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo apt-key add -
-sudo apt-get update
-install_or_upgrade virtualbox-5.2
-
 # Shell script linting
 install_or_upgrade shellcheck
 

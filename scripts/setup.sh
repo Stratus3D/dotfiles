@@ -33,12 +33,6 @@ if [ ! -d $DOTFILES_DIR ]; then
     # update the dotfiles. Which means if we run this script again, the else
     # clause below will fail.
   fi
-else
-  cd $DOTFILES_DIR
-  # We could have modifications in the repository, so we stash them
-  git stash
-  git pull origin master
-  git stash pop
 fi
 
 # Change to the dotfiles directory either way

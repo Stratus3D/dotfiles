@@ -40,9 +40,7 @@ Configurations for all the tools are need are checked into this repository. All 
 
 ## Software
 
-This is software that I need for my day-to-day programming work. I try to keep this list updated with the latest software I am using. This allows me to quickly setup new development machines.
-
-### Tools
+This is software that I use for my day-to-day work. All of this is installed via the `setup.sh` script.
 
 * Git ([https://git-scm.com/](https://git-scm.com/))
 * Vim ([http://www.vim.org/](http://www.vim.org/))
@@ -52,16 +50,12 @@ This is software that I need for my day-to-day programming work. I try to keep t
 * Tmuxinator ([https://github.com/tmuxinator/tmuxinator](https://github.com/tmuxinator/tmuxinator))
 * Exuberant Ctags ([http://ctags.sourceforge.net/](http://ctags.sourceforge.net/))
 * Dash/ZealDocs ([http://zealdocs.org/](http://zealdocs.org/))
+* Ungoogled Chromium ([https://github.com/Eloston/ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium))
 
 OSX Only
 
 * ipmenulet ([https://github.com/mcandre/IPMenulet](https://github.com/mcandre/IPMenulet))
 * ShiftIt ([https://github.com/fikovnik/ShiftIt](https://github.com/fikovnik/ShiftIt))
-
-### Browsers
-
-* Firefox
-* Ungoogled Chromium (https://github.com/Eloston/ungoogled-chromium)
 
 ### Languages
 

@@ -143,9 +143,6 @@ brew_install_or_upgrade pandoc
 # WxWidgets for Erlang
 brew_install_or_upgrade wxmac --with-static --with-stl --universal
 
-# Install pianobar for music
-brew_install_or_upgrade pianobar
-
 # For JSON pretty printing in the quicklook window
 brew cask install quicklook-json
 

@@ -119,8 +119,6 @@ install_or_upgrade libpq-dev # development package
 install_or_upgrade python3-pip
 
 # Zeal Docs
-sudo add-apt-repository ppa:zeal-developers/ppa
-sudo apt-get update
 install_or_upgrade zeal
 
 # Enable DVD playback

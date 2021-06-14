@@ -89,7 +89,7 @@ install_or_upgrade autopoint intltool libdrm-dev libxcb1-dev libxcb-randr0-dev
 #sudo apt-get install -y libgeoclue-dev geoclue-hostip
 
 # WxWidgets is needed for Erlang
-install_or_upgrade libwxgtk3.0-dev libpng-dev
+install_or_upgrade libwxgtk3.0-gtk3-dev libpng-dev
 
 # Other packages needed for Erlang
 install_or_upgrade libgl1-mesa-dev libglu1-mesa-dev

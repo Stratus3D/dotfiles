@@ -103,7 +103,7 @@ set wildmode=full
 " Turn on cursor column highlighting
 set cursorcolumn
 
-" Don't beep
+" Use a visual bell instead of an audible one
 set visualbell
 set noerrorbells
 

@@ -107,6 +107,10 @@ set cursorcolumn
 set visualbell
 set noerrorbells
 
+" But disable even the visible bell as the terminal flashing on OSX is
+" annoying
+set t_vb=
+
 " The mouse is evil
 set mouse=
 

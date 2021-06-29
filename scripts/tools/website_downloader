@@ -1,4 +1,4 @@
-#! /bin/bash -
+#!/usr/bin/env bash
 
 # Unoffical Bash "strict mode"
 # http://redsymbol.net/articles/unofficial-bash-strict-mode/
@@ -10,7 +10,7 @@ DEFAULT_DOMAIN=stratus3d.com
 
 usage() {
     cat <<EOF
-    Usage: site_sucker.sh [command]
+    Usage: website_downloader [command]
 
     Commands:
     site [url] [destination dir]         Download all pages on the domain

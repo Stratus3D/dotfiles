@@ -23,6 +23,12 @@ usage() {
 EOF
 }
 
+error_exit() {
+  printf "Error: %s\\n\\n" "$@"
+  usage
+  exit 1
+}
+
 download() {
   url=$1;
   #domain=?

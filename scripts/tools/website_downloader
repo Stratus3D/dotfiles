@@ -59,6 +59,17 @@ download() {
     #--load-cookies=$cookies_file
 }
 
+url=${2:-}
+directory=${3:-}
+
+if [ -z "$url" ]; then
+  error_exit "URL must be provided as first argument"
+fi
+
+if [ -z "$directory" ]; then
+  error_exit "Output directory must be provided as second argument"
+fi
+
 if [ $# -gt 0 ]; then
     lower_command=$(echo "$1" | awk '{print tolower($0)}');
 

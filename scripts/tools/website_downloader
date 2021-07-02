@@ -6,8 +6,6 @@ set -euo pipefail
 IFS=$'\t\n' # Stricter IFS settings
 #ORIGINAL_IFS=$IFS
 
-DEFAULT_DOMAIN=stratus3d.com
-
 usage() {
     cat <<EOF
     Usage: website_downloader [command]
@@ -76,9 +74,6 @@ if [ $# -gt 0 ]; then
     case $lower_command in
         'site')
             if [ $# -gt 2 ]; then
-                url=${2:-$DEFAULT_DOMAIN}
-                directory=${3:-$HOME}
-
                 download "$url" "$directory"
             else
                 echo "You must provide a URL and a destination directory"

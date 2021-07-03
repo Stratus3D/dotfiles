@@ -27,6 +27,32 @@ error_exit() {
   exit 1
 }
 
+get_value() {
+  raw_flag=$1
+  first=${1#*'='}
+  second=$2
+
+  # If the raw flag contains an equals sign and the value after it (first) is
+  # not null return first, otherwise return the next argument (second)
+  if [[ "$raw_flag" == *=* ]] && [ -n "$first" ]; then
+    echo "$first"
+  else
+    if [[ "$second" == -* ]]; then
+      echo "$second"
+    else
+      echo "$second"
+    fi
+  fi
+}
+
+get_shift_count() {
+  if [[ "$1" == *=* ]]; then
+    echo "1"
+  else
+    echo "2"
+  fi
+}
+
 download() {
   url=$1;
   #domain=?

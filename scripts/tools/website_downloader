@@ -83,8 +83,8 @@ download() {
     #--load-cookies=$cookies_file
 }
 
-url=${2:-}
-directory=${3:-}
+url=${1:-}
+directory=${2:-}
 
 if [ -z "$url" ]; then
   error_exit "URL must be provided as first argument"

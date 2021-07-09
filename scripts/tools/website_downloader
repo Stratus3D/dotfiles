@@ -94,23 +94,64 @@ if [ -z "$directory" ]; then
   error_exit "Output directory must be provided as second argument"
 fi
 
-if [ $# -gt 0 ]; then
-    lower_command=$(echo "$1" | awk '{print tolower($0)}');
+# Base command
+command_array=("$url" --recursive)
 
-    case $lower_command in
-        'site')
-            if [ $# -gt 2 ]; then
-                download "$url" "$directory"
-            else
-                echo "You must provide a URL and a destination directory"
-            fi;;
-        'subdirectory')
-            print_fixmes;;
-        'single_page')
-            print_optimizes;;
+shift 2
+
+while :; do
+    case ${1:-} in
+        -h|-\?|--help)
+            usage
+            exit
+            ;;
+        -r|--path-regex|--path-regex=*)
+            path_regex=$(get_value "$1" "${2:-}")
+            shift $(get_shift_count "$1")
+
+            # Add path regex flags
+            command_array+=()
+            ;;
+        -n|--no-overwrite)
+            shift
+
+            # Add flags to tell wget not to overwrite existing files
+            command_array+=(--no-clobber)
+            ;;
+        -s|--rate-limit|--rate-limit=*)
+            rate=$(get_value "$1" "${2:-}")
+            shift $(get_shift_count "$1")
+
+            # Add flags to tell wget to rate limit requests
+            command_array+=(--wait="$rate" '--limit-rate=10K')
+            ;;
+        -l|--fully-local)
+            shift
+
+            # Add flags to tell wget to format pages for local viewing
+            # (with localized links and downloaded assets)
+            command_array+=(--page-requisites --html-extension
+            --convert-links '--restrict-file-names=windows' --mirror --adjust-extension)
+            ;;
+        -d|--only-subdirectory)
+            shift
+
+            command_array+=(--no-parent "$url")
+            ;;
+        --)
+            shift
+            break
+            ;;
         *)
-            usage;;
+            if [ -z "${1:-}" ]; then
+                break
+            else
+                echo "Unknown option ${1:-}"
+                error_exit
+            fi
     esac
-else
-    usage;
-fi
+done
+
+set -x
+wget "${command_array[@]}"
+set +x

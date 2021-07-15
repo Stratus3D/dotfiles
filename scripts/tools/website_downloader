@@ -8,16 +8,15 @@ IFS=$'\t\n' # Stricter IFS settings
 
 usage() {
     cat <<EOF
-    Usage: website_downloader [command]
-
-    Commands:
-    site [url] [destination dir]         Download all pages on the domain
-    subdirectory [url] [destination dir] Download URL and sub pages
-    single_page [url] [destination dir]  Download a single URL
+    Usage: website_downloader [url] [destination_dir] [options]
 
     Options:
-    --no-localize                        Don't localize links. With this option
-                                         URLs may not work on your local copy
+    --localize - sets options needed for a complete local copy of the static
+    website with localized links
+    --overwrite - overwrite any existing local files when downloading the website
+    --rate-limit - rate limit requests
+    --only-subdirectory - limit downloads to the subdirectory specified in the URL
+    --path-regex regex - only download paths matching regex
 EOF
 }
 

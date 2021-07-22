@@ -93,8 +93,10 @@ if [ -z "$directory" ]; then
   error_exit "Output directory must be provided as second argument"
 fi
 
-# Base command
-command_array=("$url" --recursive)
+domain="$(echo "$url" | awk -F[/:] '{print $4}')"
+
+# Base command: follow links and download the whole site
+command_array=("$url" --recursive --mirror)
 
 shift 2
 

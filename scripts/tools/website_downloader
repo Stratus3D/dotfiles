@@ -117,6 +117,8 @@ while :; do
             shift
 
             # Add flags to tell wget not to overwrite existing files
+            #
+            # --no-clobber - Don't overwrite existing files when downloading
             command_array+=(--no-clobber)
             ;;
         -s|--rate-limit|--rate-limit=*)
@@ -131,12 +133,21 @@ while :; do
 
             # Add flags to tell wget to format pages for local viewing
             # (with localized links and downloaded assets)
+            #
+            # --page-requisites - Download CSS and other assets
+            # --html-extension - Save files with the .html extension
+            # --convert-links - Change URLs in links so they work offline
+            # --restrict-file-names=windows - modify filenames so they will work in Windows
+            # --adjust-extension - Save HTML and CSS with the proper extensions
             command_array+=(--page-requisites --html-extension
             --convert-links '--restrict-file-names=windows' --mirror --adjust-extension)
             ;;
         -d|--only-subdirectory)
             shift
 
+            # Only download pages from a specific subdirectory
+            #
+            # --no-parent - Don't follow links outside the directory
             command_array+=(--no-parent "$url")
             ;;
         --)

@@ -52,35 +52,11 @@ get_shift_count() {
   fi
 }
 
-download() {
-  url=$1;
-  #domain=?
-  cookies_file=~/cookies.txt
-
-  # Follow links and download the whole site
-  wget "$url" --recursive \
-      # Don't overwrite files when downloading
-    --no-clobber \
-    # Download CSS and other assets
-    --page-requisites \
-    # Save files with the .html extension
-    --html-extension \
-    # Change URLs in links so they work offline
-    --convert-links \
-    # modify filenames so they will work in Windows
-    --restrict-file-names=windows \
-    # Limit the download to this directory
-    --domains $domain \
-    # Don't follow links outside the directory
-    --no-parent "$url" \
-    --mirror \
-    # Save HTML and CSS with the proper extensions
-    --adjust-extension \
-    -e robots=off \
-    --wait=9 --limit-rate=10K \
-    # Use cookies from file. Usefully when dealing with site behind a login page
-    #--load-cookies=$cookies_file
-}
+#cookies_file="$HOME/cookies.txt"
+#-e robots=off \
+#--wait=9 --limit-rate=10K \
+# Use cookies from file. Usefully when dealing with site behind a login page
+#--load-cookies=$cookies_file
 
 url=${1:-}
 directory=${2:-}

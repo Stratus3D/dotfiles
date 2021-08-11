@@ -7,16 +7,24 @@ IFS=$'\t\n' # Stricter IFS settings
 #ORIGINAL_IFS=$IFS
 
 usage() {
-    cat <<EOF
+    cat <<EOF | awk 'NR==1 && match($0, /^ +/){n=RLENGTH} {print substr($0, n+1)}'
     Usage: website_downloader [url] [destination_dir] [options]
 
     Options:
-    --localize - sets options needed for a complete local copy of the static
-    website with localized links
-    --overwrite - overwrite any existing local files when downloading the website
-    --rate-limit - rate limit requests
-    --only-subdirectory - limit downloads to the subdirectory specified in the URL
-    --path-regex regex - only download paths matching regex
+
+      --localize - sets options needed for a complete local copy of the static
+      website with localized links
+      --overwrite - overwrite any existing local files when downloading the website
+      --rate-limit - rate limit requests
+      --only-subdirectory - limit downloads to the subdirectory specified in the URL
+      --path-regex regex - only download paths matching regex
+
+    Examples:
+
+      Download only the blog/ section of stratus3d.com and localize all links and download css/js
+      for a fully working local copy:
+
+      $ website_downloader http://stratus3d.com/blog/ stratus3d_posts --only-subdirectory --localize
 EOF
 }
 

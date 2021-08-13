@@ -62,7 +62,6 @@ get_shift_count() {
 
 #cookies_file="$HOME/cookies.txt"
 #-e robots=off \
-#--wait=9 --limit-rate=10K \
 # Use cookies from file. Usefully when dealing with site behind a login page
 #--load-cookies=$cookies_file
 

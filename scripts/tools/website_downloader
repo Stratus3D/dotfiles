@@ -94,7 +94,10 @@ while :; do
             shift $(get_shift_count "$1")
 
             # Add path regex flags
-            command_array+=()
+            #
+            # --accept-regex - Accept all pages with a path matching the regex
+            # specified
+            command_array+=(--accept-regex "$path_regex")
             ;;
         -n|--no-overwrite)
             shift

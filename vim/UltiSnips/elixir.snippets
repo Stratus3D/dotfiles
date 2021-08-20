@@ -13,3 +13,7 @@ snippet dbgall "Add dbg tracing code for all types of events for the current pro
 :dbg.p(${1:self()}, [:all])
 :dbg.tpl(${2::_}, ${3::_}, [{:_, [], [{:return_trace}]}])
 endsnippet
+
+snippet dbgstop "Stop and clear dbg tracing"
+:dbg.stop_clear()
+endsnippet

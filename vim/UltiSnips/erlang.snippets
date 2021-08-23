@@ -1,0 +1,5 @@
+snippet dbgcalls "Add dbg tracing code for tracing calls in the current process"
+dbg:tracer(),
+dbg:p(${1:self()}, [c]),
+dbg:tpl(${2:'_'}, ${3:'_'}, [{'_', [], [{return_trace}]}])${4:,}
+endsnippet

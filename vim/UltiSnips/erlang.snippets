@@ -3,3 +3,9 @@ dbg:tracer(),
 dbg:p(${1:self()}, [c]),
 dbg:tpl(${2:'_'}, ${3:'_'}, [{'_', [], [{return_trace}]}])${4:,}
 endsnippet
+
+snippet dbgall "Add dbg tracing code for all types of events for the current process"
+dbg:tracer()
+dbg:p(${1:self()}, [all])
+dbg:tpl(${2:'_'}, ${3:'_'}, [{'_', [], [{:return_trace}]}])${4:,}
+endsnippet

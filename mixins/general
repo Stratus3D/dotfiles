@@ -23,7 +23,9 @@ if [ "$XDG_CURRENT_DESKTOP" = "LXDE" ]; then
 fi
 
 # Erlang `erl` options
-export ERL_AFLAGS="+pc unicode"
+# +pc unicode - something related to display of unicode
+# -kernel shell_history enabled - Enable shell history in the `erl` shell
+export ERL_AFLAGS="+pc unicode -kernel shell_history enabled"
 
 # Set CDPATH so we can easily navigate to directories in ~/devel and ~
 # This variable is not exported because we only want this set in the interactive

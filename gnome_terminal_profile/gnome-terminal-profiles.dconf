@@ -1,0 +1,47 @@
+[/]
+default='4e32fb98-d3a4-475c-8604-805d87ba1ba9'
+list=['7cb15d7a-260e-48bb-ae67-18ff5a7d16a9', '4e32fb98-d3a4-475c-8604-805d87ba1ba9']
+
+[:4e32fb98-d3a4-475c-8604-805d87ba1ba9]
+allow-bold=true
+background-color='rgb(29,32,33)'
+bold-color='#ebebdbdbb2b2'
+bold-color-same-as-fg=true
+cell-height-scale=1.1000000000000001
+cell-width-scale=1.1000000000000001
+cursor-background-color='#ebebdbdbb2b2'
+cursor-colors-set=true
+cursor-foreground-color='#282828282828'
+custom-command='/bin/zsh'
+font='Inconsolata Medium 11'
+foreground-color='#ebebdbdbb2b2'
+palette=['#282828282828', '#cccc24241d1d', '#989897971a1a', '#d7d799992121', '#454585858888', '#b1b162628686', '#68689d9d6a6a', '#a8a899998484', '#929283837474', '#fbfb49493434', '#b8b8bbbb2626', '#fafabdbd2f2f', '#8383a5a59898', '#d3d386869b9b', '#8e8ec0c07c7c', '#ebebdbdbb2b2']
+preserve-working-directory='never'
+use-custom-command=true
+use-system-font=false
+use-theme-background=false
+use-theme-colors=false
+use-theme-transparency=false
+visible-name='Gruvbox Dark'
+
+[:7cb15d7a-260e-48bb-ae67-18ff5a7d16a9]
+allow-bold=true
+background-color='rgb(242,229,188)'
+bold-color='#3c3c38383636'
+bold-color-same-as-fg=true
+cell-height-scale=1.1000000000000001
+cell-width-scale=1.1000000000000001
+cursor-background-color='#3c3c38383636'
+cursor-colors-set=true
+cursor-foreground-color='#fbfbf1f1c7c7'
+custom-command='/bin/zsh'
+font='Inconsolata Medium 11'
+foreground-color='#3c3c38383636'
+palette=['#fbfbf1f1c7c7', '#cccc24241d1d', '#989897971a1a', '#d7d799992121', '#454585858888', '#b1b162628686', '#68689d9d6a6a', '#7c7c6f6f6464', '#929283837474', '#9d9d00000606', '#797974740e0e', '#b5b576761414', '#070766667878', '#8f8f3f3f7171', '#42427b7b5858', '#3c3c38383636']
+preserve-working-directory='never'
+use-custom-command=true
+use-system-font=false
+use-theme-background=false
+use-theme-colors=false
+use-theme-transparency=false
+visible-name='Gruvbox Light'

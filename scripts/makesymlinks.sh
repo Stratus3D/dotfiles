@@ -156,24 +156,6 @@ git clone https://github.com/gmarik/Vundle.vim.git $dotfiles/vim/bundle/Vundle.v
 # Install vundle and all other plugins
 vim +PluginInstall +qall
 
-# Link gnome terminal profile if we are on gnome
-if [ -d $HOME/.gconf/ ]; then
-    terminal_app=$HOME/.gconf/apps/gnome-terminal
-    profiles=$terminal_app/profiles/
-    echo "Linking gnome profile..."
-
-    # Link Solarized profile
-    mkdir -p $profiles/SolarizedLight
-    mkdir -p $profiles/SolarizedDark
-    symlink_file_if_missing $dotfiles/gnome_terminal_profile/profiles/SolarizedLight/%gconf.xml $profiles/SolarizedLight/%gconf.xml
-    symlink_file_if_missing $dotfiles/gnome_terminal_profile/profiles/SolarizedDark/%gconf.xml $profiles/SolarizedDark/%gconf.xml
-
-    # Link global gconf.xml
-    mkdir -p $terminal_app/global
-    symlink_file_if_missing $dotfiles/gnome_terminal_profile/global/%gconf.xml $terminal_app/global/%gconf.xml
-    echo "Gnome profile linked"
-fi
-
 # Symlink hosts_manager hosts profiles directory
 hosts_dir="$HOME/.hosts"
 hosts_source_dir="$dotfiles/hosts_profiles"

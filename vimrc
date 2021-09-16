@@ -474,7 +474,7 @@ nnoremap <S-CR> :TestSuite<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 autocmd BufRead,BufNewFile *.txt setfiletype text
-autocmd BufRead,BufNewFile sys.config,*.app.src,*.app,*.erl,*.es,*.hrl,*.yaws,*.xrl,*.spec,elvis.config setfiletype erlang
+autocmd BufRead,BufNewFile sys.config,*.app.src,*.app,*.erl,*.es,*.hrl,*.yaws,*.xrl,*.spec,elvis.config,rebar.lock setfiletype erlang
 autocmd BufRead,BufNewFile Gemfile,Vagrantfile set filetype=ruby
 autocmd BufRead,BufNewFile Dockerfile,*.bats set filetype=sh
 autocmd BufRead,BufNewFile Jenkinsfile set filetype=groovy

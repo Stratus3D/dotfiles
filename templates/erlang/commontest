@@ -1,10 +1,7 @@
 %%%-------------------------------------------------------------------
-%%% @author $author
-%%% @copyright (C) $year, $company
 %%% @doc
 %%%
 %%% @end
-%%% Created : $fulldate
 %%%-------------------------------------------------------------------
 -module($basename).
 
@@ -26,10 +23,7 @@
          %% TODO: test case names go here
         ]).
 
--include_lib("proper/include/proper.hrl").
 -include_lib("common_test/include/ct.hrl").
-
--define(PROPTEST(M,F), true = proper:quickcheck(M:F())).
 
 all() ->
     [

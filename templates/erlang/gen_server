@@ -22,6 +22,9 @@
 
 -record(state, {}).
 
+-type state() :: #state{}.
+-type from() :: {pid(), Tag :: term()}.
+
 %%%===================================================================
 %%% API
 %%%===================================================================
@@ -32,7 +35,7 @@
 %%
 %% @end
 %%--------------------------------------------------------------------
--spec start_link() -> {ok, Pid} | ignore | {error, Error}
+-spec start_link() -> {ok, Pid :: pid()} | ignore | {error, Error :: any()}.
 
 start_link() ->
     gen_server:start_link({local, ?SERVER}, ?MODULE, [], []).
@@ -41,46 +44,47 @@ start_link() ->
 %%% gen_server callbacks
 %%%===================================================================
 
--spec init(Args) -> {ok, State} |
-                    {ok, State, Timeout} |
+-spec init(Args :: list()) -> {ok, State :: state()} |
+                    {ok, State :: state(), Timeout :: integer()} |
                     ignore |
-                    {stop, Reason}
+                    {stop, Reason :: any()}.
 
 init([]) ->
     {ok, #state{}}.
 
--spec handle_call(Request, From, State) ->
-                                  {reply, Reply, State} |
-                                  {reply, Reply, State, Timeout} |
-                                  {noreply, State} |
-                                  {noreply, State, Timeout} |
-                                  {stop, Reason, Reply, State} |
-                                  {stop, Reason, State}
+-spec handle_call(Request :: any(), From :: from(), State :: state()) ->
+                                  {reply, Reply :: any(), State :: state()} |
+                                  {reply, Reply :: any(), State :: state(), Timeout :: integer()} |
+                                  {noreply, State :: state()} |
+                                  {noreply, State :: state(), Timeout :: integer()} |
+                                  {stop, Reason :: any(), Reply :: any(), State :: state()} |
+                                  {stop, Reason :: any(), State :: state()}.
 
 handle_call(_Request, _From, State) ->
     Reply = ok,
     {reply, Reply, State}.
 
--spec handle_cast(Msg, State) -> {noreply, State} |
-                                 {noreply, State, Timeout} |
-                                 {stop, Reason, State}
+-spec handle_cast(Msg :: any(), State :: state()) -> {noreply, State :: state()} |
+                                 {noreply, State :: state(), Timeout :: integer()} |
+                                 {stop, Reason :: any(), State :: state()}.
 
 handle_cast(_Msg, State) ->
     {noreply, State}.
 
--spec handle_info(Info, State) -> {noreply, State} |
-                                  {noreply, State, Timeout} |
-                                  {stop, Reason, State}
+-spec handle_info(Info :: any(), State :: state()) -> {noreply, State :: state()} |
+                                  {noreply, State :: state(), Timeout :: integer()} |
+                                  {stop, Reason :: any(), State :: state()}.
 
 handle_info(_Info, State) ->
     {noreply, State}.
 
--spec terminate(Reason, State) -> void()
+-spec terminate(Reason :: any(), State :: state()) -> void().
 
 terminate(_Reason, _State) ->
     ok.
 
--spec code_change(OldVsn, State, Extra) -> {ok, NewState}
+-spec code_change(OldVsn :: any(), State :: state(), Extra :: any()) ->
+    {ok, NewState :: state()}.
 
 code_change(_OldVsn, State, _Extra) ->
         {ok, State}.

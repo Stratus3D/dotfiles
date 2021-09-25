@@ -19,7 +19,7 @@
 %%% API functions
 %%%===================================================================
 
--spec start_link() -> {ok, Pid} | ignore | {error, Error}
+-spec start_link() -> {ok, Pid :: pid()} | ignore | {error, Error :: any()}.
 
 start_link() ->
     supervisor:start_link({local, ?SERVER}, ?MODULE, []).
@@ -31,9 +31,10 @@ start_link() ->
 %%--------------------------------------------------------------------
 %% @private
 %%--------------------------------------------------------------------
--spec init(Args) -> {ok, {SupFlags, [ChildSpec]}} |
-                    ignore |
-                    {error, Reason}
+-spec init(Args :: list()) ->
+    {ok, {SupFlags :: supervisor:sup_flags(), [ChildSpec :: supervisor:child_spec()]}} |
+    ignore |
+    {error, Reason :: any()}.
 
 init([]) ->
     RestartStrategy = one_for_one,

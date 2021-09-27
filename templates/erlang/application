@@ -18,11 +18,10 @@
 %% @private
 %%--------------------------------------------------------------------
 
--spec start(StartType, StartArgs) -> {ok, Pid} |
-                                     {ok, Pid, State} |
-                                     {error, Reason}
-     StartType = normal | {takeover, Node} | {failover, Node}
-     StartArgs = term().
+-spec start(StartType :: application:start_type(), StartArgs :: term()) ->
+    {ok, Pid :: pid()} |
+    {ok, Pid :: pid(), State :: any()} |
+    {error, Reason :: any()}.
 
 start(_StartType, _StartArgs) ->
     case 'TopSupervisor':start_link() of
@@ -36,7 +35,7 @@ start(_StartType, _StartArgs) ->
 %% @private
 %%--------------------------------------------------------------------
 
--spec stop(State) -> void().
+-spec stop(State :: term()) -> void().
 
 stop(_State) ->
     ok.

@@ -7,3 +7,9 @@
 # no diff at all.
 *.png diff=exif
 *.jpg diff=exif
+*.ico diff=exif
+*.pdf diff=exif
+*.tiff diff=exif
+*.eps diff=exif
+*.bmp diff=exif
+*.raw diff=exif

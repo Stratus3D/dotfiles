@@ -68,6 +68,9 @@ Plugin 'ervandew/supertab'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 
+" Interactive Graphviz
+Plugin 'wannesm/wmgraphviz.vim'
+
 " Not needed anymore
 "Plugin 'altercation/vim-colors-solarized'
 

@@ -1,5 +1,5 @@
 erlang 24.0.6
-elixir 1.11.2-otp-23
+elixir 1.12.3-otp-24
 lua 5.3.1
 ruby 2.4.6
 nodejs 10.24.0

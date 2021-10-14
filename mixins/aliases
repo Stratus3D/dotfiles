@@ -105,3 +105,6 @@ alias esh='rlwrap erl -oldshell'
 
 # iex alias for a better Elixir shell with a readline wrapper
 alias iex='rlwrap -afoo iex'
+
+# For faster flow on Erlang projects
+alias re='rebar3'

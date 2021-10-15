@@ -233,6 +233,10 @@ map ; :
 " A more convenient buffer write command
 map <Leader>s <esc>:w<CR>
 
+" Mappings for toggling between line numbers
+map <leader>n :set nornu number<CR>
+map <leader>r :set rnu number relativenumber<CR>
+
 " Not sure what these are for
 imap <esc>:tabn <F7>
 map gT <F8>

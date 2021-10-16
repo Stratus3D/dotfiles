@@ -231,7 +231,7 @@ let mapleader = ","
 map ; :
 
 " A more convenient buffer write command
-map <Leader>s <esc>:w<CR>
+map <leader>s <esc>:w<CR>
 
 " Mappings for toggling between line numbers
 map <leader>n :set nornu number<CR>

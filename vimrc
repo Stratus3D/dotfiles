@@ -237,6 +237,18 @@ map <leader>s <esc>:w<CR>
 map <leader>n :set nornu number<CR>
 map <leader>r :set rnu number relativenumber<CR>
 
+" Toggle visibility of whitespace characters
+nmap <leader>l :set list!<CR>
+
+" JSON formatting with jq
+nnoremap <silent> <leader>fj :%!jq '.'<CR>
+
+" Erlang term formatting with erlang_pretty_print
+nnoremap <silent> <leader>fe :%!erlang_pretty_print -i<CR>
+
+" Jira ticket command
+nnoremap <silent> <leader>to :!open $BASE_TICKET_URL/<c-r>=expand("<cWORD>")<cr>/<CR>
+
 " Not sure what these are for
 imap <esc>:tabn <F7>
 map gT <F8>
@@ -313,9 +325,6 @@ endfunction
 
 :nnoremap <F4>  :call ToggleLeftGuides()<CR>
 
-" Toggle visibility of whitespace characters
-nmap <leader>l :set list!<CR>
-
 " Load trailing whitespace functions
 source $HOME/.vim/whitespace.vim
 
@@ -347,15 +356,6 @@ function! SetSpaces(arg)
 endfunction
 
 command! -nargs=1 SetSpaces :call SetSpaces(<f-args>)
-
-" JSON formatting with jq
-nnoremap <silent> <leader>fj :%!jq '.'<CR>
-
-" Erlang term formatting with erlang_pretty_print
-nnoremap <silent> <leader>fe :%!erlang_pretty_print -i<CR>
-
-" Jira ticket command
-nnoremap <silent> <leader>to :!open $BASE_TICKET_URL/<c-r>=expand("<cWORD>")<cr>/<CR>
 
 " Make Q repeat last macro
 nnoremap Q @@

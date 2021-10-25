@@ -224,11 +224,11 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" Make comma the leader key
-let mapleader = ","
-
 " Map semicolon to colon for easier invocation of ex commands
 map ; :
+
+" Make comma the leader key
+let mapleader = ","
 
 " A more convenient buffer write command
 map <leader>s <esc>:w<CR>

@@ -249,14 +249,6 @@ nnoremap <silent> <leader>fe :%!erlang_pretty_print -i<CR>
 " Jira ticket command
 nnoremap <silent> <leader>to :!open $BASE_TICKET_URL/<c-r>=expand("<cWORD>")<cr>/<CR>
 
-" Not sure what these are for
-imap <esc>:tabn <F7>
-map gT <F8>
-map gt <F7>
-map :tabn <F8>
-map :tabp <F7>
-map <Leader>cr <F5>
-
 " Disable arrow keys
 nnoremap <Left> :echoe "Use h"<cr>
 nnoremap <Right> :echoe "Use l"<cr>

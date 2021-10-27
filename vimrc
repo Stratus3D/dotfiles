@@ -9,9 +9,6 @@ set background=dark
 
 " set the color scheme
 colorscheme solarized
-" TODO: Pull colors for env variables
-"execute "set background=".$BACKGROUND
-"execute "colorscheme ".$THEME
 
 " Make background transparent since we are using solarized in the terminal
 let g:solarized_termtrans = 1

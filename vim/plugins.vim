@@ -8,9 +8,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Plugins
-" Tmux
-" Disabled this plugin because it broke the C-l mapping to refresh Vim
-" Plugin 'christoomey/vim-tmux-navigator'
 " For writing
 Plugin 'junegunn/goyo.vim'
 Plugin 'reedes/vim-pencil'
@@ -37,7 +34,6 @@ Plugin 'xolox/vim-lua-ftplugin'
 " SASS/SCSS/Less/CSS
 Plugin 'groenewege/vim-less'
 Plugin 'cakebaker/scss-syntax.vim'
-" Plugin 'ap/vim-css-color'
 " Haml
 Plugin 'tpope/vim-haml'
 " Go
@@ -71,6 +67,10 @@ Plugin 'tpope/vim-fugitive'
 " Interactive Graphviz
 Plugin 'wannesm/wmgraphviz.vim'
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins I no longer use
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Not needed anymore
 "Plugin 'altercation/vim-colors-solarized'
 
@@ -95,5 +95,12 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'vim-test/vim-test'
 
 call vundle#end()
+" Tmux
+" Disabled this plugin because it broke the C-l mapping to refresh Vim
+" Plugin 'christoomey/vim-tmux-navigator'
 
-filetype plugin indent on
+" I decided against this plugin because 1). it's got a pretty specific use
+" case, and I don't do much with colors in CSS and 2). it's not really enough
+" color for me to get an accurate idea of what the color is when I'm in the
+" terminal.
+" Plugin 'ap/vim-css-color'

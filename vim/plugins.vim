@@ -67,6 +67,17 @@ Plugin 'tpope/vim-fugitive'
 " Interactive Graphviz
 Plugin 'wannesm/wmgraphviz.vim'
 
+" Ultisnips for code snippet management
+Plugin 'SirVer/ultisnips'
+
+" Easier movements
+Plugin 'easymotion/vim-easymotion'
+
+" Quickly run tests
+Plugin 'vim-test/vim-test'
+
+call vundle#end()
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins I no longer use
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -85,16 +96,6 @@ Plugin 'wannesm/wmgraphviz.vim'
 " in the file
 " Plugin 'severin-lemaignan/vim-minimap'
 
-" Ultisnips for code snippet management
-Plugin 'SirVer/ultisnips'
-
-" Easier movements
-Plugin 'easymotion/vim-easymotion'
-
-" Quickly run tests
-Plugin 'vim-test/vim-test'
-
-call vundle#end()
 " Tmux
 " Disabled this plugin because it broke the C-l mapping to refresh Vim
 " Plugin 'christoomey/vim-tmux-navigator'

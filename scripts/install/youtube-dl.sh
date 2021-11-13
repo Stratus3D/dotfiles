@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Build and install the eflame Erlang library
+# Download and install youtube-dl
 #
 # Usage ./youtube-dl.sh
 
@@ -10,6 +10,5 @@ set -euo pipefail
 #ORIGINAL_IFS=$IFS
 IFS=$'\t\n' # Stricter IFS settings
 
-# Download and install youtube-dl
 curl -L https://yt-dl.org/downloads/latest/youtube-dl -o $HOME/bin/youtube-dl
 chmod a+rx $HOME/bin/youtube-dl

@@ -1,5 +1,3 @@
-SOURCE="${BASH_SOURCE[0]}"
-
 source $HOME/dotfiles/mixins/general
 source $HOME/dotfiles/mixins/asdf
 source $HOME/dotfiles/mixins/functions

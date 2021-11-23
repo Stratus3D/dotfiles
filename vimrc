@@ -505,5 +505,39 @@ augroup test
     \ endif
 augroup END
 
+" Taken from https://jeffkreeftmeijer.com/vim-number/
+augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+:  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+:augroup END
+
 " Always highlight mispellings with and underline and bold text
 hi SpellBad cterm=underline,bold
+
+" set default theme, I like xcode
+if !exists('g:rtf_theme')
+  let g:rtf_theme = 'xcode'
+end
+
+" Function for RTF syntax highlighting of the current buffer. Useful when I
+" need to paste code with syntax highlighting into PowerPoint or another
+" application that supports rich text.
+function! RTFHighlight(line1,line2)
+  if !executable('pygmentize')
+    echoerr "Bummer! pygmentize not found."
+    return
+  endif
+
+  let content = join(getline(a:line1,a:line2),"\n")
+  let lexer=&filetype
+  " Run the pygmentize command
+  let command = "pygmentize -f rtf -O style=" . g:rtf_theme . " -l " . l:lexer
+  let output = system(command, content)
+  " Pipe the RTF text to pbcopy
+  let retval = system("pbcopy", output)
+endfunction
+
+" Invoking RTFHighlight on the current buffer will copy the highlighted code
+" to clipboard
+command! -range=% RTFHighlight :call RTFHighlight(<line1>,<line2>)

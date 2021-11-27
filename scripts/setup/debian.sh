@@ -115,9 +115,6 @@ install_or_upgrade libqt4-dev libqtwebkit-dev
 # Postgres
 install_or_upgrade libpq-dev # development package
 
-# Install pip so we can install python packages easily
-install_or_upgrade python3-pip
-
 # Zeal Docs
 install_or_upgrade zeal
 

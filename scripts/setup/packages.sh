@@ -15,7 +15,7 @@ IFS=$'\t\n' # Stricter IFS settings
 ###############################################################################
 
 # For tmux projects
-gem install tmuxinator -v 1.1.5
+gem install tmuxinator -v 3.0.1
 
 # Python Packages
 ###############################################################################

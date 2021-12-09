@@ -27,7 +27,7 @@ olddir=$HOME/dotfiles_old
 files="vimrc vim zshrc bashrc tmux.conf gitignore_global ctags screenrc \
     jshintrc rsync-exclude tool-versions agignore asdfrc psqlrc hushlogin \
     my.cnf inputrc editrc iex.exs curlrc irbrc gemrc weechat gitattributes \
-    gnuplot"
+    gnuplot digrc"
 
 ###############################################################################
 # Functions

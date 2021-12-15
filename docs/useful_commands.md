@@ -155,16 +155,6 @@ http://redsymbol.net/articles/unofficial-bash-strict-mode/
 * `^A d` detach current window.
 * `screen -rd` to reattach a window. Follow the prompts if there are multiple windows.
 
-## Irssi Commands
-
-* `/server`
-* `/connect <server name>` - Connect to an IRC server (`/connect irc.freenode.net`)
-* `/join <channel name>` - Join a channel on an IRC server (`/join #erlang`)
-* `/disconnect`
-* `/q <users nick>`  starts a private message with a user.
-* `/wc` closes the current window. This parts from the current channel or disconnects from the current network.
-* `Alt + Left Arrow/Right Arrow` scroll through Irssi windows.
-
 ## Gcc Flags
 
 * `-ftrapv` trap signed integer overflows

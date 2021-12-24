@@ -44,12 +44,6 @@ npm install -g xml2json-command
 # Install pa11y tool for web accessibility checks
 npm install -g pa11y
 
-# Perl Packages
-###############################################################################
-
-# Setup cpan and install packages for irssi
-cpan Lingua::Ispell
-
 # Haskell Packages
 ###############################################################################
 

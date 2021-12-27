@@ -114,9 +114,6 @@ IFS=$ORIGINAL_IFS
 # Generate and copy gitconfig
 $dotfiles/scripts/generate_gitconfig.sh
 
-# Generate and copy irssi/config
-$dotfiles/scripts/generate_irssi_config.sh
-
 # setup default tmuxinator project
 make_dir_if_missing $HOME/.tmuxinator
 

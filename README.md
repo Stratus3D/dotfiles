@@ -54,8 +54,8 @@ This is software that I use for my day-to-day work. All of this is installed via
 
 OSX Only
 
-* ipmenulet ([https://github.com/mcandre/IPMenulet](https://github.com/mcandre/IPMenulet))
-* ShiftIt ([https://github.com/fikovnik/ShiftIt](https://github.com/fikovnik/ShiftIt))
+* [Hammerspoon](http://www.hammerspoon.org/)
+* [Hammerspoon ShiftIt](https://github.com/peterklijn/hammerspoon-shiftit)
 
 ### Languages
 

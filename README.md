@@ -42,15 +42,15 @@ Configurations for all the tools are need are checked into this repository. All 
 
 This is software that I use for my day-to-day work. All of this is installed via the `setup.sh` script.
 
-* Git ([https://git-scm.com/](https://git-scm.com/))
-* Vim ([http://www.vim.org/](http://www.vim.org/))
-* Tmux ([https://tmux.github.io/](https://tmux.github.io/))
-* Z shell ([http://zsh.sourceforge.net/](http://zsh.sourceforge.net/))
-* asdf ([https://github.com/asdf-vm/asdf](https://github.com/asdf-vm/asdf))
-* Tmuxinator ([https://github.com/tmuxinator/tmuxinator](https://github.com/tmuxinator/tmuxinator))
-* Exuberant Ctags ([http://ctags.sourceforge.net/](http://ctags.sourceforge.net/))
-* Dash/ZealDocs ([http://zealdocs.org/](http://zealdocs.org/))
-* Ungoogled Chromium ([https://github.com/Eloston/ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium))
+* [Git](https://git-scm.com/)
+* [Vim](http://www.vim.org/)
+* [Tmux](https://tmux.github.io/)
+* [Z shell](http://zsh.sourceforge.net/)
+* [asdf](https://github.com/asdf-vm/asdf)
+* [Tmuxinator](https://github.com/tmuxinator/tmuxinator)
+* [Exuberant Ctags](http://ctags.sourceforge.net/)
+* [Dash/ZealDocs](http://zealdocs.org/)
+* [Ungoogled Chromium](https://github.com/Eloston/ungoogled-chromium)
 
 OSX Only
 

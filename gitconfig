@@ -98,3 +98,7 @@
 [commit]
   # Show the diff below the commit message for context when writing the message
   verbose = true
+
+# Configuration various diffs of various file types
+[diff "exif"]
+  textconv = exiftool

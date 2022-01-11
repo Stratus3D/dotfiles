@@ -8,8 +8,17 @@
 *.png diff=exif
 *.jpg diff=exif
 *.ico diff=exif
-*.pdf diff=exif
 *.tiff diff=exif
 *.eps diff=exif
 *.bmp diff=exif
 *.raw diff=exif
+*.gif diff=exif
+*.mp4 diff=exif
+
+# Custom diffs for Microsoft Office
+*.docx diff=word
+*.pptx diff=powerpoint
+*.xlsx diff=excel
+
+# Custom diffs for PDFs
+*.pdf diff=pdf

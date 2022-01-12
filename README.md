@@ -96,7 +96,6 @@ Offline documentation suitable for day to day use.
 
 * Complete the `hosts_manager.sh` script.
 * Figure out how to setup docsets locally when running the setup script.
-* Make vim highlight HTML and scripts in HTML correctly.
 * Add solarized light/dark toggle functions.
 * Make cursor stay in last position when switching back to buffer https://github.com/kien/ctrlp.vim/issues/240 https://askubuntu.com/questions/223018/vim-is-not-remembering-last-position
 * .gitattributes settings for Erlang files.

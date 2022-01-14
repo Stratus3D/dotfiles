@@ -5,7 +5,7 @@ My Dotfiles
 
 Everything I need to get setup on a new machine.
 
-This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a script to symlink all the config files and directories in place, and a set of setup scripts that install all the tools I need on Ubuntu or OSX. The [Solarized Color Scheme (http://ethanschoonover.com/solarized)](http://ethanschoonover.com/solarized) is used for Vim and the terminal emulator profiles.
+This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a script to symlink all the config files and directories in place, and a set of setup scripts that install all the tools I need on Ubuntu or OSX. The [Gruvbox Dark colorscheme](https://github.com/morhetz/gruvbox) is used for Vim and the terminal emulator profiles.
 
 ## Features
 
@@ -96,7 +96,6 @@ Offline documentation suitable for day to day use.
 
 * Complete the `hosts_manager.sh` script.
 * Figure out how to setup docsets locally when running the setup script.
-* Add solarized light/dark toggle functions.
 * Make cursor stay in last position when switching back to buffer https://github.com/kien/ctrlp.vim/issues/240 https://askubuntu.com/questions/223018/vim-is-not-remembering-last-position
 * .gitattributes settings for Erlang files.
 

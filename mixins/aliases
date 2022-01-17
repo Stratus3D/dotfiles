@@ -104,7 +104,7 @@ alias urlencode='python -c "import sys, urllib as ul; \
 alias esh='rlwrap erl -oldshell'
 
 # iex alias for a better Elixir shell with a readline wrapper
-alias iex='rlwrap -afoo iex'
+alias iex='rlwrap iex'
 
 # For faster flow on Erlang projects
 alias re='rebar3'

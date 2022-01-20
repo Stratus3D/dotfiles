@@ -137,7 +137,7 @@ brew_install_or_upgrade exiftool
 # Install command-line JSON processor
 brew_install_or_upgrade jq
 
-# Install pandoc
+# Install pandoc (for office and PDF file diffs)
 brew_install_or_upgrade pandoc
 
 # WxWidgets for Erlang

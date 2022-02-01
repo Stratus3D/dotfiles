@@ -99,6 +99,9 @@
   # Show the diff below the commit message for context when writing the message
   verbose = true
 
+  # Template for new commit messages
+  template = ~/dotfiles/templates/commit-template
+
 # Configuration various diffs of various file types
 [diff "exif"]
   textconv = exiftool

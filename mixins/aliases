@@ -75,7 +75,6 @@ alias vim-cheatsheet="open $HOME/dotfiles/charts/vim_cheat_sheet_for_programmers
 alias erlybery="(cd $HOME/bin; java -jar erlyberly-0.6.9-SNAPSHOT-runnable.jar &)"
 
 # Aliases so these commands work regardless of what versions I'm currently using
-alias fb="ASDF_NODEJS_VERSION=6.11.3 fb-messenger-cli"
 # TODO: We need an asdf exec command to do this instead of an env variable
 #alias tmuxinator="ASDF_RUBY_VERSION=2.4.6 tmuxinator"
 

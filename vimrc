@@ -165,7 +165,7 @@ set complete+=s
 
 " TODO: Figure out what all these settings do and check in the ones that are
 " useful
-"set spell noci nosi noai nolist noshowmode noshowcmd
+"set spell noci nosi noai nolist noshowmode
 
 " Don't redraw when executing macros
 set lazyredraw
@@ -487,10 +487,6 @@ augroup vimrc
 
   " Re-source vimrc whenever it changes
   autocmd BufWritePost .vimrc,*vimrc source %
-
-  " TODO: Turn on showcmd when in visual mode
-  "autocmd VisualEnter * silent execute "set showcmd!"
-  "autocmd VisualLeave * silent execute "set showcmd!"
 
   " Turn on spell checking for file types that contain text
   autocmd FileType markdown,asciidoc,text setlocal spell

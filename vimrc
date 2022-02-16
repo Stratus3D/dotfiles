@@ -170,6 +170,9 @@ set complete+=s
 " Don't redraw when executing macros
 set lazyredraw
 
+" Display the output of an *incomplete* command in the bottom right
+set showcmd
+
 " Use the old vim regex engine (version 1, as opposed to version 2, which was
 " introduced in Vim 7.3.969). The Ruby syntax highlighting is significantly
 " slower with the new regex engine.

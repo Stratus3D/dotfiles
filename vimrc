@@ -65,6 +65,10 @@ set incsearch
 " Wrap around the file when searching
 set wrapscan
 
+" Allow certain movement commands to move into the next/previous line when it
+" makes sense
+set whichwrap=h,l
+
 " Show 4 lines after cursor, useful when reviewing search results
 set scrolloff=4
 

@@ -17,6 +17,10 @@ bundle/cache
 # Ignore weechat logs and history
 weechat/logs
 
+# Ignore weechat config not checked into version control
+weechat/*.conf
+!weechat/weechat.conf
+
 # Ignore custom files
 mixins/*.custom
 scripts/custom_tools/

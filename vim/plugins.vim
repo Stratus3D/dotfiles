@@ -34,8 +34,6 @@ Plugin 'xolox/vim-lua-ftplugin'
 " SASS/SCSS/Less/CSS
 Plugin 'groenewege/vim-less'
 Plugin 'cakebaker/scss-syntax.vim'
-" Haml
-Plugin 'tpope/vim-haml'
 " Go
 "Plugin 'fatih/vim-go'
 " Mustache
@@ -107,3 +105,6 @@ filetype plugin indent on
 " color for me to get an accurate idea of what the color is when I'm in the
 " terminal.
 " Plugin 'ap/vim-css-color'
+
+" I no longer use haml
+" Plugin 'tpope/vim-haml'

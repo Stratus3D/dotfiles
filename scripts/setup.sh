@@ -137,6 +137,9 @@ bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring || true
 # Install the software versions listed in the .tool-versions file in $HOME
 asdf install
 
+# Setup officediff scripts so we can diff MS office files in Git
+$DOTFILE_SCRIPTS_DIR/officediff/setup.sh
+
 ###############################################################################
 # Install Misc. Packages
 ###############################################################################

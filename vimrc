@@ -476,7 +476,7 @@ nnoremap <S-CR> :TestSuite<CR>
 autocmd BufRead,BufNewFile *.txt setfiletype text
 autocmd BufRead,BufNewFile sys.config,*.app.src,*.app,*.erl,*.es,*.hrl,*.yaws,*.xrl,*.spec,elvis.config,rebar.lock setfiletype erlang
 autocmd BufRead,BufNewFile Gemfile,Vagrantfile set filetype=ruby
-autocmd BufRead,BufNewFile Dockerfile,*.bats set filetype=sh
+autocmd BufRead,BufNewFile *.bats set filetype=sh
 autocmd BufRead,BufNewFile Jenkinsfile set filetype=groovy
 autocmd BufRead,BufNewFile *gitconfig set filetype=conf
 " I don't think *.avdl files are valid scala but this is close enough

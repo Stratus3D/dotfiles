@@ -105,3 +105,21 @@
 # Configuration various diffs of various file types
 [diff "exif"]
   textconv = exiftool
+# https://tech.marksblogg.com/git-track-changes-in-media-office-documents.html
+# https://ongardie.net/blog/sqlite-in-git/
+[diff "word"]
+  textconv=pandoc --to=markdown
+  binary=true
+  prompt=false
+
+[diff "powerpoint"]
+  textconv=~/dotfiles/officediff/bin/python3 ~/dotfiles/officediff/pptx-dump.py
+  binary=true
+
+[diff "excel"]
+  textconv=~/dotfiles/officediff/bin/python3 ~/dotfiles/officediff/xlsx-dump.py
+  binary=true
+
+[diff "pdf"]
+  textconv=~/dotfiles/officediff/bin/python3 ~/dotfiles/officediff/pdf-dump.py
+  binary=true

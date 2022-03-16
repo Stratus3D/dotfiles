@@ -93,10 +93,10 @@ alias agu="ag -u"
 
 # URL encoding/decoding commands
 alias urldecode='python -c "import sys, urllib as ul; \
-    print ul.unquote_plus(sys.argv[1])"'
+    print(ul.unquote_plus(sys.argv[1]))"'
 
 alias urlencode='python -c "import sys, urllib as ul; \
-    print ul.quote_plus(sys.argv[1])"'
+    print(ul.quote_plus(sys.argv[1]))"'
 
 # esh alias for a better Erlang shell with a readline wrapper
 # https://ferd.ca/repl-a-bit-more-and-less-than-that.html

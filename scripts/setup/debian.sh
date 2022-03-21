@@ -172,6 +172,9 @@ install_or_upgrade kdenlive
 # CLI dictionary
 install_or_upgrade dict
 
+# For encryption and signing, also used by pass
+install_or_upgrade gnupg
+
 # For password management
 install_or_upgrade pass
 

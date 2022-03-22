@@ -172,6 +172,10 @@ brew_install_or_upgrade mobile-shell
 # For wrapping shells that don't use readline
 brew_install_or_upgrade rlwrap
 
+# For encryption and signing, also used by pass
+brew_install_or_upgrade gnupg
+brew_install_or_upgrade pinentry
+
 # For password management
 brew_install_or_upgrade pass
 

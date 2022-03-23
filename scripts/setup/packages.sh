@@ -47,6 +47,9 @@ npm install -g xml2json-command
 # Install pa11y tool for web accessibility checks
 npm install -g pa11y
 
+# For commit linting
+npm install -g @commitlint/cli @commitlint/config-conventional
+
 # Haskell Packages
 ###############################################################################
 

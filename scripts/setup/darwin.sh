@@ -188,9 +188,6 @@ brew_install_or_upgrade mtr
 # OSX alternative to `ps auxf` for process tree views
 brew_install_or_upgrade pstree
 
-# Required by asdf-nodejs
-brew_install_or_upgrade gnupg
-
 # Images in the terminal
 brew_tap eddieantonio/eddieantonio
 brew_install_or_upgrade imgcat

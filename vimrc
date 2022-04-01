@@ -4,11 +4,11 @@ set nocompatible
 " Color
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" set the color scheme
+colorscheme default
+
 " Background style
 set background=dark
-
-" set the color scheme
-colorscheme solarized
 
 " Make background transparent since we are using solarized in the terminal
 let g:solarized_termtrans = 1

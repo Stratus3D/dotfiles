@@ -4,6 +4,7 @@
 *.beam
 oh-my-zsh/
 vim/.netrwhist
+vim/spell/*.spl
 vim/undodir
 private
 

@@ -162,6 +162,14 @@ set spelllang=en_us
 " Set the spell file to one stored in my dotfiles repo
 set spellfile=$HOME/dotfiles/vim/spell/en.utf-8.add
 
+" Regenerate binary .spl files from .add files
+" https://vi.stackexchange.com/questions/5050/how-to-share-vim-spellchecking-additions-between-multiple-machines
+for d in glob('~/.vim/spell/*.add', 1, 1)
+    if filereadable(d) && (!filereadable(d . '.spl') || getftime(d) > getftime(d . '.spl'))
+        silent exec 'mkspell! ' . fnameescape(d)
+    endif
+endfor
+
 " Autocompletion from spell check
 set complete+=kspell
 " TODO: Figure out if this is needed or not

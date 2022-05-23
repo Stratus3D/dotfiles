@@ -92,12 +92,6 @@ Offline documentation suitable for day to day use.
 * [Gary Bernhardt's dotfiles (https://github.com/garybernhardt/dotfiles)](https://github.com/garybernhardt/dotfiles)
 * [Andrew Stambrosky's dotfiles (https://github.com/astambrosky/dotfiles)](https://github.com/astambrosky/dotfiles)
 
-## TODO
-
-* Figure out how to setup docsets locally when running the setup script.
-* Make cursor stay in last position when switching back to buffer https://github.com/kien/ctrlp.vim/issues/240 https://askubuntu.com/questions/223018/vim-is-not-remembering-last-position
-* .gitattributes settings for Erlang files.
-
 ## Feedback
 
 Suggestions/improvements are welcome! Please [open an issue](https://github.com/Stratus3D/dotfiles/issues) or [contact me directly](https://stratus3d.com/contact).

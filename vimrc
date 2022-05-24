@@ -8,11 +8,7 @@ set nocompatible
 colorscheme default
 
 " Background style
-set background=dark
-
-" Make background transparent since we are using solarized in the terminal
-let g:solarized_termtrans = 1
-set t_Co=256
+set background=light
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General settings

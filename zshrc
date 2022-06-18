@@ -20,23 +20,6 @@ else
   compinit -C
 fi
 
-# For my dotfiles repo to work correctly the paths to source'd files must be
-# relative to the location of this file. This doesn't handle cases where the
-# .zshrc is symlinked to a symlink.
-# Taken from http://stackoverflow.com/a/26492107/1245380
-ZSHRC_PATH=$(dirname "$(readlink "${(%):-%N}")")
-
-# This is faster than loading all of oh-my-zsh
-source $ZSH/lib/functions.zsh
-source $ZSH/lib/theme-and-appearance.zsh
-source $ZSH/lib/git.zsh
-source $ZSH/lib/history.zsh
-source $ZSH/lib/key-bindings.zsh
-source $ZSH/lib/completion.zsh
-source $ZSH/lib/misc.zsh
-source $ZSH/plugins/gitfast/gitfast.plugin.zsh
-source $ZSHRC_PATH/zsh/blinks-modified.zsh-theme
-
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -73,13 +56,15 @@ DISABLE_CORRECTION="true"
 # We need this so that tmux uses zsh when started in a zsh shell
 export SHELL='/bin/zsh'
 
-source $ZSHRC_PATH/mixins/general
-source $ZSHRC_PATH/mixins/functions
-source $ZSHRC_PATH/mixins/grep
-source $ZSHRC_PATH/mixins/path
-source $ZSHRC_PATH/mixins/asdf
-source $ZSHRC_PATH/mixins/aliases
-source $ZSHRC_PATH/mixins/man_color
+DOTFILES_DIR=$HOME/dotfiles
+
+source $DOTFILES_DIR/mixins/general
+source $DOTFILES_DIR/mixins/functions
+source $DOTFILES_DIR/mixins/grep
+source $DOTFILES_DIR/mixins/path
+source $DOTFILES_DIR/mixins/asdf
+source $DOTFILES_DIR/mixins/aliases
+source $DOTFILES_DIR/mixins/man_color
 
 # Use asdf autocompletions
 . $HOME/.asdf/completions/_asdf

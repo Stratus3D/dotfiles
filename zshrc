@@ -20,10 +20,6 @@ else
   compinit -C
 fi
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
 

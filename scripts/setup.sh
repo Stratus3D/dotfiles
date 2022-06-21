@@ -66,17 +66,17 @@ mkdir -p $HOME/.psql # psql history directory
 # Get the uname string
 unamestr=`uname`
 
-# Install oh-my-zsh first, as the laptop script doesn't install it
-ZSH_DIR="$HOME/.oh-my-zsh"
-if [[ -d $ZSH_DIR ]]; then
-    # Update Zsh if we already have it installed
-    cd $ZSH_DIR
-    git pull origin master
-    cd -
-else
-    # Install it if don't have a ~/.oh-my-zsh directory
-    curl -L http://install.ohmyz.sh | sh
+# Run the OS-specific setup scripts, needed here so git and other comamnds are
+# available for later steps
+if [[ "$unamestr" == 'Darwin' ]]; then
+    "$DOTFILE_SCRIPTS_DIR/setup/darwin.sh"
+elif [[ "$unamestr" == 'Linux' ]]; then
+    "$DOTFILE_SCRIPTS_DIR/setup/linux.sh"
 fi
+
+# Install antigen
+ANTIGEN_HOME=$HOME/.antigen
+git clone https://github.com/zsh-users/antigen.git $ANTIGEN_HOME
 
 # Define a function used by the setup scripts to run all the custom install
 # scripts.
@@ -88,13 +88,6 @@ run_install_scripts() {
         "$install_scripts_dir/$file"
     done
 }
-
-# Run the OS-specific setup scripts
-if [[ "$unamestr" == 'Darwin' ]]; then
-    "$DOTFILE_SCRIPTS_DIR/setup/darwin.sh"
-elif [[ "$unamestr" == 'Linux' ]]; then
-    "$DOTFILE_SCRIPTS_DIR/setup/linux.sh"
-fi
 
 ###############################################################################
 # Install asdf for version management

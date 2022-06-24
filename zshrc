@@ -1,8 +1,3 @@
-# Zshrc file
-
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
 # This is faster than `autoload -U compinit && compinit`
 autoload -Uz compinit
 
@@ -20,6 +15,27 @@ else
   compinit -C
 fi
 
+# Load antigen
+source $HOME/.antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle history
+antigen bundle key-bindings
+antigen bundle completion
+antigen bundle misc
+antigen bundle gitfast
+antigen bundle tmuxinator
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Tell Antigen that you're done.
+antigen apply
+
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
 
@@ -32,14 +48,6 @@ CASE_SENSITIVE="true"
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git tmuxinator rails)
 
 DISABLE_CORRECTION="true"
 
@@ -100,3 +108,6 @@ bindkey -M vicmd "^V" edit-command-line
 
 # Make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
 export KEYTIMEOUT=1
+
+# Load theme
+source $HOME/dotfiles/zsh/blinks-modified.zsh-theme

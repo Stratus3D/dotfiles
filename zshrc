@@ -49,13 +49,8 @@ CASE_SENSITIVE="true"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 
+# Don't allow zsh to autocorrect commands
 DISABLE_CORRECTION="true"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # We need this so that tmux uses zsh when started in a zsh shell
 export SHELL='/bin/zsh'

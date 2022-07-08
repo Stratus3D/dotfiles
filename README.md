@@ -68,11 +68,6 @@ Use asdf for version management ([https://github.com/asdf-vm/asdf](https://githu
 * Lua
 * Javascript (NodeJS)
 
-### Frameworks
-
-* [Rails](http://rubyonrails.org/)
-* [Phoenix](http://www.phoenixframework.org/)
-
 ## Documentation
 
 Offline documentation suitable for day to day use.

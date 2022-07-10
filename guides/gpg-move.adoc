@@ -1,0 +1,38 @@
+= Moving GPG Private and Public Keys to Another Computer
+
+== Find your key ID
+
+----
+$ gpg --list-secret-keys --keyid-format=long
+----
+
+Sample output:
+
+----
+pub   4096R/ABC12345 2020-01-01 [expires: 2025-12-31]
+uid                  Your Name <user@example.com>
+sub   4096R/DEF67890 2020-01-01 [expires: 2025-12-31]
+----
+
+The key ID is on a line starting with `pub` and is the value following the slash. In the example above it is `ABC12345`.
+
+== Export the secret key to file
+
+----
+$ gpg --export-secret-keys YOUR_ID_HERE > private.key
+----
+
+== Copy the file to the new computer
+
+Use a secure method of transferring the file. Avoid transferring over the internet and instead use something like a new flash drive that has never been plugged into an untrusted machine.
+
+== Import the key
+
+----
+$ gpg --import private.key
+----
+
+== References
+
+* https://makandracards.com/makandra-orga/37763-gpg-extract-private-key-and-import-on-different-machine
+* https://www.phildev.net/pgp/gpg_moving_keys.html

@@ -1,0 +1,95 @@
+Connect to a database
+
+[source]
+----
+\c dbname [username]
+----
+
+List databases
+
+[source]
+----
+\l
+----
+
+List tables in database
+
+[source]
+----
+\dt
+----
+
+Describe table
+
+[source]
+----
+\d tablename
+----
+
+List schemas
+
+[source]
+----
+\dn
+----
+
+List views
+
+[source]
+----
+\dv
+----
+
+List users and their roles
+[source]
+----
+\du
+----
+
+Run previous command
+[source]
+----
+\g
+----
+
+Save command history to file
+
+[source]
+----
+\s file
+----
+
+Get help on a specific command
+
+[source]
+----
+\h CREATE DATABASE
+----
+
+Open previous command for editing in your text editor
+
+[source]
+----
+\e
+----
+
+Create a function in your text editor
+
+[source]
+----
+\ef
+----
+
+Toggle aligned/non-aligned output
+
+[source]
+----
+\a
+----
+
+Generate HTML output
+
+[source]
+----
+\H
+----

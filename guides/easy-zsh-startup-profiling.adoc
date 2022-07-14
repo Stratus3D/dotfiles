@@ -1,0 +1,12 @@
+= Easy Zsh Startup Profiling
+
+[source, sh]
+----
+$ zmodload zsh/zprof
+$ zprof
+----
+
+== References
+
+* https://htr3n.github.io/2018/07/faster-zsh/
+* https://xebia.com/blog/profiling-zsh-shell-scripts/

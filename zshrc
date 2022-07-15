@@ -30,9 +30,6 @@ antigen bundle misc
 antigen bundle gitfast
 antigen bundle tmuxinator
 
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
-
 # Tell Antigen that you're done.
 antigen apply
 

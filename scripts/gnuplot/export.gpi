@@ -1,0 +1,16 @@
+# A script for easy exporting of plots
+
+# Save the current terminal settings
+set terminal push
+
+# Change the terminal to type
+set terminal ARG2
+
+# set the output filename
+set output ARG1
+
+# re-generate the plot so it's written to file
+replot
+
+# Restore the terminal
+set terminal pop

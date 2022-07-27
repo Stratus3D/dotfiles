@@ -27,3 +27,6 @@ set style line 6 linecolor rgb '#8c228c' linetype 1  # opposite Forest green
 #do for [i=1:100] {
 #    set style line i linewidth 2
 #}
+
+# Add custom scripts to the loadpath
+set loadpath "~/dotfiles/scripts/gnuplot"

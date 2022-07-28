@@ -22,12 +22,13 @@ source $HOME/.antigen/antigen.zsh
 antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
+
+# Faster than the regular git plugin
+antigen bundle gitfast
 antigen bundle history
 antigen bundle key-bindings
 antigen bundle completion
 antigen bundle misc
-antigen bundle gitfast
 antigen bundle tmuxinator
 
 # Tell Antigen that you're done.

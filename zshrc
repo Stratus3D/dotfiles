@@ -29,6 +29,8 @@ antigen bundle history
 antigen bundle key-bindings
 antigen bundle completion
 antigen bundle misc
+
+# For tmuxinator completions
 antigen bundle tmuxinator
 
 # Tell Antigen that you're done.

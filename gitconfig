@@ -72,7 +72,7 @@
   recurseSubmodules = on-demand
 [init]
   # Directory for Git templates
-  templatedir = ~/dotfiles/git-templates
+  templatedir = ~/dotfiles/git/templates
 [push]
   # Push branch to remote branch with same name
   default = current

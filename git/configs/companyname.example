@@ -1,0 +1,8 @@
+# This file is for customizing the .gitconfig for a specific set of repos (e.g.
+# work, personal, etc...) To use this file remove the .example suffix and give
+# it a meaningful name. See mixins/gitconfig.custom.example for more details.
+
+[github]
+	user = <username>
+[user]
+	email = <email>

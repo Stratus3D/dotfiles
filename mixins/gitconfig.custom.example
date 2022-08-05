@@ -1,7 +1,15 @@
 # This file is for customizing the .gitconfig To use this file remove the
 # .example suffix. The contents of the file will be concatenated with the
 # .gitconfig. Set all custom git config values here.
-[github]
-	user = <username>
-[user]
-	email = <email>
+#
+# Typically I conditionally include Git config based on the URL in the origin
+# remote as described here:
+# https://lobste.rs/s/7xgrw9/git_with_multiple_e_mail_addresses#c_kwkefm
+#
+# See the example file at git/configs/companyname.example for an example of
+# what one of these included files should look like.
+
+[includeIf "hasconfig:remote.*.url:git@github.com:Stratus3D/**"]
+  path = ~/dotfiles/git/configs/personal-github
+[includeIf "hasconfig:remote.*.url:git@github.com:companyname/**"]
+  path = ~/dotfiles/git/configs/companyname

@@ -4,6 +4,10 @@
 # Use utf8 everywhere
 set encoding utf8
 
+# Increase samples for smoother lines
+set samples 3000
+set isosamples 30
+
 set macros
 
 #png="set terminal png size 1800,1800 crop enhanced font \"/usr/share/fonts/truetype/times.ttf,30\" dashlength 2; set termoption linewidth 3"

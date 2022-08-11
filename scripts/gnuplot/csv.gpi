@@ -1,0 +1,8 @@
+# Common settings for plotting data from CSVs
+# Use by invoking `load "csv.gpi"`
+
+# By default set the separator to comma
+set datafile separator ','
+
+# automatically set keys based on headers
+set key autotitle columnhead

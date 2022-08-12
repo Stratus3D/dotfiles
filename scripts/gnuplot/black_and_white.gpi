@@ -1,0 +1,17 @@
+# Black and white theme
+# Use by invoking `load "black_and_white.gpi"`
+
+set linetype 1 pi -1 pt 1 lc black dt solid
+set linetype 2 pi -1 pt 2 lc black dt (8,6)
+set linetype 3 pi -1 pt 6 lc black dt (4,3)
+set linetype 4 pi -1 pt 4 lc black dt (3,6)
+set linetype 5 pi -1 pt 1 lc black dt (12,5,2,5,2,5)
+set linetype 6 pi -1 pt 2 lc black dt (16,8)
+set linetype 7 pi -1 pt 6 lc black dt (20,6,2,6)
+set linetype 8 pi -1 pt 4 lc black dt (30,10)
+
+set pointsize 0.5
+set pointintervalbox 1.75
+
+set termoption font "Helvetica,12"
+set termoption fontscale 0.5

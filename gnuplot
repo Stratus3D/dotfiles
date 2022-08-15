@@ -35,5 +35,8 @@ set style line 6 linecolor rgb '#8c228c' linetype 1  # opposite Forest green
 #    set style line i linewidth 2
 #}
 
+# By default render a grid for the plot
+set grid
+
 # Add custom scripts to the loadpath
 set loadpath "~/dotfiles/scripts/gnuplot"

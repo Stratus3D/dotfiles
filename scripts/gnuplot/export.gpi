@@ -1,16 +1,76 @@
 # A script for easy exporting of plots
+# Invoke as `call "export.gpi" "filename.png"`
+
+# Initialize arguments
+filename = ARG1
+len = strlen(filename)
+
+# Find the last "/" in the filename
+last_slash_index = 0
+do for [index = 1:len] {
+  if (filename[index:index] eq "/") {
+    last_slash_index = index
+  }
+}
+
+# Split the filename into path, file, and extension
+if (last_slash_index == 0) { # No "/" found, use current dir
+  path = ''
+  file = filename[1:len-4]
+} else { # At least one slash found
+  path = filename[1:last_slash_index]
+  file = filename[last_slash_index+1:len-4]
+}
+
+# Assume 3 letter file extension
+file_extension = filename[len-2:]
+print file_extension
 
 # Save the current terminal settings
 set terminal push
 
-# Change the terminal to type
-set terminal ARG2
+# Used by the catch-all clause when no file extension matches
+term=''
+
+# Default terminal config, add any global png options here
+png_terminal="set terminal pngcairo"
+
+# Change the terminal to the specified type
+if (file_extension eq 'eps') {
+  term = 'epscairo'
+  # Add any global EPS terminal settings here
+  set terminal epscairo
+}
+
+if (file_extension eq 'pdf') {
+  term = 'pdfcairo'
+  # Add any global PDF terminal settings here
+  set terminal pdfcairo
+}
+
+if (file_extension eq 'png') {
+  term = 'pngcairo'
+  eval png_terminal
+}
+
+if (file_extension eq 'svg') {
+  term = 'svg'
+  set terminal svg size 800, 500 dynamic enhanced font "Helvetica,16"
+}
+
+if (term eq '') {
+  print 'Unknown file type - using png'
+  eval png_terminal
+}
 
 # set the output filename
-set output ARG1
+set output path . file . '.' . file_extension
 
 # re-generate the plot so it's written to file
 replot
 
 # Restore the terminal
 set terminal pop
+
+# Notify the caller
+print "Export complete"

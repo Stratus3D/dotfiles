@@ -24,7 +24,6 @@ if (last_slash_index == 0) { # No "/" found, use current dir
 
 # Assume 3 letter file extension
 file_extension = filename[len-2:]
-print file_extension
 
 # Save the current terminal settings
 set terminal push

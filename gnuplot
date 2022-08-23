@@ -1,6 +1,9 @@
 # Some inspiration taken from https://github.com/hesstobi/Gnuplot-Templates/blob/master/defaults.gp
 # Colors follow guidelines from this article - https://blog.datawrapper.de/beautifulcolors/
 
+# Never remove a command from Gnuplot's command history
+set history size -1
+
 # Use utf8 everywhere
 set encoding utf8
 

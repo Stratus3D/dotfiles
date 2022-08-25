@@ -98,10 +98,6 @@ alias urldecode='python -c "import sys, urllib.parse as parse; \
 alias urlencode='python -c "import sys, urllib.parse as parse; \
     print(parse.quote(sys.argv[1]))"'
 
-# esh alias for a better Erlang shell with a readline wrapper
-# https://ferd.ca/repl-a-bit-more-and-less-than-that.html
-alias esh='rlwrap erl -oldshell'
-
 # iex alias for a better Elixir shell with a readline wrapper
 alias iex='rlwrap iex'
 

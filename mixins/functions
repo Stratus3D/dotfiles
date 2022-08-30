@@ -38,6 +38,12 @@ function asciidoc_to_markdown() {
   asciidoc -b docbook - | pandoc -from docbook -t markdown_strict --wrap none
 }
 
+# Useful for converting my asciidoc writing to docx format for services that
+# require docx
+function asciidoc_to_doc() {
+  asciidoc -b docbook - | pandoc --from docbook --to docx
+}
+
 # Load functions in other files
 for file in $HOME/dotfiles/scripts/functions/*; do
     source $file;

@@ -44,6 +44,12 @@ function asciidoc_to_doc() {
   asciidoc -b docbook - | pandoc --from docbook --to docx
 }
 
+function asciidoc_to_kindle_note() {
+  asciidoc -b docbook - | pandoc --from docbook --to epub || \
+  # Print usage information if commands fails
+  printf '\nUsage: cat notes.adoc | asciidoc_to_kindle_note > notes.epub\n' >&2
+}
+
 # Load functions in other files
 for file in $HOME/dotfiles/scripts/functions/*; do
     source $file;

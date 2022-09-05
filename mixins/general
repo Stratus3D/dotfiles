@@ -32,6 +32,10 @@ export ERL_AFLAGS="+pc unicode -kernel shell_history enabled"
 # shell
 CDPATH=.:$HOME:$HOME/devel
 
-# Set k2pdfopt options. -dev k2 denotes the target device is a second generation
-# kindle.
-export K2PDFOPT='-n -wrap+ -hy -ws -0.2 -dev k2'
+# k2pdfopt options
+K2PDFOPT='-wrap+ ' # Reflow text when formatting
+K2PDFOPT+='-hy -ws -0.2 ' # Not sure about these options
+K2PDFOPT+='-dev k2 ' # The device is a second generation kindle
+K2PDFOPT+='-m 0.8' # Ignore some margin
+
+export K2PDFOPT

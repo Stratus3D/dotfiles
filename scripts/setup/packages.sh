@@ -41,9 +41,6 @@ pip3 install spotdl
 # Install jslint for linting
 npm install -g jslint
 
-# Install xml2json tool
-npm install -g xml2json-command
-
 # Install pa11y tool for web accessibility checks
 npm install -g pa11y
 

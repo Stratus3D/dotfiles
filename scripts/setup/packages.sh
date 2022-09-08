@@ -38,9 +38,6 @@ pip3 install spotdl
 # Node.JS Packages
 ###############################################################################
 
-# Install jslint for linting
-npm install -g jslint
-
 # Install pa11y tool for web accessibility checks
 npm install -g pa11y
 

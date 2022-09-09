@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+IFS=$'\t\n' # Stricter IFS settings
+
 # Adapted from https://github.com/joshukraine/mac-bootstrap
 
 # Close any open System Preferences panes, to prevent them from overriding

@@ -136,6 +136,16 @@ sudo add-apt-repository ppa:thomas-schiex/blender
 sudo apt-get update
 install_or_upgrade blender
 
+# Install pastel for viewing and manipulating colors on the command line
+TEMP_DIR="$(mktemp -dt "$(basename "$0").XXXXXX")"
+cd "$TEMP_DIR"
+
+curl "https://github.com/sharkdp/pastel/releases/download/v0.9.0/pastel_0.9.0_amd64.deb" --output pastel_0.9.0_amd64.deb
+sudo dpkg -i pastel_0.9.0_amd64.deb
+
+cd -
+rm -rf "$TEMP_DIR"
+
 # Install Scribus for publishing
 install_or_upgrade scribus
 

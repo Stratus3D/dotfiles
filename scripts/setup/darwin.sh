@@ -131,6 +131,9 @@ brew cask install gimp
 brew cask install xquartz
 brew cask install inkscape
 
+# Install pastel for viewing and manipulating colors on the command line
+brew install pastel
+
 # For image metadata manipulation
 brew_install_or_upgrade exiftool
 

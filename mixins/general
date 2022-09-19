@@ -17,11 +17,6 @@ if [ -f "$HOME/dotfiles/mixins/shellrc.custom" ]; then
     source "$HOME/dotfiles/mixins/shellrc.custom"
 fi
 
-# Solarized color scheme for LXDE
-if [ "$XDG_CURRENT_DESKTOP" = "LXDE" ]; then
-    source "$HOME/dotfiles/mixins/solarized"
-fi
-
 # Erlang `erl` options
 # +pc unicode - something related to display of unicode
 # -kernel shell_history enabled - Enable shell history in the `erl` shell

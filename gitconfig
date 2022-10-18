@@ -26,6 +26,10 @@
   branch = auto
   diff = auto
   status = auto
+[status]
+  # git status is a command I use a lot. The default command output contains
+  # information I don't need to see.
+  short = true
 [color "branch"]
   current = yellow reverse
   local = yellow

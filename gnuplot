@@ -11,6 +11,7 @@ set encoding utf8
 set samples 3000
 set isosamples 30
 
+# Macros aren't enabled by default but I use them occassionally
 set macros
 
 #png="set terminal png size 1800,1800 crop enhanced font \"/usr/share/fonts/truetype/times.ttf,30\" dashlength 2; set termoption linewidth 3"

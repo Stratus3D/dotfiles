@@ -14,8 +14,6 @@ set isosamples 30
 # Macros aren't enabled by default but I use them occassionally
 set macros
 
-#png="set terminal png size 1800,1800 crop enhanced font \"/usr/share/fonts/truetype/times.ttf,30\" dashlength 2; set termoption linewidth 3"
-#eps="set terminal postscript fontfile \"/usr/share/fonts/truetype/times.ttf\"; set termoption linewidth 3;
 
 # Font settings
 set terminal qt font "Helvetica,16"

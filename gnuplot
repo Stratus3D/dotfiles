@@ -21,10 +21,6 @@ set terminal qt font "Helvetica,16"
 # Line settings
 set termoption linewidth 1.4
 
-# Default to a line width of 2
-#do for [i=1:100] {
-#    set style line i linewidth 2
-#}
 
 # By default render a grid for the plot
 set grid

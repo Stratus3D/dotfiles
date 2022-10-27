@@ -3,10 +3,13 @@
 # Good for website and presentations
 #
 # Use by invoking `load "stratus3d.gpi"`
-set style line 1 linecolor rgb '#de181f' linetype 1  # Red
-set style line 2 linecolor rgb '#0060ae' linetype 1  # Blue
-set style line 3 linecolor rgb '#228C22' linetype 1  # Forest green
 
-set style line 4 linecolor rgb '#18ded7' linetype 1  # opposite Red
-set style line 5 linecolor rgb '#ae4e00' linetype 1  # opposite Blue
-set style line 6 linecolor rgb '#8c228c' linetype 1  # opposite Forest green
+set linetype 1 lw 2 linecolor rgb '#192537' dashtype solid # Primary blue color
+set linetype 2 lw 2 linecolor rgb '#A50018' dashtype solid # Primary red highlight color
+set linetype 3 lw 2 linecolor rgb '#2C710A' dashtype solid # Primary green color
+
+set linetype 4 lw 2 linecolor rgb '#DB8814' # Orange
+set linetype 5 lw 2 linecolor rgb '#2E4670' # Blue lighter than primary blue
+set linetype 6 lw 2 linecolor rgb '#B20015' # Red lighter than primary red
+set linetype 7 lw 2 linecolor rgb '#465B80' # Blue slightly lighter than primary blue
+set linetype 8 lw 2 linecolor rgb '#8C98AD' # Silver

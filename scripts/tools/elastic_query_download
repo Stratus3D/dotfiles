@@ -1,0 +1,126 @@
+#!/usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+usage() {
+    cat <<EOF
+    Usage: elastic_query_download [host] [query_file] [index_name] [output_file] ([netrc file])
+
+    The query file must contain query JSON. The index name must be the name of
+    an existing index. Output file must be specified.
+
+    Credentials can be specified in a curl netrc file. If a netrc file is not
+    provided the user will be prompted for credentials.
+EOF
+}
+
+error_exit() {
+    usage
+    exit 1
+}
+
+get_batch() {
+  local scroll_id=$1
+  local scroll_time=$2
+  read -r -d '' json <<EOF
+{
+    "scroll" : "$scroll_time",
+    "scroll_id" : "$scroll_id"
+}
+EOF
+  local results
+
+  results="$(curl -s -XPOST "$elastic_url/_search/scroll" \
+    "${credentials[@]}" \
+    -H "Content-Type: application/json" \
+    -d "$json")"
+
+  parse_results "$results"
+}
+
+parse_results() {
+  local response="$1"
+  echo "$response" | jq -cr '.hits.hits'
+}
+
+elasticsearch_host=${1:-}
+json_query_file=${2:-}
+index_name=${3:-}
+output_file=${4:-}
+netrc_file=${5:-}
+
+# Values for the query
+scroll_persist_time='5m'
+
+# ElasticSearch host to query
+elastic_url="https://$elasticsearch_host:9200"
+
+if [ -z "$elasticsearch_host" ]; then
+  echo "Must specify an Elasticsearch host name"
+  error_exit
+fi
+
+if [ -z "$json_query_file" ] || [ -z "$index_name" ]; then
+  echo "Must specify query file and index name"
+  error_exit
+fi
+
+if [ -s "$output_file" ]; then
+  echo "Output file must not be empty"
+  error_exit
+fi
+
+# If netrc file with credentials is missing, prompt user for credentials
+if [ -z "$netrc_file" ]; then
+  read -r -p "Enter username: " username
+  read -r -s -p "Enter password: " password
+
+  if [ -z "$username" ] || [ -z "$password" ]; then
+    echo "Must specify username and password"
+    error_exit
+  fi
+  credentials=(--user "$username":"$password")
+else
+  credentials=(--netrc-file "$netrc_file")
+fi
+
+# Load the JSON from the query file
+if [ "$(jq -r type < "$json_query_file")" == 'object' ]; then
+  # Capture the response
+  resp="$(curl -s -XPOST "$elastic_url/$index_name/_search?scroll=$scroll_persist_time" \
+              "${credentials[@]}" \
+              -H "Content-Type: application/json" \
+              -d "$(cat "$json_query_file")")"
+
+  # Add open array square bracket to output file
+  echo '[' >> "$output_file"
+  parse_results "$resp" | sed -e 's/^\[//; s/\]$//' >> "$output_file"
+
+  # Extract the scroll_id from the response
+  scroll_id=$(echo "$resp" | jq -r '._scroll_id')
+  total_results=$(echo "$resp" | jq -r '.hits.total')
+  echo "Total results: $total_results"
+  records_received=$total_results
+
+  # Send requests with scroll_id until there are no more results
+  while [ "$records_received" -ne 0 ]; do
+    echo -n "Getting another batch of results..."
+    resp2=$(get_batch "$scroll_id" "$scroll_persist_time")
+    records_received=$(echo "$resp2" | jq '. | length')
+    if [ "$records_received" -ne 0 ]; then
+      echo "done. $records_received results received"
+      echo -n ',' >> "$output_file"
+      echo "$resp2" | sed -e 's/^\[//; s/\]$//' >> "$output_file"
+    fi
+  done
+
+  # Add closing array square bracket to output file
+  echo ']' >> "$output_file"
+else
+  echo "Query file does not contain valid JSON"
+  error_exit
+fi

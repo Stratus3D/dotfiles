@@ -21,6 +21,8 @@ set terminal qt font "Helvetica,16"
 # Line settings
 set termoption linewidth 1.4
 
+# By default make titles bigger
+set title font ", 20"
 
 # By default render a grid for the plot
 set grid

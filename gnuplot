@@ -29,3 +29,6 @@ set grid
 
 # Add custom scripts to the loadpath
 set loadpath "~/dotfiles/scripts/gnuplot"
+
+# I've found this to be slightly better than the default colorsequence
+set colorsequence podo

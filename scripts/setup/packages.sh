@@ -44,6 +44,9 @@ npm install -g pa11y
 # For commit linting
 npm install -g @commitlint/cli @commitlint/config-conventional
 
+# For viewing flame graphs in the browser
+npm install -g speedscope
+
 # Haskell Packages
 ###############################################################################
 

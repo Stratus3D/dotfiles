@@ -58,7 +58,9 @@ Plugin 'ervandew/supertab'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 
-" Interactive Graphviz
+" Interactive Graphviz and dot compiling
+" I have considered moving to https://github.com/liuchengxu/graphviz.vim
+" but lacks the :GraphvizInteractive command which I like to use
 Plugin 'wannesm/wmgraphviz.vim'
 
 " Ultisnips for code snippet management

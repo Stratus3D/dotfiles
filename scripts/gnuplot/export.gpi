@@ -1,8 +1,9 @@
 # A script for easy exporting of plots
-# Invoke as `call "export.gpi" "filename.png"`
+# Invoke as `call "export.gpi" "filename.png" "terminal options"`
 
 # Initialize arguments
 filename = ARG1
+terminal_options = ARG2
 len = strlen(filename)
 
 # Find the last "/" in the filename
@@ -54,7 +55,13 @@ if (file_extension eq 'png') {
 
 if (file_extension eq 'svg') {
   term = 'svg'
-  set terminal svg size 800, 500 dynamic enhanced font "Helvetica,16"
+
+  # Use default settings if user does not pass in custom options
+  if (terminal_options eq '') {
+    set terminal svg size 1920, 1280 dynamic enhanced font "Helvetica,16"
+  } else {
+    eval 'set terminal svg ' . terminal_options
+  }
 }
 
 if (term eq '') {

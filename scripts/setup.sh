@@ -51,7 +51,6 @@ mkdir -p $HOME/devel
 mkdir -p $HOME/devel/src # Go source directory
 mkdir -p $HOME/devel/bin # Go binary directory
 mkdir -p $HOME/devel/archived # Old projects
-mkdir -p $HOME/Documentation
 mkdir -p $HOME/Screenshots
 mkdir -p $HOME/audio
 mkdir -p $HOME/audio/podcasts # For podcast storage

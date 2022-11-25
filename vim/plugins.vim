@@ -50,8 +50,14 @@ Plugin 'scrooloose/nerdcommenter'
 " ale for syntax checking
 Plugin 'w0rp/ale'
 
+" For navigating via ctags with Ctrl-]
 Plugin 'ludovicchabant/vim-gutentags'
+
+" For visual table and column alignment with :Tab /<column delimiter>
+" http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 Plugin 'godlygeek/tabular'
+
+" For tab completion
 Plugin 'ervandew/supertab'
 
 " Git plugins

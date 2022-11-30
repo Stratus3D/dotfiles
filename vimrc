@@ -208,17 +208,6 @@ let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" GUI settings (currently not using these, probably good to remove eventually)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-if has("gui_running")
-  set guioption=-t
-endif
-
-" Font
-set guifont=Monaco:h12
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Shortcuts/Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

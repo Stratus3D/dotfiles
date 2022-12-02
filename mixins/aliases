@@ -17,20 +17,6 @@ alias gst="git status"
 alias gco="git commit -m "
 alias gdh="git diff HEAD "
 
-# Create aliases for bash scripts in the custom_tools directory
-custom_tools_dir="$HOME/dotfiles/scripts/custom_tools"
-if [ -d $custom_tools_dir ]; then
-    custom_tools=($(find $custom_tools_dir -maxdepth 1 -name "*.sh"))
-    # We might not have any custom tools
-    if [ ${#custom_tools[@]} -gt 0 ]; then
-        for file in $custom_tools; do
-            filename=${file%.sh}
-            root_filename=${filename##*/}
-            alias $root_filename="$file"
-        done
-    fi
-fi
-
 # Additional tool aliases to make commands shorter
 alias ot="open_ticket"
 

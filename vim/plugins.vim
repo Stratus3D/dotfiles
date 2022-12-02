@@ -78,6 +78,13 @@ Plugin 'easymotion/vim-easymotion'
 " Quickly run tests
 Plugin 'vim-test/vim-test'
 
+" To display the number of search matches and the index of current match in
+" the search results. The only reason I'm using this over the native feature
+" in Vim 8 is because this provides a total count under all scenarios, whereas
+" Vim natively shows >99 when number of results is greater than 100. See
+" https://vi.stackexchange.com/a/23296
+Plugin 'google/vim-searchindex'
+
 call vundle#end()
 
 filetype plugin indent on

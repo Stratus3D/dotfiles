@@ -1,7 +1,7 @@
 if ! hash vim 2>/dev/null; then
-    alias vim="vi"
+    alias v="vi"
 else
-    alias vi="vim"
+    alias v="vim"
 fi
 
 # For convenience

@@ -54,16 +54,3 @@ function asciidoc_to_kindle_note() {
 for file in $HOME/dotfiles/scripts/functions/*; do
     source $file;
 done
-
-# Load custom functions
-custom_functions_dir="$HOME/dotfiles/scripts/custom_functions"
-
-if [ -d "$custom_functions_dir" ]; then
-    custom_functions=($(find $custom_functions_dir -maxdepth 1 -name "*.sh"))
-
-    if [ ${#custom_functions[@]} -gt 0 ]; then
-        for file in $custom_functions*; do
-            source $file;
-        done
-    fi
-fi

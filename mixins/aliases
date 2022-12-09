@@ -1,8 +1,12 @@
-if ! hash vim 2>/dev/null; then
-    alias v="vi"
-else
-    alias v="vim"
-fi
+# As a general rule aliases should only define new commands, not replace
+# existing commands.
+
+# Less typing when interacting with common commands
+alias d="docker"
+alias g="git"
+alias k="kubectl"
+alias v="vim"
+alias r='rebar3'
 
 # For convenience
 alias ..="cd .."
@@ -11,11 +15,13 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
+# For common commands
+alias be="bundle exec"
+
 # Git alias
-alias g="git"
 alias gst="git status"
 alias gco="git commit -m "
-alias gdh="git diff HEAD "
+alias gdh="git diff HEAD"
 
 # Additional tool aliases to make commands shorter
 alias ot="open_ticket"
@@ -58,11 +64,6 @@ alias erlybery="(cd $HOME/bin; java -jar erlyberly-0.6.9-SNAPSHOT-runnable.jar &
 # Aliases so these commands work regardless of what versions I'm currently using
 # TODO: We need an asdf exec command to do this instead of an env variable
 #alias tmuxinator="ASDF_RUBY_VERSION=2.4.6 tmuxinator"
-
-# Aliases for commands that aren't available via oh-my-zsh
-alias rspec="_rspec_command"
-alias spring="_spring_command"
-alias be="bundle exec"
 
 # Silver Searcher aliases
 alias ag="ag --path-to-ignore ~/.agignore"

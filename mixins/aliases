@@ -52,8 +52,8 @@ else
     alias pbpaste='xsel --clipboard -o'
 fi
 
-#create hangout
-alias hangout="open https://hangouts.google.com/hangouts/_"
+# Alias for creating a Google meet meeting
+alias meet="open https://meet.google.com/new"
 
 # Charts
 alias bigo="open $HOME/dotfiles/charts/bigoposter.pdf"

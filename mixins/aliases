@@ -83,5 +83,3 @@ alias urlencode='python -c "import sys, urllib.parse as parse; \
 # iex alias for a better Elixir shell with a readline wrapper
 alias iex='rlwrap iex'
 
-# For faster flow on Erlang projects
-alias re='rebar3'

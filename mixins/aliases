@@ -23,18 +23,12 @@ alias gst="git status"
 alias gco="git commit -m "
 alias gdh="git diff HEAD"
 
-# Additional tool aliases to make commands shorter
-alias ot="open_ticket"
-
 # Postgres
 # TODO: These need to change to support asdf-postgres
 # pg_ctl -D ~/.asdf/installs/postgres/9.5.2/data -l logfile start
 alias startpost='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias stoppost='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
 alias statpost='ps aux | ag postgres'
-
-# Function aliases (for functions defined in scripts/functions/)
-alias kllist='kill_listener'
 
 os=$(uname -s)
 if [[ "$os" = 'Darwin' ]]; then

@@ -6,7 +6,3 @@
 #
 # * Mount remote file systems that are available
 # * Start any services that aren't started automatically
-#
-# For example mounting sshfs file systems on OSX:
-#
-#ensure_sshfs_mounted $HOME/servers/myserver myserver:my/directory

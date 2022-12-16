@@ -53,11 +53,9 @@ alias meet="open https://meet.google.com/new"
 alias bigo="open $HOME/dotfiles/charts/bigoposter.pdf"
 alias vim-cheatsheet="open $HOME/dotfiles/charts/vim_cheat_sheet_for_programmers_print.png"
 
-alias erlybery="(cd $HOME/bin; java -jar erlyberly-0.6.9-SNAPSHOT-runnable.jar &)"
-
-# Aliases so these commands work regardless of what versions I'm currently using
-# TODO: We need an asdf exec command to do this instead of an env variable
-#alias tmuxinator="ASDF_RUBY_VERSION=2.4.6 tmuxinator"
+# tmuxinator is only installed in default version of Ruby, so we change to the
+# home directory to invoke it with the default Ruby.
+alias tmuxinator="cd $HOME && tmuxinator"
 
 # Silver Searcher aliases
 alias ag="ag --path-to-ignore ~/.agignore"

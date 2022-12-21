@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+# This scripts exists to make running and watching Github workflows easy from
+# the command line.
+#
+# Usage:
+#
+# $ workflow [repo] [workflow] [user] -- [field=value]
+#
+# For example:
+#
+# $ workflow some/repo EXAMPLE-WORKFLOW Stratus3D -- --field=value --field2=value
+#
+# This script is a wrapper around Github's gh command. The only reason it is
+# necessary is because the gh command doesn't have an easy way to trigger a
+# workflow AND watch it run. This script triggers the workflow, waits for it
+# to start, then watches it run.
+#
+# https://cli.github.com/manual/gh_workflow_run
+
+error_exit() {
+  printf "%s\n" "$1" 1>&2
+  exit "1" # default exit status 1
+}
+
+jq_filter_query='[.[] | select( .event == "workflow_dispatch" and (.status == "in_progress" or .status == "queued"))] | .[0].databaseId'
+
+repo="${1:-}"
+workflow="${2:-}"
+user="${3:-}"
+
+if [ -z "$repo" ]; then
+  error_exit "Must specify a repository as first argument"
+fi
+
+if [ -z "$workflow" ]; then
+  error_exit "Workflow must be provided as second argument"
+fi
+
+if [ -z "$user" ]; then
+  error_exit "Username must be provided as third argument"
+fi
+
+# Build up array of field arguments for gh workflow command
+fields="${*:5}"
+field_arguments=()
+
+for field in $fields; do
+  if [[ "$field" == *"="* ]]; then
+    field_arguments+=(-F "$field")
+  else
+    error_exit "Wrong format for field argument: ${field}"
+  fi
+done
+
+echo "${field_arguments[@]}"
+
+# Kick off the deploy workflow
+echo gh workflow run -R "$repo" "$workflow" "${field_arguments[@]}"
+gh workflow run -R "$repo" "$workflow" "${field_arguments[@]}"
+
+# Until we find the workflow run listed as queued or in_progress we loop looking
+# for the run_id
+run_id="null"
+while [[ "$run_id" == "null" ]]; do
+  echo "looking for workflow run..."
+  run_id="$(gh run list -R "$repo" -w "$workflow" -u "$user" --json 'status,databaseId,event' | jq -r "$jq_filter_query")"
+done
+
+echo "Run ID: $run_id"
+
+# Watch the run until it is finished
+gh run watch "$run_id" -R "$repo"

@@ -25,7 +25,6 @@ Plugin 'vim-erlang/vim-erlang-skeletons'
 Plugin 'elixir-editors/vim-elixir'
 
 " JavaScript
-Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 

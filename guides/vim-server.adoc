@@ -1,0 +1,31 @@
+= Vim Server
+
+Vim's `--servername` fetaure allows another program/shell (client) to issue a command in an already running Vim instance (server). See `:h client-server` for details. This is useful in tmux where we may want to issue a command in one pane to open a file in a vim instance running in another pane.
+
+Basic usage:
+
+[source, sh]
+----
+# in terminal A open vim with
+vim --servername s1
+
+# in terminal B execute, vim instance in terminal A will open file
+vim --servername s1 --remote someotherfile.txt
+----
+
+== Opening Elixir Modules in Vim
+
+[source, sh]
+----
+export ELIXIR_EDITOR="vim +__LINE__ __FILE__"
+export ELIXIR_EDITOR='vim --servername s1 "+call cursor(__LINE__, 1)" "__FILE__"'
+----
+
+== References
+
+* https://subvisual.com/blog/posts/119-open-files-on-existing-vim-sessions/
+* https://github.com/Homebrew/homebrew-core/issues/30717
+* https://vi.stackexchange.com/questions/13784/vim-not-starting-server
+* https://www.adiiyengar.com/blog/20180623/iex-open-files-with-vim
+* https://stackoverflow.com/questions/56301513/how-to-open-a-file-at-a-specific-line-and-column
+* https://jasonaxelson.com/talks/elixirconf2022/#/18

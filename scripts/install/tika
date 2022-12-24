@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+error_exit() {
+  printf "%s\n" "$1" 1>&2
+  exit "${2:-1}" # default exit status 1
+}
+
+# Jar name
+jar_name=tika-app.jar
+
+# SHA512 of file
+SHA512="e888b7520cd30edd0fb399d1c79138487f9ef8d8733ff882043e00f7e4eb5b19d51409cda9670b2fed3d372d3c8d6dc7c359758e3e81e61127697e8c6b0d0f47"
+
+# Download tika
+curl https://dlcdn.apache.org/tika/2.6.0/tika-app-2.6.0.jar --output "$jar_name"
+
+computed_sha="$(sha512sum "$jar_name" | cut -f1 -d' ')"
+
+if [ "$SHA512" != "$computed_sha" ]; then
+  error_exit "Computed 512 SHA does not match expected value"
+fi
+
+# Place the file in it's final location
+mkdir -p "$HOME/lib/java"
+mv "$jar_name" "$HOME/lib/java"
+
+# Generate a Bash script to invoke the jar file easily
+script_name="$HOME/bin/tika"
+cat > "$script_name" <<EOF
+#!/usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=\$IFS
+
+java -jar "\$HOME/lib/java/$jar_name" \$@
+EOF
+
+chmod +x "$script_name"

@@ -213,6 +213,9 @@ brew_install_or_upgrade rabbitmq
 # For IRC
 brew_install_or_upgrade weechat
 
+# For diffs of Microsoft Office files
+brew install tika
+
 # Install other software using custom install scripts
 run_install_scripts
 

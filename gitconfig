@@ -117,13 +117,13 @@
   prompt=false
 
 [diff "powerpoint"]
-  textconv=~/dotfiles/officediff/bin/python3 ~/dotfiles/officediff/pptx-dump.py
+  textconv=tika --text
   binary=true
 
 [diff "excel"]
-  textconv=~/dotfiles/officediff/bin/python3 ~/dotfiles/officediff/xlsx-dump.py
+  textconv=tika --text
   binary=true
 
 [diff "pdf"]
-  textconv=~/dotfiles/officediff/bin/python3 ~/dotfiles/officediff/pdf-dump.py
+  textconv=tika --text
   binary=true

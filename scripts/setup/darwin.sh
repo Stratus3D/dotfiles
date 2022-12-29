@@ -216,9 +216,6 @@ brew_install_or_upgrade weechat
 # For diffs of Microsoft Office files
 brew install tika
 
-# Install other software using custom install scripts
-run_install_scripts
-
 ###############################################################################
 # Configure OSX
 ###############################################################################

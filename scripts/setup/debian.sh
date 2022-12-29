@@ -217,9 +217,6 @@ fi
 # Easy right click image conversion operations
 install_or_upgrade nautilus-image-converter
 
-# Install other software using custom install scripts
-run_install_scripts
-
 # This needs to be run after tmux installation
 $HOME/dotfiles/scripts/setup/tmux.sh
 

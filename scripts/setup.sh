@@ -63,7 +63,7 @@ mkdir -p $HOME/.psql # psql history directory
 # Install software on laptop
 ###############################################################################
 # Get the uname string
-unamestr=`uname`
+unamestr=$(uname)
 
 # Run the OS-specific setup scripts, needed here so git and other comamnds are
 # available for later steps
@@ -74,29 +74,39 @@ elif [[ "$unamestr" == 'Linux' ]]; then
 fi
 
 # Install antigen
-ANTIGEN_HOME=$HOME/.antigen
-git clone https://github.com/zsh-users/antigen.git $ANTIGEN_HOME
+export ANTIGEN_HOME=$HOME/.antigen
+git clone https://github.com/zsh-users/antigen.git "$ANTIGEN_HOME"
 
-# Define a function used by the setup scripts to run all the custom install
-# scripts.
 run_install_scripts() {
-    install_scripts_dir=$HOME/dotfiles/scripts/install
+    install_scripts_dir=$1
 
     # Run each script
-    for file in $install_scripts_dir/*; do
+    for file in "$install_scripts_dir"/*; do
         "$install_scripts_dir/$file"
     done
 }
 
+# Define a function used by the setup scripts to run all the custom install
+# scripts.
+run_install_scripts "$HOME/dotfiles/scripts/install"
+
+# Run OS-specific install scripts
+if [[ "$unamestr" == 'Darwin' ]]; then
+  run_install_scripts "$HOME/dotfiles/scripts/install/darwin"
+elif [[ "$unamestr" == 'Linux' ]]; then
+  # Assume we're on debian
+  run_install_scripts "$HOME/dotfiles/scripts/install/debian"
+fi
+
 ###############################################################################
 # Install asdf for version management
 ###############################################################################
-asdf_dir=$HOME/.asdf
-cd $HOME
+asdf_dir="$HOME/.asdf"
+cd "$HOME"
 
-if [ ! -d $asdf_dir ]; then
+if [ ! -d "$asdf_dir" ]; then
     echo "Installing asdf..."
-    git clone https://github.com/asdf-vm/asdf.git $asdf_dir
+    git clone https://github.com/asdf-vm/asdf.git "$asdf_dir"
     echo "asdf installation complete"
 else
     echo "asdf already installed"
@@ -105,7 +115,7 @@ fi
 ###############################################################################
 # Create symlinks to custom config now that all the software is installed
 ###############################################################################
-$DOTFILE_SCRIPTS_DIR/makesymlinks.sh
+"$DOTFILE_SCRIPTS_DIR/makesymlinks.sh"
 
 ###############################################################################
 # Reload the .bashrc so we have asdf and all the other recently installed tools
@@ -133,4 +143,4 @@ asdf install
 # Install Misc. Packages
 ###############################################################################
 
-$DOTFILE_SCRIPTS_DIR/setup/packages.sh
+"$DOTFILE_SCRIPTS_DIR/setup/packages.sh"

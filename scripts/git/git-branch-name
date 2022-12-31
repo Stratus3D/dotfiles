@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+# Prints the name of the current branch
+
+# Check if current directory is a git repository
+if git rev-parse > /dev/null 2>&1; then
+    # Get and print the branch name
+    git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3-
+fi

@@ -8,9 +8,15 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Plugins
+
 " For writing
+" For writing, a focus mode
 Plugin 'junegunn/goyo.vim'
+
+" For writing, soft line wrap and other misc. features
 Plugin 'reedes/vim-pencil'
+
+" Provides the gz command titlecasting selected text
 Plugin 'christoomey/vim-titlecase'
 
 " Language

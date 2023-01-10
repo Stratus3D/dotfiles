@@ -77,7 +77,10 @@ Plugin 'wannesm/wmgraphviz.vim'
 " Ultisnips for code snippet management
 Plugin 'SirVer/ultisnips'
 
-" Easier movements
+" Easier movements, mapped to <Leader> <Plug>(easymotion-prefix)
+" On the fence about whether I should continue using easymotion or switch to
+" something simpler like
+" https://www.reddit.com/r/vim/comments/1yfzg2/comment/cfkaxw5/
 Plugin 'easymotion/vim-easymotion'
 
 " Quickly run tests

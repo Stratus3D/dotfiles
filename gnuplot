@@ -31,4 +31,6 @@ set grid
 set loadpath "~/dotfiles/scripts/gnuplot"
 
 # I've found this to be slightly better than the default colorsequence
+# Also appears to match the recommended by the book, Fundamentals of Data
+# Visualization. https://jfly.uni-koeln.de/color/
 set colorsequence podo

@@ -16,7 +16,7 @@ Plugin 'junegunn/goyo.vim'
 " For writing, soft line wrap and other misc. features
 Plugin 'reedes/vim-pencil'
 
-" Provides the gz command titlecasting selected text
+" Provides the gz command for titlecasing selected text
 Plugin 'christoomey/vim-titlecase'
 
 " Language

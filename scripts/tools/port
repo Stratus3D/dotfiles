@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+# This script provides a simple interface for showing which ports currently
+# in use, and what processes are listening on them. If passed no arguments,
+# this script lists all processes listening on TCP ports.
+# If passed a port, it shows the process listening on that port. If passed the
+# keyword `kill` and a port it kills the process listening on that port
+#
+# TODO: Add support for UDP, possibly switch to something other than lsof?
+#
+# Usage
+#
+# Show all listening processes:
+#
+#   $ ./port
+#   COMMAND    PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+#   kdeconnec 3138 trevor   21u  IPv6  58237      0t0  TCP *:1716 (LISTEN)
+#
+# Show process listening on port:
+#
+#   $ ./port 1716
+#   COMMAND    PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+#   kdeconnec 3138 trevor   21u  IPv6  58237      0t0  TCP *:1716 (LISTEN)
+#
+# Kill process listening on port:
+#
+#   $ ./port kill 1716
+
+error_exit() {
+  printf "%s\n" "$1" 1>&2
+  exit 1 # default exit status 1
+}
+
+list_listeners() {
+  lsof -Pi -iTCP -s TCP:LISTEN -V
+}
+
+show_listener() {
+  local port
+  port="${1:-}"
+
+  if [ -z "$port" ]; then
+    error_exit "Port must be provided"
+  fi
+
+  lsof -Pi ":$port" -s TCP:LISTEN
+}
+
+kill_listener() {
+  local port
+  port="${1:-}"
+
+  if [ -z "$port" ]; then
+    error_exit "Port must be provided"
+  fi
+
+  lsof -i ":$port" -s TCP:LISTEN -t | xargs kill
+}
+
+case "${1:-}" in
+  kill)
+
+    kill_listener "${2:-}"
+    ;;
+  "")
+    list_listeners
+    ;;
+  *)
+    show_listener "${1:-}"
+esac

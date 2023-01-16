@@ -1,8 +1,16 @@
-#! /bin/bash -
+#!/usr/bin/env bash
 
-ticket() {
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+# TODO: Consider removing this script entirely. It's not something I often use
+
+uppercase_branch_name() {
     # Get the branch name
-    BRANCH_NAME="$(branch)";
+    BRANCH_NAME="$(git branch-name)";
 
     # Make branch name uppercase (JIRA tickets are uppercase)
     UPPERCASE_BRANCH_NAME=$(echo "$BRANCH_NAME" | tr '[:lower:]' '[:upper:]');
@@ -13,10 +21,12 @@ ticket() {
 
 jira_ticket() {
     # Get the uppercase branch name
-    branch_name=$(ticket)
+    branch_name=$(uppercase_branch_name)
 
     # Remove everything after the numbers, only the start of the branch is the JIRA ticket name
     jira_ticket_name=$(echo $branch_name | sed 's/\(^[[:alpha:]]*-[0-9]*\)\(.*\)/\1/g')
 
     echo $jira_ticket_name
 }
+
+jira_ticket

@@ -1,4 +1,10 @@
-#! /usr/bin/env bash
+#!/usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
 
 # I wish I could put this in ssh/config but it doesn't appear to be possible
 
@@ -6,3 +12,5 @@ function sshmux {
     # Pass all arguments directly to `ssh` and add the tmux command
     ssh $@ -t 'tmux has-session && exec tmux attach || exec tmux; exec $(tmux showenv -s)'
 }
+
+sshmux $@

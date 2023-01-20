@@ -1,4 +1,11 @@
 #!/bin/bash -
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
 ###############################################################################
 # setup.sh
 # This script creates everything needed to get started on a new laptop
@@ -15,7 +22,6 @@ cd $HOME
 DOTFILES_DIR=$HOME/dotfiles
 DOTFILE_SCRIPTS_DIR=$DOTFILES_DIR/scripts
 
-###############################################################################
 # Setup dotfiles
 ###############################################################################
 
@@ -38,10 +44,8 @@ fi
 # Change to the dotfiles directory either way
 cd $DOTFILES_DIR
 
-###############################################################################
 # Create commonly used directories
 ###############################################################################
-# TODO: These directory names are duplicated elsewhere. Reduce duplication
 mkdir -p $HOME/bin # Third-party binaries
 mkdir -p $HOME/lib # Third-party software
 mkdir -p $HOME/nobackup # All files that shouldn't be backed up the normal way
@@ -59,7 +63,6 @@ mkdir -p $HOME/servers # For remote server mounts
 mkdir -p $HOME/clients # Files for third parties - companies, friends, etc...
 mkdir -p $HOME/.psql # psql history directory
 
-###############################################################################
 # Install software on laptop
 ###############################################################################
 # Get the uname string
@@ -98,7 +101,6 @@ elif [[ "$unamestr" == 'Linux' ]]; then
   run_install_scripts "$HOME/dotfiles/scripts/install/debian"
 fi
 
-###############################################################################
 # Install asdf for version management
 ###############################################################################
 asdf_dir="$HOME/.asdf"
@@ -112,12 +114,10 @@ else
     echo "asdf already installed"
 fi
 
-###############################################################################
 # Create symlinks to custom config now that all the software is installed
 ###############################################################################
 "$DOTFILE_SCRIPTS_DIR/makesymlinks.sh"
 
-###############################################################################
 # Reload the .bashrc so we have asdf and all the other recently installed tools
 ###############################################################################
 source $HOME/.bashrc

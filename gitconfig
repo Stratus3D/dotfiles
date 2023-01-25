@@ -5,7 +5,6 @@
 
   # Shorten a few common commands
   comt = commit-ticket
-  comjt = commit-jira-ticket
 
   # Stash all files, including untracked files and directories
   stash-all = stash save --include-untracked

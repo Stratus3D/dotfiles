@@ -12,7 +12,20 @@ IFS=$'\t\n' # Stricter IFS settings
 ticket_name=$(ticket-name)
 
 if [[ $# -gt 0 ]]; then
-    git commit -m "$ticket_name - $*"
+  message_lines="$*"
+  title_line=$(head -1 <<< "$message_lines")
+  body_lines=$(sed -e '1d' <<< "$message_lines")
+  # Construct the commit message
+  commit_msg=$(cat <<EOF
+$title_line
+
+[Card](https://rentpath.atlassian.net/browse/$ticket_name)
+
+$body_lines
+EOF
+)
+
+  git commit -m "$commit_msg"
 else
-    git commit -v
+  git commit -v
 fi

@@ -1,6 +1,6 @@
 #!/bin/bash -
 
-# Unoffical Bash "strict mode"
+# Unofficial Bash "strict mode"
 # http://redsymbol.net/articles/unofficial-bash-strict-mode/
 set -euo pipefail
 #ORIGINAL_IFS=$IFS
@@ -10,12 +10,6 @@ IFS=$'\t\n' # Stricter IFS settings
 # setup.sh
 # This script creates everything needed to get started on a new laptop
 ###############################################################################
-
-# Unoffical Bash "strict mode"
-# http://redsymbol.net/articles/unofficial-bash-strict-mode/
-set -euo pipefail
-IFS=$'\t\n' # Stricter IFS settings
-ORIGINAL_IFS=$IFS
 
 cd $HOME
 
@@ -68,7 +62,7 @@ mkdir -p $HOME/.psql # psql history directory
 # Get the uname string
 unamestr=$(uname)
 
-# Run the OS-specific setup scripts, needed here so git and other comamnds are
+# Run the OS-specific setup scripts, needed here so git and other commands are
 # available for later steps
 if [[ "$unamestr" == 'Darwin' ]]; then
     "$DOTFILE_SCRIPTS_DIR/setup/darwin.sh"
@@ -136,7 +130,6 @@ asdf plugin-add yarn https://github.com/twuni/asdf-yarn.git || true
 # Install the software versions listed in the .tool-versions file in $HOME
 asdf install
 
-###############################################################################
 # Install Misc. Packages
 ###############################################################################
 

@@ -20,9 +20,6 @@ gem install tmuxinator -v 3.0.5
 # Python Packages
 ###############################################################################
 
-# For office and PDF file diffs
-pip3 install virtualenv
-
 # Install Pygments
 pip install Pygments
 

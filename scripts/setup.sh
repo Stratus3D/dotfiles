@@ -1,4 +1,4 @@
-#!/bin/bash -
+#!/usr/bin/env bash
 
 # Unofficial Bash "strict mode"
 # http://redsymbol.net/articles/unofficial-bash-strict-mode/
@@ -11,7 +11,7 @@ IFS=$'\t\n' # Stricter IFS settings
 # This script creates everything needed to get started on a new laptop
 ###############################################################################
 
-cd $HOME
+cd "$HOME"
 
 DOTFILES_DIR=$HOME/dotfiles
 DOTFILE_SCRIPTS_DIR=$DOTFILES_DIR/scripts
@@ -19,10 +19,10 @@ DOTFILE_SCRIPTS_DIR=$DOTFILES_DIR/scripts
 # Setup dotfiles
 ###############################################################################
 
-if [ ! -d $DOTFILES_DIR ]; then
+if [ ! -d "$DOTFILES_DIR" ]; then
   if hash git 2>/dev/null; then
     echo "Git is already installed. Cloning repository..."
-    git clone ssh://git@github.com/Stratus3D/dotfiles.git $DOTFILES_DIR
+    git clone ssh://git@github.com/Stratus3D/dotfiles.git "$DOTFILES_DIR"
   else
     echo "Git is not installed. Downloading repository archive..."
     wget https://github.com/Stratus3D/dotfiles/archive/master.tar.gz
@@ -36,26 +36,26 @@ if [ ! -d $DOTFILES_DIR ]; then
 fi
 
 # Change to the dotfiles directory either way
-cd $DOTFILES_DIR
+cd "$DOTFILES_DIR"
 
 # Create commonly used directories
 ###############################################################################
-mkdir -p $HOME/bin # Third-party binaries
-mkdir -p $HOME/lib # Third-party software
-mkdir -p $HOME/nobackup # All files that shouldn't be backed up the normal way
-mkdir -p $HOME/history # Zsh and Bash history files
-mkdir -p $HOME/erl_libs # $ERL_LIBS directory
-mkdir -p $HOME/devel
-mkdir -p $HOME/devel/src # Go source directory
-mkdir -p $HOME/devel/bin # Go binary directory
-mkdir -p $HOME/devel/archived # Old projects
-mkdir -p $HOME/Screenshots
-mkdir -p $HOME/audio
-mkdir -p $HOME/audio/podcasts # For podcast storage
-mkdir -p $HOME/audio/music # For music storage
-mkdir -p $HOME/servers # For remote server mounts
-mkdir -p $HOME/clients # Files for third parties - companies, friends, etc...
-mkdir -p $HOME/.psql # psql history directory
+mkdir -p "$HOME/bin" # Third-party binaries
+mkdir -p "$HOME/lib" # Third-party software
+mkdir -p "$HOME/nobackup" # All files that shouldn't be backed up the normal way
+mkdir -p "$HOME/history" # Zsh and Bash history files
+mkdir -p "$HOME/erl_libs" # $ERL_LIBS directory
+mkdir -p "$HOME/devel"
+mkdir -p "$HOME/devel/src" # Go source directory
+mkdir -p "$HOME/devel/bin" # Go binary directory
+mkdir -p "$HOME/devel/archived" # Old projects
+mkdir -p "$HOME/Screenshots"
+mkdir -p "$HOME/audio"
+mkdir -p "$HOME/audio/podcasts" # For podcast storage
+mkdir -p "$HOME/audio/music" # For music storage
+mkdir -p "$HOME/servers" # For remote server mounts
+mkdir -p "$HOME/clients" # Files for third parties - companies, friends, etc...
+mkdir -p "$HOME/.psql" # psql history directory
 
 # Install software on laptop
 ###############################################################################

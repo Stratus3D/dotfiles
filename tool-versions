@@ -2,7 +2,7 @@ erlang 25.1.2
 elixir 1.14.2-otp-25
 lua 5.3.4
 ruby 2.6.8
-nodejs 14.17.6
+nodejs 19.7.0
 postgres 9.5.2
 rebar 3.16.1
 python 3.8.12 2.7.18

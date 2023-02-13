@@ -216,6 +216,9 @@ brew_install_or_upgrade weechat
 # For diffs of Microsoft Office files
 brew install tika
 
+# For removing file metadata
+brew install mat2
+
 ###############################################################################
 # Configure OSX
 ###############################################################################

@@ -207,6 +207,9 @@ install_or_upgrade k2pdfopt
 # For converting scanned PDFs to text PDFs
 install_or_upgrade ocrmypdf
 
+# Metadata remover for common file types
+install_or_upgrade mat2
+
 if [ "$XDG_CURRENT_DESKTOP" = "GNOME" ]; then
   ./debian/gnome
 elif [ "$XDG_CURRENT_DESKTOP" = "LXQt" ] || [ "$XDG_CURRENT_DESKTOP" = "LXDE" ]; then

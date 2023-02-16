@@ -17,3 +17,20 @@ endsnippet
 snippet dbgstop "Stop and clear dbg tracing"
 :dbg.stop_clear()
 endsnippet
+
+# https://jasonaxelson.com/talks/elixirconf2022/#/33
+snippet k "Key and value"
+$1: $1
+endsnippet
+
+snippet lin "Labeled inspect"
+IO.inspect($1, label: "$1 - #{__ENV__.line}")
+endsnippet
+
+snippet pin "Pipe inspect"
+|> IO.inspect(label: "$1 - #{__ENV__.line}")
+endsnippet
+
+snippet logi "Log inspect"
+Logger.info("$1: #{inspect($1, pretty: true)}")
+endsnippet

@@ -30,10 +30,6 @@ Plugin 'vim-erlang/vim-erlang-skeletons'
 " Elixir
 Plugin 'elixir-editors/vim-elixir'
 
-" JavaScript
-Plugin 'pangloss/vim-javascript'
-Plugin 'elzr/vim-json'
-
 " Lua
 Plugin 'xolox/vim-misc' " required by vim-lua-ftplugin
 Plugin 'xolox/vim-lua-ftplugin'

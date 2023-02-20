@@ -146,9 +146,6 @@ brew_install_or_upgrade pandoc
 # WxWidgets for Erlang
 brew_install_or_upgrade wxmac --with-static --with-stl --universal
 
-# For JSON pretty printing in the quicklook window
-brew cask install quicklook-json
-
 # QCacheGrind for valgrind analysis
 brew_install_or_upgrade qcachegrind --with-graphviz
 

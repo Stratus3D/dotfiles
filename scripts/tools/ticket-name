@@ -16,17 +16,18 @@ uppercase_branch_name() {
     UPPERCASE_BRANCH_NAME=$(echo "$BRANCH_NAME" | tr '[:lower:]' '[:upper:]');
 
     # Echo branch name
-    echo $UPPERCASE_BRANCH_NAME;
+    echo "$UPPERCASE_BRANCH_NAME";
 }
 
 jira_ticket() {
     # Get the uppercase branch name
-    branch_name=$(uppercase_branch_name)
+    branch_name="$(uppercase_branch_name)"
 
-    # Remove everything after the numbers, only the start of the branch is the JIRA ticket name
-    jira_ticket_name=$(echo $branch_name | sed 's/\(^[[:alpha:]]*-[0-9]*\)\(.*\)/\1/g')
+    # Remove everything before the slash and after the numbers. For example,
+    # `feat/abc-123-something-something` becomes `abc-123`
+    jira_ticket_name="$(echo "$branch_name" | cut -f2 -d/ | sed 's/\(^[[:alpha:]]*-[0-9]*\)\(.*\)/\1/g')"
 
-    echo $jira_ticket_name
+    echo "$jira_ticket_name"
 }
 
 jira_ticket

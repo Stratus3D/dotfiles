@@ -183,6 +183,9 @@ set undofile
 " Directory for edit history
 set undodir=~/.vim/undodir
 
+" Use syntax for folding
+set foldmethod=syntax
+
 " Use built in file browser (netrw) instead of NERDTree
 " (https://shapeshed.com/vim-netrw/)
 let g:netrw_banner = 0

@@ -186,6 +186,9 @@ set undodir=~/.vim/undodir
 " Use syntax for folding
 set foldmethod=syntax
 
+" By default open files completely unfolded
+set foldlevel=99
+
 " Use built in file browser (netrw) instead of NERDTree
 " (https://shapeshed.com/vim-netrw/)
 let g:netrw_banner = 0

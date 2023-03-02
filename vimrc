@@ -142,6 +142,9 @@ set wildignore+=/tmp/,*.so,*.swp,*.swo,*.zip,*.meta,*.prefab,*.png,*.jpg,*.beam
 " it before working on another buffer.
 set hidden
 
+" Turn on spell checking for all files
+set spell
+
 " Use American English when spell checking is turned on
 set spelllang=en_us
 

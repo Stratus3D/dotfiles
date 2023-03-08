@@ -14,6 +14,15 @@ snippet dbgstop "Stop and clear dbg tracing"
 dbg:stop_clear()${1:,}
 endsnippet
 
+# Maybe make this support maps as well as proplists?
+snippet k "Key and value"
+{$1, $1},
+endsnippet
+
 snippet lin "Labeled inspect"
 io:format("$1 - Line ~p: ~p~n", [?LINE, $1]),
+endsnippet
+
+snippet logi "Log inspect"
+logger:info("$1 - Line ~p: ~p~n", [?LINE, $1]),
 endsnippet

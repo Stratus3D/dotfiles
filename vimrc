@@ -441,6 +441,11 @@ let g:ale_elixir_elixir_ls_config = {
 \   },
 \ }
 
+" Run Mix formatter on Elixir files
+let g:ale_fixers = {
+\  'elixir': ['mix_format'],
+\}
+
 " UltiSnips settings
 let g:UltiSnipsExpandTrigger=",<tab>"
 

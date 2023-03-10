@@ -446,6 +446,9 @@ let g:ale_fixers = {
 \  'elixir': ['mix_format'],
 \}
 
+" Automatically run fixer macros on buffer save
+let g:ale_fix_on_save = 1
+
 " UltiSnips settings
 let g:UltiSnipsExpandTrigger=",<tab>"
 

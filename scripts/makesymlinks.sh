@@ -144,13 +144,16 @@ for file in $tool_scripts; do
 done
 IFS=$ORIGINAL_IFS
 
-# If vundle is already installed, remove it and fetch the latest from Github
-remove_dir_if_exists $dotfiles/vim/bundle/Vundle.vim
+# Download Vundle
+vundle_dir="$dotfiles/vim/bundle/Vundle.vim"
+if [ ! -d "$vundle_dir" ]; then
+  git clone https://github.com/gmarik/Vundle.vim.git "$vundle_dir"
+else
+  echo "Vundle already installed"
+fi
 
-# Download vundle
-echo "Installing vim plugins..."
-git clone https://github.com/gmarik/Vundle.vim.git $dotfiles/vim/bundle/Vundle.vim
-# Install vundle and all other plugins
+# Install Vundle and all other plugins
+echo "Installing Vim plugins..."
 vim +PluginInstall +qall
 
 # Symlink hosts_manager hosts profiles directory

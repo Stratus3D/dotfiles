@@ -64,16 +64,6 @@ brew_launchctl_restart() {
   launchctl load "$HOME/Library/LaunchAgents/$plist" >/dev/null
 }
 
-gem_install_or_update() {
-  if gem list "$1" --installed > /dev/null; then
-    fancy_echo "Updating %s ..." "$1"
-    gem update "$@"
-  else
-    fancy_echo "Installing %s ..." "$1"
-    gem install "$@"
-  fi
-}
-
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew ..."
     curl -fsS \
@@ -109,12 +99,6 @@ brew unlink openssl && brew link openssl --force
 brew_install_or_upgrade 'libyaml'
 
 gem update --system
-
-gem_install_or_update 'bundler'
-
-fancy_echo "Configuring Bundler ..."
-  number_of_cores=$(sysctl -n hw.ncpu)
-  bundle config --global jobs $((number_of_cores - 1))
 
 # Exuberant Ctags
 brew_install_or_upgrade ctags

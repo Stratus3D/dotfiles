@@ -98,8 +98,6 @@ brew unlink openssl && brew link openssl --force
 
 brew_install_or_upgrade 'libyaml'
 
-gem update --system
-
 # Exuberant Ctags
 brew_install_or_upgrade ctags
 

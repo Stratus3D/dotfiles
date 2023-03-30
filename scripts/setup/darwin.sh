@@ -68,7 +68,7 @@ brew_install_or_upgrade 'git'
 brew_install_or_upgrade 'the_silver_searcher'
 brew_install_or_upgrade 'vim'
 brew_install_or_upgrade 'ctags'
-brew_install_or_upgrade 'tmux' --with-utf8proc
+brew_install_or_upgrade 'tmux'
 $HOME/dotfiles/script/setup/tmux.sh
 brew_install_or_upgrade 'imagemagick'
 brew_install_or_upgrade 'qt'
@@ -88,7 +88,7 @@ brew_install_or_upgrade 'libyaml'
 brew_install_or_upgrade ctags
 
 # Visualization library
-brew_install_or_upgrade graphviz --with-app
+brew_install_or_upgrade graphviz
 brew link graphviz
 
 # Gimp for image editing
@@ -112,10 +112,10 @@ brew_install_or_upgrade jq
 brew_install_or_upgrade pandoc
 
 # WxWidgets for Erlang
-brew_install_or_upgrade wxmac --with-static --with-stl --universal
+brew_install_or_upgrade wxmac
 
 # QCacheGrind for valgrind analysis
-brew_install_or_upgrade qcachegrind --with-graphviz
+brew_install_or_upgrade qcachegrind
 
 # For watching for file change events
 brew_install_or_upgrade entr

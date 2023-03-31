@@ -63,16 +63,31 @@ fi
 fancy_echo "Updating Homebrew formulas ..."
 brew update
 
+# My default interactive shell
 brew_install_or_upgrade 'zsh'
+
+# For version control
 brew_install_or_upgrade 'git'
+
+# For code search
 brew_install_or_upgrade 'the_silver_searcher'
+
+# My editor
 brew_install_or_upgrade 'vim'
-brew_install_or_upgrade 'ctags'
+
+# For Code navigation - Exuberant ctags
+brew_install_or_upgrade ctags
+
+# For screen sessions
 brew_install_or_upgrade 'tmux'
 $HOME/dotfiles/script/setup/tmux.sh
+
+# For shell scripting
+brew_install_or_upgrade 'shellcheck'
+
+# For image manipulation
 brew_install_or_upgrade 'imagemagick'
 brew_install_or_upgrade 'qt'
-brew_install_or_upgrade 'shellcheck'
 brew_install_or_upgrade 'telnet'
 
 # For Ruby
@@ -83,9 +98,6 @@ brew_install_or_upgrade 'openssl'
 brew unlink openssl && brew link openssl --force
 
 brew_install_or_upgrade 'libyaml'
-
-# Exuberant Ctags
-brew_install_or_upgrade ctags
 
 # Visualization library
 brew_install_or_upgrade graphviz

@@ -103,20 +103,6 @@ brew_install_or_upgrade 'libyaml'
 brew_install_or_upgrade graphviz
 brew link graphviz
 
-# Gimp for image editing
-brew_tap homebrew/cask
-brew cask install gimp
-
-# Inkscape for vector graphics
-brew cask install xquartz
-brew cask install inkscape
-
-# Install pastel for viewing and manipulating colors on the command line
-brew install pastel
-
-# For image metadata manipulation
-brew_install_or_upgrade exiftool
-
 # Install command-line JSON processor
 brew_install_or_upgrade jq
 
@@ -193,8 +179,27 @@ brew_install_or_upgrade weechat
 # For diffs of Microsoft Office files
 brew install tika
 
+# For graphics and file metadata on the command line
+
+# Install pastel for viewing and manipulating colors on the command line
+brew install pastel
+
 # For removing file metadata
 brew install mat2
+
+# For image metadata manipulation
+brew_install_or_upgrade exiftool
+
+# For artwork
+
+# Gimp for image editing
+brew_tap homebrew/cask
+brew cask install gimp
+
+# Inkscape for vector graphics
+brew cask install xquartz
+brew cask install inkscape
+
 
 ###############################################################################
 # Configure OSX

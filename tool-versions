@@ -7,3 +7,4 @@ postgres 9.5.25
 rebar 3.16.1
 python 3.11.2 2.7.18
 yarn 1.16.0
+rust 1.67.0

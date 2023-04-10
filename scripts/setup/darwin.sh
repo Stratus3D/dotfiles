@@ -70,7 +70,7 @@ brew_install_or_upgrade 'zsh'
 brew_install_or_upgrade 'git'
 
 # For code search
-brew_install_or_upgrade 'the_silver_searcher'
+brew_install_or_upgrade ripgrep
 
 # My editor
 brew_install_or_upgrade 'vim'

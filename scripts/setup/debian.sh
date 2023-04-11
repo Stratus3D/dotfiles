@@ -43,8 +43,10 @@ install_or_upgrade zsh
 install_or_upgrade vim-gtk
 install_or_upgrade curl
 
+# For searching code and other files
+install_or_upgrade ripgrep
+
 # other development tools
-install_or_upgrade silversearcher-ag
 install_or_upgrade exuberant-ctags
 install_or_upgrade jq
 install_or_upgrade linux-tools-`uname -r` # perf

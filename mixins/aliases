@@ -60,7 +60,6 @@ alias tmuxinator="cd $HOME && tmuxinator"
 # Silver Searcher aliases
 alias ag="ag --path-to-ignore ~/.agignore"
 alias age="ag --erlang"
-alias agj="ag --js"
 alias agr="ag --ruby"
 alias agp="ag --python"
 alias agu="ag -u"

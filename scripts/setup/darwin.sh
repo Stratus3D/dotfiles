@@ -90,6 +90,9 @@ brew_install_or_upgrade 'imagemagick'
 brew_install_or_upgrade 'qt'
 brew_install_or_upgrade 'telnet'
 
+# For building Erlang and Elixir, possibly other things
+brew_install_or_upgrade autoconf
+
 # For Ruby
 brew_install_or_upgrade readline
 

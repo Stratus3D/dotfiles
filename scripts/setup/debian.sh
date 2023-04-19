@@ -30,6 +30,8 @@ sudo snap remove chromium
 ###############################################################################
 
 # General dependencies
+
+# For building Erlang and Elixir, possibly other things
 install_or_upgrade autoconf
 install_or_upgrade libssl-dev
 install_or_upgrade build-essential

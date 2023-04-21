@@ -8,11 +8,11 @@
 # * Handle multiline TODOs.
 # * Take a directory as an additional argument.
 
-# Unoffical Bash "strict mode"
+# Unofficial Bash "strict mode"
 # http://redsymbol.net/articles/unofficial-bash-strict-mode/
 set -euo pipefail
 IFS=$'\t\n' # Stricter IFS settings
-ORIGINAL_IFS=$IFS
+#ORIGINAL_IFS=$IFS
 
 usage() {
     cat <<EOF
@@ -26,24 +26,24 @@ EOF
 }
 find_notes() {
     # Take keyword and pass it to `ag`.
-    ag $1 --group --color
+    rg -s "$1" --color always
 }
 
 print_todos() {
     # Edit the output of `ag` to remove any unnecessary syntax from the line.
-    find_notes todo | sed '1,$s/:.*TODO\(:\)\{0,1\}/:/
+    find_notes TODO | sed '1,$s/:.*TODO\(:\)\{0,1\}/:/
     1,$s/:.*todo\(:\)\{0,1\}/:/'
 }
 
 print_fixmes() {
     # Edit the output of `ag` to remove any unnecessary syntax from the line.
-    find_notes fixme | sed '1,$s/:.*FIXME\(:\)\{0,1\}/:/
+    find_notes FIXME | sed '1,$s/:.*FIXME\(:\)\{0,1\}/:/
     1,$s/:.*fixme\(:\)\{0,1\}/:/'
 }
 
 print_optimizes() {
     # Edit the output of `ag` to remove any unnecessary syntax from the line.
-    find_notes optimize | sed '1,$s/:.*OPTIMIZE\(:\)\{0,1\}/:/
+    find_notes OPTIMIZE | sed '1,$s/:.*OPTIMIZE\(:\)\{0,1\}/:/
     1,$s/:.*optimize\(:\)\{0,1\}/:/'
 }
 

@@ -25,26 +25,23 @@ usage() {
 EOF
 }
 find_notes() {
-    # Take keyword and pass it to `ag`.
-    rg -s "$1" --color always
+    # Take keyword and pass it to ripgrep
+    rg -S "$1" --color always --pretty
 }
 
 print_todos() {
-    # Edit the output of `ag` to remove any unnecessary syntax from the line.
-    find_notes TODO | sed '1,$s/:.*TODO\(:\)\{0,1\}/:/
-    1,$s/:.*todo\(:\)\{0,1\}/:/'
+    # Edit the output of ripgrep to remove any unnecessary syntax from the line.
+    find_notes todo | sed 's/\(.*\):.*todo.*\(:\)/\1:/I'
 }
 
 print_fixmes() {
-    # Edit the output of `ag` to remove any unnecessary syntax from the line.
-    find_notes FIXME | sed '1,$s/:.*FIXME\(:\)\{0,1\}/:/
-    1,$s/:.*fixme\(:\)\{0,1\}/:/'
+    # Edit the output of ripgrep to remove any unnecessary syntax from the line.
+    find_notes fixme | sed 's/\(.*\):.*fixme.*\(:\)/\1:/I'
 }
 
 print_optimizes() {
-    # Edit the output of `ag` to remove any unnecessary syntax from the line.
-    find_notes OPTIMIZE | sed '1,$s/:.*OPTIMIZE\(:\)\{0,1\}/:/
-    1,$s/:.*optimize\(:\)\{0,1\}/:/'
+    # Edit the output of ripgrep to remove any unnecessary syntax from the line.
+    find_notes optimize | sed 's/\(.*\):.*optimize.*\(:\)/\1:/I'
 }
 
 if [ $# -gt 0 ]; then

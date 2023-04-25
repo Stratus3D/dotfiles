@@ -22,13 +22,14 @@ alias be="bundle exec"
 alias gst="git status"
 alias gco="git commit -m "
 alias gdh="git diff HEAD"
+alias gd="git diff"
 
 # Postgres
 # TODO: These need to change to support asdf-postgres
 # pg_ctl -D ~/.asdf/installs/postgres/9.5.2/data -l logfile start
 alias startpost='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias stoppost='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
-alias statpost='ps aux | ag postgres'
+alias statpost='ps aux | rg postgres'
 
 os=$(uname -s)
 if [[ "$os" = 'Darwin' ]]; then
@@ -57,12 +58,11 @@ alias vim-cheatsheet="open $HOME/dotfiles/charts/vim_cheat_sheet_for_programmers
 # home directory to invoke it with the default Ruby.
 alias tmuxinator="cd $HOME && tmuxinator"
 
-# Silver Searcher aliases
-alias ag="ag --path-to-ignore ~/.agignore"
-alias age="ag --erlang"
-alias agr="ag --ruby"
-alias agp="ag --python"
-alias agu="ag -u"
+# Ripgrep aliases
+alias rge="rg --type erlang"
+alias rgr="rg --type ruby"
+alias rgx="rg --type elixir"
+alias rgu="rg --no-ignore"
 
 # URL encoding/decoding commands
 alias urldecode='python -c "import sys, urllib.parse as parse; \

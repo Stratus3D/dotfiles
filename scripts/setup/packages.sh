@@ -47,6 +47,10 @@ npm install -g @commitlint/cli @commitlint/config-conventional
 # For viewing flame graphs in the browser
 npm install -g speedscope
 
+# Quick diffs of large JSON blobs. I can pass in files that contain raw
+# unformatted JSON and get nicely structured JSON diffs.
+npm install -g json-diff
+
 # Haskell Packages
 ###############################################################################
 

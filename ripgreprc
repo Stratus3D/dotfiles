@@ -1,0 +1,10 @@
+# Ripgrep (rg) config file
+# Don't let ripgrep vomit really long lines to my terminal, and show a preview.
+--max-columns=80
+--max-columns-preview
+
+# Include .github directory in search results
+--ignore-file=$HOME/.ignore
+
+# Because who cares about case!?
+--smart-case

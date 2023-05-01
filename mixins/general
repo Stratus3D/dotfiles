@@ -34,3 +34,6 @@ K2PDFOPT+='-dev k2 ' # The device is a second generation kindle
 K2PDFOPT+='-m 0.8' # Ignore some margin
 
 export K2PDFOPT
+
+# Ripgrep config file location
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc

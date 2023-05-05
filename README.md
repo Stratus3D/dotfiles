@@ -3,9 +3,11 @@ My Dotfiles
 
 **Stratus3D**
 
-Everything I need to get setup on a new machine.
+**Everything I need to get setup on a new machine for software development.**
 
 This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a script to symlink all the config files and directories in place, and a set of setup scripts that install all the tools I need on Ubuntu or OSX. The [Gruvbox Dark colorscheme](https://github.com/morhetz/gruvbox) is used for Vim and the terminal emulator profiles.
+
+I primarily write software in Erlang, Elixir, Rust, and Bash and occasionally in Ruby, JavaScript/Node.JS, Python, and Lua. The plugins and config specified in this repo is for polyglot local development in these languages.
 
 ## Features
 
@@ -42,31 +44,20 @@ Configurations for all the tools are need are checked into this repository. All 
 
 This is software that I use for my day-to-day work. All of this is installed via the `setup.sh` script.
 
-* [Git](https://git-scm.com/)
-* [Vim](http://www.vim.org/)
-* [Tmux](https://tmux.github.io/)
-* [Z shell](http://zsh.sourceforge.net/)
-* [asdf](https://github.com/asdf-vm/asdf)
-* [Tmuxinator](https://github.com/tmuxinator/tmuxinator)
-* [Exuberant Ctags](http://ctags.sourceforge.net/)
-* [Dash/ZealDocs](http://zealdocs.org/)
+* [Git](https://git-scm.com/) for version control
+* [Vim](http://www.vim.org/) for text editing
+* [Tmux](https://tmux.github.io/) for terminal sessions and window panes
+* [Z shell](http://zsh.sourceforge.net/) as my interactive shell
+* [asdf](https://github.com/asdf-vm/asdf) for programming language version management
+* [Tmuxinator](https://github.com/tmuxinator/tmuxinator) for 
+* [Exuberant Ctags](http://ctags.sourceforge.net/) for code navigation
+* [Dash/ZealDocs](http://zealdocs.org/) and [devdocs.io](https://devdocs.io/) for documentation
 * [Ungoogled Chromium](https://github.com/Eloston/ungoogled-chromium)
 
 OSX Only
 
 * [Hammerspoon](http://www.hammerspoon.org/)
-* [Hammerspoon ShiftIt](https://github.com/peterklijn/hammerspoon-shiftit)
-
-### Languages
-
-Use asdf for version management ([https://github.com/asdf-vm/asdf](https://github.com/asdf-vm/asdf)) for each language.
-
-* Erlang
-* Elixir
-* Ruby
-* Python
-* Lua
-* Javascript (NodeJS)
+* [Hammerspoon ShiftIt](https://github.com/peterklijn/hammerspoon-shiftit) for easy window resizing
 
 ## Documentation
 

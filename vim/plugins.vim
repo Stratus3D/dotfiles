@@ -89,6 +89,10 @@ Plugin 'vim-test/vim-test'
 " https://vi.stackexchange.com/a/23296
 Plugin 'google/vim-searchindex'
 
+" A private plugin I wrote for myself that allows me to quickly jump between
+" a file in Vim and file on the Git host website (e.g. GitHub or BitBucket)
+Plugin 'git@github.com:Stratus3D/git-hop.vim.git'
+
 call vundle#end()
 
 filetype plugin indent on

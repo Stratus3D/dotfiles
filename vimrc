@@ -159,10 +159,12 @@ for d in glob('~/.vim/spell/*.add', 1, 1)
     endif
 endfor
 
-" Autocompletion from spell check
+" Keyword completion options
+" Use completions from spell check
 set complete+=kspell
-" TODO: Figure out if this is needed or not
-set complete+=s
+
+" Use tags for completion as well
+set complete+=t
 
 " TODO: Figure out what all these settings do and check in the ones that are
 " useful

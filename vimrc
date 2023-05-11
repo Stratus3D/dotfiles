@@ -166,6 +166,12 @@ set complete+=kspell
 " Use tags for completion as well
 set complete+=t
 
+" Configure as-you-type completions
+" menu - show menu when there are multiple possible completions
+" menuone - show menu even when there is only one possible completion
+" preview - show extra info about the currently selected completion
+set completeopt=menu,menuone,preview
+
 " TODO: Figure out what all these settings do and check in the ones that are
 " useful
 "set spell noci nosi noai nolist noshowmode

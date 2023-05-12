@@ -449,8 +449,11 @@ let g:ale_elixir_elixir_ls_config = {
 \   },
 \ }
 
-" Run Mix formatter on Elixir files
+" Configure ALE fixers
+" On all files, removing trailing lines and whitespace
+" On Elixir files, run mix format
 let g:ale_fixers = {
+\  '*': ['remove_trailing_lines', 'trim_whitespace'],
 \  'elixir': ['mix_format'],
 \}
 

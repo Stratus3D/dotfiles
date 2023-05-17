@@ -452,6 +452,10 @@ let g:ale_elixir_elixir_ls_config = {
 " Configure ALE fixers
 " On all files, removing trailing lines and whitespace
 " On Elixir files, run mix format
+"
+" See
+" https://medium.com/swlh/how-did-i-setup-neovim-for-rust-1763eb2ef98c
+" https://petermalmgren.com/rc-batch-day-9/
 let g:ale_fixers = {
 \  '*': ['remove_trailing_lines', 'trim_whitespace'],
 \  'elixir': ['mix_format'],

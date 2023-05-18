@@ -68,3 +68,6 @@ rustup component add clippy
 
 # Rust code formatting
 rustup component add rustfmt
+
+# Rust language server
+rustup component add rust-analyzer

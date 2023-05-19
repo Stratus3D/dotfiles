@@ -459,6 +459,7 @@ let g:ale_elixir_elixir_ls_config = {
 let g:ale_fixers = {
 \  '*': ['remove_trailing_lines', 'trim_whitespace'],
 \  'elixir': ['mix_format'],
+\  'rust': ['rustfmt']
 \}
 
 " Automatically run fixer macros on buffer save

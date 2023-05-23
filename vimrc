@@ -462,6 +462,13 @@ let g:ale_fixers = {
 \  'rust': ['rustfmt']
 \}
 
+" Enable specific linters for certain file types
+let g:ale_linters = {
+\  'erlang': ['dialyzer', 'erlc', 'erlfmt', 'elvis'],
+\  'rust': ['rust-analyzer']
+\}
+
+
 " Automatically run fixer macros on buffer save
 let g:ale_fix_on_save = 1
 

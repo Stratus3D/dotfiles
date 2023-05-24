@@ -1,5 +1,7 @@
 # A script for easy exporting of plots
 # Invoke as `call "export.gpi" "filename.png" "terminal options"`
+#
+# Requires `font` variable to be set
 
 # Initialize arguments
 filename = ARG1
@@ -58,7 +60,7 @@ if (file_extension eq 'svg') {
 
   # Use default settings if user does not pass in custom options
   if (terminal_options eq '') {
-    set terminal svg size 1920, 1280 dynamic enhanced font "Helvetica,16"
+    set terminal svg size 1920, 1280 dynamic enhanced font font
   } else {
     eval 'set terminal svg ' . terminal_options
   }

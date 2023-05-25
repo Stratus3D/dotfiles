@@ -14,6 +14,13 @@ set isosamples 30
 # Macros aren't enabled by default but I use them occassionally
 set macros
 
+# Variables
+# recommended by Gnuplot in Action, similar to Helvetica
+font = "Nimbus Sans L,16" # Or "Helvetica,16"
+
+# date/time variables
+times = "set xdata time; set xtics format '%T'; set timefmt '%H:%M:%S'"
+dates = "set xdata time; set xtics format '%F'; set timefmt '%Y-%m:%d'"
 
 # Font settings
 set terminal qt font "Helvetica,16"

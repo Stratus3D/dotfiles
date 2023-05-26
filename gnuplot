@@ -23,7 +23,7 @@ times = "set xdata time; set xtics format '%T'; set timefmt '%H:%M:%S'"
 dates = "set xdata time; set xtics format '%F'; set timefmt '%Y-%m:%d'"
 
 # Font settings
-set terminal qt font "Helvetica,16"
+set terminal qt font font
 
 # Line settings
 set termoption linewidth 1.4

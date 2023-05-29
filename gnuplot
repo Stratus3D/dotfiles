@@ -22,7 +22,7 @@ font = "Nimbus Sans L,16" # Or "Helvetica,16"
 times = "set xdata time; set xtics format '%T'; set timefmt '%H:%M:%S'"
 dates = "set xdata time; set xtics format '%F'; set timefmt '%Y-%m:%d'"
 
-# Font settings
+# Use qt terminal by default, with font setting
 set terminal qt font font
 
 # Line settings

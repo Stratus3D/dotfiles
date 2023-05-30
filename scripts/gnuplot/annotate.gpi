@@ -1,0 +1,35 @@
+# A set of bindings to allow for interactive annotation of Gnuplot plots with
+# the mouse. Usage:
+#
+# In the gnuplot prompt run:
+#
+# > load "annotate.gpi"
+#
+# Once it is loaded into your Gnuplot session you can do the following:
+#
+# * Add a point at the cursor location by left clicking with the mouse
+# * Add a label at the cursor location by holding the Ctrl key and left
+#   clicking with the mouse. Then in the shell run
+#   `label(tag_index, "tag label text")`
+# * Add an arrow by holding the Alt key and left clicking twice with the mouse.
+#   First click for the tail of the arrow and second for the point of the arrow
+# * Cancel any multi-step operation above by hitting the escape key
+
+bind "Button1" "set label at MOUSE_X, MOUSE_Y center point pt 1 ps 6; set label at MOUSE_X, MOUSE_Y center point pt 6 ps 4; replot"
+
+# Add a label, first specify location, then in the prompt specify tag and text
+bind "Ctrl-Button1" "label_x=MOUSE_X; label_y=MOUSE_Y; set label 1000 at label_x,label_y point; print \"Now use 'eval label(tag, text)' to specify label\"; replot"
+label(tag, text) = sprintf("set label %d '%s' at %f,%f; unset label 1000; replot", tag, text, label_x, label_y)
+
+# Add an arrow
+bind "Alt-Button1" "if(exists('arrow')==0) { \
+  arrow=1; arrow_x=MOUSE_X; arrow_y=MOUSE_Y; \
+  set label 1000 at arrow_x, arrow_y point; replot; \
+} else { \
+  unset label 1000; \
+  set arrow from arrow_x, arrow_y to MOUSE_X,MOUSE_Y; replot; \
+  undefine arrow, arrow_x, arrow_y \
+}"
+
+# Undefine any variables set by the bindings above, effectively canceling the operation originally started by the user
+bind "Escape" "unset label 1000; replot; undefine arrow,arrow_x,arrow_y,label_x,label_y"

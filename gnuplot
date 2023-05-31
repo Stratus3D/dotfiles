@@ -22,6 +22,11 @@ font = "Nimbus Sans L,16" # Or "Helvetica,16"
 times = "set xdata time; set xtics format '%T'; set timefmt '%H:%M:%S'"
 dates = "set xdata time; set xtics format '%F'; set timefmt '%Y-%m:%d'"
 
+# Functions
+# Color management functions, not sure if I really need these
+hsv(h, s, v) = hsv2rgb(h - floor(h), s, v)
+pack(r, g, b) = 2**16*r + 2**8*g + b
+
 # Use qt terminal by default, with font setting
 set terminal qt font font
 

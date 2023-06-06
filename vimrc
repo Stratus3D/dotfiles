@@ -464,7 +464,7 @@ let g:ale_fixers = {
 " Enable specific linters for certain file types
 let g:ale_linters = {
 \  'erlang': ['dialyzer', 'erlc', 'erlfmt', 'elvis'],
-\  'rust': ['rust-analyzer']
+\  'rust': ['analyzer']
 \}
 
 

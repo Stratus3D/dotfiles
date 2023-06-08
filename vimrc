@@ -467,9 +467,10 @@ let g:ale_linters = {
 \  'rust': ['analyzer']
 \}
 
-
-" Automatically run fixer macros on buffer save
+" Automatically run fixer macros on buffer save, and linters when leaving
+" insert mode
 let g:ale_fix_on_save = 1
+let g:ale_lint_on_insert_leave = 1
 
 " UltiSnips settings
 let g:UltiSnipsExpandTrigger=",<tab>"

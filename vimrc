@@ -526,7 +526,7 @@ augroup test
   autocmd!
 
   " Run tests automatically when a file is saved
-  autocmd BufWrite * if test#exists() |
+  autocmd BufWritePost * if test#exists() |
     \   TestFile |
     \ endif
 augroup END

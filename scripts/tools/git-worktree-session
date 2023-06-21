@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+# https://unix.stackexchange.com/questions/472001/how-to-create-a-new-tmux-window-with-same-pane-layout
+# https://github.com/tmuxinator/tmuxinator
+# https://github.com/remi/teamocil
+# https://www.matthewcm.dev/posts/2022-04-23-git-worktree/
+# https://github.com/chitacan/wttw
+
+usage() {
+  cat <<EOF
+Usage: $(basename "$0") [branch name]
+
+Create and navigate to new worktree, or jump to an existing one, inside of a new
+tmux window that is a clone of the existing one.
+
+This script must be run inside a tmux session and in a directory that is part of
+a Git repository.
+EOF
+  exit
+}
+
+error_exit() {
+  printf "%s\n" "$1" 1>&2
+  exit "${2:-1}" # default exit status 1
+}
+
+WORKTREES_DIR=worktrees
+
+if [ -z "${TMUX:-}" ]; then
+  error_exit "Must be inside a running tmux session"
+fi
+
+# get repo root
+repo_root=$(git rev-parse --show-toplevel)
+
+if [ -z "$repo_root" ]; then
+  error_exit "Must be invoked inside a Git repository"
+fi
+
+branch_name="${1:-}"
+
+if [ -z "$branch_name" ]; then
+  error_exit "Branch name must be specified"
+fi
+
+# Get all existing worktrees
+worktrees=$(git worktree list --porcelain | grep '^worktree' | cut -f2 -d' ' || true)
+worktrees_except_root=$(grep -v "^$(git rev-parse --show-toplevel)\$" <<< "$worktrees" || true)
+
+# Check for existing worktree
+worktree=$(grep "${WORKTREES_DIR}/${branch_name}" <<< "$worktrees_except_root" 2> /dev/null || true)
+
+if [ -z "$worktree" ]; then
+  worktree="$repo_root/${WORKTREES_DIR}/${branch_name}"
+
+  if git rev-parse --verify "$branch_name" 2> /dev/null; then
+    git worktree add "$worktree" "$branch_name"
+  else
+    # We specify the worktree and branch name here, as we want the branch name to
+    # contain any `/` characters if specified
+    git worktree add -b "$branch_name" "$worktree"
+  fi
+fi
+
+# Get settings from current tmux window
+current_layout=$(tmux list-windows -F "#{window_active} #{window_layout}" | grep "^1" | cut -d " " -f 2)
+
+# A new window will already have one pane so the number of splits we need to
+# make is: number of panes - 1
+panes_count=$(tmux list-panes | wc -l)
+split_needed_count=$((panes_count-1))
+
+# Create a new tmux window set to the worktree
+tmux new-window -n "$branch_name" -c "$worktree"
+
+# Split so we have the same number of panes as the old tmux window
+for _i in $(seq 1 $split_needed_count); do
+  tmux split-window -c "$worktree"
+done
+
+# Specify the layout from the old tmux window
+tmux select-layout -t "$branch_name" "$current_layout"

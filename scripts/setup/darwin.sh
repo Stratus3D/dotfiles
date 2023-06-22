@@ -106,6 +106,9 @@ brew_install_or_upgrade 'libyaml'
 brew_install_or_upgrade graphviz
 brew link graphviz
 
+# For plotting data on charts at the command line
+brew_install_or_upgrade gnuplot
+
 # Install command-line JSON processor
 brew_install_or_upgrade jq
 

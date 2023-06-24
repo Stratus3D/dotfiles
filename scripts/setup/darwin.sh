@@ -170,6 +170,9 @@ brew_install_or_upgrade ansible
 # For MySQL migrations
 brew_install_or_upgrade percona-toolkit
 
+# For benchmarking in the shell
+brew_install_or_upgrade hyperfine
+
 # Install iperf3 for network performance tests
 brew_install_or_upgrade iperf3
 

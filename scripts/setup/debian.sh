@@ -55,6 +55,10 @@ install_or_upgrade linux-tools-`uname -r` # perf
 install_or_upgrade dstat
 # For use with Erlang's fprof
 install_or_upgrade kcachegrind
+
+# For benchmarking in the shell
+install_or_upgrade hyperfine
+
 # For watching for file change events
 install_or_upgrade entr
 install_or_upgrade vagrant

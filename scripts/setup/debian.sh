@@ -61,7 +61,7 @@ install_or_upgrade hyperfine
 
 # For watching for file change events
 install_or_upgrade entr
-install_or_upgrade vagrant
+
 install_or_upgrade ansible
 install_or_upgrade percona-toolkit
 

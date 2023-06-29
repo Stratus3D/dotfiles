@@ -62,7 +62,10 @@ install_or_upgrade hyperfine
 # For watching for file change events
 install_or_upgrade entr
 
+# Install tools for server testing and administration
 install_or_upgrade ansible
+
+# For MySQL migrations
 install_or_upgrade percona-toolkit
 
 # For clipboard access on the command line

@@ -53,6 +53,7 @@ install_or_upgrade exuberant-ctags
 install_or_upgrade jq
 install_or_upgrade linux-tools-`uname -r` # perf
 install_or_upgrade dstat
+
 # For use with Erlang's fprof
 install_or_upgrade kcachegrind
 
@@ -174,9 +175,6 @@ install_or_upgrade ncftp python-paramiko python-pycryptopp lftp python-boto pyth
 
 # Needed for tmux
 install_or_upgrade libevent-dev
-
-# Needed for phantomjs
-install_or_upgrade chrpath libxft-dev libfreetype6-dev libfreetype6 libfontconfig1-dev libfontconfig1
 
 # For network troubleshooting
 install_or_upgrade mtr

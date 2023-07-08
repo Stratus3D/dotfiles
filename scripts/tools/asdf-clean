@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+# Function used to convert lines like this:
+#
+# ruby 2.0.0
+# ruby 3.0.0
+# elixir 1.10.0
+#
+# To lines like this:
+#
+# ruby 2.0.0 3.0.0
+# elixir 1.10.0
+join_multiple() {
+  local last
+  local n
+
+  while IFS=' ' read -r word definition
+  do
+    if [ "${last:-}" = "$word" ]
+    then
+      printf " %s" "$definition"
+    else
+      if [ -n "${n:-}" ]; then
+        echo
+      else
+        n=1
+      fi
+      printf "%s\\t%s" "$word" "$definition"
+      last="$word"
+    fi
+  done < "${1:-/dev/stdin}"
+  echo
+}
+
+# Find command often crashes due to permission issues
+version_files="$(find "$HOME" -name .tool-versions || true)"
+
+# Combine all .tool-version file contents into one variable
+versions_in_use="$(
+while read -r filename; do
+  cat "$filename";
+done <<< "$version_files"
+)"
+
+# Loop over each line of the .tool-versions file
+while read -r line; do
+  IFS=$' \t' read -r -a tool_and_versions <<< "$line"
+  # Split out the tool name and versions
+  tool_name="${tool_and_versions[0]}"
+  global_versions=("${tool_and_versions[@]:1}")
+
+  # Loop over each version of the tool name
+  for version in $(asdf list "$tool_name"); do
+    # Trim off leading/trailing tab/spaces
+    trimmed_version=$(echo "$version" | xargs)
+    # When version not in `global_versions` array from .tool-versions file
+    if [[ ! " ${global_versions[*]} " =~ ${trimmed_version} ]]; then
+      # Remove the version here if you want
+      echo "$tool_name version $trimmed_version not found in any .tool-versions"
+    fi
+  done
+done < <(echo "$versions_in_use" | sort -k1 | sort -u | join_multiple)

@@ -44,15 +44,15 @@ Configurations for all the tools are need are checked into this repository. All 
 
 This is software that I use for my day-to-day work. All of this is installed via the `setup.sh` script.
 
+* [asdf](https://github.com/asdf-vm/asdf) for programming language version management
+* [Dash/ZealDocs](http://zealdocs.org/) and [devdocs.io](https://devdocs.io/) for documentation
+* [Exuberant Ctags](http://ctags.sourceforge.net/) for code navigation
 * [Git](https://git-scm.com/) for version control
 * [Vim](http://www.vim.org/) for text editing
 * [Tmux](https://tmux.github.io/) for terminal sessions and window panes
-* [Z shell](http://zsh.sourceforge.net/) as my interactive shell
-* [asdf](https://github.com/asdf-vm/asdf) for programming language version management
-* [Tmuxinator](https://github.com/tmuxinator/tmuxinator) for 
-* [Exuberant Ctags](http://ctags.sourceforge.net/) for code navigation
-* [Dash/ZealDocs](http://zealdocs.org/) and [devdocs.io](https://devdocs.io/) for documentation
+* [Tmuxinator](https://github.com/tmuxinator/tmuxinator) for managing tmux sessions
 * [Ungoogled Chromium](https://github.com/Eloston/ungoogled-chromium)
+* [Z shell](http://zsh.sourceforge.net/) as my interactive shell
 
 OSX Only
 

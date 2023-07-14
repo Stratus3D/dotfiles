@@ -1,13 +1,13 @@
-source $HOME/dotfiles/mixins/general
-source $HOME/dotfiles/mixins/asdf
-source $HOME/dotfiles/mixins/functions
-source $HOME/dotfiles/mixins/aliases
-source $HOME/dotfiles/mixins/grep
-source $HOME/dotfiles/mixins/path
-source $HOME/dotfiles/mixins/man_color
+source "$HOME/dotfiles/mixins/general"
+source "$HOME/dotfiles/mixins/asdf"
+source "$HOME/dotfiles/mixins/functions"
+source "$HOME/dotfiles/mixins/aliases"
+source "$HOME/dotfiles/mixins/grep"
+source "$HOME/dotfiles/mixins/path"
+source "$HOME/dotfiles/mixins/man_color"
 
 # Use asdf autocompletions
-. $HOME/.asdf/completions/asdf.bash
+source "$HOME/.asdf/completions/asdf.bash"
 
 # We need this so that tmux uses bash when started in a bash shell
 export SHELL=/bin/bash

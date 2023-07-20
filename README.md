@@ -38,7 +38,7 @@ I primarily write software in Erlang, Elixir, Rust, and Bash and occasionally in
 
 ## Configuration
 
-Configurations for all the tools are need are checked into this repository. All the dotfiles are symlinked with to my home directory with the [scripts/makesymlinks.sh](scripts/makesymlinks.sh) script. The makesymlink.sh script is run by the setup.sh script, which is used to install these dotfiles.
+Configurations for all the tools are need are checked into this repository. All the dotfiles are symlinked with to my home directory with the [scripts/link.sh](scripts/link.sh) script. The link.sh script is run by the setup.sh script, which is used to install these dotfiles.
 
 ## Software
 

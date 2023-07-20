@@ -1,0 +1,52 @@
+= Recording the Terminal
+
+== Recording
+
+TODO: Figure out optimal record setup.
+
+[source, sh]
+----
+$ script -r recording.bin
+
+# Do what you want to record
+# Ctrl-D to exit
+----
+
+Generate asciinema
+
+----
+# Set tmux window size
+$ resize -s 24 80
+----
+
+[source, sh]
+----
+asciinema rec --command "tmux attach [-t session-name]"
+asciinema rec --command "tmux attach [-t session-name] && scriptreplay recording.txt"
+----
+
+== Converting to an Animated GIF
+
+Sometimes it's necessary to convert the terminal record into a format that can be viewed anywhere.
+
+The asciinema `agg` tool converts asciinema recordings into animated GIFs. The generated GIF file
+can then be converted to another format like MP4.
+
+Steps:
+
+1. Install link:https://github.com/asciinema/agg[asciinema/agg].
+2. Run `agg <ASCIINEMA FILE> <OUTPUT GIF FILE>` with any options you want.
+
+=== Converting the GIF to an MP4 Video
+
+Steps:
+
+1. Install `ffmpeg` if you don't already have it installed.
+2. Run `ffmpeg -i <GIF FILE> -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" <OUTPUT MP4 FILE>`
+
+== References
+
+* https://effective-shell.com/zz-developer-guide/recording-terminal-sessions
+* https://github.com/Malinskiy/spielbash
+* https://graphicdesign.stackexchange.com/questions/104535/delay-playing-animated-gif-in-powerpoint
+* https://unix.stackexchange.com/questions/40638/how-to-do-i-convert-an-animated-gif-to-an-mp4-or-mv4-on-the-command-line

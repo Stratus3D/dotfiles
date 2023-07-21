@@ -2,6 +2,19 @@
 
 == Recording
 
+=== Setup a tmux Session Optimized for Recording
+
+[source, sh]
+----
+# Create new tmux session for recording
+$ tmux new-session -s recording-studio
+
+# Run the resize-window command to set tmux window to good size for recording
+:resize-window -y 24 -x 80
+----
+
+=== Generate the Recording
+
 TODO: Figure out optimal record setup.
 
 [source, sh]
@@ -12,12 +25,8 @@ $ script -r recording.bin
 # Ctrl-D to exit
 ----
 
-Generate asciinema
+=== Generate Asciinema Cast File
 
-----
-# Set tmux window size
-$ resize -s 24 80
-----
 
 [source, sh]
 ----

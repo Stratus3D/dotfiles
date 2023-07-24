@@ -13,25 +13,18 @@ $ tmux new-session -s recording-studio
 :resize-window -y 24 -x 80
 ----
 
+TODO: Figure out best prompt for recording.
+
 === Generate the Recording
 
-TODO: Figure out optimal record setup.
+Inside the tmux session configured for terminal record, begin the recording:
 
 [source, sh]
 ----
-$ script -r recording.bin
+$ asciinema rec -t <title> <recording file name>
 
 # Do what you want to record
 # Ctrl-D to exit
-----
-
-=== Generate Asciinema Cast File
-
-
-[source, sh]
-----
-asciinema rec --command "tmux attach [-t session-name]"
-asciinema rec --command "tmux attach [-t session-name] && scriptreplay recording.txt"
 ----
 
 == Converting to an Animated GIF

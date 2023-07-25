@@ -17,14 +17,29 @@ TODO: Figure out best prompt for recording.
 
 === Generate the Recording
 
+We can record a terminal session directory with Asciinema. However, as detailed link:https://effective-shell.com/zz-developer-guide/recording-terminal-sessions/[here] it can be helpful to discard timing information if your typing is inconsistent or you need to pause and look something up during recording. link:https://github.com/scoopex/scriptreplay_ng[scriptreplay_ng] is the only tool I've found that allows you to discard timing information. This makes each keystroke appear at a consistent interval and makes for a more polished presentation.
+
+Steps:
+
+1. Install scriptreplay_ng if you haven't already link:[install script]
+2. Record the session:
+
+[source, sh]
+----
+$ record-script-session <session name>
+
+# Do what you want to record
+$ ...
+# Ctrl-D to exit
+----
+
+=== Convert the Recording to Asciinema format
+
 Inside the tmux session configured for terminal record, begin the recording:
 
 [source, sh]
 ----
-$ asciinema rec -t <title> <recording file name>
-
-# Do what you want to record
-# Ctrl-D to exit
+asciinema rec --command "scriptreplay-ng recording.txt"
 ----
 
 == Converting to an Animated GIF
@@ -49,6 +64,7 @@ Steps:
 == References
 
 * https://effective-shell.com/zz-developer-guide/recording-terminal-sessions
+* https://unix.stackexchange.com/questions/250183/using-scriptreplay-without-timing-file
 * https://github.com/Malinskiy/spielbash
 * https://graphicdesign.stackexchange.com/questions/104535/delay-playing-animated-gif-in-powerpoint
 * https://unix.stackexchange.com/questions/40638/how-to-do-i-convert-an-animated-gif-to-an-mp4-or-mv4-on-the-command-line

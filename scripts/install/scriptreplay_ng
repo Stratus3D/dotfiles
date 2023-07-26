@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+IFS=$'\t\n' # Stricter IFS settings
+
+INSTALL_DIR=$HOME/lib/scriptreplay_ng
+PATH_DIR=$HOME/bin
+
+# Clone repo into lib directory
+git clone https://github.com/scoopex/scriptreplay_ng.git $INSTALL_DIR
+
+# symlink scripts to ~/bin directory
+ln -s $INSTALL_DIR/record-script-session $PATH_DIR/record-script-session
+ln -s $INSTALL_DIR/scriptreplay $PATH_DIR/scriptreplay-ng

@@ -11,6 +11,10 @@ $ tmux new-session -s recording-studio
 
 # Run the resize-window command to set tmux window to good size for recording
 :resize-window -y 24 -x 80
+
+# Set the prompt to something very simple
+# For Bash, I like:
+$ PS1='\\$ '
 ----
 
 TODO: Figure out best prompt for recording.

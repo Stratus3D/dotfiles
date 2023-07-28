@@ -15,6 +15,9 @@ $ tmux new-session -s recording-studio
 # Set the prompt to something very simple
 # For Bash, I like:
 $ PS1='\\$ '
+
+# For Zsh, I like:
+$ PROMPT='$ '
 ----
 
 TODO: Figure out best prompt for recording.

@@ -1,4 +1,5 @@
-# These options seemed to break the Erlang builds. These lines may need to be
-# commented out
-alias grep="grep --color=always"
+# Using color=auto should disable color when grep output is piped to another
+# command
+alias grep="grep --color=auto"
+
 export GREP_COLORS="1;35;40"

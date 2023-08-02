@@ -1,7 +1,11 @@
 # Ripgrep (rg) config file
-# Don't let ripgrep vomit really long lines to my terminal, and show a preview.
---max-columns=80
---max-columns-preview
+
+# Don't let limit number of columns output by ripgrep as I may want to pipe the
+# full lines to another command. Currently, ripgrep doesn't provide a way to
+# only limit line length when output is going to an interactive terminal.
+# So I don't use these settings and live with the occasional long line.
+#--max-columns=80
+#--max-columns-preview
 
 # Include .github directory in search results
 --ignore-file=$HOME/.ignore

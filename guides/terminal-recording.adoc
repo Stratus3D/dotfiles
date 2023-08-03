@@ -20,8 +20,6 @@ $ PS1='\\$ '
 $ PROMPT='$ '
 ----
 
-TODO: Figure out best prompt for recording.
-
 === Generate the Recording
 
 We can record a terminal session directory with Asciinema. However, as detailed link:https://effective-shell.com/zz-developer-guide/recording-terminal-sessions/[here] it can be helpful to discard timing information if your typing is inconsistent or you need to pause and look something up during recording. link:https://github.com/scoopex/scriptreplay_ng[scriptreplay_ng] is the only tool I've found that allows you to discard timing information. This makes each keystroke appear at a consistent interval and makes for a more polished presentation.
@@ -60,6 +58,13 @@ Steps:
 
 1. Install link:https://github.com/asciinema/agg[asciinema/agg].
 2. Run `agg <ASCIINEMA FILE> <OUTPUT GIF FILE>` with any options you want.
+
+I've found the following options to be good:
+
+[source, sh]
+----
+agg --font-size 21 --rows 20 --theme asciinema --speed 1.3
+----
 
 === Converting the GIF to an MP4 Video
 

@@ -24,8 +24,8 @@ dotfiles=$HOME/dotfiles
 # List of space separated files/folders to symlink in homedir (these are the typical "dotfiles")
 files="vimrc vim zshrc bashrc tmux.conf gitignore_global ctags screenrc \
     jshintrc rsync-exclude tool-versions agignore asdfrc psqlrc hushlogin \
-    my.cnf inputrc ignore editrc iex.exs curlrc irbrc gemrc weechat \
-    gitattributes gnuplot digrc ripgreprc"
+    my.cnf inputrc editrc iex.exs curlrc irbrc gemrc weechat \
+    gitattributes gnuplot digrc"
 
 ###############################################################################
 # Functions
@@ -99,6 +99,9 @@ IFS=$ORIGINAL_IFS
 
 # Generate and copy gitconfig
 "$dotfiles/scripts/generate_gitconfig.sh"
+
+# Generate and copy ripgrep .ignore
+"$dotfiles/scripts/generate_ripgrep_ignore.sh"
 
 # setup default tmuxinator project
 make_dir_if_missing "$HOME/.tmuxinator"

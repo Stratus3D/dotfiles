@@ -101,7 +101,7 @@ IFS=$ORIGINAL_IFS
 "$dotfiles/scripts/generate_gitconfig.sh"
 
 # Generate and copy ripgrep .ignore
-"$dotfiles/scripts/generate_ripgrep_ignore.sh"
+"$dotfiles/scripts/generate_ripgreprc.sh"
 
 # setup default tmuxinator project
 make_dir_if_missing "$HOME/.tmuxinator"

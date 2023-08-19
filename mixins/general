@@ -37,3 +37,6 @@ export K2PDFOPT
 
 # Ripgrep config file location
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+
+# MacOS only: Disable homebrew auto update
+export HOMEBREW_NO_AUTO_UPDATE=1

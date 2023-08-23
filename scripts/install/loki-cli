@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+DESTINATION="$HOME/bin/logcli"
+
+if [ "$(uname)" = "Darwin" ]; then
+  filename="logcli-darwin-arm64"
+else
+  filename="logcli-linux-amd64"
+fi
+
+URL="https://github.com/grafana/loki/releases/download/v2.8.2/$filename.zip"
+
+# Create temp directory for the build
+TEMP_DIR="$(mktemp -dt "$(basename "$0").XXXXXX")"
+echo "Created temp directory $TEMP_DIR"
+cd "$TEMP_DIR"
+
+# Download
+curl "$URL" -o "$TEMP_DIR/archive.zip"
+
+unzip "$TEMP_DIR/archive.zip" -d "$TEMP_DIR/files"
+cp "$TEMP_DIR/files/$filename" "$DESTINATION"
+
+# Allow execution
+chmod +x "$DESTINATION"
+
+# Remove temp directory
+rm -rf "$TEMP_DIR"

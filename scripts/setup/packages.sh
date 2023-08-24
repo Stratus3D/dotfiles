@@ -51,6 +51,10 @@ npm install -g speedscope
 # unformatted JSON and get nicely structured JSON diffs.
 npm install -g json-diff
 
+# View usage examples for shell commands. Augments man pages with more concrete
+# examples
+npm install -g tldr
+
 # Haskell Packages
 ###############################################################################
 

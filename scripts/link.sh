@@ -6,14 +6,10 @@ set -euo pipefail
 #ORIGINAL_IFS=$IFS
 IFS=$'\t\n' # Stricter IFS settings
 
-###############################################################################
 # This script creates symlinks from the home directory to any desired dotfiles
 # in ~/dotfiles
-###############################################################################
 
-###############################################################################
 # Variables
-###############################################################################
 
 # The border for headings printed to STDOUT
 border="====="
@@ -27,9 +23,7 @@ files="vimrc vim zshrc bashrc tmux.conf gitignore_global ctags screenrc \
     my.cnf inputrc editrc iex.exs curlrc irbrc gemrc weechat \
     gitattributes gnuplot digrc"
 
-###############################################################################
 # Functions
-###############################################################################
 
 print_heading() {
     local text=$1

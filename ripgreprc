@@ -7,7 +7,17 @@
 #--max-columns=80
 #--max-columns-preview
 
-# Include .github directory in search results
+# Search hidden files by default. This is useful because we typically do want to
+# search dotfiles and directories like .github
+--hidden
+
+# A special case is the .git directory. We rarely want to search it. If we do
+# want to search it with this setting in place we can just cd inside .git and
+# repeat the search.
+# https://github.com/BurntSushi/ripgrep/discussions/1578
+--glob=!.git/
+
+# Ignore certain directories
 --ignore-file=$HOME/.ignore
 
 # Because who cares about case!?

@@ -1,4 +1,1 @@
 # This file is read by ripgrep
-
-# Don't ignore .github directories!
-!.github/

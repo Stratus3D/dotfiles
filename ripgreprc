@@ -18,7 +18,7 @@
 --glob=!.git/
 
 # Ignore certain directories
---ignore-file=$HOME/.ignore
+--ignore-file=$HOME/.ripgrep-ignore
 
 # Because who cares about case!?
 --smart-case

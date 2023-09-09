@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+IFS=$'\t\n' # Stricter IFS settings
+
+# notify-send adapter for terminal-notifier. Allows you to use notify-send as
+# you would on Linux. Typical usage:
+#
+# if [ "$(uname)" = "Darwin" ]; then
+#   alias notify-send="notify-send-macos"
+# fi
+#
+# Note that this script doesn't support all the options that notify-send does
+#
+# Then just notify-send as usual!
+#
+# See
+#
+# * https://gist.github.com/blech75/fd6c36c43057607507e2
+# * https://github.com/julienXX/terminal-notifier
+# * https://github.com/fgrehm/vagrant-notify#os-x
+# * https://manned.org/notify-send
+
+error_exit() {
+  printf "%s\n" "$1" 1>&2
+  exit "${2:-1}" # default exit status 1
+}
+
+# use terminal-notify for notifications (preferred)
+# https://github.com/alloy/terminal-notifier
+TERMINAL_NOTIFIER='terminal-notifier'
+
+# allow DEBUG env variable to trigger simple bash debugging when it is set to
+# anything but 'false'
+if [ "${DEBUG:=false}" != 'false' ] ; then
+  printf "%s\n" "$*"
+  set -o verbose
+  set -o xtrace
+fi
+
+if [ -z "${1:-}" ]; then
+  error_exit "Must provide title for notification"
+fi
+
+title="$1"
+message="${*:2}"
+
+## call terminal-notifier if it exists in PATH
+if which "$TERMINAL_NOTIFIER" > /dev/null; then
+  $TERMINAL_NOTIFIER \
+    -message "${message}" \
+    -activate "com.apple.Terminal" \
+    -appIcon "file://${icon_path:-}" \
+    -sound default \
+    -title "${title:-}"
+    #-subtitle "${title:-}"
+
+    # For added clarity read out the notification message
+    sleep 0.2
+    say "${message}"
+
+else
+  error_exit "Error: No notifier tool."
+fi

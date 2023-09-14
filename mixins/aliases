@@ -31,14 +31,16 @@ alias startpost='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/se
 alias stoppost='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
 alias statpost='ps aux | rg postgres'
 
-os=$(uname -s)
-if [[ "$os" = 'Darwin' ]]; then
+if [[ "$(uname -s)" = 'Darwin' ]]; then
     # If we are on OSX create a `zeal` alias and a `qcachegrind` alias
 
     alias zeal='/Applications/Zeal.app/Contents/MacOS/Zeal'
     alias qcachegrind='/Applications/qcachegrind.app/Contents/MacOS/qcachegrind'
 
     alias readlink="greadlink"
+
+    # Add shim for notify-send command if on MacOS
+    alias notify-send="notify-send-macos"
 else
     # We must be on Debian or some other OS
     # Create pbcopy and pbpaste aliases so we can use them outside of OSX

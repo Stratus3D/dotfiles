@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Unoffical Bash "strict mode"
+# Unofficial Bash "strict mode"
 # http://redsymbol.net/articles/unofficial-bash-strict-mode/
 set -euo pipefail
 #ORIGINAL_IFS=$IFS
@@ -209,6 +209,8 @@ brew cask install gimp
 brew cask install xquartz
 brew cask install inkscape
 
+# For notifications on MacOS (and for the notify-send-macos script)
+brew install terminal-notifier
 
 ###############################################################################
 # Configure OSX

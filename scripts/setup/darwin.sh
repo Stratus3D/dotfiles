@@ -72,6 +72,9 @@ brew_install_or_upgrade 'git'
 # For code search
 brew_install_or_upgrade ripgrep
 
+# Gnu grep for shell scripts and pipelines
+brew_install_or_upgrade grep
+
 # My editor
 brew_install_or_upgrade 'vim'
 

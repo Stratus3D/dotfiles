@@ -213,7 +213,7 @@ brew cask install xquartz
 brew cask install inkscape
 
 # For notifications on MacOS (and for the notify-send-macos script)
-brew install terminal-notifier
+brew_install_or_upgrade terminal-notifier
 
 ###############################################################################
 # Configure OSX

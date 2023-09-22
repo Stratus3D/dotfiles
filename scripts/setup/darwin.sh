@@ -189,15 +189,15 @@ brew_install_or_upgrade rabbitmq
 brew_install_or_upgrade weechat
 
 # For diffs of Microsoft Office files
-brew install tika
+brew_install_or_upgrade tika
 
 # For graphics and file metadata on the command line
 
 # Install pastel for viewing and manipulating colors on the command line
-brew install pastel
+brew_install_or_upgrade pastel
 
 # For removing file metadata
-brew install mat2
+brew_install_or_upgrade mat2
 
 # For image metadata manipulation
 brew_install_or_upgrade exiftool

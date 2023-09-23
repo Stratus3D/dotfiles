@@ -119,9 +119,9 @@ done
 IFS=$ORIGINAL_IFS
 
 # Symlink all the scripts in scripts/git to the bin directory
-tool_scripts="$(find "$dotfiles/scripts/git" -type f \( -perm -u=x \) -print)"
+git_scripts="$(find "$dotfiles/scripts/git" -type f \( -perm -u=x \) -print)"
 IFS=$'\n'
-for file in $tool_scripts; do
+for file in $git_scripts; do
     create_or_replace_symlink "$file" "$HOME/bin"
 done
 IFS=$ORIGINAL_IFS

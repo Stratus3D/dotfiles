@@ -131,6 +131,12 @@ hosts_dir="$HOME/.hosts"
 hosts_source_dir="$dotfiles/hosts_profiles"
 symlink "$hosts_source_dir" "$hosts_dir"
 
+if [ "$(uname)" == "Darwin" ]; then
+  symlink "$dotfiles/templates/k9s/skin.yml" "$HOME/Library/Application Support/k9s/skin.yml"
+else
+  echo "Cannot link k9s skin"
+fi
+
 # Download Vundle if not already downloaded
 print_heading "Installing Vundle"
 vundle_dir="$dotfiles/vim/bundle/Vundle.vim"

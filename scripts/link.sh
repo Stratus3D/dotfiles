@@ -133,6 +133,13 @@ symlink "$hosts_source_dir" "$hosts_dir"
 
 if [ "$(uname)" == "Darwin" ]; then
   symlink "$dotfiles/templates/k9s/skin.yml" "$HOME/Library/Application Support/k9s/skin.yml"
+
+  macos_scripts="$(find "$dotfiles/scripts/tools/macos" -type f \( -perm -u=x \) -print)"
+  IFS=$'\n'
+  for file in $macos_scripts; do
+      create_or_replace_symlink "$file" "$HOME/bin"
+  done
+  IFS=$ORIGINAL_IFS
 else
   echo "Cannot link k9s skin"
 fi

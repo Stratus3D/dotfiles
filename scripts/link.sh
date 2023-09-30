@@ -111,7 +111,7 @@ symlink "$dotfiles/tmuxinator/default.yml" "$HOME/.tmuxinator/default.yml"
 symlink "$dotfiles/erlang/erlang" "$HOME/.erlang"
 
 # Symlink all the executable scripts in scripts/tools to the bin directory
-tool_scripts="$(find "$dotfiles/scripts/tools" -type f \( -perm -u=x \) -print)"
+tool_scripts="$(find "$dotfiles/scripts/tools" -maxdepth 1 -type f \( -perm -u=x \) -print)"
 IFS=$'\n'
 for file in $tool_scripts; do
     create_or_replace_symlink "$file" "$HOME/bin"

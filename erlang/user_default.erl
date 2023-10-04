@@ -20,6 +20,9 @@
 
 -import(io, [format/1, format/2]).
 
+% For telemetry events
+-export([telemetry_attach_all/0, telemetry_attach_all/1, telemetry_stop/0]).
+
 % TODO: Don't hardcode all this info here
 % {Command, Help, Usage},
 -define(HELP, [
@@ -153,7 +156,7 @@ mm() ->
     modified_modules().
 
 modified_modules() ->
-    [M || {M, _} <- code:all_loaded(), 
+    [M || {M, _} <- code:all_loaded(),
 	  module_modified(M) == true].
 
 module_modified(Module) ->
@@ -161,7 +164,7 @@ module_modified(Module) ->
 	{file, preloaded} ->
 	    false;
 	{file, Path} ->
-	    CompileOpts = 
+	    CompileOpts =
 		proplists:get_value(compile, Module:module_info()),
 	    CompileTime = proplists:get_value(time, CompileOpts),
 	    Src = proplists:get_value(source, CompileOpts),
@@ -178,10 +181,10 @@ module_modified(Path, PrevCompileTime, PrevSrc) ->
 	    case beam_lib:chunks(ModPath, ["CInf"]) of
 		{ok, {_, [{_, CB}]}} ->
 		    CompileOpts =  binary_to_term(CB),
-		    CompileTime = proplists:get_value(time,                             
+		    CompileTime = proplists:get_value(time,
 						      CompileOpts),
 		    Src = proplists:get_value(source, CompileOpts),
-		    not (CompileTime == PrevCompileTime) and 
+		    not (CompileTime == PrevCompileTime) and
 							   (Src == PrevSrc);
 		_ ->
 		    false
@@ -256,3 +259,32 @@ environment() ->
     Apps = application:which_applications(),
     AppNames = [AppName || {AppName, _Desc, _Version} <- Apps],
     [{App, application:get_all_env(App)} || App <- AppNames].
+
+%%%===================================================================
+%%% Telemetry Events
+%%%===================================================================
+
+telemetry_attach_all() ->
+  telemetry_attach_all(fun(Name, MetaOrMeasure, MetaOrFun) ->
+                     % Print out telemetry info
+                     io:format("Telemetry event: ~w~nwith ~p and ~p~n", [Name, MetaOrMeasure, MetaOrFun])
+             end).
+
+telemetry_attach_all(Function) ->
+  % Start the tracer
+  dbg:start(),
+
+  % Create tracer process
+  dbg:tracer(process, {fun({_, _, _, {_Mod, _Fun, [Name, MetaOrMeasure, MetaOrFun]}}, _State) ->
+                               Function(Name, MetaOrMeasure, MetaOrFun)
+                       end, undefined}),
+
+  % Trace all processes
+  dbg:p(all, c),
+
+  % See all emitted telemetry events
+  dbg:tp(telemetry, execute, 3, []),
+  dbg:tp(telemetry, span, 3, []).
+
+telemetry_stop() ->
+  dbg:stop_clear().

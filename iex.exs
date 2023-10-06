@@ -16,20 +16,26 @@ defmodule TelemetryHelper do
   Only for use in development.
   """
 
+  @doc """
+  attach_all/0 prints out all telemetry events received by default.
+  Optionally, you can specify a handler function that will be invoked
+  with the same three arguments that the `:telemetry.execute/3` and
+  `:telemetry.span/3` functions were invoked with.
+  """
   def attach_all(function \\ &default_handler_fn/3) do
     # Start the tracer
     :dbg.start()
 
-    # Create tracer
+    # Create tracer process
     :dbg.tracer(
       :process,
       {fn
-         {_, _, _, {_mod, :execute, [name, measurement, metadata]}}, _n ->
+         {_, _, _, {_mod, :execute, [name, measurement, metadata]}}, _state ->
            function.(name, metadata, measurement)
 
-         {_, _, _, {_mod, :span, [name, metadata, span_fun]}}, _n ->
+         {_, _, _, {_mod, :span, [name, metadata, span_fun]}}, _state ->
            function.(name, metadata, span_fun)
-       end, 0}
+       end, nil}
     )
 
     # Trace all processes
@@ -41,10 +47,6 @@ defmodule TelemetryHelper do
   end
 
   def stop do
-    # Stop seeing all emitted telemetry events
-    :dbg.ctp(:telemetry, :execute, 3)
-    :dbg.ctp(:telemetry, :span, 3)
-
     # Stop tracer
     :dbg.stop_clear()
   end

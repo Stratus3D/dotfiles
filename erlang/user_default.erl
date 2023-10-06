@@ -1,6 +1,7 @@
 % TODO: Update this module so custom functions are added
 -module(user_default).
 
+% Help function
 -export([help/0]).
 
 % General
@@ -18,10 +19,10 @@
 % Debugging
 -export([environment/0]).
 
--import(io, [format/1, format/2]).
-
 % For telemetry events
 -export([telemetry_attach_all/0, telemetry_attach_all/1, telemetry_stop/0]).
+
+-import(io, [format/1, format/2]).
 
 % TODO: Don't hardcode all this info here
 % {Command, Help, Usage},

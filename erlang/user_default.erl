@@ -265,20 +265,25 @@ environment() ->
 %%% Telemetry Events
 %%%===================================================================
 
+% telemetry_attach_all/0 prints out all telemetry events received
 telemetry_attach_all() ->
   telemetry_attach_all(fun(Name, MetaOrMeasure, MetaOrFun) ->
-                     % Print out telemetry info
-                     io:format("Telemetry event: ~w~nwith ~p and ~p~n", [Name, MetaOrMeasure, MetaOrFun])
-             end).
+      % Print out telemetry info
+      io:format("Telemetry event: ~w~nwith ~p and ~p~n", [Name, MetaOrMeasure, MetaOrFun])
+    end).
 
+% telemetry_attach_all/1 allows you to specify a handler function that
+% will be invoked with the same three arguments that the
+% `telemetry:execute/3` and `telemetry:span/3` functions were invoked
+% with.
 telemetry_attach_all(Function) ->
   % Start the tracer
   dbg:start(),
 
   % Create tracer process
   dbg:tracer(process, {fun({_, _, _, {_Mod, _Fun, [Name, MetaOrMeasure, MetaOrFun]}}, _State) ->
-                               Function(Name, MetaOrMeasure, MetaOrFun)
-                       end, undefined}),
+      Function(Name, MetaOrMeasure, MetaOrFun)
+    end, undefined}),
 
   % Trace all processes
   dbg:p(all, c),

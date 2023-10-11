@@ -280,7 +280,8 @@ telemetry_attach_all(Function) ->
   % Start the tracer
   dbg:start(),
 
-  % Create tracer process
+  % Create tracer process with a function that pattern matches out the three
+  % arguments the telemetry calls are made with.
   dbg:tracer(process, {fun({_, _, _, {_Mod, _Fun, [Name, MetaOrMeasure, MetaOrFun]}}, _State) ->
       Function(Name, MetaOrMeasure, MetaOrFun)
     end, undefined}),

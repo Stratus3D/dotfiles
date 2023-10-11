@@ -26,7 +26,8 @@ defmodule TelemetryHelper do
     # Start the tracer
     :dbg.start()
 
-    # Create tracer process
+    # Create tracer process with a function that pattern matches out the three
+    # arguments the telemetry calls are made with.
     :dbg.tracer(
       :process,
       {fn

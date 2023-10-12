@@ -127,6 +127,7 @@ asdf plugin-add python https://github.com/danhper/asdf-python.git || true
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git || true
 asdf plugin-add yarn https://github.com/twuni/asdf-yarn.git || true
 asdf plugin-add rust https://github.com/code-lever/asdf-rust.git || true
+asdf plugin add golang https://github.com/asdf-community/asdf-golang.git || true
 
 # Install the software versions listed in the .tool-versions file in $HOME
 asdf install

@@ -9,3 +9,7 @@ export RUBY_CONFIGURE_OPTIONS='--with-opt-dir=/usr/local/opt/openssl:/usr/local/
 # Erlang
 export KERL_INSTALL_MANPAGES=yes
 export KERL_INSTALL_HTMLDOCS=yes
+
+# Golang
+# Not sure I need this so disable for now to silence warning from asdf-golang
+export ASDF_GOLANG_MOD_VERSION_ENABLED=false

@@ -27,8 +27,12 @@ Plugin 'vim-erlang/vim-erlang-omnicomplete'
 Plugin 'vim-erlang/vim-erlang-tags'
 Plugin 'vim-erlang/vim-erlang-skeletons'
 
+
 " Elixir
 Plugin 'elixir-editors/vim-elixir'
+
+" Golang
+Plugin 'fatih/vim-go'
 
 " Lua
 Plugin 'xolox/vim-misc' " required by vim-lua-ftplugin

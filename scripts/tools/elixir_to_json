@@ -1,0 +1,39 @@
+#! /usr/bin/env elixir
+
+# This script reads a string from either argument or STDIN and parses the string
+# into an Elixir literal. The literal is then encoded as JSON and printed to
+# STDOUT
+#
+# https://akoutmos.com/post/elixir-shell-scripts/
+# https://stackoverflow.com/questions/29225456/parse-elixir-terms-from-a-string
+
+# Install jason as a dependency for JSON encoding
+Mix.install([:jason])
+
+# Get input from either argument or STDIN
+input_string = case System.argv() do
+  [] ->
+    # If no arguments provided read from STDIN
+    IO.read(:stdio, :all)
+  [string] -> string
+end
+
+# Check if string parses to a quoted literal
+quoted_literal? =
+  input_string
+  |> Code.string_to_quoted()
+  |> Macro.quoted_literal?()
+
+case quoted_literal? do
+  true ->
+    # If string contains a literal then eval it and encode it as JSON and print
+    # the encoded JSON
+    {elixir_term, _} = Code.eval_string(input_string)
+
+    elixir_term
+    |> Jason.encode!()
+    |> IO.puts()
+  false ->
+    # Otherwise print an error
+    raise "Input is not valid Elixir literal"
+end

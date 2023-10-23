@@ -136,6 +136,9 @@ brew_install_or_upgrade gnu-sed
 # autoexpect
 brew_install_or_upgrade expect
 
+# For easy renaming of files
+brew_install_or_upgrade rename
+
 # For adb
 brew_tap caskroom/cask
 brew cask install android-sdk

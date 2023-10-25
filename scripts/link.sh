@@ -82,8 +82,7 @@ symlink() {
 
 print_heading "Linking Dotfiles"
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create
-# symlinks
+# create symlinks
 ORIGINAL_IFS=$IFS
 IFS=$' '
 for file in $files; do

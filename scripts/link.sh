@@ -80,6 +80,18 @@ symlink() {
     ln -s "$source" "$destination"
 }
 
+create_or_replace_symlinks() {
+  local directory=$1
+  local destination=$2
+
+  scripts="$(find "$directory" -maxdepth 1 -type f \( -perm -u=x \) -print)"
+  IFS=$'\n'
+  for script in $scripts; do
+    create_or_replace_symlink "$script" "$destination"
+  done
+  IFS=$ORIGINAL_IFS
+}
+
 print_heading "Linking Dotfiles"
 
 # create symlinks
@@ -110,20 +122,15 @@ symlink "$dotfiles/tmuxinator/default.yml" "$HOME/.tmuxinator/default.yml"
 symlink "$dotfiles/erlang/erlang" "$HOME/.erlang"
 
 # Symlink all the executable scripts in scripts/tools to the bin directory
-tool_scripts="$(find "$dotfiles/scripts/tools" -maxdepth 1 -type f \( -perm -u=x \) -print)"
-IFS=$'\n'
-for file in $tool_scripts; do
-    create_or_replace_symlink "$file" "$HOME/bin"
-done
-IFS=$ORIGINAL_IFS
+create_or_replace_symlinks "$dotfiles/scripts/tools" "$HOME/bin"
 
 # Symlink all the scripts in scripts/git to the bin directory
-git_scripts="$(find "$dotfiles/scripts/git" -type f \( -perm -u=x \) -print)"
-IFS=$'\n'
-for file in $git_scripts; do
-    create_or_replace_symlink "$file" "$HOME/bin"
-done
-IFS=$ORIGINAL_IFS
+create_or_replace_symlinks "$dotfiles/scripts/git" "$HOME/bin"
+
+# Some scripts are only needed on MacOS
+if [ "$(uname)" == "Darwin" ]; then
+  create_or_replace_symlinks "$dotfiles/scripts/tools/macos" "$HOME/bin"
+fi
 
 # Symlink hosts_manager hosts profiles directory
 hosts_dir="$HOME/.hosts"
@@ -134,16 +141,6 @@ if [ "$(uname)" == "Darwin" ]; then
   symlink "$dotfiles/templates/k9s/skin.yml" "$HOME/Library/Application Support/k9s/skin.yml"
 else
   echo "Cannot link k9s skin"
-fi
-
-# Some scripts are only needed on MacOS
-if [ "$(uname)" == "Darwin" ]; then
-  macos_scripts="$(find "$dotfiles/scripts/tools/macos" -type f \( -perm -u=x \) -print)"
-  IFS=$'\n'
-  for file in $macos_scripts; do
-      create_or_replace_symlink "$file" "$HOME/bin"
-  done
-  IFS=$ORIGINAL_IFS
 fi
 
 # Download Vundle if not already downloaded

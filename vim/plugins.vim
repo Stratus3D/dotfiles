@@ -47,7 +47,7 @@ Plugin 'mustache/vim-mustache-handlebars'
 
 " For productivity
 Plugin 'tpope/vim-ragtag'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " Maybe try https://github.com/tpope/vim-commentary instead?
 Plugin 'scrooloose/nerdcommenter'

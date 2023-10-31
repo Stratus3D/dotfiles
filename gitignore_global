@@ -9,6 +9,10 @@
 [._]s[a-v][a-z]
 [._]sw[a-p]
 
+# LibreOffice Temp Files #
+##########################
+.~lock*
+
 # Compiled source #
 ###################
 *.class

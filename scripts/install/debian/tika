@@ -40,7 +40,7 @@ cat > "$script_name" <<EOF
 set -euo pipefail
 #ORIGINAL_IFS=\$IFS
 
-java -jar "\$HOME/lib/java/$jar_name" \$@
+java -jar "\$HOME/lib/java/$jar_name" "\$@"
 EOF
 
 chmod +x "$script_name"

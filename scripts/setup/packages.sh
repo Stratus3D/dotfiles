@@ -63,15 +63,3 @@ cabal update
 
 # For building tables on the command line
 cabal install pandoc-placetable
-
-# Rust Packages
-###############################################################################
-
-# Rust linter
-rustup component add clippy
-
-# Rust code formatting
-rustup component add rustfmt
-
-# Rust language server
-rustup component add rust-analyzer

@@ -30,6 +30,11 @@ sudo snap remove chromium
 ###############################################################################
 
 # General dependencies
+# For writing and reading
+# WordNet offline dictionary
+install_or_upgrade dict-wn
+# GNU Collaborative International Dictionary of English offline dictionary
+install_or_upgrade dict-gcide
 
 # For building Erlang and Elixir, possibly other things
 install_or_upgrade autoconf

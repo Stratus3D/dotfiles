@@ -30,7 +30,11 @@ sudo snap remove chromium
 ###############################################################################
 
 # General dependencies
+
 # For writing and reading
+
+# For instructions on setting up and using offline dictionaries see
+# https://askubuntu.com/a/417132
 # WordNet offline dictionary
 install_or_upgrade dict-wn
 # GNU Collaborative International Dictionary of English offline dictionary

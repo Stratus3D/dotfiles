@@ -40,3 +40,7 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
 # MacOS only: Disable homebrew auto update
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+# Golang settings
+# My modules with the stratus3d.com prefix are private
+GOPRIVATE=*.stratus3d.com,stratus3d.com

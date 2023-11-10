@@ -453,18 +453,16 @@ let g:ale_elixir_elixir_ls_config = {
 " On Elixir files, run mix format
 "
 " See
-" https://medium.com/swlh/how-did-i-setup-neovim-for-rust-1763eb2ef98c
 " https://petermalmgren.com/rc-batch-day-9/
 let g:ale_fixers = {
 \  '*': ['remove_trailing_lines', 'trim_whitespace'],
-\  'elixir': ['mix_format'],
-\  'rust': ['rustfmt']
+\  'elixir': ['mix_format']
 \}
 
 " Enable specific linters for certain file types
 let g:ale_linters = {
 \  'erlang': ['dialyzer', 'erlc', 'erlfmt', 'elvis'],
-\  'rust': ['analyzer']
+\  'go': ['go build', 'staticcheck']
 \}
 
 " Automatically run fixer macros on buffer save, and linters when leaving

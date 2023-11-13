@@ -63,3 +63,9 @@ cabal update
 
 # For building tables on the command line
 cabal install pandoc-placetable
+
+# Golang Packages
+###############################################################################
+
+# For linting
+go install honnef.co/o/tools/cmd/staticcheck@latest

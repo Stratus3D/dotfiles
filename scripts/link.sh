@@ -132,11 +132,6 @@ if [ "$(uname)" == "Darwin" ]; then
   create_or_replace_symlinks "$dotfiles/scripts/tools/macos" "$HOME/bin"
 fi
 
-# Symlink hosts_manager hosts profiles directory
-hosts_dir="$HOME/.hosts"
-hosts_source_dir="$dotfiles/hosts_profiles"
-symlink "$hosts_source_dir" "$hosts_dir"
-
 if [ "$(uname)" == "Darwin" ]; then
   symlink "$dotfiles/templates/k9s/skin.yml" "$HOME/Library/Application Support/k9s/skin.yml"
 else

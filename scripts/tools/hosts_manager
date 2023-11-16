@@ -21,7 +21,7 @@ IFS=$'\t\n' # Stricter IFS settings
 ###############################################################################
 
 # Put the original in the dotfiles repo, so it shows up with git status
-HOST_DIR="$HOME/.hosts"
+HOST_DIR="$HOME/dotfiles/hosts_profiles"
 
 # Create HOST_DIR if doesn't exist
 mkdir -p $HOST_DIR

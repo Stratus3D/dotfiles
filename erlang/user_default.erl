@@ -143,8 +143,9 @@ dbgdel(Module, Fun) ->
 dbgoff() ->
     dbg:stop().
 
+%  Warning: dbg:stop_clear/0 is deprecated and will be removed in OTP 27; use dbg:stop/0 instead
 dbgend() ->
-    dbg:stop_clear().
+    dbg:stop().
 
 %% Reload modules that have been modified since last load.  From Tobbe
 %% Tornqvist, http://blog.tornkvist.org/, "Easy load of recompiled
@@ -294,4 +295,4 @@ telemetry_attach_all(Function) ->
   dbg:tp(telemetry, span, 3, []).
 
 telemetry_stop() ->
-  dbg:stop_clear().
+  dbg:stop().

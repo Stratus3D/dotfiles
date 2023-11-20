@@ -49,7 +49,7 @@ defmodule TelemetryHelper do
 
   def stop do
     # Stop tracer
-    :dbg.stop_clear()
+    :dbg.stop()
   end
 
   defp default_handler_fn(name, metadata, measure_or_fun) do

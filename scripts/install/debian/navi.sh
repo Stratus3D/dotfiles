@@ -12,6 +12,15 @@ BIN_DIR=$HOME/bin
 TEMP_DIR=$(mktemp -dt "$(basename $0).XXXXXX")
 cd $TEMP_DIR
 
+# Install fzf first
+curl -s -L https://github.com/junegunn/fzf/releases/download/0.45.0/fzf-0.45.0-linux_amd64.tar.gz --output fzf.tar.gz
+
+# Extract contents of archive
+tar -xvf fzf.tar.gz
+
+# Copy binary to bin directory
+cp fzf $BIN_DIR/
+
 if ! hash fzf > /dev/null 2>&1; then
   echo "fzf not already installed"
   exit 1

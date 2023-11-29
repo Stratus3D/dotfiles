@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+FFVER=$(grep -Po  "\d{2}\.\d+" /usr/lib/firefox/platform.ini)
+ARCH=$(uname -p)
+#XURL=https://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/$FFVER/runtimes/xulrunner-$FFVER.en-US.linux-$ARCH.tar.bz2
+# From http://ftp.mozilla.org/pub/xulrunner/releases/18.0.2/sdk/
+XURL=http://ftp.mozilla.org/pub/xulrunner/releases/18.0.2/sdk/xulrunner-18.0.2.en-US.linux-x86_64.sdk.tar.bz2
+
+cd "$HOME/bin"
+wget -O- "$XURL" | tar -xj
+#ln -s /opt/xulrunner/xulrunner /usr/bin/xulrunner
+#ln -s /opt/xulrunner/xpcshell /usr/bin/xpcshell

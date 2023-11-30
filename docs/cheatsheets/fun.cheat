@@ -1,0 +1,4 @@
+% fun/pranks
+
+# On MacOS, use say to whisper something to someone
+say -v whisper "I am watching you"

@@ -119,10 +119,6 @@ http://redsymbol.net/articles/unofficial-bash-strict-mode/
 
 * `-w "%{http_code}\n"` - Show the status code of the response.
 
-### Pranks
-
-* `say -v whisper "I am watching you"`
-
 ## Vim Commands
 
 * `vim -u NONE` start vim without any vimrc. `vim -u ~/.othervimrc` to specify a custom vimrc.

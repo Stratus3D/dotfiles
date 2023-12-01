@@ -1,0 +1,6 @@
+% curl
+
+Curl Commands
+
+# Show the status code of a response in the curl output
+curl -w "%{http_code}\n"

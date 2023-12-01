@@ -115,10 +115,6 @@
 * `set -o pipefail` - Causes any non-zero exit status in a pipeline to be the exit status of the entire pipeline.
 http://redsymbol.net/articles/unofficial-bash-strict-mode/
 
-### Curl Commands
-
-* `-w "%{http_code}\n"` - Show the status code of the response.
-
 ## Vim Commands
 
 * `vim -u NONE` start vim without any vimrc. `vim -u ~/.othervimrc` to specify a custom vimrc.

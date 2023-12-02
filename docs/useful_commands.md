@@ -60,10 +60,6 @@
 * `reset` clears the terminal and resets the terminal state.
 * `fc` open last command in `$EDITOR` for editing.
 
-### GPG
-
-* `gpg --list-secret-keys --keyid-format short | grep "sec" | cut --delimiter ':' --fields 5` list short IDs for GPG secret keys
-
 ### Video Manipulation
 
 * `ffmpeg -i master_bedroom.mp4 -vcodec libx265 -crf 28 -vf scale=iw/1.5:-1 -an master_bedroom_small.mp4`. Scale from full HD to 720p, compress, and remove audio from a video clip. Good for real estate videos.

@@ -1,0 +1,4 @@
+% GPG
+
+# List short IDs for GPG secret keys
+gpg --list-secret-keys --keyid-format short | grep "sec" | cut --delimiter ':' --fields 5

@@ -1,0 +1,4 @@
+% ffmpeg, video
+
+# Scale from full HD to 720p, compress, and remove audio from a video clip. Good for real estate videos.
+ffmpeg -i video.mp4 -vcodec libx265 -crf 28 -vf scale=iw/1.5:-1 -an video_small.mp4

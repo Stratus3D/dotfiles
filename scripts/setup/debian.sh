@@ -1,12 +1,8 @@
-#!/bin/bash -
+#!/usr/bin/env bash
 
-###############################################################################
-# Set flags so script is executed in "strict mode"
-###############################################################################
-
-set -u # Prevent unset variables
-set -e # Stop on an error
-set -o pipefail # Pipe exit code should be non-zero when a command in it fails
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
 #ORIGINAL_IFS=$IFS
 IFS=$'\t\n' # Stricter IFS settings
 

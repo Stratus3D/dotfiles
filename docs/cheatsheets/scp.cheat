@@ -1,0 +1,7 @@
+% scp
+
+# Copy `localfile` up to your home directory on `remotehost`
+scp localfile user@remotehost:~
+
+# Download `file` from `remotehost`
+scp user@remotehost:remote/file local/directory/

@@ -69,11 +69,6 @@
 * `killall -CONT AppName` resume an app
 * `ditto -x -k <source> <destination dir>` unzip large file on OSX.
 
-### SSH/SCP Commands
-
-* `scp localfile user@remotehost:~` to copy `localfile` up to your home directory on `remotehost`.
-* `scp user@remotehost:remote/file local/directory/` to download `file` from `remotehost`
-
 ### Git Commands
 
 * `git tag --contains <commit hash>` - Lists the tags that include the specified commit.

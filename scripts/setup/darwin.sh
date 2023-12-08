@@ -118,6 +118,9 @@ brew_install_or_upgrade jq
 # Install pandoc (for office and PDF file diffs)
 brew_install_or_upgrade pandoc
 
+# Install navi for interactive cheatsheets
+brew_install_or_upgrade navi
+
 # WxWidgets for Erlang
 brew_install_or_upgrade wxmac
 

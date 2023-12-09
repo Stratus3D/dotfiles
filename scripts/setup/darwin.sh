@@ -118,6 +118,10 @@ brew_install_or_upgrade jq
 # Install pandoc (for office and PDF file diffs)
 brew_install_or_upgrade pandoc
 
+# CLI Dictionary just like on Linux (unfortunately without an offline
+# dictionary server)
+brew_install_or_upgrade dict
+
 # Install navi for interactive cheatsheets
 brew_install_or_upgrade navi
 

@@ -1,0 +1,62 @@
+% git
+
+# Lists the tags that include the specified commit
+git tag --contains <COMMIT>
+
+# Remove files in working directory ignored by Git. Only run this if your sure you don't want any of them!
+git clean -X
+
+# Show what a file looked like at a specific point in time on a specific branch
+git show $(git rev-list -n 1 --before="2016-07-05 21:00" master):path/to/file` -
+
+# Checkout a branch at a specific point in time
+git checkout $(git rev-list -n 1 --before="2016-07-05 21:00" master)` -
+
+# Checkout revision on current branch that was
+git checkout @{90.days.ago}
+
+# Restores a file to it's unresolved state
+git checkout -m FILE_GLOB_PATTERN
+
+# Ignore whitespace changes when showing diff
+git diff --ignore-all-space
+
+# Show changed words rather than lines
+git diff --word-diff
+
+# Show filenames of files that have been changed
+git diff --name-only
+
+# Stash everything except what is already staged
+git stash --keep-index
+
+# Stage specific changes in a file.
+git add -p <FILE_GLOB_PATTERN>
+
+# Check if `COMMIT` is an ancestor of `COMMIT_2`
+git merge-base --is-ancestor <COMMIT> <COMMIT_2>
+
+# Show only resolved conflicts in merge commits
+git log -p --cc
+
+# Find all commits with `PREFIX`
+git log --grep="^PREFIX" --pretty='format:%h - %cn - %s'`
+
+# Overwrites changes in the remote branch if the remote branch has not changed since you last pushed to it. Use with care
+git push --force-with-lease
+
+# Show merge tools available
+git mergetool --tool-help
+
+# List commits by each committer in a certain window of time
+git log --pretty=short --since='10 weeks' --until='2 weeks' | git shortlog
+
+# Show number commits by each committer in a certain window of time
+git log --pretty=short --since='10 weeks' --until='2 weeks' | git shortlog -sn
+
+# Version string suitable for Erlang module `-vsn` attributes.
+git describe --long
+
+COMMIT:
+COMMIT_2:
+FILE_GLOB_PATTERN:

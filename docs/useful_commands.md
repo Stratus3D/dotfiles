@@ -69,27 +69,6 @@
 * `killall -CONT AppName` resume an app
 * `ditto -x -k <source> <destination dir>` unzip large file on OSX.
 
-### Git Commands
-
-* `git tag --contains <commit hash>` - Lists the tags that include the specified commit.
-* `git clean -X` - Remove files ignored by Git
-* `git checkout $(git rev-list -n 1 --before="2016-07-05 21:00" master)` - Checkout a branch at a specific point in time.
-* `git show $(git rev-list -n 1 --before="2016-07-05 21:00" master):path/to/file` - Show what a file looked like at a specific point in time on a specific branch.
-* `git checkout @{90.days.ago}` - Same thing but even simpler
-* `--ignore-all-space` - Ignore whitespace only changes when showing diff.
-* `git stash save --keep-index` - Stash everything except what is already staged.
-* `git add -p` - Stage specific changes in a file.
-* `git merge-base --is-ancestor <commit-1> <commit-2>` - Check if `commit-1` is an ancestor of `commit-2`.
-* `git describe --long` - version string suitable for Erlang module `-vsn` attributes.
-* `git log --grep="^prefix" --pretty='format:%h - %cn - %s'` find all commits with `prefix`
-* `git log -p --cc` show only resolved conflicts in merge commits
-* `git shortlog -sn --since='10 weeks' --until='2 weeks'` show number commits by each committer between two times
-* `git diff --word-diff` show changed words rather than lines
-* `git mergetool --tool-help` show merge tools available
-* `git checkout -m FILE` restores a file to it's unresolved state
-* `git push --force-with-lease` only overwrites changes in the remote branch if the remote branch has not changed since you last pushed to it.
-* `git diff master --name-only` list filenames of files that have been changed.
-
 ### VirtualBox Commands
 
 * `VBoxManage unregistervm --delete <vm name>` Completely removes the VM and all associated files

@@ -30,11 +30,7 @@
 * `kill <process_id>` kills the process identified by `<process_id>`. `-9` can be used to kill the process immediately
 * `echo -n ✘ | hexdump` to print the encoding of a character by the console. Useful for bash scripts. Also use `od` to dump octals.
 * `for f in directory/* ; do echo -e \\n\\n$f\\n 1>&1 ; cat $f ; done ;` print out all file name and file contents for all files in `directory`.
-* `ssh -vT git@github.com` useful for debugging SSH authentication issues.
-* `sudo -u git -H ssh -vT bitbucket.org` similar to the SSH command above, only test the connection for a specific user.
-* `ssh-add` allows identity to be used on remote machines by using the `-A` flag with the `ssh` command.
 * `tar -cvzf tarballname.tar.gz file_or_directory` compresses `file_or_directory` to a tarball named `tarballname.tar.gz`.
-* `ssh -A -L 5432:localhost:5432 remoteserver` to proxy whatever (e.g. PostgreSQL) is listening on port `5432` on `remoteserver` to port 5432 on `localhost`.
 * `ss -tunapl` show which processes are running on which ports.
 * `ss -lntu` show which ports have listeners.
 * `lsof -i -P` show which processes are running on which ports.

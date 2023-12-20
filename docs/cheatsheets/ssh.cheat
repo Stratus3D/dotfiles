@@ -1,0 +1,16 @@
+% ssh
+
+# Useful for debugging SSH authentication issues
+ssh -vT <USER>@<HOST>
+
+# Similar to the SSH command above, only test the connection for a specific user
+sudo -u <USER> -H ssh -vT <HOST>
+
+# Allows identity to be used on remote machines by using the `-A` flag with the `ssh` command
+ssh-add
+
+# Proxy whatever (e.g. PostgreSQL) is listening on port `5432` on `remoteserver` to port 5432 on `localhost`
+ssh -A -L 5432:localhost:5432 <HOST>
+
+HOST:
+USER: echo "git"

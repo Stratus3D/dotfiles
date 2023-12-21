@@ -1,0 +1,12 @@
+% csv, data, science
+
+# Print CSV as a table in the terminal
+column -t -s ',' <FILE>
+
+# Show stats for each column in a CSV
+csvstat <FILE>
+
+# Show equivalent SQL schema for file
+csvsql -d $'\t' <FILE>
+
+FILE:

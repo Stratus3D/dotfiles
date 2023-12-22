@@ -46,7 +46,6 @@
 * `sudo getent passwd | cut -d : -f 6 | sudo sed 's:$:/.bash_history:' | sudo xargs -d '\n' grep -H -e "$command"` or `grep -e "$pattern" /home/*/.bash_history` to see how others use a command
 * `bindkey` show Zsh commands
 * `cat *.c *.h | cpp -fpreprocessed | sed 's/[_a-zA-Z0-9][_a-zA-Z0-9]*/x/g' | tr -d ' \012' | wc -c` count words in C project
-* `column -t -s ',' data.csv` print CSV as a table in the terminal
 * `file <img file>` show general image info like format and dimensions
 * `identify -verbose <img file>` show colorspace, channel depth, dimensions, and other metadata for an image
 * `for ((n=0;n<10;n++)); do { time bundle exec rspec ./spec ; } 2>> time.txt; done` run a command ten times and write the execution time of each run to a file

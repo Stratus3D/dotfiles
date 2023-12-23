@@ -9,8 +9,6 @@
 * `ln -s /dev/null ~/file/you/never/want/to/persist` good for ensure data written to the file by applications never persists
 * `open .` to open current directory in Finder
 * `open -a TextEdit textfile.txt` to open a file in a specific application
-* `python -m SimpleHTTPServer 8000` runs a webserver that serves the contents of the directory
-* `python -m smtpd -n -c DebuggingServer localhost:25` runs a SMTP server that logs all messages to the console
 * `^X, ^E` to edit the currently typed command in vim
 * `!!` run the last command again
 * `cd -` change back to the previous directory

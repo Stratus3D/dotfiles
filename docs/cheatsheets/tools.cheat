@@ -1,0 +1,10 @@
+% Python dev tools
+
+# Run a webserver that serves contents of current directory
+python -m SimpleHTTPServer <HTTP_PORT>
+
+# Run a SMTP server that logs all messages to the console
+python -m smtpd -n -c DebuggingServer localhost:<SMTP_PORT>
+
+$ HTTP_PORT: echo 8000
+$ SMTP_PORT: echo 25

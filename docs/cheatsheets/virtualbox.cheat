@@ -1,0 +1,6 @@
+% virtualbox
+
+# Completely removes the VM and all associated files
+VBoxManage unregistervm --delete <VM_NAME>
+
+VM_NAME:

@@ -62,10 +62,6 @@
 * `killall -CONT AppName` resume an app
 * `ditto -x -k <source> <destination dir>` unzip large file on OSX.
 
-### VirtualBox Commands
-
-* `VBoxManage unregistervm --delete <vm name>` Completely removes the VM and all associated files
-
 ### Bash Flags
 
 * `set -x` - Turn on debug mode.

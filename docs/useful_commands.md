@@ -62,14 +62,6 @@
 * `killall -CONT AppName` resume an app
 * `ditto -x -k <source> <destination dir>` unzip large file on OSX.
 
-### Bash Flags
-
-* `set -x` - Turn on debug mode.
-* `set -e` - Exit if any command has a non-zero exit status. This ensures all commands that can fail are handled properly.
-* `set -u` - Exit if any variable is undefined (other than `$*` and `$@`, which are assumed to be available).
-* `set -o pipefail` - Causes any non-zero exit status in a pipeline to be the exit status of the entire pipeline.
-http://redsymbol.net/articles/unofficial-bash-strict-mode/
-
 ## Vim Commands
 
 * `vim -u NONE` start vim without any vimrc. `vim -u ~/.othervimrc` to specify a custom vimrc.

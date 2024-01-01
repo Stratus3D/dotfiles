@@ -172,6 +172,9 @@ install_or_upgrade scribus
 # Pandoc for document utilities
 install_or_upgrade pandoc
 
+# odt2txt for plain text representations of LibreOffice documents
+install_or_upgrade odt2txt
+
 # Cabal for Haskell packages
 install_or_upgrade cabal-install
 

@@ -180,9 +180,6 @@ brew_install_or_upgrade imgcat
 # Install tools for server testing and administration
 brew_install_or_upgrade ansible
 
-# For MySQL migrations
-brew_install_or_upgrade percona-toolkit
-
 # For benchmarking in the shell
 brew_install_or_upgrade hyperfine
 

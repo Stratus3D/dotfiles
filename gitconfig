@@ -115,13 +115,14 @@
   binary=true
   prompt=false
 
-[diff "powerpoint"]
+[diff "microsoftoffice"]
   textconv=tika --text
   binary=true
 
-[diff "excel"]
-  textconv=tika --text
-  binary=true
+[diff "libreoffice"]
+  #textconv=tika --text
+  textconv=odt2txt
+  binarytrue
 
 [diff "pdf"]
   textconv=tika --text

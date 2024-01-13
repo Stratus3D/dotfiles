@@ -17,8 +17,13 @@
 
 # Custom diffs for Microsoft Office
 *.docx diff=word
-*.pptx diff=powerpoint
-*.xlsx diff=excel
+*.pptx diff=microsoftoffice
+*.xlsx diff=microsoftoffice
+
+# Text diffs for LibreOffice documents
+*.odp diff=libreoffice
+*.odt diff=libreoffice
+*.ods diff=libreoffice
 
 # Custom diffs for PDFs
 *.pdf diff=pdf

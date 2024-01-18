@@ -1,0 +1,16 @@
+% processes, ps, os, memory, cpu
+
+# Show top processes memory usage
+ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head
+
+# Show top processes by CPU usage
+ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head
+
+# Kills all processes with the given name. The `-u` flag limits the killing to all processes with a certain euid (e.g. `pkill -u username HipChat`)
+pkill <PROCESS_NAME>
+
+# Kills the process by ID. `-9` can be used to kill the process immediately
+kill <PROCESS_ID>
+
+PROCESS_NAME: -
+PROCESS_ID: -

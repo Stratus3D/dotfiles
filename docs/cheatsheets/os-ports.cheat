@@ -1,0 +1,10 @@
+% ports, os
+
+# Local ports open
+ss -lntu
+
+# Show which processes are running on which ports
+ss -alntup
+
+# Show which processes are running on which ports
+lsof -i -P

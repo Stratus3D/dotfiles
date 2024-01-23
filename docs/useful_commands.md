@@ -27,9 +27,6 @@
 * `echo -n ✘ | hexdump` to print the encoding of a character by the console. Useful for bash scripts. Also use `od` to dump octals.
 * `for f in directory/* ; do echo -e \\n\\n$f\\n 1>&1 ; cat $f ; done ;` print out all file name and file contents for all files in `directory`.
 * `tar -cvzf tarballname.tar.gz file_or_directory` compresses `file_or_directory` to a tarball named `tarballname.tar.gz`.
-* `ss -tunapl` show which processes are running on which ports.
-* `ss -lntu` show which ports have listeners.
-* `lsof -i -P` show which processes are running on which ports.
 * `iptables -vnL` show default firewall rules.
 * `tcpdump -A` print out all packets.
 * `tcpdump -i lo -s0 -w xyz.pcap` save all packets from interface to file.

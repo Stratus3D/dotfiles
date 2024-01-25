@@ -1,0 +1,6 @@
+% docker, container, image
+
+# Show environment variables from Docker image
+docker inspect --format='{{range .Config.Env}}{{println .}}{{end}}' <IMAGE>
+
+IMAGE: -

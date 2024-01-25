@@ -124,3 +124,16 @@ function debug
     done
     echo "#############|  End of DEBUG mode |####################";
 }
+
+# From https://stackoverflow.com/questions/16311688/bash-convert-epoch-to-date-showing-wrong-time
+epoch_to_timestamp() {
+  epoch="${1:-}"
+
+  if [ "${#epoch}" = 13 ]; then
+    date -r "$((epoch/1000))"
+  else
+    date -r "$epoch"
+  fi
+
+  unset epoch
+}

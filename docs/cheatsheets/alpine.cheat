@@ -1,0 +1,4 @@
+% alpine, linux, docker
+
+# List installed packages
+apk list -i

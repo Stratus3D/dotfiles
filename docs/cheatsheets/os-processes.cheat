@@ -6,11 +6,21 @@ ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head
 # Show top process by CPU usage
 ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head
 
-# Kills all processes with the given name. The `-u` flag limits the killing to all processes with a certain euid (e.g. `pkill -u username HipChat`)
-pkill <PROCESS_NAME>
-
 # Kills the process by ID. `-9` can be used to kill the process immediately
 kill <PROCESS_ID>
 
+# Kills all processes with the given name. --exact means the process name must match exactly
+killall --exact <PROCESS_NAME>
+
+# Kill process by name for specific user (e.g. `killall -u username HipChat`).
+killall --user <USER> --exact <PROCESS_NAME>
+
+# Pause an app
+killall -STOP <PROCESS_NAME>
+
+# Resume an app
+killall -CONT <PROCESS_NAME>
+
 PROCESS_NAME: -
 PROCESS_ID: -
+USER: -

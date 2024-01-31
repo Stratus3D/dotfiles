@@ -47,14 +47,6 @@
 * `nohup <long running command> &` leave a command running in the background. Even after logout.
 * `reset` clears the terminal and resets the terminal state.
 * `fc` open last command in `$EDITOR` for editing.
-
-### OSX Commands
-
-* `su` needs to be `sudo su`
-* `| paste` needs to be `| paste -`
-* `lsvfs` get details on file systems
-* `killall -STOP AppName` pause an app
-* `killall -CONT AppName` resume an app
 * `ditto -x -k <source> <destination dir>` unzip large file on OSX.
 
 ## Vim Commands

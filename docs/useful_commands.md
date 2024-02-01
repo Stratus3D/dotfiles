@@ -26,7 +26,6 @@
 * `command <<< "input text"` can be used in place of `command < file.in`
 * `echo -n ✘ | hexdump` to print the encoding of a character by the console. Useful for bash scripts. Also use `od` to dump octals.
 * `for f in directory/* ; do echo -e \\n\\n$f\\n 1>&1 ; cat $f ; done ;` print out all file name and file contents for all files in `directory`.
-* `tar -cvzf tarballname.tar.gz file_or_directory` compresses `file_or_directory` to a tarball named `tarballname.tar.gz`.
 * `iptables -vnL` show default firewall rules.
 * `tcpdump -A` print out all packets.
 * `tcpdump -i lo -s0 -w xyz.pcap` save all packets from interface to file.
@@ -47,7 +46,6 @@
 * `nohup <long running command> &` leave a command running in the background. Even after logout.
 * `reset` clears the terminal and resets the terminal state.
 * `fc` open last command in `$EDITOR` for editing.
-* `ditto -x -k <source> <destination dir>` unzip large file on OSX.
 
 ## Vim Commands
 

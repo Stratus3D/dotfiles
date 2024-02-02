@@ -1,0 +1,13 @@
+% compress, archive, zip, gzip, tar
+
+# Compresses `SOURCE` directory to a tarball named `TARBALL`
+tar -cvzf <GZIP_TARBALL> <SOURCE>
+
+# Unzip large file on OSX
+ditto -x -k <ZIP> <DESTINATION>
+
+ZIP: - # Typical ends in .zip
+GZIP_TARBALL: - # Typical ends in tar.gz
+ARCHIVE_FILENAME: -
+SOURCE: -
+DESTINATION: -

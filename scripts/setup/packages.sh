@@ -69,3 +69,6 @@ cabal install pandoc-placetable
 
 # For linting
 go install honnef.co/o/tools/cmd/staticcheck@latest
+
+# Godoc for Go documentation serving in the browser
+go install -v golang.org/x/tools/cmd/godoc@latest

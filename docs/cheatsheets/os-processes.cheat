@@ -21,6 +21,9 @@ killall -STOP <PROCESS_NAME>
 # Resume an app
 killall -CONT <PROCESS_NAME>
 
+# Get pids of all processes running with name PROCESS_NAME
+pgrep <PROCESS_NAME>
+
 PROCESS_NAME: -
 PROCESS_ID: -
 USER: -

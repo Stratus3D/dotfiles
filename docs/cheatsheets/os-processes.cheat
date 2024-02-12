@@ -9,6 +9,7 @@ ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head
 # Kills the process by ID. `-9` can be used to kill the process immediately
 kill <PROCESS_ID>
 
+; https://unix.stackexchange.com/questions/91527/whats-the-difference-between-pkill-and-killall
 # Kills all processes with the given name. --exact means the process name must match exactly
 killall --exact <PROCESS_NAME>
 

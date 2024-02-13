@@ -1,0 +1,12 @@
+% vim, vi
+
+# Start vim without any vimrc. `vim -u ~/.othervimrc` to specify a custom vimrc
+vim -u NONE
+
+# Tell vim to log to file a named `<LOGFILE>` in the current directory
+vim -V9<LOGFILE>
+
+# Record the startup time of vim
+vim --startuptime timeCost.txt timeCost.txt
+
+LOGFILE: -

@@ -49,7 +49,6 @@
 
 ## Vim Commands
 
-* `vim -u NONE` start vim without any vimrc. `vim -u ~/.othervimrc` to specify a custom vimrc.
 * `vit` select contents of html tag. `v`isual select text `i`n a `t`ag. `dit` would delete the contents of the tag.
 * `^A` and `^X` allow you to increment the number your cursor is over, or first number after the cursor that is on the same line.
 * `<F4>` toggles everything that occupies space to the left of the text (line numbers, gitgutter, etc...)
@@ -59,13 +58,11 @@
 * `set list!` to toggle showing of whitespace characters.
 * `g;` go back a change position
 * `g,` go forward a change position
-* `vim -V9logfile` tell Vim to log to file a named `logfile` in the current directory
 * `:'<,'>:w !<command>` pipe selection to STDIN of `<command>`. For example, to count the words selected run `:'<,'>:w !wc -w` or `:'<,'>:w !haste|pbcopy` to send to pastebin and copy the URL.
 * `g^g` print number of selected lines when in visual mode
 * `^x^l` complete whole line
 * `cfdo s/foo/bar/g | update` - find and replace in all files in quickfix
 * `:g/^\d/norm A;` - use g + norm to add a semicolon to every line that starts with a number.
-* `vim --startuptime timeCost.txt timeCost.txt` - record the startup time of vim.
 * `e! ++enc=<encoding>` - reopen the file as a different encoding.
 * `:r https://stratus3d.com/index.html` load remote file into buffer
 * `:e https://stratus3d.com/index.html` load remote file into new buffer

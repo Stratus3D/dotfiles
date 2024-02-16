@@ -1,0 +1,10 @@
+% network, traffic, firewall, tcp, wireshark
+
+# Show default firewall rules
+iptables -vnL
+
+# Print out all packets
+tcpdump -A
+
+# save all packets from interface to file
+tcpdump -i lo -s0 -w xyz.pcap

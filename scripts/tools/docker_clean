@@ -8,7 +8,7 @@ IFS=$'\t\n' # Stricter IFS settings
 
 # Remove stopped containers
 echo "Removing stopped containers..."
-docker ps -aq --no-trunc | xargs docker rm
+docker container prune -f
 
 # Remove dangling/untagged images
 echo "Removing untagged images..."
@@ -20,4 +20,4 @@ docker network prune -f
 
 # Remove unused docker volumes
 echo "Removing unused Docker volumes..."
-docker network prune -f
+docker volume prune -f

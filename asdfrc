@@ -6,3 +6,6 @@ use_release_candidates = yes
 
 # Keep all downloads for convenience when working offline
 always_keep_download = yes
+
+# I don't want to be explicit about the plugin code I install
+disable_plugin_short_name_repository = yes

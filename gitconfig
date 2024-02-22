@@ -55,7 +55,7 @@
   # Better diff of changes
   #pager = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
   #pager = diff-so-fancy | less --tabs=4 -RFX
-  pager = diff-so-fancy | less
+  pager = diff-so-fancy | less --tabs=2
 [pager]
   # Don't use pager when listing branches
   # Taken from https://stackoverflow.com/a/48370253/1245380

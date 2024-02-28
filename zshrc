@@ -107,10 +107,12 @@ bindkey -M vicmd "^V" edit-command-line
 
 # Make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
 export KEYTIMEOUT=1
+# This just kills shell performance, I can't justify using it all the time for few the projects that need it
+#eval "$(direnv hook zsh)"
 
 # Run navi code so Ctrl-G in Zsh opens navi. There is likely a more efficient
 # way of doing this.
 eval "$(navi widget zsh)"
 
 # Load theme
-source $HOME/dotfiles/zsh/blinks-modified.zsh-theme
+source $HOME/dotfiles/zsh/theme.zsh

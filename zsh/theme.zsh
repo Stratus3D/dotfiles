@@ -11,6 +11,8 @@
 # * Informative - A lot of shells don't provide any indication of what happens
 #   when a command finishes. This prompt displays the exit code and the duration
 #   of a command when it renders the next prompt
+# * Designed for light mode - dark mode is generally the default, but I use
+#   light mode.
 #
 # Format
 #

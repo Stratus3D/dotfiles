@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Constants and functions for terminal colors.
 # Author: Max Tsepkov <max@yogi.pw>
 
 CLR_ESC="\033["
 
-# All these varibles has a function with the same name, but in lower case.
+# All these variables has a function with the same name, but in lower case.
 #
 CLR_RESET=0             # reset all attributes to their defaults
 CLR_RESET_UNDERLINE=24  # underline off

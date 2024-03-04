@@ -1,5 +1,5 @@
 # These colors have been optimized for light mode
-iexport MANROFFOPT='-c'
+export MANROFFOPT='-c'
 export LESS_TERMCAP_mb=$(tput bold; tput setaf 2)
 export LESS_TERMCAP_md=$(tput bold; tput setaf 6)
 export LESS_TERMCAP_me=$(tput sgr0)

@@ -18,8 +18,20 @@
 #
 # * Left prompt only. No right prompt.
 # * All values are left aligned.
-# * Top line: current directory, exit code, duration of last command, Git info.
-# * Bottom line: current user, `%` for prompt char
+# * First line:
+#   * exit code
+#   * duration of last command
+#   * Number of background jobs
+#   * Git info
+#   * current user
+#   * current directory
+# * Second line: `%` for prompt char
+#
+# Links:
+#
+# * https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html
+# * https://stackoverflow.com/questions/10194094/zsh-prompt-checking-if-there-are-any-background-jobs
+# * https://sureshjoshi.com/development/zsh-prompts-that-dont-suck
 
 function _prompt_char() {
   if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then

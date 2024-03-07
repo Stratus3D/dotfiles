@@ -33,14 +33,6 @@
 # * https://stackoverflow.com/questions/10194094/zsh-prompt-checking-if-there-are-any-background-jobs
 # * https://sureshjoshi.com/development/zsh-prompts-that-dont-suck
 
-function _prompt_char() {
-  if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
-    echo "%{%F{blue}%}±%{%f%k%b%}"
-  else
-    echo ' '
-  fi
-}
-
 prompt_bg=white
 
 #ZSH_THEME_GIT_PROMPT_PREFIX=" [%{%B%F{blue}%}"
@@ -59,7 +51,7 @@ PROMPT='%{%f%k%b%u%}\
 %{%K{${prompt_bg}}%}\
 %{%(?.%F{2}%?.%F{%{7}%?)%3G%}\
 %{%B%F{blue}%} %(1j.(%j).) %{%b%F{yellow}%K{${prompt_bg}}%}%~%{%B%F{green}%}$(git_prompt_info)%E %{%K{${prompt_bg}}%}%{$fg_bold[red]%}%(?..%?)%{%f%b%}%{%f%k%b%}
-$(_prompt_char)%{%K{${prompt_bg}}%} %#%{%f%k%b%} '
+%{%K{${prompt_bg}}%} %#%{%f%k%b%} '
 
 #PROMPT='%{%f%k%b%}
 #%{%K{${bkg}}%B%F{green}%}%n%{%B%F{blue}%} %{%b%F{yellow}%K{${bkg}}%}%~%{%B%F{green}%}$(git_prompt_info)%E %{%K{${bkg}}%}%{$fg_bold[red]%}%(?..%?)%{%f%b%}%{%f%k%b%}

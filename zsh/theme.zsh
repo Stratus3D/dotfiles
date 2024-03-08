@@ -35,12 +35,13 @@
 
 prompt_bg=white
 
-#ZSH_THEME_GIT_PROMPT_PREFIX=" [%{%B%F{blue}%}"
-#ZSH_THEME_GIT_PROMPT_SUFFIX="%{%f%k%b%K{${bkg}}%B%F{green}%}]"
-#ZSH_THEME_GIT_PROMPT_DIRTY=" %{%F{red}%}*%{%f%k%b%}"
-#ZSH_THEME_GIT_PROMPT_CLEAN=""
+ZSH_THEME_GIT_PROMPT_PREFIX=" [%{%B%F{blue}%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{%f%k%b%K{${prompt_bg}}%B%F{green}%}]"
+ZSH_THEME_GIT_PROMPT_DIRTY=" %{%F{red}%}*%{%f%k%b%}"
+ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 PROMPT='%(?.%F{14}⏺.%F{9}⏺)%f %2~ %# '
+
 # Show running background jobs, if any
 #
 # %{%f%k%b%u%}         - A reset. Stop using background color, foreground color, bold, and underline

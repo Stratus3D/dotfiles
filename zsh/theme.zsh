@@ -35,28 +35,33 @@
 
 prompt_bg=white
 
+# These are used by the `git_prompt_info` info function invoked in the prompt
 ZSH_THEME_GIT_PROMPT_PREFIX=" [%{%B%F{blue}%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{%f%k%b%K{${prompt_bg}}%B%F{green}%}]"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{%F{red}%}*%{%f%k%b%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-PROMPT='%(?.%F{14}⏺.%F{9}⏺)%f %2~ %# '
-
 # Show running background jobs, if any
 #
 # %{%f%k%b%u%}         - A reset. Stop using background color, foreground color, bold, and underline
 # %{%K{${prompt_bg}}%} - Set background color for prompt
-# - Display previous exit code. Use bold red if failed, otherwise green
-#
+# %(?.%F{green}%?.%B%F{%{red}%}%?) - Display previous exit code. Use bold red if failed, otherwise green
+# - Display the duration of the previous command in yellow
+# %{%B%F{blue}%}%(1j. (%j).) - Display the number jobs if one or more
+# %{%B%F{green}%}$(git_prompt_info) - Show Git info if inside a Git repository
+# %{%b%F{magenta}%}%~   - Display the current directory in magenta bold font
+# %E %{%f%b%u%}        - Clear to end of line, reset everything except background color
+# %#                   - Display # prompt if root, and % if not
+# %{%f%k%b%u%}         - The reset again.
+
+# TODO: Populate duration with actual time. Replace `ms` with actual millisecond symbol
 PROMPT='%{%f%k%b%u%}\
 %{%K{${prompt_bg}}%}\
-%{%(?.%F{2}%?.%F{%{7}%?)%3G%}\
-%{%B%F{blue}%} %(1j.(%j).) %{%b%F{yellow}%K{${prompt_bg}}%}%~%{%B%F{green}%}$(git_prompt_info)%E %{%K{${prompt_bg}}%}%{$fg_bold[red]%}%(?..%?)%{%f%b%}%{%f%k%b%}
-%{%K{${prompt_bg}}%} %#%{%f%k%b%} '
-
-#PROMPT='%{%f%k%b%}
-#%{%K{${bkg}}%B%F{green}%}%n%{%B%F{blue}%} %{%b%F{yellow}%K{${bkg}}%}%~%{%B%F{green}%}$(git_prompt_info)%E %{%K{${bkg}}%}%{$fg_bold[red]%}%(?..%?)%{%f%b%}%{%f%k%b%}
-#$(_prompt_char)%{%K{${bkg}}%} %#%{%f%k%b%} '
-
-# I no longer use the right prompt because I often forgot it was there
-#RPROMPT='%{%K{${bkg}}%}%{$fg_bold[red]%}%(?..%?)%{%f%b%} !%{%B%F{cyan}%}%!%{%f%k%b%}'
+%(?.%F{green}%?.%B%F{%{red}%}%?)\
+ %{%F{yellow}%}1m23s45ms\
+%{%B%F{blue}%}%(1j. (%j).)\
+%{%B%F{green}%}$(git_prompt_info)\
+ %{%B%F{magenta}%}%~\
+%E %{%f%b%u%}
+%#\
+%{%f%k%b%u%} '

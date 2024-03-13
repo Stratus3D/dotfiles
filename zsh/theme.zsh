@@ -61,7 +61,8 @@ PROMPT='%{%f%k%b%u%}\
  %{%F{yellow}%}1m23s45ms\
 %{%B%F{blue}%}%(1j. (%j).)\
 %{%B%F{green}%}$(git_prompt_info)\
- %{%B%F{magenta}%}%~\
+ %{%b%F{cyan}%}%n\
+ %{%b%F{magenta}%}%~\
 %E %{%f%b%u%}
 %#\
 %{%f%k%b%u%} '

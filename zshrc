@@ -33,10 +33,6 @@ antigen bundle misc
 # For tmuxinator completions
 antigen bundle tmuxinator
 
-# For displaying command execution time in the shell. I need to figure out how
-# to better display this in the shell prompt
-antigen bundle timer
-
 # Tell Antigen that you're done.
 antigen apply
 

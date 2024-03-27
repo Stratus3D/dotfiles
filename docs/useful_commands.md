@@ -26,10 +26,6 @@
 * `command <<< "input text"` can be used in place of `command < file.in`
 * `echo -n ✘ | hexdump` to print the encoding of a character by the console. Useful for bash scripts. Also use `od` to dump octals.
 * `for f in directory/* ; do echo -e \\n\\n$f\\n 1>&1 ; cat $f ; done ;` print out all file name and file contents for all files in `directory`.
-* `export $(cut -d= -f1 <file>)` export all variables in file containing environment variables
-* `unset $(grep -v '^#' .env | sed -E 's/(.*)=.*/\1/' | xargs)` unset all variables contained in an environment file
-* `env $(cat .env | xargs) rails` run command with variables contained in environment file
-* `env $(grep -v '^#' .env | xargs)` run command with variables contained in an environment file, ignore comments
 * `find ./ -type f -exec sed -i -e 's/foo/bar/g' {} \;` find and replace string in all files in a directory
 * `find src -name 'old*' -type f -exec bash -c 'mv "$1" "${1/old/new}"' -- {} \;` rename every filename that matches pattern
 * `sudo getent passwd | cut -d : -f 6 | sudo sed 's:$:/.bash_history:' | sudo xargs -d '\n' grep -H -e "$command"` or `grep -e "$pattern" /home/*/.bash_history` to see how others use a command

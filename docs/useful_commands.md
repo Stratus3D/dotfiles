@@ -12,16 +12,6 @@
 * `^X, ^E` to edit the currently typed command in vim
 * `!!` run the last command again
 * `cd -` change back to the previous directory
-* `^A` move to the start of the line
-* `^E` move to the end of the line
-* `^B` move back one character
-* `^P` scroll backward one item in history
-* `^N` scroll forward obackne item in history
-* `Esc-B` move back one word
-* `Esc-F` move forward one word
-* `^U` delete from cursor to the beginning of the line
-* `^K` delete from the cursor to the end of the line
-* `^Y` paste previously deleted command (separate from global Cmd-C buffer). Delete a line with `^A ^K` and then paste it back with `^Y`
 * Files/directories can be dragged onto the terminal and the path will be pasted at the current cursor position
 * `command <<< "input text"` can be used in place of `command < file.in`
 * `echo -n ✘ | hexdump` to print the encoding of a character by the console. Useful for bash scripts. Also use `od` to dump octals.

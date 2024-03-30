@@ -1,0 +1,15 @@
+% postgresql, postgres, sql, queries
+
+# Show the path to `pg_hba.conf` config file.
+SHOW hba_file;
+
+# Show all roles
+\du
+
+# Turn extended display on in the psql console. This prints columns vertically, and is useful for when a table too wide to display in the console.
+\x ON
+
+# Show the source code of a Postgres function.
+\df+ <FUNCTION_NAME>
+
+FUNCTION_NAME: -

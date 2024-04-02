@@ -79,9 +79,4 @@
 
 * `#!/usr/bin/sed 1d .` - prints all but the first line of the sed file.
 
-## Postgres
 
-* `SHOW hba_file;` - Show the path to `pg_hba.conf` config file.
-* `\du` - Show all roles
-* `\x ON` - Turn extended display on in the psql console. This prints columns vertically, and is useful for when a table too wide to display in the console.
-* `\df+ <function_name>` - Show the source code of a Postgres function.

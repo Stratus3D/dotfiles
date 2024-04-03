@@ -42,5 +42,9 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Golang settings
+
+# Disable proxy.golang.org and download modules directly from the souce
+GOPROXY=direct
+
 # My modules with the stratus3d.com prefix are private
 GOPRIVATE=*.stratus3d.com,stratus3d.com

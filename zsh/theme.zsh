@@ -30,6 +30,7 @@
 # Links:
 #
 # * https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html
+# * https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit
 # * https://stackoverflow.com/questions/10194094/zsh-prompt-checking-if-there-are-any-background-jobs
 # * https://sureshjoshi.com/development/zsh-prompts-that-dont-suck
 # * https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/timer/timer.plugin.zsh

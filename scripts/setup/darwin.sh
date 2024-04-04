@@ -192,9 +192,6 @@ brew_install_or_upgrade siege
 # I should probably create an asdf plugin for RabbitMQ
 brew_install_or_upgrade rabbitmq
 
-# For IRC
-brew_install_or_upgrade weechat
-
 # For diffs of Microsoft Office files
 brew_install_or_upgrade tika
 

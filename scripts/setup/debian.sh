@@ -78,7 +78,6 @@ install_or_upgrade xsel
 install_or_upgrade shellcheck
 
 # Communication apps
-install_or_upgrade weechat
 install_or_upgrade thunderbird
 install_or_upgrade enigmail # For secure email
 

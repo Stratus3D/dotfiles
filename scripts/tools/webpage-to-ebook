@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+# Usage:
+#
+# webpage_to_ebook [url] [book-name]
+#
+# Taken from:
+#
+# https://ebooks.stackexchange.com/questions/2/how-can-i-convert-an-html-site-into-an-ebook
+
+error_exit() {
+  printf "%s\n" "$1" 1>&2
+  exit "${2:-1}" # default exit status 1
+}
+
+url="${1:-}"
+book_name="${2:-}"
+current_dir="$(pwd)"
+
+# Argument validation
+if [ -z "$url" ]; then
+    error_exit "URL must be provided"
+fi
+
+if [ -z "$book_name" ]; then
+    error_exit "Book name slug must be provided"
+fi
+
+TEMP_DIR=$(mktemp -dt "$(basename $0).XXXXXX")
+echo "Created temp directory $TEMP_DIR"
+cd "$TEMP_DIR"
+
+# Download the webpage to the temp dir
+wget -r -np -nc -k -nd -P . -c "$url"
+
+# Convert to ebook
+epub_filename="${book_name}.epub"
+ebook-convert index.html "$epub_filename"
+
+cp "$epub_filename" "$current_dir"
+
+rm -rf "$TEMP_DIR"

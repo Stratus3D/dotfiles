@@ -10,6 +10,9 @@ IFS=$'\t\n' # Stricter IFS settings
 #
 # webpage_to_ebook [url] [book-name]
 #
+# This script relies on calibre's ebook-convert command to convert raw HTML to
+# epub.
+#
 # Taken from:
 #
 # https://ebooks.stackexchange.com/questions/2/how-can-i-convert-an-html-site-into-an-ebook

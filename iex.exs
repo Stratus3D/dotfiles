@@ -23,9 +23,11 @@ module_exists = fn module ->
   function_exported?(module, :__info__, 1)
 end
 
-# Applications that need to be loaded by Mix, if Mix is used, in order for code
-# in this file to run.
-if module_exists.(Mix) do
+running_applications = Application.started_applications()
+
+# Applications that need to be loaded by Mix, if Mix is running, in order for
+# code in this file to run.
+if List.keyfind(running_applications, :mix, 0) do
   Mix.ensure_application!(:wx)
   Mix.ensure_application!(:runtime_tools)
   Mix.ensure_application!(:observer)

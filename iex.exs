@@ -94,3 +94,55 @@ if module_missing.(TelemetryHelper) do
     end
   end
 end
+
+if module_missing.(StartupBenchmark) do
+  defmodule StartupBenchmark do
+    @moduledoc "Code to benchmark application startup"
+
+    @spec benchmark(module()) :: list()
+    def benchmark(application) do
+      # Fetch a complete list of a dependencies, they should be in the order
+      # they need to be started in.
+      complete_deps = deps_list(application)
+
+      # Start each application in order, timing the start of each application
+      dep_start_times =
+        Enum.map(complete_deps, fn app ->
+          case :timer.tc(fn -> Application.start(app) end) do
+            {time, :ok} -> {time, app}
+            # Some dependencies like :kernel will have already been started, we can
+            # ignore them
+            {time, {:error, {:already_started, _}}} -> {time, app}
+            # Raise an exception if we get an non-successful return value
+            {_time, error} -> raise(error)
+          end
+        end)
+
+      # Sort dependencies by start time so slowest application is listed first
+      dep_start_times
+      |> Enum.sort()
+      |> Enum.reverse()
+    end
+
+    defp deps_list(app) do
+      # Get all dependencies for an app
+      deps = Application.spec(app)[:applications]
+
+      complete_deps =
+        case deps do
+          nil ->
+            []
+
+          _deps ->
+            # Recursively call to get all sub-dependencies
+            Enum.map(deps, fn dep -> deps_list(dep) end)
+        end
+
+      # Build a complete list of sub dependencies, with the top level application
+      # requiring them listed last, also remove any duplicates
+      [complete_deps, [app]]
+      |> List.flatten()
+      |> Enum.uniq()
+    end
+  end
+end

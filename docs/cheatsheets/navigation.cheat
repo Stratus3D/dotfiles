@@ -1,0 +1,4 @@
+% navigation, cd, dir, directory
+
+# change back to the previous directory
+cd -

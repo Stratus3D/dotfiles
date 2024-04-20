@@ -11,7 +11,6 @@
 * `open -a TextEdit textfile.txt` to open a file in a specific application
 * `^X, ^E` to edit the currently typed command in vim
 * `!!` run the last command again
-* `cd -` change back to the previous directory
 * Files/directories can be dragged onto the terminal and the path will be pasted at the current cursor position
 * `command <<< "input text"` can be used in place of `command < file.in`
 * `echo -n ✘ | hexdump` to print the encoding of a character by the console. Useful for bash scripts. Also use `od` to dump octals.

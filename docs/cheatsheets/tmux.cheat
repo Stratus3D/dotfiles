@@ -1,0 +1,9 @@
+% tmux, window, pane, session
+
+# detach current window.
+<LEADER> d
+
+# attach to running session
+tmux attach
+
+LEADER: -

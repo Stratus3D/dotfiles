@@ -11,7 +11,6 @@
 * `open -a TextEdit textfile.txt` to open a file in a specific application
 * `^X, ^E` to edit the currently typed command in vim
 * `!!` run the last command again
-* Files/directories can be dragged onto the terminal and the path will be pasted at the current cursor position
 * `command <<< "input text"` can be used in place of `command < file.in`
 * `echo -n ✘ | hexdump` to print the encoding of a character by the console. Useful for bash scripts. Also use `od` to dump octals.
 * `for f in directory/* ; do echo -e \\n\\n$f\\n 1>&1 ; cat $f ; done ;` print out all file name and file contents for all files in `directory`.
@@ -52,11 +51,6 @@
 ## Make Targets and Commands
 
 * `print-%: ; @echo $*=$($*)` or `print-%: ; @echo '$(subst ','\'',$*=$($*))'` allows you to run `make print-<variable_name>` and print the value of any variable. Can be used without modifying the file in GNU make 3.82 or greater like this: `make --eval="print-%: ; @echo $*=$($*)" print-SOURCE_FILES`.
-
-## Screen Commands
-
-* `^A d` detach current window.
-* `screen -rd` to reattach a window. Follow the prompts if there are multiple windows.
 
 ## Gcc Flags
 

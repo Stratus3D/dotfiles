@@ -67,9 +67,3 @@
 * `+pc unicode` increase the range of characters that the system will consider printable. Helpful when testing with unicode in the shell
 
     :hackney_trace.enable(:max, :io)
-
-## AWK and sed
-
-* `#!/usr/bin/sed 1d .` - prints all but the first line of the sed file.
-
-

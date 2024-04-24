@@ -2,3 +2,6 @@
 
 # On MacOS, use say to whisper something to someone
 say -v whisper "I am watching you"
+
+# sed: prints all but the first line of the sed file
+\#!/usr/bin/sed 1d .

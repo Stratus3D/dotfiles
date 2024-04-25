@@ -2,13 +2,13 @@
 
 ## Bash/Zshell Command Line
 
-* `pcregrep --color='auto' -n '[^\x00-\x7F]' README.md` highlight lines in a file that contain non-ASCII characters. Alternatively use `grep` with the `-P` flag.
-* `file -i file.txt` print encoding of file. On OSX use `file -I`.
-* `echo "SMS notification" | sendmail -t '<phone number>@messaging.sprintpcs.com'` send an SMS notification by emailing the service's email to SMS gateway
-* `stat -c%s` show file size
-* `ln -s /dev/null ~/file/you/never/want/to/persist` good for ensure data written to the file by applications never persists
+* `open out.svg; echo new-database.dot | entr sh -c 'dot new-database.dot -Tsvg -o out.svg; $HOME/dotfiles/reload-browser Firefox'` reload file in browser when it changes
 * `open .` to open current directory in Finder
 * `open -a TextEdit textfile.txt` to open a file in a specific application
+* `echo "SMS notification" | sendmail -t '<phone number>@messaging.sprintpcs.com'` send an SMS notification by emailing the service's email to SMS gateway
+* `dmesg` show startup log messages
+* `stat -c%s` show file size
+* `ln -s /dev/null ~/file/you/never/want/to/persist` good for ensure data written to the file by applications never persists
 * `^X, ^E` to edit the currently typed command in vim
 * `!!` run the last command again
 * `command <<< "input text"` can be used in place of `command < file.in`
@@ -19,8 +19,6 @@
 * `sudo getent passwd | cut -d : -f 6 | sudo sed 's:$:/.bash_history:' | sudo xargs -d '\n' grep -H -e "$command"` or `grep -e "$pattern" /home/*/.bash_history` to see how others use a command
 * `bindkey` show Zsh commands
 * `cat *.c *.h | cpp -fpreprocessed | sed 's/[_a-zA-Z0-9][_a-zA-Z0-9]*/x/g' | tr -d ' \012' | wc -c` count words in C project
-* `file <img file>` show general image info like format and dimensions
-* `identify -verbose <img file>` show colorspace, channel depth, dimensions, and other metadata for an image
 * `for ((n=0;n<10;n++)); do { time bundle exec rspec ./spec ; } 2>> time.txt; done` run a command ten times and write the execution time of each run to a file
 * `xmllint --valid --encode utf-8 <file>; echo $?` validate that an XML file is valid and encoded as UTF-8
 * `nmcli d wifi` show signals for wifi networks

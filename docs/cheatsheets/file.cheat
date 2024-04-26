@@ -1,0 +1,12 @@
+% file, format, contents
+
+# highlight lines in a file that contain non-ASCII characters. Alternatively use `grep` with the `-P` flag
+pcregrep --color='auto' -n '[^\x00-\x7F]' <FILE>
+
+# print encoding of file. On OSX use `file -I`. For images shows general image info like format and dimensions
+file <FILE>
+
+# show colorspace, channel depth, dimensions, and other metadata for an image
+identify -verbose <FILE>
+
+FILE: -

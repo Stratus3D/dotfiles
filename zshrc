@@ -1,3 +1,11 @@
+# My zsh configuration is designed to be as lean as possible while still giving
+# me all the features I need, like autocomplete and git integration.
+#
+# References
+#
+# * https://thevaluable.dev/zsh-install-configure-mouseless/
+# * https://ohmyz.sh/
+
 # This is faster than `autoload -U compinit && compinit`
 autoload -Uz compinit
 

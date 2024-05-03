@@ -83,6 +83,8 @@ setopt INC_APPEND_HISTORY
 setopt EXTENDED_HISTORY
 # Import newly written commands from the history file
 setopt SHARE_HISTORY
+# Do not write duplicate event to history file
+setopt HIST_SAVE_NO_DUPS
 
 precmd() {
     if [ "$(id -u)" -ne 0 ]; then

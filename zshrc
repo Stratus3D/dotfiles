@@ -95,6 +95,9 @@ precmd() {
 # Use vi mode
 bindkey -v
 
+# Make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
+export KEYTIMEOUT=1
+
 # Vi mode settings
 # Better searching in command mode
 bindkey -M vicmd '?' history-incremental-search-backward
@@ -111,8 +114,6 @@ bindkey -M vicmd "j" down-line-or-beginning-search
 # open Vim
 bindkey -M vicmd "^V" edit-command-line
 
-# Make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
-export KEYTIMEOUT=1
 # This just kills shell performance, I can't justify using it all the time for few the projects that need it
 #eval "$(direnv hook zsh)"
 

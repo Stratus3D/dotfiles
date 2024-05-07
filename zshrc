@@ -1,6 +1,10 @@
 # My zsh configuration is designed to be as lean as possible while still giving
 # me all the features I need, like autocomplete and git integration.
 #
+# Commands helpful when building zsh config
+#
+# * bindkey -l - List all keymaps available
+#
 # References
 #
 # * https://thevaluable.dev/zsh-install-configure-mouseless/

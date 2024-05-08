@@ -116,6 +116,8 @@ bindkey -M vicmd "j" down-line-or-beginning-search
 # Easier, more vim-like editor opening
 # `v` is already mapped to visual mode, so we need to use a different key to
 # open Vim
+autoload -Uz edit-command-line
+zle -N edit-command-line
 bindkey -M vicmd "^V" edit-command-line
 
 # This just kills shell performance, I can't justify using it all the time for few the projects that need it

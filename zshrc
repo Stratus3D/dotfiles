@@ -45,6 +45,9 @@ antigen bundle misc
 # For tmuxinator completions
 antigen bundle tmuxinator
 
+# zsh syntax highlighting
+antigen bundle zsh-users/zsh-syntax-highlighting
+
 # Tell Antigen that you're done.
 antigen apply
 

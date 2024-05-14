@@ -4,6 +4,12 @@
 # Commands helpful when building zsh config
 #
 # * bindkey -l - List all keymaps available
+# * bindkey -M <keymap> - Show all bindings in a keymap
+#
+# Helpful widgets
+#
+# * where-is - show what keystrokes a particular widget is bound to
+# * describe-key-briefly - show escape sequence for keystroke
 #
 # References
 #

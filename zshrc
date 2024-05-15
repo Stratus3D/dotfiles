@@ -13,8 +13,11 @@
 #
 # References
 #
-# * https://thevaluable.dev/zsh-install-configure-mouseless/
 # * https://ohmyz.sh/
+# * https://thevaluable.dev/zsh-install-configure-mouseless/
+# * https://thevaluable.dev/zsh-line-editor-configuration-mouseless/
+# * https://zsh.sourceforge.io/Doc/Release/Zsh-Line-Editor.html#Standard-Widgets
+# * https://thevaluable.dev/zsh-completion-guide-examples/
 
 # This is faster than `autoload -U compinit && compinit`
 autoload -Uz compinit

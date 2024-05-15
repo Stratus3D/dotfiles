@@ -5,6 +5,7 @@
 #
 # * bindkey -l - List all keymaps available
 # * bindkey -M <keymap> - Show all bindings in a keymap
+# * setopt - show zsh options that are set
 #
 # Helpful widgets
 #
@@ -17,7 +18,40 @@
 # * https://thevaluable.dev/zsh-install-configure-mouseless/
 # * https://thevaluable.dev/zsh-line-editor-configuration-mouseless/
 # * https://zsh.sourceforge.io/Doc/Release/Zsh-Line-Editor.html#Standard-Widgets
+# * https://zsh.sourceforge.io/Doc/Release/Options.html#Option-Aliases
 # * https://thevaluable.dev/zsh-completion-guide-examples/
+
+# GENERAL
+# ----------
+
+# Print jobs in long format
+setopt LONG_LIST_JOBS
+
+# NAVIGATION
+# ----------
+
+# Navigate to directory by name without using cd
+setopt AUTO_CD
+
+# Automatically push directories to the stack when cd'ing
+setopt AUTO_PUSHD
+
+# Don't store duplicates on the stack
+setopt PUSHD_IGNORE_DUPS
+
+# Swap the meaning of cd +1 and cd -1
+setopt PUSHD_MINUS
+
+# Don't print the directory stack when pushing or popping
+setopt PUSHD_SILENT
+
+# COMPLETION
+# ----------
+
+# Not sure if I want to keep these settings
+setopt ALWAYS_TO_END
+setopt COMBINING_CHARS
+setopt COMPLETE_IN_WORD
 
 # This is faster than `autoload -U compinit && compinit`
 autoload -Uz compinit

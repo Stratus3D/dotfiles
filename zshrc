@@ -27,6 +27,9 @@
 # Print jobs in long format
 setopt LONG_LIST_JOBS
 
+# Allow comments in interactive shells
+setopt INTERACTIVE_COMMENTS
+
 # NAVIGATION
 # ----------
 

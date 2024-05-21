@@ -129,13 +129,34 @@ source $DOTFILES_DIR/mixins/man_color
 # Use asdf autocompletions
 . $HOME/.asdf/completions/_asdf
 
-# Save all history
+# HISTORY
+# ----------
+
+# Prefer unique commands in history
+# If the internal history needs to be trimmed to add the current command line,
+# setting this option will cause the oldest history event that has a duplicate
+# to be lost before losing a unique event from the list.
+setopt HIST_EXPIRE_DUPS_FIRST
+
+# Do not enter command lines into the history list if they are duplicates of the previous event.
+setopt HIST_IGNORE_DUPS
+
+# Don't save commands to history when they start with a space, or when the alias
+# contains a leading space
+setopt HIST_IGNORE_SPACE
+
+# Not totally sure I need this
+setopt HIST_VERIFY
+
 # Incrementally write history to file
 setopt INC_APPEND_HISTORY
+
 # Save timestamp to history file too
 setopt EXTENDED_HISTORY
+
 # Import newly written commands from the history file
 setopt SHARE_HISTORY
+
 # Do not write duplicate event to history file
 setopt HIST_SAVE_NO_DUPS
 

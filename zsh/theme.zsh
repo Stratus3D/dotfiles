@@ -35,6 +35,9 @@
 # * https://sureshjoshi.com/development/zsh-prompts-that-dont-suck
 # * https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/timer/timer.plugin.zsh
 
+# This theme relies on parameter and command substitution being enabled in prompts
+setopt PROMPT_SUBST
+
 prompt_bg=white
 
 # These are used by the `git_prompt_info` info function invoked in the prompt

@@ -132,6 +132,10 @@ source $DOTFILES_DIR/mixins/man_color
 # HISTORY
 # ----------
 
+# There is no way to define history size as infinite so we set it to 1 billion
+HISTSIZE=999999999
+SAVEHIST=$HISTSIZE
+
 # Prefer unique commands in history
 # If the internal history needs to be trimmed to add the current command line,
 # setting this option will cause the oldest history event that has a duplicate

@@ -208,9 +208,6 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd "^V" edit-command-line
 
-# This just kills shell performance, I can't justify using it all the time for few the projects that need it
-#eval "$(direnv hook zsh)"
-
 # Run navi code so Ctrl-G in Zsh opens navi. There is likely a more efficient
 # way of doing this.
 eval "$(navi widget zsh)"

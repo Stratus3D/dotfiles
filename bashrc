@@ -28,3 +28,8 @@ export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:
 
 # Use vi mode
 set -o vi
+
+# Custom options
+if [ -f "$HOME/dotfiles/mixins/shellrc.custom" ]; then
+    source "$HOME/dotfiles/mixins/shellrc.custom"
+fi

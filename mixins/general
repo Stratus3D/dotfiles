@@ -12,11 +12,6 @@ export PAGER='less'
 export PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
 export PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 
-# Custom options
-if [ -f "$HOME/dotfiles/mixins/shellrc.custom" ]; then
-    source "$HOME/dotfiles/mixins/shellrc.custom"
-fi
-
 # Erlang `erl` options
 # +pc unicode - something related to display of unicode
 # -kernel shell_history enabled - Enable shell history in the `erl` shell

@@ -214,3 +214,8 @@ eval "$(navi widget zsh)"
 
 # Load theme
 source $HOME/dotfiles/zsh/theme.zsh
+
+# Custom options
+if [ -f "$HOME/dotfiles/mixins/shellrc.custom" ]; then
+    source "$HOME/dotfiles/mixins/shellrc.custom"
+fi

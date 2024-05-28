@@ -76,20 +76,6 @@ fi
 # Load antigen
 source $HOME/.antigen/antigen.zsh
 
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
-
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-
-# Faster than the regular git plugin
-antigen bundle gitfast
-antigen bundle history
-antigen bundle key-bindings
-antigen bundle completion
-antigen bundle misc
-
-# For tmuxinator completions
-antigen bundle tmuxinator
 
 # zsh syntax highlighting
 antigen bundle zsh-users/zsh-syntax-highlighting

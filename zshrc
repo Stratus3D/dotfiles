@@ -6,6 +6,7 @@
 # * bindkey -l - List all keymaps available
 # * bindkey -M <keymap> - Show all bindings in a keymap
 # * setopt - show zsh options that are set
+# * zstyle - show configured styles
 #
 # Helpful widgets
 #
@@ -20,15 +21,22 @@
 # * https://zsh.sourceforge.io/Doc/Release/Zsh-Line-Editor.html#Standard-Widgets
 # * https://zsh.sourceforge.io/Doc/Release/Options.html#Option-Aliases
 # * https://thevaluable.dev/zsh-completion-guide-examples/
+# * https://github.com/Phantas0s/.dotfiles/blob/master/zsh/zshrc
 
 # GENERAL
 # ----------
+
+# We need this so that tmux uses zsh when started in a zsh shell
+export SHELL='/bin/zsh'
 
 # Print jobs in long format
 setopt LONG_LIST_JOBS
 
 # Allow comments in interactive shells
 setopt INTERACTIVE_COMMENTS
+
+# Enable implicit redirection to multiple streams: echo >file1 >file2
+setopt MULTIOS
 
 # NAVIGATION
 # ----------

@@ -62,6 +62,8 @@ setopt PUSHD_SILENT
 # Not sure if I want to keep these settings
 setopt ALWAYS_TO_END
 setopt COMBINING_CHARS
+
+# Complete from both ends of a word
 setopt COMPLETE_IN_WORD
 
 # This is faster than `autoload -U compinit && compinit`

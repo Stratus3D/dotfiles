@@ -109,19 +109,6 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Don't allow zsh to autocorrect commands
 DISABLE_CORRECTION="true"
 
-# We need this so that tmux uses zsh when started in a zsh shell
-export SHELL='/bin/zsh'
-
-DOTFILES_DIR=$HOME/dotfiles
-
-source $DOTFILES_DIR/mixins/general
-source $DOTFILES_DIR/mixins/functions
-source $DOTFILES_DIR/mixins/grep
-source $DOTFILES_DIR/mixins/path
-source $DOTFILES_DIR/mixins/asdf
-source $DOTFILES_DIR/mixins/aliases
-source $DOTFILES_DIR/mixins/man_color
-
 # Use asdf autocompletions
 . $HOME/.asdf/completions/_asdf
 
@@ -210,6 +197,17 @@ eval "$(navi widget zsh)"
 
 # Load theme
 source $HOME/dotfiles/zsh/theme.zsh
+
+# SCRIPTS & CUSTOM
+# ----------
+
+source $DOTFILES_DIR/mixins/general
+source $DOTFILES_DIR/mixins/functions
+source $DOTFILES_DIR/mixins/grep
+source $DOTFILES_DIR/mixins/path
+source $DOTFILES_DIR/mixins/asdf
+source $DOTFILES_DIR/mixins/aliases
+source $DOTFILES_DIR/mixins/man_color
 
 # Custom options
 if [ -f "$HOME/dotfiles/mixins/shellrc.custom" ]; then

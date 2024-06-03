@@ -96,16 +96,6 @@ antigen apply
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
 # Don't allow zsh to autocorrect commands
 DISABLE_CORRECTION="true"
 
@@ -118,6 +108,11 @@ DISABLE_CORRECTION="true"
 # There is no way to define history size as infinite so we set it to 1 billion
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
 
 # Prefer unique commands in history
 # If the internal history needs to be trimmed to add the current command line,
@@ -194,6 +189,19 @@ bindkey -M vicmd "^V" edit-command-line
 # Run navi code so Ctrl-G in Zsh opens navi. There is likely a more efficient
 # way of doing this.
 eval "$(navi widget zsh)"
+
+# THEME & GIT
+# ----------
+
+DOTFILES_DIR=$HOME/dotfiles
+
+# Theme uses git functions
+source $DOTFILES_DIR/zsh/git.zsh
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Load theme
 source $HOME/dotfiles/zsh/theme.zsh

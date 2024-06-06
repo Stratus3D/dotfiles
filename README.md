@@ -7,7 +7,7 @@ My Dotfiles
 
 This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a script to symlink all the config files and directories in place, and a set of setup scripts that install all the tools I need on Ubuntu or OSX. The [Gruvbox Dark colorscheme](https://github.com/morhetz/gruvbox) is used for Vim and the terminal emulator profiles.
 
-I primarily write software in Erlang, Elixir, Rust, and Bash and occasionally in Ruby, JavaScript/Node.JS, Python, and Lua. The plugins and config specified in this repo is for polyglot local development in these languages.
+I primarily write software in Erlang, Elixir, Go, and Bash and occasionally in Ruby and Lua. The plugins and config specified in this repo is for polyglot local development in these languages.
 
 ## Features
 

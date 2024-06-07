@@ -136,6 +136,7 @@ setopt INC_APPEND_HISTORY
 # Save timestamp to history file too
 setopt EXTENDED_HISTORY
 
+# TODO: I need to either disable SHARE_HISTORY or INC_APPEND_HISTORY
 # Import newly written commands from the history file
 setopt SHARE_HISTORY
 
@@ -147,6 +148,9 @@ precmd() {
         echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history | tail -n 1)" >>! $HOME/history/zsh-history-$(date "+%Y-%m-%d").log;
     fi
 }
+
+# KEY BINDINGS
+# ----------
 
 # Use vi mode
 bindkey -v

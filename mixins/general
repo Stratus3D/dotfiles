@@ -15,8 +15,7 @@ export PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 # Darwin only: Set CLICOLOR so ls output is colored
 export CLICOLOR=1
 
-# Colorize grep output
-export GREP_OPTIONS='--color=auto'
+# grep colors
 export GREP_COLOR='1;32'
 
 # Erlang `erl` options

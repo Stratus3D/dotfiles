@@ -92,6 +92,10 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Disable smart dashes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
+# Disable notification bubbles for apps on dock
+defaults delete com.apple.systempreferences DidShowPrefBundleIDs
+defaults write com.apple.systempreferences AttentionPrefBundleIDs 0
+
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
@@ -248,8 +252,8 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
 
-# Position dock on the left side of the screen
-defaults write com.apple.dock orientation -string "left"
+# Position dock on the top of the screen
+defaults write com.apple.dock "orientation" -string "bottom"
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
@@ -257,8 +261,8 @@ defaults write com.apple.dock autohide -bool true
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
-# Set the icon size of Dock items to 72 pixels
-defaults write com.apple.dock tilesize -int 72
+# Set the icon size of Dock items to 16 pixels to keep the dock very small
+defaults write com.apple.dock tilesize -int 16
 
 # Enable spring loading for all Dock items
 defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true

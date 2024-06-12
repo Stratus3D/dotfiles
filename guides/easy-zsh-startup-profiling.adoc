@@ -1,12 +1,23 @@
 = Easy Zsh Startup Profiling
 
+If you want to profile the contents of your `.zshrc` file add this to the
+beginning of it:
 [source, sh]
 ----
-$ zmodload zsh/zprof
+zmodload zsh/zprof
+----
+
+Then open up a new Zshell session and run:
+
+[source, sh]
+----
 $ zprof
 ----
 
+The profiling results will be printed.
+
 == References
 
+* https://zsh.sourceforge.io/Doc/Release/Zsh-Modules.html#The-zsh_002fzprof-Module
 * https://htr3n.github.io/2018/07/faster-zsh/
 * https://xebia.com/blog/profiling-zsh-shell-scripts/

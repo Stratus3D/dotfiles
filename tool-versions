@@ -3,7 +3,7 @@ elixir 1.15.7-otp-26
 lua 5.3.4
 ruby 2.6.8
 nodejs 19.7.0
-postgres 11.19
+postgres 15.7
 rebar 3.16.1
 python 3.11.2 2.7.18
 yarn 1.16.0

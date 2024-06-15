@@ -163,11 +163,18 @@ export KEYTIMEOUT=1
 bindkey -M vicmd '?' history-incremental-search-backward
 bindkey -M vicmd '/' history-incremental-search-forward
 
-# Beginning search with arrow keys
-bindkey "^[OA" up-line-or-beginning-search
-bindkey "^[OB" down-line-or-beginning-search
+# Beginning search with arrow keys in insert mode or k/j command mode
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search
+bindkey "^[[B" down-line-or-beginning-search
 bindkey -M vicmd "k" up-line-or-beginning-search
 bindkey -M vicmd "j" down-line-or-beginning-search
+
+# Maintain traditional incremental search behavior
+bindkey '^r' history-incremental-search-backward
 
 # Vi-mode text object bindings
 autoload -Uz select-bracketed select-quoted

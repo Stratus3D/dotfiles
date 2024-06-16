@@ -105,6 +105,9 @@ DISABLE_CORRECTION="true"
 # HISTORY
 # ----------
 
+# Default location for history file
+HISTFILE=$HOME/.zsh_history
+
 # There is no way to define history size as infinite so we set it to 1 billion
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE

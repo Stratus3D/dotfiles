@@ -24,8 +24,9 @@ alias gco="git commit -m "
 alias gdh="git diff HEAD"
 alias gd="git diff"
 
-# For colored grep output
-alias grep='grep --color auto'
+# For colored output
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 
 # Postgres
 # TODO: These need to change to support asdf-postgres
@@ -75,4 +76,3 @@ alias urlencode='python -c "import sys, urllib.parse as parse; \
 
 # iex alias for a better Elixir shell with a readline wrapper
 alias iex='rlwrap iex'
-

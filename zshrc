@@ -93,12 +93,6 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # Tell Antigen that you're done.
 antigen apply
 
-# Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE="true"
-
-# Don't allow zsh to autocorrect commands
-DISABLE_CORRECTION="true"
-
 # Use asdf autocompletions
 . $HOME/.asdf/completions/_asdf
 

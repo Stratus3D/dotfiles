@@ -1,11 +1,19 @@
 #!/usr/bin/env bash
-#
+
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
 # Constants and functions for terminal colors.
 # Author: Max Tsepkov <max@yogi.pw>
+#
+# https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit
 
 CLR_ESC="\033["
 
-# All these variables has a function with the same name, but in lower case.
+# All these varibles has a function with the same name, but in lower case.
 #
 CLR_RESET=0             # reset all attributes to their defaults
 CLR_RESET_UNDERLINE=24  # underline off
@@ -40,9 +48,9 @@ CLR_WHITEB=47           # set white background
 # Ex: console_escape foobar $CLR_RED $CLR_BOLD
 function clr_escape
 {
-    local result="$1"
-    until [ -z "$2" ]; do
-	if ! [ $2 -ge 0 -a $2 -le 47 ] 2>/dev/null; then
+    local result="${1:-}"
+    until [ -z "${2:-}" ]; do
+	if ! [ "${2:-}" -ge 0 ] && [ "${2:-}" -le 47 ] 2>/dev/null; then
 	    echo "clr_escape: argument \"$2\" is out of range" >&2 && return 1
 	fi
         result="${CLR_ESC}${2}m${result}${CLR_ESC}${CLR_RESET}m"
@@ -126,3 +134,4 @@ function clr_dump
 '
 }
 
+clr_dump

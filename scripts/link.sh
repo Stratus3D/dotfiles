@@ -24,6 +24,10 @@ files="vimrc vim zshrc bashrc tmux.conf gitignore_global ctags screenrc \
     gitattributes gnuplot digrc"
 
 # Functions
+error_exit() {
+  printf "\e[1;7;31m'%s\n\e[0m" "$1" 1>&2
+  exit "${2:-1}" # default exit status 1
+}
 
 print_heading() {
     local text=$1
@@ -146,6 +150,11 @@ if [ ! -d "$vundle_dir" ]; then
 else
   echo "Vundle already installed"
 fi
+
+# Validate Vim was compiled with flags needed by plugins
+vim_info="$(vim --version)"
+grep -F '+float' <<< "$vim_info" > /dev/null ||
+  error_exit "Vim not compiled with +float option needed for the crunch plugin. Please recompile"
 
 # Install Vundle and all other plugins
 print_heading "Installing Vim Plugins"

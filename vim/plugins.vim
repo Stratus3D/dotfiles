@@ -74,6 +74,10 @@ Plugin 'tpope/vim-fugitive'
 " but lacks the :GraphvizInteractive command which I like to use
 Plugin 'wannesm/wmgraphviz.vim'
 
+" For easy math in Vim
+Plugin 'arecarn/vim-selection'
+Plugin 'arecarn/vim-crunch'
+
 " Ultisnips for code snippet management
 Plugin 'SirVer/ultisnips'
 

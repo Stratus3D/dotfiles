@@ -14,7 +14,7 @@ set -euo pipefail
 #ORIGINAL_IFS=$IFS
 IFS=$'\t\n' # Stricter IFS settings
 
-VERSION='3.0a'
+VERSION='3.4'
 BIN_DIR=$HOME/bin
 
 # Create temp directory for the build

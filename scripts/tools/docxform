@@ -1,0 +1,155 @@
+#!/usr/bin/env bash
+
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+usage() {
+    cat <<EOF
+Usage:
+
+$ docxform --am file.adoc file.markdown
+
+Operations:
+
+  --ma       Markdown -> Asciidoc
+  --am       Asciidoc -> Markdown
+  --aw       Asciidoc -> Word Doc
+  --ae       Asciidoc -> Epub
+  --ap       Asciidoc -> PDF
+
+Transform a document from one format to another. This script was originally a
+bunch of shell functions that I eventually collected into this script.
+Useful for converting my asciidoc writing to various formats.
+
+This script depends on pandoc, latex, and asciidoctor.
+EOF
+}
+
+error_exit() {
+  printf "\e[1;7;31m'%s\n\e[0m" "$1" 1>&2
+  exit "${2:-1}" # default exit status 1
+}
+
+# Pipeline building block functions
+
+markdown_to_asciidoc() {
+  pandoc --from markdown --to asciidoc --wrap none
+}
+
+asciidoc_to_docbook() {
+  asciidoctor -b docbook -
+}
+
+docbook_to_epub() {
+  pandoc -f docbook -t epub
+}
+
+docbook_to_markdown() {
+  pandoc -f docbook --to markdown_strict --wrap none
+}
+
+docbook_to_worddoc() {
+  pandoc --from docbook --to docx
+}
+
+docbook_to_pdf() {
+  pandoc --from docbook --to pdf --pdf-engine=pdflatex
+}
+
+# Conversion functions
+
+# Asciidoc to Markdown conversion function, since pandoc can't do this natively.
+# Pipe asciidoc to this function on STDIN, and it will write the markdown to
+# STDOUT. Based on
+# https://alvinalexander.com/bookmarks/how-convert-asciidoc-to-html-or-markdown
+asciidoc_to_markdown() {
+  asciidoc_to_docbook < "$1" | docbook_to_markdown > "$2"
+}
+
+asciidoc_to_pdf() {
+  asciidoc_to_docbook < "$1" | docbook_to_pdf > "$2"
+}
+
+asciidoc_to_worddoc() {
+  asciidoc_to_docbook < "$1" | docbook_to_worddoc > "$2"
+}
+
+asciidoc_to_epub() {
+  asciidoc_to_docbook < "$1" | docbook_to_epub > "$2"
+}
+
+resolve_input() {
+  case "${1:-}" in
+    '')
+      printf "/dev/stdin\n"
+      ;;
+    '-')
+      printf "/dev/stdin\n"
+      ;;
+    *)
+      printf "%s\n" "$1"
+  esac
+}
+
+resolve_output() {
+  case "${1:-}" in
+    '')
+      printf "/dev/stdout\n"
+      ;;
+    '-')
+      printf "/dev/stdout\n"
+      ;;
+    *)
+      printf "%s\n" "$1"
+  esac
+}
+
+input_file="${2:-}"
+output_file="${3:-}"
+
+if [ -z "$input_file" ]; then
+  usage
+  printf '\n'
+  error_exit "Input file must be specified. Use - for STDIN"
+fi
+
+if [ -z "$output_file" ]; then
+  usage
+  printf '\n'
+  error_exit "Output file must be specified. Use - for STDOUT"
+fi
+
+input="$(resolve_input "$input_file")"
+output="$(resolve_output "$output_file")"
+
+case ${1:-} in
+  -h|-\?|--help)
+    usage
+    exit
+    ;;
+  --ma)
+    markdown_to_asciidoc < "$input" > "$output"
+    shift
+    ;;
+  --am)
+    asciidoc_to_markdown "$input" "$output"
+    shift
+    ;;
+  --aw)
+    asciidoc_to_worddoc "$input" "$output"
+    shift
+    ;;
+  --ae)
+    asciidoc_to_epub "$input" "$output"
+    shift
+    ;;
+  --ap)
+    asciidoc_to_pdf "$input" "$output"
+    shift
+    ;;
+  *)
+    error_exit "Unknown option ${1:-}"
+esac

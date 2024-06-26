@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Omitting usual strict mode settings since script is short
+
+exec xdg-open $@

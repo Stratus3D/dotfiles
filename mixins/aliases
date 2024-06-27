@@ -42,12 +42,6 @@ if [[ "$(uname -s)" = 'Darwin' ]]; then
     alias qcachegrind='/Applications/qcachegrind.app/Contents/MacOS/qcachegrind'
 
     alias readlink="greadlink"
-else
-    # We must be on Debian or some other OS
-    # Create pbcopy and pbpaste aliases so we can use them outside of OSX
-
-    alias pbcopy='xsel --clipboard'
-    alias pbpaste='xsel --clipboard -o'
 fi
 
 # Alias for creating a Google meet meeting

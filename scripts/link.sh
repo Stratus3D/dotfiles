@@ -131,9 +131,13 @@ create_or_replace_symlinks "$dotfiles/scripts/tools" "$HOME/bin"
 # Symlink all the scripts in scripts/git to the bin directory
 create_or_replace_symlinks "$dotfiles/scripts/git" "$HOME/bin"
 
-# Some scripts are only needed on MacOS
+# Some scripts are only needed on MacOS or Linux
 if [ "$(uname)" == "Darwin" ]; then
   create_or_replace_symlinks "$dotfiles/scripts/tools/macos" "$HOME/bin"
+fi
+
+if [ "$(uname)" == "Linux" ]; then
+  create_or_replace_symlinks "$dotfiles/scripts/tools/linux" "$HOME/bin"
 fi
 
 if [ "$(uname)" == "Darwin" ]; then

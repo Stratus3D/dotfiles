@@ -15,16 +15,6 @@ function mkcd() {
   mkdir $1 && cd $1
 }
 
-# Read STDIN as JSON and print to STDOUT as YAML
-function json_to_yaml() {
-	ruby -ryaml -rjson -e 'puts YAML.dump(JSON.parse(STDIN.read))'
-}
-
-# Read STDIN as YAML and print to STDOUT as JSON
-function yaml_to_json() {
-	ruby -ryaml -rjson -e 'puts YAML.load(STDIN.read).to_json'
-}
-
 # Easily create a temp directory and cd into it for quick experiments
 function t {
   cd $(mktemp -d /tmp/$1.XXXX)

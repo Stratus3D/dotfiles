@@ -1,0 +1,110 @@
+#!/usr/bin/env bash
+
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+usage() {
+    cat <<EOF
+Usage:
+
+$ xfmt --jy file.json file.yaml
+
+Operations:
+
+  --jy       JSON -> YAML
+  --yj       YAML -> JSON
+
+  --jx       JSON -> Elixir
+  --xj       Elixir -> JSON
+
+Transform data from one format to another. This script was originally a
+bunch of shell functions that I eventually collected into this script.
+
+This script depends on Ruby, Elixir and Erlang 27.
+EOF
+}
+
+error_exit() {
+  printf "\e[1;7;31m%s\n\e[0m" "$1" 1>&2
+  exit "${2:-1}" # default exit status 1
+}
+
+# Pipeline building block functions
+
+# Read STDIN as JSON and print to STDOUT as YAML
+json_to_yaml() {
+	ruby -ryaml -rjson -e 'puts YAML.dump(JSON.parse(STDIN.read))'
+}
+
+# Read STDIN as YAML and print to STDOUT as JSON
+yaml_to_json() {
+	ruby -ryaml -rjson -e "puts YAML.load(STDIN.read).to_json"
+}
+
+json_to_elixir() {
+  iex --eval "IO.inspect((IO.read(:stdio, :eof) |> :json.decode()), limit: :infinity); System.halt()"
+}
+
+elixir_to_json() {
+  iex --eval "IO.puts(:stdio, (IO.read(:stdio, :eof) |> Code.eval_string() |> elem(0) |> :json.encode())); System.halt()"
+}
+
+# Conversion functions
+
+
+resolve_input() {
+  case "${1:-}" in
+    '')
+      printf "/dev/stdin\n"
+      ;;
+    '-')
+      printf "/dev/stdin\n"
+      ;;
+    *)
+      printf "%s\n" "$1"
+  esac
+}
+
+resolve_output() {
+  case "${1:-}" in
+    '')
+      printf "/dev/stdout\n"
+      ;;
+    '-')
+      printf "/dev/stdout\n"
+      ;;
+    *)
+      printf "%s\n" "$1"
+  esac
+}
+
+input="$(resolve_input "${2:-}")"
+output="$(resolve_output "${3:-}")"
+
+case ${1:-} in
+  -h|-\?|--help)
+    usage
+    exit
+    ;;
+  --jy)
+    json_to_yaml < "$input" > "$output"
+    shift
+    ;;
+  --yj)
+    yaml_to_json < "$input" > "$output"
+    shift
+    ;;
+  --je)
+    json_to_elixir < "$input" > "$output"
+    shift
+    ;;
+  --ej)
+    elixir_to_json < "$input" > "$output"
+    shift
+    ;;
+  *)
+    error_exit "Unknown option ${1:-}"
+esac

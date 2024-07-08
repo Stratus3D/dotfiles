@@ -29,7 +29,7 @@ EOF
 }
 
 error_exit() {
-  printf "\e[1;7;31m'%s\n\e[0m" "$1" 1>&2
+  printf "\e[1;7;31m%s\n\e[0m" "$1" 1>&2
   exit "${2:-1}" # default exit status 1
 }
 
@@ -107,23 +107,8 @@ resolve_output() {
   esac
 }
 
-input_file="${2:-}"
-output_file="${3:-}"
-
-if [ -z "$input_file" ]; then
-  usage
-  printf '\n'
-  error_exit "Input file must be specified. Use - for STDIN"
-fi
-
-if [ -z "$output_file" ]; then
-  usage
-  printf '\n'
-  error_exit "Output file must be specified. Use - for STDOUT"
-fi
-
-input="$(resolve_input "$input_file")"
-output="$(resolve_output "$output_file")"
+input="$(resolve_input "${2:-}")"
+output="$(resolve_output "${3:-}")"
 
 case ${1:-} in
   -h|-\?|--help)
@@ -151,5 +136,9 @@ case ${1:-} in
     shift
     ;;
   *)
-    error_exit "Unknown option ${1:-}"
+    if [ -z "${1:-}" ]; then
+      error_exit "No conversion flag specified"
+    else
+      error_exit "Unknown option ${1:-}"
+    fi
 esac

@@ -77,3 +77,6 @@ echo "Run ID: $run_id"
 
 # Watch the run until it is finished
 gh run watch "$run_id" -R "$repo"
+
+# Print out verbose output of workflow run
+gh run view -v "$run_id" -R "$repo"

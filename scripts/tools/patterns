@@ -1,0 +1,111 @@
+#!/usr/bin/env bash
+
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+
+usage() {
+  cat <<EOF
+A script that contains various regex expressions for things we often need to
+match such as domain names, URLs, and emails.
+
+This script can grep STDIN for the specified pattern, grep a file for it, or
+print the pattern.
+EOF
+}
+
+# Taken from
+#
+# * https://leahneukirchen.org/dotfiles/bin/urls
+# * https://leahneukirchen.org/dotfiles/bin/emails
+
+error_exit() {
+  printf "\e[1;7;31m%s\n\e[0m" "$1" 1>&2
+  exit "${2:-1}" # default exit status 1
+}
+
+get_shift_count() {
+  if [[ "$1" == *=* ]]; then
+    echo "1"
+  else
+    echo "2"
+  fi
+}
+
+get_value() {
+  raw_flag=$1
+  first=${1#*'='}
+  second=$2
+
+  # If the raw flag contains an equals sign and the value after it (first) is
+  # not null return first, otherwise return the next argument (second)
+  if [[ "$raw_flag" == *=* ]] && [ -n "$first" ]; then
+    echo "$first"
+  else
+    if [[ "$second" == -* ]]; then
+      echo "$second"
+    else
+      echo "$second"
+    fi
+  fi
+}
+
+# Patterns
+declare -rA patterns=(
+["urls"]='(?:https?://|ftp://|news://|mailto:|file://|\bwww\.)[a-zA-Z0-9\-\@;\/?:&=%\$_.+!*\x27,~#]*(\([a-zA-Z0-9\-\@;\/?:&=%\$_.+!*\x27,~#]*\)|[a-zA-Z0-9\-\@;\/?:&=%\$_+*~])+'
+["emails"]='\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,8}\b'
+["ipv4"]='[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'
+)
+
+while :; do
+  case ${1:-} in
+    -h|-\?|--help)
+      usage
+      exit
+      ;;
+    -p|--pattern|--pattern=*)
+      pattern=$(get_value "$1" "${2:-}")
+      shift $(get_shift_count "$1")
+      ;;
+    -s|--show)
+      show="true"
+      shift
+      ;;
+    -l|--list)
+      list="true"
+      shift
+      ;;
+    -f|--file|--file=*)
+      file=$(get_value "$1" "${2:-}")
+      shift $(get_shift_count "$1")
+      ;;
+    *)
+      break
+  esac
+done
+
+pattern="${1:-}"
+
+if [ -z "$pattern" ] && [ -z "${list:-}" ]; then
+    error_exit "Pattern name must be specified"
+fi
+
+# Valid arguments if we get here
+if [ "${list:-}" ]; then
+  echo "${!patterns[@]}"
+else
+  pattern_regex="${patterns["$pattern"]}"
+
+  if [ -z "${show:-}" ]; then
+    # Apply the pattern to some input
+    if [ -z "${file:-}" ]; then
+      # If no grep STDIN
+      grep -P -o "$pattern_regex" -
+    else
+      grep -P -o "$pattern_regex" "$file"
+    fi
+  else
+    printf "%s\n" "$pattern_regex"
+  fi
+fi

@@ -1,0 +1,11 @@
+# Test plot useful for visualizing style changes
+# http://www.gnuplot.info/demo_4.6/dashcolor.html
+plot cos(x), \
+     cos(x-.3) with lp pi -12, \
+     cos(x-.6) with lp pi -16, \
+     cos(x-.9), \
+     cos(x-1.2) with lp pi -12, \
+     cos(x-1.5) with lp pi -16, \
+     cos(x-1.8), \
+     cos(x-2.1)
+

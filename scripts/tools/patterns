@@ -52,11 +52,9 @@ get_value() {
 }
 
 # Patterns
-declare -rA patterns=(
-["urls"]='(?:https?://|ftp://|news://|mailto:|file://|\bwww\.)[a-zA-Z0-9\-\@;\/?:&=%\$_.+!*\x27,~#]*(\([a-zA-Z0-9\-\@;\/?:&=%\$_.+!*\x27,~#]*\)|[a-zA-Z0-9\-\@;\/?:&=%\$_+*~])+'
-["emails"]='\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,8}\b'
-["ipv4"]='[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'
-)
+patterns_urls='(?:https?://|ftp://|news://|mailto:|file://|\bwww\.)[a-zA-Z0-9\-\@;\/?:&=%\$_.+!*\x27,~#]*(\([a-zA-Z0-9\-\@;\/?:&=%\$_.+!*\x27,~#]*\)|[a-zA-Z0-9\-\@;\/?:&=%\$_+*~])+'
+patterns_emails='\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,8}\b'
+patterns_ipv4='[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'
 
 while :; do
   case ${1:-} in
@@ -93,9 +91,14 @@ fi
 
 # Valid arguments if we get here
 if [ "${list:-}" ]; then
-  echo "${!patterns[@]}"
+  typeset -p | grep -o "patterns_[[:alpha:]]*" | sed 's/^patterns_//'
 else
-  pattern_regex="${patterns["$pattern"]}"
+  var_name="patterns_$pattern"
+  pattern_regex="${!var_name:-}"
+
+  if [ -z "$pattern_regex" ]; then
+    error_exit "Pattern not found"
+  fi
 
   if [ -z "${show:-}" ]; then
     # Apply the pattern to some input

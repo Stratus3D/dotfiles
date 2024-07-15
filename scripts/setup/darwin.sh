@@ -219,6 +219,9 @@ brew cask install inkscape
 # For notifications on MacOS (and for the notify-send-macos script)
 brew_install_or_upgrade terminal-notifier
 
+# For programmable CLI menus
+brew_install_or_upgrade fzf
+
 ###############################################################################
 # Configure OSX
 ###############################################################################

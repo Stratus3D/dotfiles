@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-# Omitting usual strict mode settings since script is short
-
-# If we are on OSX dmenu is available as dmenu-mac
-
-exec dmenu-mac $@

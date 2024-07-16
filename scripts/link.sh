@@ -159,6 +159,8 @@ fi
 vim_info="$(vim --version)"
 grep -F '+float' <<< "$vim_info" > /dev/null ||
   error_exit "Vim not compiled with +float option needed for the crunch plugin. Please recompile"
+grep -F '+python' <<< "$vim_info" > /dev/null ||
+  error_exit "Vim not compiled with +python option needed for the ultisnips plugin. Please recompile"
 
 # Install Vundle and all other plugins
 print_heading "Installing Vim Plugins"

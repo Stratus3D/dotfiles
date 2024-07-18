@@ -1,3 +1,7 @@
 snippet pry "Insert binding.pry call into Ruby code"
 require 'pry'; binding.pry
 endsnippet
+
+snippet lintignore "Ignore Rubocop warnings"
+# rubocop:disable ${1:Metrics/MethodLength}
+endsnippet

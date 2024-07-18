@@ -35,6 +35,10 @@ error_exit() {
 
 # Pipeline building block functions
 
+github_markdown_to_asciidoc() {
+  pandoc --from gfm --to asciidoc --wrap none
+}
+
 markdown_to_asciidoc() {
   pandoc --from markdown --to asciidoc --wrap none
 }
@@ -114,6 +118,10 @@ case ${1:-} in
   -h|-\?|--help)
     usage
     exit
+    ;;
+  --ghma)
+    github_markdown_to_asciidoc < "$input" > "$output"
+    shift
     ;;
   --ma)
     markdown_to_asciidoc < "$input" > "$output"

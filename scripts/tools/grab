@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+error_exit() {
+  printf "\e[1;7;31m%s\n\e[0m" "$1" 1>&2
+  exit "${2:-1}" # default exit status 1
+}
+
+pattern="${1:-}"
+
+if [ -z "$pattern" ] && [ -z "${list:-}" ]; then
+    error_exit "Pattern name must be specified"
+fi
+
+tmux capture-pane -pS -10000 | patterns "$pattern" | tac | fzf --no-sort | pbcopy

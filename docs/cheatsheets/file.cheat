@@ -9,4 +9,7 @@ file <FILE>
 # show colorspace, channel depth, dimensions, and other metadata for an image
 identify -verbose <FILE>
 
+# Show date a photo was taken
+exiftool -q -p '$FileModifyDate  $FileName' <FILE>
+
 FILE: -

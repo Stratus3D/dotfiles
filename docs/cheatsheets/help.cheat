@@ -1,0 +1,4 @@
+% help, man, manpage, documentation
+
+# Show compose keys from https://github.com/brandon-rhodes/homedir/blob/master/bin/%2Ccompose-keys
+less $(locate en_US.UTF-8/Compose)

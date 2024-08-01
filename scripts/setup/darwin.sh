@@ -83,7 +83,7 @@ brew_install_or_upgrade ctags
 
 # For screen sessions
 brew_install_or_upgrade 'tmux'
-$HOME/dotfiles/script/setup/tmux.sh
+"$HOME/dotfiles/script/setup/tmux.sh"
 
 # For shell scripting
 brew_install_or_upgrade 'shellcheck'
@@ -164,6 +164,9 @@ brew_install_or_upgrade pinentry
 # For password management
 brew_install_or_upgrade pass
 
+# For working JWT tokens on the command line
+brew_install_or_upgrade step
+
 # Install step cli for various crypto tools
 brew_install_or_upgrade  step
 
@@ -175,10 +178,6 @@ brew_install_or_upgrade mtr
 
 # OSX alternative to `ps auxf` for process tree views
 brew_install_or_upgrade pstree
-
-# Images in the terminal
-brew_tap eddieantonio/eddieantonio
-brew_install_or_upgrade imgcat
 
 # Install tools for server testing and administration
 brew_install_or_upgrade ansible
@@ -224,6 +223,10 @@ brew_install_or_upgrade terminal-notifier
 
 # For programmable CLI menus
 brew_install_or_upgrade fzf
+
+# For Hardware
+# For programmable keyboard
+brew_install_or_upgrade vial
 
 ###############################################################################
 # Configure OSX

@@ -225,6 +225,7 @@ brew_install_or_upgrade terminal-notifier
 brew_install_or_upgrade fzf
 
 # For Hardware
+
 # For programmable keyboard
 brew_install_or_upgrade vial
 
@@ -232,4 +233,4 @@ brew_install_or_upgrade vial
 # Configure OSX
 ###############################################################################
 
-$HOME/dotfiles/scripts/setup/macos-defaults
+"$HOME/dotfiles/scripts/setup/macos-defaults"

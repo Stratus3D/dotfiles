@@ -60,6 +60,9 @@
   # Don't use pager when listing branches
   # Taken from https://stackoverflow.com/a/48370253/1245380
   branch = false
+
+  # A better diff algorithm
+  algorithm = histogram
 [status]
   # Show status of git submodules in git status output
   submoduleSummary = true
@@ -85,7 +88,7 @@
 [merge]
   # Standard diff is two sets of final changes. This introduces the change
   # present in the common ancestor of both conflicting commits.
-  conflictstyle = diff3
+  conflictstyle = zdiff3
 
   # Always create a merge commit when merging
   ff = false

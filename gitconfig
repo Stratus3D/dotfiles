@@ -92,6 +92,11 @@
 
   # Always create a merge commit when merging
   ff = false
+
+[rerere]
+  # Automatically apply previously resolved conflicts when they appear again
+  enabled = true
+
 [rebase]
   # Always auto squash when rebasing
   autosquash = true

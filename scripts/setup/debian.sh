@@ -244,3 +244,7 @@ $HOME/dotfiles/scripts/setup/tmux.sh
 if ! grep -c "flat-volumes = no" "$HOME/.pulse/daemon.conf"; then
     echo "flat-volumes = no" >> "$HOME/.pulse/daemon.conf"
 fi
+
+# Adjust gamma so darker tones aren't whitewashed on my laptop monitor
+# https://askubuntu.com/questions/9248/is-there-a-software-utility-to-adjust-screen-gamma-brightness-contrast
+xgamma -gamma 0.5

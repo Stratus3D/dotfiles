@@ -164,11 +164,8 @@ brew_install_or_upgrade pinentry
 # For password management
 brew_install_or_upgrade pass
 
-# For working JWT tokens on the command line
+# For working with JWT tokens on the command line
 brew_install_or_upgrade step
-
-# Install step cli for various crypto tools
-brew_install_or_upgrade  step
 
 # Elm for packages that require it
 brew_install_or_upgrade elm

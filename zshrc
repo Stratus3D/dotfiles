@@ -198,6 +198,22 @@ bindkey -M vicmd "^V" edit-command-line
 # way of doing this.
 eval "$(navi widget zsh)"
 
+# decarg isn't going to work until the next version of Zsh is tagged (current
+# is 5.9.0) but I'm adding it now because I think this will be something I will
+# use.
+# https://github.com/zsh-users/zsh/blob/master/Functions/Zle/incarg
+autoload -Uz incarg
+
+for widget in vim-{,sync-}{inc,dec}arg; do
+  zle -N "$widget" incarg
+done
+
+bindkey -a \
+  '^A' vim-incarg \
+  '^X' vim-decarg \
+  'g^A' vim-sync-incarg \
+  'g^X' vim-sync-decarg
+
 # THEME & GIT
 # ----------
 

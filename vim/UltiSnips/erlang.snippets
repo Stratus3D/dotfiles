@@ -20,9 +20,9 @@ snippet k "Key and value"
 endsnippet
 
 snippet lin "Labeled inspect"
-io:format("$1 - Line ~p: ~p~n", [?LINE, $1]),
+io:format("$1 - File: ~p:~p: ~p~n", [?FILE, ?LINE, $1]),
 endsnippet
 
 snippet logi "Log inspect"
-logger:info("$1 - Line ~p: ~p~n", [?LINE, $1]),
+logger:info("$1 - File: ~p:~p: ~p~n", [?FILE, ?LINE, $1]),
 endsnippet

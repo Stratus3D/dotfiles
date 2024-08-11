@@ -194,9 +194,14 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd "^V" edit-command-line
 
-# Run navi code so Ctrl-G in Zsh opens navi. There is likely a more efficient
-# way of doing this.
-eval "$(navi widget zsh)"
+# Yank to the system clipboard
+function vi-yank-xclip {
+    zle vi-yank
+   echo "$CUTBUFFER" | pbcopy -i
+}
+
+zle -N vi-yank-xclip
+bindkey -M vicmd 'y' vi-yank-xclip
 
 # decarg isn't going to work until the next version of Zsh is tagged (current
 # is 5.9.0) but I'm adding it now because I think this will be something I will

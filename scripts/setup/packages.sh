@@ -29,9 +29,6 @@ pip install Pygments
 # flake8 for linting
 python -m pip install flake8
 
-# csvkit for CSV utilities
-pip install csvkit
-
 # Spotify downloader
 pip3 install spotdl
 

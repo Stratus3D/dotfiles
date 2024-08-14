@@ -112,6 +112,9 @@ brew link graphviz
 # For plotting data on charts at the command line
 brew_install_or_upgrade gnuplot
 
+# For manipulating tabular data on the command line
+install_or_upgrade miller
+
 # Install command-line JSON processor
 brew_install_or_upgrade jq
 

@@ -116,11 +116,11 @@ install_or_upgrade inkscape
 # Visualization library
 install_or_upgrade graphviz
 
-# For manipulating tabular data on the command line
-install_or_upgrade miller
-
 # For plotting data on charts at the command line
 install_or_upgrade gnuplot
+
+# For manipulating tabular data on the command line
+install_or_upgrade miller
 
 # For image metadata manipulation
 install_or_upgrade exiftool

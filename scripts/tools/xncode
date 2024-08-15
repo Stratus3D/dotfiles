@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+usage() {
+    cat <<EOF
+Usage:
+
+$ xncode --pu <<< "this is a test"
+
+Operations:
+
+  --pu       Plain to URI encoding
+  --up       URI encoding to plain
+
+Transform data from one format to another. This script was originally a
+bunch of shell functions that I eventually collected into this script.
+
+This script depends on Ruby, Elixir and Erlang 27.
+EOF
+}
+
+error_exit() {
+  printf "\e[1;7;31m%s\n\e[0m" "$1" 1>&2
+  exit "${2:-1}" # default exit status 1
+}
+
+
+# URL encoding/decoding functions
+plain_to_uri() {
+  plain_input=$(cat)
+  trurl localhost --append query="placeholder=$plain_input" | trurl --url-file - --get '{:query:placeholder}'
+}
+
+uri_to_plain() {
+  uri_input=$(cat)
+  trurl localhost --set query:="placeholder=$uri_input" | trurl --url-file - --get '{query:placeholder}'
+}
+
+
+case ${1:-} in
+  -h|-\?|--help)
+    usage
+    exit
+    ;;
+  --pu)
+    script_input="$(cat)"
+    plain_to_uri <<< "$script_input"
+    shift
+    ;;
+  --up)
+    script_input="$(cat)"
+    uri_to_plain <<< "$script_input"
+    shift
+    ;;
+  *)
+    error_exit "Unknown option ${1:-}"
+esac

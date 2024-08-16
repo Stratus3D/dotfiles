@@ -61,12 +61,5 @@ alias rgr="rg --type ruby"
 alias rgx="rg --type elixir"
 alias rgu="rg --no-ignore"
 
-# URL encoding/decoding commands
-alias urldecode='python -c "import sys, urllib.parse as parse; \
-    print(parse.unquote(sys.argv[1]))"'
-
-alias urlencode='python -c "import sys, urllib.parse as parse; \
-    print(parse.quote(sys.argv[1]))"'
-
 # iex alias for a better Elixir shell with a readline wrapper
 alias iex='rlwrap iex'

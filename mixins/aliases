@@ -28,13 +28,6 @@ alias gd="git diff"
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-# Postgres
-# TODO: These need to change to support asdf-postgres
-# pg_ctl -D ~/.asdf/installs/postgres/9.5.2/data -l logfile start
-alias startpost='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias stoppost='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
-alias statpost='ps aux | rg postgres'
-
 if [[ "$(uname -s)" = 'Darwin' ]]; then
     # If we are on OSX create a `zeal` alias and a `qcachegrind` alias
 

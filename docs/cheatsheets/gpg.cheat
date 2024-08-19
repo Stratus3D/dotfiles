@@ -1,4 +1,6 @@
 % GPG
+# Restart gpg to reload config
+killall gpg-agent
 
 # List short IDs for GPG secret keys
-gpg --list-secret-keys --keyid-format short | grep "sec" | cut --delimiter ':' --fields 5
+gpg --list-secret-keys --keyid-format short | grep "sec" | cut -d':' -f5

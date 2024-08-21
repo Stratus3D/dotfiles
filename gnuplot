@@ -15,8 +15,13 @@ set isosamples 30
 set macros
 
 # Variables
-# recommended by Gnuplot in Action, similar to Helvetica
+# Recommended by Gnuplot in Action, similar to Helvetica
 font = "Nimbus Sans L,16" # Or "Helvetica,16"
+# Point symbol variables, easier to remember than numbers
+square = 4
+squarefilled = 5
+circle = 6
+circlefilled = 7
 
 # date/time variables
 times = "set xdata time; set xtics format '%T'; set timefmt '%H:%M:%S'"

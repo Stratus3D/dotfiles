@@ -23,3 +23,6 @@ user_pref("dom.webnotifications.requireinteraction.enabled", true);
 
 // Don't show ads in suggestions
 user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false)
+
+// Zoom with Meta + mousewheel
+user_pref("mousewheel.with_meta.action.override_x", 3)

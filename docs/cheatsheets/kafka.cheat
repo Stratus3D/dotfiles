@@ -9,6 +9,9 @@ kcat -b <BROKERS> -t <TOPIC> -C -s value=avro -r <SCHEMA_REGISTRY_SERVER> -u -f 
 # Print JSON envelope for each event on a topic
 kcat -b <BROKERS> -t <TOPIC> -C -s value=avro -r <SCHEMA_REGISTRY_SERVER> -u -J
 
+# List Kafka topics and metadata
+kcat -b <BROKERS> -L
+
 BROKERS: -
 SCHEMA_REGISTRY_SERVER: -
 TOPIC: -

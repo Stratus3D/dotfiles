@@ -39,6 +39,10 @@ tags.*
 # Blender backup files
 *.blend[0-9]*
 
+# Asciidoctor temp files
+**/.asciidoctor/images/*
+**/.asciidoctor/diagram/*
+
 # OS generated files
 .DS_Store
 .DS_Store?

@@ -9,9 +9,6 @@ ORIGINAL_IFS=$IFS
 # Create tmux directory if it doesn't already exist
 mkdir -p $HOME/.tmux
 
-# Install Tmux Plugin Manager
-git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
-
 # Install plugins
 # https://github.com/tmux-plugins/tmux-yank
 if [ ! -d $HOME/.tmux/tmux-yank ]; then

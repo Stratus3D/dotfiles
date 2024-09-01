@@ -1,0 +1,22 @@
+% pager, less
+;
+; https://superuser.com/questions/113039/less-quickly-jump-to-line-number-in-large-file
+;
+; Less commands:
+;
+; `100g` to go to the 100th line.
+; `50p` to go to 50% into the file.
+; `100P` to go to the line containing 100th byte.
+;
+; Prefix with + to use in command
+
+# View the 100th byte in a file
+less +100P <FILE>
+
+# View the middle of a file
+less +50p <FILE>
+
+# View to the 100th line in a file
+less +100g <FILE>
+
+FILE: -

@@ -63,6 +63,10 @@ docbook_to_pdf() {
   pandoc --from docbook --to pdf --pdf-engine=pdflatex
 }
 
+docbook_to_html() {
+  pandoc --from docbook --to html -s
+}
+
 # Conversion functions
 
 # Asciidoc to Markdown conversion function, since pandoc can't do this natively.
@@ -83,6 +87,10 @@ asciidoc_to_worddoc() {
 
 asciidoc_to_epub() {
   asciidoc_to_docbook < "$1" | docbook_to_epub > "$2"
+}
+
+asciidoc_to_html() {
+  asciidoc_to_docbook < "$1" | docbook_to_html > "$2"
 }
 
 resolve_input() {
@@ -141,6 +149,10 @@ case ${1:-} in
     ;;
   --ap)
     asciidoc_to_pdf "$input" "$output"
+    shift
+    ;;
+  --ah)
+    asciidoc_to_html "$input" "$output"
     shift
     ;;
   *)

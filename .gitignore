@@ -14,3 +14,7 @@ mixins/*.custom
 scripts/custom_tools/
 scripts/custom_functions/
 scripts/upon_login_custom.sh
+
+# Ignore all files in git/configs except example file
+git/configs/
+!git/configs/companyname.example

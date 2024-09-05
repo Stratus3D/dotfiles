@@ -1,0 +1,17 @@
+% groff, troff, man, document
+
+# Generate PDF from groff document
+groff -ms <INPUT> -Tpdf > <OUTPUT>
+
+# Mathematical formatting
+eqn <INPUT> -Tpdf | groff -ms -Tpdf > <OUTPUT>
+
+# Mathematical formatting
+groff -e <INPUT> -ms -Tpdf > <OUTPUT>
+
+# Process bibliographic references for groff
+refer -SPe -p<REFFILE> <INPUT> | groff -ms -Tpdf > <OUTPUT>
+
+INPUT: -
+OUTPUT: -
+REFFILE: -

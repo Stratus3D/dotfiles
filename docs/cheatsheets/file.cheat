@@ -12,4 +12,10 @@ identify -verbose <FILE>
 # Show date a photo was taken
 exiftool -q -p '$FileModifyDate  $FileName' <FILE>
 
+# Show file size
+stat -c%s
+
+# validate that an XML file is valid and encoded as UTF-8
+xmllint --valid --encode utf-8 <file>
+
 FILE: -

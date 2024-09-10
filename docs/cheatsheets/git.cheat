@@ -57,6 +57,9 @@ git log --pretty=short --since='10 weeks' --until='2 weeks' | git shortlog -sn
 # Version string suitable for Erlang module `-vsn` attributes.
 git describe --long
 
+# show least (or most) recently modified files in a Git repo
+while read file; do echo $(git log --pretty=format:%ai -n 1 --date=raw -- $file) $file; done < <(git ls-tree -r --name-only HEAD) | sort -r
+
 COMMIT:
 COMMIT_2:
 FILE_GLOB_PATTERN:

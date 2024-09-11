@@ -8,3 +8,6 @@ tcpdump -A
 
 # save all packets from interface to file
 tcpdump -i lo -s0 -w xyz.pcap
+
+# show signals for wifi networks
+nmcli d wifi

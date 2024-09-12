@@ -1,0 +1,21 @@
+# https://tech.davis-hansson.com/p/make/
+
+snippet strict "My own Make & Bash strict mode variation"
+# Use Bash
+SHELL := bash
+
+# With strict settings
+.SHELLFLAGS := -eu -o pipefail -c
+
+# Run each Make recipe as one single shell session
+.ONESHELL
+
+# Delete target file if a Make rule fails
+.DELETE_ON_ERROR
+
+# Issue a warning about undefined variables
+MAKEFLAGS += --warn-undefined-variables
+
+# Disable built-in rules for C, C++ and other files
+MAKEFLAGS += --no-builtin-rules
+endsnippet

@@ -1,0 +1,7 @@
+% pipes, streams, text
+
+# Extract nth line of a stream of text
+tail -n+<LINE> < <INPUT> | head -n1
+
+INPUT: -
+LINE: -

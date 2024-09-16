@@ -1,0 +1,4 @@
+% time, date, datetime
+
+# Date and time formatted as a integer
+date +'%Y%m%d%H%M%S'

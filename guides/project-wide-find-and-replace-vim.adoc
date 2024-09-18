@@ -1,0 +1,41 @@
+= Project-wide Find and Replace in Vim
+
+== Populate quickfix list
+
+Find all files you want to replace in. For example, all Markdown files:
+
+----
+:vimgrep "\%^" **/*.md
+----
+
+Or all files in a dir:
+
+----
+:vimgrep "\%^" dir/*
+----
+
+== Two Quickfix Types
+
+1. entry: the actual line content (e.g. :grep foo will show a specific line that matched within a file).
+2. file: the actual file itself (e.g. the path to the file that contained the match).
+
+For more details see https://gist.github.com/Integralist/8d01300efcd2006c69e8b9492c0eada8
+
+== Find and replace on **entries** in the quickfix list
+
+**entries** are the file content visible in the quickfix window.
+
+----
+:cdo s/<pattern>/<replacement>/ | update
+----
+
+== Find and replace on **files** in quickfix list
+
+----
+:cfdo %s/<pattern>/<replacement>/g | update
+----
+
+== References
+
+* https://stackoverflow.com/questions/5686206/search-replace-using-quickfix-list-in-vim/38559267#38559267
+* https://gist.github.com/Integralist/8d01300efcd2006c69e8b9492c0eada8

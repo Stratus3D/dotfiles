@@ -3,21 +3,11 @@
 ## Bash/Zshell Command Line
 
 * `open out.svg; echo new-database.dot | entr sh -c 'dot new-database.dot -Tsvg -o out.svg; $HOME/dotfiles/reload-browser Firefox'` reload file in browser when it changes
-* `open -a TextEdit textfile.txt` to open a file in a specific application
-* `echo "SMS notification" | sendmail -t '<phone number>@messaging.sprintpcs.com'` send an SMS notification by emailing the service's email to SMS gateway
 * `dmesg` show startup log messages
-* `ln -s /dev/null ~/file/you/never/want/to/persist` good for ensure data written to the file by applications never persists
-* `^X, ^E` to edit the currently typed command in vim
 * `!!` run the last command again
-* `command <<< "input text"` can be used in place of `command < file.in`
-* `echo -n ✘ | hexdump` to print the encoding of a character by the console. Useful for bash scripts. Also use `od` to dump octals.
-* `for f in directory/* ; do echo -e \\n\\n$f\\n 1>&1 ; cat $f ; done ;` print out all file name and file contents for all files in `directory`.
 * `find ./ -type f -exec sed -i '.bak' -e 's/foo/bar/g' {} \;` find and replace string in all files in a directory. Follow up with `find . -type f -name '*.bak' -delete` if necessary
-* `find src -name 'old*' -type f -exec bash -c 'mv "$1" "${1/old/new}"' -- {} \;` rename every filename that matches pattern
 * `sudo getent passwd | cut -d : -f 6 | sudo sed 's:$:/.bash_history:' | sudo xargs -d '\n' grep -H -e "$command"` or `grep -e "$pattern" /home/*/.bash_history` to see how others use a command
 * `etop -node testnode@localhost -setcookie 123` - run etop to see top like info for a running Erlang node
-* `nohup <long running command> &` leave a command running in the background. Even after logout.
-* `bindkey` show Zsh commands
 * `paste -sd+ - | bc` sum values in lines https://stackoverflow.com/a/18141152/85360
 * `reset` clears the terminal and resets the terminal state.
 * `fc` open last command in `$EDITOR` for editing. (**f**ix **c**ommand)

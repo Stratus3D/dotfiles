@@ -18,4 +18,12 @@ stat -c%s
 # validate that an XML file is valid and encoded as UTF-8
 xmllint --valid --encode utf-8 <file>
 
+# blackhole file, exists on the file system as a symlink, but anything written to it disappears
+ln -s /dev/null FILE
+
+# Rename set of files
+rename 's/<OLD_PATTERN>/<NEW_PATTERN>/' *
+
 FILE: -
+OLD_PATTERN: -
+NEW_PATTERN: -

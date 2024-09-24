@@ -1,0 +1,7 @@
+% binary, encoding, data
+
+# print the encoding of a character by the console. Useful for bash scripts. Also use `od` to dump octals.
+echo -n ✘ | hexdump
+
+#
+echo -n ✘ | od

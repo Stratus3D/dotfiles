@@ -1,0 +1,9 @@
+% workflow
+
+# Send an email notification
+echo "Notification message" | sendmail -t '<phone number>@messaging.sprintpcs.com'
+
+# Leave a command running in the background
+nohup <COMMAND> &
+
+COMMAND: -

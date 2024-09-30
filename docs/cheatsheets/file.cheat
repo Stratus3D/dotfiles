@@ -24,6 +24,9 @@ ln -s /dev/null FILE
 # Rename set of files
 rename 's/<OLD_PATTERN>/<NEW_PATTERN>/' *
 
+# Convert input UTF-8 to asciidoc
+iconv -f utf-8 -t ascii//translit
+
 FILE: -
 OLD_PATTERN: -
 NEW_PATTERN: -

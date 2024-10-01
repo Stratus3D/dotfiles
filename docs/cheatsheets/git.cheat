@@ -18,6 +18,9 @@ git checkout @{90.days.ago}
 # Restores a file to it's unresolved state
 git checkout -m FILE_GLOB_PATTERN
 
+# Checkout the version of a file present on another branch (or ref)
+git checkout <BRANCH> -- <FILE>
+
 # Ignore whitespace changes when showing diff
 git diff --ignore-all-space
 

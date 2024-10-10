@@ -60,7 +60,11 @@ docbook_to_worddoc() {
 }
 
 docbook_to_pdf() {
-  pandoc --from docbook --to pdf --pdf-engine=pdflatex
+  pandoc --from docbook --to pdf --pdf-engine=pdflatex --template eisvogel
+}
+
+docbook_to_kindle_pdf() {
+  pandoc --from docbook --to pdf --pdf-engine=pdflatex -V papersize:a6 -V geometry:margin=0.1in
 }
 
 docbook_to_html() {
@@ -79,6 +83,10 @@ asciidoc_to_markdown() {
 
 asciidoc_to_pdf() {
   asciidoc_to_docbook < "$1" | docbook_to_pdf > "$2"
+}
+
+asciidoc_to_kpdf() {
+  asciidoc_to_docbook < "$1" | docbook_to_kindle_pdf > "$2"
 }
 
 asciidoc_to_worddoc() {
@@ -149,6 +157,10 @@ case ${1:-} in
     ;;
   --ap)
     asciidoc_to_pdf "$input" "$output"
+    shift
+    ;;
+  --akp)
+    asciidoc_to_kpdf "$input" "$output"
     shift
     ;;
   --ah)

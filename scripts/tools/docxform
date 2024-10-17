@@ -19,6 +19,7 @@ Operations:
   --aw       Asciidoc -> Word Doc
   --ae       Asciidoc -> Epub
   --ap       Asciidoc -> PDF
+  --akp      Asciidoc -> PDF formatted for E-readers and mobile devices
 
 Transform a document from one format to another. This script was originally a
 bunch of shell functions that I eventually collected into this script.

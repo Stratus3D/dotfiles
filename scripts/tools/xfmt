@@ -17,8 +17,8 @@ Operations:
   --jy       JSON -> YAML
   --yj       YAML -> JSON
 
-  --jx       JSON -> Elixir
-  --xj       Elixir -> JSON
+  --je       JSON -> Elixir
+  --ej       Elixir -> JSON
 
 Transform data from one format to another. This script was originally a
 bunch of shell functions that I eventually collected into this script.

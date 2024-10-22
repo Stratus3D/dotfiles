@@ -1,0 +1,9 @@
+% go, golang
+
+# Local golang playground in the browser
+godoc -http=:6060 -play -index
+
+# Define variable at build time
+go build -ldflags='-s -X main.variable=<VARIABLE_VALUE>'
+
+VARIABLE_VALUE: -

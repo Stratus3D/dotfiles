@@ -61,7 +61,7 @@ docbook_to_worddoc() {
 }
 
 docbook_to_pdf() {
-  pandoc --from docbook --to pdf --pdf-engine=pdflatex --template eisvogel
+  pandoc --from docbook --to pdf --pdf-engine=pdflatex
 }
 
 docbook_to_kindle_pdf() {

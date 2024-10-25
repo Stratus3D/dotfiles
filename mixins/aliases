@@ -44,10 +44,6 @@ alias meet="open https://meet.google.com/new"
 alias bigo="open $HOME/dotfiles/charts/bigoposter.pdf"
 alias vim-cheatsheet="open $HOME/dotfiles/charts/vim_cheat_sheet_for_programmers_print.png"
 
-# tmuxinator is only installed in default version of Ruby, so we change to the
-# home directory to invoke it with the default Ruby.
-alias tmuxinator="cd $HOME && tmuxinator"
-
 # Ripgrep aliases
 alias rge="rg --type erlang"
 alias rgr="rg --type ruby"

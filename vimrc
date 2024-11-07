@@ -51,6 +51,13 @@ set incsearch
 " Wrap around the file when searching
 set wrapscan
 
+" By default perform case-insensitive searches. To perform case-sensitive use
+" /<term>\C
+set ignorecase
+
+" Use case insensitive search unless I use an uppercase letter in the search
+set smartcase
+
 " Allow certain movement commands to move into the next/previous line when it
 " makes sense
 set whichwrap=h,l

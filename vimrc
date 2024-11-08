@@ -578,3 +578,10 @@ endfunction
 " Invoking RTFHighlight on the current buffer will copy the highlighted code
 " to clipboard
 command! -range=% RTFHighlight :call RTFHighlight(<line1>,<line2>)
+
+" Use ripgrep for searching files instead of grep
+" https://phelipetls.github.io/posts/extending-vim-with-ripgrep/
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --smart-case\ --hidden\ $*
+  set grepformat^=%f:%l:%c:%m
+endif

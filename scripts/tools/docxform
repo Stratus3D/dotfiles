@@ -17,6 +17,7 @@ Operations:
   --ma       Markdown -> Asciidoc
   --am       Asciidoc -> Markdown
   --aw       Asciidoc -> Word Doc
+  --ah       Asciidoc -> HTML
   --ae       Asciidoc -> Epub
   --ap       Asciidoc -> PDF
   --akp      Asciidoc -> PDF formatted for E-readers and mobile devices

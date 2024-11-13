@@ -45,6 +45,14 @@ markdown_to_asciidoc() {
   pandoc --from markdown --to asciidoc --wrap none
 }
 
+worddoc_to_asciidoc() {
+  pandoc --from docx --to asciidoc --wrap none
+}
+
+libredoc_to_asciidoc() {
+  pandoc --from odt --to asciidoc --wrap none
+}
+
 asciidoc_to_docbook() {
   asciidoctor -b docbook -
 }
@@ -151,6 +159,14 @@ case ${1:-} in
     ;;
   --aw)
     asciidoc_to_worddoc "$input" "$output"
+    shift
+    ;;
+  --wa)
+    worddoc_to_asciidoc "$input" "$output"
+    shift
+    ;;
+  --la)
+    libredoc_to_asciidoc "$input" "$output"
     shift
     ;;
   --ae)

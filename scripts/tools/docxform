@@ -14,13 +14,15 @@ $ docxform --am file.adoc file.markdown
 
 Operations:
 
-  --ma       Markdown -> Asciidoc
-  --am       Asciidoc -> Markdown
-  --aw       Asciidoc -> Word Doc
-  --ah       Asciidoc -> HTML
-  --ae       Asciidoc -> Epub
-  --ap       Asciidoc -> PDF
-  --akp      Asciidoc -> PDF formatted for E-readers and mobile devices
+  --wa       Word Doc    -> Asciidoc
+  --la       LibreOffice -> Asciidoc
+  --ma       Markdown    -> Asciidoc
+  --am       Asciidoc    -> Markdown
+  --aw       Asciidoc    -> Word Doc
+  --ah       Asciidoc    -> HTML
+  --ae       Asciidoc    -> Epub
+  --ap       Asciidoc    -> PDF
+  --akp      Asciidoc    -> PDF formatted for E-readers and mobile devices
 
 Transform a document from one format to another. This script was originally a
 bunch of shell functions that I eventually collected into this script.

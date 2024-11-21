@@ -1,0 +1,4 @@
+% uuid, random, unique
+
+# Generate a uuid value
+uuidgen

@@ -45,11 +45,11 @@ yaml_to_json() {
 }
 
 json_to_elixir() {
-  iex --eval "IO.inspect((IO.read(:stdio, :eof) |> :json.decode()), limit: :infinity); System.halt()"
+  iex --eval "IO.inspect((IO.read(:stdio, :eof) |> :json.decode()), limit: :infinity); System.halt()" | tail -n +2
 }
 
 elixir_to_json() {
-  iex --eval "IO.puts(:stdio, (IO.read(:stdio, :eof) |> Code.eval_string() |> elem(0) |> :json.encode())); System.halt()"
+  iex --eval "IO.puts(:stdio, (IO.read(:stdio, :eof) |> Code.eval_string() |> elem(0) |> :json.encode())); System.halt()" | tail -n +2
 }
 
 # Conversion functions

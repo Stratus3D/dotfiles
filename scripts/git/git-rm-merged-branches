@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# Unoffical Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+error_exit() {
+  printf "%s\n" "$1" 1>&2
+  exit "${2:-1}" # default exit status 1
+}
+
+# Get a list of merged branches, filter out the obvious ones that should be
+# kept, and for the others confirm with the user before deleting them.
+branches="$(git branch --merged | grep -Ev "(^\*|main|master|dev|ci|qa|prod)" || true)"
+
+if [ -z "$branches" ]; then
+  error_exit "No branches to delete"
+fi
+
+xargs -p -I {} git branch -d {} <<< "$branches"

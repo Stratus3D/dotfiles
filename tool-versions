@@ -1,7 +1,7 @@
 erlang 27.2
 elixir 1.15.7-otp-26
 lua 5.4.6
-ruby 2.6.8
+ruby 3.4.1
 nodejs 23.2.0
 postgres 15.7
 rebar 3.16.1

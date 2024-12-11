@@ -1,5 +1,5 @@
 # Testing asdf version 0.16.0
-export PATH="$ASDF_DATA_DIR/shims:$PATH"
+export PATH="$HOME/.asdf/shims:$PATH"
 
 # asdf plugin options
 

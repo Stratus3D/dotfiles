@@ -1,4 +1,4 @@
-# Testing asdf version 0.16.0
+# Add shims directory to path
 export PATH="$HOME/.asdf/shims:$PATH"
 
 # asdf plugin options

@@ -149,11 +149,6 @@ brew_install_or_upgrade expect
 # For easy renaming of files
 brew_install_or_upgrade rename
 
-# For adb
-brew_tap caskroom/cask
-brew cask install android-sdk
-brew cask install android-platform-tools
-
 # Mosh for high latency remote servers
 brew_install_or_upgrade mobile-shell
 

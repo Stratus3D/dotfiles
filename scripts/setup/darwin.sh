@@ -99,8 +99,8 @@ brew_install_or_upgrade autoconf
 # For Ruby
 brew_install_or_upgrade readline
 
-# For various languages that use OpenSSL
-brew_install_or_upgrade 'openssl'
+# For various languages that use OpenSSL version 3
+brew_install_or_upgrade openssl
 brew unlink openssl && brew link openssl --force
 
 brew_install_or_upgrade 'libyaml'

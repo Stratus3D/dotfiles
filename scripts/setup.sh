@@ -51,7 +51,6 @@ mkdir -p "$HOME/devel/bin" # Go binary directory
 mkdir -p "$HOME/devel/archived" # Old projects
 mkdir -p "$HOME/Screenshots"
 mkdir -p "$HOME/audio"
-mkdir -p "$HOME/audio/podcasts" # For podcast storage
 mkdir -p "$HOME/audio/music" # For music storage
 mkdir -p "$HOME/clients" # Files for third parties - companies, friends, etc...
 mkdir -p "$HOME/.psql" # psql history directory

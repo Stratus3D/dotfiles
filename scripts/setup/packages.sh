@@ -14,9 +14,6 @@ IFS=$'\t\n' # Stricter IFS settings
 # Ruby Packages
 ###############################################################################
 
-# For managing project dependencies
-gem install bundler
-
 # For tmux projects
 gem install tmuxinator -v 3.3.3
 

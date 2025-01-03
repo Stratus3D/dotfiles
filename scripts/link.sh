@@ -21,7 +21,7 @@ dotfiles=$HOME/dotfiles
 files="vimrc vim zshrc bashrc tmux.conf gitignore_global ctags screenrc \
     jshintrc rsync-exclude tool-versions agignore asdfrc psqlrc hushlogin \
     my.cnf inputrc editrc iex.exs curlrc irbrc gemrc ripgrep-ignore \
-    gitattributes gnuplot digrc"
+    gitattributes gnuplot digrc default-gems"
 
 # Functions
 error_exit() {

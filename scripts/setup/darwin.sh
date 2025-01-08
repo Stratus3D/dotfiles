@@ -161,6 +161,7 @@ brew_install_or_upgrade pinentry
 
 # For password management
 brew_install_or_upgrade pass
+brew_install_or_upgrade pass-otp
 
 # For working with JWT tokens on the command line
 brew_install_or_upgrade step

@@ -2,6 +2,10 @@ snippet pry "Insert IEx.pry call into Elixir code"
 require IEx; IEx.pry
 endsnippet
 
+snippet shebang "The Elixir shebang line I typically use"
+#!/usr/bin/env elixir
+endsnippet
+
 snippet dbgcalls "Add dbg tracing code for tracing calls in the current process"
 :dbg.tracer()
 :dbg.p(${1:self()}, [:c])

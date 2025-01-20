@@ -5,3 +5,9 @@ say -v whisper "I am watching you"
 
 # sed: prints all but the first line of the sed file
 \#!/usr/bin/sed 1d .
+
+# Generate a random number from a range
+shuf -i 1-100000 -n 1
+
+# Generate a random 5-digit base-6 number
+base 10 $( shuf -i 1-7775 -n 1) | rg Senary

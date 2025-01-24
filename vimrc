@@ -486,6 +486,10 @@ let g:ale_lint_on_insert_leave = 1
 " UltiSnips settings
 let g:UltiSnipsExpandTrigger=",<tab>"
 
+" Load snippets from dotfiles and from my notes directory
+" https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt#L550
+let g:UltiSnipsSnippetDirectories=["UltiSnips", $HOME."/notes/snippets/"]
+
 " My custom mapping
 function! RunTestFileOrLast()
   if (test#test_file(expand('%s')) == 1)

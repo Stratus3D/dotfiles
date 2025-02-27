@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Unoffical Bash "strict mode"
+# Unofficial Bash "strict mode"
 # http://redsymbol.net/articles/unofficial-bash-strict-mode/
 set -euo pipefail
 #ORIGINAL_IFS=$IFS
@@ -21,3 +21,6 @@ docker network prune -f
 # Remove unused docker volumes
 echo "Removing unused Docker volumes..."
 docker volume prune -f
+
+# Prune system volumes
+docker system prune --volumes

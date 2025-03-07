@@ -1,0 +1,10 @@
+% clojure, java, cli, lein
+
+# Run all tests for a project
+clojure -A:test -m kaocha.runner
+
+# Run a single test from a project
+clojure -A:test -m kaocha.runner --focus app.some-particular-test
+
+# Build an uberjar
+clojure -T:build uber

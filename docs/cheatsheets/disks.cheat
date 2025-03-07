@@ -1,0 +1,7 @@
+% disk, dvd, cd, iso, file system
+
+# Write an ISO to a disk
+growisofs -Z /dev/sr0=your.iso
+
+# List all block devices on the computer
+lsblk

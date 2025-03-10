@@ -1,0 +1,128 @@
+#!/usr/bin/env bash
+
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+install_or_upgrade() {
+    sudo pacman --noconfirm -S "$@"
+}
+
+# Tools I need for development
+install_or_upgrade vim
+install_or_upgrade git
+install_or_upgrade zsh
+install_or_upgrade curl
+install_or_upgrade tmux
+
+# For searching code and other files
+install_or_upgrade ripgrep
+
+# other development tools
+install_or_upgrade universal-ctags
+install_or_upgrade jq
+
+# For use with Erlang's fprof
+install_or_upgrade kcachegrind
+
+# For benchmarking in the shell
+install_or_upgrade hyperfine
+
+# For watching for file change events
+install_or_upgrade entr
+
+# For clipboard access on the command line
+install_or_upgrade xsel
+install_or_upgrade xclip
+
+# Shell script linting
+install_or_upgrade shellcheck
+
+# For documents
+install_or_upgrade fonts-cmu
+
+# Photo editing
+install_or_upgrade gimp
+
+# Vector graphics
+install_or_upgrade inkscape
+
+# Visualization library
+install_or_upgrade graphviz
+
+# For plotting data on charts at the command line
+install_or_upgrade gnuplot
+
+# For manipulating tabular data on the command line
+install_or_upgrade miller
+
+# For image metadata manipulation
+install_or_upgrade exiftool
+
+# Zeal Docs
+install_or_upgrade zeal
+
+# Enable DVD playback
+install_or_upgrade libdvd-pkg
+
+# Install mosh shell for high latency servers
+install_or_upgrade mosh
+
+# Install pastel for viewing and manipulating colors on the command line
+install_or_upgrade pastel
+
+# Install Scribus for publishing
+install_or_upgrade scribus
+
+# Pandoc for document utilities
+install_or_upgrade pandoc
+
+# odt2txt for plain text representations of LibreOffice documents
+install_or_upgrade odt2txt
+
+# For network troubleshooting
+install_or_upgrade mtr
+
+# Tree for directory structure
+install_or_upgrade tree
+
+# Screen recording
+install_or_upgrade vokoscreen
+
+# Sound recording
+install_or_upgrade audacity
+
+# Video editing
+install_or_upgrade kdenlive
+
+# CLI dictionary
+install_or_upgrade dict
+
+# For encryption and signing, also used by pass
+install_or_upgrade gnupg
+
+# For password management
+install_or_upgrade pass
+install_or_upgrade pass-otp
+
+# For wrapping shells that don't use readline
+install_or_upgrade rlwrap
+
+# Install xsane and dependencies
+# TODO
+#install_or_upgrade libsane libsane-extras sane-utils xsane
+
+# For Ebooks
+# For library management
+install_or_upgrade calibre
+
+# For resizing PDFs for Kindle
+install_or_upgrade k2pdfopt
+
+# Metadata remover for common file types
+install_or_upgrade mat2
+
+# asdf-ruby dependencies
+install_or_upgrade base-devel

@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+# Location of cached word list on disk
+wordlist_file="$HOME/.wordlist"
+checksum="addd35536511597a02fa0a9ff1e5284677b8883b83e986e43f15a3db996b903e  $wordlist_file"
+
+# If we don't have a local copy of the wordlist download it
+if [ ! -f "$wordlist_file" ]; then
+  curl 'https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt' > "$wordlist_file"
+fi
+
+# Validate that file matches checksum
+printf "%s" "$checksum" | sha256sum --check 2>&1 > /dev/null
+
+# Print file
+exec cat $wordlist_file

@@ -126,3 +126,6 @@ install_or_upgrade mat2
 
 # asdf-ruby dependencies
 install_or_upgrade base-devel
+
+# Pandoc for document utilities
+install_or_upgrade pandoc

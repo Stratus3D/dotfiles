@@ -17,6 +17,9 @@ IFS=$'\t\n' # Stricter IFS settings
 # For tmux projects
 gem install tmuxinator -v 3.3.3
 
+# For asciidoc file processing
+gem install asciidoctor -v 2.0.17
+
 # Python Packages
 ###############################################################################
 

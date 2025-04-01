@@ -46,7 +46,7 @@ This is software that I use for my day-to-day work. All of this is installed via
 
 * [asdf](https://github.com/asdf-vm/asdf) for programming language version management
 * [Dash/ZealDocs](http://zealdocs.org/) and [devdocs.io](https://devdocs.io/) for documentation
-* [Exuberant Ctags](http://ctags.sourceforge.net/) for code navigation
+* [Universal Ctags](https://ctags.io/) for code navigation
 * [Git](https://git-scm.com/) for version control
 * [Vim](http://www.vim.org/) for text editing
 * [Tmux](https://tmux.github.io/) for terminal sessions and window panes

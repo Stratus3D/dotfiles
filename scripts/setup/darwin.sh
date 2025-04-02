@@ -78,8 +78,8 @@ brew_install_or_upgrade grep
 # My editor
 brew_install_or_upgrade 'vim'
 
-# For Code navigation - Exuberant ctags
-brew_install_or_upgrade ctags
+# For Code navigation - Universal ctags
+brew_install_or_upgrade universal-ctags
 
 # For screen sessions
 brew_install_or_upgrade 'tmux'

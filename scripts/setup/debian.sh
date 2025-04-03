@@ -54,7 +54,7 @@ install_or_upgrade curl
 install_or_upgrade ripgrep
 
 # other development tools
-install_or_upgrade exuberant-ctags
+install_or_upgrade universal-ctags
 install_or_upgrade jq
 install_or_upgrade "linux-tools-$(uname -r)" # perf
 install_or_upgrade dstat

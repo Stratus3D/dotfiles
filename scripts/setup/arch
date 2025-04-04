@@ -79,6 +79,9 @@ install_or_upgrade scribus
 # Pandoc for document utilities
 install_or_upgrade pandoc
 
+# latex for document processing
+install_or_upgrade texlive
+
 # odt2txt for plain text representations of LibreOffice documents
 install_or_upgrade odt2txt
 

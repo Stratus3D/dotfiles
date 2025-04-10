@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+# From https://tylercipriani.com/blog/2022/06/15/choose-boring-desktop-technology/
+# and https://github.com/addyosmani/dotfiles/blob/master/.functions#L1-L17
+#
+# This exists as a shell script so I can easily call it from within Vim.
+
+# Simple calculator
+function calc() {
+        local result=""
+        result="$(printf "scale=10;%s\n" "$*" | bc --mathlib | tr -d '\\\n')"
+        #                       └─ default (when `--mathlib` is used) is 20
+        #
+        if [[ "$result" == *.* ]]; then
+                # improve the output for decimal numbers
+                printf "%s" "$result" |
+                sed -e 's/^\./0./'        `# add "0" for cases like ".5"` \
+                    -e 's/^-\./-0./'      `# add "0" for cases like "-.5"`\
+                    -e 's/0*$//;s/\.$//'   # remove trailing zeros
+        else
+                printf "%s" "$result"
+        fi
+        printf "\n"
+}
+
+if [ -z "${1:-}" ]; then
+  input="$(</dev/stdin)"
+else
+  input="$1"
+fi
+
+calc "$input"

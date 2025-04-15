@@ -64,10 +64,10 @@ fancy_echo "Updating Homebrew formulas ..."
 brew update
 
 # My default interactive shell
-brew_install_or_upgrade 'zsh'
+brew_install_or_upgrade zsh
 
 # For version control
-brew_install_or_upgrade 'git'
+brew_install_or_upgrade git
 
 # For code search
 brew_install_or_upgrade ripgrep
@@ -76,22 +76,22 @@ brew_install_or_upgrade ripgrep
 brew_install_or_upgrade grep
 
 # My editor
-brew_install_or_upgrade 'vim'
+brew_install_or_upgrade vim
 
 # For Code navigation - Universal ctags
 brew_install_or_upgrade universal-ctags
 
 # For screen sessions
-brew_install_or_upgrade 'tmux'
+brew_install_or_upgrade tmux
 "$HOME/dotfiles/script/setup/tmux.sh"
 
 # For shell scripting
-brew_install_or_upgrade 'shellcheck'
+brew_install_or_upgrade shellcheck
 
 # For image manipulation
-brew_install_or_upgrade 'imagemagick'
-brew_install_or_upgrade 'qt'
-brew_install_or_upgrade 'telnet'
+brew_install_or_upgrade imagemagick
+brew_install_or_upgrade qt
+brew_install_or_upgrade telnet
 
 # For building Erlang and Elixir, possibly other things
 brew_install_or_upgrade autoconf
@@ -103,7 +103,7 @@ brew_install_or_upgrade readline
 brew_install_or_upgrade openssl
 brew unlink openssl && brew link openssl --force
 
-brew_install_or_upgrade 'libyaml'
+brew_install_or_upgrade libyaml
 
 # Visualization library
 brew_install_or_upgrade graphviz

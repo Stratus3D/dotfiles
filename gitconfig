@@ -1,4 +1,19 @@
+# https://adrg.se/blog/dotfiles-digest-git
+# https://gist.github.com/schacon/e9e743dee2e92db9a464619b99e94eff
+
 [alias]
+  # Common commands for less typing
+  s = status
+  o = commit -m
+  dh = diff HEAD
+  d = diff
+  wt = worktree
+
+  # Stash untracked files as well when stashing
+  stash = stash --all
+
+  #git blame -w -C -C -C -L
+
   # Better version of the stash list command
   # Taken from https://stackoverflow.com/a/38826108/1245380
   sl = stash list --format='%C(red)%h%C(reset) - %C(yellow)(%C(bold magenta)%gd%C(yellow))%C(reset) %<(70,trunc)%s %C(green)(%cr) %C(bold blue)%C(reset)'
@@ -17,10 +32,24 @@
   recent = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
 
   # Graph/Log aliases
-  lp = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-  ll = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+  lp = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %s %C(yellow)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  ll = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %s %C(yellow)- %an%C(reset)' --all
   graph = log --graph --all --decorate --stat --date=iso
   graph1 = log --date-order --decorate --graph --oneline --no-show-signature
+
+[core]
+  # Global gitignore rules
+  excludesfile = ~/.gitignore_global
+
+  # Global gitattributes file
+  attributesFile = ~/.gitattributes
+
+  # Pay attention to case, even on OSX
+  ignorecase = false
+
+  # Better diff of changes
+  pager = delta --features gruvbox-light --hunk-header-style omit
+
 [color]
   branch = auto
   diff = auto
@@ -42,36 +71,25 @@
   added = yellow
   changed = green
   untracked = cyan
-[core]
-  # Global gitignore rules
-  excludesfile = ~/.gitignore_global
-
-  # Global gitattributes file
-  attributesFile = ~/.gitattributes
-
-  # Pay attention to case, even on OSX
-  ignorecase = false
-
-  # Better diff of changes
-  #pager = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
-  #pager = diff-so-fancy | less --tabs=4 -RFX
-  pager = diff-so-fancy | less --tabs=2
 [pager]
   # Don't use pager when listing branches
   # Taken from https://stackoverflow.com/a/48370253/1245380
   branch = false
 
-  # A better diff algorithm
-  algorithm = histogram
 [status]
   # Show status of git submodules in git status output
   submoduleSummary = true
+
 [diff]
   # Show submodules changes in diffs as a list of commits like `git log` shows
   submodule = log
 
   # Default tool for resolving conflicts
   tool = vimdiff3
+
+  # A better diff algorithm
+  algorithm = histogram
+
 [fetch]
   # Push push submodule changes to the remote before pushing the main project.
   # If a submodule fails to push the main project will not be pushed.
@@ -85,6 +103,7 @@
 [pull]
   # Don't flatten locally created merge commits when rebasing
   rebase = merges
+
 [merge]
   # Standard diff is two sets of final changes. This introduces the change
   # present in the common ancestor of both conflicting commits.
@@ -106,6 +125,9 @@
 [branch]
   # When checking out branches locally make them always track the remote branch
   autosetupmerge = always
+
+  # Sort branches by recently updated
+  sort = committerdate
 [commit]
   # Show the diff below the commit message for context when writing the message
   verbose = true
@@ -135,3 +157,11 @@
 [diff "pdf"]
   textconv=tika --text
   binary=true
+
+[log]
+  # Show commit timestamps in my local time
+  date = local
+
+[tag]
+  # Set sort order of `git tag` so semantic version tags are sorted properly
+  sort = version:refname

@@ -7,6 +7,7 @@ alias g="git"
 alias k="kubectl"
 alias v="vim"
 alias r='rebar3'
+alias tm='tmuxinator'
 
 # For convenience
 alias ..="cd .."
@@ -17,6 +18,9 @@ alias ......='cd ../../../../..'
 
 # For common commands
 alias be="bundle exec"
+
+# Simpler way of invoking restish
+alias h='NOCOLOR=1 restish'
 
 # Git alias
 alias gst="git status"
@@ -45,10 +49,16 @@ alias bigo="open $HOME/dotfiles/charts/bigoposter.pdf"
 alias vim-cheatsheet="open $HOME/dotfiles/charts/vim_cheat_sheet_for_programmers_print.png"
 
 # Ripgrep aliases
+# By default search hidden files and directories
+alias rg="rg -."
+
+# ripgrep alias for always searching all files
+alias rgu="rg --no-ignore -."
+
+# Aliases for specific file types
 alias rge="rg --type erlang"
 alias rgr="rg --type ruby"
 alias rgx="rg --type elixir"
-alias rgu="rg --no-ignore"
 
 # iex alias for a better Elixir shell with a readline wrapper
 alias iex='rlwrap iex'

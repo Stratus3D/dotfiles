@@ -7,6 +7,7 @@
 # * bindkey -M <keymap> - Show all bindings in a keymap
 # * setopt - show zsh options that are set
 # * zstyle - show configured styles
+# * compinstall - configuration completions
 #
 # Helpful widgets
 #
@@ -16,6 +17,7 @@
 # References
 #
 # * https://ohmyz.sh/
+# * https://zsh.sourceforge.io/Doc/zsh_us.pdf
 # * https://thevaluable.dev/zsh-install-configure-mouseless/
 # * https://thevaluable.dev/zsh-line-editor-configuration-mouseless/
 # * https://zsh.sourceforge.io/Doc/Release/Zsh-Line-Editor.html#Standard-Widgets
@@ -56,46 +58,6 @@ setopt PUSHD_MINUS
 # Don't print the directory stack when pushing or popping
 setopt PUSHD_SILENT
 
-# COMPLETION
-# ----------
-
-# Not sure if I want to keep these settings
-setopt ALWAYS_TO_END
-setopt COMBINING_CHARS
-
-# Complete from both ends of a word
-setopt COMPLETE_IN_WORD
-
-# This is faster than `autoload -U compinit && compinit`
-autoload -Uz compinit
-
-zcompdump_current() {
-  if [[ $(uname -s) == 'Darwin' ]]; then
-    [ "$(date +'%s')" != "$(stat -f '%Y' -t '%j' $HOME/.zcompdump)" ];
-  else
-    [ "$(date +'%s')" != "$(stat -c '%Y' $HOME/.zcompdump)" ];
-  fi
-}
-
-if zcompdump_current; then
-  compinit
-else
-  compinit -C
-fi
-
-# Load antigen
-source $HOME/.antigen/antigen.zsh
-
-
-# zsh syntax highlighting
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-# Tell Antigen that you're done.
-antigen apply
-
-# Use asdf autocompletions
-. $HOME/.asdf/completions/_asdf
-
 # HISTORY
 # ----------
 
@@ -133,18 +95,69 @@ setopt INC_APPEND_HISTORY
 # Save timestamp to history file too
 setopt EXTENDED_HISTORY
 
-# TODO: I need to either disable SHARE_HISTORY or INC_APPEND_HISTORY
-# Import newly written commands from the history file
-setopt SHARE_HISTORY
-
 # Do not write duplicate event to history file
 setopt HIST_SAVE_NO_DUPS
+
+# Note to self: use fc -RI to import commands from other zsh sessions
 
 precmd() {
     if [ "$(id -u)" -ne 0 ]; then
         echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history | tail -n 1)" >>! $HOME/history/zsh-history-$(date "+%Y-%m-%d").log;
     fi
 }
+
+# PLUGINS
+# ----------
+
+# Load antigen
+source $HOME/.antigen/antigen.zsh
+
+# Non-standard completions
+antigen bundle zsh-users/zsh-completions
+
+# zsh syntax highlighting
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Tell Antigen that you're done
+antigen apply
+
+# COMPLETION
+# ----------
+
+# Not sure if I want to keep these settings
+setopt ALWAYS_TO_END
+setopt COMBINING_CHARS
+
+# Complete from both ends of a word
+setopt COMPLETE_IN_WORD
+
+# Don't require a leading . to match hidden files
+setopt GLOB_DOTS
+
+# This is faster than `autoload -U compinit && compinit`
+autoload -Uz compinit
+
+# Should be called before compinit
+zmodload -i zsh/complist
+
+if command -v brew 2>&1 >/dev/null; then
+  # Load completions from brew-installed programs https://docs.brew.sh/Shell-Completion
+  eval "$(brew shellenv)"
+fi
+
+zcompdump_current() {
+  if [[ $(uname -s) == 'Darwin' ]]; then
+    [ "$(date +'%s')" != "$(stat -f '%Y' -t '%j' $HOME/.zcompdump)" ];
+  else
+    [ "$(date +'%s')" != "$(stat -c '%Y' $HOME/.zcompdump)" ];
+  fi
+}
+
+if zcompdump_current; then
+  compinit
+else
+  compinit -C
+fi
 
 # KEY BINDINGS
 # ----------
@@ -169,6 +182,17 @@ bindkey "^[[A" up-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
 bindkey -M vicmd "k" up-line-or-beginning-search
 bindkey -M vicmd "j" down-line-or-beginning-search
+
+# Completion menu bindings
+# Use hjlk in menu selection (during completion)
+zmodload zsh/complist
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+
+# Undo suggestion selection
+bindkey -M menuselect '^xu' undo
 
 # Maintain traditional incremental search behavior
 bindkey '^r' history-incremental-search-backward
@@ -219,6 +243,89 @@ bindkey -a \
   'g^A' vim-sync-incarg \
   'g^X' vim-sync-decarg
 
+# [Shift-Tab] - move through the completion menu backwards
+if [[ -n "${terminfo[kcbt]}" ]]; then
+  bindkey -M viins "${terminfo[kcbt]}" reverse-menu-complete
+  bindkey -M vicmd "${terminfo[kcbt]}" reverse-menu-complete
+fi
+
+# STYLING/COMPLETION STYLING
+# ----------
+
+# From the documentation for zstyle:
+#
+# > The fields are always in the order :completion:function:completer:command:argument:tag.
+
+# Match spec to fall back to case-insensitive when no case-sensitive matches found
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# Group each type  of completion match into its own group
+zstyle ':completion:*' group-name ''
+
+# Sort files by modification date, unsure if I like this sort
+zstyle ':completion:*' file-sort modification
+
+# Use caching so that slow commands are useable
+zstyle ':completion:*' use-cache yes
+
+# Show more verbose suggestion output
+zstyle ':completion:*' verbose yes
+
+# Suggest the aliases like regular commands
+zstyle ':completion:*' complete true
+
+# Display a completion menu when any tags are available for the current completion
+zstyle ':completion:*' menu select
+
+# Use file and directory colors from those specified for GNU ls
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+# Special format for warning when no results found
+zstyle ':completion:*:*:*:*:warnings' format ' %F{red}-- no matches found --%f'
+
+# Colorize process suggestions for commands that operate on processes
+zstyle ':completion:*:*:*:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+
+# The command to use to populate the list of processes
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USERNAME -o pid,user,comm -w -w"
+
+# Hostname completion from ssh known hosts
+zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
+
+# Suggest directories more likely to be `cd` to first
+zstyle ':completion:*:*:cd:*' tag-order directory-stack local-directories path-directories
+
+# Define a specific ordering for command suggestion groups
+zstyle ':completion:*:*:-command-:*:*' group-order aliases builtins functions commands
+
+# Completers to be used. I like to be able to expand aliases if I want
+zstyle ':completion:*' completer _expand_alias _extensions _complete _approximate
+
+# https://gist.github.com/LukeSmithxyz/e62f26e55ea8b0ed41a65912fbebbe52
+# See https://ttssh2.osdn.jp/manual/4/en/usage/tips/vim.html for cursor shapes
+# https://unix.stackexchange.com/questions/433273/changing-cursor-style-based-on-mode-in-both-zsh-and-vim
+cursor_block='\e[2 q'
+cursor_beam='\e[5 q'
+
+function zle-keymap-select {
+    if [[ ${KEYMAP} == vicmd ]] ||
+        [[ $1 = 'block' ]]; then
+        echo -ne $cursor_block
+    elif [[ ${KEYMAP} == main ]] ||
+        [[ ${KEYMAP} == viins ]] ||
+        [[ ${KEYMAP} = '' ]] ||
+        [[ $1 = 'beam' ]]; then
+        echo -ne $cursor_beam
+    fi
+}
+
+zle-line-init() {
+    echo -ne $cursor_beam
+}
+
+zle -N zle-keymap-select
+zle -N zle-line-init
+
 # THEME & GIT
 # ----------
 
@@ -241,10 +348,14 @@ source $HOME/dotfiles/zsh/theme.zsh
 source $DOTFILES_DIR/mixins/general
 source $DOTFILES_DIR/mixins/functions
 source $DOTFILES_DIR/mixins/grep
-source $DOTFILES_DIR/mixins/path
 source $DOTFILES_DIR/mixins/asdf
+source $DOTFILES_DIR/mixins/path
 source $DOTFILES_DIR/mixins/aliases
 source $DOTFILES_DIR/mixins/man_color
+
+# Run navi code so Ctrl-G in Zsh opens navi. There is likely a more efficient
+# way of doing this.
+eval "$(navi widget zsh)"
 
 # Custom options
 if [ -f "$HOME/dotfiles/mixins/shellrc.custom" ]; then

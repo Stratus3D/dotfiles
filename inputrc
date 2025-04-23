@@ -1,3 +1,7 @@
+# Good resources for this config:
+# * https://www.masteringemacs.org/article/keyboard-shortcuts-every-command-line-hacker-should-know-about-gnu-readline
+# * https://tiswww.case.edu/php/chet/readline/rluserman.html
+
 # First attempt at a inputrc file
 # Set the editing mode to vi
 set editing-mode vi

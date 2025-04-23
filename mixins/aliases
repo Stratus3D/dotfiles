@@ -22,12 +22,6 @@ alias be="bundle exec"
 # Simpler way of invoking restish
 alias h='NOCOLOR=1 restish'
 
-# Git alias
-alias gst="git status"
-alias gco="git commit -m "
-alias gdh="git diff HEAD"
-alias gd="git diff"
-
 # For colored output
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'

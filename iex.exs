@@ -65,6 +65,10 @@ if module_missing.(TelemetryHelper) do
       :dbg.tracer(
         :process,
         {fn
+           # telemetry.execute/2 is another function we need to trace
+           {_, _, _, {_mod, :execute, [name, measurements]}}, _state ->
+             function.(name, [], measurements)
+
            {_, _, _, {_mod, :execute, [name, measurement, metadata]}}, _state ->
              function.(name, metadata, measurement)
 
@@ -77,6 +81,7 @@ if module_missing.(TelemetryHelper) do
       :dbg.p(:all, :c)
 
       # See all emitted telemetry events
+      :dbg.tp(:telemetry, :execute, 2, [])
       :dbg.tp(:telemetry, :execute, 3, [])
       :dbg.tp(:telemetry, :span, 3, [])
     end
@@ -91,6 +96,37 @@ if module_missing.(TelemetryHelper) do
       IO.puts(
         "Telemetry event:#{inspect(name)}\nwith #{inspect(measure_or_fun)} and #{inspect(metadata)}"
       )
+    end
+  end
+end
+
+if module_missing.(RequestHelper) do
+  defmodule RequestHelper do
+    @moduledoc """
+    Module for easy tracking of calls to httpc.request functions. Eventually I want
+    to convert this to a module containing a library of common trace patterns.
+    """
+
+    def start do
+      :dbg.start()
+
+      # Create tracer process with a function that pattern matches out the three
+      # arguments the telemetry calls are made with.
+      :dbg.tracer(
+        :process,
+        {fn
+           {_, _, _, {mod, fun, args}}, _state ->
+             IO.inspect([mod, fun, args])
+         end, nil}
+      )
+
+      # Trace all processes
+      :dbg.p(:all, :c)
+
+      # See all HTTP request calls made to httpc
+      :dbg.tp(:httpc, :request, 5, [{~c"_", [], [{:return_trace}]}])
+      :dbg.tp(:httpc, :request, 4, [{~c"_", [], [{:return_trace}]}])
+      :dbg.tp(:httpc, :request, 1, [{~c"_", [], [{:return_trace}]}])
     end
   end
 end

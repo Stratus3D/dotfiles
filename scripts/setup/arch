@@ -27,6 +27,9 @@ install_or_upgrade ripgrep
 install_or_upgrade universal-ctags
 install_or_upgrade jq
 
+# for programmable cli menus (and in vim)
+install_or_upgrade fz
+
 # For use with Erlang's fprof
 install_or_upgrade kcachegrind
 

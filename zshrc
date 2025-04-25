@@ -357,6 +357,13 @@ source $DOTFILES_DIR/mixins/man_color
 # way of doing this.
 eval "$(navi widget zsh)"
 
+# fzf integrations
+# https://github.com/junegunn/fzf?tab=readme-ov-file#fuzzy-completion-for-bash-and-zsh
+# https://pragmaticpineapple.com/four-useful-fzf-tricks-for-your-terminal/
+source <(fzf --zsh)
+# Hack to get the Alt-C binding working on MacOS
+bindkey "ç" fzf-cd-widget
+
 # Custom options
 if [ -f "$HOME/dotfiles/mixins/shellrc.custom" ]; then
     source "$HOME/dotfiles/mixins/shellrc.custom"

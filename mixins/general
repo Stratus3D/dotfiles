@@ -49,3 +49,6 @@ GOPROXY=direct
 
 # My modules with the stratus3d.com prefix are private
 GOPRIVATE=*.stratus3d.com,stratus3d.com
+
+# Default settings for fzf interface
+export FZF_DEFAULT_OTPS="--border --color=light"

@@ -47,7 +47,10 @@ Plugin 'mustache/vim-mustache-handlebars'
 
 " For productivity
 Plugin 'tpope/vim-ragtag'
-Plugin 'ctrlpvim/ctrlp.vim'
+
+" File fuzzy finder
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
 
 " Maybe try https://github.com/tpope/vim-commentary instead?
 Plugin 'scrooloose/nerdcommenter'

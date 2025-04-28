@@ -375,8 +375,38 @@ nnoremap Q @@
 " Load plugins
 source $HOME/.vim/plugins.vim
 
-" Start CtrlP on startup
-autocmd VimEnter * CtrlP
+" For fzf and vim see
+" https://thevaluable.dev/fzf-vim-integration/
+" https://github.com/junegunn/fzf.vim
+
+" fzf.vim configuration dictionary
+let g:fzf_vim = {}
+
+" disable preview window
+let g:fzf_vim.preview_window = []
+
+" Jump to existing window if possible
+let g:fzf_vim.buffers_jump = 1
+
+
+let g:fzf_vim.buffers_options = '--border-label " Open Buffers "'
+
+" display fzf window at bottom like Ctrl-P
+let g:fzf_layout = {'window': { 'width': 1, 'height': 20, 'yoffset': 1}}
+
+" key mappings for opening fzf
+
+" leader-b for buffers
+nnoremap <leader>b :Buffers<CR>
+
+"leader-a for all files
+nnoremap <leader>a :Files<CR>
+
+" ctrl-p for all files tracked by Git
+nnoremap <C-p> :GFiles<CR>
+
+" ctrl-p for all files tracked by Git
+nnoremap <C-i> :Lines<CR>
 
 " Vim-Erlang Skeleton settings
 let g:erl_replace_buffer=0
@@ -394,11 +424,6 @@ let g:NERDDefaultAlign = 'left'
 
 " Use compact syntax for prettified multi-line comments
 let g:NERDCompactSexyComs = 1
-
-" CtrlP directory mode
-let g:ctrlp_working_path_mode = 0
-
-set runtimepath^=$HOME/.vim/bundle/ctrlp.vim
 
 " Vim pencil settings
 " Hard wrapping was causing newlines I added to be removed from code in Markdown
@@ -419,32 +444,6 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
-
-"open CtrlP in buffer mode
-nnoremap <leader>b :CtrlPBuffer<CR>
-
-" custom CtrlP ignores toggle
-function! ToggleCtrlPIgnores()
-    if exists("g:ctrlp_user_command")
-        " unset the ignores
-        let g:ctrlp_custom_ignore = {}
-        unlet g:ctrlp_user_command
-    else
-        " always ignore these patterns
-        let g:ctrlp_custom_ignore = {
-                    \'dir': 'ebin\|DS_Store\|git$\|bower_components\|node_modules\|logs',
-                    \'file': '\v\.(beam|pyc|swo|jpg)$',
-                    \}
-        " also ignore files listed in the .gitignore
-        " This command returns all text files under version control
-        let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-        "let g:ctrlp_user_command = '(cd %s; git grep --cached -Il "") || find %s -type f'
-    end
-endfunction
-
-call ToggleCtrlPIgnores()
-"let g:ctrlp_user_command = '(cd %s; git grep --cached -Il "") || find %s -type f'
-:nnoremap <F6> call ToggleCtrlPIgnores()<CR>
 
 " vim-indent-guides settings
 "let g:indent_guides_enable_on_vim_startup = 1

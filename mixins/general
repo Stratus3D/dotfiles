@@ -51,4 +51,4 @@ GOPROXY=direct
 GOPRIVATE=*.stratus3d.com,stratus3d.com
 
 # Default settings for fzf interface
-export FZF_DEFAULT_OTPS="--border --color=light"
+export FZF_DEFAULT_OPTS="--border --color=light"

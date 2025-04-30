@@ -55,4 +55,6 @@ alias rgr="rg --type ruby"
 alias rgx="rg --type elixir"
 
 # iex alias for a better Elixir shell with a readline wrapper
-alias iex='rlwrap iex'
+# this allows me to use my vi bindings from .inputrc in iex
+# https://elixirforum.com/t/i-d-love-to-see-iex-command-line-supporting-vi-command-line-editing/3365
+alias iex='rlwrap --always-readline --no-children iex'

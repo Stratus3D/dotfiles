@@ -414,10 +414,6 @@ let g:erl_replace_buffer=0
 " Custom simplified Erlang templates (without all the verbose comment blocks)
 let g:erl_tpl_dir=$HOME."/dotfiles/templates/erlang"
 
-" Erlang plugin settings. TODO: Pull these from the environment
-" let g:erl_author=""
-" let g:erl_company=""
-
 " Align line-wise comment delimiters flush left instead of following code
 " indentation
 let g:NERDDefaultAlign = 'left'

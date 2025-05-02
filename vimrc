@@ -129,7 +129,7 @@ set statusline+=\ %P                                         " Percentage throug
 "set statusline+=\ Buf:%n                                     " Buffer number
 
 " Color status bar
-highlight statusline ctermfg=cyan ctermbg=black guifg=cyan guibg=black
+highlight statusline ctermfg=darkcyan ctermbg=white guifg=cyan guibg=black
 
 if has('macunix')
     " allow yanking to OSX clipboard

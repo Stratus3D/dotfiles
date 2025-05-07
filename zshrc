@@ -351,7 +351,6 @@ source $DOTFILES_DIR/mixins/grep
 source $DOTFILES_DIR/mixins/asdf
 source $DOTFILES_DIR/mixins/path
 source $DOTFILES_DIR/mixins/aliases
-source $DOTFILES_DIR/mixins/man_color
 
 # Run navi code so Ctrl-G in Zsh opens navi. There is likely a more efficient
 # way of doing this.

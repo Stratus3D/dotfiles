@@ -4,7 +4,6 @@ source "$HOME/dotfiles/mixins/functions"
 source "$HOME/dotfiles/mixins/aliases"
 source "$HOME/dotfiles/mixins/grep"
 source "$HOME/dotfiles/mixins/path"
-source "$HOME/dotfiles/mixins/man_color"
 
 # Use asdf autocompletions
 source "$HOME/.asdf/completions/asdf.bash"

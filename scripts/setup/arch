@@ -138,3 +138,9 @@ install_or_upgrade base-devel
 
 # Pandoc for document utilities
 install_or_upgrade pandoc
+
+# yt-dlp for video and audio download
+install_or_upgrade yt-dlp
+
+# The perl version of `rename` is better as it supports regex
+install_or_upgrade perl-rename

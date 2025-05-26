@@ -5,7 +5,9 @@
 #
 # * bindkey -l - List all keymaps available
 # * bindkey -M <keymap> - Show all bindings in a keymap
+# * zle -al - list all commands that can be bound
 # * setopt - show zsh options that are set
+# * set -o - list of all options that can be set
 # * zstyle - show configured styles
 # * compinstall - configuration completions
 #

@@ -47,8 +47,16 @@ if [ -z "$user" ]; then
   error_exit "Username must be provided as third argument"
 fi
 
+# ref is optional so we
+if [ "$4" == "--" ]; then
+  ref="master"
+  fields="${*:5}"
+else
+  ref="$4"
+  fields="${*:6}"
+fi
+
 # Build up array of field arguments for gh workflow command
-fields="${*:5}"
 field_arguments=()
 
 for field in $fields; do
@@ -62,8 +70,8 @@ done
 echo "${field_arguments[@]}"
 
 # Kick off the deploy workflow
-echo gh workflow run -R "$repo" "$workflow" "${field_arguments[@]}"
-gh workflow run -R "$repo" "$workflow" "${field_arguments[@]}"
+echo gh workflow run -R "$repo" --ref "$ref" "$workflow" "${field_arguments[@]}"
+gh workflow run -R "$repo" --ref "$ref" "$workflow" "${field_arguments[@]}"
 
 # Until we find the workflow run listed as queued or in_progress we loop looking
 # for the run_id

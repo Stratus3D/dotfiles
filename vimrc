@@ -399,11 +399,10 @@ let g:fzf_layout = {'window': { 'width': 1, 'height': 20, 'yoffset': 1}}
 " leader-b for buffers
 nnoremap <leader>b :Buffers<CR>
 
-"leader-a for all files
-nnoremap <leader>a :Files<CR>
-
-" ctrl-p for all files tracked by Git
-nnoremap <C-p> :GFiles<CR>
+" ctrl-p for all files (if in Git repo FZF_DEFAULT_COMMAND excludes ignored
+" files)
+" https://github.com/junegunn/fzf.vim/issues/121#issuecomment-466056060
+nnoremap <C-p> :Files<CR>
 
 " ctrl-p for all files tracked by Git
 nnoremap <C-i> :Lines<CR>

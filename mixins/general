@@ -54,5 +54,8 @@ GOPRIVATE=*.stratus3d.com,stratus3d.com
 # Default settings for fzf interface
 export FZF_DEFAULT_OPTS="--border --color=light"
 
+# Use rg to list files in fzf by default
+export FZF_DEFAULT_COMMAND="rg --files"
+
 # These colors have been optimized for light mode
 export MANPAGER="less -R --use-color -Dd+m -Du+b"

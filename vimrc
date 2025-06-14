@@ -404,7 +404,7 @@ nnoremap <leader>b :Buffers<CR>
 " https://github.com/junegunn/fzf.vim/issues/121#issuecomment-466056060
 nnoremap <C-p> :Files<CR>
 
-" ctrl-p for all files tracked by Git
+" ctrl-i for all lines in current file
 nnoremap <C-i> :Lines<CR>
 
 " Vim-Erlang Skeleton settings

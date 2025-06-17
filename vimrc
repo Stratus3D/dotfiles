@@ -214,6 +214,7 @@ set foldlevel=99
 
 " Use built in file browser (netrw) instead of NERDTree
 " (https://shapeshed.com/vim-netrw/)
+" Disable banner
 let g:netrw_banner = 0
 " Make the browser 25% of the width of the editor
 let g:netrw_winsize = 25

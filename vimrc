@@ -449,13 +449,6 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " ALE settings
 let g:ale_lint_delay = 400
 
-" Disable elixirLS Dialyzer checks
-let g:ale_elixir_elixir_ls_config = {
-\   'elixirLS': {
-\     'dialyzerEnabled': v:false,
-\   },
-\ }
-
 " Configure ALE fixers
 " On all files, removing trailing lines and whitespace
 " On Elixir files, run mix format

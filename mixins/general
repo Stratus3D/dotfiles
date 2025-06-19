@@ -59,3 +59,6 @@ export FZF_DEFAULT_COMMAND="rg --files"
 
 # These colors have been optimized for light mode
 export MANPAGER="less -R --use-color -Dd+m -Du+b"
+
+# To disable reading of Go version from go.mod file in asdf-golang
++export ASDF_GOLANG_MOD_VERSION_ENABLED=false

@@ -1,10 +1,39 @@
-\set COMP_KEYWORD_CASE upper
-\set HISTFILE ~/.psql/history- :DBNAME
-\pset null '[null]'
-\set PROMPT1 '%[%033[1m%]%M %n@%/%R%[%033[0m%]%# '
+-- Define prompt in the format [hostname] username@dbname
+\set PROMPT1 '%[%033[1m%][%M] %n@%/%R%[%033[0m%]%# '
 \set PROMPT2 '[more] %R > '
 
-\x auto
+-- Autocompletion of keywords in lowercase
+\set COMP_KEYWORD_CASE lower
+
+-- Keep a separate history file for each database
+\set HISTFILE ~/.psql/history-:DBNAME
 
 -- Display query times in psql shell
 \timing
+
+-- Automatically use expanded table output based on terminal width
+\x auto
+
+-- Set special char for null values
+\pset null '◇'
+
+-- Terminate scripts on the first error
+\set ON_ERROR_STOP on
+
+-- Rollback to the last successful command when an error occurs, allows you
+-- to interactively correct a failed command
+\set ON_ERROR_ROLLBACK interactive
+
+-- Use vim key bindings
+\set keymap vi-command
+
+-- Use new unicode line drawing characters
+\pset linestyle 'unicode'
+
+-- Use single lines for everything except headers
+\pset unicode_border_linestyle single
+\pset unicode_column_linestyle single
+\pset unicode_header_linestyle double
+
+-- Use more human readable format for printing of interval values
+\set intervalstyle to 'postgres_verbose';

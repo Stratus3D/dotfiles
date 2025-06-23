@@ -7,11 +7,15 @@ set -euo pipefail
 IFS=$'\t\n' # Stricter IFS settings
 
 install_or_upgrade() {
-    sudo pacman --noconfirm -S "$@"
+  yay -S --noconfirm --answerdiff=None --answeredit=None $@
 }
 
+# For AUR package installs
+sudo pacman --noconfirm -S yay
+
 # Tools I need for development
-install_or_upgrade vim
+# Use gvim instead of vim so we have clipboard support
+install_or_upgrade gvim
 install_or_upgrade git
 install_or_upgrade zsh
 install_or_upgrade curl

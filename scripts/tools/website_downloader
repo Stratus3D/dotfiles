@@ -79,7 +79,7 @@ fi
 domain="$(echo "$url" | awk -F[/:] '{print $4}')"
 
 # Base command: follow links and download the whole site
-command_array=("$url" --recursive --mirror '--domains='"$domain")
+command_array=("$url" --recursive --mirror '--domains='"$domain" --directory-prefix="$directory")
 
 shift 2
 

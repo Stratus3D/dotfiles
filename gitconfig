@@ -165,3 +165,8 @@
 [tag]
   # Set sort order of `git tag` so semantic version tags are sorted properly
   sort = version:refname
+
+[interactive]
+  # Use a single key for git add -p interactive prompts instead of having to
+  # press enter after each one.
+  singleKey = true

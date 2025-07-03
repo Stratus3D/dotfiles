@@ -30,10 +30,5 @@
 -- Use new unicode line drawing characters
 \pset linestyle 'unicode'
 
--- Use single lines for everything except headers
-\pset unicode_border_linestyle single
-\pset unicode_column_linestyle single
-\pset unicode_header_linestyle double
-
 -- Use more human readable format for printing of interval values
 \set intervalstyle to 'postgres_verbose';

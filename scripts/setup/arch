@@ -148,3 +148,6 @@ install_or_upgrade yt-dlp
 
 # The perl version of `rename` is better as it supports regex
 install_or_upgrade perl-rename
+
+# Needed for livereload tools
+install_or_upgrade inotify-tools

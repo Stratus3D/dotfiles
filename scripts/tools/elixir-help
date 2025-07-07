@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+# Helper script used by vim to lookup documentation
+identifier=$1
+
+error_exit() {
+  printf "%s\n" "$1" 1>&2
+  exit "${2:-1}" # default exit status 1
+}
+
+if [ -z "$identifier" ]; then
+  error_exit "No module, function or macro name provided"
+fi
+
+# Use IEx.Helpers to print help to stdout for Elixir module or function
+elixir --eval "require IEx.Helpers; IEx.Helpers.h($identifier)"

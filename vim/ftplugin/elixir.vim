@@ -1,5 +1,6 @@
 " Hack to get ExDocs available in Vim
-"
+" https://til.codeinthehole.com/posts/about-how-to-use-keywordprg-effectively/
+
 " Define command for loading keyword help in split and set it as keywordprg
 " for Elixir files
 funct ElixirKeywordHelp()

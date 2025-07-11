@@ -170,3 +170,8 @@
   # Use a single key for git add -p interactive prompts instead of having to
   # press enter after each one.
   singleKey = true
+
+[advice]
+  # Don't show help on how to proceed from current state of repo from git
+  # status command.
+  statusHints = false

@@ -1,0 +1,64 @@
+diff --git a/config.def.h b/config.def.h
+index 2cd740a..5a8f248 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -5,7 +5,7 @@
+  *
+  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
+  */
+-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
++static char *font = "Inconsolata:pixelsize=22:antialias=true:autohint=true";
+ static int borderpx = 2;
+ 
+ /*
+@@ -96,32 +96,32 @@ unsigned int tabspaces = 8;
+ /* Terminal colors (16 first used in escape sequence) */
+ static const char *colorname[] = {
+ 	/* 8 normal colors */
+-	"black",
+-	"red3",
+-	"green3",
+-	"yellow3",
+-	"blue2",
+-	"magenta3",
+-	"cyan3",
+-	"gray90",
++  "#2d2f36",
++	"#b24339",
++	"#9c6a01",
++	"#016a96",
++	"#7f1d7e",
++	"#07768c",
++	"#7f1d7e",
++	"#f0f0f0",
+ 
+ 	/* 8 bright colors */
+-	"gray50",
+-	"red",
+-	"green",
+-	"yellow",
+-	"#5c5cff",
+-	"magenta",
+-	"cyan",
+-	"white",
++	"#4f525e",
++	"#e06c75",
++	"#98c379",
++	"#e5c07b",
++	"#61afef",
++	"#c678dd",
++	"#56b6c2",
++	"#f5f5f5",
+ 
+ 	[255] = 0,
+ 
+ 	/* more colors can be added after 255 to use with DefaultXX */
+ 	"#cccccc",
+ 	"#555555",
+-	"gray90", /* default foreground colour */
+-	"black", /* default background colour */
++	"#383a42", /* default foreground colour */
++	"#fefefe", /* default background colour */
+ };
+ 
+ 

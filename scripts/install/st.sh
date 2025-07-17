@@ -14,7 +14,7 @@ IFS=$'\t\n' # Stricter IFS settings
 # https://github.com/lukesmithxyz/st
 # https://github.com/BreadOnPenguins/st
 
-st_patch_dir="$(pwd)/st"
+st_patch_dir="$(realpath "$(dirname -- "${BASH_SOURCE[0]}")/st")"
 
 # Create temp directory for the build
 TEMP_DIR=$(mktemp -dt "$(basename $0).XXXXXX")
@@ -53,7 +53,7 @@ make clean
 make
 
 # Copy st binary into place
-cp st $HOME/bin/st.new
+cp st $HOME/bin/st
 
 # Remove temp dir
 rm -rf $TEMP_DIR

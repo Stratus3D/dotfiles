@@ -1,0 +1,4 @@
+% compiler, gcc
+
+# Show machine architecture info
+gcc -dumpmachine

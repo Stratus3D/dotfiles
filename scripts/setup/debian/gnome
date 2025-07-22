@@ -13,15 +13,3 @@ gsettings set org.gnome.desktop.background picture-uri ''
 
 # Set desktop background color
 gsettings set org.gnome.desktop.background primary-color '#6c6d6c'
-
-# Dotfiles directory
-dotfiles=$HOME/dotfiles
-
-# Load in my saved Gnome Terminal profiles
-# See this pages for reference:
-# * https://unix.stackexchange.com/questions/448811/how-to-export-a-gnome-terminal-profile
-# * https://blog.aamnah.com/ubuntu/create-theme-gnome-terminal-ultimate-guide
-#
-# Dumping updated profiles back to file is easy:
-# $ dconf dump /org/gnome/terminal/legacy/profiles:/ > gnome-terminal-profiles.dconf
-dconf load /org/gnome/terminal/legacy/profiles:/ < $dotfiles/gnome_terminal_profiles/gnome-terminal-profiles.dconf

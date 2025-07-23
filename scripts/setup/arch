@@ -151,3 +151,9 @@ install_or_upgrade perl-rename
 
 # Needed for livereload tools
 install_or_upgrade inotify-tools
+
+# For working on X server apps
+install_or_upgrade xephyr
+
+# Gramps GUI for genealogy management
+install_or_upgrade gramps

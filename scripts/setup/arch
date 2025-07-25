@@ -157,3 +157,6 @@ install_or_upgrade xephyr
 
 # Gramps GUI for genealogy management
 install_or_upgrade gramps
+
+# CLI cheatsheets
+install_or_upgrade navi

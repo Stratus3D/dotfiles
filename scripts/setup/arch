@@ -32,7 +32,7 @@ install_or_upgrade universal-ctags
 install_or_upgrade jq
 
 # for programmable cli menus (and in vim)
-install_or_upgrade fz
+install_or_upgrade fzf
 
 # For use with Erlang's fprof
 install_or_upgrade kcachegrind
@@ -160,3 +160,6 @@ install_or_upgrade gramps
 
 # CLI cheatsheets
 install_or_upgrade navi
+
+# For programmable keyboard
+install_or_upgrade vial

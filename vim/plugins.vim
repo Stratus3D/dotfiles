@@ -48,6 +48,17 @@ Plugin 'mustache/vim-mustache-handlebars'
 " For productivity
 Plugin 'tpope/vim-ragtag'
 
+" Provide more text targets to operate on. This plugin allows visual mode
+" operations on characters that are available out of the box in vim. For
+" example:
+"
+" * select text of a url segment: vi/
+" * delete everything between pipes: di|
+"
+" For more see
+" https://medium.com/codex/vim-targets-work-on-text-objects-with-less-keystrokes-684683bbaeea
+Plugin 'wellle/targets.vim'
+
 " File fuzzy finder
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'

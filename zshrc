@@ -147,6 +147,10 @@ if command -v brew 2>&1 >/dev/null; then
   eval "$(brew shellenv)"
 fi
 
+# Manually add completion for asdf
+# Run `mkdir -p $HOME asdf; asdf completion zsh > $HOME/.zsh-completions/asdf.bash`
+fpath=($HOME/.zsh-completions/ $fpath)
+
 zcompdump_current() {
   if [[ $(uname -s) == 'Darwin' ]]; then
     [ "$(date +'%s')" != "$(stat -f '%Y' -t '%j' $HOME/.zcompdump)" ];

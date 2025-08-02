@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+default_ruby_version="$(cd "$HOME"; asdf current ruby --no-header | tr -s ' ' | cut -f2 -d ' ')"
+ASDF_RUBY_VERSION="$default_ruby_version" asdf exec tmuxinator $@

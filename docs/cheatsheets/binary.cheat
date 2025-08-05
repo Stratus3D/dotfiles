@@ -5,3 +5,6 @@ echo -n ✘ | hexdump
 
 #
 echo -n ✘ | od
+
+# Convert a string of binary 1s and 0s to ascii
+for a in $($1); do printf "%x" $((2#$a)); done | xxd -r -p

@@ -5,11 +5,11 @@
 " for Elixir files
 funct ElixirKeywordHelp()
   " Hack so that we use full module.function name as keyword
-  let l:old_iskeyword = &iskeyword
   set iskeyword+=46
-
-  silent exe ':hor term bash -c "elixir-help ' . shellescape(expand('<cword>')) . '" 2>/dev/null'
-  let &iskeyword = l:old_iskeyword
+  " Grab the whole module.func string as a WORD
+  let l:module_fun = expand('<cword>')
+  set iskeyword-=46
+  silent exe ':hor term bash -c "elixir-help ' . shellescape(l:module_fun) . '" 2>/dev/null'
 endfunction
 
 command! -buffer -nargs=1 ElixirKeywordPrg call ElixirKeywordHelp()

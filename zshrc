@@ -307,6 +307,35 @@ zstyle ':completion:*:*:-command-:*:*' group-order aliases builtins functions co
 # Completers to be used. I like to be able to expand aliases if I want
 zstyle ':completion:*' completer _expand_alias _extensions _complete _approximate
 
+# CUSTOM ZLE WIDGETS
+# -----------------
+
+# Custom accept-line widget displays confirmation prompt if the command contains
+# the substring 'prod'. This is useful to prevent accidental execution of
+# commands against prod
+#
+# An improvement on
+# https://medium.com/the-cloud-corner/cancel-a-terminal-command-during-preexec-zsh-function-c5b0d27b99fb
+ function confirm_potential_prod_command() {
+  if [[ "$BUFFER" =~ 'prod' ]]; then
+    printf "\n$(tput setab 1)$(tput setaf 7)Are you sure you want to run '%s'? [y/N]:$(tput sgr0)" "$BUFFER"
+    local reply
+    read -k 1 reply < /dev/tty
+    reply="${reply//[[:space:]]/}"   # Remove ALL whitespace
+    reply="${reply:l}"               # Convert to lowercase (Zsh feature)
+    if [[ "$reply" != "y" ]]; then
+      printf '\nDid not run "%s".' "$BUFFER"
+      zle -I
+      BUFFER=""
+      return 1
+    fi
+  fi
+  # Call the built-in accept-line
+  zle .accept-line
+}
+
+zle -N accept-line confirm_potential_prod_command
+
 # https://gist.github.com/LukeSmithxyz/e62f26e55ea8b0ed41a65912fbebbe52
 # See https://ttssh2.osdn.jp/manual/4/en/usage/tips/vim.html for cursor shapes
 # https://unix.stackexchange.com/questions/433273/changing-cursor-style-based-on-mode-in-both-zsh-and-vim

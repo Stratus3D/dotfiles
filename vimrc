@@ -366,6 +366,9 @@ endfunction
 
 command! -nargs=1 SetSpaces :call SetSpaces(<f-args>)
 
+" Load SortWords function
+source $HOME/.vim/sortwords.vim
+
 " Make Q repeat last macro
 nnoremap Q @@
 

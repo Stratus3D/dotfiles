@@ -42,6 +42,10 @@ Plugin 'xolox/vim-lua-ftplugin'
 Plugin 'groenewege/vim-less'
 Plugin 'cakebaker/scss-syntax.vim'
 
+" For displaying for hexadecimal color codes inline as the vim background
+" color
+Plugin 'ap/vim-css-color'
+
 " Mustache
 Plugin 'mustache/vim-mustache-handlebars'
 
@@ -140,12 +144,6 @@ filetype plugin indent on
 " Tmux
 " Disabled this plugin because it broke the C-l mapping to refresh Vim
 " Plugin 'christoomey/vim-tmux-navigator'
-
-" I decided against this plugin because 1). it's got a pretty specific use
-" case, and I don't do much with colors in CSS and 2). it's not really enough
-" color for me to get an accurate idea of what the color is when I'm in the
-" terminal.
-" Plugin 'ap/vim-css-color'
 
 " I no longer use haml
 " Plugin 'tpope/vim-haml'

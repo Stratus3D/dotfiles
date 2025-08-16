@@ -80,8 +80,8 @@ Plugin 'ludovicchabant/vim-gutentags'
 " http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 Plugin 'godlygeek/tabular'
 
-" For tab completion
-Plugin 'ervandew/supertab'
+" For insert mode tab completion
+Plugin 'lifepillar/vim-mucomplete'
 
 " Git plugins
 Plugin 'airblade/vim-gitgutter'

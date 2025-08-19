@@ -452,6 +452,9 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " ALE settings
 let g:ale_lint_delay = 400
 
+" Use ale suggestions for omni complete
+set omnifunc=ale#completion#OmniFunc
+
 " Configure ALE fixers
 " On all files, removing trailing lines and whitespace
 " On Elixir files, run mix format

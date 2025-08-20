@@ -449,6 +449,9 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 "let g:indent_guides_start_level = 0
 "let g:indent_guides_guide_size = 1
 
+" Turn on automatic mu completion suggestions at startup
+let g:mucomplete#enable_auto_at_startup = 1
+
 " ALE settings
 let g:ale_lint_delay = 400
 

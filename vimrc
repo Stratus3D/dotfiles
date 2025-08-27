@@ -99,6 +99,9 @@ set showmode
 set wildmenu
 set wildmode=full
 
+" Turn on insert mode text as-you-type completion
+set autocomplete
+
 " Configure as-you-type completions
 " menu - show menu when there are multiple possible completions
 " menuone - show menu even when there is only one possible completion

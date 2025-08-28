@@ -190,6 +190,9 @@ set complete+=kspell
 " Use tags for completion as well
 set complete+=t
 
+" Use omnifunc completion for LSP suggestions
+set complete+=o
+
 " TODO: Figure out what all these settings do and check in the ones that are
 " useful
 "set spell noci nosi noai nolist noshowmode

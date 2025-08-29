@@ -285,6 +285,11 @@ inoremap <Right> <esc> :echoe "Use l"<cr>
 inoremap <Up> <esc> :echoe "Use k"<cr>
 inoremap <Down> <esc> :echoe "Use j"<cr>
 
+" Map tab and shift-tab to insert completion navigation bindings when
+" completion menu is visible.
+inoremap <silent><expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 " Allow replacing of searched text by using `cs` on the first result and `n.`
 " on all consecutive results
 vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>

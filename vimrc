@@ -108,8 +108,19 @@ set autocomplete
 " noselect - do not select any menu item by default
 " noinsert - do not insert any text until the user selects it
 " preview - show extra info about the currently selected completion
-" fuzzy - suggest fuzzy matches
-set completeopt=menu,menuone,noselect,noinsert,fuzzy
+" popup - show extra info about completion suggestions
+set completeopt=menu,menuone,noselect,noinsert,popup
+
+" Keyword completion options
+" https://medium.com/usevim/set-complete-e76b9f196f0f
+" Use completions from spell check
+set complete+=kspell
+
+" Use tags for completion as well
+set complete+=t
+
+" Use omnifunc completion for LSP suggestions
+set complete+=o
 
 " Turn on cursor column highlighting
 set cursorcolumn
@@ -182,16 +193,6 @@ for d in glob('~/.vim/spell/*.add', 1, 1)
         silent exec 'mkspell! ' . fnameescape(d)
     endif
 endfor
-
-" Keyword completion options
-" Use completions from spell check
-set complete+=kspell
-
-" Use tags for completion as well
-set complete+=t
-
-" Use omnifunc completion for LSP suggestions
-set complete+=o
 
 " TODO: Figure out what all these settings do and check in the ones that are
 " useful

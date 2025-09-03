@@ -111,8 +111,9 @@ set autocomplete
 " popup - show extra info about completion suggestions
 set completeopt=menu,menuone,noselect,noinsert,popup
 
-" Keyword completion options
+" Insert completion options
 " https://medium.com/usevim/set-complete-e76b9f196f0f
+" For a full list of options run :help 'complete'
 " Use completions from spell check
 set complete+=kspell
 

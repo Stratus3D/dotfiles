@@ -114,6 +114,10 @@ set completeopt=menu,menuone,noselect,noinsert,popup
 " Insert completion options
 " https://medium.com/usevim/set-complete-e76b9f196f0f
 " For a full list of options run :help 'complete'
+
+" Use words from current file, buffers in any open window, and any open buffer
+set complete=.,w,b
+
 " Use completions from spell check
 set complete+=kspell
 

@@ -182,6 +182,10 @@ set wildignore+=/tmp/,*.so,*.swp,*.swo,*.zip,*.meta,*.prefab,*.png,*.jpg,*.beam
 " it before working on another buffer.
 set hidden
 
+" Configure Vim dictionary with OS words list
+" On arch linux run 'sudo pacman -S words' to install this file
+set dictionary+=/usr/share/dict/words
+
 " Turn on spell checking for all files
 set spell
 

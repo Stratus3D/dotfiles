@@ -118,6 +118,9 @@ set completeopt=menu,menuone,noselect,noinsert,popup
 " Use words from current file, buffers in any open window, and any open buffer
 set complete=.,w,b
 
+" Use words from dictionary for completion
+set complete+=k
+
 " Use completions from spell check
 set complete+=kspell
 

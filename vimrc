@@ -409,7 +409,6 @@ source $HOME/.vim/plugins.vim
 " For fzf and vim see
 " https://thevaluable.dev/fzf-vim-integration/
 " https://github.com/junegunn/fzf.vim
-
 " fzf.vim configuration dictionary
 let g:fzf_vim = {}
 
@@ -439,10 +438,10 @@ nnoremap <C-p> :Files<CR>
 nnoremap <C-i> :Lines<CR>
 
 " Vim-Erlang Skeleton settings
-let g:erl_replace_buffer=0
+let g:erl_replace_buffer = 0
 
 " Custom simplified Erlang templates (without all the verbose comment blocks)
-let g:erl_tpl_dir=$HOME."/dotfiles/templates/erlang"
+let g:erl_tpl_dir = $HOME."/dotfiles/templates/erlang"
 
 " Align line-wise comment delimiters flush left instead of following code
 " indentation

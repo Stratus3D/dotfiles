@@ -119,6 +119,7 @@ set completeopt=menu,menuone,noselect,noinsert,popup
 set complete=.,w,b
 
 " Use words from dictionary for completion
+" https://www.reddit.com/r/vim/comments/39l4jt/comment/cs4y7la/
 set complete+=k
 
 " Use completions from spell check

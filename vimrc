@@ -118,6 +118,15 @@ set completeopt=menu,menuone,noselect,noinsert,popup
 " Use words from current file, buffers in any open window, and any open buffer
 set complete=.,w,b
 
+" Use omnifunc completion for LSP suggestions
+set complete+=o
+
+" Use completefunc completion for UltiSnips snippet name suggestions
+set complete+=F
+
+" Use tags for completion as well
+set complete+=t
+
 " Use words from dictionary for completion
 " https://www.reddit.com/r/vim/comments/39l4jt/comment/cs4y7la/
 set complete+=k
@@ -125,11 +134,6 @@ set complete+=k
 " Use completions from spell check
 set complete+=kspell
 
-" Use tags for completion as well
-set complete+=t
-
-" Use omnifunc completion for LSP suggestions
-set complete+=o
 
 " Turn on cursor column highlighting
 set cursorcolumn

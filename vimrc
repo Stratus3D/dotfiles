@@ -486,6 +486,34 @@ let g:ale_lint_delay = 400
 " Use ale suggestions for omni complete
 set omnifunc=ale#completion#OmniFunc
 
+" Custom completion function for available UltiSnips snippets
+function! UltiSnipsSnippetName(findstart, base) abort
+  if a:findstart
+    " Locate the start of the word to be completed
+    let line = getline('.')
+    let col = col('.') - 1
+    while col > 0 && line[col - 1] =~ '\a'
+      let col -= 1
+    endwhile
+
+    return col
+  else
+    let suggestions = []
+
+    " Find any snippets with matching name
+    let snippets = UltiSnips#SnippetsInCurrentScope(1)
+    echom 'l:snippets %#+v\n' . string(l:snippets)
+
+    for snippet_name in keys(snippets)
+      let description = get(snippets, snippet_name)
+      let suggestion = {'word': snippet_name, 'menu': description, 'kind': 'S'}
+      call add(suggestions, suggestion)
+    endfor
+
+    return suggestions
+  endif
+endfunction
+
 " Configure ALE fixers
 " On all files, removing trailing lines and whitespace
 " On Elixir files, run mix format

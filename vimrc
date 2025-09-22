@@ -514,6 +514,9 @@ function! UltiSnipsSnippetName(findstart, base) abort
   endif
 endfunction
 
+" Use custom UltiSnips completion function as completefunc
+set completefunc=UltiSnipsSnippetName
+
 " Configure ALE fixers
 " On all files, removing trailing lines and whitespace
 " On Elixir files, run mix format

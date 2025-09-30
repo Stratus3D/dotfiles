@@ -507,7 +507,10 @@ function! UltiSnipsSnippetName(findstart, base) abort
     for snippet_name in keys(snippets)
       let description = get(snippets, snippet_name)
       let suggestion = {'word': snippet_name, 'menu': description, 'kind': 'S'}
-      call add(suggestions, suggestion)
+
+      if snippet_name =~ '^' . a:base
+        call add(suggestions, suggestion)
+      endif
     endfor
 
     return suggestions

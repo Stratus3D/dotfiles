@@ -489,7 +489,7 @@ set omnifunc=ale#completion#OmniFunc
 " Custom completion function for available UltiSnips snippets
 function! UltiSnipsSnippetName(findstart, base) abort
   if a:findstart
-    " Locate the start of the word to be completed
+    " Locate the start of the word to be completed, and return the index of it
     let line = getline('.')
     let col = col('.') - 1
     while col > 0 && line[col - 1] =~ '\a'

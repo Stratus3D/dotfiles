@@ -498,6 +498,7 @@ function! UltiSnipsSnippetName(findstart, base) abort
 
     return col
   else
+    " Find any snippets with matching name and return them as suggestions
     let suggestions = []
 
     " Find any snippets with matching name

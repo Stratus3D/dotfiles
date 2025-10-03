@@ -501,9 +501,7 @@ function! UltiSnipsSnippetName(findstart, base) abort
     " Find any snippets with matching name and return them as suggestions
     let suggestions = []
 
-    " Find any snippets with matching name
     let snippets = UltiSnips#SnippetsInCurrentScope(1)
-    echom 'l:snippets %#+v\n' . string(l:snippets)
 
     for snippet_name in keys(snippets)
       let description = get(snippets, snippet_name)

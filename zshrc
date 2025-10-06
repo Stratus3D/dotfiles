@@ -392,8 +392,17 @@ source $DOTFILES_DIR/mixins/aliases
 eval "$(navi widget zsh)"
 
 # fzf integrations
+#
 # https://github.com/junegunn/fzf?tab=readme-ov-file#fuzzy-completion-for-bash-and-zsh
 # https://pragmaticpineapple.com/four-useful-fzf-tricks-for-your-terminal/
+#
+# Bindings:
+#
+# Alt-C - change directory
+# Alt-R - search history
+# Alt-T - select filename
+#
+# Completion in a shell command: $ ./my-cmd **<TAB>
 source <(fzf --zsh)
 # Hack to get the Alt-C binding working on MacOS
 bindkey "ç" fzf-cd-widget

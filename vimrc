@@ -153,8 +153,8 @@ set mouse=
 set laststatus=2
 
 " Custom status bar
-set statusline=\ Filename:%-8t                               " Filename
-set statusline+=\ Encoding:\%-8{strlen(&fenc)?&fenc:'none'}  " File encoding
+set statusline=\ Filename:%-6t                               " Filename
+set statusline+=\ Encoding:\%-6{strlen(&fenc)?&fenc:'none'}  " File encoding
 set statusline+=\ Line\ Endings:%-6{&ff}                     " Line Endings
 set statusline+=\ Type:%-12y                                 " File Type
 set statusline+=%=%h%m%r                                     " Flags

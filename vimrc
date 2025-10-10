@@ -134,7 +134,6 @@ set complete+=k
 " Use completions from spell check
 set complete+=kspell
 
-
 " Turn on cursor column highlighting
 set cursorcolumn
 
@@ -423,9 +422,6 @@ let g:fzf_vim.preview_window = []
 
 " Jump to existing window if possible
 let g:fzf_vim.buffers_jump = 1
-
-
-let g:fzf_vim.buffers_options = '--border-label " Open Buffers "'
 
 " display fzf window at bottom like Ctrl-P
 let g:fzf_layout = {'window': { 'width': 1, 'height': 20, 'yoffset': 1}}

@@ -141,7 +141,7 @@ if [ "$(uname)" == "Linux" ]; then
 fi
 
 if [ "$(uname)" == "Darwin" ]; then
-  symlink "$dotfiles/templates/k9s/skin.yml" "$HOME/Library/Application Support/k9s/skin.yml"
+  symlink "$dotfiles/templates/k9s/stratus3d.yaml" "$HOME/Library/Application Support/k9s/stratus3d.yaml"
 else
   echo "Cannot link k9s skin"
 fi

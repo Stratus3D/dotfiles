@@ -145,6 +145,7 @@ if [ "$(uname)" == "Darwin" ]; then
   symlink "$dotfiles/templates/k9s/config.yaml" "$HOME/Library/Application Support/k9s/config.yaml"
 else
   symlink "$dotfiles/templates/k9s/stratus3d.yaml" "$HOME/.config/k9s/skins/stratus3d.yaml"
+  symlink "$dotfiles/templates/k9s/config.yaml" "$HOME/.config/k9s/config.yaml"
 fi
 
 # Download Vundle if not already downloaded

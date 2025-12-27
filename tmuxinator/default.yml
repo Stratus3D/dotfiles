@@ -7,4 +7,3 @@ windows:
         - vim $(git status --porcelain | sed -ne 's/^ M //p')
         - # zsh
         - # zsh
-        - # zsh

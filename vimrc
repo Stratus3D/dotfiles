@@ -595,10 +595,14 @@ augroup END
 augroup test
   autocmd!
 
-  " Run tests automatically when a file is saved
-  autocmd BufWritePost * if test#exists() |
-    \   TestFile |
-    \ endif
+  " We want to trigger running of tests when the buffer is written to disk, but
+  " only if manually written. If written as part of cdo or cfdo we don't want
+  " to run tests as that would interrupt the process of files in the quickfix
+  " list
+  autocmd CmdlineEnter : if getcmdtype() ==# ':' && getcmdline() =~# '^\s*cf\?do\>' | let g:__batch_process = 1 | endif
+  autocmd CmdlineLeave : if exists('g:__batch_process') | unlet g:__batch_process | endif
+
+  autocmd BufWritePost * if test#exists() && exists('g:__batch_process') | TestFile | endif
 augroup END
 
 " Taken from https://jeffkreeftmeijer.com/vim-number/

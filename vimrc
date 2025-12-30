@@ -574,6 +574,7 @@ autocmd BufRead,BufNewFile Jenkinsfile set filetype=groovy
 autocmd BufRead,BufNewFile *gitconfig set filetype=conf
 " I don't think *.avdl files are valid scala but this is close enough
 autocmd BufRead,BufNewFile *.avdl set filetype=scala
+autocmd BufRead,BufNewFile *aws/config set filetype=confini
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Auto commands

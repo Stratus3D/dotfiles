@@ -1,3 +1,4 @@
 k9s:
   ui:
+    enableMouse: true
     skin: stratus3d

@@ -156,3 +156,7 @@ filetype plugin indent on
 
 " In-editor file browser. Disabled because of poor performance
 "Plugin 'scrooloose/nerdtree'
+
+" Too noisy and distracting. Provides poor quality suggestions that slow me
+" down
+"Plugin 'github/copilot.vim'

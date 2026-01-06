@@ -225,6 +225,11 @@ brew_install_or_upgrade fzf
 # For programmable keyboard
 brew_install_or_upgrade vial
 
+# For declarative infrastructure
+brew_install_or_upgrade terraform
+brew_install_or_upgrade tflint
+brew_install_or_upgrade hashicorp/tap/terraform-ls
+
 ###############################################################################
 # Configure OSX
 ###############################################################################

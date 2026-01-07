@@ -230,6 +230,9 @@ brew_install_or_upgrade terraform
 brew_install_or_upgrade tflint
 brew_install_or_upgrade hashicorp/tap/terraform-ls
 
+# For Kubernetes management
+brew_install_or_upgrade kubectl
+
 ###############################################################################
 # Configure OSX
 ###############################################################################

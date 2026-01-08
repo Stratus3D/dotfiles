@@ -225,6 +225,8 @@ brew_install_or_upgrade fzf
 # For programmable keyboard
 brew_install_or_upgrade vial
 
+# For software infrastructure
+
 # For declarative infrastructure
 brew_install_or_upgrade terraform
 brew_install_or_upgrade tflint

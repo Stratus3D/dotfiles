@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+# Script to pick a random word from the wordlist script that loads the EFF
+# word list
+wordlist | grep "^$(shuf -i 1-6 -n 5 --random-source=/dev/urandom | xargs | sed 's/ //g')" - | awk '{print $2}'

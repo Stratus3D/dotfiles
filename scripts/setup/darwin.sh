@@ -235,6 +235,11 @@ brew_install_or_upgrade hashicorp/tap/terraform-ls
 # For Kubernetes management
 brew_install_or_upgrade kubectl
 
+# MacOS specific packages
+
+# Hammerspoon for keyboard shortcuts
+brew install hammerspoon
+
 ###############################################################################
 # Configure OSX
 ###############################################################################

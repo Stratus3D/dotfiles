@@ -127,6 +127,7 @@ asdf plugin add yarn https://github.com/twuni/asdf-yarn.git || true
 asdf plugin add rust https://github.com/code-lever/asdf-rust.git || true
 asdf plugin add golang https://github.com/asdf-community/asdf-golang.git || true
 asdf plugin add bats https://github.com/timgluz/asdf-bats.git || true
+asdf plugin add shellcheck https://github.com/luizm/asdf-shellcheck.git || true
 
 # Install the software versions listed in the .tool-versions file in $HOME
 asdf install

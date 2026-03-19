@@ -8,3 +8,5 @@ rebar 3.16.1
 python 3.11.2 2.7.18
 yarn 1.16.0
 golang 1.21.3
+shellcheck 0.11.0
+shfmt 3.13.1

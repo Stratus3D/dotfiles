@@ -23,6 +23,7 @@ Operations:
   --ae       Asciidoc    -> Epub
   --ap       Asciidoc    -> PDF
   --at       Asciidoc    -> Text
+  --ar       Asciidoc    -> Rich Text
   --akp      Asciidoc    -> PDF formatted for E-readers and mobile devices
 
 Transform a document from one format to another. This script was originally a
@@ -88,6 +89,10 @@ docbook_to_text() {
   pandoc --from docbook --to plain -s
 }
 
+docbook_to_rich_text() {
+  pandoc --from docbook --to rtf -s
+}
+
 # Conversion functions
 
 # Asciidoc to Markdown conversion function, since pandoc can't do this natively.
@@ -120,6 +125,10 @@ asciidoc_to_html() {
 
 asciidoc_to_text() {
   asciidoc_to_docbook < "$1" | docbook_to_text > "$2"
+}
+
+asciidoc_to_rich_text() {
+  asciidoc_to_docbook < "$1" | docbook_to_rich_text > "$2"
 }
 
 resolve_input() {
@@ -198,6 +207,10 @@ case ${1:-} in
     ;;
   --at)
     asciidoc_to_text "$input" "$output"
+    shift
+    ;;
+  --ar)
+    asciidoc_to_rich_text "$input" "$output"
     shift
     ;;
   *)

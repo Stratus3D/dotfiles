@@ -193,6 +193,9 @@ brew_install_or_upgrade rabbitmq
 # For diffs of Microsoft Office files
 brew_install_or_upgrade tika
 
+# For internet video and audio download
+brew_install_or_upgrade yt-dlp
+
 # For graphics and file metadata on the command line
 
 # Install pastel for viewing and manipulating colors on the command line

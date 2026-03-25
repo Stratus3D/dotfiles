@@ -1,6 +1,6 @@
 erlang 28.0.2
 elixir 1.18.4-otp-28
-lua 5.4.6
+lua 5.5.0
 ruby 3.4.8
 nodejs 23.2.0
 postgres 17.5

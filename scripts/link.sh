@@ -117,7 +117,7 @@ IFS=$ORIGINAL_IFS
 make_dir_if_missing "$HOME/.tmuxinator"
 
 # Create directory for Vim undo history
-make_dir_if_missing "$dotfiles/vim/undodir"
+make_dir_if_missing "$HOME/.vim/undodir"
 
 # link the default tmuxinator project
 symlink "$dotfiles/tmuxinator/default.yml" "$HOME/.tmuxinator/default.yml"

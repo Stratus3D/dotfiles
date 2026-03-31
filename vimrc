@@ -156,7 +156,7 @@ set statusline=\ Filename:%-6t                               " Filename
 set statusline+=\ Encoding:\%-6{strlen(&fenc)?&fenc:'none'}  " File encoding
 set statusline+=\ Line\ Endings:%-6{&ff}                     " Line Endings
 set statusline+=\ Type:%-6y                                  " File Type
-set statusline+=%{gutentags#statusline()}                    " Show gutentags status
+set statusline+=\ %{gutentags#statusline()}                  " Show gutentags status
 set statusline+=%=%h%m%r                                     " Flags
 set statusline+=\ %l/%L                                      " Cursor line and total lines
 set statusline+=\ %c                                         " Cursor column

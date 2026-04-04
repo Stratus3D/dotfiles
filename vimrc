@@ -477,6 +477,13 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 "let g:indent_guides_start_level = 0
 "let g:indent_guides_guide_size = 1
 
+" Update status line when Gutentags status changes
+augroup MyGutentagsStatusLineRefresher
+  autocmd!
+  autocmd User GutentagsUpdating let &stl=&stl
+  autocmd User GutentagsUpdated let &stl=&stl
+augroup END
+
 " ALE settings
 let g:ale_lint_delay = 400
 

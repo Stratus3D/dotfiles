@@ -484,6 +484,11 @@ augroup MyGutentagsStatusLineRefresher
   autocmd User GutentagsUpdated let &stl=&stl
 augroup END
 
+" I want tags from files in dependencies and these are typically ignored by
+" version control. I then manually ignore directories that contain build
+" artifacts like elixir's `/_build`.
+let g:gutentags_file_list_command = 'rg --files --no-ignore-vcs -g \!_build -g \!.elixir_ls -g \!tmp'
+
 " ALE settings
 let g:ale_lint_delay = 400
 

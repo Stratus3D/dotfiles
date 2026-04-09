@@ -489,6 +489,11 @@ augroup END
 " artifacts like elixir's `/_build`.
 let g:gutentags_file_list_command = 'rg --files --no-ignore-vcs -g \!_build -g \!.elixir_ls -g \!tmp'
 
+" Because I include a lot of files I use this to exclude specific file types
+" that I know aren't useful and would otherwise clutter up my completion
+" suggestions.
+let g:gutentags_ctags_exclude = ['*.beam']
+
 " ALE settings
 let g:ale_lint_delay = 400
 

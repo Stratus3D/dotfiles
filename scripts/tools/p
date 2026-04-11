@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+# Extract data out of a tmux pane
+#
+# Inspired by:
+#
+# * script
+# * https://github.com/strang1ato/nhi
+# * https://github.com/LukeSmithxyz/st/blob/master/st-copyout
+# * https://ianthehenry.com/posts/tmux-copy-last-command/
+# * https://leancrew.com/all-this/2011/11/last-output-from-terminal/
+
+if [ -z "${1:-}" ]; then
+  tmux capture-pane -pS -
+else
+  tmux capture-pane -pS - | rg $@ | fzf
+fi

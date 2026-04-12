@@ -19,5 +19,5 @@ IFS=$'\t\n' # Stricter IFS settings
 if [ -z "${1:-}" ]; then
   tmux capture-pane -pS -
 else
-  tmux capture-pane -pS - | rg $@ | fzf
+  tmux capture-pane -pS - | rg $@ | tac | fzf | pbcopy
 fi

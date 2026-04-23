@@ -51,6 +51,11 @@ get_value() {
   fi
 }
 
+
+for cmd in rg; do
+  command -v "$cmd" &>/dev/null || { echo "Error: $cmd is required but not installed." >&2; exit 1; }
+done
+
 # Patterns
 patterns_files='[a-zA-Z0-9_\-\.]+\.[a-zA-Z0-9]+'
 patterns_paths='(?:\./)?(?:[a-zA-Z0-9_\-\.]+/)*[a-zA-Z0-9_\-\.]+\.[a-zA-Z0-9]+'

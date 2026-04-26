@@ -91,13 +91,13 @@ while :; do
   esac
 done
 
-if [ -z "$pattern" ] && [ -z "${list:-}" ]; then
+if [ -z "${pattern:-}" ] && [ -z "${list:-}" ]; then
     error_exit "Pattern name must be specified"
 fi
 
 # Valid arguments if we get here
 if [ "${list:-}" ]; then
-  typeset -p | grep -o "patterns_[[:alpha:]]*" | sed 's/^patterns_//'
+  typeset -p | grep -o "patterns_[[:alpha:][:digit:]]*" | sed 's/^patterns_//'
 else
   var_name="patterns_$pattern"
   pattern_regex="${!var_name:-}"

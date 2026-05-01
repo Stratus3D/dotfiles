@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+# Script for automated starting of tmuxinator projects, even if they don't
+# exist yet. If a tmuxinator project already exists this script just starts it.
+# If a tmuxinator project doesn't exist but the directory for the project
+# exists in $DEVELOPMENT_DIR this script copies the tmuxinator default yaml,
+# updates it with project details, and then starts the new tmuxinator project.
+
+error_exit() {
+  printf "%s\n" "$1" 1>&2
+  exit "${2:-1}" # default exit status 1
+}
+
+project="${1:-}"
+
+if [ -z "$project" ]; then
+    error_exit "Project name not provided"
+fi
+
+projects="$(tmuxinator list -n | tail -n +2)"
+
+if ! grep "$project" <<< "$projects" > /dev/null; then
+  if [ -d "$DEVELOPMENT_DIR/$project" ]; then
+    # Generate new project
+    tmuxinator_default_yaml="$HOME/.tmuxinator/default.yml"
+    tmuxinator_project_yaml="$HOME/.tmuxinator/$project.yml"
+    cp "$tmuxinator_default_yaml" "$tmuxinator_project_yaml"
+
+    tmuxinator_project_yaml="$HOME/.tmuxinator/$project.yml"
+    edited_project_yaml="$(xfmt --yj < "$tmuxinator_project_yaml" | jq ".name = \"$project\" | .root = \"~/devel/$project\"" | xfmt --jy)"
+    echo "$edited_project_yaml" > "$tmuxinator_project_yaml"
+    tmuxinator start "$project"
+  else
+    error_exit "Project does not exist in $DEVELOPMENT_DIR"
+  fi
+fi
+
+# Start existing project
+tmuxinator start "$project"

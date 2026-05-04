@@ -6,10 +6,11 @@ cardinality
 namespace
 
 # Brand/product/application names
-Terraform
-Elasticsearch
-GitHub
+asdf
 Avro
 Ecto
+Elasticsearch
+GitHub
+Kubernetes
 Lua
-asdf
+Terraform

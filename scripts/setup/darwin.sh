@@ -207,6 +207,15 @@ brew_install_or_upgrade mat2
 # For image metadata manipulation
 brew_install_or_upgrade exiftool
 
+# For notifications on MacOS (and for the notify-send-macos script)
+brew_install_or_upgrade terminal-notifier
+
+# For programmable CLI menus
+brew_install_or_upgrade fzf
+
+# Java language server
+install_or_upgrade jdtls
+
 # For artwork
 
 # Gimp for image editing
@@ -216,12 +225,6 @@ brew cask install gimp
 # Inkscape for vector graphics
 brew cask install xquartz
 brew cask install inkscape
-
-# For notifications on MacOS (and for the notify-send-macos script)
-brew_install_or_upgrade terminal-notifier
-
-# For programmable CLI menus
-brew_install_or_upgrade fzf
 
 # For Hardware
 

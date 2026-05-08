@@ -541,7 +541,8 @@ set completefunc=UltiSnipsSnippetName
 " https://petermalmgren.com/rc-batch-day-9/
 let g:ale_fixers = {
 \  '*': ['remove_trailing_lines', 'trim_whitespace'],
-\  'elixir': ['mix_format']
+\  'elixir': ['mix_format'],
+\  'java': ['eclipselsp', 'google_java_format']
 \}
 
 " Enable specific linters for certain file types

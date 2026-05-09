@@ -548,7 +548,9 @@ let g:ale_fixers = {
 " Enable specific linters for certain file types
 let g:ale_linters = {
 \  'erlang': ['dialyzer', 'erlc', 'erlfmt', 'elvis'],
-\  'go': ['go build', 'staticcheck']
+"\  'elixir': ['elixir-ls', 'credo'],
+\  'go': ['go build', 'staticcheck'],
+\  'java': ['eclipselsp', 'google_java_format', 'javac']
 \}
 
 " Automatically run fixer macros on buffer save, and linters when leaving

@@ -11,3 +11,4 @@ golang 1.21.3
 shellcheck 0.11.0
 shfmt 3.13.1
 java temurin-25.0.1+8.0.LTS
+gradle 9.2.0

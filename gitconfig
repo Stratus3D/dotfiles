@@ -129,8 +129,9 @@
   # Sort branches by recently updated
   sort = committerdate
 [commit]
-  # Show the diff below the commit message for context when writing the message
-  verbose = true
+  # The diff below the commit message adds context, but when diffs are present
+  # Vim becomes unusable. Don't show the diff to ensure vim is always fast.
+  verbose = false
 
   # Template for new commit messages
   template = ~/dotfiles/templates/commit-template

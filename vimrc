@@ -221,11 +221,11 @@ set lazyredraw
 " Display the output of an *incomplete* command in the bottom right
 set showcmd
 
-" Use the old vim regex engine (version 1, as opposed to version 2, which was
-" introduced in Vim 7.3.969). The Ruby syntax highlighting is significantly
-" slower with the new regex engine.
-" https://github.com/joshukraine/dotfiles/blob/79aae9ac707460877d0fb36a3ef6a9b1ea7c44ce/vim-performance.md
-set re=1
+" In Vim 7 the new regex engine (2) was very slow on Ruby code, so we used the
+" only regex engine (1). With Vim 9 this no longer appears to be a problem,
+" and the new regex engine is much faster on Typescript than the old engine.
+" We let Vim select the fastest engine now.
+set regexpengine=0
 
 " Maintain edit history between sessions in file
 set undofile

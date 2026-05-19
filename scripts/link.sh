@@ -18,7 +18,7 @@ border="====="
 dotfiles=$HOME/dotfiles
 
 # List of space separated files/folders to symlink in homedir (these are the typical "dotfiles")
-files="vimrc vim/UltiSnips vim/ftplugin vim/spell vim/sortwords.vim vim/plugins.vim zshrc bashrc tmux.conf gitignore_global ctags screenrc \
+files="vimrc vim/UltiSnips vim/ftplugin vim/spell vim/sortwords.vim vim/plugins.vim vim/whitespace.vim zshrc bashrc tmux.conf gitignore_global ctags screenrc \
     jshintrc rsync-exclude tool-versions agignore asdfrc psqlrc hushlogin \
     my.cnf inputrc editrc iex.exs curlrc irbrc gemrc ripgrep-ignore \
     gitattributes gnuplot digrc default-gems"

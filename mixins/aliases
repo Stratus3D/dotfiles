@@ -58,3 +58,7 @@ alias rgx="rg --type elixir"
 # this allows me to use my vi bindings from .inputrc in iex
 # https://elixirforum.com/t/i-d-love-to-see-iex-command-line-supporting-vi-command-line-editing/3365
 alias iex='rlwrap --always-readline --no-children iex'
+
+# Tree command can produce very verbose output in certain projects, make it
+# more compact
+alias tree='tree --gitignore --prune'

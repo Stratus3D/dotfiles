@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+PATTERN_OPTIONS="emails files ipv4 ipv6 paths urls"
+ACTION_OPTIONS="copy edit open"
+
+# Arguments, fall back on fzf menu if they are not provided
+PATTERN="${1:-$(sed 's/ /\n/g' <<< "$PATTERN_OPTIONS" | fzf --prompt="Select a pattern to extract:")}"
+ACTION="${2:-$(sed 's/ /\n/g' <<< "$ACTION_OPTIONS" | fzf --prompt="Select action to take:")}"
+
+action() {
+  case "$ACTION" in
+    "open")
+      xargs -L 1 open
+      ;;
+      "edit")
+      "$EDITOR"
+      ;;
+      "copy")
+      pbcopy
+      ;;
+  esac
+}
+
+# Extract the specified elements by pattern
+patterns -p "$PATTERN" |
+  # Select one or more elements to operate on
+  fzf --multi --bind 'ctrl-a:select-all,ctrl-d:deselect-all' |
+  # Perform the specified operation on them
+  action

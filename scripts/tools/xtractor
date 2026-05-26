@@ -6,8 +6,9 @@ set -euo pipefail
 #ORIGINAL_IFS=$IFS
 IFS=$'\t\n' # Stricter IFS settings
 
-PATTERN_OPTIONS="emails files ipv4 ipv6 paths urls"
-ACTION_OPTIONS="copy edit open"
+# Order here by frequency of use
+PATTERN_OPTIONS="urls files paths emails ipv4 ipv6"
+ACTION_OPTIONS="copy open edit"
 
 # Arguments, fall back on fzf menu if they are not provided
 PATTERN="${1:-$(sed 's/ /\n/g' <<< "$PATTERN_OPTIONS" | fzf --prompt="Select a pattern to extract:")}"

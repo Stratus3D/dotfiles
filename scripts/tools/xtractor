@@ -11,8 +11,8 @@ PATTERN_OPTIONS="urls files paths emails ipv4 ipv6"
 ACTION_OPTIONS="copy open edit"
 
 # Arguments, fall back on fzf menu if they are not provided
-PATTERN="${1:-$(sed 's/ /\n/g' <<< "$PATTERN_OPTIONS" | fzf --prompt="Select a pattern to extract:")}"
-ACTION="${2:-$(sed 's/ /\n/g' <<< "$ACTION_OPTIONS" | fzf --prompt="Select action to take:")}"
+PATTERN="${1:-$(fzf --prompt="Select element to extract:" <<< "${PATTERN_OPTIONS// /$'\n'}")}"
+ACTION="${2:-$(fzf --prompt="Select action:" <<< "${ACTION_OPTIONS// /$'\n'}")}"
 
 action() {
   case "$ACTION" in

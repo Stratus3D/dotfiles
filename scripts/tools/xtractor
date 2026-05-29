@@ -14,6 +14,11 @@ ACTION_OPTIONS="copy open edit"
 PATTERN="${1:-$(fzf --prompt="Select element to extract:" <<< "${PATTERN_OPTIONS// /$'\n'}")}"
 ACTION="${2:-$(fzf --prompt="Select action:" <<< "${ACTION_OPTIONS// /$'\n'}")}"
 
+error_exit() {
+  printf "%s\n" "$1" 1>&2
+  exit "${2:-1}" # default exit status 1
+}
+
 action() {
   case "$ACTION" in
     "open")
@@ -24,6 +29,9 @@ action() {
       ;;
       "copy")
       pbcopy
+      ;;
+    *)
+      error_exit "Unknown action: $ACTION" >&2
       ;;
   esac
 }

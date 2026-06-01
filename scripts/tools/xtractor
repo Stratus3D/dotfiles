@@ -23,6 +23,9 @@ action() {
   case "$ACTION" in
     "open")
       xargs -L 1 open
+      # If this scripts runs inside a tmux popup this open command won't work
+      # unless this script continues running
+      sleep 1
       ;;
     "edit")
       # Need to fix "Vim: Warning: Input is not from a terminal" warning

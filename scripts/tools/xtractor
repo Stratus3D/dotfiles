@@ -19,11 +19,15 @@ error_exit() {
   exit "${2:-1}" # default exit status 1
 }
 
+# Validate arguments
+[[ " $PATTERN_OPTIONS " == *" $PATTERN "* ]] || error_exit "Unknown pattern: $PATTERN. Valid options: $PATTERN_OPTIONS"
+[[ " $ACTION_OPTIONS " == *" $ACTION "* ]]   || error_exit "Unknown action: $ACTION. Valid options: $ACTION_OPTIONS"
+
 action() {
   case "$ACTION" in
     "open")
       xargs -L 1 open
-      # If this scripts runs inside a tmux popup this open command won't work
+      # If this script runs inside a tmux popup this open command won't work
       # unless this script continues running
       sleep 1
       ;;
@@ -34,9 +38,6 @@ action() {
       ;;
     "copy")
       pbcopy
-      ;;
-    *)
-      error_exit "Unknown action: $ACTION" >&2
       ;;
   esac
 }

@@ -97,10 +97,6 @@ curl -s 'https://download.opensuse.org/repositories/home:/ungoogled_chromium/Ubu
 sudo apt-get update
 install_or_upgrade ungoogled-chromium
 
-# Redshift dependencies
-install_or_upgrade autopoint intltool libdrm-dev libxcb1-dev libxcb-randr0-dev
-#sudo apt-get install -y libgeoclue-dev geoclue-hostip
-
 # WxWidgets is needed for Erlang
 install_or_upgrade libwxgtk3.0-gtk3-dev libpng-dev
 

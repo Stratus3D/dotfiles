@@ -166,3 +166,7 @@ install_or_upgrade navi
 
 # For programmable keyboard
 install_or_upgrade vial
+
+# Adjust the color temperature of screen for evenings
+# https://wiki.archlinux.org/title/Redshift
+install_or_upgrade redshift

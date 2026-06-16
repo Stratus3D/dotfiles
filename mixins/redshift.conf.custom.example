@@ -1,0 +1,8 @@
+# See https://forum.manjaro.org/t/redshift-is-dead-long-live-redshift/175044
+# Copy this file ~/.config/redshift.conf and then customize it
+[redshift]
+location-provider=manual
+
+[manual]
+lat=60.00
+lon=-60.00

@@ -22,14 +22,14 @@ EOF
 }
 # Get the name of the platform running this script
 dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd );
-platform=$("$dir/platform_name.sh");
+platform=$(uname);
 
 interface=$1
 command=$2
 
 off_command=""
 on_command=""
-if [[ "$platform" == 'darwin' ]]; then
+if [[ "$platform" == 'Darwin' ]]; then
     off_command="sudo ifconfig $interface down";
     on_command="sudo ifconfig $interface up";
 else

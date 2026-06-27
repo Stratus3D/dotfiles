@@ -166,6 +166,9 @@ brew_install_or_upgrade pass-otp
 # For working with JWT tokens on the command line
 brew_install_or_upgrade step
 
+# SSL testing utility tool
+brew_install_or_upgrade testssl
+
 # Elm for packages that require it
 brew_install_or_upgrade elm
 

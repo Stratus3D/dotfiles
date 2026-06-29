@@ -123,6 +123,9 @@ install_or_upgrade gnupg
 install_or_upgrade pass
 install_or_upgrade pass-otp
 
+# SSL testing utility tool
+install_or_upgrade testssl
+
 # For wrapping shells that don't use readline
 install_or_upgrade rlwrap
 

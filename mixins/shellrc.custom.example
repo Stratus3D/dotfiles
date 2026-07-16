@@ -3,5 +3,4 @@
 # and .zshrc.
 
 # These are variables that you will most likely need to set
-export HASTEBIN_URL="https://hastebin.com"
 export BASE_TICKET_URL="https://atlassian.net/browse/"

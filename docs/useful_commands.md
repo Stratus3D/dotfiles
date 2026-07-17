@@ -23,7 +23,7 @@
 * `set list!` to toggle showing of whitespace characters.
 * `g;` go back a change position
 * `g,` go forward a change position
-* `:'<,'>:w !<command>` pipe selection to STDIN of `<command>`. For example, to count the words selected run `:'<,'>:w !wc -w` or `:'<,'>:w !haste|pbcopy` to send to pastebin and copy the URL.
+* `:'<,'>:w !<command>` pipe selection to STDIN of `<command>`.
 * `g^g` print number of selected lines when in visual mode
 * `^x^l` complete whole line
 * `cfdo s/foo/bar/g | update` - find and replace in all files in quickfix

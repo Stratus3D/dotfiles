@@ -24,6 +24,9 @@ install_or_upgrade tmux
 # For diffs
 install_or_upgrade git-delta
 
+# For git stats
+install_or_upgrade git-quick-stats
+
 # For searching code and other files
 install_or_upgrade ripgrep
 

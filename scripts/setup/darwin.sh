@@ -69,6 +69,9 @@ brew_install_or_upgrade zsh
 # For version control
 brew_install_or_upgrade git
 
+# For git commit stats
+brew_install_or_upgrade git-quick-stats
+
 # For code search
 brew_install_or_upgrade ripgrep
 

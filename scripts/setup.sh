@@ -63,9 +63,9 @@ unamestr=$(uname)
 # Run the OS-specific setup scripts, needed here so git and other commands are
 # available for later steps
 if [[ "$unamestr" == 'Darwin' ]]; then
-    "$DOTFILE_SCRIPTS_DIR/setup/darwin.sh"
+  "$DOTFILE_SCRIPTS_DIR/setup/darwin.sh"
 elif [[ "$unamestr" == 'Linux' ]]; then
-    "$DOTFILE_SCRIPTS_DIR/setup/linux.sh"
+  "$DOTFILE_SCRIPTS_DIR/setup/arch"
 fi
 
 # Install antigen

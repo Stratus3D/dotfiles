@@ -1,0 +1,30 @@
+= Share a Git Repository without a host
+
+Sometimes it is necessary to share a full Git repository without a host. For
+sharing patches we can use `git diff` and generate a patch file, but for a full
+repository with history we need something more sophisticated. For this we can
+use `git bundle`. Git bundles are nice because they are a single file that is
+compressed but can still be cloned as if they are a regular repository.
+
+== Bundling
+
+1. Generate the bundle. Navigate to the repository you want to bundle and run
+  `git bundle create repo.bundle --all`.
+2. Optionally convert it to ASCII for easier sharing. In some environments it
+  is not possible or permitted to share binary files. Converting to base64 or
+  base85 ensures the file is represented as ASCII.
+  ** base64: `base64 -i repo.bundle > repo.bundle.b64`
+  ** base85: `python3 -c 'import base64,sys;sys.stdout.write(base64.b85encode(sys.stdin.buffer.read()).decode())' > repo.bundle.b85 < repo.bundle`
+
+== Unpacking
+
+The steps above, but in reverse.
+
+1. Decode the file if in base64 or base85:
+  ** base64: `base64 -d -i repo.bundle.b64 > repo.bundle`
+  ** base85: `python3 -c 'import base64,sys;sys.stdout.buffer.write(base64.b85decode(sys.stdin.read()))' < repo.bundle.b85 > repo.bundle`
+2. Clone the bundle to the desired location on the file system. `git clone repo.bundle destination-directory`
+
+== Links
+
+* https://git-scm.com/docs/git-bundle

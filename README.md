@@ -5,7 +5,7 @@ My Dotfiles
 
 **Everything I need to get setup on a new machine for software development.**
 
-This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a script to symlink all the config files and directories in place, and a set of setup scripts that install all the tools I need on Ubuntu or OSX. The [Gruvbox Dark colorscheme](https://github.com/morhetz/gruvbox) is used for Vim and the terminal emulator profiles.
+This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a script to symlink all the config files and directories in place, and a set of setup scripts that install all the tools I need on Ubuntu or MacOS. The [Gruvbox Dark colorscheme](https://github.com/morhetz/gruvbox) is used for Vim and the terminal emulator profiles.
 
 I primarily write software in Erlang, Elixir, Go, and Bash and occasionally in Ruby and Lua. The plugins and config specified in this repo is for polyglot local development in these languages.
 
@@ -31,10 +31,10 @@ I primarily write software in Erlang, Elixir, Go, and Bash and occasionally in R
         chmod +x setup.sh
         ./setup.sh | tee ~/setup.log
 
-    On Debian this is all you need to do. Everything should be installed and configured correctly. On OSX there are two remaining steps.
+    On Debian this is all you need to do. Everything should be installed and configured correctly. On MacOS there are two remaining steps.
 
 
-2. (OSX only) Configure Terminal.app to use the custom profile stored in the dotfiles directory. In the Terminal preferences window under the Profiles tab click the "import" button and navigate to `~/dotfiles/terminal.app_profile/` and select the profile file.
+2. (MacOS only) Configure Terminal.app to use the custom profile stored in the dotfiles directory. In the Terminal preferences window under the Profiles tab click the "import" button and navigate to `~/dotfiles/terminal.app_profile/` and select the profile file.
 
 ## Configuration
 
@@ -54,19 +54,19 @@ This is software that I use for my day-to-day work. All of this is installed via
 * [Ungoogled Chromium](https://github.com/Eloston/ungoogled-chromium)
 * [Z shell](http://zsh.sourceforge.net/) as my interactive shell
 
-OSX Only
+MacOS Only
 
 * [Hammerspoon](http://www.hammerspoon.org/)
 * [Hammerspoon ShiftIt](https://github.com/peterklijn/hammerspoon-shiftit) for easy window resizing
 
 ## Documentation
 
-Offline documentation suitable for day to day use.
+I primarily use [devdocs.io](https://devdocs.io) for programming language API documentation. I want to find or build a devdocs.io CLI viewer that I can use within Vim and the shell.
 
-* Erlang: [http://erldocs.com/](http://erldocs.com/)
+Other documentation I use occasionally:
+
+* Erlang: [https://erldocs.com/](https://erldocs.com/)
 * Elixir: [http://elixir-lang.org/docs.html](http://elixir-lang.org/docs.html)
-* Ruby: [http://pjkh.com/articles/building-your-own-rails-and-ruby-searchable-api-docs/](http://pjkh.com/articles/building-your-own-rails-and-ruby-searchable-api-docs/) and [http://shynnergy.com/2012/02/create-local-ruby-on-rails-documentation-for-offline-use/](http://shynnergy.com/2012/02/create-local-ruby-on-rails-documentation-for-offline-use/)
-* JavaScript: [https://developer.mozilla.org/media/developer.mozilla.org.tar.gz](https://developer.mozilla.org/media/developer.mozilla.org.tar.gz)
 * C: [http://www.gnu.org/software/libc/manual/html_mono/libc.html](http://www.gnu.org/software/libc/manual/html_mono/libc.html)
 * Make: [http://www.gnu.org/software/make/manual/make.html](http://www.gnu.org/software/make/manual/make.html)
 

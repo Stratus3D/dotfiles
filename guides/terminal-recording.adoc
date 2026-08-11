@@ -26,7 +26,7 @@ We can record a terminal session directory with Asciinema. However, as detailed 
 
 Steps:
 
-1. Install scriptreplay_ng if you haven't already link:[install script]
+1. Install scriptreplay_ng if you haven't already link:../scripts/install/scriptreplay_ng[install script]
 2. Record the session:
 
 [source, sh]

@@ -1,6 +1,6 @@
 = Vim Server
 
-Vim's `--servername` fetaure allows another program/shell (client) to issue a command in an already running Vim instance (server). See `:h client-server` for details. This is useful in tmux where we may want to issue a command in one pane to open a file in a vim instance running in another pane.
+Vim's `--servername` feature allows another program/shell (client) to issue a command in an already running Vim instance (server). See `:h client-server` for details. This is useful in tmux where we may want to issue a command in one pane to open a file in a vim instance running in another pane.
 
 Basic usage:
 

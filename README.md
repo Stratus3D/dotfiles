@@ -5,7 +5,7 @@ My Dotfiles
 
 **Everything I need to get setup on a new machine for software development.**
 
-This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a script to symlink all the config files and directories in place, and a set of setup scripts that install all the tools I need on Ubuntu or MacOS. The [Gruvbox Dark colorscheme](https://github.com/morhetz/gruvbox) is used for Vim and the terminal emulator profiles.
+This repository contains my Vim, tmux, Zsh, Bash, and asdf config files, a script to symlink all the config files and directories in place, and a set of setup scripts that install all the tools I need on Arch Linux or MacOS. The [Gruvbox Dark colorscheme](https://github.com/morhetz/gruvbox) is used for Vim and the terminal emulator profiles.
 
 I primarily write software in Erlang, Elixir, Go, and Bash and occasionally in Ruby and Lua. The plugins and config specified in this repo is for polyglot local development in these languages.
 
@@ -45,10 +45,10 @@ Configurations for all the tools are need are checked into this repository. All 
 This is software that I use for my day-to-day work. All of this is installed via the `setup.sh` script.
 
 * [asdf](https://github.com/asdf-vm/asdf) for programming language version management
-* [Dash/ZealDocs](http://zealdocs.org/) and [devdocs.io](https://devdocs.io/) for documentation
+* [Dash/ZealDocs](https://zealdocs.org/) and [devdocs.io](https://devdocs.io/) for documentation
 * [Universal Ctags](https://ctags.io/) for code navigation
 * [Git](https://git-scm.com/) for version control
-* [Vim](http://www.vim.org/) for text editing
+* [Vim](https://www.vim.org/) for text editing
 * [Tmux](https://tmux.github.io/) for terminal sessions and window panes
 * [Tmuxinator](https://github.com/tmuxinator/tmuxinator) for managing tmux sessions
 * [Ungoogled Chromium](https://github.com/Eloston/ungoogled-chromium)
@@ -56,7 +56,7 @@ This is software that I use for my day-to-day work. All of this is installed via
 
 MacOS Only
 
-* [Hammerspoon](http://www.hammerspoon.org/)
+* [Hammerspoon](https://www.hammerspoon.org/)
 * [Hammerspoon ShiftIt](https://github.com/peterklijn/hammerspoon-shiftit) for easy window resizing
 
 ## Documentation
@@ -66,9 +66,9 @@ I primarily use [devdocs.io](https://devdocs.io) for programming language API do
 Other documentation I use occasionally:
 
 * Erlang: [https://erldocs.com/](https://erldocs.com/)
-* Elixir: [http://elixir-lang.org/docs.html](http://elixir-lang.org/docs.html)
-* C: [http://www.gnu.org/software/libc/manual/html_mono/libc.html](http://www.gnu.org/software/libc/manual/html_mono/libc.html)
-* Make: [http://www.gnu.org/software/make/manual/make.html](http://www.gnu.org/software/make/manual/make.html)
+* Elixir: [https://elixir-lang.org/docs.html](https://elixir-lang.org/docs.html)
+* C: [https://www.gnu.org/software/libc/manual/html_mono/libc.html](https://www.gnu.org/software/libc/manual/html_mono/libc.html)
+* Make: [https://www.gnu.org/software/make/manual/make.html](https://www.gnu.org/software/make/manual/make.html)
 
 ## Repositories that I referred to when creating these dotfiles
 

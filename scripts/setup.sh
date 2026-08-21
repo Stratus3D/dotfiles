@@ -129,6 +129,7 @@ asdf plugin add golang https://github.com/asdf-community/asdf-golang.git
 asdf plugin add bats https://github.com/timgluz/asdf-bats.git
 asdf plugin add shellcheck https://github.com/luizm/asdf-shellcheck.git
 asdf plugin add shfmt https://github.com/luizm/asdf-shfmt.git
+asdf plugin add jdtls https://github.com/Stratus3D/asdf-jdtls.git
 
 # Install the software versions listed in the .tool-versions file in $HOME
 asdf install

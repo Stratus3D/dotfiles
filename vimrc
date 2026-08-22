@@ -71,6 +71,9 @@ set title
 " Don't move cursor to start of line when switching buffers
 set nostartofline
 
+" Add current directory and all sub directories to path for file finding
+set path+=**
+
 " Show the 80 column line
 set colorcolumn=80,120
 

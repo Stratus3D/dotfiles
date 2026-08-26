@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# Unofficial Bash "strict mode"
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+# Utility to play certain sound effects
+#
+# Designed to be invoked by long running command line programs to notify the
+# programmer they have finished
+#
+# Copied from https://gitlab.com/EvanHahn/dotfiles/-/blob/42af33e66387598b174694e3c088ba39d823f8ad/home/bin/bin/sfx
+#
+# TODO:
+#
+# * accept argument string (options like good,bad,neutral)
+# * read config in $XDG_CONFIG_HOME./config/sfx/config
+# * play configured files as good,bad,neutral
+
+XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
+
+exec mpv --really-quiet --no-video "$XDG_CONFIG_HOME/evanhahn-sfx/$1.ogg" &

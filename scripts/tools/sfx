@@ -18,7 +18,13 @@ IFS=$'\t\n' # Stricter IFS settings
 # * accept argument string (options like good,bad,neutral)
 # * read config in $XDG_CONFIG_HOME./config/sfx/config
 # * play configured files as good,bad,neutral
+#
+# MacOS sound effects located at /System/Library/Sounds
+#
 
 XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 
+CONFIG_FILE="${XDG_CONFIG_HOME}/sfx/config"
+
+# todo: find $1 in config file, if not set print error
 exec mpv --really-quiet --no-video "$XDG_CONFIG_HOME/evanhahn-sfx/$1.ogg" &
